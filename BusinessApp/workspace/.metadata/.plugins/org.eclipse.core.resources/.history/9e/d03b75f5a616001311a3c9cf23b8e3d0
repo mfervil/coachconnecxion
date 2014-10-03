@@ -1,0 +1,182 @@
+<%@ include file="/WEB-INF/views/common/include.jsp" %>
+<%@ include file="/WEB-INF/views/common/header_no_side.jsp" %>	
+
+<%--
+<%@ include file="/WEB-INF/views/userprofile/include.jsp" %>
+<%@ include file="header.jsp" %>			
+
+ --%>
+
+<%@ page language="java" 
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Profile Overview</title>
+
+	<!--[if lt IE 9]>
+	<link href="/css/style.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+	<link href="/css/style.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 941px)" />
+<style type="text/css">
+table tr {
+	border: none
+}
+
+table tbody {
+	border: none;
+}
+
+
+table td {
+	height: 30px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 4px;
+}
+</style>
+<STYLE>
+body,input {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	color: #0254EB
+}
+
+a:visited {
+	color: #0254EB
+}
+
+#header h2 {
+	color: white;
+	background-color: #00A1E6;
+	margin: 0px;
+	padding: 5px;
+}
+
+.comment {
+	width: 100%;
+	background-color: #f0f0f0;
+}
+
+a.morelink {
+	text-decoration: none;
+	outline: none;
+}
+
+.morecontent span {
+	display: none;
+}
+
+table tr:nth-child(2n) {
+	background: none;
+	
+}
+
+</STYLE>
+
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+			<!-- CONTACT FORM -->
+		<form:form method="post" commandName="userProfile" enctype="multipart/form-data">
+		<!-- <form action="#" id="page_user_profile_form" method="post"> -->
+		<h3 style="color:red"> ${errorMessage} </h3>
+	<table style="width: 900px;">
+		<tr>
+			<td style="width: 730px; padding: 5px;">
+				<table>
+					<tr>
+						<td style="margin-top: 4px;"> <!-- style="margin-top -->
+	
+	<table border="1">	
+				<tr><td colspan="2" >PROFILE INFORMATION</td> </tr>
+				<tr><td class="leftalign" >Upload Picture: <input type="file" name="profilePicture"
+					id="profilePicture" ></input></td> 
+					<td class="leftalign" nowrap>Video URL: <form:input size="40" path="video_url" /> </td>
+				</tr>
+
+				<tr><td class="leftalign" >Display Name: <form:input size="30" path="displayName" /> <form:errors path="displayName" cssClass="error" /></td> 
+					<td class="leftalign" >Email: <form:input size="30" path="email" /> <form:errors path="email" cssClass="error" /></td>
+				</tr>
+					
+				<%-- <tr>
+					<td class="leftalign" >
+						<form:input size="40" path="displayName" />
+					</td>
+					<td class="leftalign" >
+						<form:input size="40" path="email" />
+					</td>
+				</tr>
+				--%>
+				
+				<tr><td class="leftalign" >Overview <form:errors path="overview" cssClass="error" /></td> 
+					<td class="leftalign" >Service Description <form:errors path="serviceDescription" cssClass="error" /> </td>
+				</tr>
+				<tr>
+					<td class="leftalign" >
+						<form:textarea rows="6" cols="35" path="overview" /> 
+					</td>
+					<td class="leftalign" >
+						<form:textarea rows="6" cols="35" path="serviceDescription" /> 
+					</td>
+				</tr>
+				<tr><td class="leftalign" >Skills Expertise <form:errors path="skillsExpertise" cssClass="error" /></td> 
+					<td class="leftalign" >Keywords <form:errors path="keywords" cssClass="error" /></td>
+				</tr>
+				<tr>
+					<td  class="leftalign" >
+						<form:textarea rows="6" cols="35" path="skillsExpertise" /> 
+					</td>
+					<td class="leftalign" >
+						<form:textarea rows="6" cols="35" path="keywords" /> 
+					</td>
+				</tr>
+				<tr><td class="leftalign" >Company of Highest Position <form:errors path="companyOfHighestPosition" cssClass="error" /></td> 
+					<td class="leftalign" >Title/Summay of Position <form:errors path="summaryOfHighestPosition" cssClass="error" /></td>
+				</tr>
+				<tr>
+					<td class="topalign" >
+						<form:input size="40" path="companyOfHighestPosition" />
+					</td>
+					<td class="leftalign" >
+						<form:textarea rows="6" cols="35" path="summaryOfHighestPosition" /> 
+					</td>
+				</tr>
+<%--				
+				<tr><td class="leftalign" >Hourly Rate  <form:errors path="hourlyRate" cssClass="error" /></td> 
+					<td class="leftalign" >Payment Terms  <form:errors path="paymentTerms" cssClass="error" /></td></tr>
+				<tr>
+					<td class="topalign" >
+						<form:input size="40" path="hourlyRate" />
+					</td>
+					<td class="leftalign" >
+						<form:textarea rows="6" cols="35" path="paymentTerms" /> 
+					</td>
+				</tr>
+ --%>				
+			</table>
+			<table>
+				<tr>
+					<td class="leftalign">
+						<input type="submit" class="input-button" value="CANCEL" />
+						<input type="submit" class="input-button" value="SUBMIT" />
+					</td>
+				</tr>
+			</table>
+							
+						</td> <!-- End style="margin-top -->
+
+					</tr>
+
+				</table>			
+			</td>
+		</table>
+			
+		</form:form>
+</body>
+</html>
+</section>
+<%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	

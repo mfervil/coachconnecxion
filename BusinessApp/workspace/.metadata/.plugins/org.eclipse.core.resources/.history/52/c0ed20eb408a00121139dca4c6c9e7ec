@@ -1,0 +1,160 @@
+package com.fervil.spring.careercoach.model.dao;
+
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.context.internal.ThreadLocalSessionContext;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.fervil.spring.careercoach.model.domain.UserProfile;
+
+import java.util.List;
+
+@Repository
+public class HibernateUserProfileDao implements UserProfileDao {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	private ServiceRegistry serviceRegistry;
+/*
+	public HibernateUserProfileDao() {
+		Configuration configuration = new Configuration().configure();
+		
+	    serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();        
+	    sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+	    
+		//sessionFactory = configuration. .buildSessionFactory();
+	}
+*/
+	public void store(UserProfile UserProfile) {
+		//Session session = sessionFactory.openSession();
+		//Transaction tx = sessionFactory.getCurrentSession().getTransaction();
+		try {
+
+			//tx.begin();
+			sessionFactory.getCurrentSession().saveOrUpdate(UserProfile);
+			//session.save(UserProfile);
+			
+			//tx.commit();
+			
+		} catch (RuntimeException e) {
+			System.out.println(" The exception is: " + e.toString() );
+			//tx.rollback();			
+			throw e;
+			
+		//} finally {
+		//	session.close();
+			
+		}
+	}
+
+	public void delete(long id) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.getTransaction();
+		try {
+			tx.begin();
+			UserProfile UserProfile = (UserProfile) sessionFactory
+					.getCurrentSession().get(UserProfile.class, id);
+			session.delete(UserProfile);
+			tx.commit();
+		} catch (RuntimeException e) {
+			tx.rollback();
+			throw e;
+		} finally {
+			session.close();
+		}
+	}
+
+	public List<UserProfile> findAll() {
+		//Session session = sessionFactory.openSession();
+		//ThreadLocalSessionContext.bind(session); 
+		
+		try {
+			//session.beginTransaction();
+			System.out.println("Inside the HibernateUserProfileDAO 111");
+	        List list = sessionFactory.getCurrentSession().createCriteria(UserProfile.class).list();
+			System.out.println("Inside the HibernateUserProfileDAO 222");
+	        return ((List<UserProfile>) list);
+
+			//Query query = sessionFactory.getCurrentSession().createQuery(
+			//		"from UserProfile");
+			//return query.list();
+        
+		} catch (RuntimeException e) {
+			System.out.println(e.toString());
+			//tx.rollback();
+			throw e;
+		}		
+	}
+
+	public List<UserProfile> findFilteredUserProfiles(int coachingCategory,
+    		int coachingSubcategory, int industryExperience,
+    		String companyExperience, String coachFirstName,
+    		String coachLastName){
+
+		int i=0;
+		if (i>2){
+			i++;
+		}
+			try {
+				//session.beginTransaction();
+				System.out.println("Inside the findFilteredUserProfiles 111");
+		        List list = sessionFactory.getCurrentSession().createCriteria(UserProfile.class).list();
+		        
+		        Criteria crit = sessionFactory.getCurrentSession().createCriteria(UserProfile.class);
+		        if (coachingCategory > 0) crit.add(Restrictions.eq("coachingCategory", coachingCategory));
+		        
+				System.out.println("Inside the findFilteredUserProfiles 222");
+		        return ((List<UserProfile>) list);
+	
+			} catch (RuntimeException e) {
+				System.out.println(e.toString());
+				//tx.rollback();
+				throw e;
+			}		
+	}
+	
+	public void delete(String id) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.getTransaction();
+		try {
+			tx.begin();
+			UserProfile userProfile = (UserProfile) sessionFactory
+					.getCurrentSession().get(UserProfile.class, id);
+			session.delete(userProfile);
+			tx.commit();
+		} catch (RuntimeException e) {
+			tx.rollback();
+			throw e;
+		} finally {
+			session.close();
+		}
+		
+	}
+
+	public UserProfile findById(String id) {
+		Session session = sessionFactory.openSession();
+		ThreadLocalSessionContext.bind(session); 
+		
+		try {
+			UserProfile up =  (UserProfile)sessionFactory.getCurrentSession().get(
+					UserProfile.class, Long.valueOf(id));
+			
+			return up;
+		} catch (Exception e){
+			System.out.println("Errors in UserProfile findById(String id): " + e.toString());
+			//throw new Exception(e);
+			return null;
+		} finally {
+			session.close();
+		}
+	}	
+}

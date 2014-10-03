@@ -1,0 +1,245 @@
+package com.fervil.spring.careercoach.web;
+
+import java.io.BufferedInputStream;
+
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.net.URLDecoder;
+import java.sql.Blob;
+import java.util.Date;
+
+import javax.annotation.Resource;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.multipart.MultipartFile;
+
+import ua.com.bitlab.springsecuritydemo.services.UsersManagerServiceImpl;
+import ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils;
+
+import com.fervil.spring.careercoach.model.domain.UserProfile;
+import com.fervil.spring.careercoach.service.CreateUserProfileValidator;
+import com.fervil.spring.careercoach.service.UserProfileManager;
+import com.fervil.spring.careercoach.util.Constants;
+import com.fervil.spring.careercoach.util.SystemUtil;
+
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.auth.PropertiesCredentials;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.PutObjectRequest;
+
+
+import java.util.UUID;
+
+@Transactional
+@Controller 
+@RequestMapping("/createuserprofile") 
+public class CreateUserProfileFormController {
+	
+    private static final Logger log = LoggerFactory.getLogger(CreateUserProfileFormController.class);
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+
+//Testing only
+	@Resource(name = "userProfileValidator")
+	private CreateUserProfileValidator validator;
+	
+	@Resource(name = "userProfileManager")
+	private UserProfileManager userProfileManager;
+
+	@Autowired
+	ServletContext context;	
+	
+    private static String bucketName     = "ccxvi";
+    private static String keyName        = "Object-"+UUID.randomUUID();	
+    private static String uploadFileNamePrefix = "ccxv1";
+    
+	@RequestMapping(method = RequestMethod.GET) 
+	public String printHello(ModelMap model, org.springframework.web.context.request.WebRequest webRequest) {
+		try{
+
+			UserProfile userProfile = new UserProfile();
+
+			if (webRequest.getParameter("profileId") == null){
+				userProfile.setModifiedDate(new Date());
+				userProfile.setAccountType(1);
+				userProfile.setUserProfileType(1);
+				
+				userProfile.setCoachingcategory1(-1);
+				userProfile.setCoachingcategory2(-1);
+				userProfile.setCoachingcategory3(-1);
+				
+				userProfile.setIndustryfocus1(-1);
+				userProfile.setIndustryfocus2(-1);
+				userProfile.setIndustryfocus3(-1);
+				
+				
+			} else{
+				userProfile = userProfileManager.findById(Long.valueOf(webRequest.getParameter("profileId")));
+			}
+			
+ 			
+			model.addAttribute("profileId", webRequest.getParameter("profileId"));
+			model.addAttribute("userProfile", userProfile);
+			return "userprofile/createuserprofile"; 
+			
+		} catch (Exception e) {
+	        String msg = "The request failed. Error " + e;
+	        log.error(msg, e);
+			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+			return "public/common/error/errorpage";
+		}	
+	} 
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public String submitForm(
+			@ModelAttribute("userProfile") UserProfile userProfile,
+			@RequestParam("frmprofilepicture") MultipartFile frmprofilepicture, 
+			BindingResult result, SessionStatus status, ModelMap model, HttpServletRequest request, HttpServletResponse response,
+			org.springframework.web.context.request.WebRequest webRequest) {
+		
+ 		
+		validator.validate(userProfile, result);
+
+		try {
+		
+	        if (result.hasErrors()) {
+				return "userprofile/createuserprofile";
+			} else {
+				long userProfileId = SystemUtil.getUserProfileId(request, userProfileManager);
+				if (webRequest.getParameter("profileId") != null && !((String)webRequest.getParameter("profileId")).equals("")  && Long.valueOf((String)webRequest.getParameter("profileId")) > 0){
+					userProfile.setUserProfileId(Long.valueOf(webRequest.getParameter("profileId")));
+				} else if (userProfileId > 0){
+					userProfile.setUserProfileId(userProfileId);
+				}
+
+				
+				userProfile.setUser_userId(SecurityUtils.getCurrentUser().getId());
+				userProfile.setModifiedDate(new Date());
+				userProfile.setAccountType(1);
+				userProfile.setUserProfileType(1);
+
+				Session session = sessionFactory.getCurrentSession();
+				Blob blob = Hibernate.getLobCreator(session).createBlob(frmprofilepicture.getInputStream(), frmprofilepicture.getSize());
+				
+				if (frmprofilepicture.getBytes().length  > 4096000){
+					model.addAttribute(Constants.ERROR_MSG_KEY, "The image selected is bigger than 4,096KB. Please choose a smaller image to proceed.");
+					return "userprofile/createuserprofile";
+				}
+				
+				userProfile.setProfilepicture(blob);
+				userProfile.setProfile_picture_type(frmprofilepicture.getContentType()); 
+				
+				userProfileManager.storeUserProfile(userProfile);
+				status.setComplete();
+
+				//saveMultipartToDisk(profilepicture, userProfile);
+				saveMultipartToAmazonS3(frmprofilepicture, userProfile);
+
+				return "redirect:createuserprofilesuccess/userProfileId/" + userProfile.getUserProfileId();
+			    
+			}
+		} catch (Exception e) {
+	            String msg = "Failed to create user. Error " + e;
+	            log.error(msg, e);
+				model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				return "userprofile/createuserprofile";
+		}
+	}
+
+	private String calculateDestinationDirectory(UserProfile userProfile) {
+        String result = this.context.getRealPath("");
+        //result += "/";
+        result += Constants.UPLOAD_DIRECTORY;
+        result += "/";
+        result += userProfile.getUserProfileId();
+        
+        return result;
+    }
+ 
+    private String calculateDestinationPath(MultipartFile file, UserProfile userProfile) {
+        String result = this.calculateDestinationDirectory(userProfile);
+        result += "/";
+        result += "USERPROFILEIMAGE" + userProfile.getUserProfileId() + "." + getFileExtension(file);
+        //result += file.getOriginalFilename();
+
+        return result;
+    }
+ 
+    	
+    	
+    private void saveMultipartToAmazonS3(MultipartFile multipart, UserProfile userProfile) throws Exception {
+    	
+        AmazonS3 s3client = new AmazonS3Client(new ProfileCredentialsProvider());
+        try {
+            System.out.println("Uploading a new object to S3 from a file\n");
+            //File fileName = new File(uploadFileNamePrefix + userProfile.getUserProfileId());
+            
+            File convFile = new File( multipart.getOriginalFilename());
+            multipart.transferTo(convFile);
+            //return convFile;            
+    
+            String[] split = convFile.getName().split("\\.");
+            String ext = split[split.length - 1];
+            
+            s3client.putObject(new PutObjectRequest(
+            		bucketName, uploadFileNamePrefix + userProfile.getUserProfileId() + "." + ext, convFile ) );
+            
+         } catch (AmazonServiceException ase) {
+            System.out.println("Caught an AmazonServiceException, which " +
+            		"means your request made it " +
+                    "to Amazon S3, but was rejected with an error response" +
+                    " for some reason.");
+            System.out.println("Error Message:    " + ase.getMessage());
+            System.out.println("HTTP Status Code: " + ase.getStatusCode());
+            System.out.println("AWS Error Code:   " + ase.getErrorCode());
+            System.out.println("Error Type:       " + ase.getErrorType());
+            System.out.println("Request ID:       " + ase.getRequestId());
+        } catch (AmazonClientException ace) {
+            System.out.println("Caught an AmazonClientException, which " +
+            		"means the client encountered " +
+                    "an internal error while trying to " +
+                    "communicate with S3, " +
+                    "such as not being able to access the network.");
+            System.out.println("Error Message: " + ace.getMessage());
+        }    	
+    }	
+
+    private void saveMultipartToDisk(MultipartFile file, UserProfile userProfile) throws Exception {
+    	
+    	
+    	File dir = new File(this.calculateDestinationDirectory(userProfile));
+        if(!dir.exists()) {
+            dir.mkdirs();
+        }
+        File multipartFile = new File(this.calculateDestinationPath(file, userProfile));
+        file.transferTo(multipartFile);
+    }	
+    
+    
+    private String getFileExtension(MultipartFile file ) {
+		String filename = file.getOriginalFilename();
+		return filename.substring(filename.lastIndexOf( "." ) + 1 );
+	}
+}

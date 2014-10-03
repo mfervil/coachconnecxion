@@ -1,0 +1,66 @@
+<%@ include file="/WEB-INF/jsp/include.jsp" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ include file="header_no_side.jsp" %>			
+			<!-- CONTACT FORM -->
+		<form:form method="post" commandName="userProfile">
+		<!-- <form action="#" id="page_user_profile_form" method="post"> -->
+			<table>
+
+				<table>
+					<thead>
+						<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Service Desc.</th>
+						<th>Hourly Rate</th>
+						<th>Payment Terms</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${userProfiles}" varStatus="status" var="userProfile">
+							<tr> <td> ${userProfile.displayName}</td> 
+								 <td> ${userProfile.email}</td> 
+								 <td> ${userProfile.serviceDescription}</td> 
+								 <td> ${userProfile.hourlyRate} </td> 
+								 <td> ${userProfile.paymentTerms} </td> 
+								 <td><a href="#" id="coachSelected" class="coachSelected" data-value-1="${userProfile.email}" data-value-2="2"> &nbsp; &nbsp; <u> Contact </u></a></td> 
+							 </tr>
+							 <c:set var="userProfileId" value ="${userProfile.userProfileId}"/>
+							 <!-- <td><c:out value="${customerId}" /></td> -->
+						</c:forEach>
+					</tbody>	
+			</table>
+		</form:form>
+		
+		</section>
+		
+		
+		<!-- SIDEBAR -->
+		<section id="sidebar">
+			
+			<!-- SUB NAVIGATION -->
+			<section>
+<!--
+				<header>  				
+					<h1>SUB NAVIGATION</h1>				
+					<div class="heading_line"><span class="overlay"></span></div>
+				</header>  
+				
+				<ul class="list">
+					<li><a href="#">Lorem and Ipsum</a></li>
+					<li><a href="#">Dolor sit amet</a></li>
+					<li><a href="#">Consectetur adipiscing elit</a></li>
+					<li><a href="#">Mauris tristique pellentesque</a></li>
+					<li><a href="#">Lorem et faucibus</a></li>
+				</ul>
+ -->	
+ 				<div id="staticcontent" style="width: 170px">			
+ 				<a href="#" id="removeSelectedCoach" class="removeSelectedCoach"> <u> Remove Selected Coach </u></a> <br>
+ 				<select size="15" id="selectedCoach">
+    				<option>Coaches Selected</option>
+  				</select>
+  				</div> <br>
+  				
+			</section>
+		</section>		
+<%@ include file="footer_no_side.jsp" %>			

@@ -1,0 +1,35 @@
+				
+		</section>
+		
+		<div class="separator"></div>
+		
+		<div class="clear"></div>		
+	</div><!-- #boxed-page-bg -->			
+	<div id="wrapper-boxed-page-bottom"></div>
+	
+	
+	
+	<!-- FOOTER LINE -->
+	<section id="footer-line">
+		<div id="left">
+			<p><span class="colorizer">WEISS</span> HTML5 TEMPLATE BY <a href="http://www.themeprince.com">THEMEPRINCE</a> &COPY; 2012  - ALL RIGHTS RESERVED!</p>
+		</div>
+		
+		<div id="right">					
+			<ul class="social_icons">
+				<li><a href="#"><img src="/images/icon-rss.png" alt="RSS feed" /></a></li>
+				<li><a href="#"><img src="/images/icon-mail.png" alt="eMail" /></a></li>
+				<li><a href="#"><img src="/images/icon-facebook.png" alt="Facebook" /></a></li>
+				<li><a href="#"><img src="/images/icon-twitter.png" alt="Twitter" /></a></li>
+			</ul>
+			
+			<p>FOLLOW US ON </p>
+		</div>
+	</section>
+	
+	
+	</div><!-- #background -->		
+	</div><!-- #background_repeat -->	
+	
+</body>
+</html>

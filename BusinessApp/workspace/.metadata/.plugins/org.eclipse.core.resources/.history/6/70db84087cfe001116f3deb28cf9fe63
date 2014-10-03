@@ -1,0 +1,51 @@
+package com.fervil.spring.careercoach.model.domain;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "USER_PROFILE")
+public class UserProfile  implements Serializable {
+	public UserProfile() {
+		
+	}	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private long userProfileId;
+	private String displayName;
+
+	@Id
+	@Column(name = "userProfileId", unique = true, nullable = false, precision = 10, scale = 0)
+	public long getUserProfileId() {
+		return userProfileId;
+	}
+
+	public void setUserProfileId(long userProfileId) {
+		this.userProfileId = userProfileId;
+	}	
+	
+	@Column(name = "disPlayName", nullable = false, length = 75)
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+	}	
+	
+	public String toString() {
+		StringBuffer buffer = new StringBuffer();
+		buffer.append(" userProfileId: " + userProfileId + ";");
+		buffer.append(" displayName: " + displayName + ";");
+		buffer.append(" firstName: " + displayName);
+		return buffer.toString();
+	}
+	
+}

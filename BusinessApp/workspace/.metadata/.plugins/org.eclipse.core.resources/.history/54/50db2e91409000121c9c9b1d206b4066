@@ -1,0 +1,5 @@
+package com.fervil.spring.careercoach.model.domain;
+
+public class Package {
+
+}

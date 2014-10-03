@@ -1,0 +1,3 @@
+sed -i '/Rewrite*/d' /etc/httpd/conf.d/elasticbeanstalk.conf
+sed -i '/<\/VirtualHost>/i \ \n\ RewriteEngine On \n\ RewriteCond %{HTTP:X-Forwarded-Proto} !https \n\ RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI}' /etc/httpd/conf.d/elasticbeanstalk.conf
+/sbin/service httpd reload

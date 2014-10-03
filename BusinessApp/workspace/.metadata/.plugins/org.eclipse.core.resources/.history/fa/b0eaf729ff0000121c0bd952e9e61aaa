@@ -1,0 +1,187 @@
+package com.fervil.spring.careercoach.model.domain;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import java.util.Date;
+
+
+@Entity
+@Table(name = "USER_PROFILE")
+public class UserProfile  implements Serializable {
+	public UserProfile() {
+		
+	}	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private long userProfileId;
+	private String displayName;
+	private int userProfileType;
+	private long user_userId;
+	private int accountType;
+	private String email;
+	private String overview;
+	private String serviceDescription;
+	private String skillsExpertise;
+	private String TitleSummayOfhighestPosition;
+	private String companyOfHighestPosition;
+	private double hourlyRate;
+	private String paymentTerms;
+	private String keywords;
+	private Date modifiedDate;
+
+	@Id
+	@Column(name = "userProfileId", unique = true, nullable = false, precision = 10, scale = 0)
+	public long getUserProfileId() {
+		return userProfileId;
+	}
+
+	public void setUserProfileId(long userProfileId) {
+		this.userProfileId = userProfileId;
+	}	
+	
+	@Column(name = "disPlayName", nullable = false, length = 75)
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+	}	
+
+	@Column(name = "userProfileType", nullable = false)
+	public int getUserProfileType (){
+		return userProfileType;
+	}
+	
+	public void setUserProfileType(int userProfileType){
+		this.userProfileType = 	userProfileType;
+	}
+	
+	@Column(name = "user_userId", nullable = false)
+	public long getUser_userId (){
+		return user_userId;
+	}
+	
+	public void setUser_userId(long user_userId){
+		this.user_userId = user_userId;
+	}
+	
+	@Column(name = "accountType", nullable = false)
+	public int getAccountType(){
+		return accountType;
+	}
+	
+	public void setAccountType(int accountType){
+		this.accountType = accountType;
+	}
+	
+	@Column(name = "email", nullable = false, length = 75)
+	public String getEmail (){
+		return email;
+	}
+	
+	public void setEmail(String email){
+		this.email = email;
+	}
+	
+	@Column(name = "overview", nullable = false, length = 1000)
+	public String getOverview(){
+		return overview;
+	}
+	
+	public void setOverview(String overview){
+		this.overview = overview;
+	}
+	
+	@Column(name = "disPlayName", nullable = false, length = 1000)
+	public String getServiceDescription(){
+		return serviceDescription;
+	}
+	
+	public void setServiceDescription(){
+		this.serviceDescription = serviceDescription;
+	}
+	
+	@Column(name = "skillsExpertise", nullable = false, length = 1000)
+	public String getSkillsExpertise(){
+		return skillsExpertise;
+	}
+	
+	public void setSkillsExpertise(String skillsExpertise){
+		this.skillsExpertise = skillsExpertise;
+	}
+	
+	@Column(name = "TitleSummayOfhighestPosition", nullable = true, length = 75)
+	public String getTitleSummayOfhighestPosition(){
+		return TitleSummayOfhighestPosition;
+	}
+	
+	public void setTitleSummayOfhighestPosition(String TitleSummayOfhighestPosition){
+		this.TitleSummayOfhighestPosition = TitleSummayOfhighestPosition;
+	}
+	
+	@Column(name = "companyOfHighestPosition", nullable = true, length = 75)
+	public String getCompanyOfHighestPosition(){
+		return companyOfHighestPosition;
+	}
+	
+	public void setCompanyOfHighestPosition(String companyOfHighestPosition){
+		this.companyOfHighestPosition = companyOfHighestPosition;
+	}
+	
+	@Column(name = "hourlyRate", nullable = false)
+	public double getHourlyRate(){
+		return hourlyRate;
+	}
+	
+	public void setHourlyRate (double hourlyRate){
+		this.hourlyRate = hourlyRate;
+	}
+	
+	@Column(name = "paymentTerms", nullable = false)
+	public String getPaymentTerms(){
+		return paymentTerms;
+	}
+	
+	public void setPaymentTerms(String paymentTerms){
+		this.paymentTerms = paymentTerms;
+	}
+	
+	@Column(name = "keywords", nullable = false, length = 1000)
+	public String getKeywords(){
+		return keywords;
+	}
+	
+	public void setKeywords(String keywords){
+		this.keywords = keywords;
+	}
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "modifiedDate")
+	public Date getModifiedDate(){
+		return modifiedDate;
+	}
+	
+	public void setModifiedDate(Date modifiedDate){
+		this.modifiedDate = modifiedDate;
+	}
+	
+	
+	public String toString() {
+		StringBuffer buffer = new StringBuffer();
+		buffer.append(" userProfileId: " + userProfileId + ";");
+		buffer.append(" displayName: " + displayName + ";");
+		buffer.append(" firstName: " + displayName);
+		return buffer.toString();
+	}
+	
+}

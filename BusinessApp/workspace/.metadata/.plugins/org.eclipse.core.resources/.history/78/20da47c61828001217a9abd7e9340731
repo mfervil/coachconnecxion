@@ -1,0 +1,177 @@
+package com.fervil.spring.careercoach.model.domain;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import java.util.Date;
+
+@Entity
+@Table(name = "COACHING_REQUEST")
+public class CoachingRequest  implements Serializable {
+	public CoachingRequest() {
+		
+	}	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private Long coachingRequestId;
+	private Long userId;
+
+	private String currentPosition;
+	private String currentCompany;
+	private int careerCategory;
+	private int coachingType;
+	private int roadBlocks;
+	private int coachingStyle;
+	private Date startDate;
+	private String hours;
+	private String goals;
+	private String selectedCoaches;
+
+	////////////////    Testing Area Starts     ////////////////////////////
+	//private String testInfoNotToSave;
+	//public String getTestInfoNotToSave() {
+	//	return testInfoNotToSave;
+	//}
+	//
+	//public void setTestInfoNotToSave(String ptestInfoNotToSave) {
+	//	this.testInfoNotToSave = ptestInfoNotToSave;
+	//}	
+	////////////////    Testing Area Ends     ////////////////////////////
+
+	
+	
+	@Id
+	@Column(name = "COACHING_REQUEST_ID", unique = true, nullable = false, precision = 10, scale = 0)
+	public Long getCoachingRequestId() {
+		return coachingRequestId;
+	}
+	
+	public void setCoachingRequestId(Long coachingRequestId) {
+		this.coachingRequestId = coachingRequestId;
+	}	
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}	
+	
+	@Column(name = "USER_ID", nullable = false)
+	public Long getUserId() {
+		return userId;
+	}
+	
+	
+	@Column(name = "CURRENT_POSITION", nullable = false, length = 75)
+	public String getCurrentPosition() {
+		return currentPosition;
+	}
+
+	public void setCurrentPosition(String currentPosition) {
+		this.currentPosition = currentPosition;
+	}	
+
+	@Column(name = "CURRENT_COMPANY", nullable = false, length = 75)
+	public String getCurrentCompany (){
+		return currentCompany;
+	}
+	
+	public void setCurrentCompany(String currentCompany){
+		this.currentCompany = 	currentCompany;
+	}
+	
+	@Column(name = "CAREER_CATEGORY", columnDefinition = "SMALLINT", nullable = false)
+	public int getCareerCategory (){
+		return careerCategory;
+	}
+	
+	public void setCareerCategory(int careerCategory){
+		this.careerCategory = careerCategory;
+	}
+	
+	@Column(name = "COACHING_TYPE",  columnDefinition = "SMALLINT",  nullable = false)
+	public int getCoachingType(){
+		return coachingType;
+	}
+	
+	public void setCoachingType(int coachingType){
+		this.coachingType = coachingType;
+	}
+	
+	@Column(name = "ROADBLOCKS",  columnDefinition = "SMALLINT", nullable = false)
+	public int getRoadBlocks (){
+		return roadBlocks;
+	}
+	
+	public void setRoadBlocks(int roadBlocks){
+		this.roadBlocks = roadBlocks;
+	}
+	
+	@Column(name = "COACHING_STYLE",  columnDefinition = "SMALLINT", nullable = false)
+	public int getCoachingStyle(){
+		return coachingStyle;
+	}
+	
+	public void setCoachingStyle(int coachingStyle){
+		this.coachingStyle = coachingStyle;
+	}
+	
+	@Column(name = "START_DATE", nullable = false)
+	public Date getStartDate(){
+		return startDate;
+	}
+	
+	public void setStartDate(Date startDate){
+		this.startDate = startDate;
+	}
+	
+	@Column(name = "HOURS", length = 75)
+	public String getHours(){
+		return hours;
+	}
+	
+	public void setHours(String hours){
+		this.hours = hours;
+	}
+	
+	@Column(name = "GOALS", nullable = true, length = 1000)
+	public String getGoals(){
+		return goals;
+	}
+	
+	public void setGoals(String goals){
+		this.goals = goals;
+	}
+
+	@Column(name = "SELECTED_COACHES", nullable = true)
+	public String getSelectedCoaches(){
+		return selectedCoaches;
+	}
+	
+	public void setSelectedCoaches(String selectedCoaches){
+		this.selectedCoaches = selectedCoaches;
+	}
+	
+	public String toString() {
+		StringBuffer buffer = new StringBuffer();
+		buffer.append(" coachingRequestIdId: " + coachingRequestId + ";");
+		buffer.append(" currentPosition: " + currentPosition + ";");
+		buffer.append(" currentCompany: " + currentCompany + ";");
+		buffer.append(" expertiseArea: " + careerCategory + ";");
+		buffer.append(" coachingType: " + coachingType + ";");
+		buffer.append(" roadBlocks: " + roadBlocks + ";");
+		buffer.append(" coachingStyle: " + coachingStyle + ";");
+		buffer.append(" startDate: " + startDate + ";");
+		buffer.append(" hours: " + hours + ";");
+		buffer.append(" goals: " + goals + ";");
+		buffer.append(" selected coaches: " + selectedCoaches + ";");
+		
+		return buffer.toString();
+	}
+	
+}

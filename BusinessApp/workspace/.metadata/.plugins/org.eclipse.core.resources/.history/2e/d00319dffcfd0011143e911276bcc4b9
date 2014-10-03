@@ -1,0 +1,38 @@
+package com.fervil.spring.careercoach.model.domain;
+
+import java.io.Serializable;
+
+public class UserProfile  implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private long userProfileId;
+	private String displayName;
+
+	
+	public long getUserProfileId() {
+		return userProfileId;
+	}
+
+	public void setUserProfileId(long userProfileId) {
+		this.userProfileId = userProfileId;
+	}	
+	
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+	}	
+	
+	public String toString() {
+		StringBuffer buffer = new StringBuffer();
+		buffer.append(" userProfileId: " + userProfileId + ";");
+		buffer.append(" displayName: " + displayName + ";");
+		buffer.append(" firstName: " + displayName);
+		return buffer.toString();
+	}
+	
+}

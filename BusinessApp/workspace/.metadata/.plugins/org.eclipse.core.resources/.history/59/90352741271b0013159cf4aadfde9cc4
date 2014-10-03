@@ -1,0 +1,157 @@
+package com.fervil.spring.careercoach.web;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.net.URLDecoder;
+import java.sql.Blob;
+import java.util.Date;
+
+import javax.annotation.Resource;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.multipart.MultipartFile;
+
+import ua.com.bitlab.springsecuritydemo.services.UsersManagerServiceImpl;
+import ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils;
+
+import com.fervil.spring.careercoach.model.domain.UserProfile;
+import com.fervil.spring.careercoach.service.CreateUserProfileValidator;
+import com.fervil.spring.careercoach.service.UserProfileManager;
+import com.fervil.spring.careercoach.util.Constants;
+
+@Controller 
+@Transactional
+@RequestMapping("/createuserprofile") 
+public class CreateUserProfileFormController {
+	
+    private static final Logger log = LoggerFactory.getLogger(CreateUserProfileFormController.class);
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+
+//Testing only
+	@Resource(name = "userProfileValidator")
+	private CreateUserProfileValidator validator;
+	
+	@Resource(name = "userProfileManager")
+	private UserProfileManager userProfileManager;
+
+	@Autowired
+	ServletContext context;	
+	
+	@RequestMapping(method = RequestMethod.GET) 
+	public String printHello(ModelMap model) {
+		try{
+			
+			UserProfile userProfile = new UserProfile();
+	
+			userProfile.setModifiedDate(new Date());
+	
+			userProfile.setAccountType(1);
+			userProfile.setUserProfileType(1);
+			
+			String[] testString = {"test1, test2"};
+			
+			model.addAttribute("userProfile", userProfile);
+			return "userprofile/createuserprofile"; 
+			
+		} catch (Exception e) {
+	        String msg = "Failed while displaying create user page. Error " + e;
+	        log.error(msg, e);
+			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+			return "common/errorpage";
+		}	
+	} 
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public String submitForm(
+			@ModelAttribute("userProfile") UserProfile userProfile,
+			@RequestParam("profilePicture") MultipartFile profilePicture, 
+			BindingResult result, SessionStatus status, ModelMap model, HttpServletRequest request, HttpServletResponse response) {
+		validator.validate(userProfile, result);
+
+		try {
+			System.out.println("Inside CreatUserProfile POST: ");				
+		
+	        if (result.hasErrors()) {
+				return "userprofile/createuserprofile";
+			} else {
+				userProfile.setUser_userId(SecurityUtils.getCurrentUser().getId());
+				userProfile.setModifiedDate(new Date());
+				userProfile.setAccountType(1);
+				userProfile.setUserProfileType(1);
+
+				Session session = sessionFactory.getCurrentSession();
+				Blob blob = Hibernate.getLobCreator(session).createBlob(profilePicture.getInputStream(), profilePicture.getSize());
+				
+				userProfile.setProfile_picture(blob);
+				userProfile.setProfile_picture_type(profilePicture.getContentType()); 
+				
+				userProfileManager.storeUserProfile(userProfile);
+				status.setComplete();
+
+				saveMultipartToDisk(profilePicture, userProfile);
+				return "redirect:createuserprofilesuccess/userProfileId/" + userProfile.getUserProfileId();
+			    
+			}
+		} catch (Exception e) {
+	            String msg = "Failed to create user. Error " + e;
+	            log.error(msg, e);
+				model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				return "userprofile/createuserprofile";
+		}
+	}
+
+	private String calculateDestinationDirectory(UserProfile userProfile) {
+        String result = this.context.getRealPath("");
+        //result += "/";
+        result += Constants.UPLOAD_DIRECTORY;
+        result += "/";
+        result += userProfile.getUserProfileId();
+        
+        return result;
+    }
+ 
+    private String calculateDestinationPath(MultipartFile file, UserProfile userProfile) {
+        String result = this.calculateDestinationDirectory(userProfile);
+        result += "/";
+        result += "USERPROFILEIMAGE" + userProfile.getUserProfileId() + "." + getFileExtension(file);
+        //result += file.getOriginalFilename();
+
+        return result;
+    }
+ 
+    private void saveMultipartToDisk(MultipartFile file, UserProfile userProfile) throws Exception {
+        File dir = new File(this.calculateDestinationDirectory(userProfile));
+        if(!dir.exists()) {
+            dir.mkdirs();
+        }
+        File multipartFile = new File(this.calculateDestinationPath(file, userProfile));
+        file.transferTo(multipartFile);
+
+    }	
+    
+    private String getFileExtension(MultipartFile file ) {
+		String filename = file.getOriginalFilename();
+		return filename.substring(filename.lastIndexOf( "." ) + 1 );
+	}
+}

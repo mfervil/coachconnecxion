@@ -1,0 +1,90 @@
+package com.fervil.spring.careercoach.model.domain;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import java.util.Date;
+
+@Entity
+@Table(name = "PACKAGE")
+public class Package {
+
+	long user_profile_id;
+	String packageName;
+	int category;
+	int subCategory;
+	double price;
+	String overview;
+	String packageDetails;
+	int optOutDays;
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	private long packageId;
+	public long getPackageId() {
+		return packageId;
+	}
+	public void setPackageId(long packageId) {
+		this.packageId = packageId;
+	}
+	public long getUser_profile_id() {
+		return user_profile_id;
+	}
+	public void setUser_profile_id(long user_profile_id) {
+		this.user_profile_id = user_profile_id;
+	}
+	public String getPackageName() {
+		return packageName;
+	}
+	public void setPackageName(String packageName) {
+		this.packageName = packageName;
+	}
+	public int getCategory() {
+		return category;
+	}
+	public void setCategory(int category) {
+		this.category = category;
+	}
+	public int getSubCategory() {
+		return subCategory;
+	}
+	public void setSubCategory(int subCategory) {
+		this.subCategory = subCategory;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public String getOverview() {
+		return overview;
+	}
+	public void setOverview(String overview) {
+		this.overview = overview;
+	}
+	public String getPackageDetails() {
+		return packageDetails;
+	}
+	public void setPackageDetails(String packageDetails) {
+		this.packageDetails = packageDetails;
+	}
+	public int getOptOutDays() {
+		return optOutDays;
+	}
+	public void setOptOutDays(int optOutDays) {
+		this.optOutDays = optOutDays;
+	}
+	
+	
+	
+	
+}

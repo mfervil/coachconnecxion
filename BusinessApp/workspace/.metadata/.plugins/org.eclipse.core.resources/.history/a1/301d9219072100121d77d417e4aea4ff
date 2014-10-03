@@ -1,0 +1,14 @@
+<%@ include file="/WEB-INF/jsp/include.jsp" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<html>
+<head>
+<title>Create User Profile Success</title>
+</head>
+<%@ include file="header.jsp" %>			
+<body> <center>
+<br> 
+<b>The user profile has been created successfully for the customer with ID <c:out value="${model.userProfileId}"/>.</b>
+<br> 
+</center>
+</body>
+</html>

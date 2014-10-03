@@ -1,0 +1,30 @@
+package com.fervil.spring.careercoach.service;
+		
+import org.springframework.stereotype.Component;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
+
+import com.fervil.spring.careercoach.model.domain.CoachingRequest;
+import com.fervil.spring.careercoach.model.domain.UserProfile;
+
+@Component
+public class SelectedCoachesValidator implements Validator {
+
+    public boolean supports(Class clazz) {
+        return UserProfile.class.isAssignableFrom(clazz);
+    }
+
+    
+    public void validate(Object target, Errors errors) {
+    	final String fieldisRequired = " : At least one coach must be added to the list to proceed.";
+    	
+        CoachingRequest coachingRequest = (CoachingRequest) target;
+        String[] selectedCoachList = coachingRequest.getSelectedCoaches().split("@") ;
+        if (selectedCoachList.length < 2 ) {
+			errors.rejectValue("selectedCoaches", "invalid.selectedCoaches", fieldisRequired);
+        }
+    }
+    
+
+}

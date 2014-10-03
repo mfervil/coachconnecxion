@@ -1,0 +1,111 @@
+package ua.com.bitlab.springsecuritydemo.web.controllers;
+
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import ua.com.bitlab.springsecuritydemo.services.UserServiceException;
+import ua.com.bitlab.springsecuritydemo.services.UsersManagerService;
+import ua.com.bitlab.springsecuritydemo.services.UsersService;
+import ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils;
+import ua.com.bitlab.springsecuritydemo.services.security.UserSecurityBean;
+import ua.com.bitlab.springsecuritydemo.web.beans.WebUser;
+
+import javax.validation.Valid;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * User: anna
+ * Date: 10/12/12
+ */
+@Controller
+@RequestMapping("/users")
+public class UsersController {
+
+    private static final Logger log = LoggerFactory.getLogger(UsersController.class);
+
+    @Autowired
+    private UsersService usersService;
+    @Autowired
+    private UsersManagerService usersManagerService;
+
+
+    @RequestMapping(value = "create", method = RequestMethod.GET)
+    public void create(Model model) {
+        model.addAttribute("user", new WebUser());
+    }
+
+    @RequestMapping(value = "create", method = RequestMethod.POST)
+    public String create(@Valid WebUser user, Model model) {
+        log.debug("Creating user " + user);
+        try {
+            usersManagerService.createUser(user);
+        } catch (UserServiceException e) {
+            log.error("Failed to create new user user '" + user.getUsername() + "'. Error: " + e, e);
+            model.addAttribute("errorMsg", e.getPrintableMessage());
+            model.addAttribute("user", user);
+            return "users/create";
+        }
+        log.info("User created: " + user);
+        return "redirect:/users/successfulRegistration";
+    }
+
+    @RequestMapping(value = "activate", method = RequestMethod.GET)
+    public String activate(long id, String code, Model model) {
+        log.debug("Activating user with id [" + id + "] and activation code [" + code + "]");
+        if (StringUtils.isBlank(code)) {
+            log.error("Parameter  activation code cannot be empty.");
+            model.addAttribute("message", "Activation code is incorrect.");
+            return "users/activate";
+        }
+        try {
+            WebUser user = usersService.activateUser(id, code);
+            model.addAttribute("message", "User '" + user.getUsername() + "' was activated successfully.");
+        } catch (UserServiceException e) {
+            log.error("Failed to activate  user with id'" + id + "'. Error: " + e, e);
+            model.addAttribute("message", e.getPrintableMessage());
+        }
+        log.info("User [" + id + "] activated");
+        return "users/activate";
+    }
+
+    @Secured("ROLE_USER")
+    @RequestMapping(value = "home")
+    public void home(Model model) {
+        UserSecurityBean currentUser = SecurityUtils.getCurrentUser();
+        Long userId = currentUser.getId();
+        WebUser user = usersService.getUserById(userId);
+        model.addAttribute("user", user);
+    }
+
+    @Secured("ROLE_USER")
+    @RequestMapping(value = "view")
+    public void view(Model model) {
+        UserSecurityBean currentUser = SecurityUtils.getCurrentUser();
+        Long userId = currentUser.getId();
+        WebUser user = usersService.getUserById(userId);
+        model.addAttribute("user", user);
+    }
+
+    @Secured("ROLE_ADMIN")
+    @RequestMapping(value = "list")
+    public void list(Model model) {
+        List<WebUser> users = usersService.listUsers();
+        model.addAttribute("users", users);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "checkUserName", method = RequestMethod.GET)
+    public Boolean checkMasterByOfferName(String username) {
+        WebUser webUser = usersService.getUserByUsername(username);
+        return webUser == null;
+    }
+}

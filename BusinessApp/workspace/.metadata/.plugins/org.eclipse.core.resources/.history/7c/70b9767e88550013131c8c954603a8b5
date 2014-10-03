@@ -1,0 +1,94 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Selecting your coach</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta charset="utf-8" />
+	<meta name="description" content="WEISS - HTML5 Responsive Template" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
+	
+<script type="text/javascript">
+
+	$(function()
+
+	{
+
+		$('#wysiwyg').wysiwyg();
+
+	});
+</script>
+<script type="text/javascript">
+	$(function()
+
+	{
+
+		$('#wysiwyg1').wysiwyg();
+
+	});
+</script>
+<style type="text/css">
+table tr {
+	border: none
+}
+
+table tbody {
+	border: none;
+}
+</style>
+
+	
+</head>
+<body >
+
+<%-- BEGIN BODY No Side test --%>
+<%-- END BODY No Side test --%>
+
+	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
+
+	<table style="width: 98%;">
+		<tr>
+			<td	style="width: 15%; vertical-align: top; background-color: #EAEAEA; padding: 5px;">
+			<%@ include file="/WEB-INF/views/common/left_nav.jsp" %>
+			</td>
+
+			<td style="width: 85%;">
+			
+			<c:url var="mainUrl" value="/packageAdd" />
+			<h1 style="font-size:14px;">${message}</h1>
+			<table style="border: 1px solid; width: 100%; text-align: center">
+				<thead style="background: #EAEAEA;">
+					<tr>
+						<th style="text-align: center;width: 40%;">Vendor Name</th>
+						<th style="text-align: center;width: 40%;">Package Name</th>
+						<th style="text-align: center;width: 20%;">Price</th>
+						<th style="text-align: center;width: 20%;">Overview</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${customerPackages}" var="packages">
+						<tr>
+							<td style="text-align: center;"><c:out value="${packages.displayName}" /></td>
+							<td style="text-align: center;"><c:out value="${packages.packageName}" /></td>
+							<td style="text-align: center;"><c:out value="${packages.price}" /></td>
+							<td style="text-align: center;"><c:out value="${packages.overview}" /></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+
+			<c:if test="${empty packages}">
+				There are currently no packages in your list.
+			</c:if>
+
+			</td>
+		</tr>
+	</table>
+
+</section>
+<%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	

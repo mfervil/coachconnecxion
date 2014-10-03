@@ -1,0 +1,17 @@
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/springsecuritydemo_test_db
+jdbc.username=root
+jdbc.password=14fifi14
+
+hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+hibernate.generate_statistics=true
+#Hibernate action on startup
+hibernate.auto=create
+
+#for confirmation email
+mail.host=
+mail.port=1
+
+mail.username=
+mail.password=
+
