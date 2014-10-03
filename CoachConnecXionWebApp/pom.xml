@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>SpringSecurityDemo</groupId>
-    <artifactId>spring-security-demo</artifactId>
+    <groupId>CoachConnecXionWebApp</groupId>
+    <artifactId>CoachConnecXionWebApp</artifactId>
     <packaging>war</packaging>
-    <name>spring-security-demo</name>
+    <name>CoachConnecXionWebApp</name>
 
     <properties>
         <java-version>1.6</java-version>
@@ -95,22 +95,22 @@ AWS
         <!-- Spring Security -->
         <dependency>
             <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
+            <artifactId>CoachConnecXionWebApp-web</artifactId>
             <version>${spring.security.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
+            <artifactId>CoachConnecXionWebApp-core</artifactId>
             <version>${spring.security.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-taglibs</artifactId>
+            <artifactId>CoachConnecXionWebApp-taglibs</artifactId>
             <version>${spring.security.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
+            <artifactId>CoachConnecXionWebApp-config</artifactId>
             <version>${spring.security.version}</version>
         </dependency>
 
@@ -337,7 +337,7 @@ AWS
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <_url>http://localhost:8090/spring-security-demo-2</_url>
+                <_url>http://localhost:8090/CoachConnecXionWebApp</_url>
                 <_jdbc.url>jdbc:mysql://localhost:3306/careercoach</_jdbc.url>
                 <_jdbc.username>root</_jdbc.username>
                 <_jdbc.password>14fifi14</_jdbc.password>
@@ -360,10 +360,10 @@ AWS
         <profile>
             <id>tester-local</id>
             <properties>
-                <_url>http://localhost:8090/spring-security-demo-2</_url>
+                <_url>http://localhost:8090/CoachConnecXionWebApp</_url>
                 <tomcat.server>apache-tomcat-7.0.29</tomcat.server>
                 <tomcat.url>http://localhost:8090/manager</tomcat.url>
-                <tomcat.path>/spring-security-demo</tomcat.path>
+                <tomcat.path>/CoachConnecXionWebApp</tomcat.path>
 
                 <_jdbc.url>jdbc:mysql://localhost:3306/careercoach</_jdbc.url>
                 <_jdbc.username>root</_jdbc.username>
@@ -385,7 +385,7 @@ AWS
         <profile>
             <id>tester-remote</id>
             <properties>
-                <_url>http://localhost:8090/spring-security-demo-2</_url>
+                <_url>http://localhost:8090/CoachConnecXionWebApp</_url>
                 <tomcat.server>apache-tomcat-7.0.29</tomcat.server>
                 <tomcat.url>http://localhost:8090/manager</tomcat.url>
                 <tomcat.path>/spring-security-demo</tomcat.path>
