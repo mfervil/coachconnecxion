@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/main/java=utf-8
+encoding//src/main/resources=utf-8
+encoding//src/main/webapp/WEB-INF/views/public/common/legal/personalsafety.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/public/common/systeminfo/SearchCoachesOverview.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/public/common/systeminfo/SearchCoachesOverview_cleaned.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/public/common/systeminfo/coachesInfoOverview.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/users/successfulRegistration.jsp=UTF-8
+encoding//src/test/java=utf-8
+encoding//src/test/resources=utf-8
