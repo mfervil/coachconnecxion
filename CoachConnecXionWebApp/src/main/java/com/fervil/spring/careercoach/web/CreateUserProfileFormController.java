@@ -150,8 +150,12 @@ public class CreateUserProfileFormController {
 				}
 				
 				userProfile.setProfilepicture(blob);
-				userProfile.setProfile_picture_type(frmprofilepicture.getContentType()); 
-				
+				//userProfile.setProfile_picture_type(frmprofilepicture.getContentType()); 
+			    
+	            String[] split = frmprofilepicture.getOriginalFilename().split("\\.");
+	            String ext = split[split.length - 1];
+				userProfile.setProfile_picture_type(ext); 
+
 				userProfileManager.storeUserProfile(userProfile);
 				status.setComplete();
 

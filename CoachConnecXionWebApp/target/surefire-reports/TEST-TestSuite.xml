@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.301" errors="0" skipped="0" tests="0" name="TestSuite">
+<testsuite failures="0" time="0.423" errors="0" skipped="0" tests="0" name="TestSuite">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_37\jre\bin"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="C:\Users\mfervil\Coach\git\coachconnecxion\CoachConnecXionWebApp"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_37\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="C:\Users\mfervil\AppData\Local\Temp\surefirebooter7944015025633361607.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\mfervil\AppData\Local\Temp\surefirebooter3194300929963778148.jar"/>
     <property name="java.io.tmpdir" value="C:\Users\mfervil\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -43,7 +43,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.6.0_37\jre"/>
-    <property name="sun.java.command" value="C:\Users\mfervil\AppData\Local\Temp\surefirebooter7944015025633361607.jar C:\Users\mfervil\AppData\Local\Temp\surefire2296015639713017485tmp C:\Users\mfervil\AppData\Local\Temp\surefire8273780345992899834tmp"/>
+    <property name="sun.java.command" value="C:\Users\mfervil\AppData\Local\Temp\surefirebooter3194300929963778148.jar C:\Users\mfervil\AppData\Local\Temp\surefire8123514732634370276tmp C:\Users\mfervil\AppData\Local\Temp\surefire5202392675403463579tmp"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>

@@ -1,0 +1,21 @@
+/* COLORIZER */
+
+#topline,.ei-slider-thumbs li.ei-slider-element,.call_to_action .button,.button,span.circle,.heading_line,#contact_form .input-button,#page_contact_form .input-button,.reply  .i-send,.post_format{	
+	background-color: #7b2d08;
+}
+
+.colorizer,a:hover,.current,#menu a:hover,#menu li.current a,#menu li:hover ul li a:hover,#responsive-menu,.ei-title h2,.ui-tabs .ui-tabs-nav li.ui-tabs-selected a{
+	color: #7b2d08;
+}
+
+#menu .current,#menu li:hover,.tabs.ui-tabs .ui-tabs-nav li.ui-tabs-selected{
+	border-top: 1px solid #7b2d08;
+}
+
+#menu li ul {
+	border-top: 2px solid #7b2d08;
+}
+
+#responsive-menu{
+	border: 1px solid #7b2d08;
+}
