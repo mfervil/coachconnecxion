@@ -15,7 +15,7 @@
 	<title>Selecting your coach</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="WEISS - HTML5 Responsive Template" />
+	<meta name="description" content=" CoachConnecXion" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -258,14 +258,14 @@ String finalPath = request.getContextPath();
 							<table>
 								<tr>
 									<td style="text-align: left;"> ${profileInfo.getOverview()}
-										<%-- <div class="comment more">${profileInfo.getOverview()} --- Weiss Pro Audio manufactures
+										<%-- <div class="comment more">${profileInfo.getOverview()} ---  CoachConnecXion Pro Audio manufactures
 											professional digital and analog audio equipment for quality
 											conscious people. Expect no less than excellence in design,
 											ergonomics and sonic quality. This is what our name stands
-											for. Weiss Pro Audio manufactures professional digital and
+											for.  CoachConnecXion Pro Audio manufactures professional digital and
 											analog audio equipment for quality conscious people. Expect
 											no less than excellence in design, ergonomics and sonic
-											quality. This is what our name stands for. Weiss Pro Audio
+											quality. This is what our name stands for.  CoachConnecXion Pro Audio
 											manufactures professional digital and analog audio equipment
 											for quality conscious people. Expect no less than excellence
 											in design, ergonomics and sonic quality. This is what our
@@ -284,14 +284,14 @@ String finalPath = request.getContextPath();
 							<table>
 								<tr>
 									<td style="text-align: left;">${profileInfo.getServiceDescription()}
-										<%-- <div class="comment more">${profileInfo.getServiceDescription()} --- Weiss Pro Audio manufactures
+										<%-- <div class="comment more">${profileInfo.getServiceDescription()} ---  CoachConnecXion Pro Audio manufactures
 											professional digital and analog audio equipment for quality
 											conscious people. Expect no less than excellence in design,
 											ergonomics and sonic quality. This is what our name stands
-											for. Weiss Pro Audio manufactures professional digital and
+											for.  CoachConnecXion Pro Audio manufactures professional digital and
 											analog audio equipment for quality conscious people. Expect
 											no less than excellence in design, ergonomics and sonic
-											quality. This is what our name stands for. Weiss Pro Audio
+											quality. This is what our name stands for.  CoachConnecXion Pro Audio
 											manufactures professional digital and analog audio equipment
 											for quality conscious people. Expect no less than excellence
 											in design, ergonomics and sonic quality. This is what our
@@ -309,14 +309,14 @@ String finalPath = request.getContextPath();
 							<table>
 								<tr>
 									<td style="text-align: left;">${profileInfo.getSkillsExpertise()}
-										<%--<div class="comment more">${profileInfo.getSkillsExpertise()} --- Weiss Pro Audio manufactures
+										<%--<div class="comment more">${profileInfo.getSkillsExpertise()} ---  CoachConnecXion Pro Audio manufactures
 											professional digital and analog audio equipment for quality
 											conscious people. Expect no less than excellence in design,
 											ergonomics and sonic quality. This is what our name stands
-											for. Weiss Pro Audio manufactures professional digital and
+											for.  CoachConnecXion Pro Audio manufactures professional digital and
 											analog audio equipment for quality conscious people. Expect
 											no less than excellence in design, ergonomics and sonic
-											quality. This is what our name stands for. Weiss Pro Audio
+											quality. This is what our name stands for.  CoachConnecXion Pro Audio
 											manufactures professional digital and analog audio equipment
 											for quality conscious people. Expect no less than excellence
 											in design, ergonomics and sonic quality. This is what our

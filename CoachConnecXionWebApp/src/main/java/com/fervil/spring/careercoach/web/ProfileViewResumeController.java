@@ -157,7 +157,7 @@ public class ProfileViewResumeController {
 	public String download(
 			@RequestParam(value = "id", required = true) Integer id,
 			HttpServletResponse response, Model model) {
-		log.debug("Received request to download resume");
+		log.info("Received request to download resume");
 		try {
 			ResumesCertificates resumesCertificates = addresumeService.get(id);
 

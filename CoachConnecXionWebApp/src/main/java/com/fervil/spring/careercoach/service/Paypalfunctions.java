@@ -93,8 +93,9 @@ public class Paypalfunctions  {
     gv_APIPassword	= "mncmar14";
     gv_APIVendor	= "coachconnexion";
     gv_APIPartner	= "PayPal";
-	gv_Env			= "pilot";
-	unique_id		= "";
+	//gv_Env			= "pilot";
+	gv_Env			= "production";
+    unique_id		= "";
 
     boolean bSandbox = true;
 
@@ -183,12 +184,12 @@ public String[] ExecutePayment(String paymentType, PaymentInformation paymentInf
     // or your bank statement. These fields are reportable but not searchable in PayPal Manager.
     
 /* 2/24/2014      */
-    inv.setPoNum("PO12345");
-    inv.setInvNum("INV12345");
+    inv.setPoNum("CCXPO12345");
+    inv.setInvNum("CCXINV12345");
     //inv.setCustRef("CustRef1");
-    inv.setCustRef("CUSTREF1");
-    inv.setMerchDescr("Merchant Descr");
-    inv.setMerchSvc("Merchant Svc");
+    inv.setCustRef("CCXCUSTREF1");
+    inv.setMerchDescr("CCX Merchant");
+    inv.setMerchSvc("CCX Merchant Svc");
 
 //    inv.setPoNum("POCCNXN1");
 //    inv.setInvNum("INVCCNXN1");

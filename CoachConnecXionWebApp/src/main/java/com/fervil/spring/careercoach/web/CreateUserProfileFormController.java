@@ -100,7 +100,6 @@ public class CreateUserProfileFormController {
 				userProfile = userProfileManager.findById(Long.valueOf(webRequest.getParameter("profileId")));
 			}
 			
- 			
 			model.addAttribute("profileId", webRequest.getParameter("profileId"));
 			model.addAttribute("userProfile", userProfile);
 			return "userprofile/createuserprofile"; 
@@ -117,6 +116,8 @@ public class CreateUserProfileFormController {
 	public String submitForm(
 			@ModelAttribute("userProfile") UserProfile userProfile,
 			@RequestParam("frmprofilepicture") MultipartFile frmprofilepicture, 
+			@RequestParam("profile_picture_type") String profilePictureType, 
+			@RequestParam("profile_picture_name") String profilePictureName, 
 			BindingResult result, SessionStatus status, ModelMap model, HttpServletRequest request, HttpServletResponse response,
 			org.springframework.web.context.request.WebRequest webRequest) {
 		
@@ -134,7 +135,6 @@ public class CreateUserProfileFormController {
 				} else if (userProfileId > 0){
 					userProfile.setUserProfileId(userProfileId);
 				}
-
 				
 				userProfile.setUser_userId(SecurityUtils.getCurrentUser().getId());
 				userProfile.setModifiedDate(new Date());
@@ -152,16 +152,41 @@ public class CreateUserProfileFormController {
 				userProfile.setProfilepicture(blob);
 				//userProfile.setProfile_picture_type(frmprofilepicture.getContentType()); 
 			    
-	            String[] split = frmprofilepicture.getOriginalFilename().split("\\.");
-	            String ext = split[split.length - 1];
-				userProfile.setProfile_picture_type(ext); 
+				if (frmprofilepicture.getOriginalFilename().trim().equals("") ){  //If no new file was selected, use what was passed in the form
+					System.out.println("Inside 1: " + frmprofilepicture.getOriginalFilename().toString());
+					
+					userProfile.setProfile_picture_name(profilePictureName);
+					userProfile.setProfile_picture_type(profilePictureType);
+				} else {
+					System.out.println("Inside 2: " + frmprofilepicture.getOriginalFilename().toString());
+					
+					userProfile.setProfile_picture_name(frmprofilepicture.getOriginalFilename());
+					String[] split = frmprofilepicture.getOriginalFilename().split("\\.");
+		            String ext = split[split.length - 1];
+					userProfile.setProfile_picture_type(ext); 
+				}
 
 				userProfileManager.storeUserProfile(userProfile);
 				status.setComplete();
 
+				/*************************************************************************************/
+				System.out.println("Info 1: " + profilePictureName);
+				System.out.println("Info 2: " + profilePictureType);
+				System.out.println("Info 3: " + frmprofilepicture.getOriginalFilename());
+				/*************************************************************************************/
+				
 				//saveMultipartToDisk(profilepicture, userProfile);
-				saveMultipartToAmazonS3(frmprofilepicture, userProfile);
-
+				if (!frmprofilepicture.getOriginalFilename().trim().equals("") ) {
+					System.out.println("if (!frmprofilepicture.getOriginalFilename(): " + frmprofilepicture.getOriginalFilename().toString());
+					
+					try{
+						saveMultipartToAmazonS3(frmprofilepicture, userProfile);   
+					} catch (Exception e){
+			            String msg = "Failed saving file to amazon File: " + frmprofilepicture.getOriginalFilename() + " Error Message: " + e;
+			            log.error(msg, e);
+					}
+				}
+				
 				return "redirect:createuserprofilesuccess/userProfileId/" + userProfile.getUserProfileId();
 			    
 			}

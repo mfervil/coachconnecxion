@@ -8,7 +8,7 @@
 	<title>Selecting your coach</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="WEISS - HTML5 Responsive Template" />
+	<meta name="description" content=" CoachConnecXion" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -88,9 +88,9 @@ label {font-size:14px;}
 
 	<table style="border:1px solid black; width:100%">	
 				<%-- <tr><td colspan="2" ><label style="font-size:20px;">PROFILE INFORMATION</label></td> </tr>  --%>
-				<tr><td class="leftalign" nowrap colspan="2" ><label>Upload Self/Company Image:</label> <input type="file" name="frmprofilepicture"
+				<tr><td class="leftalign" nowrap colspan="2" ><label>Upload Image/Logo: <b>${userProfile.profile_picture_name}</b></label> <input type="file" name="frmprofilepicture"
 					id="frmprofilepicture" ></input></td> 
-					<td class="leftalign" nowrap ><label>YouTube Video:</label> <form:input size="25" path="video_url" /> </td>
+					<td class="leftalign" nowrap ><label>YouTube Video Link </label> <form:input size="25" path="video_url" /><br> <b>Link Ex: https://www.youtube.com/watch?v=1234 </b></td>
 				</tr>
 				<tr><td class="leftalign" nowrap><form:errors path="firstname"><form:errors path="firstname" cssClass="error" /><br></form:errors><label>*First Name:</label> <form:input size="25" path="firstname" /> </td> 
 					<td class="leftalign" nowrap><form:errors path="middleinitial"><form:errors path="middleinitial" cssClass="error" /><br></form:errors><label>Middle Initial:</label> <form:input size="2" path="middleinitial" /> </td>
@@ -104,7 +104,7 @@ label {font-size:14px;}
 					<td class="leftalign" nowrap><label>Suite/Apt #:</label> <form:input size="25" path="apartment" /> </td>
 				</tr>
 				<tr><td class="leftalign" nowrap><form:errors path="city"><form:errors path="city" cssClass="error" /><br></form:errors><span class="required">*</span><label>City:</label> <form:input size="25" path="city" /> </td> 
-					<td class="leftalign" nowrap><form:errors path="state"><form:errors path="state" cssClass="error" /><br></form:errors><span class="required">*</span><label>State/Province:</label> <%-- <form:input size="20" path="state" /> --%>
+					<td class="leftalign" nowrap><form:errors path="state"><form:errors path="state" cssClass="error" /><br></form:errors><span class="required">*</span><label>State/Prov:</label> <%-- <form:input size="20" path="state" /> --%>
 							<form:select size="1" path="state" id="state" ><option value="">SELECT YOUR STATE</option>
 								${userProfile.state =='AL' ? "<option value='AL' selected>ALABAMA</option>" : "<option value='AL' >ALABAMA</option>"}
 								${userProfile.state =='AK' ? "<option value='AK' selected>ALASKA</option>" :  "<option value='AK' >ALASKA</option>"}
@@ -661,6 +661,8 @@ label {font-size:14px;}
 			</td>
 		</table>
 		<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
+		<input type="hidden" name="profile_picture_type" id="profile_picture_type" value="${userProfile.profile_picture_type}"></input>
+		<input type="hidden" name="profile_picture_name" id="profile_picture_name" value="${userProfile.profile_picture_name}"></input>
 		</form:form>
 </section>
 <%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	

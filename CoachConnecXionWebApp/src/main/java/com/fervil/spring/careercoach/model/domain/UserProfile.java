@@ -132,7 +132,7 @@ public class UserProfile  implements Serializable {
 	private String apartment;
 	
 	public String getCity() {
-		return "MMMMMMMM" + city;
+		return city;
 	}
 
 

@@ -96,7 +96,7 @@
 	<!-- FOOTER LINE -->
 	<section id="footer-line">
 		<div id="left">
-			<p><span class="colorizer">WEISS</span> HTML5 TEMPLATE BY <a href="http://www.themeprince.com">THEMEPRINCE</a> &COPY; 2012  - ALL RIGHTS RESERVED!</p>
+			<p><span class="colorizer"> CoachConnecXion</span> HTML5 TEMPLATE BY <a href="http://www.themeprince.com">THEMEPRINCE</a> &COPY; 2012  - ALL RIGHTS RESERVED!</p>
 		</div>
 		
 		<div id="right">					
