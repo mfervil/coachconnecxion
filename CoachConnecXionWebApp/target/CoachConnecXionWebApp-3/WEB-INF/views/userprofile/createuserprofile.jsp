@@ -90,7 +90,7 @@ label {font-size:14px;}
 				<%-- <tr><td colspan="2" ><label style="font-size:20px;">PROFILE INFORMATION</label></td> </tr>  --%>
 				<tr><td class="leftalign" nowrap colspan="2" ><label>Upload Image/Logo: <b>${userProfile.profile_picture_name}</b></label> <input type="file" name="frmprofilepicture"
 					id="frmprofilepicture" ></input></td> 
-					<td class="leftalign" nowrap ><label>YouTube Video Link </label> <form:input size="25" path="video_url" /><br> <b>Link Ex: https://www.youtube.com/watch?v=1234 </b></td>
+					<td class="leftalign" nowrap ><label>YouTube Video Link </label> <form:input size="25" path="video_url" /><br> <b>Link ex.: https://www.youtube.com/watch?v=1234 </b></td>
 				</tr>
 				<tr><td class="leftalign" nowrap><form:errors path="firstname"><form:errors path="firstname" cssClass="error" /><br></form:errors><label>*First Name:</label> <form:input size="25" path="firstname" /> </td> 
 					<td class="leftalign" nowrap><form:errors path="middleinitial"><form:errors path="middleinitial" cssClass="error" /><br></form:errors><label>Middle Initial:</label> <form:input size="2" path="middleinitial" /> </td>

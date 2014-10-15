@@ -97,7 +97,7 @@ public class Paypalfunctions  {
 	gv_Env			= "production";
     unique_id		= "";
 
-    boolean bSandbox = true;
+    //boolean bSandbox = true;
 
     /*
     Servers for NVP API

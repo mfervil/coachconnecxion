@@ -455,8 +455,7 @@ String finalPath = request.getContextPath();
 									<table class="data">
 										<tr>
 											<td >
-												<input type="submit" value="Buy This Package"
-													style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right; float: right;" />
+												<input type="submit" class="input-button" value="Buy This Package" />
 											</td>	
 											<td width="100%"><h1 style="color: blue; text-align: center;">&nbsp;&nbsp;&nbsp;Package Name: ${availablePackages.packageName} -- Price:  ${availablePackages.priceValue} </h1></td>
 										</tr>
@@ -506,8 +505,7 @@ String finalPath = request.getContextPath();
 						<tr>
 							<td>
 								<c:if test="${profileOfCurrentUser}" > 					
-									<input type="submit" value="Add Resume/Certifications"
-									style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right;" />
+									<input type="submit" class="input-button" value="Add Resume/Certifications" />
 								</c:if>
 							</td>
 						</tr>
