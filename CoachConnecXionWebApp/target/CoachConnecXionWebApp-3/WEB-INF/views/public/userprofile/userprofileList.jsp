@@ -8,10 +8,10 @@
 <html lang="en">
 
 <head>
-	<title>Selecting your coach</title>
+	<title>Coach/Trainer User Profile List</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Find a listing of all of our Coaches and Trainers" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -66,10 +66,10 @@
 									<td class="leftalign" width="125px;" height="115px" >
 											<c:choose>
     											<c:when test="${empty userProfileDetails.profile_picture_type}">
-													<a href="profile?profileId=${userProfileDetails.user_profile_id}"><img id="photo2" src="https://s3.amazonaws.com/ccxvi/nopicture.png" width="125px;" height="115px"/></a>
+													<a href="profile?profileId=${userProfileDetails.user_profile_id}"><img id="photo2" src="https://s3.amazonaws.com/ccxvi/nopicture.png" width="125px;""/></a>
 												</c:when>
     											<c:otherwise>
-													<a href="profile?profileId=${userProfileDetails.user_profile_id}"><img id="photo2" src="https://s3.amazonaws.com/ccxvi/ccxv1${userProfileDetails.user_profile_id}.${userProfileDetails.profile_picture_type}" width="125px;" height="115px"/></a>
+													<a href="profile?profileId=${userProfileDetails.user_profile_id}"><img id="photo2" src="https://s3.amazonaws.com/ccxvi/ccxv1${userProfileDetails.user_profile_id}.${userProfileDetails.profile_picture_type}" width="125px;" /></a>
     											</c:otherwise>
 											</c:choose>			
 									</td>																		

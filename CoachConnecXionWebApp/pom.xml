@@ -55,26 +55,46 @@ Google Emails
 		CoachConnecxionsup ccnxn14$pus
 		CoachConnecxionReg ccnxn14$
 		CoachConnecxionord ccnxn14$dro
+		
 		ccnxn14$   77
 
 AWS Prod DB
 		ccnxnawsprodb
 		cpdcnxn14db$
 		
+constant contact
+		CoachConnecxionReg
+		mfervil 		
+		ccnxn14$noc
+		
+Paypal
+		mfervil
+		ccnxn14$yap
+		https://manager.paypal.com/
+				
 AWS		
 		cacnxn14ws$
+
+Gmail contact
+        <_smtp.username>registration@coachconnecxion.com</_smtp.username>
+        <_smtp.password>ccnxn14$</_smtp.password>
+
 		
         <_smtp.username>mfervilg@gmail.com</_smtp.username>
         <_smtp.password>ccnxn14$liv</_smtp.password>
         <_smtp.server>smtp.gmail.com</_smtp.server>
         <_smtp.port>587</_smtp.port>
 
--->
-
         <_smtp.username>CoachConnecxion@gmail.com</_smtp.username>
         <_smtp.password>Coachccxngenar1$</_smtp.password>
         <_smtp.server>smtp.gmail.com</_smtp.server>
         <_smtp.port>587</_smtp.port>
+-->
+        <_smtp.username>registration@coachconnecxion.com</_smtp.username>
+        <_smtp.password>ccnxn14$</_smtp.password>
+        <_smtp.server>smtp.gmail.com</_smtp.server>
+        <_smtp.port>587</_smtp.port>
+
 
     </properties>
 
@@ -312,12 +332,20 @@ AWS
 		    <version>2.3.102</version>
 		</dependency>        
 
-	<!-- APIs to create, and manage PayPal Payments Standard buttons programmatically. -->
+	<!-- APIs to create, and manage PayPal Payments Standard buttons programmatically. 
 		<dependency>
 		    <groupId>com.paypal.sdk</groupId>
 		    <artifactId>payflow</artifactId>
 		    <version>1.0</version>
 		</dependency>        
+-->	
+	    <dependency>
+	      <groupId>com.paypal.sdk</groupId>
+	      <artifactId>payflow</artifactId>
+	      <version>1.0</version>
+	      <scope>system</scope>
+	      <systemPath>${java.home}/extlib/payflow.jar</systemPath>
+	    </dependency>
 
 		<dependency>
 		  <groupId>com.amazonaws</groupId>
@@ -338,6 +366,7 @@ AWS
             </activation>
             <properties>
                 <_url>http://localhost:8090/CoachConnecXionWebApp</_url>
+                <_url_prod>https://www.coachconnecxion.com</_url_prod>
                 <_jdbc.url>jdbc:mysql://localhost:3306/careercoach</_jdbc.url>
                 <_jdbc.username>root</_jdbc.username>
                 <_jdbc.password>14fifi14</_jdbc.password>
@@ -360,9 +389,9 @@ AWS
         <profile>
             <id>tester-local</id>
             <properties>
-                <_url>http://localhost:8090/CoachConnecXionWebApp</_url>
+                <_url>http://localhost:8080/CoachConnecXionWebApp</_url>
                 <tomcat.server>apache-tomcat-7.0.29</tomcat.server>
-                <tomcat.url>http://localhost:8090/manager</tomcat.url>
+                <tomcat.url>http://localhost:8080/manager</tomcat.url>
                 <tomcat.path>/CoachConnecXionWebApp</tomcat.path>
 
                 <_jdbc.url>jdbc:mysql://localhost:3306/careercoach</_jdbc.url>
@@ -385,9 +414,10 @@ AWS
         <profile>
             <id>tester-remote</id>
             <properties>
-                <_url>http://localhost:8090/CoachConnecXionWebApp</_url>
+                <_url>http://localhost:8080/CoachConnecXionWebApp</_url>
+                <_url_prod>https://www.coachconnecxion.com</_url_prod>
                 <tomcat.server>apache-tomcat-7.0.29</tomcat.server>
-                <tomcat.url>http://localhost:8090/manager</tomcat.url>
+                <tomcat.url>http://localhost:8080/manager</tomcat.url>
                 <tomcat.path>/spring-security-demo</tomcat.path>
 
                 <_jdbc.url>jdbc:mysql://localhost:3306/careercoach?characterSetResults=UTF-8&amp;characterEncoding=UTF-8</_jdbc.url>
@@ -458,7 +488,7 @@ AWS
 	            <groupId>org.apache.maven.plugins</groupId>
 	            <artifactId>maven-war-plugin</artifactId>
 	            <configuration>
-	                <outputDirectory>C:\Users\mfervil\tomcat\apache-tomcat-7.0.34\webapps\</outputDirectory>
+	                <outputDirectory>C:\Users\Marc\development\apachetomcat7.0.55\apache-tomcat-7.0.55\webapps\</outputDirectory>
 	            </configuration>
 	        </plugin>        
             <!-- Compiler -->

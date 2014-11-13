@@ -7,7 +7,6 @@ import ua.com.bitlab.springsecuritydemo.web.beans.WebUser;
 
 import java.util.List;
 
-
 /**
  * Low-level user service
  */

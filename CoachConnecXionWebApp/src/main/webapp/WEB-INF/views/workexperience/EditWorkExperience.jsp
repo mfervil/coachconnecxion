@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Selecting your coach</title>
+	<title>Edit Coach or Trainer work Experience</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Add or Edit the work experience of a Coach or Trainer" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

@@ -1,6 +1,7 @@
-	<!-- CSS -->	
+	<!-- CSS 	
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
 	<link href="fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
+	-->
 	<!--[if lt IE 9]>
 	<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" />
 	<![endif]-->

@@ -7,10 +7,10 @@
 <html lang="en">
 
 <head>
-	<title>About CoachConnecXion</title>
+	<title>Terms of Use</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Our terms of use" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
@@ -128,7 +128,7 @@ services, may be the trademarks of their respective owners.</span></p>
 the service provider's designated agent. Written notification must be submitted
 to the following designated agent:</span></p>
 
-<p class=MsoNormal><span style='color:black'>Marc Fervil</span></p>
+<p class=MsoNormal><span style='color:black'>Marc Arthur</span></p>
 
 <p class=MsoNormal>CoachConnecxionsup@Gmail.com</p>
 <br>

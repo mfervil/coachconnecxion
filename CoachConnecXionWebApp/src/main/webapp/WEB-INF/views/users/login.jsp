@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Selecting your coach</title>
+	<title>login to find a coach or trainer</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Sign in to the system for Coaching or Training services" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -31,16 +31,16 @@
             <form action="<c:url value="/j_spring_security_check"/>" method="post">
                 <dl>
                     <dt><label for="email">Email:</label></dt>
-                    <dd class="clear"><input value="marc" id="email" type="text" class="text required" name="j_username"/></dd>
+                    <dd class="clear"><input id="email" type="text" class="text required" name="j_username"/></dd>
                     <dt><label for="password">Password:</label></dt>
-                    <dd class="clear"><input value="marc" id="password" type="password" class="text required" name="j_password"/></dd>
+                    <dd class="clear"><input id="password" type="password" class="text required" name="j_password"/></dd>
                 </dl>
                 <c:if test="${not empty param.login_error}">
                     <div class="error">Could not log you in.  Please verify your email and password and try again. <br> If you still can't login the system may be down, please try again at a later time</div>
                 </c:if>
                 <br>
                 <div>
-                	By clicking submit below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/legal?type=tu">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/legal?type=pp">Privacy Policy</a> 
+                	By clicking submit below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=tu">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy</a> 
                 </div>
                 <div class="hidden-submit"><input type="submit" value="Sign In" tabindex="-1"/></div>
                 

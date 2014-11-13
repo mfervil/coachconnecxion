@@ -7,10 +7,10 @@
 <html lang="en">
 
 <head>
-	<title>About CoachConnecXion</title>
+	<title>About CoachConnecXion Training and Coaching services</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Brief description of our company and what we do" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>

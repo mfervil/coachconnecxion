@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Selecting your coach</title>
+	<title>Create user profile success</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Confirmation of having successfully created a profile to become a Coach or Trainer" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -42,8 +42,13 @@ span.required {color:red;font-weight:bold}
 	<table style="border:1px solid;">	
 
 <tr><td>	
-<%-- <b>The user profile has been created successfully for the customer with ID <c:out value="${model.userProfileId}"/>.</b> --%>
-<b> <span style="font-size: 1.25em;"> <c:out value="${model.message}"/> </span></b>
+<%-- <b>The user profile has been created successfully for the customer with ID <c:out value="${model.userProfileId}"/>.</b> 
+<b> <span style="font-size: 1.25em;"> <c:out value="${model.message}"/> </span></b>--%>
+
+<span style="font-size: 1.25em;"> Congratulations! Your profile update completed successfully. </span>
+<br> <span style="font-size: 1.25em;"> Next step is to create coaching service packages that customers can buy </span>
+<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); text-decoration: underline;"> <a href="${pageContext.request.contextPath}/packageAdd">**CLICK HERE TO CREATE YOUR COACHING PACKAGES**</a> </span></b>
+
 
 </td></tr>
 

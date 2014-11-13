@@ -28,7 +28,8 @@ public class CreateUserProfileSuccessController {
     	Map<String, Object> myModel = new HashMap<String, Object>();
 	    try{	
 	    	//myModel.put("userProfileId", userProfileId);
-	    	myModel.put("message", "Your profile has been successfully created.");
+	    	myModel.put("message", "Congratulations! Your profile has been successfully created.");
+	    	myModel.put("profileId", userProfileId);
 	    	
 	    	return new ModelAndView("userprofile/createUserProfileSuccess", "model", myModel);
 	    	

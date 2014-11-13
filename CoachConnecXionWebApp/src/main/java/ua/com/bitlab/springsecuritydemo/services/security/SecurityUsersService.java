@@ -20,10 +20,11 @@ import java.util.List;
  * @version 12.10.12
  */
 public class SecurityUsersService implements UserDetailsService {
-
+	
 	
     private final static Logger log = LoggerFactory.getLogger(SecurityUsersService.class);
 
+    
     @Autowired
     private UsersService usersService;
 

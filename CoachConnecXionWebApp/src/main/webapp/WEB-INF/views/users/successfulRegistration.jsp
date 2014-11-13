@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Selecting your coach</title>
+	<title>Coaching/Training registration</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Confirmation of Registration for Coaching or Training services" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -32,7 +32,7 @@
         Thank you very much for registering for CoachConnecXion.com.
         Please check your email in-box; you should receive an email within the next 5 minutes.
         Please click on the link in the email to finalize your registration.
-        In case you haven’t received this email, please check your SPAM folder.
+        In case you haven&#39;t received this email, please check your SPAM folder.
     </div>
 
 </div>

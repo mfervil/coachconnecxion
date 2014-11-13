@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Selecting your coach</title>
+	<title>Select Coaching and Training Categories</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Displays all Coaching and Training categories" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

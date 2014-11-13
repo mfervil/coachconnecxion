@@ -104,10 +104,10 @@ public class PackageDetailsService {
 
 		session.save(existingPackage);
 	}
-	public Integer totalClientCount()  throws Exception {
+	public Integer totalClientCount(long profileId)  throws Exception {
 		Session session = sessionFactory.getCurrentSession();		
 		int count = 0;
-			Query query = session.createQuery("SELECT DISTINCT clientId FROM  PackagesSold");
+			Query query = session.createQuery("SELECT DISTINCT clientId FROM  PackagesSold where profileId = " + profileId );
 			List results = query.list();				
 			return results.size();
 	}

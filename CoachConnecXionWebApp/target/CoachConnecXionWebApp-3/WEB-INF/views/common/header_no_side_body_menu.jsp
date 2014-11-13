@@ -6,8 +6,8 @@
 							<li><a href="${pageContext.request.contextPath}/public/coachSelection">FIND A COACH</a></li>
 							<li><a href="${pageContext.request.contextPath}/viewOrders">MY COACHING PURCHASES</a></li>
 							<li><a href="${pageContext.request.contextPath}/viewOrders">COMMENTS & RATINGS</a></li>
-							<!-- <li><a href="${pageContext.request.contextPath}/public/infomation?type=so">SEARCH OVERVIEW</a></li>
-							<li><a href="${pageContext.request.contextPath}/public/infomation?type=sf">FAQ</a></li>
+							<!-- <li><a href="${pageContext.request.contextPath}/public/information?type=so">SEARCH OVERVIEW</a></li>
+							<li><a href="${pageContext.request.contextPath}/public/information?type=sf">FAQ</a></li>
 							-->
 						</ul>
 					</li>
@@ -18,13 +18,13 @@
 							<li><a href="${pageContext.request.contextPath}/packageAdd?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">CREATE MY PACKAGE</a></li>
 							<li><a href="${pageContext.request.contextPath}/packages?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">VIEW MY PACKAGES</a></li>
 							<li><a href="${pageContext.request.contextPath}/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">VIEW REQUESTS</a></li>
-							<!--  <li><a href="${pageContext.request.contextPath}/public/infomation?type=co">COACHING OVERVIEW</a></li>
-							<li><a href="${pageContext.request.contextPath}/public/infomation?type=cf">FAQ</a></li>
+							<!--  <li><a href="${pageContext.request.contextPath}/public/information?type=co">COACHING OVERVIEW</a></li>
+							<li><a href="${pageContext.request.contextPath}/public/information?type=cf">FAQ</a></li>
 							 -->
 						</ul>
 					</li>
-					<li><a href="${pageContext.request.contextPath}/public/infomation?type=hw">HOW IT WORKS</a></li>
-					<%-- <li><a href="${pageContext.request.contextPath}/public/infomation?type=nw">NEWS</a></li> --%>
+					<li><a href="${pageContext.request.contextPath}/public/information?type=hw">HOW IT WORKS</a></li>
+					<%-- <li><a href="${pageContext.request.contextPath}/public/information?type=nw">NEWS</a></li> --%>
 					<li> </li>
 					<li><a href="${pageContext.request.contextPath}/users/login">SIGN IN</a></li>
 				</ul>

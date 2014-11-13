@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Create Coaching Packages</title>
+	<title>Create Coaching/Training Packages</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Allows our Coaches and Trainers to provide details of the services they offer" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

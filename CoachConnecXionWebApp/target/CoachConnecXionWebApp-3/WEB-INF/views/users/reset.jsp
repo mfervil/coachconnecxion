@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>CoachConnecXion.com -- Reset Password</title>
+	<title>Reset Password</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Reset your password for CoachConnecXion" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

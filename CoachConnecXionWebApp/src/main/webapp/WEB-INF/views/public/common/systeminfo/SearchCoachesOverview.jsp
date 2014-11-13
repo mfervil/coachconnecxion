@@ -8,7 +8,8 @@ li {font-size:16px;}
 p {font-size:16px;}
 </style>
 
-<title>Profile Overview</title>
+<title>CoachConnecXion Overview</title>
+<meta name="description" content="Overview of the search process when finding a coach" />
  
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 			<!-- CONTACT FORM -->

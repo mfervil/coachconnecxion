@@ -10,7 +10,7 @@
 	<title>CoachConnecXion Privacy Policy</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Our privacy policy" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>

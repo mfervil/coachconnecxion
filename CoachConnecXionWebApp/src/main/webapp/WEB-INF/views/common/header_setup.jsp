@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title> CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-	<!-- CSS -->	
+	<!-- CSS 	
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
-	<link href="${pageContext.request.contextPath}/css/elastic_slider.css" rel="stylesheet" type="text/css" />
 	<link href="${pageContext.request.contextPath}/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
+	-->
+	<link href="${pageContext.request.contextPath}/css/elastic_slider.css" rel="stylesheet" type="text/css" />
 	<!--[if lt IE 9]>
 	<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" />
 	<![endif]-->
@@ -107,15 +106,3 @@ $(document).ready(function(){
     }
 </style>
 
-</head>
-<body>
-
-	<!-- DISPLAY MESSAGE IF JAVA IS TURNED OFF -->
-	<noscript>		
-		<div id="notification">Please turn on javascript in your browser for the maximum experience!</div>
-	</noscript>
-	
-	<!-- DISPLAY THIS MESSAGE IF USER'S BROWSER IS IE7 OR LOWER -->
-	<div id="ie_warning"><img src="${pageContext.request.contextPath}/images/warning.png" alt="IE Warning" /><br /><strong>Your browser is out of date!</strong><br /><br />This website uses the latest web technologies so it requires an up-to-date, fast browser!<br />Try <a href="http://www.mozilla.org/en-US/firefox/new/?from=getfirefox">Firefox</a> or <a href="https://www.google.com/chrome">Chrome</a>!</div>
-	
-	<div id="toTop"><img src="${pageContext.request.contextPath}/images/back_to_top.png" alt="Back to top" title="Back to top" /></div>

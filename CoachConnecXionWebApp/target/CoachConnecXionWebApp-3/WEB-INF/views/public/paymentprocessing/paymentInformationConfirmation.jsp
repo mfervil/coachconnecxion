@@ -6,10 +6,10 @@
 <html lang="en">
 
 <head>
-	<title>Selecting your coach</title>
+	<title>Payment confirmation for Coaching/Training Services </title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Allows users to confirm their payments for Coaching or Training services" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

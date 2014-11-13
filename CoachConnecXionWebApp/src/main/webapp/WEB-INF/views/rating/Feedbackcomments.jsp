@@ -6,10 +6,10 @@
 <html lang="en">
 
 <head>
-	<title>Selecting your coach</title>
+	<title>Coaches/Trainers Feedback and Comments</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Provide feedback and comments for our coaches and trainers" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

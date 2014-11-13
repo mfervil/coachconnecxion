@@ -7,10 +7,10 @@
 <html lang="en">
 
 <head>
-	<title>Find a Coach Frequently Asked Questions</title>
+	<title>Coach/Trainer Frequently Asked Questions</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Questions asked by coaches looking to use our site" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>

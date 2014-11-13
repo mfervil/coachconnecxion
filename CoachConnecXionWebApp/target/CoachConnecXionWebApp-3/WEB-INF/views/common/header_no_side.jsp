@@ -14,9 +14,10 @@
 	<meta name="description" content=" CoachConnecXion" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-	<!-- CSS -->	
+	<!-- CSS 	
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
 	<link href="fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
+	-->
 	<!--[if lt IE 9]>
 	<link href="/css/style.css" rel="stylesheet" type="text/css" />
 	<![endif]-->
@@ -98,8 +99,8 @@
 					<li><a href="#">SEARCH</a>
 						<ul>	
 							<li><a href="${pageContext.request.contextPath}/userprofileList">FIND A COACH</a></li>
-							<li><a href="${pageContext.request.contextPath}/infomation?type=so">SEARCH OVERVIEW</a></li>
-							<li><a href="${pageContext.request.contextPath}/infomation?type=sf">FAQ</a></li>
+							<li><a href="${pageContext.request.contextPath}/information?type=so">SEARCH OVERVIEW</a></li>
+							<li><a href="${pageContext.request.contextPath}/information?type=sf">FAQ</a></li>
 						</ul>
 					</li>
 					<li><a href="blog-small.html">COACHES</a>
@@ -108,13 +109,13 @@
 							<li><a href="${pageContext.request.contextPath}/packageAdd?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">CREATE MY PACKAGE</a></li>
 							<li><a href="${pageContext.request.contextPath}/packages?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">VIEW MY PACKAGES</a></li>
 							<li><a href="${pageContext.request.contextPath}/post.html?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">VIEW REQUESTS</a></li>
-							<li><a href="${pageContext.request.contextPath}/infomation?type=co">COACHING OVERVIEW</a></li>
-							<li><a href="${pageContext.request.contextPath}/infomation?type=cf">FAQ</a></li>
+							<li><a href="${pageContext.request.contextPath}/information?type=co">COACHING OVERVIEW</a></li>
+							<li><a href="${pageContext.request.contextPath}/information?type=cf">FAQ</a></li>
 						</ul>
 					</li>
-					<li><a href="${pageContext.request.contextPath}/infomation?type=hw">HOW IT WORKS</a></li>
-					<li><a href="${pageContext.request.contextPath}/infomation?type=bl">BLOG</a></li>
-					<li><a href="${pageContext.request.contextPath}/infomation?type=au">ABOUT US</a></li>
+					<li><a href="${pageContext.request.contextPath}/information?type=hw">HOW IT WORKS</a></li>
+					<li><a href="${pageContext.request.contextPath}/information?type=bl">BLOG</a></li>
+					<li><a href="${pageContext.request.contextPath}/information?type=au">ABOUT US</a></li>
 					<li><a href="${pageContext.request.contextPath}/users/login">SIGN IN</a></li>
 				</ul>
 				<%--

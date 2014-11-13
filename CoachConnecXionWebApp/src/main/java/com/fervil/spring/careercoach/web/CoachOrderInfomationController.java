@@ -62,7 +62,7 @@ public class CoachOrderInfomationController {
 			return mav;
 		} catch (Exception e) {
 	        String msg = "CoachOrderInfomationController:ModelAndView -- The request failed. Error: " + e;
-	        log.error(msg, e);
+	        //log.error(msg, e);
 			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
 	        return new ModelAndView("public/common/error/errorpage");
 		}	

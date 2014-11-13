@@ -4,10 +4,10 @@
 <html lang="en">
 
 <head>
-	<title>Selecting your coach</title>
+	<title>Find Coach or Trainer for self improvement</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Find a Coach or Trainer to help you improve your self" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

@@ -1,3 +1,20 @@
+
+	<title>CoachConnecXion - Find a Coach or Trainer for self improvement</title>
+	<meta name="description" content="Find a Coach or Trainer to help you raise your game" />
+
+</head>
+<body>
+
+	<!-- DISPLAY MESSAGE IF JAVA IS TURNED OFF -->
+	<noscript>		
+		<div id="notification">Please turn on javascript in your browser for the maximum experience!</div>
+	</noscript>
+	
+	<!-- DISPLAY THIS MESSAGE IF USER'S BROWSER IS IE7 OR LOWER -->
+	<div id="ie_warning"><img src="${pageContext.request.contextPath}/images/warning.png" alt="IE Warning" /><br /><strong>Your browser is out of date!</strong><br /><br />This website uses the latest web technologies so it requires an up-to-date, fast browser!<br />Try <a href="http://www.mozilla.org/en-US/firefox/new/?from=getfirefox">Firefox</a> or <a href="https://www.google.com/chrome">Chrome</a>!</div>
+	
+	<div id="toTop"><img src="${pageContext.request.contextPath}/images/back_to_top.png" alt="Back to top" title="Back to top" /></div>
+
 <%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
 
 	<%@ include file="/WEB-INF/views/common/header_setup.jsp" %>	
@@ -15,13 +32,13 @@
 			</div>
 
 			<div id="menutopmost">
-				<%-- <a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/infomation?type=au">About Us </a> | <a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/infomation?type=cu">Contact Us </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/infomation?type=pp">Privacy Policy&nbsp;&nbsp;&nbsp;&nbsp;</a> --%>
+				<%-- <a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | <a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy&nbsp;&nbsp;&nbsp;&nbsp;</a> --%>
 					<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
-					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/legal?type=au">About Us </a> | 
-					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/legal?type=cu">Contact Us </a> | 
-					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/legal?type=tu">Terms Of Use </a> | 
-					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/legal?type=pp">Privacy Policy </a> | 
-					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/legal?type=ps">Safety Tips&nbsp;&nbsp;&nbsp;&nbsp;</a>
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | 
+					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | 
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=tu">Terms Of Use </a> | 
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy </a> | 
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=ps">Safety Tips&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div>
 
 			<div id="menubar">
@@ -30,7 +47,7 @@
 			
 		<div class="separator"></div>
 		
-				<br><br><h1 style="color:red;">SITE IS UNDER CONSTRUCTION. COME BACK IN A FEW WEEKS TO FIND A COACH OR REGISTER AS A COACH</h1>	
+				<!--  <br><br><h1 style="color:red;">SITE IS UNDER CONSTRUCTION. COME BACK IN A FEW WEEKS TO FIND A COACH OR REGISTER AS A COACH</h1>  -->	
 					
 		<!-- ELASTIC SLIDER -->
 		<section>		

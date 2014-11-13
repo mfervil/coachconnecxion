@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import com.fervil.spring.careercoach.util.Constants;
 
-@Controller
-@RequestMapping("/public/infomation")
+@Controller		  
+@RequestMapping("/public/information")
 public class siteInfoController {
     private static final Logger log = LoggerFactory.getLogger(siteInfoController.class);
 	
@@ -48,7 +48,11 @@ public class siteInfoController {
 	    		} else if (((String)request.getParameter("type")).equalsIgnoreCase("cu") ){
 	    			navPage = "public/common/systeminfo/contactus";
 	    		} else if (((String)request.getParameter("type")).equalsIgnoreCase("pp") ){
-	    			navPage = "public/common/systeminfo/privacy";
+	    			navPage = "public/common/legal/privacypolicy";
+	    		} else if (((String)request.getParameter("type")).equalsIgnoreCase("tu") ){
+	    			navPage = "public/common/legal/termsofuse";
+	    		} else if (((String)request.getParameter("type")).equalsIgnoreCase("ps") ){
+	    			navPage = "public/common/legal/personalsafety";
 	    		} else if (((String)request.getParameter("type")).equalsIgnoreCase("nw") ){
 	    			String newsLinks = GetLinks("http://query.nytimes.com/search/sitesearch/#/personal+coach/");
 	    			model.addAttribute("news", newsLinks);

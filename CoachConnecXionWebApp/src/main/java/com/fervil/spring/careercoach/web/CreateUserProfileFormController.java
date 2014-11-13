@@ -169,11 +169,11 @@ public class CreateUserProfileFormController {
 				userProfileManager.storeUserProfile(userProfile);
 				status.setComplete();
 
-				/*************************************************************************************/
+				/*************************************************************************************
 				System.out.println("Info 1: " + profilePictureName);
 				System.out.println("Info 2: " + profilePictureType);
 				System.out.println("Info 3: " + frmprofilepicture.getOriginalFilename());
-				/*************************************************************************************/
+				*************************************************************************************/
 				
 				//saveMultipartToDisk(profilepicture, userProfile);
 				if (!frmprofilepicture.getOriginalFilename().trim().equals("") ) {

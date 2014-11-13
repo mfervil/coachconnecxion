@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Add Coach Profile Media</title>
+	<title>Add Coach/Trainer Profile Media</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Coaches and Trainers can help pictures and videos to promote their services" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

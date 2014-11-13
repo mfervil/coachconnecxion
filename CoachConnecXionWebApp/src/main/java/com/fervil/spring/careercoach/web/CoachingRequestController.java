@@ -34,6 +34,7 @@ public class CoachingRequestController {
 	        coachingRequestManager = new BasicCoachingRequestManager();
 	        myModel.put("coachingRequests", coachingRequestManager.getCoachingRequests());
 	           	
+	        
 	        return new ModelAndView("coachingRequestList", "model", myModel);
 		} catch (Exception e) {
 	        String msg = "The request failed. Error " + e;

@@ -12,10 +12,10 @@
 <html lang="en">
 
 <head>
-	<title>Selecting your coach</title>
+	<title>Coach/Trainer Profile Overview</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="View the profile of our Coaches and Trainers" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -158,7 +158,7 @@ table tr:nth-child(2n) {
 					<li><a href="#overview">OVERVIEW &nbsp;&nbsp; /</a></li>
 					<li><a href="#education">EDUCATION &nbsp;&nbsp; /</a></li>
 					<li><a href="#jobhistory">JOB HISTORY &nbsp;&nbsp; /</a></li>
-					<li><a href="#packages">BUY A PACKAGE</a></li>
+					<li><a href="#packages">PACKAGES</a></li>
 				</ul>
 				
 <div id="overview">
@@ -198,10 +198,10 @@ String finalPath = request.getContextPath();
 
 											<c:choose>
     											<c:when test="${empty profileInfo.profile_picture_type}">
-													<td style="vertical-align: bottom; text-align: right; background-image: url('https://s3.amazonaws.com/ccxvi/nopicture.png'); background-size: 100% 100%; width: 125px; height: 115px;">
+													<td style="vertical-align: bottom; text-align: right; background-image: url('https://s3.amazonaws.com/ccxvi/nopicture.png'); background-size: 100% 100%; width: 125px; ">
 												</c:when>
     											<c:otherwise>
-													<td style="vertical-align: bottom; text-align: right; background-image: url('https://s3.amazonaws.com/ccxvi/ccxv1${profileInfo.userProfileId}.${profileInfo.profile_picture_type}'); background-size: 100% 100%; width: 125px; height: 115px;">
+													<td style="vertical-align: bottom; text-align: right; background-image: url('https://s3.amazonaws.com/ccxvi/ccxv1${profileInfo.userProfileId}.${profileInfo.profile_picture_type}'); background-size: 100% 100%; width: 125px; ">
     											</c:otherwise>
 											</c:choose>			
  
@@ -421,11 +421,11 @@ String finalPath = request.getContextPath();
 							<!-- ============================  Packages  =========================================== -->
 							<form:form	method="GET" action="${packagesUrl}">							
 							<table>
+								<tr><td><span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span></td></tr>
 								<tr style="border-bottom:1px solid #000;">
 									<td style="text-align: left; font-weight: bold;"><h2>AVAILABLE PACKAGES</h2>
 									</td>
 									<td>
-										<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>									
 										<c:url var="packagesUrl" value="/packages" /> 
 											<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
 											<%-- <table>

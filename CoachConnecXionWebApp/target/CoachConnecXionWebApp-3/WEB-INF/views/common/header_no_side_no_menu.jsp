@@ -7,9 +7,10 @@
 	<meta name="description" content=" CoachConnecXion" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-	<!-- CSS -->	
+	<!-- CSS 	
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
 	<link href="/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
+	-->
 	<!--[if lt IE 9]>
 	<link href="/css/style.css" rel="stylesheet" type="text/css" />
 	<![endif]-->

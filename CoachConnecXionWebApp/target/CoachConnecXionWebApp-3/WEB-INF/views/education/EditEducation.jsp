@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Edit Coach Education</title>
+	<title>Edit Coach/Trainer Education</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Area where Coaches and Trainers can add or edit their education" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

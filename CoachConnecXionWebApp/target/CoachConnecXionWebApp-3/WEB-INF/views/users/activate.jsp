@@ -6,10 +6,10 @@
 <html lang="en">
 
 <head>
-	<title>Selecting your coach</title>
+	<title>Account Activation</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Activate your account for training or coaching purposes" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -29,7 +29,7 @@
     <div class="pageWrapper">
         <h1>Activation</h1> <br />
         
-        ${message}  <a href="<c:url value="/packageAdd?cuin=${cuin}"/>" style="font:14px;color:#0404B4">Click here to create your profile</a>
+        ${message}  <a href="<c:url value="/public/profile?cuin=${cuin}"/>" style="font:14px;color:#0404B4">Click here to login and create your profile</a>
 
         <br/><br/>
 

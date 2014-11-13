@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>CoachConnecXion.com -- Create Password</title>
+	<title>Create and account</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Create an accont for Coaching or Training purposes" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -59,7 +59,7 @@
             </div>
             --%>
                 <div>
-                	By clicking Register below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/legal?type=tu">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/legal?type=pp">Privacy Policy</a> 
+                	By clicking Register below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=tu">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy</a> 
                 </div>
             
             <div class="hidden-submit"><input type="submit" value="Register" tabindex="-1"/></div>

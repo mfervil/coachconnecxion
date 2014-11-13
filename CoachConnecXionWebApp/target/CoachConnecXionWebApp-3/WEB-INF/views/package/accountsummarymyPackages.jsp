@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>View Coach Packages</title>
+	<title>View Coach/Trainer Packages</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="View all the packages that our Trainers and Coaches offer" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -84,8 +84,9 @@ table tbody {
 					<td><c:out value="${totalClients}"></c:out></td>
 					<td style="font-weight: bold;">Total Packages Sold:</td>
 					<td><c:out value="${totalSold}"></c:out></td>
-					<td style="font-weight: bold;">Outstanding Request:</td>
-					<td>5</td>
+					<td>&nbsp;&nbsp;</td>
+					<!--  <td style="font-weight: bold;">Outstanding Request:</td>
+					<td>5</td>  -->
 		
 		</tr></table>
 

@@ -8,7 +8,8 @@ li {font-size:16px;}
 p {font-size:16px;}
 </style>
 
-<title>System Overview</title>
+<title>System Overview for Coaches and Trainers</title>
+<meta name="description" content="Brief description on how coaches should use the system to set themselves up" />
  
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 			<!-- CONTACT FORM -->

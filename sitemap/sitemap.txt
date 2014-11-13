@@ -1,0 +1,14 @@
+﻿http://www.coachconnecxion.com/
+https://www.coachconnecxion.com/public/infomation?type=au
+https://www.coachconnecxion.com/public/infomation?type=cu
+https://www.coachconnecxion.com/public/infomation?type=pp
+https://www.coachconnecxion.com/public/coachSelection
+https://www.coachconnecxion.com/viewOrders
+https://www.coachconnecxion.com/userprofileList
+https://www.coachconnecxion.com/public/infomation?type=sf
+https://www.coachconnecxion.com/public/infomation?type=co
+https://www.coachconnecxion.com/public/infomation?type=cf
+https://www.coachconnecxion.com/public/infomation?type=hw
+https://www.coachconnecxion.com/public/legal?type=tu
+https://www.coachconnecxion.com/public/legal?type=pp
+https://www.coachconnecxion.com/public/legal?type=ps

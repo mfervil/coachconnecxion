@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Selecting your coach</title>
+	<title>Payment Information</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Customers payment information for coaching services" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -111,6 +111,27 @@ select.error {
 					</td></tr>
 				</tbody >
 			  </table>
+			 <br>
+			 <p style="text-decoration:underline; font:italic bold 16px/30px Georgia, serif;">Register or Sign-in</p> 
+			 <table>
+				<tr>
+			      <td class="leftalign"><label>*Email: </label>
+				        <form:input size="40" path="email" /><span style='color:red'><form:errors path="email" cssClass="error" /></span>
+			        </td>
+				</tr>
+
+				<tr>
+			      <td class="leftalign"><label>*Password: </label>
+				        <form:password size="20" path="password" /><span style='color:red'><form:errors path="password" cssClass="error" /></span>
+			        </td>
+				</tr>
+				<tr>
+			      <td class="leftalign"><label>*Verify Password: </label>
+				        <form:password size="40" path="confirmedpassword" /><span style='color:red'><form:errors path="confirmedpassword" cssClass="error" /></span>
+			        </td>
+				</tr>
+			 </table>
+			  
 			<br>	
 			 <p style="text-decoration:underline; font:italic bold 16px/30px Georgia, serif;">Payment Information</p> 
 			 <table>
@@ -132,30 +153,30 @@ select.error {
 				
 				<tr>
 				      <td class="leftalign"><label>*Card Number: </label>
-				        <form:input background-color="blue" size="4" path="creditCardNumber1" value="4111"/>
-				        <form:input size="4" path="creditCardNumber2" value="1111"/>
-				        <form:input size="4" path="creditCardNumber3" value="1111"/>
-				        <form:input size="4" path="creditCardNumber4" value="1111"/> <span style='color:red'><form:errors path="creditCardNumber1" cssClass="error" /></span>
+				        <form:input background-color="blue" maxlength="4" size="4" path="creditCardNumber1" />
+				        <form:input size="4" maxlength="4"  path="creditCardNumber2" />
+				        <form:input size="4" maxlength="4"  path="creditCardNumber3" />
+				        <form:input size="4" maxlength="4"  path="creditCardNumber4" /> <span style='color:red'><form:errors path="creditCardNumber1" cssClass="error" /></span>
 				        </td>
 				</tr>
    				<form:hidden path="expirationMonthValue" id="expirationMonthValue" value="January"/>
-   				<form:hidden path="expirationYearValue" id="expirationYearValue" value="2014"/>
+   				<form:hidden path="expirationYearValue" id="expirationYearValue" value="2013"/>
 			    <tr>
 			      <td class="leftalign"><label>*Expiration Date: </label>
 			        <form:select readonly="true" size="1" path="expirationMonth" id="expirationMonth" >
 					<option value="-1" selected="selected">Select Month</option>
-					<option value="01" >January</option>
-					<option value="02">February</option>
-					<option value="03">March</option>
-					<option value="04">April</option>
-					<option value="05">May</option>
-					<option value="06">June</option>
-					<option value="07">July</option>
-					<option value="08">August</option>
-					<option value="09">September</option>
-					<option value="10">October</option>
-					<option value="11">November</option>
-					<option value="12">December</option>			        
+					<option value="01">01-January</option>
+					<option value="02">02-February</option>
+					<option value="03">03-March</option>
+					<option value="04">04-April</option>
+					<option value="05">05-May</option>
+					<option value="06">06-June</option>
+					<option value="07">07-July</option>
+					<option value="08">08-August</option>
+					<option value="09">09-September</option>
+					<option value="10">10-October</option>
+					<option value="11">11-November</option>
+					<option value="12">12-December</option>			        
 					</form:select>
 
 					<!--  Add Code to generate the year dynamically -->
@@ -181,67 +202,47 @@ select.error {
 				</td></tr>
 				<tr>
 			      <td class="leftalign"><label>*Security Code: </label>
-				        <form:input size="4" path="cvv2" MAX="3" value="123" /><span style='color:red'><form:errors path="cvv2" cssClass="error" /></span>
+				        <form:input size="4" path="cvv2" maxlength="4"  /><span style='color:red'><form:errors path="cvv2" cssClass="error" /></span>
 			        </td>
 				</tr>
 				</tbody>
 			 </table>
 			 	
-			 <br>
-			 <p style="text-decoration:underline; font:italic bold 16px/30px Georgia, serif;">Register or Sign-in</p> 
-			 <table>
-				<tr>
-			      <td class="leftalign"><label>*Email: </label>
-				        <form:input size="40" path="email" value="mfervil@yahoo.com"/><span style='color:red'><form:errors path="email" cssClass="error" /></span>
-			        </td>
-				</tr>
-
-				<tr>
-			      <td class="leftalign"><label>*Password: </label>
-				        <form:input size="20" path="password" value="mfervil@yahoo.com"/><span style='color:red'><form:errors path="password" cssClass="error" /></span>
-			        </td>
-				</tr>
-				<tr>
-			      <td class="leftalign"><label>*Verify Password: </label>
-				        <form:input size="40" path="confirmedpassword" value="mfervil@yahoo.com"/><span style='color:red'><form:errors path="confirmedpassword" cssClass="error" /></span>
-			        </td>
-				</tr>
-			 </table>
 			<br>
 			 <p style="text-decoration:underline; font:italic bold 16px/30px Georgia, serif;">Billing Details</p> 
 			 <table>
 			  	<tbody >
 				<tr>
 			      <td class="leftalign"><label>*First Name: </label>
-				        <form:input size="20" path="firstName" value="My First Name"/><span style='color:red'><form:errors path="firstName" cssClass="error" /></span>
+				        <form:input size="20" path="firstName" /><span style='color:red'><form:errors path="firstName" cssClass="error" /></span>
 			        </td>
 				</tr>
 				<tr>
 			      <td class="leftalign"><label>*Last Name: </label>
-				        <form:input size="20" path="lastName" value="MY Last Name"/><span style='color:red'><form:errors path="lastName" cssClass="error" /></span>
+				        <form:input size="20" path="lastName" /><span style='color:red'><form:errors path="lastName" cssClass="error" /></span>
 			        </td>
 				</tr>
 
 				<tr>
 				      <td class="leftalign"><label>*Phone Number: </label>
-				        <form:input size="4" maxlength="3" path="phoneNumber1" value="630"/>
-				        <form:input size="4" maxlength="3" path="phoneNumber2" value="111"/>
-				        <form:input size="5" maxlength="4" path="phoneNumber3" value="1111"/><span style='color:red'><form:errors path="phoneNumber3" cssClass="error" /></span>
+				        <form:input size="4" maxlength="3" path="phoneNumber1" />
+				        <form:input size="4" maxlength="3" path="phoneNumber2" />
+				        <form:input size="5" maxlength="4" path="phoneNumber3" /><span style='color:red'><form:errors path="phoneNumber3" cssClass="error" /></span>
 				        </td>
 				</tr>
 				<tr>
 			      <td class="leftalign"><label>*Billing Street Address 1: </label>
-				        <form:input size="30" path="street1" value="1 N State 111"/><span style='color:red'><form:errors path="street1" cssClass="error" /></span>
+				        <form:input size="30" path="street1" /><span style='color:red'><form:errors path="street1" cssClass="error" /></span>
 			        </td>
 				</tr>
 				<tr>
 			      <td class="leftalign"><label>Billing Street Address 2: </label>
-				        <form:input size="30" path="street2" value="1 N State 222"/>
+				        <form:input size="30" path="street2" />
 			        </td>
 				</tr>
 				<tr>
 			      <td class="leftalign"><label>*City: </label>
-				        <form:input size="8" path="city" value="Chicago"/><span style='color:red'><form:errors path="city" cssClass="error" /></span>
+				        <form:input size="8" path="city" /><span style='color:red'><form:errors path="city" cssClass="error" /></span>
 			        </td>
 				</tr>
       			<form:hidden path="stateValue" id="stateValue" value="Alabama"/>
@@ -268,7 +269,7 @@ select.error {
 						<option value="GU">Guam</option>
 						<option value="HI">Hawaii</option>
 						<option value="ID">Idaho</option>
-						<option value="IL" selected="selected">Illinois</option>
+						<option value="IL">Illinois</option>
 						<option value="IN">Indiana</option>
 						<option value="IA">Iowa</option>
 						<option value="KS">Kansas</option>
@@ -316,7 +317,7 @@ select.error {
 
 				<tr>
 			      <td class="leftalign"><label>*Zip Code: </label>
-				        <form:input size="8" path="zip" value="60626"/><span style='color:red'><form:errors path="zip" cssClass="error" /></span>
+				        <form:input size="8" path="zip" /><span style='color:red'><form:errors path="zip" cssClass="error" /></span>
 			        </td>
 				</tr>
 <%-- 
@@ -570,7 +571,7 @@ select.error {
 --%>
 				<tr>
 			      <td class="leftalign"><label>Order Description: </label>
-				        <form:input size="40" value="Test Order" path="orderDescription" />
+				        <form:input size="40" path="orderDescription" />
 			        </td>
 				</tr>
 				<tr>
@@ -585,7 +586,7 @@ select.error {
 				<tr><td></td></tr>
 				<tr>
 					<td>
-	                	By clicking Submit Payment Information below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/legal?type=tu">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/legal?type=pp">Privacy Policy</a> 
+	                	By clicking Submit Payment Information below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=tu">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy</a> 
 					</td>
 				</tr>
 				

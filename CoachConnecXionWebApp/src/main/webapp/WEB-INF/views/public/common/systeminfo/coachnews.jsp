@@ -8,7 +8,8 @@ li {font-size:16px;}
 p {font-size:16px;}
 </style>
 
-<title>Coach Related News</title>
+<title>Coach and Trainer Related News</title>
+<meta name="description" content="Read some of the news and benefits of coaching" />
  
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 			<!-- CONTACT FORM -->

@@ -148,8 +148,8 @@ $(document).ready(function(){
 					<li><a href="#">SEARCH</a>
 						<ul>	
 							<li><a href="${pageContext.request.contextPath}/userprofileList">FIND A COACH</a></li>
-							<li><a href="${pageContext.request.contextPath}/infomation?type=so">SEARCH OVERVIEW</a></li>
-							<li><a href="${pageContext.request.contextPath}/infomation?type=sf">FAQ</a></li>
+							<li><a href="${pageContext.request.contextPath}/information?type=so">SEARCH OVERVIEW</a></li>
+							<li><a href="${pageContext.request.contextPath}/information?type=sf">FAQ</a></li>
 <!-- 							<li><a href="#">3RD LEVEL MENU <img src="${pageContext.request.contextPath}/images/list-1.png" alt="arrow" /></a>
 								<ul>
 									<li><a href="#">SAMPLE MENU ONE</a></li>
@@ -166,13 +166,13 @@ $(document).ready(function(){
 							<li><a href="${pageContext.request.contextPath}/packageAdd?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">CREATE MY PACKAGE</a></li>
 							<li><a href="${pageContext.request.contextPath}/packages?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">VIEW MY PACKAGES</a></li>
 							<li><a href="${pageContext.request.contextPath}/post.html?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">VIEW REQUESTS</a></li>
-							<li><a href="${pageContext.request.contextPath}/infomation?type=co">COACHING OVERVIEW</a></li>
-							<li><a href="${pageContext.request.contextPath}/infomation?type=cf">FAQ</a></li>
+							<li><a href="${pageContext.request.contextPath}/information?type=co">COACHING OVERVIEW</a></li>
+							<li><a href="${pageContext.request.contextPath}/information?type=cf">FAQ</a></li>
 						</ul>
 					</li>
-					<li><a href="${pageContext.request.contextPath}/infomation?type=hw">HOW IT WORKS</a></li>
-					<li><a href="${pageContext.request.contextPath}/infomation?type=bl">BLOG</a></li>
-					<li><a href="${pageContext.request.contextPath}/infomation?type=au">ABOUT US</a></li>
+					<li><a href="${pageContext.request.contextPath}/information?type=hw">HOW IT WORKS</a></li>
+					<li><a href="${pageContext.request.contextPath}/information?type=bl">BLOG</a></li>
+					<li><a href="${pageContext.request.contextPath}/information?type=au">ABOUT US</a></li>
 					<li><a href="${pageContext.request.contextPath}/users/login">SIGN IN</a></li>
 				</ul>
 				

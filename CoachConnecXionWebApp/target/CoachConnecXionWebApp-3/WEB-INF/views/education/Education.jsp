@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>View Coach Education</title>
+	<title>View Coach/Trainer Education</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="View the education and background of a coach or trainer" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

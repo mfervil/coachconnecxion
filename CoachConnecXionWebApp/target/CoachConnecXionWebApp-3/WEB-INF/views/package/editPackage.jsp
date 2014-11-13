@@ -5,17 +5,16 @@
 <html lang="en">
 
 <head>
-	<title>Edit Coach Package</title>
+	<title>Edit Coaching/Training Packages</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content=" CoachConnecXion" />
+	<meta name="description" content="Allows our Coaches and Trainers to provide details of the services they offer" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
 <%-- END Header No Side test --%>
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
-
  
 <link rel="stylesheet" href="css/jquery.wysiwyg.css" type="text/css" />
 <script type="text/javascript" src="jquery/jquery-1.3.2.js"></script>
