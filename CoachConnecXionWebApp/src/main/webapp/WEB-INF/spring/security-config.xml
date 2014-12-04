@@ -22,6 +22,10 @@
  
         <logout/>            
         <logout/>
+        
+        <intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS" />
+        <intercept-url pattern="favicon.ico" access="ROLE_ANONYMOUS" />
+        
         <intercept-url pattern="/users/login" access="permitAll()"/>
         <intercept-url pattern="/users/accessDenied" access="permitAll()"/>
         <intercept-url pattern="/users/create" access="permitAll()"/>
@@ -106,6 +110,8 @@
         <intercept-url pattern="/users/list" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/users/**" access="hasRole('ROLE_USER')"/>
         <intercept-url pattern="/**" access="isAuthenticated()"/>
+        
+        
     </http>
 
     <!-- password encoder (SHA-1) -->

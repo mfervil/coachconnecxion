@@ -26,7 +26,7 @@
 					<li><a href="${pageContext.request.contextPath}/public/information?type=hw">HOW IT WORKS</a></li>
 					<%-- <li><a href="${pageContext.request.contextPath}/public/information?type=nw">NEWS</a></li> --%>
 					<li> </li>
-					<li><a href="${pageContext.request.contextPath}/users/login">SIGN IN</a></li>
+					<li><a href="${pageContext.request.contextPath}/users/login">SIGN IN-REGISTER</a></li>
 				</ul>
 				<!-- 
 				<select id="responsive-menu">

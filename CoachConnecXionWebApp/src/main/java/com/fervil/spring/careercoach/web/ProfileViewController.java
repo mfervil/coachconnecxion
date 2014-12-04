@@ -122,6 +122,12 @@ public class ProfileViewController {
 				model.addAttribute("profileOfCurrentUser", true);
 			}
 			
+			String youtubeEmbed = "";
+			if (userProfile.getVideo_url() != null && userProfile.getVideo_url().length() > 8){
+				youtubeEmbed = getYouTubeEmbed(userProfile.getVideo_url());
+				model.addAttribute("embed", youtubeEmbed);
+			}
+			
 			model.addAttribute("profileInfo", userProfile);
 			model.addAttribute("averageRate1", averageRate1);
 			model.addAttribute("totalClients", totalClients);
@@ -136,8 +142,24 @@ public class ProfileViewController {
 		}	
 	}
 
-	
-
+	String getYouTubeEmbed(String videoURL){
+		String embed = "";
+		
+		if (videoURL.indexOf(".be") > 0){
+			String lastInfo = videoURL.substring(16, videoURL.length());
+			String[] splitLink = lastInfo.split("\\?");
+			embed = splitLink[0];
+		} else if (videoURL.indexOf("channel") > 0){
+			String lastInfo = videoURL.substring(31, videoURL.length());
+			String[] splitLink = lastInfo.split("\\?");
+			embed = splitLink[0];
+		} else if (videoURL.indexOf("v=") > 0){
+			String lastInfo = videoURL.substring(31, videoURL.length());
+			embed = lastInfo;
+		}
+		
+		return embed;
+	}
 	
 	/*	
 	@RequestMapping(value = "/education", method = RequestMethod.GET)

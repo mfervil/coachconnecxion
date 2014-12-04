@@ -143,12 +143,16 @@ table tr:nth-child(2n) {
 
 <div id="profilevideo" style="display: none;">
 		<p><a href="#" onClick="window.parent.jQuery('#profilevideo').hide();"> Close this video</a> </p>
-		<c:set var="URL" value="${profileInfo.getVideo_url()}"/>
-		<c:set var="URL" value="${URL}=" />
+		<c:set var="URL" value="${utubeVideoLink}"/>
+		<c:set var="URL1" value="${URL}=" />
 		<c:set var="a" value="${fn:split(URL, '=')}" />
 		<c:set var="utubeVideo" value="${a[1]}" />
+		
+		<c:set var="embedinfo" value="${embed}"/>
+		
 		<%
-		out.println("<iframe width=\"600\" height=\"600\" src=\"//www.youtube.com/embed/"+ pageContext.findAttribute("utubeVideo")  +"\" frameborder=\"0\" allowfullscreen></iframe>");
+		
+		out.println("<iframe width=\"600\" height=\"600\" src=\"//www.youtube.com/embed/"+ pageContext.findAttribute("embedinfo")  +"\" frameborder=\"0\" allowfullscreen></iframe>");	
 		%>	
 	
 </div>
@@ -156,7 +160,7 @@ table tr:nth-child(2n) {
 <div class="tabs">
 				<ul >
 					<li><a href="#overview">OVERVIEW &nbsp;&nbsp; /</a></li>
-					<li><a href="#education">EDUCATION &nbsp;&nbsp; /</a></li>
+					<li><a href="#education">TRAINING:EDUCATION &nbsp;&nbsp; /</a></li>
 					<li><a href="#jobhistory">JOB HISTORY &nbsp;&nbsp; /</a></li>
 					<li><a href="#packages">PACKAGES</a></li>
 				</ul>
@@ -198,19 +202,28 @@ String finalPath = request.getContextPath();
 
 											<c:choose>
     											<c:when test="${empty profileInfo.profile_picture_type}">
-													<td style="vertical-align: bottom; text-align: right; background-image: url('https://s3.amazonaws.com/ccxvi/nopicture.png'); background-size: 100% 100%; width: 125px; ">
+													<!--  <td style="vertical-align: bottom; text-align: right; background-image: url('https://s3.amazonaws.com/ccxvi/nopicture.png'); background-size: 100% 100%; width: 125px; ">  -->
+													<td>
+														<img id="photo1" src="https://s3.amazonaws.com/ccxvi/nopicture.png" width="125px;"/>
 												</c:when>
     											<c:otherwise>
-													<td style="vertical-align: bottom; text-align: right; background-image: url('https://s3.amazonaws.com/ccxvi/ccxv1${profileInfo.userProfileId}.${profileInfo.profile_picture_type}'); background-size: 100% 100%; width: 125px; ">
+													<td> 
+														<img id="photo2" src="https://s3.amazonaws.com/ccxvi/ccxv1${profileInfo.userProfileId}.${profileInfo.profile_picture_type}" width="125px;" /> 
+													<!--  <td style="vertical-align: bottom; text-align: right; background-image: url('https://s3.amazonaws.com/ccxvi/ccxv1${profileInfo.userProfileId}.${profileInfo.profile_picture_type}'); background-size: 100% 100%; width: 125px; ">  -->
     											</c:otherwise>
 											</c:choose>			
- 
+
+<br /> 
 <c:if test="${not empty profileInfo.getVideo_url()}">
-		<a href="#">
-		<img id="photo2" onClick="window.parent.jQuery('#profilevideo').show();" src="${pageContext.request.contextPath}/images/player_play_2.png" width="30px;" height="30px" Title="Click to play video"/> 
+		<a href="#" onClick="window.parent.jQuery('#profilevideo').show();">PLAY VIDEO
 		</a>
+		 
+		<!--
+		<img id="photo2" onClick="window.parent.jQuery('#profilevideo').show();" src="${pageContext.request.contextPath}/images/player_play_2.png" width="30px;" height="30px" Title="Click to play video"/> 
+		-->
 </c:if>		
 </td>
+
 		 <td >
 							<table>
 								<tr>

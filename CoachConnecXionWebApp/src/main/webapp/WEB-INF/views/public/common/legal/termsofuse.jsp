@@ -102,10 +102,10 @@ Terms of Use, do not use this Website.</span></p>
 <p><span style='color:black'>This Website may contain links to other sites. If
 so, and if you choose to use the services provided by those third-party
 websites, you may be asked by those sites to provide certain personally
-identifiable information. Owner is not responsible for the privacy practices of
-those sites. Please be aware when you leave our site, and read the privacy
-policies of each and every website that you visit. This Agreement applies
-solely to this Website. Owner is not responsible for the contents of any linked
+identifiable information. CoachSessions LLC is not responsible for the privacy practices of
+those sites. Please be aware when you leave our site to read the privacy
+policies of each and every Website that you visit. This Agreement applies
+solely to this Website. CoachSessions LLC is not responsible for the contents of any linked
 site or any link contained in a linked site.</span></p>
 <br>
 <p><b><span style='color:black'>Intellectual Property</span></b></p>
@@ -130,7 +130,7 @@ to the following designated agent:</span></p>
 
 <p class=MsoNormal><span style='color:black'>Marc Arthur</span></p>
 
-<p class=MsoNormal>CoachConnecxionsup@Gmail.com</p>
+<p class=MsoNormal>marc.arthur@coachconnecxion.com</p>
 <br>
 <p><b><span style='color:black'>Restrictions on Use</span></b></p>
 
@@ -232,7 +232,7 @@ your purchase</span></p><br>
 <p><b><span style='color:black'>Contacting Us</span></b></p>
 
 <p><span style='color:black'>If you have questions or need assistance, please contact
-Customer Support at: CoachConnecxionsup@gmail.com</span></p><br>
+Customer Support at: marc.arthur@coachconnecxion.com</span></p><br>
 
 </div>
 

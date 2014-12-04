@@ -90,10 +90,22 @@ a.morelink {
 .morecontent span {
 	display: none;
 }
+</style>
 	
 <script type="text/javascript" src="js/calendar.js">
 </script>
 <link href="css/calendar.css" rel="stylesheet" type="text/css" />
+<script type='text/javascript'>
+	$(document).ready(function() {
+		$('input#tmpOpen').click(function($e) {
+			$('div#myDialog').show(5000);
+		});
+
+		$('input#tmpClose').click(function($e) {
+			$('div#myDialog').hide(5000);
+		});
+	});
+</script>
 <style type='text/css'>
 div#myDialog {
 text-align:center;
@@ -130,7 +142,7 @@ text-align:center;
 </script>
 	
 </head>
-<body onload="checkForSuccess;">
+<body onload="checkForSuccess();">
 
 <%-- BEGIN BODY No Side test --%>
 <%-- END BODY No Side test --%>
@@ -179,15 +191,17 @@ text-align:center;
 
 			<td>
 				<div style="text-align: left;margin-left:10px;">
-			
-				<input type="hidden" name="success" id="success" value="${successMessage}"></input>
+					<h1 style="font-size: 14px; color: red;">${errorMessage}</h1>
+					<input type="hidden" name="success" id="success" 
+						value="${successMessage}"></input>
 
 					<c:choose>
 						<c:when test="${not empty successMessage}">
 							<div id='myDialog'>
 								<h1 style="font-size: 14px; color: green;">${successMessage}</h1>
 								 <br>
-								 Click&nbsp;&nbsp;<a href="educationAdd?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To create another Education
+								 Click&nbsp;&nbsp;<a href="educationAdd?profileId=${profileId}" 
+								 style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To create another Education
 								 <br>OR
 								 <br>
 								Click&nbsp;&nbsp;<a href="education?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To continue summary page								
@@ -263,7 +277,7 @@ text-align:center;
 						</tr>
 						<tr>
 							<td style="text-align: left;"><form:label
-									path="locationsName">Location:</form:label></td>
+									path="locationsName">City/State:</form:label></td>
 							<td style="text-align: left;"><form:input type="text"
 									size="30" path="locationsName" maxlength="100" cssStyle="width: 197px;"/></td>
 									

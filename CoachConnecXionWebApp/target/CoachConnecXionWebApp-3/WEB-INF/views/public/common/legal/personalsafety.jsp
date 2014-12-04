@@ -104,7 +104,7 @@ common sense precautions online as you would offline.</span></p><br>
       the person you’re meeting and pass it on to a friend or family member</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
       font-family:"Times New Roman","serif"'>--Insist on a public meeting place
-      like a cafe.</span></li>
+      like a cafe or public library.</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
       font-family:"Times New Roman","serif"'>--Stay in a public place</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;

@@ -12,7 +12,7 @@ $(document).ready(function(){
 		jQuery('#ei-slider').eislideshow({
 			easing		: 'easeOutExpo',
 			titleeasing	: 'easeOutExpo',
-			titlespeed	: 1200
+			titlespeed	: 2400 
 		});
 		
 		

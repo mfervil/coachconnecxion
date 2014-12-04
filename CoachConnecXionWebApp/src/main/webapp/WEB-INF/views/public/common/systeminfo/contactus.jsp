@@ -59,7 +59,7 @@ p {font-size:16px;}
 <br>
 <p>At CoachConnecXion, our goal is to make the process of connecting to a coach smooth and simple, and if there are any obstacles to that goal, please do not hesitate to let us know, and we'll take corrective actions to rectify the issue.</p>	
 <br>
-<p>Contact Email: CoachConnecxionsup@gmail.com</p>
+<p>Contact Email: marc.arthur@coachconnecxion.com</p>
 
 
 </section>

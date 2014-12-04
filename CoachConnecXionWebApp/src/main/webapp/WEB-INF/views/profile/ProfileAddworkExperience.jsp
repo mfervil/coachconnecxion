@@ -218,7 +218,7 @@ lable {
 						</tr>
 						<tr>
 							<td style="text-align: left; width: 150px;"><form:label
-									path="locationName">Location:</form:label></td>
+									path="locationName">City/State:</form:label></td>
 							<td style="text-align: left;"><form:input type="text"
 									size="30" path="locationName" maxlength="100"/></td>
 							<td style="text-align: left;"><h1

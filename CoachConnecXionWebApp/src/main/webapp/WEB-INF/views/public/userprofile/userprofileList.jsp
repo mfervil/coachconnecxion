@@ -77,7 +77,7 @@
 									<td class="leftalign" width="100%"> <br> 
 										 <b> &nbsp;&nbsp;<a href="profile?profileId=${userProfileDetails.user_profile_id}"><font color="blue" style="font-size:16px">${userProfileDetails.display_name}</font></a></b> &nbsp;&nbsp;<%@ include file="/WEB-INF/views/common/average_rating.jsp" %>	
 										 <br> <b>&nbsp;&nbsp;City:</b> ${userProfileDetails.city} || ${userProfileDetails.profilepicturestring} &nbsp;&nbsp;<b>State/Province: </b> ${userProfileDetails.state} 
-									     <br><b>&nbsp;&nbsp;# Clients:</b> ${userProfileDetails.num_clients} 
+									     <br> <!-- <b>&nbsp;&nbsp;# Clients:</b> ${userProfileDetails.num_clients}  -->
 									      &nbsp;&nbsp;<b> Packages from:</b>&nbsp;$${userProfileDetails.packages_from} 
 									      &nbsp;&nbsp;<b>Coaching Categories: </b>${userProfileDetails.coaching_category_name1} - ${userProfileDetails.coaching_category_name2} - ${userProfileDetails.coaching_category_name3} 
 										<br><br>

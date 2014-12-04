@@ -107,13 +107,13 @@ interaction between coaches, and those seeking to be coached.  Currently we
 collect and save the following personal information:</span></p>
 
 <p class=MsoNormal><span style='color:black'>Name, Address, City, State,
-Zipcode, Country, Phone Number, Email </span></p>
+Zipcode, Country, Phone Number and Email </span></p>
 
 <p class=MsoNormal><span style='color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal><span style='color:black'>We also collect credit card
-information for payment purposes only, but that information is never saved in
-our system.  </span></p><br>
+information, but only for payment processing; that information is <b>NEVER SAVED</b> in
+our system and is not available to anyone after processing your transaction.  </span></p><br>
 
 <p><b><span style='color:black'>How We Get Your Information</span></b></p>
 
@@ -182,7 +182,7 @@ you write, include your name, address, and policy or account number.</span></p><
 
 <p><b><span style='color:black'>Send privacy questions to:</span></b></p>
 
-<p class=MsoNormal><span style='color:black'>CoachConnecxionsup@Gmail.com </span></p><br>
+<p class=MsoNormal><span style='color:black'>marc.arthur@coachconnecxion.com</span></p><br>
 
 <p><span style='color:black'>Please note that this Privacy Policy may change
 from time to time. If we make any material changes, we will notify you as

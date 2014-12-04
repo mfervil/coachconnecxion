@@ -62,21 +62,21 @@
 					</li>
                      <li>
 						<img src="${pageContext.request.contextPath}/images/HomePage/skilled.jpg" alt="Business Coach"/>
-						<div class="ei-title black_bg">
+						<div class="ei-title ">
 							<h2>ARE YOUR SKILLS OUTDATED </h2>
-							<h3>FIND A COACH WHO'S TECHNICALLY SAVY</h3>
+							<h3>FIND A COACH WHO'S TECHNICALLY SAVVY</h3>
 						</div>
 					</li>
                      <li>
 						<img src="${pageContext.request.contextPath}/images/HomePage/mountain.jpg" alt="Corporate Coach"/>
-						<div class="ei-title">
+						<div class="ei-title black_bg">
 							<h2>LOOKING FOR A FINAL PULL</h2>
 							<h3>OR PUSH TO GET YOU TO THE TOP</h3>
 						</div>
 					</li>
 					<li>
 						<img src="${pageContext.request.contextPath}/images/HomePage/remote.jpg" alt="Coaching Any Time Any Plance"/>
-						<div class="ei-title black_bg">
+						<div class="ei-title ">
 							<h2>GET COACHED ANY TIME ANY PLACE</h2>
 							<h3>EVEN IN THE COMFORT OF YOUR OWN HOME</h3>
 						</div>
@@ -90,7 +90,7 @@
 					</li>
 					<li>
 						<img src="${pageContext.request.contextPath}/images/HomePage/chef.jpg" alt="New Field Coach"/>
-						<div class="ei-title black_bg">
+						<div class="ei-title ">
 							<h2>TRYING SOMETHING NEW</h2>
 							<h3>A COACH IN THE FIELD IS THE QUICKEST ROUTE</h3>
 						</div>						

@@ -40,7 +40,7 @@
                 </c:if>
                 <br>
                 <div>
-                	By clicking submit below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=tu">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy</a> 
+                	By clicking Sign In below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=tu">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy</a> 
                 </div>
                 <div class="hidden-submit"><input type="submit" value="Sign In" tabindex="-1"/></div>
                 

@@ -169,7 +169,7 @@ a.morelink {
 										</tr>
 										<tr>
 											<td
-												style="width: 100px; text-align: left; font-weight: bold;">Location
+												style="width: 100px; text-align: left; font-weight: bold;">City/State
 												:</td>
 											<td style="text-align: left;"><div
 													style="width: 450px; word-wrap: break-word;">

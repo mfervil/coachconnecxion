@@ -53,9 +53,11 @@
         
 Google Emails        
 		CoachConnecxionsup ccnxn14$pus
-		CoachConnecxionReg ccnxn14$
+		CoachConnecxionReg ccnxn14$   
+		registration@coachconnecxio.com  gmail admin account
 		CoachConnecxionord ccnxn14$dro
 		
+		marc.arthur@coachconnecxion.com ccnxn14$ram 
 		ccnxn14$   77
 
 AWS Prod DB
@@ -90,8 +92,8 @@ Gmail contact
         <_smtp.server>smtp.gmail.com</_smtp.server>
         <_smtp.port>587</_smtp.port>
 -->
-        <_smtp.username>registration@coachconnecxion.com</_smtp.username>
-        <_smtp.password>ccnxn14$</_smtp.password>
+        <_smtp.username>marc.arthur@coachconnecxion.com</_smtp.username>
+        <_smtp.password>ccnxn14$ram</_smtp.password>
         <_smtp.server>smtp.gmail.com</_smtp.server>
         <_smtp.port>587</_smtp.port>
 

@@ -173,7 +173,7 @@ $(document).ready(function(){
 					<li><a href="${pageContext.request.contextPath}/information?type=hw">HOW IT WORKS</a></li>
 					<li><a href="${pageContext.request.contextPath}/information?type=bl">BLOG</a></li>
 					<li><a href="${pageContext.request.contextPath}/information?type=au">ABOUT US</a></li>
-					<li><a href="${pageContext.request.contextPath}/users/login">SIGN IN</a></li>
+					<li><a href="${pageContext.request.contextPath}/users/login">SIGN IN/REGISTER</a></li>
 				</ul>
 				
 				<select id="responsive-menu">

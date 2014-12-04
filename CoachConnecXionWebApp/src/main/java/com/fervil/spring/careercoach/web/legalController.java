@@ -55,7 +55,7 @@ public class legalController {
     }
 
 	public String GetLinks(String URLstring) throws Exception {
-		/*Written by Marc Fervil
+		/*Written by Marc Arthur
 		*  Returns links (HTML)
 		*  Can be parsed directly into jsp page.*/
 		//try{

@@ -64,7 +64,6 @@ a.morelink {
 	
 </script>
 <link href="css/calendar.css" rel="stylesheet" type="text/css" />
-<title>Add/Edit Work Experience</title>
 <script type='text/javascript'>
 	$(document).ready(function() {
 		$('input#tmpOpen').click(function($e) {
@@ -166,8 +165,9 @@ div#myDialog {
 						<c:when test="${not empty successMessage}">
 							<div id='myDialog'>
 								<h1 style="font-size: 14px; color: green;">${successMessage}</h1>
-								<br> Click&nbsp;&nbsp;<a href="jobhistoryAdd?profileId=${profileId}"
-									style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To create another
+								<br> 
+								Click&nbsp;&nbsp;<a href="jobhistoryAdd?profileId=${profileId}"
+								style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To create another
 								employer <br>OR <br> Click&nbsp;&nbsp;<a
 									href="workexperience?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To
 								continue summary page
@@ -210,7 +210,7 @@ div#myDialog {
 						</tr>
 						<tr>
 							<td style="text-align: left; width: 150px;"><form:label
-									path="locationName">Location:</form:label></td>
+									path="locationName">City/State:</form:label></td>
 							<td style="text-align: left;"><form:input type="text"
 									size="30" path="locationName" maxlength="100"/></td>
 							<td style="text-align: left;"><h1

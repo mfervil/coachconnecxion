@@ -80,8 +80,8 @@ table tbody {
 			
 		<table style="width: 98%;"><tr><td style="width: 15%;">&nbsp;</td><td style="text-align: left"><h1 style="color: blue; font-size: 20px;">MY PACKAGES </h1></td>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td style="font-weight: bold;">Number of Clients:</td>
-					<td><c:out value="${totalClients}"></c:out></td>
+					<!--  <td style="font-weight: bold;">Number of Clients:</td>
+					<td><c:out value="${totalClients}"></c:out></td>  -->
 					<td style="font-weight: bold;">Total Packages Sold:</td>
 					<td><c:out value="${totalSold}"></c:out></td>
 					<td>&nbsp;&nbsp;</td>

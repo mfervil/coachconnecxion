@@ -239,7 +239,7 @@ lable {
 						</tr>
 						<tr>
 							<td style="text-align: left;"><form:label
-									path="locationsName">Location:</form:label></td>
+									path="locationsName">City/State:</form:label></td>
 							<td style="text-align: left;"><form:input type="text"
 									size="30" path="locationsName" maxlength="100" cssStyle="width: 197px;"/></td>
 									<td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage5}</h1></td>

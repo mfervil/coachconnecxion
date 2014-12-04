@@ -137,7 +137,7 @@ public class PackageController {
 				BigInteger totalSold1=(BigInteger) packages.get(j).getNumberSold();			
 				totalSold=totalSold+Integer.parseInt(totalSold1.toString());
 			}
-			totalClients=packageDetailsService.totalClientCount();
+			totalClients=packageDetailsService.totalClientCount(userProfileId);
 			model.addAttribute("totalClients", totalClients);
 			model.addAttribute("totalSold", totalSold);
 			model.addAttribute("persons", packages);
