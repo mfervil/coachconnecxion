@@ -33,6 +33,7 @@ public class AddEducationService {
 			logger.error("Exception " + e.getMessage()); 
 		}
 		return null;
+		
 	}
 
 	public List<EducationDetails> getEducationById(long userProfileId)  throws Exception {
