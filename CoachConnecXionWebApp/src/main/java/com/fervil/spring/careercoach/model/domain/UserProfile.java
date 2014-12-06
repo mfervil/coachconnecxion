@@ -21,7 +21,7 @@ import java.util.Date;
 public class UserProfile  implements Serializable {
 	public UserProfile() {
 		
-	}	
+	}	      
 
 	/**
 	 * 
