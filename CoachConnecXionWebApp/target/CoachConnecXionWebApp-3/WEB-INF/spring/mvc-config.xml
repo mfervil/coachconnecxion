@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+                           http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+                           
+                                                 http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+                           
+                      
+    <!-- Enables @Secured annotation for interfaces -->
+    <security:global-method-security secured-annotations="enabled"/>
+
+    <!-- Configures the @Controller programming model -->
+    <mvc:annotation-driven/>
+
+    <mvc:resources mapping="/resources/**" location="/static/"/>
+    <!-- Forwards requests to the "/" resource to the "welcome" view -->
+
+    <!-- redirector -->
+    <mvc:view-controller path="/" view-name="/redirector"/>
+
+    <!-- simple views -->
+    <!--todo: configure "/"-->
+    <mvc:view-controller path="/users/login"/>
+    <mvc:view-controller path="/users/accessDenied"/>
+    <mvc:view-controller path="/users/successfulRegistration"/>
+    <mvc:view-controller path="/users/successfulAccountReset"/>
+
+    <context:component-scan base-package="ua.com.bitlab.springsecuritydemo.web.controllers"/>
+	<context:component-scan base-package="com.fervil.spring.careercoach.web" />
+
+
+    <!-- Resolves view names to protected .jsp resources within the /WEB-INF/views directory -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<property name="maxUploadSize" value="268435456"/> <!-- 256 megs -->
+	</bean>
+
+	<bean name="/userProfileList.htm" class="com.fervil.spring.careercoach.web.UserProfileController">
+		<property name="userProfileManager" ref="userProfileManager" />
+	</bean>	
+
+
+    <!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager"
+          p:sessionFactory-ref="sessionFactory"/>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>   
+    
+<!--     
+    <bean id="unAuthenticatedUrlMapping"
+        class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <property name="mappings">
+      <props>
+        <prop key="/index.do">WorkController</prop>
+        <prop key="/index.htm">WorkController</prop>
+      </props>
+    </property>
+    
+  </bean>
+ -->
+     
+</beans>

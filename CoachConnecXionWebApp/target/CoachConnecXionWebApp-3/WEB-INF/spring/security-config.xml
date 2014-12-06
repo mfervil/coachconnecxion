@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		     http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <!-- Enables @Secured annotation for interfaces -->
+    <global-method-security secured-annotations="enabled"/>
+
+    <http name="static-resources" pattern="/resources/**" security="none"/>
+ <!-- No Security required for the ROOT Context -->
+  <http pattern="/displayProfileImage/**" security="none" />
+  
+    <http name="web-app" use-expressions="true" access-denied-page="/users/accessDenied">
+        <!--  <form-login always-use-default-target="true" default-target-url="/users/home"
+                    login-page="/users/login" authentication-failure-url="/users/login?login_error=1"/>
+         -->            
+        <form-login login-page='/users/login'
+            authentication-failure-url="/users/login?login_error=1"
+            authentication-success-handler-ref="ccAuthenticationSuccessHandler"/>
+ 
+        <logout/>            
+        <logout/>
+        
+        <intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS" />
+        <intercept-url pattern="favicon.ico" access="ROLE_ANONYMOUS" />
+        
+        <intercept-url pattern="/users/login" access="permitAll()"/>
+        <intercept-url pattern="/users/accessDenied" access="permitAll()"/>
+        <intercept-url pattern="/users/create" access="permitAll()"/>
+        <intercept-url pattern="/users/reset" access="permitAll()"/>
+        <intercept-url pattern="/users/successfulRegistration" access="permitAll()"/>
+        <intercept-url pattern="/users/successfulAccountReset" access="permitAll()"/>
+        <intercept-url pattern="/users/activate" access="permitAll()"/>
+        <intercept-url pattern="/users/activateReset" access="permitAll()"/>
+        <intercept-url pattern="/users/checkUserName" access="permitAll()"/>
+        <intercept-url pattern="/public/**" access="permitAll()"/>
+        <intercept-url pattern="/download/**" access="permitAll()"/>
+        <intercept-url pattern="/css/**" access="permitAll()"/>
+        <intercept-url pattern="/js/**" access="permitAll()"/>
+        <intercept-url pattern="/images/**" access="permitAll()"/>
+        <intercept-url pattern="/fancybox/**" access="permitAll()"/>
+        
+<!--         
+        <intercept-url pattern="/userprofile/**" access="permitAll()"/>
+        <intercept-url pattern="/createuserprofile/**" access="permitAll()"/>
+        <intercept-url pattern="/createcoachingRequest/**" access="permitAll()"/>
+        <intercept-url pattern="/userprofileList" access="permitAll()"/>
+        <intercept-url pattern="/coachSelection" access="permitAll()"/>
+
+        <intercept-url pattern="/packages" access="permitAll()"/>
+        <intercept-url pattern="/packageAdd" access="permitAll()"/>
+        <intercept-url pattern="/packageEdit" access="permitAll()"/>
+        <intercept-url pattern="/packagedelete" access="permitAll()"/>
+
+        <intercept-url pattern="/profile" access="permitAll()"/>
+        <intercept-url pattern="/profilejobhistoryAdd" access="permitAll()"/>
+        <intercept-url pattern="/profileeducationAdd" access="permitAll()"/>
+        <intercept-url pattern="/packagedelete" access="permitAll()"/>
+
+        <intercept-url pattern="/workexperience" access="permitAll()"/>
+        <intercept-url pattern="/education" access="permitAll()"/>
+        <intercept-url pattern="/addEditWorkExperience" access="permitAll()"/>
+        <intercept-url pattern="/addResume" access="permitAll()"/>
+        <intercept-url pattern="/download" access="permitAll()"/>
+
+        <intercept-url pattern="/remove" access="permitAll()"/>
+        <intercept-url pattern="/remove1" access="permitAll()"/>
+        <intercept-url pattern="/educationAdd" access="permitAll()"/>
+        <intercept-url pattern="/educationEdit" access="permitAll()"/>
+        <intercept-url pattern="/experienceEdit" access="permitAll()"/>
+
+        <intercept-url pattern="/jobhistoryAdd" access="permitAll()"/>
+        <intercept-url pattern="/profilejobhistoryAdd" access="permitAll()"/>
+        <intercept-url pattern="/profileeducationAdd" access="permitAll()"/>
+        <intercept-url pattern="/educationDelete" access="permitAll()"/>
+
+        <intercept-url pattern="/jobRating" access="permitAll()"/>
+        <intercept-url pattern="/feedbackAdd" access="permitAll()"/>
+        <intercept-url pattern="/feedbackComments" access="permitAll()"/>
+        <intercept-url pattern="/responseAdd" access="permitAll()"/>
+
+		<intercept-url pattern="/images/web_widget_star.gif" access="permitAll()"/>
+        <intercept-url pattern="/js/webwidget_rating_bar.js" access="permitAll()"/>
+        <intercept-url pattern="/css/webwidget_rating_bar.css" access="permitAll()"/>
+		<intercept-url pattern="/js/jquery-1.3.2.min.js" access="permitAll()"/>
+        
+        <intercept-url pattern="/Allrequests" access="permitAll()"/>
+        <intercept-url pattern="/selectCoachingCategories" access="permitAll()"/>
+        <intercept-url pattern="/requestNames" access="permitAll()"/>
+        <intercept-url pattern="/Executiverequests" access="permitAll()"/>
+        <intercept-url pattern="/BusinessExecutive" access="permitAll()"/>
+        <intercept-url pattern="/BusinessManager" access="permitAll()"/>
+        <intercept-url pattern="/BusinessNewBusiness" access="permitAll()"/>
+        <intercept-url pattern="/getRequestDetails" access="permitAll()"/>
+        <intercept-url pattern="/getRequestDetails1" access="permitAll()"/>
+        <intercept-url pattern="/BusinessNewBusiness" access="permitAll()"/>
+        <intercept-url pattern="/getRequestDetails" access="permitAll()"/>
+        <intercept-url pattern="/getRequestDetails1" access="permitAll()"/>
+        <intercept-url pattern="/createuserprofilesuccess/**" access="permitAll()"/>
+ -->         
+        <intercept-url pattern="/redirector" access="permitAll()"/>
+        <intercept-url pattern="/redirector.jsp" access="permitAll()"/>
+        <intercept-url pattern="/" access="permitAll()"/>
+        <intercept-url pattern="/users/home" access="permitAll()"/>
+        <intercept-url pattern="/users/home.jsp" access="permitAll()"/>
+        <intercept-url pattern="/google2233c8da8a8a9306.html" access="permitAll()"/>
+
+        <intercept-url pattern="/users/list" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/users/**" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
+        
+        
+    </http>
+
+    <!-- password encoder (SHA-1) -->
+    <beans:bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.ShaPasswordEncoder"/>
+    
+	<beans:bean id="ccAuthenticationSuccessHandler"
+        class="ua.com.bitlab.springsecuritydemo.services.security.CCAuthenticationSuccessHandler" />
+        
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider user-service-ref="customUserDetailsService">
+            <password-encoder ref="passwordEncoder">
+                <salt-source user-property="saltString"/>
+            </password-encoder>
+        </authentication-provider>
+    </authentication-manager>
+
+    <beans:bean id="customUserDetailsService" class="ua.com.bitlab.springsecuritydemo.services.security.SecurityUsersService"/>
+
+</beans:beans>
