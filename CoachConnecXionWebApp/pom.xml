@@ -490,7 +490,7 @@ Gmail contact
 	            <groupId>org.apache.maven.plugins</groupId>
 	            <artifactId>maven-war-plugin</artifactId>
 	            <configuration>
-	                <outputDirectory>C:\Users\Marc\development\apachetomcat7.0.55\apache-tomcat-7.0.55\webapps\</outputDirectory>
+	                <outputDirectory>C:\Users\mfervil\development\apache-tomcat-7.0.56\webapps\</outputDirectory>
 	            </configuration>
 	        </plugin>        
             <!-- Compiler -->

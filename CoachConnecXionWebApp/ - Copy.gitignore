@@ -1,0 +1,10 @@
+/target/
+/pom.xml
+/Copy of pom.xml
+target/
+pom.xml
+Copy of pom.xml
+.classpath
+.project
+.settings/
+*.class

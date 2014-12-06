@@ -13,4 +13,4 @@ public interface CoachingRequestDao {
     public CoachingRequest findById(long id) throws Exception ;
 
     public List<CoachingRequest> findAll() throws Exception ;    
-}
+}  
