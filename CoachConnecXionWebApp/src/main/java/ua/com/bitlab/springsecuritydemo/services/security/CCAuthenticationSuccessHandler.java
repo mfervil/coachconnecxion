@@ -29,7 +29,11 @@ System.out.println("Inside the saved request");
 	else {
 		System.out.println("The saved request is: " + savedRequest.getRedirectUrl());
 		
-	    response.sendRedirect(savedRequest.getRedirectUrl());
+		if (savedRequest.getRedirectUrl().contains("ping_session") ){
+		    response.sendRedirect(request.getContextPath() + "/");
+		} else {
+			response.sendRedirect(savedRequest.getRedirectUrl());
+		}	
 	}
     }
 }

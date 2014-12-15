@@ -41,6 +41,8 @@
         <intercept-url pattern="/js/**" access="permitAll()"/>
         <intercept-url pattern="/images/**" access="permitAll()"/>
         <intercept-url pattern="/fancybox/**" access="permitAll()"/>
+        <intercept-url pattern="/forums/**" access="permitAll()"/>
+        <intercept-url pattern="/templates/**" access="permitAll()"/>
         
 <!--         
         <intercept-url pattern="/userprofile/**" access="permitAll()"/>
