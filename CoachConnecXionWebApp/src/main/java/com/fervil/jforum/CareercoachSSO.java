@@ -4,7 +4,7 @@ package com.fervil.jforum;
 import net.jforum.entities.UserSession;
 import net.jforum.sso.SSO;
 
-	public class CareercoachSSO implements SSO {
+	public class CareercoachSSO implements SSO {   
 
 		public String authenticateUser(net.jforum.context.RequestContext request) {
 
