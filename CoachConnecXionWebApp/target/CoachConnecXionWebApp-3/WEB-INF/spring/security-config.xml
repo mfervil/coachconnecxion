@@ -41,6 +41,21 @@
         <intercept-url pattern="/js/**" access="permitAll()"/>
         <intercept-url pattern="/images/**" access="permitAll()"/>
         <intercept-url pattern="/fancybox/**" access="permitAll()"/>
+        <intercept-url pattern="/forums/**" access="permitAll()"/>
+        <intercept-url pattern="/templates/**" access="permitAll()"/>
+
+        <intercept-url pattern="/search/filters.page" access="permitAll()"/>
+        <intercept-url pattern="/recentTopics/list.page" access="permitAll()"/>
+        <intercept-url pattern="/hottestTopics/list.page" access="permitAll()"/>
+        <intercept-url pattern="/user/list.page" access="permitAll()"/>
+        <intercept-url pattern="/moderation/showActivityLog.page" access="permitAll()"/>
+
+        <intercept-url pattern="/posts/list/**" access="permitAll()"/>
+        <intercept-url pattern="/user/profile/**" access="permitAll()"/>
+        <intercept-url pattern="/pm/sendTo/**" access="permitAll()"/>
+        <intercept-url pattern="/jforum.page" access="permitAll()"/>
+        <intercept-url pattern="/rss/recentTopics.page" access="permitAll()"/>
+
         
 <!--         
         <intercept-url pattern="/userprofile/**" access="permitAll()"/>
