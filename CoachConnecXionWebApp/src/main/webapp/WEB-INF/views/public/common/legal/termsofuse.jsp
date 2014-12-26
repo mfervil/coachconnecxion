@@ -7,10 +7,10 @@
 <html lang="en">
 
 <head>
-	<title>Terms of Use</title>
+	<title>Terms For CoachConnecXion - Time Management Coach - Professional Life Coach</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="description" content="CoachConnecXion is Directory of Coaches. We provide a listing of different coaches, such as stress management coach, time management coach, professional life coach, personal development coach and professional sports trainer. To learn more about our services, feel  free to peruse our site, or call @ 630-983-9587" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our terms of use" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
@@ -79,9 +79,8 @@ ul
 
 <div class=WordSection1>
 
-<p align=center style='text-align:center'><b><span style='color:black'>TERMS OF
-USE</span></b></p>
-</br>
+<h1 style="text-align:center;font-weight: bold;">TERMS OF USE</h1>
+<br>
 <p><span style='color:black'>By accessing, browsing or using
 www.coachconnecxion.com&nbsp;(&quot;Website&quot;), or any page thereof,
 through direct or indirect means, or alternative methods (including telephone
@@ -95,10 +94,9 @@ following the posting of any changes to the Terms of Use constitutes acceptance
 of those changes.</span></p>
 <br>
 <p><span style='color:black'>If at any time you choose not to accept these
-Terms of Use, do not use this Website.</span></p>
-<br>
-<p><b><span style='color:black'>Links to Other Sites</span></b></p>
+Terms of Use, do not use this Website.</span></p><br>
 
+<h3 style="text-align:left;font-weight: bold;">Links to Other Sites</h3>
 <p><span style='color:black'>This Website may contain links to other sites. If
 so, and if you choose to use the services provided by those third-party
 websites, you may be asked by those sites to provide certain personally
@@ -106,10 +104,9 @@ identifiable information. CoachSessions LLC is not responsible for the privacy p
 those sites. Please be aware when you leave our site to read the privacy
 policies of each and every Website that you visit. This Agreement applies
 solely to this Website. CoachSessions LLC is not responsible for the contents of any linked
-site or any link contained in a linked site.</span></p>
-<br>
-<p><b><span style='color:black'>Intellectual Property</span></b></p>
+site or any link contained in a linked site.</span></p><br>
 
+<h3 style="text-align:left;font-weight: bold;">Intellectual Property</h3>
 <p><span style='color:black'>All material available on this Website is the
 property of Owner and is protected by international copyright and trademark
 laws. All rights are reserved to Owner. You may not modify, copy, reproduce,
@@ -118,26 +115,24 @@ material from this site without express written permission from Owner. You are
 permitted to use material from this Website for your own personal, private,
 non-commercial use only, provided you keep intact all copyright and other
 proprietary notices.</span></p>
-
-<p><span style='color:black'>CoachConnecXion&nbsp;is a trademark of Owner.
+<br>
+<p><span style='color:black'>CoachConnecXion&nbsp;is a trademark of CoachSessions LLC.
 Other featured words or symbols, used to identify the source of goods and
 services, may be the trademarks of their respective owners.</span></p>
-
+<br>
 <p><span style='color:black'>Pursuant to Title 17, United States Code, Section
 512(c)(2), notifications of claimed copyright infringement should be sent to
 the service provider's designated agent. Written notification must be submitted
 to the following designated agent:</span></p>
 
 <p class=MsoNormal><span style='color:black'>Marc Arthur</span></p>
-
 <p class=MsoNormal>marc.arthur@coachconnecxion.com</p>
 <br>
-<p><b><span style='color:black'>Restrictions on Use</span></b></p>
-
+<h3 style="text-align:left;font-weight: bold;">Restrictions on Use</h3>
 <p class=MsoNormal><span style='color:black'>You agree that you will not, and
 will not assist or enable others to use the Website: </span></p>
 
-<ol start=1 type=1>
+<ul style="list-style-type:circle">
  <li class=MsoNormal style='color:black'>to threaten, stalk, defraud, incite,
      harass, or advocate the harassment of another person or entity, or
      otherwise interfere with use of the Website; </li>
@@ -149,16 +144,14 @@ will not assist or enable others to use the Website: </span></p>
      Website or Website Content except as expressly authorized by Owner </li>
  <li class=MsoNormal style='color:black'>to mine, record or gather information
      about other users; </li>
-</ol>
+</ul>
 <br>
-<p><b><span style='color:black'>Termination</span></b></p>
-
+<h3 style="text-align:left;font-weight: bold;">Termination</h3>
 <p><span style='color:black'>Owner may terminate or suspend your account or
 ability to use the Website, in whole or in part, at our sole discretion, for
 any or no reason, and without notice or liability of any kind.</span></p>
 <br>
-<p><b><span style='color:black'>Disclaimers and Liability</span></b></p>
-
+<h3  style="text-align:left;font-weight: bold;">Disclaimers and Liability</h3>
 <p><span style='color:black'>THE WEBSITE AND ALL WEBSITE CONTENT IS MADE
 AVAILABLE TO YOU ON AN &quot;AS IS&quot; BASIS. OWNER MAKES NO WARRANTIES,
 REPRESENTATIONS, OR CONDITIONS OF ANY KIND, EXPRESS, STATUTORY OR IMPLIED AS TO
@@ -184,8 +177,7 @@ OR THE LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, IN SUCH
 STATES OR JURISDICTIONS, OWNER'S LIABILITY SHALL BE LIMITED TO THE EXTENT
 PERMITTED BY LAW.</span></p>
 <br>
-<p><b><span style='color:black'>Indemnity</span></b></p>
-
+<h3 style="text-align:left;font-weight: bold;">Indemnity</h3>
 <p><span style='color:black'>You agree to indemnify Owner and its agents and
 representatives from and against any and all liabilities, expenses (including
 attorneys' fees) and damages from any claim or demand made by any third-party
@@ -194,43 +186,37 @@ products and services sold thereon, (ii) your violation of the Terms of Use, or
 (iii) the infringement by you, or any third-party using your account, of any
 intellectual property or other right of any person or entity.</span></p>
 <br>
-<p><b><span style='color:black'>Use of Website</span></b></p>
-
+<h3 style="text-align:left;font-weight: bold;">Use of Website</h3>
 <p><span style='color:black'>You affirm that you are either more than 18 years
 of age, an emancipated minor, or possess legal parental or guardian consent,
 and are able and competent to enter into the terms and conditions set forth in
-this Agreement.</span></p><br>
-
-<p><b><span style='color:black'>Fees</span></b></p>
-
+this Agreement.</span></p>
+<br>
+<h3 style="text-align:left;font-weight: bold;">Fees</h3>
 <p><span style='color:black'>CoachConnecXion.com is free to join.  There are no charges
 for customers, and no charges for coaches to post their services.  Coaches are only
-charged when a customer buys a package, and the fee charged to the coach is 10%
-of the cost of the service</span></p><br>
-
-<p><b><span style='color:black'>Coach & Client Contract</span></b></p>
-
+charged when a customer buys a package, and the fee charged to the coach is 15%
+of the cost of the service</span></p>
+<br>
+<h3 style="text-align:left;font-weight: bold;">Coach & Client Contract</h3>
 <p><span style='color:black'>When a client buys a package, the contract is between the
 coach and the client only.  The client has 30 days from the time of purchase to cancel
 the order.  If the order is cancelled within those 30 days, CoachConnecXion.com will
 reimburse the client.  After the 30 days, all negotiations and disputes are to be handled
-by the client and the coach</span></p><br>
-
-<p><b><span style='color:black'>Directory of Coaches</span></b></p>
-
+by the client and the coach</span></p>
+<br>
+<h3 style="text-align:left;font-weight: bold;">Directory of Coaches</h3>
 <p><span style='color:black'>This website contains a list of coaches.  The list is populated
 primarily with information from the coaches themselves or a member of their associated company.
 CoachConnecXion.com makes this list available to users to facilitate the coaching process, and
 CoachConnecXion.com DOES NOT confirm or verify the information entered by the coaches or their
-affiliates</span></p><br>
-
-<p><b><span style='color:black'>Cancellation</span></b></p>
-
+affiliates</span></p>
+<br>
+<h3 style="text-align:left;font-weight: bold;">Cancellation</h3>
 <p><span style='color:black'>To cancel an order, request a refund via email within 30 days of
-your purchase</span></p><br>
-
-<p><b><span style='color:black'>Contacting Us</span></b></p>
-
+your purchase</span></p>
+<br>
+<h3 style="text-align:left;font-weight: bold;">Contacting Us</h3>
 <p><span style='color:black'>If you have questions or need assistance, please contact
 Customer Support at: marc.arthur@coachconnecxion.com</span></p><br>
 

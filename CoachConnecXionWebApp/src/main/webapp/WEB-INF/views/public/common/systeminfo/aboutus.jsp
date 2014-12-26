@@ -7,10 +7,10 @@
 <html lang="en">
 
 <head>
-	<title>About CoachConnecXion Training and Coaching services</title>
+	<title>Coach Factory Online - Certified Executive Coach - Professional Life Coach | CoachConnecXion</title>
+	<meta name="description" content="CoachConnecXion offers a quick and easy way to find Coaches and Trainers for self improvement.  We provide information of Professional Coaches of various backgrounds such as professional life management, stress management and sports trainer." />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Brief description of our company and what we do" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
@@ -50,6 +50,20 @@ p {font-size:16px;}
 <%-- END BODY No Side test --%>
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
+
+<div id="CoachSessions" class="vcard">
+ <a class="url fn n" href="https://www.coachconnecxion.com/"></a>
+ <div class="org">CoachSessions  LLC</div>
+ <a class="email" href="mailto:Marc.arthur@coachconnecxion.com">Marc.arthur@coachconnecxion.com</a>
+ <div class="adr">
+  <div class="street-address">601 Pawnee lane</div>
+  <span class="locality">Naperville,</span>
+  <span class="region">Illinois,</span>
+  <span class="postal-code">60563</span>
+  <span class="country-name">United States</span>
+ </div>
+ <div class="tel">630-983-9587</div>
+</div>
 
 <h1 style="text-align:center;color:#0404B4">About US</h1> <br>
 <p>At CoachConnecXion, our aim is to make the process of finding a coach quick and easy.  Our primary experience derives from management to information technology, but We provide access to coaches of various backgrounds, from sports to executive and everything in between.</p>

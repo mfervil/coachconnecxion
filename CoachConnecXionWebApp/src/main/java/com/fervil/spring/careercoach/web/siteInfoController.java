@@ -18,11 +18,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fervil.spring.careercoach.util.Constants;
 
 @Controller		  
-@RequestMapping("/public/information")
 public class siteInfoController {
     private static final Logger log = LoggerFactory.getLogger(siteInfoController.class);
 	
-	@RequestMapping(method = RequestMethod.GET) 
+/*    
+	@RequestMapping(value = "/public/information", method = RequestMethod.GET)
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response, Model model) {
             //throws ServletException, IOException {
 
@@ -58,7 +58,6 @@ public class siteInfoController {
 	    			model.addAttribute("news", newsLinks);
 	    			navPage = "public/common/systeminfo/coachnews";
 	    		} 
-	    		
 	    	}
 	        return new ModelAndView(navPage, "model", myModel);
 		} catch (Exception e) {
@@ -68,7 +67,137 @@ public class siteInfoController {
 	        return new ModelAndView("public/common/error/errorpage", "model", myModel);
 		}	
     }
+*/
+    
+@RequestMapping(value = "/how-it-works", method = RequestMethod.GET)
+public ModelAndView getHowItWorks(HttpServletRequest request, HttpServletResponse response, Model model) {
+        //throws ServletException, IOException {
 
+	Map<String, Object> myModel = new HashMap<String, Object>();
+	try{	
+
+		String now = (new java.util.Date()).toString();
+        myModel.put("now", now);
+		String navPage = "public/common/systeminfo/howitworks";
+        
+        return new ModelAndView(navPage, "model", myModel);
+
+	} catch (Exception e) {
+        String msg = "The request failed. Error " + e;
+        log.error(msg, e);
+		model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+        return new ModelAndView("public/common/error/errorpage", "model", myModel);
+	}	
+}	
+
+
+	@RequestMapping(value = "/about-us", method = RequestMethod.GET)
+    public ModelAndView getAboutUs(HttpServletRequest request, HttpServletResponse response, Model model) {
+            //throws ServletException, IOException {
+
+    	Map<String, Object> myModel = new HashMap<String, Object>();
+    	try{	
+
+    		String now = (new java.util.Date()).toString();
+	        myModel.put("now", now);
+			String navPage = "public/common/systeminfo/aboutus";
+	        
+	        return new ModelAndView(navPage, "model", myModel);
+
+		} catch (Exception e) {
+	        String msg = "The request failed. Error " + e;
+	        log.error(msg, e);
+			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+	        return new ModelAndView("public/common/error/errorpage", "model", myModel);
+		}	
+	}	
+	
+	@RequestMapping(value = "/contact-us", method = RequestMethod.GET)
+    public ModelAndView getContactUs(HttpServletRequest request, HttpServletResponse response, Model model) {
+            //throws ServletException, IOException {
+
+    	Map<String, Object> myModel = new HashMap<String, Object>();
+    	try{	
+
+    		String now = (new java.util.Date()).toString();
+	        myModel.put("now", now);
+			String navPage = "public/common/systeminfo/contactus";
+	        
+	        return new ModelAndView(navPage, "model", myModel);
+
+		} catch (Exception e) {
+	        String msg = "The request failed. Error " + e;
+	        log.error(msg, e);
+			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+	        return new ModelAndView("public/common/error/errorpage", "model", myModel);
+		}	
+	}	
+	
+	@RequestMapping(value = "/terms-of-use", method = RequestMethod.GET)
+    public ModelAndView getTermsOfUse(HttpServletRequest request, HttpServletResponse response, Model model) {
+            //throws ServletException, IOException {
+
+    	Map<String, Object> myModel = new HashMap<String, Object>();
+    	try{	
+
+    		String now = (new java.util.Date()).toString();
+	        myModel.put("now", now);
+			String navPage = "public/common/legal/termsofuse";
+	        
+	        return new ModelAndView(navPage, "model", myModel);
+
+		} catch (Exception e) {
+	        String msg = "The request failed. Error " + e;
+	        log.error(msg, e);
+			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+	        return new ModelAndView("public/common/error/errorpage", "model", myModel);
+		}	
+	}	
+	
+	
+	
+	@RequestMapping(value = "/privacy-policy", method = RequestMethod.GET)
+    public ModelAndView getPrivacyPolicy(HttpServletRequest request, HttpServletResponse response, Model model) {
+            //throws ServletException, IOException {
+
+    	Map<String, Object> myModel = new HashMap<String, Object>();
+    	try{	
+
+    		String now = (new java.util.Date()).toString();
+	        myModel.put("now", now);
+			String navPage = "public/common/legal/privacypolicy";
+	        
+	        return new ModelAndView(navPage, "model", myModel);
+
+		} catch (Exception e) {
+	        String msg = "The request failed. Error " + e;
+	        log.error(msg, e);
+			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+	        return new ModelAndView("public/common/error/errorpage", "model", myModel);
+		}	
+	}	
+	
+	@RequestMapping(value = "/safety-tips", method = RequestMethod.GET)
+    public ModelAndView getSafetyTips(HttpServletRequest request, HttpServletResponse response, Model model) {
+            //throws ServletException, IOException {
+
+    	Map<String, Object> myModel = new HashMap<String, Object>();
+    	try{	
+
+    		String now = (new java.util.Date()).toString();
+	        myModel.put("now", now);
+			String navPage = "public/common/legal/personalsafety";
+	        
+	        return new ModelAndView(navPage, "model", myModel);
+
+		} catch (Exception e) {
+	        String msg = "The request failed. Error " + e;
+	        log.error(msg, e);
+			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+	        return new ModelAndView("public/common/error/errorpage", "model", myModel);
+		}	
+	}	
+	
 	public String GetLinks(String URLstring) throws Exception {
 		/*Written by Marc Arthur
 		*  Returns links (HTML)

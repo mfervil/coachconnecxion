@@ -4,10 +4,10 @@
 <html lang="en">
 
 <head>
-	<title>Find Coach or Trainer for self improvement</title>
+	<title>Find A Certified Professional Coach - Personal Development Coach | CoachConnecXion</title>
+	<meta name="description" content="CoachConnecXion provides an efficient and easy to use online system that will help people find the right coach for self improvement. We offer a list of coaches for different fields such personal development, time management, stress management and sports." />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Find a Coach or Trainer to help you improve your self" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

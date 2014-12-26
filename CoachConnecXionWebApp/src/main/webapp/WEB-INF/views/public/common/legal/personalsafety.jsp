@@ -7,10 +7,10 @@
 <html lang="en">
 
 <head>
-	<title>Personal Safety</title>
+	<title>Personal Safety - Coach Factory Online - Online Personal Trainer | CoachConnecXion</title>
+	<meta name="description" content="Tips and guidance on keeping your self safe while going through the market place offered by CoachConnecXion" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Tips and guidance on keeping your self safe" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
@@ -79,8 +79,7 @@ ul
 
 <div class=WordSection1>
 
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman","serif"'>Personal Safety</span></b></p><br>
+<h1 style="text-align:center;font-weight: bold;">Personal Safety</h1><br>
 
 <p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
 font-family:"Times New Roman","serif"'>The majority of Internet users are
@@ -90,132 +89,122 @@ trustworthy and well-intentioned.</span></p>
 font-family:"Times New Roman","serif"'>Nevertheless, please take the same
 common sense precautions online as you would offline.</span></p><br>
 
-<ul type=disc>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman","serif"'><b>Face-to-face meetings: </b>We recommend
-     coaching sessions happen online or through other electronic mediums, but
-     if meeting in person, follow the guidelines below to stay safe</span></li>
- <ul type=circle>
+<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman","serif"'>We recommend coaching sessions happen online or through other electronic mediums, but
+if meeting in person, follow the guidelines below to stay safe.</span></p><br>
+
+ <h3 style="text-align:left;font-weight: bold;">Face-to-face meetings: </h3>
+<ul style="list-style-type:circle">
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Verify the identity of the other
+      font-family:"Times New Roman","serif"'>Verify the identity of the other
       person</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Get phone number and address of
+      font-family:"Times New Roman","serif"'>Get phone number and address of
       the person you’re meeting and pass it on to a friend or family member</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Insist on a public meeting place
+      font-family:"Times New Roman","serif"'>Insist on a public meeting place
       like a cafe or public library.</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Stay in a public place</span></li>
+      font-family:"Times New Roman","serif"'>Stay in a public place</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Do not meet in a secluded place,
+      font-family:"Times New Roman","serif"'>Do not meet in a secluded place,
       or invite strangers into your home.</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Tell a friend or family member
+      font-family:"Times New Roman","serif"'>Tell a friend or family member
       where you're going.</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Take your cell phone along to a
+      font-family:"Times New Roman","serif"'>Take your cell phone along to a
       meeting if you have one.</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Stay sober</span></li>
+      font-family:"Times New Roman","serif"'>Stay sober</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Drive yourself to and from
+      font-family:"Times New Roman","serif"'>Drive yourself to and from
       meetings</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Keep your personal items with you
+      font-family:"Times New Roman","serif"'>Keep your personal items with you
       at all times.</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Do not meet in unfamiliar areas
+      font-family:"Times New Roman","serif"'>Do not meet in unfamiliar areas
       far away from your home</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Consider having a friend accompany
+      font-family:"Times New Roman","serif"'>Consider having a friend accompany
       you.</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Trust your instincts.</span></li>
+      font-family:"Times New Roman","serif"'>Trust your instincts.</span></li>
  </ul>
  <br>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman","serif"'><b>Protect your finances</b></span></li>
- <ul type=circle>
+ <h3 style="text-align:left;font-weight: bold;">Protect your finances</h3>
+<ul style="list-style-type:circle">
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Do not send money for any reason
+      font-family:"Times New Roman","serif"'>Do not send money for any reason
       in any form to anyone, especially cash and wire transfers.</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Never give out your financial
+      font-family:"Times New Roman","serif"'>Never give out your financial
       information (such as you social security number, credit card number or
       bank information) to any person or company you meet through  this site</span></li>
  </ul>
  <br>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman","serif"'><b>Guard your personal and online
-     access information</b></span></li>
- <ul type=circle>
+<h3 style="text-align:left;font-weight: bold;">Guard your personal and online access information</h3>
+<ul style="list-style-type:circle">
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Do not give our your personal
+      font-family:"Times New Roman","serif"'>Do not give our your personal
       information </span><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>such
       as full name, phone number, email and address unless you trust the person
       and can verify their identity</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Be extra cautious when accessing
+      font-family:"Times New Roman","serif"'>Be extra cautious when accessing
       your account in a public place.  Make sure no one is looking over your
       shoulder</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--If accessing your account over a
+      font-family:"Times New Roman","serif"'>If accessing your account over a
       public computer or a computer that you share, be sure to disable the auto
       sign-in feature and clear all saved passwords.</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Do not send your user name and
+      font-family:"Times New Roman","serif"'>Do not send your user name and
       password to anyone in email.  CoachConnecXion.com will never send emails
       asking for your username and password    </span></li>
- </ul>
- <br>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman","serif"'><b>Be Web Wise: </b>Beware of people who
-     exhibit the behaviors below and stay away from them</span></li>
- <ul type=circle>
+ </ul><br>
+<h3 style="text-align:left;font-weight: bold;">Be Web Wise: Beware of people who exhibit the behaviors below and stay away from them</h3>
+<ul style="list-style-type:circle">
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Quickly asks to talk or chat on an
+      font-family:"Times New Roman","serif"'>Quickly asks to talk or chat on an
       outside email or messaging service</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Asks you for money: All payments
+      font-family:"Times New Roman","serif"'>Asks you for money: All payments
       should be made through CoachConnecXion.com only.</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Vanishes mysteriously from the
+      font-family:"Times New Roman","serif"'>Vanishes mysteriously from the
       site, then reappears under a different name</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Asks for your personal information
+      font-family:"Times New Roman","serif"'>Asks for your personal information
       like address, birthday or social security number </span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Makes an inordinate amount of
+      font-family:"Times New Roman","serif"'>Makes an inordinate amount of
       grammar and/or spelling errors</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Sends you emails containing
+      font-family:"Times New Roman","serif"'>Sends you emails containing
       strange links to third-party websites</span></li>
- </ul>
- <br>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman","serif"'><b>Suspicious users: </b>Stay away from
-     suspicious users or those who violate our terms of use including the below</span></li>
- <ul type=circle>
+ </ul><br>
+<h3 style="text-align:left;font-weight: bold;">Suspicious users: Stay away from suspicious users or those who violate our terms of use including the below</h3>
+<ul style="list-style-type:circle">
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Asking you for money or donations</span></li>
+      font-family:"Times New Roman","serif"'>Asking you for money or donations</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Minors using the service without
+      font-family:"Times New Roman","serif"'>Minors using the service without
       parental consent</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Members sending harassing or
+      font-family:"Times New Roman","serif"'>Members sending harassing or
       offensive emails/IMs</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Members behaving inappropriately</span></li>
+      font-family:"Times New Roman","serif"'>Members behaving inappropriately</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Fraudulent registration or
+      font-family:"Times New Roman","serif"'>Fraudulent registration or
       profiles</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>--Spam or solicitation, such as invitations
+      font-family:"Times New Roman","serif"'>Spam or solicitation, such as invitations
       to call 1-900 numbers or attempts to sell products or services</span></li>
  </ul>
-</ul>
-<br>
+ <br>
 <p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
 font-family:"Times New Roman","serif"'>Taking these simple precautions helps
 make our site safer for everyone.</span></p>
@@ -224,7 +213,7 @@ make our site safer for everyone.</span></p>
 font-family:"Times New Roman","serif"'>For more information about personal
 safety online, check out these resources:</span></p>
 
-<ul type=disc>
+<ul style="list-style-type:circle">
  <li class=MsoNormal style='line-height:normal'><a
      href="http://www.staysafeonline.org/"><span style='font-size:12.0pt;
      font-family:"Times New Roman","serif"; color:#0000FF'>http://www.staysafeonline.org/</span></a></li>

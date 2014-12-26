@@ -7,10 +7,10 @@
 <html lang="en">
 
 <head>
-	<title>CoachConnecXion Contact US</title>
+	<title>Contact for Certified Professional Coach - Personal Development Coach | CoachConnecXion</title>
+	<meta name="description" content="CoachConnecXion will help you find a professional Coach based on your criteria. We provide a listing of coaches with various backgrounds such as professional life coach, personal development coach and sports trainer. To Know more mail us marc.arthur@coachconnecxion.com. " />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Reach out to us for issues and questions" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>

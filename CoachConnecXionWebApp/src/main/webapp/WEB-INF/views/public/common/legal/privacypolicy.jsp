@@ -7,10 +7,10 @@
 <html lang="en">
 
 <head>
-	<title>Privacy Policy</title>
+	<title>Privacy Policy for CoachConnecXion - Certified Executive Coach- Online Personal Trainer</title>
+	<meta name="description" content="CoachConnecXion provides a marketplace where users are matched with coaches. We Understand the value of your Privacy. We will not share your information with any unaffiliated person or company.  Feel free to peruse our site to get more details." />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Read how we help keep your information safe while you use our site" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
@@ -79,8 +79,7 @@ ul
 
 <div class=WordSection1>
 
-<p align=center style='text-align:center'><b><span style='color:black'>PRIVACY
-POLICY</span></b></p><br>
+<h1 style="text-align:center;font-weight: bold;">PRIVACY POLICY</h1><br>
 
 <p><span style='color:black'>We know that you buy our products and services and
 use our Website because you trust us. This notice explains how we protect your

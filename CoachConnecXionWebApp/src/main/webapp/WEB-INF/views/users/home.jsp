@@ -1,24 +1,32 @@
 
-	<title>CoachConnecXion - Find a Coach or Trainer for self improvement</title>
-	<meta name="description" content="Find a Coach or Trainer to help you raise your game" />
+
+ 
+ 	<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
+  
+	<%@ include file="/WEB-INF/views/common/header_setup.jsp" %>	
+
+	<title>Certified Professional Coach - Personal Trainer Website | CoachConnecXion</title>
+	<meta name="description" content="CoachConnecXion is one of the leading Websites for Trainers and Coaches in Illinois, USA. We Provide a listing of available certified professional coaches and trainers based on your search criteria." />
+
+
+	<meta name="robots" content="NOODP,NOYDIR" />
+	
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-57746277-1', 'coachconnecxion.com');
+		ga('require', 'displayfeatures');
+		ga('send', 'pageview');
+	</script>
+	
 
 </head>
+
 <body>
 
-	<!-- DISPLAY MESSAGE IF JAVA IS TURNED OFF -->
-	<noscript>		
-		<div id="notification">Please turn on javascript in your browser for the maximum experience!</div>
-	</noscript>
-	
-	<!-- DISPLAY THIS MESSAGE IF USER'S BROWSER IS IE7 OR LOWER -->
-	<div id="ie_warning"><img src="${pageContext.request.contextPath}/images/warning.png" alt="IE Warning" /><br /><strong>Your browser is out of date!</strong><br /><br />This website uses the latest web technologies so it requires an up-to-date, fast browser!<br />Try <a href="http://www.mozilla.org/en-US/firefox/new/?from=getfirefox">Firefox</a> or <a href="https://www.google.com/chrome">Chrome</a>!</div>
-	
-	<div id="toTop"><img src="${pageContext.request.contextPath}/images/back_to_top.png" alt="Back to top" title="Back to top" /></div>
-
-<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
-
-	<%@ include file="/WEB-INF/views/common/header_setup.jsp" %>	
-	
 	<div id="topline"></div>		
 	<div id="wrapper">			
 		<%-- @ include file="/WEB-INF/views/common/header_navigation_menu.jsp" --%>	
@@ -28,17 +36,17 @@
 			<div id="logo">
 				<%-- <a href="index.html"><img src="/images/heading.jpg" alt="logo" /></a>  --%>
 				<%-- <a href="index.html"><img src="/images/cq5_2.jpg" alt="logo" height="88" width="250"/></a>  --%>
-				<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/images/logo/coachconnecxion_4_23.jpg" alt="logo" height="99" width="344"/></a>
+				<a href="https://www.coachconnecxion.com/"><img src="${pageContext.request.contextPath}/images/logo/coachconnecxion_4_23.jpg" alt="logo" height="99" width="344"/></a>
 			</div>
 
 			<div id="menutopmost">
 				<%-- <a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | <a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy&nbsp;&nbsp;&nbsp;&nbsp;</a> --%>
 					<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
-					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | 
-					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | 
-					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=tu">Terms Of Use </a> | 
-					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy </a> | 
-					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=ps">Safety Tips&nbsp;&nbsp;&nbsp;&nbsp;</a>
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/about-us">About Us </a> | 
+					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> | 
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/terms-of-use">Terms Of Use </a> | 
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/privacy-policy">Privacy Policy </a> | 
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/safety-tips">Safety Tips&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			</div>
 
 			<div id="menubar">
@@ -47,8 +55,6 @@
 			
 		<div class="separator"></div>
 		
-				<!--  <br><br><h1 style="color:red;">SITE IS UNDER CONSTRUCTION. COME BACK IN A FEW WEEKS TO FIND A COACH OR REGISTER AS A COACH</h1>  -->	
-					
 		<!-- ELASTIC SLIDER -->
 		<section>		
 			<div id="ei-slider" class="ei-slider">

@@ -7,10 +7,10 @@
 <html lang="en">
 
 <head>
-	<title>How the coaching/Training process work</title>
+	<title>Online Personal Trainer - Stress Management Coach - Professional Life Coach | CoachConnecXion</title>
+	<meta name="description" content="CoachConnecXion offers an efficient and easy online system to find the right coaches or clients. You just follow some simple step to select Professional coaches. To find out more, peruse the website, or call @ 630-983-9587" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Overview of how the coaching process works" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
