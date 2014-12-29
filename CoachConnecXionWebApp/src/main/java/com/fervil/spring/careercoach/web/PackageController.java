@@ -11,7 +11,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -28,7 +27,6 @@ import ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils;
 import com.fervil.spring.careercoach.model.domain.AccountSummaryPackage;
 import com.fervil.spring.careercoach.model.domain.PackageDetails;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
-
 import com.fervil.spring.careercoach.model.domain.SubcategoryDetails;
 import com.fervil.spring.careercoach.service.CategoryService;
 import com.fervil.spring.careercoach.service.PackageDetailsService;
@@ -65,7 +63,9 @@ public class PackageController {
 	}
 	
 	@RequestMapping(value = "/packages", method = RequestMethod.GET)
-	public String getPackages(Model model, HttpServletRequest request, org.springframework.web.context.request.WebRequest webRequest) {
+	public String getPackages(Model model, HttpServletRequest request, 
+			org.springframework.web.context.request.WebRequest webRequest,
+			HttpSession session) {
 		log.debug("Received request to display Packages");
 		try{	
 			
@@ -75,6 +75,9 @@ public class PackageController {
 			long userProfileId = -1;
 			if (webRequest.getParameter("profileId") != null ) {
 				userProfileId = Long.valueOf(webRequest.getParameter("profileId"));
+				session.setAttribute("packagesProfileId", userProfileId); //For Breadcrumb
+			} else if (session.getAttribute("packagesProfileId") != null){ //For Breadcrumb
+				userProfileId = Long.valueOf((String)session.getAttribute("packagesProfileId"));
 			} else {
 				//If no profileId is passed, then we assume the current user is trying to view and update his/her packages
 				userProfileId = SystemUtil.getUserProfileId(request, userProfileManager);
@@ -84,6 +87,7 @@ public class PackageController {
 					model.addAttribute("userProfile", getUserProfile());
 					return "userprofile/createuserprofile";
 				}
+				session.setAttribute("packagesProfileId", userProfileId); //For Breadcrumb
 			}
 			//////////////////////////////////////////////////////////////////////////////////////////////
 

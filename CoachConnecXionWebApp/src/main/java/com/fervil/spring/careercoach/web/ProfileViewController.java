@@ -11,6 +11,7 @@ import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.io.IOUtils;
 import org.hibernate.SessionFactory;
@@ -70,24 +71,46 @@ public class ProfileViewController {
 
 	
 	@RequestMapping(value = "/public/profile", method = RequestMethod.GET)
-	public String getProfile(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpServletRequest request) {
+	public String getProfile(Model model, org.springframework.web.context.request.WebRequest webRequest, 
+			HttpServletRequest request, HttpSession session) {
 		log.debug("Received request to show profile");
 
 		try{	
 			long profileId = -1;
 			
-			if (webRequest.getParameter("profileId") == null){
+			// Updated for breadcrumb functionality
+			//if (webRequest.getParameter("profileId") == null){
+
+			if (webRequest.getParameter("BREADCRUMB") != null) {
+				profileId = (Long.valueOf((String)session.getAttribute("profileViewCoachProfileId"))); //Added for breadcruumb
+System.out.println("1111111" + profileId);				
+			}else if (webRequest.getParameter("profileId") == null ){
+System.out.println("222222" + profileId);				
+				//cuin is the current logged in user
 				if (webRequest.getParameter("cuin") == null){
+System.out.println("3333333" + profileId);				
 					return "redirect:users/login";
 				} else { //Don't have profileId but am logged into the system
+System.out.println("444444" + profileId);				
+
+					//This logic is for new members who have created an account but have not yet created a profile
 					profileId = SystemUtil.getUserProfileId(request, userProfileManager);
+System.out.println("555555" + profileId);				
+
 					if (profileId < 1){ //If no profile exists in the system for this user, send him/her to create a profile
+System.out.println("666666" + profileId);				
+
 						return "redirect:/createuserprofile";
 					}
 				}
 			} else { //If here, I have logged in, and have a profileId
-				profileId = Long.valueOf(webRequest.getParameter("profileId"));
+					profileId = Long.valueOf(webRequest.getParameter("profileId"));
+System.out.println("77777" + profileId);				
+					
 			}
+			session.setAttribute("profileViewCoachProfileId", webRequest.getParameter("profileId"));
+
+			//session.setAttribute("coachProfileId", webRequest.getParameter("profileId"));
 			
 			//List<ResumesCertificates> addResumes = addresumeService.getAllResumes();
 			List<ResumesCertificates> addResumes = addresumeService.getResumesById(profileId);

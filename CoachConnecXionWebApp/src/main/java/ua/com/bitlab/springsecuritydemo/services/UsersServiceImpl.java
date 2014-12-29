@@ -71,6 +71,8 @@ public class UsersServiceImpl implements UsersService {
         log.debug("Generate activation code as [" + activationCode + "] for user [" + username + "]");
         userEntity.setCreateDate(new Date());
 
+        System.out.println("NEW DATE VALUE IS USER ENTITY: " + userEntity.getCreateDate());
+        
         log.debug("Create user [" + user + "]");
         long userId = usersDao.save(userEntity);
         log.info("Save to DB user with id [" + userId + "]");

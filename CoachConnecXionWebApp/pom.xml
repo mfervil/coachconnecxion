@@ -59,6 +59,8 @@ Google Emails
 		
 		marc.arthur@coachconnecxion.com ccnxn14$ram 
 		ccnxn14$   77
+		git ccnxn14$
+		jforum  ccnxn14$
 
 AWS Prod DB
 		ccnxnawsprodb
@@ -376,10 +378,11 @@ Gmail contact
                 <_jdbc.username>root</_jdbc.username>
                 <_jdbc.password>14fifi14</_jdbc.password>
 
+<!--  
                 <_aws_prod_jdbc.url>jdbc:mysql://ccnxnawsprodbid.clqxraftqadk.us-east-1.rds.amazonaws.com:3306/careercoach</_aws_prod_jdbc.url>
                 <_aws_prod_jdbc.username>ccnxnawsprodb</_aws_prod_jdbc.username>  
                 <_aws_prod_jdbc.password>cpdcnxn14db$</_aws_prod_jdbc.password>
-
+-->
                 <_aws_prod_v1_jdbc.url>jdbc:mysql://aa1iz6j3sxnd9x9.clqxraftqadk.us-east-1.rds.amazonaws.com:3306/careercoach</_aws_prod_v1_jdbc.url>
                 <_aws_prod_v1_jdbc.username>ccnxnawsprodb</_aws_prod_v1_jdbc.username>  
                 <_aws_prod_v1_jdbc.password>cpdcnxn14db$</_aws_prod_v1_jdbc.password>

@@ -134,6 +134,17 @@ table tr:nth-child(2n) {
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 
+<c:choose>  
+    <c:when test="${profileOfCurrentUser}" >  
+		<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a> <br><br>
+	</c:when>  
+	<c:otherwise>
+		<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a> &gt;&gt;<a href="${pageContext.request.contextPath}/public/coachSelection">New Search</a>
+		&gt;&gt;<a href="${pageContext.request.contextPath}/public/coachSelection?BREADCRUMB=y">Coach List</a><br><br>
+	</c:otherwise>
+</c:choose>
+
+
 	<table style="width: 900px;">
 		<tr>
 			<td style="width: 730px; padding: 5px;">

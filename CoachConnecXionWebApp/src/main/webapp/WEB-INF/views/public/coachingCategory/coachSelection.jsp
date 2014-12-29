@@ -61,6 +61,8 @@
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 	
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a><br><br>
+	
 			<!-- CONTACT FORM -->
 		<form:form method="post" commandName="coachSelection" >
 			  <table style="border-spacing:2px; border-collapse:separate;">

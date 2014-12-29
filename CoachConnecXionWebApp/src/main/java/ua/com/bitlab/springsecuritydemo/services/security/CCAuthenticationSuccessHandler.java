@@ -24,6 +24,7 @@ public class CCAuthenticationSuccessHandler implements AuthenticationSuccessHand
 
 System.out.println("Inside the saved request");
 	if (savedRequest == null) {
+		
 	    response.sendRedirect(request.getContextPath() + "/");
 	}
 	else {

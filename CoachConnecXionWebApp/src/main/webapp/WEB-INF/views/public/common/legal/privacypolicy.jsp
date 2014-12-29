@@ -77,6 +77,8 @@ ul
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 
+<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a><br><br>
+
 <div class=WordSection1>
 
 <h1 style="text-align:center;font-weight: bold;">PRIVACY POLICY</h1><br>

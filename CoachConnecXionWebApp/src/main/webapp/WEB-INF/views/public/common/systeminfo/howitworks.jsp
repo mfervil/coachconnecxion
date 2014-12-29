@@ -51,6 +51,8 @@ p {font-size:16px;}
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 
+<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a><br><br>
+	
 <h1 style="text-align:center;">HOW COACHING WORKS</h1> <br>
 
 <h3 style="text-align:center;"> ARE YOU SOMEONE LOOKING FOR A COACH ?</h3>

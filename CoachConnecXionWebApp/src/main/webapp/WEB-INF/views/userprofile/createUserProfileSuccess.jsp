@@ -27,6 +27,9 @@ span.required {color:red;font-weight:bold}
 <%-- END BODY No Side test --%>
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
+		
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a> &gt;&gt;<a href="${pageContext.request.contextPath}/createuserprofile">User Profile</a><br><br>
+		
 			
 		<!-- CONTACT FORM -->
 		<form:form method="post" commandName="userProfile" enctype="multipart/form-data">

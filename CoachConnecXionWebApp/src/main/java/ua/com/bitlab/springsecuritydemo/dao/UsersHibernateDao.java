@@ -26,7 +26,7 @@ public class UsersHibernateDao implements UsersDao {
 
     @Override
     public long save(UserEntity userEntity) {
-        log.debug("Insert user to DB");
+        log.debug("Insert user to DB ZZZZZZZZZ" + userEntity.getCreateDate());
         return (Long) sessionFactory.getCurrentSession().save(userEntity);
     }
 

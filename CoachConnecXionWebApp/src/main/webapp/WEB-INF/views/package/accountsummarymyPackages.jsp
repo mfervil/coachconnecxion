@@ -61,6 +61,7 @@ table tbody {
 <%-- END BODY No Side test --%>
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a><br><br>
 
 	<%-- 
 	<div style="height: 10px;"></div>

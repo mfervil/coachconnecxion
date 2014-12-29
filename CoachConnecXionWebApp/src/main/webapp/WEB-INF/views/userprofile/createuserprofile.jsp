@@ -71,6 +71,7 @@ label {font-size:14px;}
 <%-- END BODY No Side test --%>
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a><br><br>
 			
 		<!-- CONTACT FORM -->
 		<form:form method="post"  id="form" commandName="userProfile" enctype="multipart/form-data">

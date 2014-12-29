@@ -141,6 +141,7 @@ div#myDialog {
 <%-- END BODY No Side test --%>
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a><br><br>
 
 	<div style="text-align: left; margin-left: 10px;">
 		<input type="hidden" name="success" id="success"

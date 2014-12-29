@@ -102,6 +102,8 @@ text-align:center;
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a> &gt;&gt;<a href="${pageContext.request.contextPath}/viewOrders">My Orders</a><br><br>
+
 <input type="hidden" value="${RatingDone}" name="rating1" id="rating1"/>
 
 <input type="hidden" name="success" id="success" value="${successMessage}"></input>

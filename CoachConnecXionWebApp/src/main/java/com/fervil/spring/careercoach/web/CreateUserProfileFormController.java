@@ -1,7 +1,6 @@
 package com.fervil.spring.careercoach.web;
 
 import java.io.BufferedInputStream;
-
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +12,7 @@ import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
@@ -39,7 +39,6 @@ import com.fervil.spring.careercoach.service.CreateUserProfileValidator;
 import com.fervil.spring.careercoach.service.UserProfileManager;
 import com.fervil.spring.careercoach.util.Constants;
 import com.fervil.spring.careercoach.util.SystemUtil;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.PropertiesCredentials;
@@ -48,7 +47,6 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-
 
 import java.util.UUID;
 
@@ -77,12 +75,17 @@ public class CreateUserProfileFormController {
     private static String uploadFileNamePrefix = "ccxv1";
     
 	@RequestMapping(method = RequestMethod.GET) 
-	public String printHello(ModelMap model, org.springframework.web.context.request.WebRequest webRequest) {
+	public String printHello(ModelMap model, org.springframework.web.context.request.WebRequest webRequest,
+			HttpSession session) {
+//TODO: This code takes you to createUser Profile rather or not your profile has already been created.
+
 		try{
+			long profileId = -1;
 
 			UserProfile userProfile = new UserProfile();
 
-			if (webRequest.getParameter("profileId") == null){
+			//if (webRequest.getParameter("profileId") == null){ //Breadcrumb changes
+			if (webRequest.getParameter("profileId") == null && session.getAttribute("createUserProfileProfileId") == null){
 				userProfile.setModifiedDate(new Date());
 				userProfile.setAccountType(1);
 				userProfile.setUserProfileType(1);
@@ -94,13 +97,24 @@ public class CreateUserProfileFormController {
 				userProfile.setIndustryfocus1(-1);
 				userProfile.setIndustryfocus2(-1);
 				userProfile.setIndustryfocus3(-1);
-				
-				
 			} else{
-				userProfile = userProfileManager.findById(Long.valueOf(webRequest.getParameter("profileId")));
+				if (webRequest.getParameter("profileId") !=null){
+					profileId = Long.valueOf(webRequest.getParameter("profileId"));
+					session.setAttribute("createUserProfileProfileId", profileId);
+					
+				} else {
+					profileId = Long.valueOf((String)session.getAttribute("createUserProfileProfileId"));
+					
+				}				
+				userProfile = userProfileManager.findById(profileId);
+
+				// Breadcrumb changes.  Only item that was in the else clause
+				//userProfile = userProfileManager.findById(Long.valueOf(webRequest.getParameter("profileId")));
 			}
+
+			//model.addAttribute("profileId", webRequest.getParameter("profileId")); //Removed for breadcrumb
 			
-			model.addAttribute("profileId", webRequest.getParameter("profileId"));
+			model.addAttribute("profileId", profileId);
 			model.addAttribute("userProfile", userProfile);
 			return "userprofile/createuserprofile"; 
 			
@@ -121,7 +135,6 @@ public class CreateUserProfileFormController {
 			BindingResult result, SessionStatus status, ModelMap model, HttpServletRequest request, HttpServletResponse response,
 			org.springframework.web.context.request.WebRequest webRequest) {
 		
- 		
 		validator.validate(userProfile, result);
 
 		try {

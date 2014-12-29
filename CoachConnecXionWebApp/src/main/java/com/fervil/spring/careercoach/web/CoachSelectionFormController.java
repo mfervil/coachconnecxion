@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.fervil.spring.careercoach.service.CoachSelectionValidator;
 import com.fervil.spring.careercoach.service.CoachSelectionManager;
 import com.fervil.spring.careercoach.service.UserProfileManager;
@@ -54,17 +57,31 @@ public class CoachSelectionFormController  {
 	//		HttpServletResponse response) throws Exception {
 	@RequestMapping(method = RequestMethod.GET) 
 	//public ModelAndView showCoachSelectionForm(ModelMap model) {
-	public ModelAndView showCoachSelectionForm(Model model) {
+	public ModelAndView showCoachSelectionForm(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
 	ModelAndView mav = new ModelAndView ();
     //Map<String, Object> myModel = new HashMap<String, Object>();
 		
 		try{	
 			
-			CoachSelection coachSelection = new CoachSelection();
-			mav.addObject("coachSelection", coachSelection);
-			mav.setViewName ("public/coachingCategory/coachSelection");
-			return mav;
+			if (webRequest.getParameter("BREADCRUMB") != null && session.getAttribute("coachingCategory") != null){
+				mav.setViewName ("redirect:userprofileList?coachingcategory=" + webRequest.getParameter("coachingCategory") );
+				mav.addObject("coachingCategory", session.getAttribute("coachingCategory"));
+				mav.addObject("coachingSubcategory", session.getAttribute("coachingSubcategory"));
+				mav.addObject("industryExperience", session.getAttribute("industryExperience"));
+				mav.addObject("companyExperience", session.getAttribute("companyExperience"));
+				mav.addObject("coachFirstName", session.getAttribute("coachFirstName"));
+				mav.addObject("coachLastName", session.getAttribute("coachLastName"));
+				mav.addObject("state", session.getAttribute("state"));
+
+				return mav;
+				
+			} else {
+				CoachSelection coachSelection = new CoachSelection();
+				mav.addObject("coachSelection", coachSelection);
+				mav.setViewName ("public/coachingCategory/coachSelection");
+				return mav;
+			}
 			
 		} catch (Exception e) {
 	        String msg = "The request failed. Error " + e;
@@ -80,7 +97,8 @@ public class CoachSelectionFormController  {
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView submitForm( 
 			@ModelAttribute("coachSelection") CoachSelection coachSelection,
-			BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, Model model) {
+			BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
+			Model model, HttpSession session) {
 
 	    //Map<String, Object> myModel = new HashMap<String, Object>();
 		
@@ -105,6 +123,14 @@ public class CoachSelectionFormController  {
 				mav.addObject("coachFirstName", webRequest.getParameter("coachFirstName"));
 				mav.addObject("coachLastName", webRequest.getParameter("coachLastName"));
 				mav.addObject("state", webRequest.getParameter("state"));
+
+				session.setAttribute("coachingCategory", webRequest.getParameter("coachingCategory"));
+				session.setAttribute("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
+				session.setAttribute("industryExperience", webRequest.getParameter("industryExperience"));
+				session.setAttribute("companyExperience", webRequest.getParameter("companyExperience"));
+				session.setAttribute("coachFirstName", webRequest.getParameter("coachFirstName"));
+				session.setAttribute("coachLastName", webRequest.getParameter("coachLastName"));
+				session.setAttribute("state", webRequest.getParameter("state"));
 				
 				return mav;
 			}

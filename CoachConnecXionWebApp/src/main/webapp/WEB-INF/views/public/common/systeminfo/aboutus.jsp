@@ -51,6 +51,8 @@ p {font-size:16px;}
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 
+<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a><br><br>
+
 <div id="CoachSessions" class="vcard">
  <a class="url fn n" href="https://www.coachconnecxion.com/"></a>
  <div class="org">CoachSessions  LLC</div>

@@ -8,8 +8,6 @@
 	</div><!-- #boxed-page-bg -->			
 	<div id="wrapper-boxed-page-bottom"></div>
 	
-	
-	
 	<!-- FOOTER LINE -->
 	<section id="footer-line">
 		<div id="left">
