@@ -98,6 +98,32 @@
 				          <option value="24">College Prep. Testing</option>
 				        </form:select>			    	
 			    	</td>
+<!-- 
+Bus:Business Management
+Bus:Career Change / Enhancement
+Bus:Leadership/Executive
+Bus:Sales
+
+hlth:Diet/Weight Loss
+hlth:Exercise
+hlth:Sports Training
+
+Lrn:College Test Prep
+Lrn:Learning Disability
+
+Mus:Music
+
+Prs:Couples/Family/Relationship
+Prs:Life/Motivational
+Prs:Personal Finance
+Prs:Retirement
+Prs:Stress Management
+
+Remove Team and Group
+Remove Hobby
+Remove Performance
+ -->			    	
+			    	
 			      <td class="rightalign" >Industry Experience: <form:errors path="industryExperience" cssClass="error" /> </td>
 				  <td  class="leftalign">	
 			      <!-- Find complete list from job categories in career builder -->

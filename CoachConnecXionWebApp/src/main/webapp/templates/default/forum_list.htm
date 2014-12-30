@@ -1,6 +1,8 @@
 <#include "header.htm"/>
 <link rel="alternate" type="application/rss+xml" title="RSS" href="${contextPath}/rss/forums${extension}" />
 
+<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a><br><br>
+
 <table width="100%" align="center">
 	<tr>
 		<td width="100%" height="318" valign="top">
@@ -70,7 +72,7 @@
 						<#assign indexNumber = lpi.username?index_of("@")>
 
 						<#if indexNumber == -1>
-							<#assign userEmailSubString = Anonymous>
+							<#assign userEmailSubString = "Anonymous">
 						<#else>
 							<#assign userEmailSubString = lpi.username?substring(0, indexNumber)>
 						</#if>
@@ -119,7 +121,7 @@
 						<#assign indexNumber = lastUser.username?index_of("@")>
 
 						<#if indexNumber == -1>
-							<#assign userEmailSubString = Anonymous>
+							<#assign userEmailSubString = "Anonymous">
 						<#else>
 							<#assign userEmailSubString = lastUser.username?substring(0, indexNumber)>
 						</#if>

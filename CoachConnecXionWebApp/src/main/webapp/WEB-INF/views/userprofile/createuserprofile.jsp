@@ -78,7 +78,7 @@ label {font-size:14px;}
 		<!-- <form action="#" id="page_user_profile_form" method="post"> -->
 		<h3 style="color:red"> ${errorMessage} </h3>
 
-	<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>									
+	<p>Coach Profile</p><span id="siteseal" style="text-align:right"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>									
 	<table style="width: 900px;">
 		<tr>
 			<td style="width: 730px; padding: 5px;">
