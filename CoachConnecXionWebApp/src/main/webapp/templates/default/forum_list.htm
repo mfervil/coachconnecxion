@@ -69,7 +69,11 @@
 							<span class="gensmall"><#if (total > 0)>${total}<#else>${I18n.getMessage("ForumListing.noMessages")}</#if></span>
 						</td>
 
-						<#assign indexNumber = lpi.username?index_of("@")>
+						<#assign indexNumber = -1>
+						
+						<#if lpi.username??>
+							<#assign indexNumber = lpi.username?index_of("@")>
+						</#if>
 
 						<#if indexNumber == -1>
 							<#assign userEmailSubString = "Anonymous">
