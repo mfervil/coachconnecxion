@@ -37,9 +37,15 @@ public class PackageDetailsService {
 
 	public List<AccountSummaryPackage> getPackageSummaryById(long userProfileId)  throws Exception {
 		logger.debug("Retrieving all Packages");
+		
+		String package_Select = "select a.id AS id, a.packageName AS packageName, a.price AS price, a.optOutDays AS optOutDays, "
+				+ " a.PROFILEID AS profileid, (select count(b.id) from packages_sold b where a.id = b.package_details_id) AS totalsold "
+				+ " from packagedetails a  where profileid = " + userProfileId + " order by a.packageName Desc";
+		
 		Session session = sessionFactory.getCurrentSession();
 		List<AccountSummaryPackage> package1=new ArrayList<AccountSummaryPackage>();
-			SQLQuery query = session.createSQLQuery("select id,packageName,price,optOutDays,totalsold from package_info where profileid = " + userProfileId + " order by id Desc");
+			//SQLQuery query = session.createSQLQuery("select id,packageName,price,optOutDays,totalsold from package_info where profileid = " + userProfileId + " order by id Desc");
+			SQLQuery query = session.createSQLQuery(package_Select);
 			query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 			List data = query.list();
 			for (Object object : data) {

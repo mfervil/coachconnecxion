@@ -145,7 +145,7 @@ lable {
 					<tr>
 						<td
 							style="font-size: 14px; text-align: left;"><a
-							href="" style="text-decoration: none">Portfolio</a></td>
+							href="packages?profileId=${profileId}" style="text-decoration: none">Packages</a></td>
 					</tr>
 					<tr>
 						<td

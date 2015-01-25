@@ -84,7 +84,7 @@ label {font-size:14px;}
 		<!-- <form action="#" id="page_user_profile_form" method="post"> -->
 		<h3 style="color:red"> ${errorMessage} </h3>
 
-	<h2 style="text-align: center;">Coach Profile</h2>									
+	<h2 style="text-align: center;">Create/Update Your Coaching Profile</h2>									
 	<table style="width: 900px;">
 		<tr>
 			<td style="width: 730px; padding: 5px;">

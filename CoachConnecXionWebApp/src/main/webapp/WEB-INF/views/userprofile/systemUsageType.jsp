@@ -48,15 +48,11 @@ span.required {color:red;font-weight:bold}
 <%-- <b>The user profile has been created successfully for the customer with ID <c:out value="${model.userProfileId}"/>.</b> 
 <b> <span style="font-size: 1.25em;"> <c:out value="${model.message}"/> </span></b>--%>
 
-<span style="font-size: 1.25em;"> Congratulations! Your profile update completed successfully. </span>
+<span style="font-size: 1.25em;"> What is your main purpose for using the system? </span>
 
-<c:if test="${sessionScope.newusercreated == '1'}">
-	<br> <span style="font-size: 1.25em;"> Next step is to create coaching service packages that customers can buy </span>
-	<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); text-decoration: underline;"> <a href="${pageContext.request.contextPath}/packageAdd">**CLICK HERE TO CREATE YOUR COACHING PACKAGES**</a> </span></b>
-</c:if>
-<c:if test="${sessionScope.newusercreated != '1'}">
-	<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); text-decoration: underline;"> <a href="${pageContext.request.contextPath}/public/profile">**CLICK HERE TO VIEW YOUR UPDATED PROFILE**</a> </span></b>
-</c:if>
+	<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); "> <a href="${pageContext.request.contextPath}/public/profile?cuin=${cuin}" style="color:blue;">**CLICK HERE IF YOU WANT TO COACH OTHERS**</a> </span></b>
+
+	<br><br><b> <span style="font-size: 1.25em; color:red; "> <a href="${pageContext.request.contextPath}/public/createCustomerUserProfile" style="color:blue;">**CLICK HERE IF YOU ARE LOOKING FOR A COACH**</a> </span></b>
 
 </td></tr>
 

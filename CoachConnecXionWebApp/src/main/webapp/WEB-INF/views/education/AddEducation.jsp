@@ -170,7 +170,7 @@ text-align:center;
 					<tr>
 						<td
 							style="font-size: 14px; text-align: left;"><a
-							href="" style="text-decoration: none">Portfolio</a></td>
+							href="packages?profileId=${profileId}" style="text-decoration: none">Packages</a></td>
 					</tr>
 					<tr>
 						<td
@@ -200,12 +200,20 @@ text-align:center;
 							<div id='myDialog'>
 								<h1 style="font-size: 14px; color: green;">${successMessage}</h1>
 								 <br>
-								 Click&nbsp;&nbsp;<a href="educationAdd?profileId=${profileId}" 
-								 style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To create another Education
-								 <br>OR
-								 <br>
-								Click&nbsp;&nbsp;<a href="education?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To continue summary page								
-								<div style="height: 15px;"></div>
+								 <a href="educationAdd?profileId=${profileId}" 
+								 style="font-size: 14px;text-decoration: underline;color:blue;">CREATE ANOTHER EDUCATION</a>
+
+								<c:if test="${sessionScope.newusercreated != '1'}">
+									 <br><br>
+									<a href="education?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">VIEW YOUR EDUCATION SUMMARY</a>								
+									<div style="height: 15px;"></div>
+								</c:if>
+																
+								<c:if test="${sessionScope.newusercreated == '1'}">
+									<br><br> <a href="jobhistoryAdd?profileId=${profileId}"
+										style="font-size: 14px; text-decoration: underline; color: blue;">NEXT >></a>  
+								</c:if>
+								
 							</div>
 						</c:when>
 					</c:choose>
@@ -219,12 +227,16 @@ text-align:center;
 						<table>
 						<tr>
 							<td style="text-align: left; width: 150px;"><form:label
-									path="degreeLevel">Degree Level:</form:label></td>
+									path="degreeLevel">Degree Type:</form:label></td>
 							<td style="text-align: left;width:200px;"><form:select
 									style="width: 202px; size =30; height: 25px;"
 									path="degreeLevel">
-								<form:option value="Master Degree">Master Degree</form:option>
-									<form:option value="Bacher Degree">Bacher Degree</form:option>
+
+								<form:option value="Bacher Degree">Certification</form:option>
+								<form:option value="Bacher Degree">Associate Degree</form:option>
+								<form:option value="Bacher Degree">Bachelor Degree</form:option>
+								<form:option value="Master Degree">Masters</form:option>
+								<form:option value="Master Degree">Doctorate</form:option>
 
 								</form:select>
 								</td><td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage}</h1></td>
@@ -287,25 +299,33 @@ text-align:center;
 						<td></td>
 							<td style="text-align: left;"><input type="submit"
 								style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right;"
-								value="Save Changes" name="submit1" id="submit1" disabled></td>
+								value="Save" name="submit1" id="submit1" disabled colspan="2">
+
+								<c:if test="${sessionScope.newusercreated == '1'}">
+									&nbsp;&nbsp;&nbsp;&nbsp;<a href="jobhistoryAdd?profileId=${profileId}"
+										style="font-size: 14px; text-decoration: underline; color: blue;">SKIP EDUCATION</a>
+								</c:if>								
+							</td>
 						</tr>
 						</table>
 					</form:form>
 
 				
+				<c:if test="${sessionScope.newusercreated != '1'}">
 
-				<table style="margin-left: 0px; margin-top: -31px;">
-					<tr>
-						<td><c:url var="profileUrl" value="/education" /> <form:form
-								commandName="/education" method="GET" action="${profileUrl}">
-
-								<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
-								<input type="submit"
-									style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right;"
-									value="Cancel">
-							</form:form></td>
-					</tr>
-				</table>
+					<table style="margin-left: 0px; margin-top: -31px;">
+						<tr>
+							<td><c:url var="profileUrl" value="/education" /> <form:form
+									commandName="/education" method="GET" action="${profileUrl}">
+	
+									<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
+									<input type="submit"
+										style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right;"
+										value="Cancel">
+								</form:form></td>
+						</tr>
+					</table>
+				</c:if>				
 			</td>
 		</tr>
 	</table>

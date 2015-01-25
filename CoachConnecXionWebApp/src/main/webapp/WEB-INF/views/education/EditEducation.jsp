@@ -158,7 +158,7 @@ text-align:center;
 					<tr>
 						<td
 							style="font-size: 14px; text-align: left;"><a
-							href="" style="text-decoration: none">Portfolio</a></td>
+							href="packages?profileId=${profileId}" style="text-decoration: none">Packages</a></td>
 					</tr>
 					<tr>
 						<td
@@ -206,8 +206,12 @@ text-align:center;
 							<td style="text-align: left;width: 200px;"><form:select
 									style="width: 202px;"
 									path="degreeLevel">
-									<form:option value="Master Degree">Master Degree</form:option>
-									<form:option value="Bacher Degree">Bacher Degree</form:option>
+									
+									<form:option value="Bacher Degree">Certification</form:option>
+									<form:option value="Bacher Degree">Associate Degree</form:option>
+									<form:option value="Bacher Degree">Bachelor Degree</form:option>
+									<form:option value="Master Degree">Masters</form:option>
+									<form:option value="Master Degree">Doctorate</form:option>
 
 								</form:select></td>
 								<td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage}</h1></td>

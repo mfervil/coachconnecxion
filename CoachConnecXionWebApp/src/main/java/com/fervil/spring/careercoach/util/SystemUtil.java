@@ -36,7 +36,7 @@ System.out.println("The user id is" + userId);
 			for(int j=0; j<usrList.size();j++ ){			
 				
 				profileType= usrList.get(j).getUserProfileType();
-				userProfileId = profileType==1?usrList.get(j).getUserProfileId():0;
+				userProfileId = (profileType==1 || profileType==2)?usrList.get(j).getUserProfileId():0;
 				session.setAttribute("userProfileId", userProfileId);
 
 				session.setMaxInactiveInterval(7200);

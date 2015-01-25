@@ -147,16 +147,27 @@ div#myDialog {
 		<input type="hidden" name="success" id="success"
 			value="${successMessage}"></input> <input type="hidden"
 			name="success1" id="success1" value="3"></input>
+			
+		<c:if test="${sessionScope.newusercreated == '1'}">
+			<p><b> ENTER PACKAGES FOR CUSTOMERS TO PURCHASE</b></p>
+		</c:if>
+		
 		<c:choose>
 			<c:when test="${not empty successMessage}">
 				<div id='myDialog'>
 					<h1 style="font-size: 14px; color: green;">${successMessage}</h1>
-					<br> Click&nbsp;&nbsp;<a href="packageAdd"
-						style="font-size: 14px; text-decoration: underline; color: blue;">here</a>&nbsp;&nbsp;To
-					create another package <br>OR <br> Click&nbsp;&nbsp;<a
-						href="packages"
-						style="font-size: 14px; text-decoration: underline; color: blue;">here</a>&nbsp;&nbsp;To
-					continue summary page
+					<br><br> <a href="packageAdd"
+						style="font-size: 14px; text-decoration: underline; color: blue;">CREATE ANOTHER PACKAGE</a>
+						
+					<c:if test="${sessionScope.newusercreated != '1'}">
+							<br><br><a href="packages" style="font-size: 14px; text-decoration: underline; color: blue;">VIEW YOUR PACKAGES</a>
+					</c:if>
+					
+					<c:if test="${sessionScope.newusercreated == '1'}">
+						<br><br> <a href="educationAdd?profileId=${userProfileId}"
+							style="font-size: 14px; text-decoration: underline; color: blue;">NEXT >> </a>  
+					</c:if>
+					
 					<div style="height: 15px;"></div>
 				</div>
 			</c:when>
@@ -176,29 +187,6 @@ div#myDialog {
 				<form:input
 						path="packageName" size="30" maxlength="50" cssStyle="width: 197px;"/><font style="font-size: 14px; color: red;margin-left: 2px;">${errorMessage1}</font></td>
 			</tr>
-
-<%-- 
-			<tr style="text-align: left;">
-				<td style="text-align: left; width: 150px;"><form:label
-						path="categoryIndex">Category </form:label></td>
-				<td style="text-align: left;"><form:select path="categoryIndex" style="width:202px;"
-						id="categoryIndex">
-						<form:option value="-1">Select from list</form:option>
-						<form:options items="${categoryId}" />
-					</form:select><font style="font-size: 14px; color: red;margin-left: 2px;">${errorMessage2}</font></td>
-			</tr>
-
-			<tr style="text-align: left;">
-				<td style="text-align: left; width: 150px;"><form:label
-						path="subcategoryIndex">Subcategory </form:label></td>
-				<td style="text-align: left;"><form:select
-						path="subcategoryIndex" id="subcategoryIndex" style="width:202px;">
-						<form:option value="-1" label="Select from list"></form:option>
-						<form:options items="${subcategoryId}" itemValue="id"
-							itemLabel="subCategoryName"></form:options>
-					</form:select><font style="font-size: 14px; color: red;margin-left: 2px;">${errorMessage3}</font></td>
-			</tr>
---%>
 
 			<tr style="text-align: left;">
 				<td style="text-align: left; width: 150px;"><form:label
@@ -229,42 +217,34 @@ div#myDialog {
 				<td style="text-align: left;"><font style="font-size: 14px; color: red;margin-left: -35px;">${errorMessage6}</font></td>
 			</tr>
 
-<%-- 
-			<tr style="text-align: left;">
-				<td style="text-align: left; width: 150px;"><form:label
-						path="optOutDays">Opt out days </form:label></td>
-				<td style="text-align: left;"><form:select path="optOutDays" style="width:202px;">
-						<form:option value="-1">Select from list</form:option>
-						<form:option value="1">1</form:option>
-						<form:option value="2">2</form:option>
-						<form:option value="3">3</form:option>
-						<form:option value="4">4</form:option>
-						<form:option value="5">5</form:option>
-						<form:option value="6">6</form:option>
-						<form:option value="7">7</form:option>
-						<form:option value="8">8</form:option>
-						<form:option value="9">9</form:option>
-						<form:option value="10">10</form:option>
-						<form:option value="11">11</form:option>
-						<form:option value="12">12</form:option>
-						<form:option value="13">13</form:option>
-						<form:option value="14">14</form:option>
-						<form:option value="15">15</form:option>
-					</form:select><font style="font-size: 14px; color: red;margin-left: 2px;">${errorMessage7}</font></td>
-			</tr>
---%>
 			</form:form>
-			<tr >
-				<td></td>
-				<td style="text-align: left; width: 150px;"><input
-					type="submit" value="Submit" name="submit1" id="submitButton"
-					style="text-decoration: none; font-size: 14px; background-color: lightblue;" />
-					&nbsp;&nbsp;
-						<input type="submit" value="Cancel" id="cancelButton"
-							style="text-decoration: none; font-size: 14px; background-color: lightblue;" />
-				</td>
-			</tr>
 
+			<c:if test="${sessionScope.newusercreated == '1'}">
+			
+				<tr >
+					<td></td>
+					<td style="text-align: left; width: 150px;"><input
+						type="submit" value="NEXT >>" name="submit1" id="submitButton"
+						style="text-decoration: none; font-size: 14px; background-color: lightblue;" />
+					</td>
+				</tr>
+			</c:if>
+
+			<c:if test="${sessionScope.newusercreated != '1'}">
+			
+				<tr >
+					<td></td>
+					<td style="text-align: left; width: 150px;"><input
+						type="submit" value="Submit" name="submit1" id="submitButton"
+						style="text-decoration: none; font-size: 14px; background-color: lightblue;" />
+						&nbsp;&nbsp;
+							<input type="submit" value="Cancel" id="cancelButton"
+								style="text-decoration: none; font-size: 14px; background-color: lightblue;" />
+					</td>
+				</tr>
+			</c:if>
+
+			
 		</table>
 	<c:url var="cancelUrl" value="/packages" />
 	<form:form method="get" action="${cancelUrl}" commandName="/packages" id="cancelForm">

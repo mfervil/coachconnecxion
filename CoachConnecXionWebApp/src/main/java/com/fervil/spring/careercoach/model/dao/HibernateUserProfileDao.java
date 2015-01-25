@@ -152,7 +152,9 @@ public class HibernateUserProfileDao implements UserProfileDao {
 				CRITERIA += CRITERIA.contains("where")?" and ":" where ";
 				CRITERIA = CRITERIA + " state = '" + state + "' ";
 			}
-			
+
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			CRITERIA = CRITERIA + " account_type = 1";
 			
 			String sql = " select u.city, u.state, u.user_profile_id, u.language, u.display_name, u.coaching_category, u.overview, u.profilepicture, u.profilepicturestring, u.profile_picture_type, " +
 			" (select c.coaching_category_name from coaching_category c where u.coachingcategory1 = c.coaching_category_id) coaching_category_name1, " +

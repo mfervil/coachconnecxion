@@ -41,13 +41,13 @@
                     <dd><form:input path="username" cssClass="text"/><form:errors path="username" cssClass="error" /></dd>
 				--%>
                     <dt><label for="email">Email<span class="r">*</span></label></dt>
-                    <dd><form:input path="email" cssClass="text"/><form:errors path="email" cssClass="error" /></dd>
+                    <dd><form:input size="30" path="email" cssClass="text"/><form:errors path="email" cssClass="error" /></dd>
 
                     <dt><label for="password">Password<span class="r">*</span></label></dt>
-                    <dd><form:input path="password" cssClass="text" type="password"/><form:errors path="password" cssClass="error" /></dd>
+                    <dd><form:input size="30" path="password" cssClass="text" type="password"/><form:errors path="password" cssClass="error" /></dd>
 
                     <dt><label for="confirmedPassword">Confirm password<span class="r">*</span></label></dt>
-                    <dd><form:input path="confirmedPassword" cssClass="text" type="password"/><form:errors path="confirmedPassword" cssClass="error" /></dd>
+                    <dd><form:input size="30" path="confirmedPassword" cssClass="text" type="password"/><form:errors path="confirmedPassword" cssClass="error" /></dd>
                 </dl>
             </div>
             <br>

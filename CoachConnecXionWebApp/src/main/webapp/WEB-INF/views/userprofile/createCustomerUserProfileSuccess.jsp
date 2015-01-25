@@ -50,6 +50,9 @@ span.required {color:red;font-weight:bold}
 
 <span style="font-size: 1.25em;"> Congratulations! Your profile update completed successfully. </span>
 
+	<br><br> <span style="font-size: 1.25em;"> Feel free to browse the site to find the coach to help you get to the next step </span>
+
+<%-- 
 <c:if test="${sessionScope.newusercreated == '1'}">
 	<br> <span style="font-size: 1.25em;"> Next step is to create coaching service packages that customers can buy </span>
 	<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); text-decoration: underline;"> <a href="${pageContext.request.contextPath}/packageAdd">**CLICK HERE TO CREATE YOUR COACHING PACKAGES**</a> </span></b>
@@ -57,6 +60,7 @@ span.required {color:red;font-weight:bold}
 <c:if test="${sessionScope.newusercreated != '1'}">
 	<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); text-decoration: underline;"> <a href="${pageContext.request.contextPath}/public/profile">**CLICK HERE TO VIEW YOUR UPDATED PROFILE**</a> </span></b>
 </c:if>
+--%>
 
 </td></tr>
 

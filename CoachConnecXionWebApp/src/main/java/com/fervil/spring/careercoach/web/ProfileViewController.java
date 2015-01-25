@@ -70,6 +70,43 @@ public class ProfileViewController {
 	private PackageDetailsService packageDetailsService;
 
 	
+	
+	@RequestMapping(value = "/userprofile/systemUsageType", method = RequestMethod.GET)
+	public String getUsageType(Model model, org.springframework.web.context.request.WebRequest webRequest, 
+			HttpServletRequest request, HttpSession session) {
+		log.debug("Received request to show systemUsateType");
+
+		try{
+			return "userprofile/systemUsageType";
+		} catch (Exception e) {
+	        String msg = "ProfileViewController:systemUsageType -- The request failed. Error " + e;
+	        log.error(msg, e);
+			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+			return "public/common/error/errorpage";
+		}	
+    }	
+		
+	@RequestMapping(value = "/public/createCustomerUserProfile", method = RequestMethod.GET)
+	public String createCustomerUserProfile(Model model, org.springframework.web.context.request.WebRequest webRequest, 
+			HttpServletRequest request, HttpSession session) {
+		log.debug("Received request to show createCustomerUserProfile");
+
+		try{
+			
+			//if (session.getAttribute("newusercreated").toString().equals("1") ) {
+			return "redirect:/createcustomeruserprofile";
+			//return "userprofile/createCustomerUserProfile";
+			//}	
+		} catch (Exception e) {
+	        String msg = "ProfileViewController:createCustomerUserProfile -- The request failed. Error " + e;
+	        log.error(msg, e);
+			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+			return "public/common/error/errorpage";
+		}	
+    }	
+	
+	
+		
 	@RequestMapping(value = "/public/profile", method = RequestMethod.GET)
 	public String getProfile(Model model, org.springframework.web.context.request.WebRequest webRequest, 
 			HttpServletRequest request, HttpSession session) {
@@ -82,7 +119,7 @@ public class ProfileViewController {
 			//if (webRequest.getParameter("profileId") == null){
 
 			if (webRequest.getParameter("BREADCRUMB") != null) {
-				profileId = (Long.valueOf((String)session.getAttribute("profileViewCoachProfileId"))); //Added for breadcruumb
+				profileId = (Long.valueOf(session.getAttribute("profileViewCoachProfileId").toString() )); //Added for breadcruumb
 System.out.println("1111111" + profileId);				
 			}else if (webRequest.getParameter("profileId") == null ){
 System.out.println("222222" + profileId);				
@@ -108,6 +145,10 @@ System.out.println("666666" + profileId);
 System.out.println("77777" + profileId);				
 					
 			}
+			
+			//This attribute is used when a new user is creating a profile. After the user creates a profile, we want to remove them from session
+			session.removeAttribute("newusercreated");		
+			
 			session.setAttribute("profileViewCoachProfileId", webRequest.getParameter("profileId"));
 
 			//session.setAttribute("coachProfileId", webRequest.getParameter("profileId"));

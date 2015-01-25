@@ -11,23 +11,27 @@
 							-->
 						</ul>
 					</li>
-					<li><a href="blog-small.html">COACHES</a>
+					<li><a href="#">COACHES</a>
 						<ul>	
 							<%-- <li><a href="${pageContext.request.contextPath}/users/create?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">REGISTER AS A COACH</a></li> --%>
 							<li><a href="${pageContext.request.contextPath}/public/profile?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">VIEW / CREATE MY PROFILE</a></li>
-							<li><a href="${pageContext.request.contextPath}/packageAdd?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">CREATE MY PACKAGE</a></li>
-							<li><a href="${pageContext.request.contextPath}/packages?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">VIEW MY PACKAGES</a></li>
+							<%-- <li><a href="${pageContext.request.contextPath}/packageAdd?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">CREATE MY PACKAGE</a></li> --%>
+							<li><a href="${pageContext.request.contextPath}/packages?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">VIEW / CREATE PACKAGES</a></li>
 							<li><a href="${pageContext.request.contextPath}/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>">VIEW REQUESTS</a></li>
-							<li><a href="${pageContext.request.contextPath}/forums/list.page">Community Discussions</a></li>
 							<!--  <li><a href="${pageContext.request.contextPath}/public/information?type=co">COACHING OVERVIEW</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/information?type=cf">FAQ</a></li>
 							 -->
 						</ul>
 					</li>
-					<li><a href="${pageContext.request.contextPath}/public/information?type=hw">HOW IT WORKS</a></li>
+					<li><a href="${pageContext.request.contextPath}/how-it-works">HOW IT WORKS</a></li>
 					<%-- <li><a href="${pageContext.request.contextPath}/public/information?type=nw">NEWS</a></li> --%>
-					<li> </li>
-					<li><a href="${pageContext.request.contextPath}/users/login">SIGN IN-REGISTER</a></li>
+					<li><a href="${pageContext.request.contextPath}/users/login">SIGN IN</a>
+						<ul>
+							<li><a href="${pageContext.request.contextPath}/users/create">REGISTER</a></li>
+							<li><a href="${pageContext.request.contextPath}/users/login">SIGN IN</a></li>
+						</ul>
+					</li>	
+					<li><a href="${pageContext.request.contextPath}/forums/list.page">DISCUSSIONS</a></li>
 				</ul>
 				<!-- 
 				<select id="responsive-menu">

@@ -146,6 +146,12 @@ text-align:center;
 		
 		<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
 
+			<c:if test="${sessionScope.newusercreated == '1'}">
+				<br> Done with Education: Click&nbsp;&nbsp;<a href="jobhistoryAdd?profileId=${profileId}"
+					style="font-size: 14px; text-decoration: underline; color: blue;">here</a>&nbsp;&nbsp;To
+					enter job history.  
+			</c:if>
+
 			<table>
 				<tr>
 					<td><input type="submit" value="Add Education"

@@ -21,7 +21,9 @@ import ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils;
 import ua.com.bitlab.springsecuritydemo.services.security.UserSecurityBean;
 import ua.com.bitlab.springsecuritydemo.web.beans.WebUser;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+
 import java.util.List;
 
 
@@ -48,7 +50,7 @@ public class UsersController {
     }    
     
     @RequestMapping(value = "create", method = RequestMethod.POST)
-    public String create(@Valid WebUser user, final BindingResult result, final Model model ) {
+    public String create(@Valid WebUser user, final BindingResult result, final Model model) {
         //public String create(@Valid WebUser user, Model model, final BindingResult result) {
 
     	String errorMsg = "";
@@ -88,6 +90,8 @@ public class UsersController {
         log.debug("Creating user " );
         try {
             usersManagerService.createUser(user);
+           
+            
         } catch (UserServiceException e) {
         	System.out.println("Error occured in UserServiceException");
             log.error("Failed to create new user user '" + user.getUsername() + "'. Error: " + e, e);
@@ -164,7 +168,7 @@ public class UsersController {
     
     
     @RequestMapping(value = "activate", method = RequestMethod.GET)
-    public String activate(long id, String code, Model model) {
+    public String activate(long id, String code, Model model, HttpSession session) {
         log.debug("Activating user with id [" + id + "] and activation code [" + code + "]");
         if (StringUtils.isBlank(code)) {
             log.error("Parameter  activation code cannot be empty.");
@@ -183,6 +187,9 @@ public class UsersController {
             model.addAttribute("message", "SYSTEM ERROR:::There was a problem activating your account.  Please try again later.");
         }
         log.info("User [" + id + "] activated");
+
+        session.setAttribute("newusercreated", "1"); 
+        
         return "users/activate";
     }
 
