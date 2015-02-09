@@ -1785,5 +1785,200 @@ p.tags{
 #carousel .overview li img{ float: left; width: 189px; height: 105px; padding: 1px; border: 1px solid #dedede; }
 #carousel ul{ width: 52px; margin: 0px auto;}
 
+/*===============13-01-14 Elance koyel===================*/
 
+.login-card {
+  padding: 40px;
+  width: auto;
+  background-color: #F7F7F7;
+  margin: 30px auto 10px;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.login-card h1 {
+  font-weight: 100;
+  text-align: center;
+  font-size: 2.3em;
+}
+
+.login-card input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.login-card input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.login-card input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.login {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.login-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  background-color: #0098db;
+  text-transform:uppercase;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.login-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #727377;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.login-card a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-card a:hover {
+  opacity: 1;
+}
+
+.login-help {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+#menutopmost {
+	margin:0 0 15px 0;
+	text-align:center;
+}
+
+/*messege*/
+.content-wrap {
+	padding:15px 0;
+}
+
+.msg_box {
+	background:#ccc;
+	border:1px dashed #bfbebe;
+	margin:0 0 10px 0;
+}
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+
+.row-top {
+	background:#eee;
+	padding:5px;
+}
+
+.row-top span {
+	width:auto;
+	display:block;
+	float:none;
+}
+
+.row-top strong {
+	width:auto;
+	display:block;
+	float:none;
+}
+
+.row-top em {
+	width:auto;
+	display:block;
+	float:none;
+	text-align:left;
+}
+
+.filter-row {
+	background:#f3f1f1;
+	padding:5px;
+	border-top:1px solid #e4e4e4;
+}
+
+.filter-row a {
+	background: url(../images/arrow-down.png) no-repeat right center;
+	display:block;
+	text-align:left;
+	color:#a53692;
+	padding:0 15px 0 0;
+}
+
+.detail-msg {
+	background:#fff;
+	padding:10px;
+	border-top:1px solid #e4e4e4;
+	border-bottom:1px solid #e4e4e4;
+}
+
+.detail-msg strong {
+	color:#333;
+	width:auto;
+	display:block;
+	float:none;
+}
+
+.para {
+	width:auto;
+	float:none;
+}
+
+.para p {
+	font-size:12px;
+	line-height:18px;
+	padding:0 0 10px 0;
+}
+
+.detail-msg small {
+	width:auto;
+	display:block;
+	float:none;
+	text-align:left;
+	color:#0098db;
+	font-style:italic;
+}
 

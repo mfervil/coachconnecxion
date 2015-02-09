@@ -84,6 +84,7 @@ public class HibernatePaymentInformationDao implements PaymentInformationDao {
 			return ((List<PaymentInformation>) list);
 
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw e;
 		} finally {
 			session.close();
@@ -98,6 +99,25 @@ public class HibernatePaymentInformationDao implements PaymentInformationDao {
 			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
 					PaymentInformation.class);
 			
+			String sql = " Select pi.id orderid, pi.email toemail, up.user_profile_id toprofileid, up.firstname tofirstname, up.display_name todisplayname "
+					+ ", pd.PROFILEID fromprofileid, up1.email fromemail , up1.firstname fromfirstname, up1.display_name fromdisplayname "
+					+ ", pi.phone_Number1, pi.phone_Number2  "
+					+ ", pi.phone_Number3 , pi.first_Name  "
+					+ ", pi.last_Name, pi.street1  "
+					+ ", pi.street2  "
+					+ ", pi.city  "
+					+ ", pi.state  "
+					+ ", pi.zip, pi.order_Description, pi.package_Price  "
+					+ ", pi.expiration_Month_Value, pi.expiration_Year_Value, pi.state_Value  "
+					+ ", pi.package_Name , pi.currentdate  "
+					+ " from packagedetails pd, payment_information pi, user_profile up, user_profile up1  "
+					+ " Where pd.id = pi.package_Id  "
+					+ " and up.email = pi.email  "
+					+ " and up1.user_profile_id = pd.PROFILEID  "
+		 			+ " and pd.profileId = " + coachUserProfileId
+					+ " order by pi.currentdate desc  ";
+			
+/*			
 			String sql = " Select pi.email , pi.phone_Number1, pi.phone_Number2 "
 			+ ", pi.phone_Number3 , pi.first_Name "
 			+ ", pi.last_Name, pi.street1 "
@@ -111,35 +131,7 @@ public class HibernatePaymentInformationDao implements PaymentInformationDao {
 			+ " Where pd.id = pi.package_Id "
 			+ " and pd.profileId = " + coachUserProfileId
 			+ " order by pi.currentdate desc";
-
-/*			
-			String sql = " Select userProfileId , phone, displayName "
-			+ ", userProfileType , user_user_id "
-			+ ", accountType, email "
-			+ ", coachingcategory1 "
-			+ ",  coachingcategory2 "
-			+ ", coachingcategory3 "
-			+ ", industryfocus1, industryfocus2, industryfocus3 "
-			+ ", companyexperience1, companyexperience2, companyexperience3 "
-			+ ", address , apartment, city "
-			+ ", state, zipcode=, overview "
-			+ ", overview, serviceDescription "
-			+ ", skillsExpertise " 
-			+ ", summaryOfHighestPosition "
-			+ ", companyOfHighestPosition "
-			+ ", hourlyRate, paymentTerms "
-			+ ", paymentTerms, keywords "
-			+ ", modifiedDate , coaching_category "
-			+ ", company_experience "
-			+ ", firstname , middleinitial "
-			+ ", lastname, language "
-			+ ", countryname "
-			+ ", profilepicture, profile_picture_type "
-			+ ", profile_picture_name, video_url "
-			+ " from PackageDetails pd, PaymentInformation pi "
-			+ " Where pd.id = pi.packageId "
-			+ " and pd.profileId = " + coachUserProfileId;		
-*/			
+*/
 			
 			log.info(" HibernatePaymentInformation:findPurchasedPackages " + sql);
 
@@ -152,6 +144,7 @@ public class HibernatePaymentInformationDao implements PaymentInformationDao {
 			return ((List<PaymentInformation>) list);
 
 		} catch (Exception e) {
+			e.printStackTrace();
 			// tx.rollback();
 			throw e;
 		}

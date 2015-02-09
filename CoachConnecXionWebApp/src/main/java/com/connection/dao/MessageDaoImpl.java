@@ -1,0 +1,363 @@
+package com.connection.dao;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import org.hibernate.Criteria;
+import org.hibernate.FlushMode;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.StatelessSession;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.CriteriaSpecification;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.LogicalExpression;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.mapping.Array;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import com.connection.model.Attachment;
+import com.connection.model.Customer;
+import com.connection.model.Message;
+import com.connection.model.UserAttachment;
+import com.connection.model.Usermessage;
+@Repository("messageDao")
+@Scope("prototype")
+public class MessageDaoImpl implements MessageDao {
+	@Autowired(required=false)
+	private SessionFactory sessionFactory;
+
+	public Usermessage saveUserMessage(Usermessage message2){
+		System.out.println("BEFORE SAVE "+message2.getDescription());
+		Set<UserAttachment> attachments=new HashSet<UserAttachment>();
+		attachments=message2.getUserattachment();
+		Iterator<UserAttachment> iterator=attachments.iterator();
+		String extension="";
+		/*while (iterator.hasNext()) {
+			extension=String.valueOf(iterator.next().getAttachmentname());
+			System.out.println("Extension-------------------"+extension);
+		}*/
+		StatelessSession session=sessionFactory.openStatelessSession();
+		//Transaction transaction=session.beginTransaction();
+		try{
+		session.insert(message2);
+		
+		//Set<Attachment> attachments=new HashSet<Attachment>();
+		//attachments=(Set<Attachment>) message2.getAttachment(); 
+		//session.save(message2);
+		//Iterator<Attachment> iterator=attachments.iterator();
+		
+		
+		
+		while(iterator.hasNext()){
+			
+			//Session session=sessionFactory.getCurrentSession();
+		//	session.setFlushMode(FlushMode.COMMIT);
+			//Transaction transaction=session.beginTransaction();
+		UserAttachment attachment=iterator.next();
+		try{
+		attachment.setMessageid(message2); 
+		session.insert(attachment);
+		//transaction.commit(); 
+		//session.
+		}catch(Exception e){
+			e.printStackTrace();
+			//transaction.rollback();
+		}
+		
+	}
+	
+		
+		
+		
+		System.out.println("CUSTOMER ID "+message2.getMessageid());  
+		//transaction.commit();
+		session.close();
+		}catch(Exception e){
+			e.printStackTrace();
+			//transaction.rollback();
+		}
+		return message2;     
+		
+	}
+	
+	public Message saveMessage(Message message2) {
+		System.out.println("BEFORE SAVE "+message2.getDescription());
+		Set<Attachment> attachments=new HashSet<Attachment>();
+		attachments=message2.getAttachment();
+		Iterator<Attachment> iterator=attachments.iterator();
+		String extension="";
+		/*while (iterator.hasNext()) {
+			extension=String.valueOf(iterator.next().getAttachmentname());
+			System.out.println("Extension-------------------"+extension);
+		}*/
+		StatelessSession session=sessionFactory.openStatelessSession();
+		//Transaction transaction=session.beginTransaction();
+		try{
+		session.insert(message2);
+		
+		//Set<Attachment> attachments=new HashSet<Attachment>();
+		//attachments=(Set<Attachment>) message2.getAttachment(); 
+		//session.save(message2);
+		//Iterator<Attachment> iterator=attachments.iterator();
+		
+		
+		
+		while(iterator.hasNext()){
+			
+			//Session session=sessionFactory.getCurrentSession();
+		//	session.setFlushMode(FlushMode.COMMIT);
+			//Transaction transaction=session.beginTransaction();
+		Attachment attachment=iterator.next();
+		try{
+		attachment.setMessageid(message2); 
+		session.insert(attachment);
+		//transaction.commit(); 
+		//session.
+		}catch(Exception e){
+			e.printStackTrace();
+			//transaction.rollback();
+		}
+	}
+	
+		
+		
+		
+		System.out.println("CUSTOMER ID "+message2.getMessageid());  
+		//transaction.commit();
+		session.close();
+		}catch(Exception e){
+			e.printStackTrace();
+			//transaction.rollback();
+		}
+		return message2;     
+		
+	}
+	public Message saveAttachment(Message message2){
+		
+		
+		//session.beginTransaction();
+		//session.flush();
+		
+		System.out.println("ID OF MESSAGE:- "+message2.getMessageid());
+			Set<Attachment> attachments=new HashSet<Attachment>();
+			attachments=(Set<Attachment>) message2.getAttachment(); 
+			//session.save(message2);
+			Iterator<Attachment> iterator=attachments.iterator();
+			
+			while(iterator.hasNext()){
+				
+					Session session=sessionFactory.getCurrentSession();
+					session.setFlushMode(FlushMode.COMMIT);
+					//Transaction transaction=session.beginTransaction();
+				Attachment attachment=iterator.next();
+				try{
+				attachment.setMessageid(message2); 
+				session.save(attachment);
+				//transaction.commit(); 
+				//session.
+				}catch(Exception e){
+					e.printStackTrace();
+					//transaction.rollback();
+				}
+			}
+			
+		
+		return message2;
+		
+	}
+
+	public Usermessage saveUserAttachment(Usermessage message2){
+		
+		
+		//session.beginTransaction();
+		//session.flush();
+		
+		System.out.println("ID OF MESSAGE:- "+message2.getMessageid());
+			Set<UserAttachment> attachments=new HashSet<UserAttachment>();
+			attachments=(Set<UserAttachment>) message2.getUserattachment();    
+			//session.save(message2);
+			Iterator<UserAttachment> iterator=attachments.iterator();
+			
+			while(iterator.hasNext()){
+				
+					Session session=sessionFactory.getCurrentSession();
+					session.setFlushMode(FlushMode.COMMIT);
+					//Transaction transaction=session.beginTransaction();
+				UserAttachment attachment=iterator.next();
+				try{
+				attachment.setMessageid(message2); 
+				session.save(attachment);
+				//transaction.commit(); 
+				//session.
+				}catch(Exception e){
+					e.printStackTrace();
+					//transaction.rollback();
+				}
+			}
+			
+		
+		return message2;
+		
+	}
+
+	
+
+	@SuppressWarnings("unchecked")
+	public List<Message> getUserMessages(Customer fromCustomer, Customer toCustomer) { 
+		List<Message> messages=new ArrayList<Message>();
+		System.out.println("################################## getUserMessages ################################"); 
+		//Session session=sessionFactory.openSession(); 
+		
+		
+		Session session=sessionFactory.getCurrentSession();  
+		
+		//session.flush();
+		//session.clear();
+	//	session.close();
+		//Transaction transaction=session.beginTransaction();
+		//transaction.begin();
+		try{
+		Criteria crit = session.createCriteria(Message.class); 
+		
+		Criterion touser = Restrictions.eq("touser",toCustomer); 
+		Criterion fromuser = Restrictions.eq("fromuser", fromCustomer);    
+		LogicalExpression andExp = Restrictions.and(touser,fromuser); 
+		Criterion touser2 = Restrictions.eq("touser",fromCustomer ); 
+		Criterion fromuser2 = Restrictions.eq("fromuser", toCustomer);     
+		
+		LogicalExpression andExp1 = Restrictions.and(fromuser2,touser2); 
+		LogicalExpression orExp = Restrictions.or(andExp,andExp1); 
+		crit.add(orExp);    
+		crit.addOrder(Order.desc("date"));
+		crit.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY); 
+		
+		
+		messages.addAll((List<Message>)crit.list()); 
+		//transaction.commit(); 
+		}catch(Exception e){
+			//transaction.rollback();
+		}
+		//transaction.commit(); 
+		
+		return messages;
+		
+	}
+
+	@Override
+	public List<Message> getUserMessagesUnRead(Customer fromCustomer,
+			Customer toCustomer) {
+		List<Message> messages=new ArrayList<Message>();
+		
+		Session session=sessionFactory.getCurrentSession();
+		session.flush();
+		Criteria crit = session.createCriteria(Message.class); 
+		
+		Criterion touser = Restrictions.eq("touser",toCustomer); 
+		Criterion fromuser = Restrictions.eq("fromuser", fromCustomer);    
+		LogicalExpression andExp = Restrictions.and(touser,fromuser); 
+		Criterion touser2 = Restrictions.eq("touser",fromCustomer ); 
+		Criterion fromuser2 = Restrictions.eq("fromuser", toCustomer);     
+		Criterion unRead = Restrictions.eq("read_status", "1");    
+		LogicalExpression andExp1 = Restrictions.and(fromuser2,touser2); 
+		LogicalExpression orExp = Restrictions.or(andExp,andExp1); 
+		LogicalExpression totalAnd=Restrictions.and(orExp,unRead);
+		crit.add(totalAnd);     
+		crit.addOrder(Order.desc("date"));
+		crit.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY); 
+		
+		System.out.println(crit.list());
+		
+		return messages;
+	}
+
+	@Override
+	public List<Usermessage> getUserMessagesByProfileId (long orderid) {
+		List<Usermessage> messages=new ArrayList<Usermessage>();
+		System.out.println("################################## getUserMessagesByProfileId ################################"); 
+		//Session session=sessionFactory.openSession(); 
+		
+		Session session=sessionFactory.getCurrentSession();  
+		
+		//session.flush();
+		//session.clear();
+	//	session.close();
+		//Transaction transaction=session.beginTransaction();
+		//transaction.begin();
+		try{
+		Criteria crit = session.createCriteria(Usermessage.class); 
+
+		System.out.println("getUserMessagesByProfileId:: The profile info is: " + orderid);
+/*		
+		Criterion touser = Restrictions.eq("toprofileid", toProfileId); 
+		Criterion fromuser = Restrictions.eq("fromprofileid", fromProfileId);    
+		LogicalExpression andExp = Restrictions.and(touser,fromuser); 
+		Criterion touser2 = Restrictions.eq("toprofileid",fromProfileId ); 
+		Criterion fromuser2 = Restrictions.eq("fromprofileid", toProfileId);     
+		
+		LogicalExpression andExp1 = Restrictions.and(fromuser2,touser2); 
+		LogicalExpression orExp = Restrictions.or(andExp,andExp1); 
+		crit.add(orExp);    
+*/
+		Criterion crtorderid = Restrictions.eq("orderid", orderid); 
+		crit.add(crtorderid);    
+		
+		crit.addOrder(Order.desc("date"));
+		crit.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY); 
+		
+		messages.addAll((List<Usermessage>)crit.list()); 
+		//transaction.commit(); 
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println("The exception is: " + e.getMessage() );
+			//transaction.rollback();
+		}
+		//transaction.commit(); 
+		
+		return messages;
+	}
+
+	@Override
+	public List<Message> getUserMessagesUnReadByProfileId(long orderid) {
+		List<Message> messages=new ArrayList<Message>();
+		
+		Session session=sessionFactory.getCurrentSession();
+		session.flush();
+		Criteria crit = session.createCriteria(Message.class); 
+		
+/*		
+		Criterion touser = Restrictions.eq("toprofileid",toprofileid); 
+		Criterion fromuser = Restrictions.eq("fromprofileid", fromprofileid);    
+		LogicalExpression andExp = Restrictions.and(touser,fromuser); 
+		Criterion touser2 = Restrictions.eq("toprofileid",fromprofileid ); 
+		Criterion fromuser2 = Restrictions.eq("fromprofileid", toprofileid);     
+		Criterion unRead = Restrictions.eq("read_status", "1");    
+		LogicalExpression andExp1 = Restrictions.and(fromuser2,touser2); 
+		LogicalExpression orExp = Restrictions.or(andExp,andExp1); 
+		LogicalExpression totalAnd=Restrictions.and(orExp,unRead);
+*/
+		
+		Criterion unRead = Restrictions.eq("read_status", "1");    
+		Criterion crtorderid = Restrictions.eq("orderid", orderid); 
+		LogicalExpression totalAnd=Restrictions.and(crtorderid,unRead);
+		
+		
+		crit.add(totalAnd);     
+		crit.addOrder(Order.desc("date"));
+		crit.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY); 
+		
+		System.out.println(crit.list());
+		
+		return messages;
+	}
+	
+	
+	
+}

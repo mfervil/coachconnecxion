@@ -1,0 +1,126 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xmlns:lang="http://www.springframework.org/schema/lang"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+<!-- MAF MAF MAF
+	<context:property-placeholder location="classpath:database.properties,classpath:application.properties" />
+-->
+  
+ 	<context:annotation-config />
+    <context:component-scan base-package="com.connection.controller" />
+	
+	<!-- <context:component-scan base-package="com.connection" /> -->
+
+	<!-- <tx:annotation-driven transaction-manager="hibernateTransactionManager"/> -->
+
+	<bean id="jspViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	 <bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- max upload size in bytes -->
+        <property name="maxUploadSize" value="20971520" /> <!-- 20MB -->
+        
+        <!-- max size of file in memory (in bytes) -->
+        <property name="maxInMemorySize" value="1048576" /> <!-- 1MB -->
+
+    </bean>
+
+<!--  MAF MAF MAF
+    <bean id="dataSource"
+        class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"
+        p:driverClassName="com.mysql.jdbc.Driver"
+        p:url="jdbc:mysql://192.168.1.2:3306/DAVDB?autoReconnect=true" p:username="root"
+        p:password="asdfg@123" />
+-->
+
+<!-- MAF MAF MAF 
+	<bean id="sessionFactory"
+        class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" scope="prototype">
+        <property name="dataSource" ref="dataSource" />
+       <!-a-  <property name="configLocation">
+            <value>classpath:hibernate.cfg.xml</value>
+        </property> -a->
+        <property name="packagesToScan" value="com.connection.model"/>
+        			<A!-a- <property name="connection.pool_size" value="500"></property>  -a-A>
+       				<A!-a-  <property name="hibernate.dbcp.initialSize" value="8"/>
+  		<property name="" value="20"/>
+  		<property name="" value="20"/>
+  		<property name="" value="0"/> -a-A>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.show_sql">false</prop> 
+                 
+                 <prop key="hibernate.dbcp.initialSize">200</prop>
+                <prop key="hibernate.dbcp.maxActive">200</prop>
+                 <prop key="hibernate.dbcp.maxIdle">100</prop>
+                <prop key="hibernate.dbcp.minIdle">1</prop>
+                 <prop key="connection.pool_size">1000</prop>
+                  <prop key="hibernate.current_session_context_class">thread</prop> 
+               <!A-a-  <prop key="hibernate.show_sql">true</prop> -a-A>
+            </props>
+        </property>
+    </bean>
+-->    
+    
+	<bean id="customerService" class="com.connection.service.CustomerServiceImpl "/>
+	<bean id="messageService" class="com.connection.service.MessageServiceImpl "/>
+	<bean id="attachmentService" class="com.connection.service.AttachmentServiceImpl "/>
+	
+	<bean id="customerDAO" class="com.connection.dao.CustomerDaoImpl"></bean>
+   <bean id="messageDAO" class="com.connection.dao.MessageDaoImpl"></bean> 
+     <bean id="attachmentDAO" class="com.connection.dao.AttachmentDaoImpl"></bean>
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+	
+		<!-- MAF MAF MAF
+		<property name="interceptors">
+		    <ref bean="authenticationInterceptor"/>
+		</property> 
+		 -->
+	
+	 </bean> 
+	 
+<!-- MAF MAF MAF	 
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="${application.mailid}"/>
+		<property name="password" value="${application.pwd}" />
+		<property name="javaMailProperties"> 
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>
+	</bean>  
+ -->
+ 	
+ <!--  MAF MAF MAF 	
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+    <bean id="transactionManager"
+        class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+ -->
+     
+</beans>

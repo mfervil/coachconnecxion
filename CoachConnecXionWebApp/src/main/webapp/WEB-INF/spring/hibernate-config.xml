@@ -43,6 +43,7 @@
             <list>
                 <value>ua.com.bitlab.springsecuritydemo.dao.entities</value>
                 <value>com.fervil.spring.careercoach.model.domain</value>
+          		<value>com.connection.model</value>      
             </list>
         </property>
     </bean>

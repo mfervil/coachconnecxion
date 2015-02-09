@@ -19,6 +19,7 @@
 	<context:component-scan base-package="com.fervil.spring.careercoach.model" />
 
     <import resource="hibernate-config.xml"/>
+    <import resource="sdnext-servlet.xml"/>
     <import resource="mail-config.xml"/>
     <import resource="security-config.xml"/>
 
