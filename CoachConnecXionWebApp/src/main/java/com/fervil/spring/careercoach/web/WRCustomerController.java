@@ -501,8 +501,8 @@ public class WRCustomerController {
 			
 			long orderid = Long.valueOf(webRequest.getParameter("orderid"));
 
-			long fromProfileId = Long.valueOf(webRequest.getParameter("fromprofileid"));
-			long toProfileId = Long.valueOf(webRequest.getParameter("toprofileid"));
+			long currentLoggedInUserProfileId = Long.valueOf(webRequest.getParameter("fromprofileid"));
+			long userCommunicatingTotoProfileId = Long.valueOf(webRequest.getParameter("toprofileid"));
 			String fromEmail = webRequest.getParameter("fromemail").toString();
 			String toEmail = webRequest.getParameter("toemail").toString() ;
 
@@ -510,7 +510,7 @@ public class WRCustomerController {
 			String todisplayname = webRequest.getParameter("todisplayname").toString() ;
 			
 			
-			System.out.println("The passed info is: " + fromProfileId + ":" + toProfileId + ":" + fromEmail + ":" + toEmail);
+			System.out.println("The passed info is: " + currentLoggedInUserProfileId + ":" + userCommunicatingTotoProfileId + ":" + fromEmail + ":" + toEmail);
 			
 			//System.out.println("############  EMAIL "+customerService.loadCustomer(customerbean).getEmailid()); 
 			/*
@@ -538,30 +538,30 @@ public class WRCustomerController {
 
 			for(int i=0;i<messages.size();i++){
 				
-				
 				Usermessage message=new Usermessage();
 				message=messages.get(i); 
 
 				System.out.println("WRCustomerController::wrsendMessage 2:: The messages are: " + message.getMessageid());
-				
-				/*Iterator<Attachment> iterator=message.getAttachment().iterator();
-				while(iterator.hasNext()){
-					System.out.println("############### ATTACHMENT  "+iterator.next().getAttachmentname()); 
-				}*/
-				//message=new Message();
 			}
+
+			//Change the status of all the messages to read.
+			try {
+				messageService.updateReadStatus(orderid, userCommunicatingTotoProfileId, currentLoggedInUserProfileId, 0);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}  
 			
 			model.addAttribute("emailid", toEmail);  
 			model.addAttribute("name", "Marc Test Name");   
 			//model.addAttribute("id", toProfileId);
 
-			model.addAttribute("fromprofileid", fromProfileId);
-			model.addAttribute("toprofileid", toProfileId);
+			model.addAttribute("fromprofileid", currentLoggedInUserProfileId);
+			model.addAttribute("toprofileid", userCommunicatingTotoProfileId);
 			model.addAttribute("orderid", orderid);
 
 			model.addAttribute("fromdisplayname", fromdisplayname);
 			model.addAttribute("todisplayname", todisplayname);
-			
 			
 			model.addAttribute("fromemail", fromEmail);
 			model.addAttribute("toemail", toEmail);

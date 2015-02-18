@@ -31,6 +31,9 @@ public class Message {
 	private int messageid;
 	
 	private long orderid;
+
+	private long toprofileid;
+	private long fromprofileid;
 	
 	@Column(name = "description")
 	private String description;
@@ -103,5 +106,17 @@ public class Message {
 	}
 	public void setOrderid(long orderid) {
 		this.orderid = orderid;
+	}
+	public long getToprofileid() {
+		return toprofileid;
+	}
+	public void setToprofileid(long toprofileid) {
+		this.toprofileid = toprofileid;
+	}
+	public long getFromprofileid() {
+		return fromprofileid;
+	}
+	public void setFromprofileid(long fromprofileid) {
+		this.fromprofileid = fromprofileid;
 	}
 }

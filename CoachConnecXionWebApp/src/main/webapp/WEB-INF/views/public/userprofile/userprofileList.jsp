@@ -35,6 +35,11 @@
 					<thead>
 						<tr>
 						<th>LIST OF COACHES </th>
+						<th style="position: absolute; right:0px;"> 
+						<c:if test="${pageNumber > 1}" >
+						<a href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber - 1}"> PREV PAGE </a> &nbsp;&nbsp;&nbsp;
+						</c:if>
+						<a href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber + 1}"> NEXT PAGE </a>&nbsp;&nbsp;</th> 
 						<!--  <th>Payment Terms</th>  -->
 						</tr>
 					</thead>
@@ -110,6 +115,9 @@
 			</section>
 		</section>	
 		--%>
+		
+		<%-- <form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/> --%>
+		<input type="hidden" name="coachingCategory" value="1111${coachingCategory}">
 			
 	</form:form>
 </section>

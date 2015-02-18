@@ -110,6 +110,7 @@ public class HibernatePaymentInformationDao implements PaymentInformationDao {
 					+ ", pi.zip, pi.order_Description, pi.package_Price  "
 					+ ", pi.expiration_Month_Value, pi.expiration_Year_Value, pi.state_Value  "
 					+ ", pi.package_Name , pi.currentdate  "
+					+ ", (select count(*) from message where toprofileid=" + coachUserProfileId + " and read_status=1 and orderid = pi.id) unreadmessages "  //find all unread messages coming to me
 					+ " from packagedetails pd, payment_information pi, user_profile up, user_profile up1  "
 					+ " Where pd.id = pi.package_Id  "
 					+ " and up.email = pi.email  "

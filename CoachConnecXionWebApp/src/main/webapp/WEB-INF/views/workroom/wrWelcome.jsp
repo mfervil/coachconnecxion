@@ -350,7 +350,6 @@ a.link2{
 			<div class="clear"></div>
 		   <div class="separator"></div>
 		
-		   
            <div class="content-wrap">
            
  --%>          

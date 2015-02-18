@@ -30,7 +30,7 @@ public class SystemUtil<Static> {
 
 			List<UserProfile> usrList = userProfileManager.findByUserId(userId);
 			
-System.out.println("The user id is" + userId);
+//System.out.println("The user id is" + userId);
 			
 			int profileType = 0;
 			for(int j=0; j<usrList.size();j++ ){			

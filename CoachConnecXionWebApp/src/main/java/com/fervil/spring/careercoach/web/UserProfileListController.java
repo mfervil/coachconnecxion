@@ -37,6 +37,8 @@ import com.fervil.spring.careercoach.util.Constants;
 @RequestMapping("/public/userprofileList")
 public class UserProfileListController  {
     private static final Logger log = LoggerFactory.getLogger(UserProfileListController.class);
+    
+    private static final int pageSize = 10;
 	
 	private UserProfileManager userProfileManager;
 	private SelectedCoachesValidator validator;
@@ -77,10 +79,20 @@ public class UserProfileListController  {
 			String coachLastName = webRequest.getParameter("coachLastName") == null?"":webRequest.getParameter("coachLastName");
 			String city = webRequest.getParameter("city") == null?"":webRequest.getParameter("city");
 			String state = webRequest.getParameter("state") == null?"":webRequest.getParameter("state");
-	
+
+			int pageNumber = webRequest.getParameter("pageNumber") == null?1:Integer.valueOf(webRequest.getParameter("pageNumber"));
+			
+			
+			//int pageNumber = Integer.valueOf(webRequest.getParameter("pagenumber"));
+			//int pageNumber = 2;
+			//int pageSize = 10;			
+			
+            //criteria.setFirstResult((pageNumber - 1) * pageSize);
+            //criteria.setMaxResults(pageSize);			
+			
 			
 			List<HashMap> userProfiles = userProfileManager.getUserProfiles(
-					coachingCategory, coachingSubcategory, industryExperience,companyExperience, coachFirstName, coachLastName, city, state);
+					coachingCategory, coachingSubcategory, industryExperience,companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
 			
 			ModelAndView mav = new ModelAndView ();
 			mav.setViewName ("public/userprofile/userprofileList");
@@ -91,6 +103,16 @@ public class UserProfileListController  {
 			
 			// float averageRate1 = jobRatingService.getProfileRating(123);
 			// model.addAttribute("averageRate1", averageRate1);
+			
+			mav.addObject("coachingCategory", webRequest.getParameter("coachingCategory"));
+			mav.addObject("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
+			mav.addObject("industryExperience", webRequest.getParameter("industryExperience"));
+			mav.addObject("companyExperience", webRequest.getParameter("companyExperience"));
+			mav.addObject("coachFirstName", webRequest.getParameter("coachFirstName"));
+			mav.addObject("coachLastName", webRequest.getParameter("coachLastName"));
+			mav.addObject("city", webRequest.getParameter("city"));
+			mav.addObject("state", webRequest.getParameter("state"));
+			mav.addObject("pageNumber", pageNumber);
 			
 			mav.addObject("coachingCategory", webRequest.getParameter("coachingCategory"));
 	

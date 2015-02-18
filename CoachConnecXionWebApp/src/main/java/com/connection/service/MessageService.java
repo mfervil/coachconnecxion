@@ -25,5 +25,9 @@ public interface MessageService {
 			Customer customer1);            
 
 	public List<Message> getUserMessagesUnReadByProfileId(long orderid);            
+
+	public int getNumberOfUnreadMsgByProfileId (long profileId) throws Exception;
+	
+	public void updateReadStatus(long orderid, long userCommunicatingTotoProfileId, long currentLoggedInUserProfileId, int readStaus) throws Exception;
 	
 }

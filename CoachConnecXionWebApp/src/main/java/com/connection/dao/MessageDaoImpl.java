@@ -8,14 +8,17 @@ import java.util.Set;
 
 import org.hibernate.Criteria;
 import org.hibernate.FlushMode;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.StatelessSession;
 import org.hibernate.Transaction;
+import org.hibernate.context.internal.ThreadLocalSessionContext;
 import org.hibernate.criterion.CriteriaSpecification;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.LogicalExpression;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.mapping.Array;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +31,8 @@ import com.connection.model.Customer;
 import com.connection.model.Message;
 import com.connection.model.UserAttachment;
 import com.connection.model.Usermessage;
+import com.fervil.spring.careercoach.model.domain.CategoryDetails;
+import com.fervil.spring.careercoach.model.domain.UserProfile;
 @Repository("messageDao")
 @Scope("prototype")
 public class MessageDaoImpl implements MessageDao {
@@ -358,6 +363,61 @@ public class MessageDaoImpl implements MessageDao {
 		return messages;
 	}
 	
+	@Override
+	public int getNumberOfUnreadMsgByProfileId(long profileId) throws Exception {
+
+		Session session = sessionFactory.openSession();
+		ThreadLocalSessionContext.bind(session);
+
+		try {
+
+			//String sql = "select count(*) from message where toprofileid=" + profileId + " and "
+			//		+ " read_status=1 ) unreadmessages ";
+
+			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
+					Message.class);
+			
+			crit.add(Restrictions.eq("toprofileid", profileId));
+			crit.add(Restrictions.eq("read_status", "1"));
+			
+	         // To get total row count.
+	         crit.setProjection(Projections.rowCount());
+	         List rowCount = crit.list();
+	        
+	         
+	         return Integer.valueOf(rowCount.get(0).toString() );
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			session.close();
+		}
+		
+	}
 	
+	public void updateReadStatus (long orderid, long userCommunicatingTotoProfileId, long currentLoggedInUserProfileId, int readStatus) throws Exception {
+		Session session = sessionFactory.openSession();
+		ThreadLocalSessionContext.bind(session);
+
+		try {
+
+			Transaction tx = null;
+		    tx = session.beginTransaction();
+
+		            Query query = session
+		                    .createQuery(" update Message set read_status = " + readStatus + 
+		                    		" where orderid= " + orderid +  
+		                    		" and toprofileid= " + currentLoggedInUserProfileId +  
+		                    		" and fromprofileid= " + userCommunicatingTotoProfileId );
+		        query.executeUpdate();
+		    tx.commit();
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			session.close();
+		}
+	}
+
 	
 }

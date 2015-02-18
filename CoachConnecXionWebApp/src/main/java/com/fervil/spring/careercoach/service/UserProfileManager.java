@@ -19,7 +19,7 @@ public interface UserProfileManager  extends Serializable {
 	public List<HashMap> getUserProfiles(int coachingCategory, 
 			int coachingSubcategory, int industryExperience, 
 			String companyExperience, String coachFirstName, 
-			String coachLastName, String city, String state) throws Exception;
+			String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception;
     public void storeUserProfile(UserProfile userProfile) throws Exception;
     public void deleteUserProfile(String id) throws Exception;
     public UserProfile findById(String id) throws Exception;	

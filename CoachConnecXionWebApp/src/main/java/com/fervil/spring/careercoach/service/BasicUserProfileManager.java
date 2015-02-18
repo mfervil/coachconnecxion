@@ -40,16 +40,16 @@ public class BasicUserProfileManager implements UserProfileManager {
     
     @NotNull
     @Override
-	public List<HashMap> getUserProfiles(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state) throws Exception {
-        return userProfileDao.findFilteredUserProfiles(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state);
+	public List<HashMap> getUserProfiles(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception {
+        return userProfileDao.findFilteredUserProfiles(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
     }
     
     
     @NotNull
-	public List<HashMap> getUserProfilesPictureString(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state) throws Exception {
+	public List<HashMap> getUserProfilesPictureString(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception {
         //return userProfileDao.findFilteredUserProfiles(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state);
     
-    	List<HashMap> userProfiles = userProfileDao.findFilteredUserProfiles(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state);
+    	List<HashMap> userProfiles = userProfileDao.findFilteredUserProfiles(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
         
     	//List<UserProfile> newUserProfiles = new ArrayList<UserProfile>();
     	

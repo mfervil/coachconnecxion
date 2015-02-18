@@ -63,7 +63,7 @@ public class WRSendEmailAttachController {
 	private CustomerService customerService;
 
     private static String bucketName     = "ccxviworkroom";
-    private static String keyName        = "Object-"+UUID.randomUUID();	
+    //private static String keyName        = "Object-"+UUID.randomUUID();	
     private static String uploadFileNamePrefix = "ccxv1atch";
 	
 	@RequestMapping(method = RequestMethod.POST)
@@ -289,6 +289,10 @@ public class WRSendEmailAttachController {
 		 
 		   model.addAttribute("emailid",emailTo);  
 		    model.addAttribute("name",name); 
+
+			model.addAttribute("fromdisplayname", request.getParameter("fromdisplayname").toString());
+			model.addAttribute("todisplayname", request.getParameter("todisplayname").toString());
+
 		    //model.addAttribute("id",toprofileid); 
 		   
 		   return new ModelAndView("workroom/wrEmailForm", model); 

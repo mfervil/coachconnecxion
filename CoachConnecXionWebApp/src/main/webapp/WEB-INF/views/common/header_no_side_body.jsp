@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	
 	<!-- DISPLAY MESSAGE IF JAVA IS TURNED OFF -->
 	<noscript>		
 		<div id="notification">Please turn on javascript in your browser for the maximum experience!</div>
@@ -29,10 +32,23 @@
 			<div id="menutopmost">
 				<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
 				<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/about-us">About Us </a> | 
-				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> | 
-				<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/terms-of-use">Terms Of Use </a> | 
+				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a>
+<c:if test="${!empty sessionScope.nummessages}">
+	<c:if test="${sessionScope.usertype == 1}">
+	 			<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>"> | NEW MESSAGES
+				(${sessionScope.nummessages}) </a>
+	</c:if>
+	<c:if test="${sessionScope.usertype == 2}">
+				<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/viewOrders"> | NEW MESSAGES
+				(${sessionScope.nummessages}) </a>
+	</c:if>
+
+</c:if>
+
+<%-- 			<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/terms-of-use">Terms Of Use </a> | 
 				<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/privacy-policy">Privacy Policy </a> | 
 				<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/safety-tips">Safety Tips&nbsp;&nbsp;&nbsp;&nbsp;</a>
+--%>				
 			</div>
 			
 			<%-- MENU --%>

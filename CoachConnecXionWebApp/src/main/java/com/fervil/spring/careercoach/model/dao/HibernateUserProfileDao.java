@@ -106,7 +106,7 @@ public class HibernateUserProfileDao implements UserProfileDao {
 	public List findFilteredUserProfiles(int coachingCategory,
 			int coachingSubcategory, int industryExperience,
 			String companyExperience, String coachFirstName,
-			String coachLastName, String city, String state)  throws Exception {
+			String coachLastName, String city, String state, int pageSize, int pageNumber)  throws Exception {
 
 		try {
 			// session.beginTransaction();
@@ -166,7 +166,6 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			" from user_profile u " +
 			 CRITERIA;
 			
-			
 /*			
 			String sql = " select u.user_profile_id, c.country_name country, u.language, u.display_name, u.coaching_category, u.overview, cg.coaching_category_name, " +
 			 " cg1.coaching_category_name coaching_SubCategory_name, " +
@@ -182,6 +181,9 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			log.info(" findFilteredUserProfiles:::: " + sql);
 
 			Query query = sessionFactory.getCurrentSession().createSQLQuery(sql); 
+			
+	        query.setFirstResult(((pageNumber - 1) * pageSize) + 1 );
+	        query.setMaxResults(pageSize);
 			
 			query.setResultTransformer(AliasToEntityMapResultTransformer.INSTANCE);
 			List list = query.list();

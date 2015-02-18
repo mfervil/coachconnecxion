@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 
+
 import com.connection.dao.CustomerDao;
 import com.connection.dao.MessageDao;
 import com.connection.model.Customer;
@@ -67,6 +68,16 @@ public class MessageServiceImpl implements MessageService{
 	public List<Message> getUserMessagesUnReadByProfileId(long orderid) {
 		// TODO Auto-generated method stub
 		return messageDao.getUserMessagesUnReadByProfileId(orderid);  
+	}
+	
+	@Override
+	public int getNumberOfUnreadMsgByProfileId (long profileId) throws Exception{
+		return messageDao.getNumberOfUnreadMsgByProfileId(profileId);
+	}
+	
+	@Override
+	public void updateReadStatus(long orderid, long userCommunicatingTotoProfileId, long currentLoggedInUserProfileId, int readStaus) throws Exception{
+		 messageDao.updateReadStatus(orderid, userCommunicatingTotoProfileId, currentLoggedInUserProfileId, readStaus);
 	}
 	
 }

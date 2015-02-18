@@ -504,7 +504,7 @@ a.link2{
             		
                     <div class="para"><p>${messages.description}</p>
 	                    <c:forEach items="${messages.userattachment}" var="attachment">
-	                    	<a href="download.html?attachId=${attachment.attachid}&filename=${attachment.attachmentname}"><p>${attachment.attachmentname}</p></a>
+	                    	<a href="downloadFromAWSSE?attachId=${attachment.attachid}&orderid=${orderid}&messageid=${messages.messageid}&filename=${attachment.attachmentname}"><p>${attachment.attachmentname}</p></a>
 	                    </c:forEach>
 					</div>
                     <small>${fn:substring(messages.date, 0, 16)}</small>
@@ -513,20 +513,6 @@ a.link2{
 		</c:forEach>
 		</div>
 </c:if>
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
 					
 					<!-- 	<div class="msg_box">
             	<div class="row-top clearfix">

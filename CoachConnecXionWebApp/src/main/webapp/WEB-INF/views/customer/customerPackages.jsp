@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,26 +74,44 @@ table tbody {
 			<table style="border: 1px solid; width: 100%; text-align: center">
 				<thead style="background: #EAEAEA;">
 					<tr>
-						<th style="text-align: center;width: 15%;">Vendor Name</th>
+						<th style="text-align: center;width: 10%;">Vendor Name</th>
 						<th style="text-align: center;width: 20%;">Package Name</th>
 						<th style="text-align: center;width: 5%;">Price</th>
 						<th style="text-align: center;width: 10%;">Order Date</th>
-						<th style="text-align: center;width: 20%;">Vendor Email</th>						
+						<th style="text-align: center;width: 15%;">Vendor Email</th>						
 						<th style="text-align: center;width: 15%;">Vendor Phone</th>						
-						<th style="text-align: center;width: 15%;">&nbsp;</th>						
+						<th style="text-align: center;width: 15%;">Rating</th>						
+						<th style="text-align: center;width: 10%;">Message</th>						
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach items="${customerPackages}" var="packages">
+					
+						<c:set var="todisplayname" value="${packages.todisplayname}"/>						
+						<c:set var="fromdisplayname" value="${packages.fromdisplayname}"/>						
+					
+						<c:if test="${empty packages.todisplayname}">
+							<c:set var="todisplayname" value="${packages.tofirstname}"/>						
+						</c:if>
+						<c:if test="${empty packages.fromdisplayname}">
+							<c:set var="fromdisplayname" value="${packages.fromfirstname}"/>						
+						</c:if>
+						
 						<tr>
-							<td style="text-align: center;"><c:out value="${packages.displayname}" /></td>
-							<td style="text-align: center;"><c:out value="${packages.packagename}" /></td>
-							<td style="text-align: center;"><c:out value="${packages.price}" /></td>
-							<td style="text-align: center;"><c:out value="${packages.orderdate}" /></td>
-							<td style="text-align: center;"><c:out value="${packages.email}" /></td>
-							<td style="text-align: center;"><c:out value="${packages.phone}" /></td>
-							<td style="border-style: solid; border-width: 1px; text-align: center; white-space:nowrap; text-decoration:underline; color: rgb(0,0,255);" >
-							<a href="${pageContext.request.contextPath}/feedbackAdd?vendorId=${packages.userProfileId}&packageId=${packages.packageId}&paymentId=${packages.paymentId}&customerId=${currentUserId}&projectName=${packages.packagename}&vendorName=${packages.displayname}" >Rate this job</a> </td>
+							<td style="text-align: center;"><c:out value="${todisplayname}" /></td>
+							<td style="text-align: center;"><c:out value="${packages.packageName}" /></td>
+							<td style="text-align: center;"><c:out value="${packages.priceValue}" /></td>
+							<td style="text-align: center;"><c:out value="${fn:substring(packages.orderdate, 0, 10)}" /></td>
+							<td style="text-align: center;"><c:out value="${packages.toemail}" /></td>
+							<td style="text-align: center;"><c:out value="${packages.tophone}" /></td>
+							<td style="text-align: center;">
+							<a style="color: #0000FF;" href="${pageContext.request.contextPath}/feedbackAdd?vendorId=${packages.userProfileId}&packageId=${packages.packageId}&paymentId=${packages.paymentId}&customerId=${currentUserId}&projectName=${packages.packagename}&vendorName=${packages.displayname}" >Rate this job</a> </td>
+							<td style="text-align: center; 	white-space: nowrap;" ><a style="color: #0000FF;" href="${pageContext.request.contextPath}/workroom/wrsendMessage?fromprofileid=${packages.fromprofileid}&orderid=${packages.orderid}&toprofileid=${packages.toprofileid}
+										&fromemail=${packages.fromemail}&toemail=${packages.toemail}&todisplayname=${todisplayname}&fromdisplayname=${fromdisplayname}">
+										<c:if test="${packages.unreadmessages ne '0' }">New Msg(${packages.unreadmessages})</c:if>
+										<c:if test="${packages.unreadmessages == '0' }">All Msg</c:if>
+									</a>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>

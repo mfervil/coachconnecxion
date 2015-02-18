@@ -23,5 +23,8 @@ public interface MessageDao {
 	List<Usermessage> getUserMessagesByProfileId(long orderid);
 	
 	public List<Message> getUserMessagesUnReadByProfileId(long orderid);
+	
+	public int getNumberOfUnreadMsgByProfileId(long profileId) throws Exception;
 
+	public void updateReadStatus (long orderid, long userCommunicatingTotoProfileId, long currentLoggedInUserProfileId, int readStaus) throws Exception;
 }

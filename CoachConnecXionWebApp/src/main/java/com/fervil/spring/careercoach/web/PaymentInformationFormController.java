@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -46,7 +47,9 @@ public class PaymentInformationFormController  {
 	
 	private PaymentInformationManager paymentInformationManager;
 	private PaymentInformationValidator validator;
-	//private UserProfileManager userProfileManager;
+	
+   	@Resource(name = "userProfileManager")
+	private UserProfileManager userProfileManager;
 
     @Autowired
     private UsersService usersService;
@@ -130,17 +133,36 @@ public class PaymentInformationFormController  {
 						
 						//If the payment was processed successfully, then Save the registration information
 						//
+						WebUser user = new WebUser();
+
 						try{
-							WebUser user = new WebUser();
 
 							user.setUsername(webRequest.getParameter("email"));
 							user.setEmail(webRequest.getParameter("email"));
 							user.setPassword(webRequest.getParameter("password"));
 							user = usersService.saveUser(user);
-					        user = usersService.activateUser( user.getId() , user.getActivationCode());				        
+					        user = usersService.activateUser( user.getId() , user.getActivationCode());
 						} catch (Exception e){
 							//If the user already exists, then the info will not be saved, and an exception will be thrown
 							String msg = "PaymentInformationFormController: Error while creating the user. Error " + e;
+					        log.error(msg, e);
+					    }
+
+						try{
+					        //Create a profile record for the user....................................
+					        UserProfile up = new UserProfile();
+					        up.setAccountType(2);
+					        up.setHourlyRate(0);
+					        up.setUserProfileType(2);
+					        up.setUser_userId(user.getId());
+					        up.setCoachingcategory1(17);
+					        userProfileManager.storeUserProfile(up);
+					        System.out.println("We've saved to the UserProfile table");
+					        //End Create a profile record for the user
+					        
+						} catch (Exception e){
+							//If the user already exists, then the info will not be saved, and an exception will be thrown
+							String msg = "PaymentInformationFormController: Error while creating the User Profile record. Error " + e;
 					        log.error(msg, e);
 					    }
 						
