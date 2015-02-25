@@ -747,15 +747,12 @@ public class ProfileViewEducationController {
 											"To Date Should be ahead of the From Date");
 								}
 							}
-							//System.out.println("Month :" + month + "Date :" + date1
-							//		+ "DATE 1 :" + date);
 						} catch (ParseException e) {
 							model.addAttribute("successMessage", "");
 							errorValid = false;
 							model.addAttribute("errorMessage6",
 									"Unknown Date format :" + startDate);
 							log.error("Exception :" + e);
-							//System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");

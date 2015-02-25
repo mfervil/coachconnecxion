@@ -197,7 +197,6 @@ public class CreateCustomerUserProfileFormController {
     	
         AmazonS3 s3client = new AmazonS3Client(new ProfileCredentialsProvider());
         try {
-            System.out.println("Uploading a new object to S3 from a file\n");
             //File fileName = new File(uploadFileNamePrefix + userProfile.getUserProfileId());
             
             File convFile = new File( multipart.getOriginalFilename());
@@ -215,6 +214,18 @@ public class CreateCustomerUserProfileFormController {
             //		bucketName, uploadFileNamePrefix + userProfile.getUserProfileId() + "." + ext, convFile ) );
             
          } catch (AmazonServiceException ase) {
+        	 String msg = "Caught an AmazonServiceException, which " +
+             		"means your request made it " +
+                     "to Amazon S3, but was rejected with an error response" +
+                     " for some reason. ";
+			     	 msg += "::Error Message:    " + ase.getMessage();
+			     	 msg += "::HTTP Status Code: " + ase.getStatusCode();
+			     	 msg += "::AWS Error Code:   " + ase.getErrorCode();
+			     	 msg += "::Error Type:       " + ase.getErrorType();
+			     	 msg += "::Request ID:       " + ase.getRequestId();
+			
+			     	 log.error(msg, ase);
+/*        	 
             System.out.println("Caught an AmazonServiceException, which " +
             		"means your request made it " +
                     "to Amazon S3, but was rejected with an error response" +
@@ -224,14 +235,19 @@ public class CreateCustomerUserProfileFormController {
             System.out.println("AWS Error Code:   " + ase.getErrorCode());
             System.out.println("Error Type:       " + ase.getErrorType());
             System.out.println("Request ID:       " + ase.getRequestId());
+*/            
         } catch (AmazonClientException ace) {
-            System.out.println("Caught an AmazonClientException, which " +
+            String msg = "Caught an AmazonClientException, which " +
             		"means the client encountered " +
                     "an internal error while trying to " +
                     "communicate with S3, " +
-                    "such as not being able to access the network.");
-            System.out.println("Error Message: " + ace.getMessage());
-        }    	
+                    "such as not being able to access the network.";
+            
+        	 log.error(msg, ace);
+        }  catch (Exception e) {
+            String msg = "Caught a General Amazon Exception, which ";			                
+        	log.error(msg, e);
+        }     	
     }	
 
     private void saveMultipartToDisk(MultipartFile file, UserProfile userProfile) throws Exception {

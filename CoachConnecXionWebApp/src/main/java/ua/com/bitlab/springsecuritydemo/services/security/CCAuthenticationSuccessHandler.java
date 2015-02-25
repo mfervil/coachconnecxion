@@ -48,7 +48,6 @@ public class CCAuthenticationSuccessHandler implements AuthenticationSuccessHand
 	
 	//long userId = SecurityUtils.getCurrentUser().getId() ;
 	
-	System.out.println("I am in CCAuthen....");
 	List<UserProfile> usrList=null;
 	try {
 		usrList = userProfileManager.findByUserId(SecurityUtils.getCurrentUser().getId());
@@ -58,12 +57,10 @@ public class CCAuthenticationSuccessHandler implements AuthenticationSuccessHand
 		for(int j=0; j<usrList.size();j++ ){			
 			profileType= usrList.get(j).getUserProfileType();
 			userProfileId = (profileType==1 || profileType==2)?usrList.get(j).getUserProfileId():0;
-			System.out.println("I am in CCAuthen...." + profileType + "::" + userProfileId);
 			break;
 		}
 		
 		int numMessages =messageService.getNumberOfUnreadMsgByProfileId(userProfileId);  
-		System.out.println("NUM MESSAGES I am in CCAuthen...." + numMessages);
 		
 		HttpSession session=request.getSession();
 		session.setAttribute("nummessages", new Integer(numMessages));
@@ -79,13 +76,11 @@ public class CCAuthenticationSuccessHandler implements AuthenticationSuccessHand
 
 	//2/16/2015
 	
-System.out.println("Inside the saved request");
 	if (savedRequest == null) {
 		
 	    response.sendRedirect(request.getContextPath() + "/");
 	}
 	else {
-		System.out.println("The saved request is: " + savedRequest.getRedirectUrl());
 		
 		if (savedRequest.getRedirectUrl().contains("ping_session") ){
 		    response.sendRedirect(request.getContextPath() + "/");

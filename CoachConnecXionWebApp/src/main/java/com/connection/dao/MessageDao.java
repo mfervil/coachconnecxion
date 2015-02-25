@@ -10,19 +10,19 @@ import com.connection.model.Usermessage;
 
 public interface MessageDao {
 
-	Message saveMessage(Message message2);
+	Message saveMessage(Message message2)  throws Exception;
 
-	Usermessage saveUserMessage(Usermessage message2);
+	Usermessage saveUserMessage(Usermessage message2)  throws Exception;
 	
 	//List<Message> getUserMessages(Integer customerid, Integer id); 
 
-	List<Message> getUserMessages(Customer fromCustomer, Customer customer);
+	List<Message> getUserMessages(Customer fromCustomer, Customer customer) throws Exception;
 
-	List<Message> getUserMessagesUnRead(Customer customer, Customer customer2);      
+	List<Message> getUserMessagesUnRead(Customer customer, Customer customer2) throws Exception;      
  
-	List<Usermessage> getUserMessagesByProfileId(long orderid);
+	List<Usermessage> getUserMessagesByProfileId(long orderid) throws Exception;
 	
-	public List<Message> getUserMessagesUnReadByProfileId(long orderid);
+	public List<Message> getUserMessagesUnReadByProfileId(long orderid) throws Exception;
 	
 	public int getNumberOfUnreadMsgByProfileId(long profileId) throws Exception;
 

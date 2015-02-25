@@ -93,13 +93,11 @@ public class UsersController {
            
             
         } catch (UserServiceException e) {
-        	System.out.println("Error occured in UserServiceException");
             log.error("Failed to create new user user '" + user.getUsername() + "'. Error: " + e, e);
             model.addAttribute("errorMsg", e.getPrintableMessage());
             model.addAttribute("user", user);
             return "users/create";
         } catch (Exception e) {
-        	System.out.println("Error occured in Exception");
             log.error("Failed to create new user user '" + user.getUsername() + "'. Error: " + e, e);
             model.addAttribute("errorMsg", "SYSTEM ERROR::An error occured while creating your account.  Please try again later.");
             model.addAttribute("user", user);
@@ -221,7 +219,6 @@ public class UsersController {
     
     @RequestMapping(value = "home")
     public void home(Model model) {
-    	//System.out.println("Inside the call to home");
     	
         //UserSecurityBean currentUser = SecurityUtils.getCurrentUser();
         //Long userId = currentUser.getId();

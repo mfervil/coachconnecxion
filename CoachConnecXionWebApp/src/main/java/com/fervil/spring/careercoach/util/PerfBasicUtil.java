@@ -67,11 +67,8 @@ public class PerfBasicUtil {
 				apfWriter = new PrintWriter(new FileWriter(apfFileName, true));
 			}
 		} catch (IOException io) {
-			System.out.println("Failed to create " + apfFileName + " "
-					+ io.getMessage());
 			System.exit(-1);
 		}
-		System.out.println("apfWriter created: ");
 	}
 
 	public void closeApfWriter() {

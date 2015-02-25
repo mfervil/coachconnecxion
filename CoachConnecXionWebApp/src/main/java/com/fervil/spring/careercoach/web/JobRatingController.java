@@ -67,12 +67,6 @@ public class JobRatingController {
 		model.addAttribute("successMessage", "");
 		//TODO.  Remove dummy quantity and award date below
 		
-		System.out.println("Package Id: " + jobratingDetails.getPackageId()  );
-		System.out.println(" PaymentId: " + jobratingDetails.getPaymentId()  );
-		System.out.println("Comments: " + jobratingDetails.getCommentDetails()  );
-		System.out.println("Feedbacks: " + jobratingDetails.getFeedBacks()  );
-		
-		
 		try {
 			Float quality11 = new Float(request.getParameter("my_text_input"));
 			quality11 = quality11 / 20;
@@ -113,8 +107,6 @@ public class JobRatingController {
 				model.addAttribute("errorMessage", "Comments Should not empty");
 				model.addAttribute("successMessage", "");
 			} else {
-				
-				System.out.println(" MAF MAF MAF MAF::::::: " + jobratingDetails.toString() );
 				
 				jobRatingService.edit(jobratingDetails);
 				model.addAttribute("successMessage",
@@ -166,7 +158,6 @@ public class JobRatingController {
 		log.debug("Received request to show new feedback page");
 		try{	
 			
-			System.out.println("The payment Id is: " + paymentId);
 			//Has to be a rating by project
 			if (jobRatingService.ratingDone(paymentId) == true) {
 				model.addAttribute("RatingDone", "Yes");

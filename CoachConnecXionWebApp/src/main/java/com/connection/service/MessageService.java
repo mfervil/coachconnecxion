@@ -10,21 +10,21 @@ import com.connection.model.Usermessage;
 @Component
 public interface MessageService {
 
-	public Message saveMessage(Message message2);
+	//public Message saveMessage(Message message2);
 
-	public Usermessage saveUserMessage(Usermessage message2);
+	public Usermessage saveUserMessage(Usermessage message2) throws Exception;
 	
 //	public List<Message> getUserMessages(Integer customerid, Integer id);
 
 	public List<Message> getUserMessages(Customer fromCustomer, 
-			Customer customer);
+			Customer customer) throws Exception;
 	
-	public List<Usermessage> getUserMessagesByProfileId (long orderid);
+	public List<Usermessage> getUserMessagesByProfileId (long orderid) throws Exception;
 
-	public List<Message> getUserMessagesUnRead(Customer customer,
-			Customer customer1);            
+	//public List<Message> getUserMessagesUnRead(Customer customer,
+	//		Customer customer1);            
 
-	public List<Message> getUserMessagesUnReadByProfileId(long orderid);            
+	public List<Message> getUserMessagesUnReadByProfileId(long orderid) throws Exception;            
 
 	public int getNumberOfUnreadMsgByProfileId (long profileId) throws Exception;
 	

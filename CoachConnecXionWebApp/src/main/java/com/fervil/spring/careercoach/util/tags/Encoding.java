@@ -34,8 +34,6 @@ public class Encoding  extends TagSupport {
  
         	urlinput = URLEncoder.encode(urlinput, charset);
         	
-        	System.out.println(urlinput);
-        	
             out.println(urlinput);
         	
         } catch (IOException e) {

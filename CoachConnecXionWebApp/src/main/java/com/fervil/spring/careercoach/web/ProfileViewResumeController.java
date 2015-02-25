@@ -100,6 +100,9 @@ public class ProfileViewResumeController {
 			@RequestParam(value = "profileId", required = true) long profileId,
 			Model model, org.springframework.web.context.request.WebRequest webRequest) {         
 
+		String extension=file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));		
+		resumescertificates.setFileName(resumescertificates.getFileName() +  extension);
+
 		try{
 			log.debug("Received request to add new Resume");
 			boolean errorValid = true;

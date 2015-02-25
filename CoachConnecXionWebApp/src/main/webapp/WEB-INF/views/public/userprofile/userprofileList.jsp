@@ -36,10 +36,16 @@
 						<tr>
 						<th>LIST OF COACHES </th>
 						<th style="position: absolute; right:0px;"> 
-						<c:if test="${pageNumber > 1}" >
-						<a href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber - 1}"> PREV PAGE </a> &nbsp;&nbsp;&nbsp;
-						</c:if>
-						<a href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber + 1}"> NEXT PAGE </a>&nbsp;&nbsp;</th> 
+							Page: ${pageNumber} of ${totalpages} &nbsp;&nbsp;
+							<c:if test="${pageNumber > 1}" >
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber - 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> &lt;&lt; PREV PAGE </a> &nbsp;&nbsp;&nbsp;&nbsp;
+							</c:if>
+	
+							<c:if test="${userprofilecount > (pageNumber * pagesize) }" >
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber + 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> NEXT PAGE &gt;&gt; </a>&nbsp;&nbsp;&nbsp;&nbsp;
+							</c:if>
+						</th> 
+
 						<!--  <th>Payment Terms</th>  -->
 						</tr>
 					</thead>
@@ -102,6 +108,19 @@
 						</c:forEach>
 					</tbody>	
 			</table>
+			<table>
+						<th></th>
+						<th style="position: absolute; right:0px;"> 
+							Page: ${pageNumber} of ${totalpages} &nbsp;&nbsp;
+							<c:if test="${pageNumber > 1}" >
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber - 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> &lt;&lt; PREV PAGE </a> &nbsp;&nbsp;&nbsp;&nbsp;
+							</c:if>
+	
+							<c:if test="${userprofilecount > (pageNumber * pagesize) }" >
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber + 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> NEXT PAGE &gt;&gt; </a>&nbsp;&nbsp;&nbsp;&nbsp;
+							</c:if>
+						</th> 
+			</table>
 		<!--  This section is opened in header_no_side.jsp -->
 		</section>
 		
@@ -117,7 +136,7 @@
 		--%>
 		
 		<%-- <form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/> --%>
-		<input type="hidden" name="coachingCategory" value="1111${coachingCategory}">
+		<input type="hidden" name="coachingCategory" value="${coachingCategory}">
 			
 	</form:form>
 </section>

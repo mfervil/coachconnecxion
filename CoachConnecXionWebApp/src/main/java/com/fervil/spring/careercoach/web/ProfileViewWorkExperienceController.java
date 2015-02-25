@@ -176,8 +176,6 @@ public class ProfileViewWorkExperienceController {
 								errorValid = false;
 							}
 	
-							//System.out.println("Month :" + month + "Date :" + date1
-							//		+ "DATE 1 :" + date);
 						} catch (ParseException e) {
 							model.addAttribute("successMessage", "");
 							errorValid = false;
@@ -277,7 +275,6 @@ public class ProfileViewWorkExperienceController {
 							model.addAttribute("errorMessage7",
 									"Unknown Date format :" + startDate);
 							log.error("Exception :" + e);
-							//System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -377,7 +374,6 @@ public class ProfileViewWorkExperienceController {
 				errorValid = false;
 			} else {
 				String startDate = experiencedetails.getStartDate();
-				//System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -427,15 +423,12 @@ public class ProfileViewWorkExperienceController {
 								errorValid = false;
 							}
 	
-							//System.out.println("Month :" + month + "Date :" + date1
-							//		+ "DATE 1 :" + date);
 						} catch (ParseException e) {
 							model.addAttribute("successMessage", "");
 							errorValid = false;
 							model.addAttribute("errorMessage6",
 									"Unknown Date format :" + startDate);
 							log.error("Exception :" + e);
-							//System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -454,7 +447,6 @@ public class ProfileViewWorkExperienceController {
 					|| experiencedetails.getEndDate().isEmpty()) {
 			} else {
 				String startDate = experiencedetails.getEndDate();
-				//System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -530,7 +522,6 @@ public class ProfileViewWorkExperienceController {
 							model.addAttribute("errorMessage7",
 									"Unknown Date format :" + startDate);
 							log.error("Exception :" + e);
-							//System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -630,7 +621,6 @@ public class ProfileViewWorkExperienceController {
 				errorValid = false;
 			} else {
 				String startDate = experiencedetails.getStartDate();
-				//System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -680,14 +670,11 @@ public class ProfileViewWorkExperienceController {
 								errorValid = false;
 							}
 	
-							//System.out.println("Month :" + month + "Date :" + date1
-							//		+ "DATE 1 :" + date);
 						} catch (ParseException e) {
 							model.addAttribute("successMessage", "");
 							errorValid = false;
 							model.addAttribute("errorMessage6",
 									"Unknown Date format :" + startDate);
-							//System.out.println("Exception :" + e);
 							log.error("Exception :" + e);
 						}
 					} else {
@@ -707,7 +694,6 @@ public class ProfileViewWorkExperienceController {
 					|| experiencedetails.getEndDate().isEmpty()) {
 			} else {
 				String startDate = experiencedetails.getEndDate();
-				//System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -782,7 +768,6 @@ public class ProfileViewWorkExperienceController {
 							errorValid = false;
 							model.addAttribute("errorMessage7",
 									"Unknown Date format :" + startDate);
-							//System.out.println("Exception :" + e);
 							log.error("Exception :" + e);
 						}
 					} else {

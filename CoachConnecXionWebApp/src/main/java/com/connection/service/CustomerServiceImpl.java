@@ -26,55 +26,55 @@ public class CustomerServiceImpl implements CustomerService{
 	private CustomerDao customerDao;
 	
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
-	public void addCustomer(Customer customer) {
+	public void addCustomer(Customer customer)  throws Exception{
 		customerDao.addCustomer(customer);
 	}
 	
-	public List<Customer> listCustomer() {
+	public List<Customer> listCustomer()  throws Exception{
 		return customerDao.listCustomer();
 	}
 	
-	public List<Customer> listSearchCustomer(String searchvalue) {
+	public List<Customer> listSearchCustomer(String searchvalue)  throws Exception{
 		return customerDao.listSearchCustomer(searchvalue);
 	}
 	
 	
-	public List<Customer> login(String email,String password){
+	public List<Customer> login(String email,String password) throws Exception{
 		
 		@SuppressWarnings("unchecked")
 		List<Customer> list=customerDao.login(email,password);
 		return list;
 	}
 	
-	public List<Customer> forgotPassword(String email){
+	public List<Customer> forgotPassword(String email) throws Exception{
 		List<Customer> list=customerDao.forgotPassword(email);
 		return list;
 	}
 	
-	public List<Object[]> unReadMsg(Customer customer){
+	public List<Object[]> unReadMsg(Customer customer) throws Exception{
 		List<Object[]>  list=customerDao.unReadMsg(customer);
 		return list;
 		
 	}
 	
-	public List<Object[]> fileDownload(Customer customer){
+	public List<Object[]> fileDownload(Customer customer) throws Exception{
 		List<Object[]>  list=customerDao.fileDownload(customer);
 		return list;
 	}
 	
-	public boolean cheking(String emailId){
+	public boolean cheking(String emailId) throws Exception{
 		boolean flag=customerDao.cheking(emailId);
 		return flag;
 	}
 	
 
-	public void deleteCustomer(Customer customer) {
+	public void deleteCustomer(Customer customer)  throws Exception{
 		customerDao.deleteCustomer(customer);
 	}
-	public Customer loadCustomer(CustomerBean customerBean) {
+	public Customer loadCustomer(CustomerBean customerBean)  throws Exception{
 		return customerDao.loadCustomer(customerBean);
 	}
-	public List<Customer> loadCustomerbymailId(CustomerBean customerBean){
+	public List<Customer> loadCustomerbymailId(CustomerBean customerBean) throws Exception{
 		return customerDao.loadCustomerbymailId(customerBean);
 	}
 }

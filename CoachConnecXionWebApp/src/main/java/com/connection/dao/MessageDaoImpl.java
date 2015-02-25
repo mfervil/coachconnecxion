@@ -39,16 +39,12 @@ public class MessageDaoImpl implements MessageDao {
 	@Autowired(required=false)
 	private SessionFactory sessionFactory;
 
-	public Usermessage saveUserMessage(Usermessage message2){
-		System.out.println("BEFORE SAVE "+message2.getDescription());
+	public Usermessage saveUserMessage(Usermessage message2)  throws Exception{
 		Set<UserAttachment> attachments=new HashSet<UserAttachment>();
 		attachments=message2.getUserattachment();
 		Iterator<UserAttachment> iterator=attachments.iterator();
 		String extension="";
-		/*while (iterator.hasNext()) {
-			extension=String.valueOf(iterator.next().getAttachmentname());
-			System.out.println("Extension-------------------"+extension);
-		}*/
+		
 		StatelessSession session=sessionFactory.openStatelessSession();
 		//Transaction transaction=session.beginTransaction();
 		try{
@@ -58,8 +54,6 @@ public class MessageDaoImpl implements MessageDao {
 		//attachments=(Set<Attachment>) message2.getAttachment(); 
 		//session.save(message2);
 		//Iterator<Attachment> iterator=attachments.iterator();
-		
-		
 		
 		while(iterator.hasNext()){
 			
@@ -73,36 +67,29 @@ public class MessageDaoImpl implements MessageDao {
 		//transaction.commit(); 
 		//session.
 		}catch(Exception e){
-			e.printStackTrace();
+			throw e;
+			//e.printStackTrace();
 			//transaction.rollback();
 		}
 		
 	}
 	
-		
-		
-		
-		System.out.println("CUSTOMER ID "+message2.getMessageid());  
 		//transaction.commit();
 		session.close();
 		}catch(Exception e){
-			e.printStackTrace();
+			throw e;
+			//e.printStackTrace();
 			//transaction.rollback();
 		}
 		return message2;     
 		
 	}
 	
-	public Message saveMessage(Message message2) {
-		System.out.println("BEFORE SAVE "+message2.getDescription());
+	public Message saveMessage(Message message2)  throws Exception{
 		Set<Attachment> attachments=new HashSet<Attachment>();
 		attachments=message2.getAttachment();
 		Iterator<Attachment> iterator=attachments.iterator();
 		String extension="";
-		/*while (iterator.hasNext()) {
-			extension=String.valueOf(iterator.next().getAttachmentname());
-			System.out.println("Extension-------------------"+extension);
-		}*/
 		StatelessSession session=sessionFactory.openStatelessSession();
 		//Transaction transaction=session.beginTransaction();
 		try{
@@ -112,8 +99,6 @@ public class MessageDaoImpl implements MessageDao {
 		//attachments=(Set<Attachment>) message2.getAttachment(); 
 		//session.save(message2);
 		//Iterator<Attachment> iterator=attachments.iterator();
-		
-		
 		
 		while(iterator.hasNext()){
 			
@@ -131,27 +116,23 @@ public class MessageDaoImpl implements MessageDao {
 			//transaction.rollback();
 		}
 	}
-	
 		
-		
-		
-		System.out.println("CUSTOMER ID "+message2.getMessageid());  
 		//transaction.commit();
 		session.close();
 		}catch(Exception e){
-			e.printStackTrace();
+			throw e;
+			//e.printStackTrace();
 			//transaction.rollback();
 		}
 		return message2;     
 		
 	}
-	public Message saveAttachment(Message message2){
+	public Message saveAttachment(Message message2) throws Exception{
 		
 		
 		//session.beginTransaction();
 		//session.flush();
 		
-		System.out.println("ID OF MESSAGE:- "+message2.getMessageid());
 			Set<Attachment> attachments=new HashSet<Attachment>();
 			attachments=(Set<Attachment>) message2.getAttachment(); 
 			//session.save(message2);
@@ -169,7 +150,8 @@ public class MessageDaoImpl implements MessageDao {
 				//transaction.commit(); 
 				//session.
 				}catch(Exception e){
-					e.printStackTrace();
+					throw e;
+					//e.printStackTrace();
 					//transaction.rollback();
 				}
 			}
@@ -179,13 +161,12 @@ public class MessageDaoImpl implements MessageDao {
 		
 	}
 
-	public Usermessage saveUserAttachment(Usermessage message2){
+	public Usermessage saveUserAttachment(Usermessage message2) throws Exception{
 		
 		
 		//session.beginTransaction();
 		//session.flush();
 		
-		System.out.println("ID OF MESSAGE:- "+message2.getMessageid());
 			Set<UserAttachment> attachments=new HashSet<UserAttachment>();
 			attachments=(Set<UserAttachment>) message2.getUserattachment();    
 			//session.save(message2);
@@ -203,7 +184,8 @@ public class MessageDaoImpl implements MessageDao {
 				//transaction.commit(); 
 				//session.
 				}catch(Exception e){
-					e.printStackTrace();
+					throw e;
+					//e.printStackTrace();
 					//transaction.rollback();
 				}
 			}
@@ -216,19 +198,13 @@ public class MessageDaoImpl implements MessageDao {
 	
 
 	@SuppressWarnings("unchecked")
-	public List<Message> getUserMessages(Customer fromCustomer, Customer toCustomer) { 
+	public List<Message> getUserMessages(Customer fromCustomer, Customer toCustomer)  throws Exception{ 
 		List<Message> messages=new ArrayList<Message>();
-		System.out.println("################################## getUserMessages ################################"); 
 		//Session session=sessionFactory.openSession(); 
 		
 		
 		Session session=sessionFactory.getCurrentSession();  
 		
-		//session.flush();
-		//session.clear();
-	//	session.close();
-		//Transaction transaction=session.beginTransaction();
-		//transaction.begin();
 		try{
 		Criteria crit = session.createCriteria(Message.class); 
 		
@@ -248,6 +224,7 @@ public class MessageDaoImpl implements MessageDao {
 		messages.addAll((List<Message>)crit.list()); 
 		//transaction.commit(); 
 		}catch(Exception e){
+			throw e;
 			//transaction.rollback();
 		}
 		//transaction.commit(); 
@@ -258,7 +235,7 @@ public class MessageDaoImpl implements MessageDao {
 
 	@Override
 	public List<Message> getUserMessagesUnRead(Customer fromCustomer,
-			Customer toCustomer) {
+			Customer toCustomer)  throws Exception{
 		List<Message> messages=new ArrayList<Message>();
 		
 		Session session=sessionFactory.getCurrentSession();
@@ -278,15 +255,13 @@ public class MessageDaoImpl implements MessageDao {
 		crit.addOrder(Order.desc("date"));
 		crit.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY); 
 		
-		System.out.println(crit.list());
 		
 		return messages;
 	}
 
 	@Override
-	public List<Usermessage> getUserMessagesByProfileId (long orderid) {
+	public List<Usermessage> getUserMessagesByProfileId (long orderid)  throws Exception{
 		List<Usermessage> messages=new ArrayList<Usermessage>();
-		System.out.println("################################## getUserMessagesByProfileId ################################"); 
 		//Session session=sessionFactory.openSession(); 
 		
 		Session session=sessionFactory.getCurrentSession();  
@@ -299,7 +274,6 @@ public class MessageDaoImpl implements MessageDao {
 		try{
 		Criteria crit = session.createCriteria(Usermessage.class); 
 
-		System.out.println("getUserMessagesByProfileId:: The profile info is: " + orderid);
 /*		
 		Criterion touser = Restrictions.eq("toprofileid", toProfileId); 
 		Criterion fromuser = Restrictions.eq("fromprofileid", fromProfileId);    
@@ -320,8 +294,8 @@ public class MessageDaoImpl implements MessageDao {
 		messages.addAll((List<Usermessage>)crit.list()); 
 		//transaction.commit(); 
 		}catch(Exception e){
-			e.printStackTrace();
-			System.out.println("The exception is: " + e.getMessage() );
+			throw e;
+			//e.printStackTrace();
 			//transaction.rollback();
 		}
 		//transaction.commit(); 
@@ -330,7 +304,7 @@ public class MessageDaoImpl implements MessageDao {
 	}
 
 	@Override
-	public List<Message> getUserMessagesUnReadByProfileId(long orderid) {
+	public List<Message> getUserMessagesUnReadByProfileId(long orderid)  throws Exception{
 		List<Message> messages=new ArrayList<Message>();
 		
 		Session session=sessionFactory.getCurrentSession();
@@ -357,8 +331,6 @@ public class MessageDaoImpl implements MessageDao {
 		crit.add(totalAnd);     
 		crit.addOrder(Order.desc("date"));
 		crit.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY); 
-		
-		System.out.println(crit.list());
 		
 		return messages;
 	}
@@ -418,6 +390,4 @@ public class MessageDaoImpl implements MessageDao {
 			session.close();
 		}
 	}
-
-	
 }

@@ -76,14 +76,11 @@ public class PackageController {
 			if (webRequest.getParameter("profileId") != null ) {
 				userProfileId = Long.valueOf(webRequest.getParameter("profileId"));
 				session.setAttribute("packagesProfileId", userProfileId); //For Breadcrumb
-				System.out.println("1 The profifle Id is: " + userProfileId);
 			} else if (session.getAttribute("packagesProfileId") != null){ //For Breadcrumb
 				userProfileId = Long.valueOf(session.getAttribute("packagesProfileId").toString() );
-				System.out.println("2 The profifle Id is: " + userProfileId);
 			} else {
 				//If no profileId is passed, then we assume the current user is trying to view and update his/her packages
 				userProfileId = SystemUtil.getUserProfileId(request, userProfileManager);
-				System.out.println("3 The profifle Id is: " + userProfileId);
 				if (userProfileId <= 0){
 					model.addAttribute("errorMessage", "You must first create a profile before adding packages. Enter your information below to create your profile.");
 					model.addAttribute("userprofileid", userProfileId);
@@ -191,12 +188,6 @@ public class PackageController {
 			pkg.setProfileId(userProfileId);
 			model.addAttribute("packageAttribute", pkg);
 
-			//System.out.println("Get the value of the session: " + session.getAttribute("createUserProfileProfileId"));
-			//if (session.getAttribute("createUserProfileProfileId") == null){
-				//If it is a new user, after a profile is created, they need to create a package
-			//	model.addAttribute("newuser", "1");
-			//}
-			
 			return "package/createPackage";
 			
 		} catch (Exception e) {

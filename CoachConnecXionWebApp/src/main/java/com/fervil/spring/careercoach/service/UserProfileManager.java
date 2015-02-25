@@ -14,12 +14,19 @@ public interface UserProfileManager  extends Serializable {
 	
     @NotNull
 	public List<UserProfile> getUserProfiles() throws Exception;
+
+    @NotNull
+	public int findFilteredUserProfilesCount(int coachingCategory, 
+			int coachingSubcategory, int industryExperience, 
+			String companyExperience, String coachFirstName, 
+			String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception;
     
     @NotNull
 	public List<HashMap> getUserProfiles(int coachingCategory, 
 			int coachingSubcategory, int industryExperience, 
 			String companyExperience, String coachFirstName, 
 			String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception;
+    
     public void storeUserProfile(UserProfile userProfile) throws Exception;
     public void deleteUserProfile(String id) throws Exception;
     public UserProfile findById(String id) throws Exception;	

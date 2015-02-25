@@ -9,24 +9,24 @@ import com.connection.model.Customer;
 
 @Component
 public interface CustomerService {
-	public void addCustomer(Customer customer);
+	public void addCustomer(Customer customer) throws Exception;
 
-	public List<Customer> listCustomer();
+	public List<Customer> listCustomer() throws Exception;
 	
 	
-	public boolean cheking(String emailId);
+	public boolean cheking(String emailId) throws Exception;
 	
 	/*public Customer getEmployee(int customerid);*/
 	
-	public List<Customer> login(String email,String password);
+	public List<Customer> login(String email,String password) throws Exception;
 	
-	public List<Object[]>  unReadMsg(Customer customer);
+	public List<Object[]>  unReadMsg(Customer customer) throws Exception;
 	
-	public List<Customer> listSearchCustomer(String searchvalue);
+	public List<Customer> listSearchCustomer(String searchvalue) throws Exception;
 	
-	public void deleteCustomer(Customer customer);
-	public List<Object[]> fileDownload(Customer customer);
-	public Customer loadCustomer(CustomerBean customerBean);
-	public List<Customer> forgotPassword(String email);
-	public List<Customer> loadCustomerbymailId(CustomerBean customerBean);
+	public void deleteCustomer(Customer customer) throws Exception;
+	public List<Object[]> fileDownload(Customer customer) throws Exception;
+	public Customer loadCustomer(CustomerBean customerBean) throws Exception;
+	public List<Customer> forgotPassword(String email) throws Exception;
+	public List<Customer> loadCustomerbymailId(CustomerBean customerBean) throws Exception;
 }

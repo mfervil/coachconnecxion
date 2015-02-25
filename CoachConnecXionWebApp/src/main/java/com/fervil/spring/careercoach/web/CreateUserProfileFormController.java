@@ -166,12 +166,10 @@ public class CreateUserProfileFormController {
 				//userProfile.setProfile_picture_type(frmprofilepicture.getContentType()); 
 			    
 				if (frmprofilepicture.getOriginalFilename().trim().equals("") ){  //If no new file was selected, use what was passed in the form
-					System.out.println("Inside 1: " + frmprofilepicture.getOriginalFilename().toString());
 					
 					userProfile.setProfile_picture_name(profilePictureName);
 					userProfile.setProfile_picture_type(profilePictureType);
 				} else {
-					System.out.println("Inside 2: " + frmprofilepicture.getOriginalFilename().toString());
 					
 					userProfile.setProfile_picture_name(frmprofilepicture.getOriginalFilename());
 					String[] split = frmprofilepicture.getOriginalFilename().split("\\.");
@@ -182,15 +180,8 @@ public class CreateUserProfileFormController {
 				userProfileManager.storeUserProfile(userProfile);
 				status.setComplete();
 
-				/*************************************************************************************
-				System.out.println("Info 1: " + profilePictureName);
-				System.out.println("Info 2: " + profilePictureType);
-				System.out.println("Info 3: " + frmprofilepicture.getOriginalFilename());
-				*************************************************************************************/
-				
 				//saveMultipartToDisk(profilepicture, userProfile);
 				if (!frmprofilepicture.getOriginalFilename().trim().equals("") ) {
-					System.out.println("if (!frmprofilepicture.getOriginalFilename(): " + frmprofilepicture.getOriginalFilename().toString());
 					
 					try{
 						saveMultipartToAmazonS3(frmprofilepicture, userProfile);   
@@ -240,7 +231,6 @@ public class CreateUserProfileFormController {
     	
         AmazonS3 s3client = new AmazonS3Client(new ProfileCredentialsProvider());
         try {
-            System.out.println("Uploading a new object to S3 from a file\n");
             //File fileName = new File(uploadFileNamePrefix + userProfile.getUserProfileId());
             
             File convFile = new File( multipart.getOriginalFilename());
@@ -258,6 +248,19 @@ public class CreateUserProfileFormController {
             //		bucketName, uploadFileNamePrefix + userProfile.getUserProfileId() + "." + ext, convFile ) );
             
          } catch (AmazonServiceException ase) {
+        	 String msg = "Caught an AmazonServiceException, which " +
+             		"means your request made it " +
+                     "to Amazon S3, but was rejected with an error response" +
+                     " for some reason. ";
+			     	 msg += "::Error Message:    " + ase.getMessage();
+			     	 msg += "::HTTP Status Code: " + ase.getStatusCode();
+			     	 msg += "::AWS Error Code:   " + ase.getErrorCode();
+			     	 msg += "::Error Type:       " + ase.getErrorType();
+			     	 msg += "::Request ID:       " + ase.getRequestId();
+			
+			     	 log.error(msg, ase);
+        	 
+/*        	 
             System.out.println("Caught an AmazonServiceException, which " +
             		"means your request made it " +
                     "to Amazon S3, but was rejected with an error response" +
@@ -267,14 +270,19 @@ public class CreateUserProfileFormController {
             System.out.println("AWS Error Code:   " + ase.getErrorCode());
             System.out.println("Error Type:       " + ase.getErrorType());
             System.out.println("Request ID:       " + ase.getRequestId());
+*/            
         } catch (AmazonClientException ace) {
-            System.out.println("Caught an AmazonClientException, which " +
+            String msg = "Caught an AmazonClientException, which " +
             		"means the client encountered " +
                     "an internal error while trying to " +
                     "communicate with S3, " +
-                    "such as not being able to access the network.");
-            System.out.println("Error Message: " + ace.getMessage());
-        }    	
+                    "such as not being able to access the network.";
+            
+        	 log.error(msg, ace);
+        }  catch (Exception e) {
+            String msg = "Caught a General Amazon Exception, which ";			                
+        	log.error(msg, e);
+        }     	
     }	
 
     private void saveMultipartToDisk(MultipartFile file, UserProfile userProfile) throws Exception {

@@ -23,13 +23,13 @@ public final class SecurityUtils {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null) {
             String msg = "No authenticated user";
-            log.error(msg);
+            //log.error(msg);
             return null;
         } else {
             Object principal = authentication.getPrincipal();
             if (!(principal instanceof User)) {
                 String msg = "Not AuthenticatedUser principal";
-                log.error(msg);
+                //log.error(msg);
                 return null;
             }
             return ((UserSecurityBean) principal);

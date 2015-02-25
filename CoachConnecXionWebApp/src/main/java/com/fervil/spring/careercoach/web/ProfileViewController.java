@@ -120,30 +120,21 @@ public class ProfileViewController {
 
 			if (webRequest.getParameter("BREADCRUMB") != null) {
 				profileId = (Long.valueOf(session.getAttribute("profileViewCoachProfileId").toString() )); //Added for breadcruumb
-System.out.println("1111111" + profileId);				
 			}else if (webRequest.getParameter("profileId") == null ){
-System.out.println("222222" + profileId);				
 				//cuin is the current logged in user
 				if (webRequest.getParameter("cuin") == null){
-System.out.println("3333333" + profileId);				
 					return "redirect:users/login";
 				} else { //Don't have profileId but am logged into the system
-System.out.println("444444" + profileId);				
 
 					//This logic is for new members who have created an account but have not yet created a profile
 					profileId = SystemUtil.getUserProfileId(request, userProfileManager);
-System.out.println("555555" + profileId);				
 
 					if (profileId < 1){ //If no profile exists in the system for this user, send him/her to create a profile
-System.out.println("666666" + profileId);				
-
 						return "redirect:/createuserprofile";
 					}
 				}
 			} else { //If here, I have logged in, and have a profileId
 					profileId = Long.valueOf(webRequest.getParameter("profileId"));
-System.out.println("77777" + profileId);				
-					
 			}
 			
 			//This attribute is used when a new user is creating a profile. After the user creates a profile, we want to remove them from session
@@ -174,11 +165,6 @@ System.out.println("77777" + profileId);
 			float averageRate1 = jobRatingService.getProfileRating(profileId);
 			Integer totalClients = jobRatingService.totalClientCount(profileId);
 	
-		    //UserProfileManager userProfileManager = new BasicUserProfileManager();
-			//userProfileManager = new BasicUserProfileManager();
-		    //myModel.put("userProfileInfo", userProfileManager.findById(profileId));
-			//List<EducationDetails> addEducations = addEducationService.getAll();
-			//List<ProfileInfo> profileInfo = addEducationService.getEducationById(profileId);
 			UserProfile userProfile = userProfileManager.findById(profileId);
 			
 			long loggedInUserProfileId = SystemUtil.getUserProfileId(request, userProfileManager);
@@ -312,7 +298,6 @@ System.out.println("77777" + profileId);
 
 		try{
 			model.addAttribute("resumeAttribute", new ResumesCertificates());
-			System.out.println(" The Profile Id is: " + webRequest.getParameter("profileId") );
 			List<ResumesCertificates> addResumes = addresumeService.getResumesById(Long.valueOf(webRequest.getParameter("profileId")));
 	
 			model.addAttribute("profileId", webRequest.getParameter("profileId"));
@@ -336,8 +321,6 @@ System.out.println("77777" + profileId);
 			@RequestParam(value = "profileId", required = true) long profileId,
 			Model model, org.springframework.web.context.request.WebRequest webRequest) {         
 
-		//System.out.println(" The profile Id in AddResume is /addResume -- RequestMethod.POST: " );
-
 		try{
 			log.debug("Received request to add new Resume");
 			boolean errorValid = true;
@@ -350,7 +333,6 @@ System.out.println("77777" + profileId);
 				model.addAttribute("errorMessage1", "Please Select the file");
 				errorValid = false;
 			}
-			System.out.println(resumescertificates.getFileName());
 			if (errorValid == true) {
 				try {
 					//Blob blob = Hibernate.createBlob(file.getInputStream());
@@ -367,7 +349,6 @@ System.out.println("77777" + profileId);
 					resumescertificates.setContent(blob);
 					resumescertificates.setContenttype(file.getContentType());
 					resumescertificates.setProfileId(profileId);
-					System.out.println("The profile Id is: " + profileId);
 					addresumeService.save(resumescertificates);
 					model.addAttribute("successMessage", "Added Successfully");
 					fileName=resumescertificates.getFileName();
@@ -402,7 +383,6 @@ System.out.println("77777" + profileId);
 			@RequestParam(value = "id", required = true) Integer id,
 			HttpServletResponse response, Model model) {
 		log.debug("Received request to download resume");
-		//System.out.println("ID VALUE :" + id);
 		try {
 			ResumesCertificates resumesCertificates = addresumeService.get(id);
 
@@ -515,7 +495,6 @@ System.out.println("77777" + profileId);
 				errorValid = false;
 			} else {
 				String startDate = educationDetails.getFromDate();
-				System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -529,7 +508,6 @@ System.out.println("77777" + profileId);
 							int date1 = Integer.parseInt(startDate.substring(3, 5));
 							int year1 = Integer
 									.parseInt(startDate.substring(6, 10));
-							System.out.println("YEAR1 :" + year1);
 							if (year1 == 0) {
 								model.addAttribute("errorMessage2",
 										"Year Should not be 0000");
@@ -576,7 +554,6 @@ System.out.println("77777" + profileId);
 							errorValid = false;
 							model.addAttribute("errorMessage2",
 									"Unknown Date format :" + startDate);
-							System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -596,7 +573,6 @@ System.out.println("77777" + profileId);
 					|| educationDetails.getToDate().isEmpty()) {
 			} else {
 				String startDate = educationDetails.getToDate();
-				System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -610,7 +586,6 @@ System.out.println("77777" + profileId);
 							int date1 = Integer.parseInt(startDate.substring(3, 5));
 							int year1 = Integer
 									.parseInt(startDate.substring(6, 10));
-							System.out.println("YEAR1 :" + year1);
 							if (year1 == 0) {
 								model.addAttribute("errorMessage6",
 										"Year Should not be 0000");
@@ -670,14 +645,11 @@ System.out.println("77777" + profileId);
 											"To Date Should be ahead of the From Date");
 								}
 							}
-							System.out.println("Month :" + month + "Date :" + date1
-									+ "DATE 1 :" + date);
 						} catch (ParseException e) {
 							model.addAttribute("successMessage", "");
 							errorValid = false;
 							model.addAttribute("errorMessage6",
 									"Unknown Date format :" + startDate);
-							System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -739,7 +711,6 @@ System.out.println("77777" + profileId);
 	public String getEducationEdit(
 			@RequestParam(value = "id", required = true) Integer id, Model model, org.springframework.web.context.request.WebRequest webRequest) {
 		try{
-			System.out.println("The Id from WebRequest is: " + webRequest.getParameter("profileId"));
 			model.addAttribute("profileId", webRequest.getParameter("profileId"));
 			model.addAttribute("educationAttribute", addEducationService.get(id));
 			return "education/EditEducation";
@@ -776,7 +747,6 @@ System.out.println("77777" + profileId);
 				errorValid = false;
 			} else {
 				String startDate = educationDetails.getFromDate();
-				System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -790,7 +760,6 @@ System.out.println("77777" + profileId);
 							int date1 = Integer.parseInt(startDate.substring(3, 5));
 							int year1 = Integer
 									.parseInt(startDate.substring(6, 10));
-							System.out.println("YEAR1 :" + year1);
 							if (year1 == 0) {
 								model.addAttribute("errorMessage2",
 										"Year Should not be 0000");
@@ -837,7 +806,6 @@ System.out.println("77777" + profileId);
 							errorValid = false;
 							model.addAttribute("errorMessage2",
 									"Unknown Date format :" + startDate);
-							System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -857,7 +825,6 @@ System.out.println("77777" + profileId);
 					|| educationDetails.getToDate().isEmpty()) {
 			} else {
 				String startDate = educationDetails.getToDate();
-				System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -871,7 +838,6 @@ System.out.println("77777" + profileId);
 							int date1 = Integer.parseInt(startDate.substring(3, 5));
 							int year1 = Integer
 									.parseInt(startDate.substring(6, 10));
-							System.out.println("YEAR1 :" + year1);
 							if (year1 == 0) {
 								model.addAttribute("errorMessage6",
 										"Year Should not be 0000");
@@ -931,14 +897,11 @@ System.out.println("77777" + profileId);
 											"To Date Should be ahead of the From Date");
 								}
 							}
-							System.out.println("Month :" + month + "Date :" + date1
-									+ "DATE 1 :" + date);
 						} catch (ParseException e) {
 							model.addAttribute("successMessage", "");
 							errorValid = false;
 							model.addAttribute("errorMessage6",
 									"Unknown Date format :" + startDate);
-							System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -985,7 +948,6 @@ System.out.println("77777" + profileId);
 			} else {
 				model.addAttribute("successMessage", "");
 			}
-			System.out.println("The Id from WebRequest is: + " + webRequest.getParameter("profileId"));
 			model.addAttribute("profileId", webRequest.getParameter("profileId"));
 			model.addAttribute("id", id);
 			return "education/EditEducation";
@@ -1033,7 +995,6 @@ System.out.println("77777" + profileId);
 				errorValid = false;
 			} else {
 				String startDate = experiencedetails.getStartDate();
-				System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -1083,14 +1044,11 @@ System.out.println("77777" + profileId);
 								errorValid = false;
 							}
 	
-							System.out.println("Month :" + month + "Date :" + date1
-									+ "DATE 1 :" + date);
 						} catch (ParseException e) {
 							model.addAttribute("successMessage", "");
 							errorValid = false;
 							model.addAttribute("errorMessage6",
 									"Unknown Date format :" + startDate);
-							System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -1109,7 +1067,6 @@ System.out.println("77777" + profileId);
 					|| experiencedetails.getEndDate().isEmpty()) {
 			} else {
 				String startDate = experiencedetails.getEndDate();
-				System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -1184,7 +1141,6 @@ System.out.println("77777" + profileId);
 							errorValid = false;
 							model.addAttribute("errorMessage7",
 									"Unknown Date format :" + startDate);
-							System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -1284,7 +1240,6 @@ System.out.println("77777" + profileId);
 				errorValid = false;
 			} else {
 				String startDate = experiencedetails.getStartDate();
-				System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -1334,14 +1289,11 @@ System.out.println("77777" + profileId);
 								errorValid = false;
 							}
 	
-							System.out.println("Month :" + month + "Date :" + date1
-									+ "DATE 1 :" + date);
 						} catch (ParseException e) {
 							model.addAttribute("successMessage", "");
 							errorValid = false;
 							model.addAttribute("errorMessage6",
 									"Unknown Date format :" + startDate);
-							System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -1360,7 +1312,6 @@ System.out.println("77777" + profileId);
 					|| experiencedetails.getEndDate().isEmpty()) {
 			} else {
 				String startDate = experiencedetails.getEndDate();
-				System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -1435,7 +1386,6 @@ System.out.println("77777" + profileId);
 							errorValid = false;
 							model.addAttribute("errorMessage7",
 									"Unknown Date format :" + startDate);
-							System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -1535,7 +1485,6 @@ System.out.println("77777" + profileId);
 				errorValid = false;
 			} else {
 				String startDate = experiencedetails.getStartDate();
-				System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -1585,14 +1534,11 @@ System.out.println("77777" + profileId);
 								errorValid = false;
 							}
 	
-							System.out.println("Month :" + month + "Date :" + date1
-									+ "DATE 1 :" + date);
 						} catch (ParseException e) {
 							model.addAttribute("successMessage", "");
 							errorValid = false;
 							model.addAttribute("errorMessage6",
 									"Unknown Date format :" + startDate);
-							System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -1611,7 +1557,6 @@ System.out.println("77777" + profileId);
 					|| experiencedetails.getEndDate().isEmpty()) {
 			} else {
 				String startDate = experiencedetails.getEndDate();
-				System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -1686,7 +1631,6 @@ System.out.println("77777" + profileId);
 							errorValid = false;
 							model.addAttribute("errorMessage7",
 									"Unknown Date format :" + startDate);
-							System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -1795,7 +1739,6 @@ System.out.println("77777" + profileId);
 				errorValid = false;
 			} else {
 				String startDate = educationDetails.getFromDate();
-				System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -1809,7 +1752,6 @@ System.out.println("77777" + profileId);
 							int date1 = Integer.parseInt(startDate.substring(3, 5));
 							int year1 = Integer
 									.parseInt(startDate.substring(6, 10));
-							System.out.println("YEAR1 :" + year1);
 							if (year1 == 0) {
 								model.addAttribute("errorMessage2",
 										"Year Should not be 0000");
@@ -1856,7 +1798,6 @@ System.out.println("77777" + profileId);
 							errorValid = false;
 							model.addAttribute("errorMessage2",
 									"Unknown Date format :" + startDate);
-							System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");
@@ -1876,7 +1817,6 @@ System.out.println("77777" + profileId);
 					|| educationDetails.getToDate().isEmpty()) {
 			} else {
 				String startDate = educationDetails.getToDate();
-				System.out.println("Start Date :" + startDate);
 				DateFormat formatter;
 				Date date;
 				if (startDate.length() == 10) {
@@ -1890,7 +1830,6 @@ System.out.println("77777" + profileId);
 							int date1 = Integer.parseInt(startDate.substring(3, 5));
 							int year1 = Integer
 									.parseInt(startDate.substring(6, 10));
-							System.out.println("YEAR1 :" + year1);
 							if (year1 == 0) {
 								model.addAttribute("errorMessage6",
 										"Year Should not be 0000");
@@ -1950,14 +1889,11 @@ System.out.println("77777" + profileId);
 											"To Date Should be ahead of the From Date");
 								}
 							}
-							System.out.println("Month :" + month + "Date :" + date1
-									+ "DATE 1 :" + date);
 						} catch (ParseException e) {
 							model.addAttribute("successMessage", "");
 							errorValid = false;
 							model.addAttribute("errorMessage6",
 									"Unknown Date format :" + startDate);
-							System.out.println("Exception :" + e);
 						}
 					} else {
 						model.addAttribute("successMessage", "");

@@ -447,7 +447,7 @@ a.link2{
 								 
 								<tr>
 									<td>Message:</td>
-									<td><textarea cols="50" rows="10" name="message" class="text-area" style="width:97%;border-radius:5px" id="message"></textarea></td>
+									<td><textarea cols="50" rows="5" name="message" class="text-area" style="width:97%;border-radius:5px" id="message"></textarea></td>
 								
 								 <td class="error" id=messsageerror>
                     
@@ -462,11 +462,13 @@ a.link2{
 								</tr>				
 								<tr>
 								<td></td>
-									<td colspan="2" align="center">
-									 <input type="submit" value="Send Message" style="display: block;float: left;padding: 8px 10px;background: #a53692;color: #fff;margin: 0 5px 0;"/>
-									 <a href="skype:${skypeName}?call" class="link1">Call Now</a>
+								<td></td>
+									<td style="text-align:left">
+									 <input type="submit" value="Send Message" style="font-size:14px;background: #0066CC; color: white;" > &nbsp;&nbsp;
+							 		 <a style="text-align:left; font-size:15px;background-color:#12A5F4; color: white;" href="skype:Select/Add_Contact?chat" >&nbsp;Start sKype Chat/Call&nbsp;</a>
 										
 									</td>
+									<tr><td>&nbsp;</td></tr>
 								</tr>
 							</table>
 						</form>
@@ -504,7 +506,7 @@ a.link2{
             		
                     <div class="para"><p>${messages.description}</p>
 	                    <c:forEach items="${messages.userattachment}" var="attachment">
-	                    	<a href="downloadFromAWSSE?attachId=${attachment.attachid}&orderid=${orderid}&messageid=${messages.messageid}&filename=${attachment.attachmentname}"><p>${attachment.attachmentname}</p></a>
+	                    	<a  style="color:blue" href="downloadFromAWSSE?attachId=${attachment.attachid}&orderid=${orderid}&messageid=${messages.messageid}&filename=${attachment.attachmentname}"><p>${attachment.attachmentname}</p></a>
 	                    </c:forEach>
 					</div>
                     <small>${fn:substring(messages.date, 0, 16)}</small>

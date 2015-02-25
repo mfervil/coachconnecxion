@@ -103,6 +103,90 @@ public class HibernateUserProfileDao implements UserProfileDao {
 		}
 	}
 
+	public String getCriteria(int coachingCategory,
+			int coachingSubcategory, int industryExperience,
+			String companyExperience, String coachFirstName,
+			String coachLastName, String city, String state, int pageSize, int pageNumber)  throws Exception {
+
+		String CRITERIA = "";
+		
+		if (coachingCategory > 0) CRITERIA = " where (coachingcategory1 = " + coachingCategory + " or coachingcategory2 = " + coachingCategory  + " or coachingcategory3 = " + coachingCategory + ") ";
+
+		if (industryExperience > 0) {
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			//CRITERIA = CRITERIA + " industry_experience = " + industryExperience;
+			CRITERIA = CRITERIA + " (industryfocus1 = " + industryExperience + " or industryfocus2 = " + industryExperience  + " or industryfocus3 = " + industryExperience + ") ";				
+		}
+
+		if (companyExperience != null  && !companyExperience.equals("")) {
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			//CRITERIA = CRITERIA + " company_experience like '%" + companyExperience + "%' ";
+			CRITERIA = CRITERIA + " (companyexperience1 like '%" + companyExperience + "%' or companyexperience2 like '%" + companyExperience  + "%' or companyexperience3 = '%" + companyExperience + "%' ) ";
+		}
+		
+		if (coachFirstName != null  && !coachFirstName.equals("")) {
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			CRITERIA = CRITERIA + " firstname like '%" + coachFirstName + "%' ";
+		}
+
+		if (coachLastName != null  && !coachLastName.equals("")) {
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			CRITERIA = CRITERIA + " lastname like '%" + coachLastName + "%' ";
+		}
+
+		if (city != null  && !city.equals("")) {
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			CRITERIA = CRITERIA + " city like '%" + city + "%' ";
+		}
+
+		if (state != null  && !state.equals("")) {
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			CRITERIA = CRITERIA + " state = '" + state + "' ";
+		}
+
+		CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+		CRITERIA = CRITERIA + " account_type = 1";
+
+		return CRITERIA;
+	}	
+
+	public int findFilteredUserProfilesCount(int coachingCategory,
+			int coachingSubcategory, int industryExperience,
+			String companyExperience, String coachFirstName,
+			String coachLastName, String city, String state, int pageSize, int pageNumber)  throws Exception {
+		
+		try {
+			// session.beginTransaction();
+			
+		    log.info("Coaching Category: " + coachingCategory);
+		    log.info("Coaching Sub Category: " + coachingSubcategory);
+
+			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
+					UserProfile.class);
+
+			String  CRITERIA = getCriteria(coachingCategory,
+					coachingSubcategory, industryExperience,
+					companyExperience, coachFirstName,
+					coachLastName, city, state, pageSize, pageNumber);
+	
+			String sql = " select count(*) from user_profile u " + CRITERIA;
+			
+			log.info(" findFilteredUserProfilesCount:::: " + sql);
+
+			int count = ((java.math.BigInteger)sessionFactory.getCurrentSession().createSQLQuery(sql).uniqueResult()).intValue() ; 
+			
+			//query.setResultTransformer(AliasToEntityMapResultTransformer.INSTANCE);
+			//List list = query.list();
+		    log.info(" findFilteredUserProfilesCount::Number of Coaches found: " + count);
+		    
+			return count;
+
+		} catch (Exception e) {
+			// tx.rollback();
+			throw e;
+		}
+	}
+	
 	public List findFilteredUserProfiles(int coachingCategory,
 			int coachingSubcategory, int industryExperience,
 			String companyExperience, String coachFirstName,
@@ -117,6 +201,14 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
 					UserProfile.class);
 
+			String  CRITERIA = getCriteria(coachingCategory,
+					coachingSubcategory, industryExperience,
+					companyExperience, coachFirstName,
+					coachLastName, city, state, pageSize, pageNumber);
+
+			/*
+			 2/19/2015 Moved this code to getCriteria
+			 
 			String CRITERIA = "";
 			
 			if (coachingCategory > 0) CRITERIA = " where (coachingcategory1 = " + coachingCategory + " or coachingcategory2 = " + coachingCategory  + " or coachingcategory3 = " + coachingCategory + ") ";
@@ -155,6 +247,7 @@ public class HibernateUserProfileDao implements UserProfileDao {
 
 			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
 			CRITERIA = CRITERIA + " account_type = 1";
+			*/
 			
 			String sql = " select u.city, u.state, u.user_profile_id, u.language, u.display_name, u.coaching_category, u.overview, u.profilepicture, u.profilepicturestring, u.profile_picture_type, " +
 			" (select c.coaching_category_name from coaching_category c where u.coachingcategory1 = c.coaching_category_id) coaching_category_name1, " +
@@ -166,18 +259,6 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			" from user_profile u " +
 			 CRITERIA;
 			
-/*			
-			String sql = " select u.user_profile_id, c.country_name country, u.language, u.display_name, u.coaching_category, u.overview, cg.coaching_category_name, " +
-			 " cg1.coaching_category_name coaching_SubCategory_name, " +
-			 " (select count(*) from packages_sold ps where ps.user_profile_id = u.user_profile_id) num_clients, " +  
-			 " (select min(p.price)  from package p where p.user_profile_id = u.user_profile_id) packages_from, " + 
-			 " (select avg(averagerating) from jobratingdetails j where j.user_profile_id=u.user_profile_id) rating " + 
-			 " from user_profile u " +
-			 " Left outer join country c on c.country_id = u.country " + 
-			 " Left outer join coaching_category cg on cg.coaching_category_id = u.coaching_category " + 
-			 " Left outer join coaching_category cg1 on cg1.coaching_category_id = u.coaching_subCategory " +
-			 CRITERIA;
-*/
 			log.info(" findFilteredUserProfiles:::: " + sql);
 
 			Query query = sessionFactory.getCurrentSession().createSQLQuery(sql); 
@@ -187,7 +268,7 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			
 			query.setResultTransformer(AliasToEntityMapResultTransformer.INSTANCE);
 			List list = query.list();
-		    log.info(" Number of Coaches found: " + list.size());
+		    log.info(" findFilteredUserProfiles::Number of Coaches found: " + list.size());
 		    
 			return ((List<HashMap>) list);
 

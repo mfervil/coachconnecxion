@@ -44,6 +44,12 @@ public class BasicUserProfileManager implements UserProfileManager {
         return userProfileDao.findFilteredUserProfiles(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
     }
     
+    @NotNull
+    @Override
+	public int findFilteredUserProfilesCount(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception {
+        return userProfileDao.findFilteredUserProfilesCount(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
+    }
+    
     
     @NotNull
 	public List<HashMap> getUserProfilesPictureString(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception {
@@ -105,10 +111,7 @@ public class BasicUserProfileManager implements UserProfileManager {
         	
         	String byteArrayBlobString ="";
         	
-        	System.out.println("1 The value of the picture Blob is: " + userProfilemap.get("profilepicture"));
-        	
         	if (userProfilemap.get("profilepicture") != null) {
-            	System.out.println("2 The value of the picture Blob is: " + userProfilemap.get("profilepicture"));
         		
 	        	//Blob profilePictureBlob = (Blob) userProfilemap.get("profilepicture");
 	    		//String imgLen = String.valueOf(profilePictureBlob);		
@@ -126,8 +129,6 @@ public class BasicUserProfileManager implements UserProfileManager {
             	Base64 bs=new Base64();
             	
             	//byteArrayBlobString = bs.encodeToString(rb);  Does not compile but should be used.........
-
-            	System.out.println("3 The value of the byteArrayBlobString is : " + byteArrayBlobString);
 	    		
         	}	
     		
@@ -136,8 +137,6 @@ public class BasicUserProfileManager implements UserProfileManager {
 
         	userProfilemap.put("profilepicturestring", byteArrayBlobString);
 
-        	System.out.println("4 The value of the byteArrayBlobString After putting in Map is : " + ((String)userProfilemap.get("profilepicturestring")).toString() );
-        	
         }        
         return userProfiles;
         

@@ -33,7 +33,7 @@ public class MessagedDaoImpl implements MessageDao {
 	private SessionFactory sessionFactory;
 
 	
-	public Message saveMessage(Message message2) {
+	public Message saveMessage(Message message2)  throws Exception{
 		Session session=sessionFactory.openSession();
 		//Transaction transaction=session.beginTransaction();
 		try{
@@ -41,7 +41,6 @@ public class MessagedDaoImpl implements MessageDao {
 			attachments=(Set<Attachment>) message2.getAttachment(); 
 			session.save(message2);
 			Iterator<Attachment> iterator=attachments.iterator();
-			System.out.println("########## MESSAGEID "+message2.getMessageid()); 
 			while(iterator.hasNext()){
 				Attachment attachment=iterator.next();
 				attachment.setMessageid(message2); 
@@ -49,10 +48,6 @@ public class MessagedDaoImpl implements MessageDao {
 			}
 			//transaction.commit();
 			Iterator<Attachment> iterator1=message2.getAttachment().iterator(); 
-			System.out.println("########## MESSAGEID "+message2.getMessageid()); 
-			while(iterator1.hasNext()){
-				System.out.println("&&&&&&&&&&&&&&&&&&&&&&  "+iterator1.next().getAttachid()); 
-			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -60,11 +55,8 @@ public class MessagedDaoImpl implements MessageDao {
 		
 	}
 
-
-	
-
 	@SuppressWarnings("unchecked")
-	public List<Message> getUserMessages(Customer fromCustomer, Customer toCustomer) { 
+	public List<Message> getUserMessages(Customer fromCustomer, Customer toCustomer)  throws Exception{ 
 		List<Message> messages=new ArrayList<Message>();
 		//Customer customer=new Customer();
 		//Customer customer1=new Customer();
@@ -95,12 +87,9 @@ public class MessagedDaoImpl implements MessageDao {
 		return messages;
 	}
 
-
-
-
 	@Override
 	public List<Message> getUserMessagesUnRead(Customer fromCustomer,
-			Customer toCustomer) {
+			Customer toCustomer)  throws Exception{
 		List<Message> messages=new ArrayList<Message>();
 		//Customer customer=new Customer();
 		//Customer customer1=new Customer();
@@ -129,13 +118,12 @@ public class MessagedDaoImpl implements MessageDao {
 		crit.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY); 
 		messages=(List<Message>)crit.list();
 		//transaction.commit();
-		System.out.println("TOTAL MESSAGE SIZE "+messages.size()); 
 		return messages;
 	}
 
 /* ================================================================================================================================================= */
 
-	public Usermessage saveUserMessage(Usermessage message2) {
+	public Usermessage saveUserMessage(Usermessage message2)  throws Exception{
 		Session session=sessionFactory.openSession();
 		//Transaction transaction=session.beginTransaction();
 		try{
@@ -143,7 +131,6 @@ public class MessagedDaoImpl implements MessageDao {
 			attachments=(Set<UserAttachment>) message2.getUserattachment(); 
 			session.save(message2);
 			Iterator<UserAttachment> iterator=attachments.iterator();
-			System.out.println("########## MESSAGEID "+message2.getMessageid()); 
 			while(iterator.hasNext()){
 				UserAttachment attachment=iterator.next();
 				attachment.setMessageid(message2); 
@@ -151,21 +138,14 @@ public class MessagedDaoImpl implements MessageDao {
 			}
 			//transaction.commit();
 			Iterator<UserAttachment> iterator1=message2.getUserattachment().iterator(); 
-			System.out.println("########## MESSAGEID "+message2.getMessageid()); 
-			while(iterator1.hasNext()){
-				System.out.println("&&&&&&&&&&&&&&&&&&&&&&  "+iterator1.next().getAttachid()); 
-			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 		return message2; 
 	}
 
-
-	
-
 	@SuppressWarnings("unchecked")
-	public List<Usermessage> getUserMessagesByProfileId(long orderid) { 
+	public List<Usermessage> getUserMessagesByProfileId(long orderid)  throws Exception { 
 		List<Usermessage> messages=new ArrayList<Usermessage>();
 		//Customer customer=new Customer();
 		//Customer customer1=new Customer();
@@ -198,7 +178,7 @@ public class MessagedDaoImpl implements MessageDao {
 	}
 
 	@Override
-	public List<Message> getUserMessagesUnReadByProfileId(long orderid) {
+	public List<Message> getUserMessagesUnReadByProfileId(long orderid)  throws Exception{
 		List<Message> messages=new ArrayList<Message>();
 		//Customer customer=new Customer();
 		//Customer customer1=new Customer();
@@ -237,7 +217,6 @@ public class MessagedDaoImpl implements MessageDao {
 		crit.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY); 
 		messages=(List<Message>)crit.list();
 		//transaction.commit();
-		System.out.println("TOTAL MESSAGE SIZE "+messages.size()); 
 		return messages;
 	}
 	
@@ -269,7 +248,6 @@ public class MessagedDaoImpl implements MessageDao {
 		} finally {
 			session.close();
 		}
-		
 	}
 	
 	public void updateReadStatus (long orderid, long userCommunicatingTotoProfileId, long currentLoggedInUserProfileId, int readStaus) throws Exception {

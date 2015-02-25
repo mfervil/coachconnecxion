@@ -151,13 +151,17 @@ public class PaymentInformationFormController  {
 						try{
 					        //Create a profile record for the user....................................
 					        UserProfile up = new UserProfile();
+					        
+					        up.setFirstname(paymentInformation.getFirstName());
+					        up.setLastname(paymentInformation.getLastName());
+					        up.setEmail(webRequest.getParameter("email"));
+					        
 					        up.setAccountType(2);
 					        up.setHourlyRate(0);
 					        up.setUserProfileType(2);
 					        up.setUser_userId(user.getId());
 					        up.setCoachingcategory1(17);
 					        userProfileManager.storeUserProfile(up);
-					        System.out.println("We've saved to the UserProfile table");
 					        //End Create a profile record for the user
 					        
 						} catch (Exception e){

@@ -54,7 +54,6 @@ public class CustomerBean {
 		return name;
 	}
 	public void setName(String name) {
-		//System.out.println("Name-----");
 		this.name = name;
 	}
 	
@@ -62,14 +61,12 @@ public class CustomerBean {
 		return phno;
 	}
 	public void setPhno(Long phno) {
-		//System.out.println("PHno.....");
 		this.phno = phno;
 	}
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
-		//System.out.println("Address----------------------------------");
 		this.address = address;
 	}
 	public Date getCreateddate() {

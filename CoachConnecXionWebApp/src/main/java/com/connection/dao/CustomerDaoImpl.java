@@ -30,25 +30,25 @@ public class CustomerDaoImpl implements CustomerDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	public void addCustomer(Customer customer) {
+	public void addCustomer(Customer customer)  throws Exception{
 		
 		Session session=sessionFactory.getCurrentSession();
 		//Transaction transaction=session.beginTransaction();
 		try{
 		session.saveOrUpdate(customer);
-		System.out.println("CUSTOMER ID "+customer.getCustomerid()); 
 		//transaction.commit();
 		}catch(Exception e){
+			throw e;
 			//transaction.rollback();
 		}
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Customer> listCustomer() {
+	public List<Customer> listCustomer()  throws Exception{
 		return (List<Customer>) sessionFactory.openSession().createCriteria(Customer.class).list();
 	}
 	
-	public List<Customer> login(String email,String Password){
+	public List<Customer> login(String email,String Password)  throws Exception{
 		Criteria cr = sessionFactory.openSession().createCriteria(Customer.class); 
 		cr.add(Restrictions.eq("emailid",email));
 		cr.add(Restrictions.eq("password",Password));
@@ -61,7 +61,7 @@ public class CustomerDaoImpl implements CustomerDao{
 		//return Customer sessionFactory.getCurrentSession().createQuery("SELECT * FROM customer WHERE emailid="+email+" AND PASSWORD="+Password).e
 	}
 	
-	public List<Customer> forgotPassword(String email){
+	public List<Customer> forgotPassword(String email) throws Exception{
 		Criteria cr = sessionFactory.openSession().createCriteria(Customer.class);
 		cr.add(Restrictions.eq("emailid",email));
 		//cr.add(Restrictions.eq("password",Password));
@@ -75,7 +75,7 @@ public class CustomerDaoImpl implements CustomerDao{
 	}
 	
 
-	public List<Object[]> unReadMsg(Customer customer){
+	public List<Object[]> unReadMsg(Customer customer) throws Exception{
 		//Criteria cr=sessionFactory.getCurrentSession().createCriteria(Message.class);
 		Session session=sessionFactory.getCurrentSession();
 		////session.flush();
@@ -89,45 +89,39 @@ public class CustomerDaoImpl implements CustomerDao{
 		list=(List<Object[]>)query.list(); 
 		//transaction.commit();
 		}catch(Exception e){
+			throw e;
 			//transaction.rollback();
 		}
-		/*for(Object[] arr : list){
-            System.out.println(Arrays.toString(arr));
-        }*/
 			//session.close();
 		return list;
 	
 	}
 		
-	public List<Object[]> fileDownload(Customer customer){
+	public List<Object[]> fileDownload(Customer customer) throws Exception{
 		Session session=sessionFactory.getCurrentSession();
 		////session.flush();
 		//Transaction transaction=session.beginTransaction();
 		List<Object[]> groupList=new ArrayList<Object[]>();
 		try{
 		Query query=session.createQuery("SELECT c.customername,DATE_FORMAT(m.date,GET_FORMAT(DATE,'ISO')),a.attachment_name,a.attachid FROM Customer c,Message m,Attachment a  WHERE a.messageid=m.messageid AND c.customerid = m.fromuser AND a.attachment_name IS NOT NULL AND a.attachment_name <> '' AND m.touser =:touser ORDER BY c.customername,m.date DESC ");
-		//System.out.println("Id----"+customer.getCustomerid());
 		query.setParameter("touser", customer);	
 		
 		groupList=query.list();
 		//transaction.commit();
 		}catch(Exception e){
+			throw e;
 			//transaction.rollback();
 		}
-		/*for(Object[] arr : groupList){
-            System.out.println(Arrays.toString(arr));
-        }*/
 		//session.close();
 		return groupList;
 		
 	}
 	
 	//start Code Tanumoy
-		public Customer loadCustomer(CustomerBean customerBean) { 
+		public Customer loadCustomer(CustomerBean customerBean)  throws Exception{ 
 			Session session= sessionFactory.getCurrentSession(); 
 			//Transaction transaction=session.beginTransaction();
 			try{
-				System.out.println("######################## loadCustomer ############################");
 			
 			////session.flush();
 			//Transaction transaction=session.beginTransaction();
@@ -136,18 +130,19 @@ public class CustomerDaoImpl implements CustomerDao{
 			//session.close();
 			return bean;
 			}catch(Exception e){
+				throw e;
 				//transaction.rollback();
-				e.printStackTrace();
+				//e.printStackTrace();
 			}
 			
-			return null;
+			//2/21/2015 return null;
 		}
 		//end Code Tanumoy
 	
 	
 	
 	
-	public List<Customer> listSearchCustomer(String searchvalue){
+	public List<Customer> listSearchCustomer(String searchvalue)  throws Exception{
 		Session session=sessionFactory.getCurrentSession();
 		////session.flush();
 		//Transaction transaction=session.beginTransaction();
@@ -164,6 +159,7 @@ public class CustomerDaoImpl implements CustomerDao{
 		list= (List<Customer>)cr.list();
 		//transaction.commit();
 		}catch(Exception e){
+			throw e;
 			//transaction.rollback();
 		}
 		//session.close();
@@ -174,7 +170,7 @@ public class CustomerDaoImpl implements CustomerDao{
 	}
 	
 	
-	public boolean cheking(String emailId){
+	public boolean cheking(String emailId)  throws Exception{
 		 boolean flag=false;
 		 Session session=sessionFactory.getCurrentSession();
 		 //Transaction transaction=session.beginTransaction();
@@ -204,11 +200,11 @@ public class CustomerDaoImpl implements CustomerDao{
 	
 	
 	
-	public void deleteCustomer(Customer customer) {
+	public void deleteCustomer(Customer customer)  throws Exception{
 		sessionFactory.getCurrentSession().createQuery("DELETE FROM Customer WHERE customerid = "+customer.getCustomerid()).executeUpdate();
 	}
 
-			public List<Customer> loadCustomerbymailId(CustomerBean customerBean) { 
+			public List<Customer> loadCustomerbymailId(CustomerBean customerBean)   throws Exception{ 
 				
 				Session session=sessionFactory.getCurrentSession();
 				 //Transaction transaction=session.beginTransaction();
@@ -229,11 +225,7 @@ public class CustomerDaoImpl implements CustomerDao{
 			}
 		
 	
-	public static void main(String args[]){
+	public static void main(String args[]) throws Exception{
 		CustomerDaoImpl customerDaoImpl=new  CustomerDaoImpl();
-		//List<String> list=customerDaoImpl.unReadMsg("tmmca12@gmail.com");
-		//for(String name:list){
-		//	System.out.println("Name---"+name);
-		//}
 	}
 }

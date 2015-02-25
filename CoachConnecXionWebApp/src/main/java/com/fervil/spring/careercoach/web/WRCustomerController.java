@@ -66,42 +66,45 @@ public class WRCustomerController {
 	private static final int BUFFER_SIZE = 4096;
 	
 	
-	
+/*	
 	@RequestMapping(value = "/workroom/wrsaveCustomer", method = RequestMethod.POST)
 	public ModelAndView saveCustomer(@ModelAttribute("command") CustomerBean customerbean, 
 			BindingResult result) {
 		
 		Map<String, Object> model = new HashMap<String, Object>();
 		try{
-		String email=customerbean.getEmailid();
-		boolean flag=customerService.cheking(email);
-		if(!flag){
+			String email=customerbean.getEmailid();
+			boolean flag=customerService.cheking(email);
+			if(!flag){
+				
 			
-		
+				
+			String password=customerbean.getPassword();
+		    if(password.equals(customerbean.getConfirmpassword())){
+			Customer employee = prepareModel(customerbean);
 			
-		String password=customerbean.getPassword();
-	    if(password.equals(customerbean.getConfirmpassword())){
-		Customer employee = prepareModel(customerbean);
-		
-		customerService.addCustomer(employee);
-		regiMail(employee);
-		model.put("msg", "Customer Inserted Successfully");
-		}
-		else{
+			customerService.addCustomer(employee);
+			regiMail(employee);
+			model.put("msg", "Customer Inserted Successfully");
+			}
+			else{
+				
+				model.put("msg", "password and confirm password not match");
+			}
+			}
+			else{
+				model.put("msg", "Email Id present in data base");
+			}
+			model.put("customers",  prepareListofBean(customerService.listCustomer()));
 			
-			model.put("msg", "password and confirm password not match");
-		}
-		}
-		else{
-			model.put("msg", "Email Id present in data base");
-		}
-		model.put("customers",  prepareListofBean(customerService.listCustomer()));
-		
         }catch(Exception exception){
         	model.put("msg", exception.getMessage());
 		}
 		return new ModelAndView("workroom/wraddCustomer", model);
 	}
+*/	
+
+/*	
 	@RequestMapping(value = "/workroom/wraddCustomer", method = RequestMethod.GET)
 	public ModelAndView addCustomer(@ModelAttribute("command")  CustomerBean customerbean,
 			BindingResult result) {
@@ -130,7 +133,9 @@ public class WRCustomerController {
 	public ModelAndView welcome() {
 		return new ModelAndView("workroom/wrindex");
 	}
-
+*/
+	
+/*	
 	@RequestMapping(value = "/workroom/wrlogin", method = RequestMethod.POST)
 	public ModelAndView login(@ModelAttribute("command")  CustomerBean customerbean,
 			BindingResult result,HttpServletRequest request) {
@@ -189,31 +194,27 @@ public class WRCustomerController {
 			}
 			model.put("listdownload",listdownload);
 			
-			/*
+			// * Was already commented out
 			List<Attachment> attachments=new Arrray 
 			CustomerBean bean=new CustomerBean();
 			bean.setId(customer.getCustomerid()); 
 			Customer model1=new Customer();
 			model1=customerService.loadCustomer(bean);
-			System.out.println("^^^^^^^^^^^^^^^^^^^^^  TEST CODE RESULT "+model1.getEmailid());  
 			Iterator<Message> iterator=model1.getFromMessage().iterator();
-			System.out.println("MESSAGE SIZE "+model1.getFromMessage().size() );  
 			while (iterator.hasNext()) {
-				System.out.println("%%%%%%%%%%%%%%%%%%%%"); 
 				
 				Message message=iterator.next();
-				System.out.println("ITERATOR   "+message.getDescription());  
 				Iterator<Attachment> iterator2=message.getAttachment().iterator(); 
 				while(iterator2.hasNext()){
 					
-					
-					System.out.println("@@@@@@@@@@@@@@@ iterator2  "+iterator2.next().getAttachmentname()); 
 				}
 			//return new ModelAndView("Welcome", model);
 			
 			}
 			model.put("message", iterator);
-			*/
+			* //  Was already commented out
+	
+	
 			return new ModelAndView("workroom/wrWelcome", model);
 			
 			
@@ -222,6 +223,9 @@ public class WRCustomerController {
 			return new ModelAndView("workroom/wrloginPage", model);
 		}
 	}
+*/
+
+/*	
 	@RequestMapping(value = "/workroom/wrhome", method = RequestMethod.GET)
 	public ModelAndView homePage(@ModelAttribute("command")  CustomerBean customerbean,
 			BindingResult result,HttpServletRequest request) throws MessagingException {
@@ -272,16 +276,58 @@ public class WRCustomerController {
 		//return new ModelAndView("Welcome", model);
 		
 	}
-	
+*/	
 	
 	
 	@RequestMapping(value = "/workroom/wrsendMail", method = RequestMethod.GET)
 	public ModelAndView sendMail(@ModelAttribute("command")  CustomerBean customerbean,
-			BindingResult result,HttpServletRequest request) throws MessagingException {
-		boolean flag=sendMail();
-		return new ModelAndView("workroom/wrindex");
+			BindingResult result,HttpServletRequest request) {
+		Map<String, Object> model = new HashMap<String, Object>();
+
+		try{
+			boolean flag=sendMail();
+			return new ModelAndView("workroom/wrindex");
+		} catch (Exception e) {
+	        String msg = "Error encountered while downloading your file.  The file is either corrupted or does not exist " + e;
+	        log.error(msg, e);
+	        model.put(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+			//model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+			return new ModelAndView("public/common/error/errorpage", model);
+
+			//return "public/common/error/errorpage";
+
+		}	
 		
 	}
+
+	
+	private boolean sendMail() throws Exception{
+		
+		String recipientAddress = "tmmca10@gmail.com";
+		String subject = "test";
+		String message = "test";
+
+       
+       MimeMessage msg = mailSender.createMimeMessage();  
+       
+       MimeMessageHelper helper = new MimeMessageHelper(msg, true);  
+       helper.setFrom("sanando.beas@gmail.com");  
+       helper.setTo("tmmca10@gmail.com");  
+       helper.setSubject(subject);  
+       //helper.setText(message);  
+ 
+       // attach the file  
+       FileSystemResource file = new FileSystemResource(new File("d:/rr.txt"));  
+       helper.addAttachment("mybrothermage.txt", file);//image will be sent by this name  
+ 
+       mailSender.send(msg);  
+       
+       return true;
+	}
+	
+	
+	
+/*	
 	@RequestMapping(value = "/workroom/wrforgotPasswordPage", method = RequestMethod.GET)
 	public ModelAndView forgotPasswordPage(@ModelAttribute("command")  CustomerBean customerbean,
 			BindingResult result,HttpServletRequest request) throws MessagingException {
@@ -313,74 +359,82 @@ public class WRCustomerController {
 		
 	}
 	
-	
-	
-	
-	
+*/	
 	
 	@RequestMapping(value = "/workroom/wrsearch", method = RequestMethod.POST)
 	public ModelAndView search(@ModelAttribute("command")  CustomerBean customerbean,
 			BindingResult result,HttpServletRequest request) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		
-		String searchValue=customerbean.getSearchValue();
-		if(searchValue!=null && !searchValue.equalsIgnoreCase("")){
+		try{
 			
-		
-		List<Customer> list=customerService.listSearchCustomer(searchValue);
-		
-		//List<Customer> list=customerService.login(emailID, pass);
-		model.put("customers",  list);
-		
-		//Collections.sort(listarray.subList(1, listarray.size()));
-		//model.put("listarray", listarray);
-		}
-		
-		else{
-			model.put("msg","Please Enter data in text field");
-		}
-		HttpSession session=request.getSession();
-		Customer customer=(Customer)session.getAttribute("Customer");
-		
-		List<Object[]> listname=customerService.unReadMsg(customer);
-		List<String[]> listarray=new ArrayList<String[]>();
-		
-		String checker="";
-		for(Object[] arr : listname){
-            String[] liststring=new String[4];
-            int index=0;
-            for(Object value:arr){
-            	 //String value=value.toString()
-            	
-            	liststring[index]=value.toString();
-            	//checker=liststring[0];
-            	index++;
-            }
-            listarray.add(liststring);
-        }
-		//Collections.sort(listarray.subList(1, listarray.size()));
-		model.put("listarray", listarray);
-		
-		List<Object[]>  listObject=customerService.fileDownload(customer);
-        List<String[]> listdownload=new ArrayList<String[]>();
-		
-		//String checker="";
-		for(Object[] arr : listObject){
-            String[] liststring=new String[4];
-            int index=0;
-            for(Object value:arr){
-            	 //String value=value.toString()
-            	
-            	liststring[index]=value.toString();
-            	//checker=liststring[0];
-            	index++;
-            }
-            listdownload.add(liststring);
-		}
-		model.put("listdownload",listdownload);
-		return new ModelAndView("workroom/wrWelcome", model);
+			String searchValue=customerbean.getSearchValue();
+			if(searchValue!=null && !searchValue.equalsIgnoreCase("")){
+				
+			
+			List<Customer> list=customerService.listSearchCustomer(searchValue);
+			
+			//List<Customer> list=customerService.login(emailID, pass);
+			model.put("customers",  list);
+			
+			//Collections.sort(listarray.subList(1, listarray.size()));
+			//model.put("listarray", listarray);
+			}
+			
+			else{
+				model.put("msg","Please Enter data in text field");
+			}
+			HttpSession session=request.getSession();
+			Customer customer=(Customer)session.getAttribute("Customer");
+			
+			List<Object[]> listname=customerService.unReadMsg(customer);
+			List<String[]> listarray=new ArrayList<String[]>();
+			
+			String checker="";
+			for(Object[] arr : listname){
+	            String[] liststring=new String[4];
+	            int index=0;
+	            for(Object value:arr){
+	            	 //String value=value.toString()
+	            	
+	            	liststring[index]=value.toString();
+	            	//checker=liststring[0];
+	            	index++;
+	            }
+	            listarray.add(liststring);
+	        }
+			//Collections.sort(listarray.subList(1, listarray.size()));
+			model.put("listarray", listarray);
+			
+			List<Object[]>  listObject=customerService.fileDownload(customer);
+	        List<String[]> listdownload=new ArrayList<String[]>();
+			
+			//String checker="";
+			for(Object[] arr : listObject){
+	            String[] liststring=new String[4];
+	            int index=0;
+	            for(Object value:arr){
+	            	 //String value=value.toString()
+	            	
+	            	liststring[index]=value.toString();
+	            	//checker=liststring[0];
+	            	index++;
+	            }
+	            listdownload.add(liststring);
+			}
+			model.put("listdownload",listdownload);
+			return new ModelAndView("workroom/wrWelcome", model);
+			
+		} catch (Exception e) {
+	        String msg = "Error encountered while downloading your file.  The file is either corrupted or does not exist " + e;
+	        log.error(msg, e);
+	        model.put(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+			//model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+			return new ModelAndView("public/common/error/errorpage", model);
+		}	
 	}
 	
+/*	
 	@RequestMapping(value = "/workroom/wrloginPage", method = RequestMethod.GET)
 	public ModelAndView loginPage(@ModelAttribute("command")  CustomerBean customerbean,
 			BindingResult result,HttpServletRequest request) {
@@ -441,20 +495,16 @@ public class WRCustomerController {
 			}
 			model.put("listdownload",listdownload);
 			
-			/*
+			// 2/23/2015 Was already commented out*
 			List<Attachment> attachments=new Arrray 
 			CustomerBean bean=new CustomerBean();
 			bean.setId(customer.getCustomerid()); 
 			Customer model1=new Customer();
 			model1=customerService.loadCustomer(bean);
-			System.out.println("^^^^^^^^^^^^^^^^^^^^^  TEST CODE RESULT "+model1.getEmailid());  
 			Iterator<Message> iterator=model1.getFromMessage().iterator();
-			System.out.println("MESSAGE SIZE "+model1.getFromMessage().size() );  
 			while (iterator.hasNext()) {
-				System.out.println("%%%%%%%%%%%%%%%%%%%%"); 
 				
 				Message message=iterator.next();
-				System.out.println("ITERATOR   "+message.getDescription());  
 				Iterator<Attachment> iterator2=message.getAttachment().iterator(); 
 				while(iterator2.hasNext()){
 					
@@ -465,7 +515,7 @@ public class WRCustomerController {
 			
 			}
 			model.put("message", iterator);
-			*/
+			*  2/23/2015 Was already commented out /
 			return new ModelAndView("workroom/wrWelcome", model);
 			
 			
@@ -475,7 +525,7 @@ public class WRCustomerController {
 		}
 	}
 
-	
+*/	
 	
 /*		
 		@RequestMapping(value = "/workroom/wrloginPage", method = RequestMethod.GET)
@@ -493,163 +543,177 @@ public class WRCustomerController {
 		
 		@RequestMapping(value = "/workroom/wrsendMessage", method = RequestMethod.GET)
 		public ModelAndView  sendMessage(org.springframework.web.context.request.WebRequest webRequest) {
-			
-			System.out.println("######################################### sendMessage ###############################################"); 
 
 			//Map<String, Object> model = new HashMap<String, Object>();
 			ModelMap model = new ModelMap();
 			
-			long orderid = Long.valueOf(webRequest.getParameter("orderid"));
-
-			long currentLoggedInUserProfileId = Long.valueOf(webRequest.getParameter("fromprofileid"));
-			long userCommunicatingTotoProfileId = Long.valueOf(webRequest.getParameter("toprofileid"));
-			String fromEmail = webRequest.getParameter("fromemail").toString();
-			String toEmail = webRequest.getParameter("toemail").toString() ;
-
-			String fromdisplayname = webRequest.getParameter("fromdisplayname").toString();
-			String todisplayname = webRequest.getParameter("todisplayname").toString() ;
-			
-			
-			System.out.println("The passed info is: " + currentLoggedInUserProfileId + ":" + userCommunicatingTotoProfileId + ":" + fromEmail + ":" + toEmail);
-			
-			//System.out.println("############  EMAIL "+customerService.loadCustomer(customerbean).getEmailid()); 
-			/*
-			Customer customer=new Customer();
-			try {
-				customer=customerService.loadCustomer(customerbean);
-				BeanUtils.copyProperties(customerbean, customer); 
+			try{
+				System.out.println("######################################### sendMessage ###############################################"); 
+	
 				
-			} catch (IllegalAccessException e) {				
-				e.printStackTrace();
-			} catch (InvocationTargetException e) {				
-				e.printStackTrace();
-			}
-			*/
-			
-			
-			
-			//HttpSession session=request.getSession();
-			//Customer fromCustomer=(Customer)session.getAttribute("Customer");
-			List<Usermessage> messages=new ArrayList<Usermessage>();
-			
-			messages=messageService.getUserMessagesByProfileId(orderid);  
-
-			System.out.println("WRCustomerController::wrsendMessage 1:: The messages are: " + messages.size()  );
-
-			for(int i=0;i<messages.size();i++){
+				long orderid = Long.valueOf(webRequest.getParameter("orderid"));
+	
+				long currentLoggedInUserProfileId = Long.valueOf(webRequest.getParameter("fromprofileid"));
+				long userCommunicatingTotoProfileId = Long.valueOf(webRequest.getParameter("toprofileid"));
+				String fromEmail = webRequest.getParameter("fromemail").toString();
+				String toEmail = webRequest.getParameter("toemail").toString() ;
+	
+				String fromdisplayname = webRequest.getParameter("fromdisplayname").toString();
+				String todisplayname = webRequest.getParameter("todisplayname").toString() ;
 				
-				Usermessage message=new Usermessage();
-				message=messages.get(i); 
-
-				System.out.println("WRCustomerController::wrsendMessage 2:: The messages are: " + message.getMessageid());
-			}
-
-			//Change the status of all the messages to read.
-			try {
-				messageService.updateReadStatus(orderid, userCommunicatingTotoProfileId, currentLoggedInUserProfileId, 0);
+				
+				System.out.println("The passed info is: " + currentLoggedInUserProfileId + ":" + userCommunicatingTotoProfileId + ":" + fromEmail + ":" + toEmail);
+				
+				//System.out.println("############  EMAIL "+customerService.loadCustomer(customerbean).getEmailid()); 
+				/*
+				Customer customer=new Customer();
+				try {
+					customer=customerService.loadCustomer(customerbean);
+					BeanUtils.copyProperties(customerbean, customer); 
+					
+				} catch (IllegalAccessException e) {				
+					e.printStackTrace();
+				} catch (InvocationTargetException e) {				
+					e.printStackTrace();
+				}
+				*/
+				
+				
+				
+				//HttpSession session=request.getSession();
+				//Customer fromCustomer=(Customer)session.getAttribute("Customer");
+				List<Usermessage> messages=new ArrayList<Usermessage>();
+				
+				messages=messageService.getUserMessagesByProfileId(orderid);  
+	
+				System.out.println("WRCustomerController::wrsendMessage 1:: The messages are: " + messages.size()  );
+	
+				for(int i=0;i<messages.size();i++){
+					
+					Usermessage message=new Usermessage();
+					message=messages.get(i); 
+	
+					System.out.println("WRCustomerController::wrsendMessage 2:: The messages are: " + message.getMessageid());
+				}
+	
+				//Change the status of all the messages to read.
+				try {
+					messageService.updateReadStatus(orderid, userCommunicatingTotoProfileId, currentLoggedInUserProfileId, 0);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}  
+				
+				model.addAttribute("emailid", toEmail);  
+				model.addAttribute("name", "Marc Test Name");   
+				//model.addAttribute("id", toProfileId);
+	
+				model.addAttribute("fromprofileid", currentLoggedInUserProfileId);
+				model.addAttribute("toprofileid", userCommunicatingTotoProfileId);
+				model.addAttribute("orderid", orderid);
+	
+				model.addAttribute("fromdisplayname", fromdisplayname);
+				model.addAttribute("todisplayname", todisplayname);
+				
+				model.addAttribute("fromemail", fromEmail);
+				model.addAttribute("toemail", toEmail);
+				
+				//session.setAttribute("TO_CUSTOMER",customer );
+				model.addAttribute("skypeName","mfervil");
+				
+				model.put("messages", messages);
+				return new ModelAndView("workroom/wrEmailForm", model); 
+			
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}  
+		        String msg = "Error encountered while downloading your file.  The file is either corrupted or does not exist " + e;
+		        log.error(msg, e);
+		        model.put(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				//model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				return new ModelAndView("public/common/error/errorpage", model);
+			}	
 			
-			model.addAttribute("emailid", toEmail);  
-			model.addAttribute("name", "Marc Test Name");   
-			//model.addAttribute("id", toProfileId);
-
-			model.addAttribute("fromprofileid", currentLoggedInUserProfileId);
-			model.addAttribute("toprofileid", userCommunicatingTotoProfileId);
-			model.addAttribute("orderid", orderid);
-
-			model.addAttribute("fromdisplayname", fromdisplayname);
-			model.addAttribute("todisplayname", todisplayname);
 			
-			model.addAttribute("fromemail", fromEmail);
-			model.addAttribute("toemail", toEmail);
-			
-			//session.setAttribute("TO_CUSTOMER",customer );
-			model.addAttribute("skypeName","mfervil");
-			
-			model.put("messages", messages);
-			return new ModelAndView("workroom/wrEmailForm", model); 
 		}
 		
 		@RequestMapping(value = "/workroom/wrloadMessageDetails", method = RequestMethod.GET)
-		public @ResponseBody String loadSentMessage(HttpServletRequest request,HttpServletResponse response,@RequestParam("id") Integer id){
+		public @ResponseBody String loadSentMessage(HttpServletRequest request,HttpServletResponse response,@RequestParam("id") Integer id, Model model){
 			System.out.println("######################################### loadMessageDetails ###############################################");
-				List<Message> messages=new ArrayList<Message>();
-		
-				Customer customer=new Customer();
-				HttpSession session=request.getSession();
-				
-				customer=(Customer)session.getAttribute("Customer"); 
-				Customer customer2=new Customer();
-				if(session.getAttribute("TO_CUSTOMER")!=null){
-					customer2=(Customer)session.getAttribute("TO_CUSTOMER"); 
-				}else{
-					CustomerBean customerbean=new CustomerBean();
-					customerbean.setId(id);
-					try {
-						customer2=customerService.loadCustomer(customerbean);
-						BeanUtils.copyProperties(customerbean, customer2); 
-						
-					} catch (IllegalAccessException e) {				
-						e.printStackTrace();
-					} catch (InvocationTargetException e) {				
-						e.printStackTrace();
-					}
-				}
-				
-				//Customer customer2=new Customer();
-				
-				System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^customer.getCustomername()  "+customer.getCustomername());
-				System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^customer2.getCustomername()  "+customer2.getCustomername());
-				 
-				messages=messageService.getUserMessages(customer,customer2);    
-			 
-				String result="";
-				for(int i=0;i<messages.size();i++){
-					Message message1=new Message();
-					message1=messages.get(i); 
-					
-					result=result+"<div class=\"detail-msg clearfix\"><strong>"+message1.getFromuser().getCustomername()+"</strong>";
-					result=result+"<strong>"+message1.getTouser().getCustomername()+"</strong>";
-					result=result+"<div class=\"para\"><p>"+message1.getDescription()+"</p>";
-					try{
-						Iterator<Attachment> iterator=message1.getAttachment().iterator();
-						while(iterator.hasNext()){
-							Attachment attachment=iterator.next();
-							result=result+"<a href=\"download.html?attachId="+attachment.getAttachid()+"&filename="+attachment.getAttachmentname()+"\"><p>"+attachment.getAttachmentname()+"</p></a>";
-						}
-					}catch(Exception e){
-						
-					}
-					result=result+"</div>";
-					result=result+" <small>"+message1.getDate()+"</small></div>";
-					
-				}
-				
-				
-				
-				
+
+			try{
+					List<Message> messages=new ArrayList<Message>();
 			
-			 /*Random rand = new Random();
-			 float r = rand.nextFloat() * 100;
-			String result = "<br>Next Random # is <b>" + r + "</b>. Generated on <b>" + new Date().toString() + "</b>";
-	        System.out.println("Debug Message from CrunchifySpringAjaxJQuery Controller.." + new Date().toString());*/
-				if(messages.size()==0){
-					result=""; 
-				}
-	      
-			return result; 
-		//	return messages;
+					Customer customer=new Customer();
+					HttpSession session=request.getSession();
+					
+					customer=(Customer)session.getAttribute("Customer"); 
+					Customer customer2=new Customer();
+					if(session.getAttribute("TO_CUSTOMER")!=null){
+						customer2=(Customer)session.getAttribute("TO_CUSTOMER"); 
+					}else{
+						CustomerBean customerbean=new CustomerBean();
+						customerbean.setId(id);
+						try {
+							customer2=customerService.loadCustomer(customerbean);
+							BeanUtils.copyProperties(customerbean, customer2); 
+							
+						} catch (IllegalAccessException e) {				
+							e.printStackTrace();
+						} catch (InvocationTargetException e) {				
+							e.printStackTrace();
+						}
+					}
+					
+					//Customer customer2=new Customer();
+					
+					System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^customer.getCustomername()  "+customer.getCustomername());
+					System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^customer2.getCustomername()  "+customer2.getCustomername());
+					 
+					messages=messageService.getUserMessages(customer,customer2);    
+				 
+					String result="";
+					for(int i=0;i<messages.size();i++){
+						Message message1=new Message();
+						message1=messages.get(i); 
+						
+						result=result+"<div class=\"detail-msg clearfix\"><strong>"+message1.getFromuser().getCustomername()+"</strong>";
+						result=result+"<strong>"+message1.getTouser().getCustomername()+"</strong>";
+						result=result+"<div class=\"para\"><p>"+message1.getDescription()+"</p>";
+						try{
+							Iterator<Attachment> iterator=message1.getAttachment().iterator();
+							while(iterator.hasNext()){
+								Attachment attachment=iterator.next();
+								result=result+"<a href=\"download.html?attachId="+attachment.getAttachid()+"&filename="+attachment.getAttachmentname()+"\"><p>"+attachment.getAttachmentname()+"</p></a>";
+							}
+						}catch(Exception e){
+							
+						}
+						result=result+"</div>";
+						result=result+" <small>"+message1.getDate()+"</small></div>";
+						
+					}
+				
+				 /*Random rand = new Random();
+				 float r = rand.nextFloat() * 100;
+				String result = "<br>Next Random # is <b>" + r + "</b>. Generated on <b>" + new Date().toString() + "</b>";
+		        System.out.println("Debug Message from CrunchifySpringAjaxJQuery Controller.." + new Date().toString());*/
+					if(messages.size()==0){
+						result=""; 
+					}
+		      
+				return result; 
+				//return messages;
+			
+			} catch (Exception e) {
+		        String msg = "Error encountered while downloading your file.  The file is either corrupted or does not exist " + e;
+		        log.error(msg, e);
+		        model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				//model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				return "public/common/error/errorpage";
+				
+			}	
 		}
 		
-		
-		
-
-		
-		
-		
+/*		
 		@RequestMapping(value = "/workroom/wrloadTotalMsg", method = RequestMethod.GET)
 		public @ResponseBody String loadTotalMsg(HttpServletRequest request,HttpServletResponse response){
 			HttpSession session=request.getSession();
@@ -683,9 +747,9 @@ public class WRCustomerController {
   return maindiv;
 			
 		}
-		
+*/		
 	
-		
+/*		
 		@RequestMapping(value = "/workroom/wrloadFileDetails", method = RequestMethod.GET)
 		public @ResponseBody String loadFileDetails(HttpServletRequest request,HttpServletResponse response){
 			HttpSession session=request.getSession();
@@ -716,26 +780,15 @@ public class WRCustomerController {
 			
 			String maindiv="<div class='row-top clearfix'><span>USERS</span><strong>Attachments</strong><em>Date</em></div>";
 		
-			 /* <div class="detail-msg clearfix">
-				<strong><c:out value="${listdownload[0]}"/></strong>
-				<div class="para"><p><a href="download.html?attachId=${listdownload[3]}&filename=${listdownload[2]}" ><c:out value="${listdownload[2]}"/></a></p>
-				</div>
-				<small><c:out value="${listdownload[1]}"/></small>
-			 </div>*/
-			
-			
 			for(String[] listOfString:listdownload){
 			maindiv=maindiv+"<div class='detail-msg clearfix'><strong>"+listOfString[0]+"</strong><div class='para'><p><a href='download.html?attachId="+listOfString[3]+"&filename="+listOfString[2]+"'>"+listOfString[2]+"</a></p></div><small>"+listOfString[1]+"</small></div>";
 		}
 		
            return maindiv;
-			
 		}
+*/		
 		
-		
-		
-		
-	
+/*	
 	private Customer prepareModel(CustomerBean customerBean){
 		Customer customer=new Customer();
 		//DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -773,32 +826,7 @@ public class WRCustomerController {
 		}
 		return beans;
 	}
-	
-	private boolean sendMail() throws MessagingException{
-		
-		
-		
-		String recipientAddress = "tmmca10@gmail.com";
-		String subject = "test";
-		String message = "test";
 
-       
-       MimeMessage msg = mailSender.createMimeMessage();  
-       
-       MimeMessageHelper helper = new MimeMessageHelper(msg, true);  
-       helper.setFrom("sanando.beas@gmail.com");  
-       helper.setTo("tmmca10@gmail.com");  
-       helper.setSubject(subject);  
-       //helper.setText(message);  
- 
-       // attach the file  
-       FileSystemResource file = new FileSystemResource(new File("d:/rr.txt"));  
-       helper.addAttachment("mybrothermage.txt", file);//image will be sent by this name  
- 
-       mailSender.send(msg);  
-       
-       return true;
-	}
 	
 	private  boolean regiMail(Customer customer) throws MessagingException{
 		String recipientAddress = customer.getEmailid();
@@ -847,5 +875,6 @@ public class WRCustomerController {
 				return "wrloginPage";   
 		
 	} 
+*/	
 }
 	

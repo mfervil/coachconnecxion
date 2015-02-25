@@ -12,6 +12,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 
+
+
+
+
+
 import com.connection.dao.CustomerDao;
 import com.connection.dao.MessageDao;
 import com.connection.model.Customer;
@@ -29,13 +34,13 @@ public class MessageServiceImpl implements MessageService{
 		
 	}
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = false) 
-	public Message saveMessage(Message message2) {
+	public Message saveMessage(Message message2)  throws Exception{
 		
 		return messageDao.saveMessage(message2);   
 	}
 
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = false) 
-	public Usermessage saveUserMessage(Usermessage userMessage2) {
+	public Usermessage saveUserMessage(Usermessage userMessage2)  throws Exception{
 		
 		return messageDao.saveUserMessage(userMessage2);   
 	}
@@ -43,37 +48,37 @@ public class MessageServiceImpl implements MessageService{
 	
 	@Override
 	public List<Message> getUserMessages(Customer fromCustomer,
-			Customer customer) {
+			Customer customer)  throws Exception{
 		// TODO Auto-generated method stub
-		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$ SERVICE_IMPLE getUserMessages $$$$$$$$$$$$$$$$$$$$$$ "); 
 		return messageDao.getUserMessages(fromCustomer,customer); 
 	}
 	
 	@Override
-	public List<Usermessage> getUserMessagesByProfileId(long orderid) {
+	public List<Usermessage> getUserMessagesByProfileId(long orderid)  throws Exception{
 		// TODO Auto-generated method stub
-		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$ SERVICE_IMPLE getUserMessages $$$$$$$$$$$$$$$$$$$$$$ "); 
 		return messageDao.getUserMessagesByProfileId(orderid); 
 	}
 	
-	
+/*	
 	@Override
 	public List<Message> getUserMessagesUnRead(Customer customer,
 			Customer customer1) {
 		// TODO Auto-generated method stub
 		return messageDao.getUserMessagesUnRead(customer,customer);  
 	}
-
+*/
+	
 	@Override
-	public List<Message> getUserMessagesUnReadByProfileId(long orderid) {
+	public List<Message> getUserMessagesUnReadByProfileId(long orderid)  throws Exception{
 		// TODO Auto-generated method stub
 		return messageDao.getUserMessagesUnReadByProfileId(orderid);  
 	}
-	
+
 	@Override
 	public int getNumberOfUnreadMsgByProfileId (long profileId) throws Exception{
 		return messageDao.getNumberOfUnreadMsgByProfileId(profileId);
 	}
+
 	
 	@Override
 	public void updateReadStatus(long orderid, long userCommunicatingTotoProfileId, long currentLoggedInUserProfileId, int readStaus) throws Exception{

@@ -38,7 +38,7 @@ import com.fervil.spring.careercoach.util.Constants;
 public class UserProfileListController  {
     private static final Logger log = LoggerFactory.getLogger(UserProfileListController.class);
     
-    private static final int pageSize = 10;
+    private static final int pageSize = 25;
 	
 	private UserProfileManager userProfileManager;
 	private SelectedCoachesValidator validator;
@@ -93,6 +93,10 @@ public class UserProfileListController  {
 			
 			List<HashMap> userProfiles = userProfileManager.getUserProfiles(
 					coachingCategory, coachingSubcategory, industryExperience,companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
+
+			int userprofilecount = userProfileManager.findFilteredUserProfilesCount(
+					coachingCategory, coachingSubcategory, industryExperience,companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
+			
 			
 			ModelAndView mav = new ModelAndView ();
 			mav.setViewName ("public/userprofile/userprofileList");
@@ -104,6 +108,8 @@ public class UserProfileListController  {
 			// float averageRate1 = jobRatingService.getProfileRating(123);
 			// model.addAttribute("averageRate1", averageRate1);
 			
+			long totalNumPagestoDisplay =  ((Double)Math.ceil(userprofilecount/pageSize)).longValue() ;
+			
 			mav.addObject("coachingCategory", webRequest.getParameter("coachingCategory"));
 			mav.addObject("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
 			mav.addObject("industryExperience", webRequest.getParameter("industryExperience"));
@@ -113,6 +119,9 @@ public class UserProfileListController  {
 			mav.addObject("city", webRequest.getParameter("city"));
 			mav.addObject("state", webRequest.getParameter("state"));
 			mav.addObject("pageNumber", pageNumber);
+			mav.addObject("userprofilecount", userprofilecount);
+			mav.addObject("pagesize", pageSize);
+			mav.addObject("totalpages", totalNumPagestoDisplay);
 			
 			mav.addObject("coachingCategory", webRequest.getParameter("coachingCategory"));
 	

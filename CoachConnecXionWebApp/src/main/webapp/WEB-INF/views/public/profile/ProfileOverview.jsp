@@ -569,6 +569,7 @@ String finalPath = request.getContextPath();
 					</table>
 				</c:if> <br />
 			</td>
+		</tr>	
 	</table>
 </section>
 <%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	
