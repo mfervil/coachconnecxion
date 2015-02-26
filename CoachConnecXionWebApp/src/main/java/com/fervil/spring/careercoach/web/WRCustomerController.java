@@ -542,7 +542,7 @@ public class WRCustomerController {
 	//Send Message Tanumoy da.....
 		
 		@RequestMapping(value = "/workroom/wrsendMessage", method = RequestMethod.GET)
-		public ModelAndView  sendMessage(org.springframework.web.context.request.WebRequest webRequest) {
+		public ModelAndView  sendMessage(org.springframework.web.context.request.WebRequest webRequest, HttpServletRequest request) {
 
 			//Map<String, Object> model = new HashMap<String, Object>();
 			ModelMap model = new ModelMap();
@@ -599,6 +599,18 @@ public class WRCustomerController {
 				//Change the status of all the messages to read.
 				try {
 					messageService.updateReadStatus(orderid, userCommunicatingTotoProfileId, currentLoggedInUserProfileId, 0);
+					
+				 //After the user sees all the emails, we want to clear the messages.
+					int numMessages =messageService.getNumberOfUnreadMsgByProfileId(currentLoggedInUserProfileId);  
+					
+					HttpSession session=request.getSession();
+					session.setAttribute("nummessages", new Integer(numMessages));
+					
+					System.out.println("fromprofileid::" + currentLoggedInUserProfileId + "::numMessages:" + numMessages);
+				//After user sees all the emails	
+					
+					
+					
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

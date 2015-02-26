@@ -455,13 +455,12 @@ a.link2{
                                </tr> 
 								<tr>
 									<td>Attach file:</td>
-									<td align="left"><input style="float: left;" type="file" name="attachFile" size="60" id="file" /></td>
+									<td  style="text-align:left"><input style="float: left;" type="file" name="attachFile" size="60" id="file" /></td>
 							 <td class="error" id=fileerror>
                     
                               </td>
 								</tr>				
 								<tr>
-								<td></td>
 								<td></td>
 									<td style="text-align:left">
 									 <input type="submit" value="Send Message" style="font-size:14px;background: #0066CC; color: white;" > &nbsp;&nbsp;
