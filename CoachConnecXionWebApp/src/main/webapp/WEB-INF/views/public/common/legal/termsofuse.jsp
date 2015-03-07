@@ -9,7 +9,7 @@
 <head>
 	<title>Terms For CoachConnecXion - Time Management Coach - Professional Life Coach</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<meta name="description" content="CoachConnecXion is Directory of Coaches. We provide a listing of different coaches, such as stress management coach, time management coach, professional life coach, personal development coach and professional sports trainer. To learn more about our services, feel  free to peruse our site, or call @ 630-983-9587" />
+	<meta name="description" content="CoachConnecXion is Directory of Coaches. We provide a listing of different coaches, such as stress management coach, time management coach, professional life coach, personal development coach and professional sports trainer. To learn more about our services, feel  free to peruse our site, or call @ (630) 286-9405" />
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 

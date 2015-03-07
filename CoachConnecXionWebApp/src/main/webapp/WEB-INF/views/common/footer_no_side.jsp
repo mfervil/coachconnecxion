@@ -18,12 +18,21 @@
 
 				<%-- MENU --%>
 				<div id="menutopmost">
-					<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/about-us">About Us </a> | 
+					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> |
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/terms-of-use">Terms Of Use </a> | 
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/privacy-policy">Privacy Policy </a> | 
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/safety-tips">Safety Tips&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				
+<%-- 				
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | 
 					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | 
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=tu">Terms Of Use </a> | 
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy </a> | 
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=ps">Safety Tips&nbsp;&nbsp;&nbsp;&nbsp;</a>
+--%>					
 				</div>
 
 

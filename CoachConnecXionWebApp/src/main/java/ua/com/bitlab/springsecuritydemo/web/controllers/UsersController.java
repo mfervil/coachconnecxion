@@ -93,7 +93,8 @@ public class UsersController {
            
             
         } catch (UserServiceException e) {
-            log.error("Failed to create new user user '" + user.getUsername() + "'. Error: " + e, e);
+            log.error("Failed to create new user user '" + user.getUsername() +  "'. Error: " + e, e);
+            
             model.addAttribute("errorMsg", e.getPrintableMessage());
             model.addAttribute("user", user);
             return "users/create";

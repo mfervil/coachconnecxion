@@ -35,11 +35,14 @@
          ${message}  <a href="<c:url value="/userprofile/systemUsageType?cuin=${cuin}"/>" style="font:14px;color:#0404B4">LOGIN AND CREATE A PROFILE TO CONTINUE</a>
 
         <br/><br/>
-
+        
+		<%--
         <p>
             Don't have an account yet? 
             <a href="<c:url value="/users/create"/>" style="font:14px;color:#0404B4">REGISTER HERE</a>
         </p>
+        --%>
+        
     </div>
 
 

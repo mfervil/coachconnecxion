@@ -64,7 +64,7 @@ p {font-size:16px;}
   <span class="postal-code">60563</span>
   <span class="country-name">United States</span>
  </div>
- <div class="tel">630-983-9587</div>
+ <div class="tel">(630) 286-9405</div>
 </div>
 
 <h1 style="text-align:center;color:#0404B4">About US</h1> <br>

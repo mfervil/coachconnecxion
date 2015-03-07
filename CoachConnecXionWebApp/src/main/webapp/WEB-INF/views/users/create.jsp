@@ -59,16 +59,17 @@
             </div>
             --%>
                 <div>
-                	By clicking Register below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=tu">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy</a> 
+                	By clicking Register below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/terms-of-use">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/privacy-policy">Privacy Policy</a> 
                 </div>
             
             <div class="hidden-submit"><input type="submit" value="Register" tabindex="-1"/></div>
         </form:form>
         
         <br>
-        
+		<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>
+        <%-- 
 		<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>									
-
+		--%>
     </div>
 </div>
 

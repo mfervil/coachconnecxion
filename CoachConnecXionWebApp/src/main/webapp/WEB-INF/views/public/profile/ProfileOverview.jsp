@@ -445,7 +445,10 @@ String finalPath = request.getContextPath();
 							<!-- ============================  Packages  =========================================== -->
 							<form:form	method="GET" action="${packagesUrl}">							
 							<table>
-								<tr><td><span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span></td></tr>
+								<tr><td>
+									<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>
+								<%-- <span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span> --%>
+								</td></tr>
 								<tr style="border-bottom:1px solid #000;">
 									<td style="text-align: left; font-weight: bold;"><h2>AVAILABLE PACKAGES</h2>
 									</td>

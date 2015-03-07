@@ -207,11 +207,11 @@ text-align:center;
 									style="width: 202px;"
 									path="degreeLevel">
 									
-									<form:option value="Bacher Degree">Certification</form:option>
-									<form:option value="Bacher Degree">Associate Degree</form:option>
-									<form:option value="Bacher Degree">Bachelor Degree</form:option>
-									<form:option value="Master Degree">Masters</form:option>
-									<form:option value="Master Degree">Doctorate</form:option>
+									<form:option value="Certification">Certification</form:option>
+									<form:option value="Associates Degree">Associates Degree</form:option>
+									<form:option value="Bachelors Degree">Bachelors Degree</form:option>
+									<form:option value="Masters Degree">Masters</form:option>
+									<form:option value="Doctorate">Doctorate</form:option>
 
 								</form:select></td>
 								<td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage}</h1></td>

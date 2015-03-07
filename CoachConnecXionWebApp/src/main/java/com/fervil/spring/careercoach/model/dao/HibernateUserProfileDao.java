@@ -262,13 +262,19 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			log.info(" findFilteredUserProfiles:::: " + sql);
 
 			Query query = sessionFactory.getCurrentSession().createSQLQuery(sql); 
+		    log.info("1 findFilteredUserProfiles::Number of Coaches found: " + query.list().size());
 			
-	        query.setFirstResult(((pageNumber - 1) * pageSize) + 1 );
+	        //query.setFirstResult(((pageNumber - 1) * pageSize) + 1 );
+
+	        query.setFirstResult(((pageNumber - 1) * pageSize) );
+	        log.info("2 findFilteredUserProfiles::Number of Coaches found: " + query.list().size());
 	        query.setMaxResults(pageSize);
 			
+		    log.info("3 findFilteredUserProfiles::Number of Coaches found: " + query.list().size());
 			query.setResultTransformer(AliasToEntityMapResultTransformer.INSTANCE);
+		    log.info("4 findFilteredUserProfiles::Number of Coaches found: " + query.list().size());
 			List list = query.list();
-		    log.info(" findFilteredUserProfiles::Number of Coaches found: " + list.size());
+		    log.info("5 findFilteredUserProfiles::Number of Coaches found: " + query.list().size());
 		    
 			return ((List<HashMap>) list);
 

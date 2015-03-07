@@ -26,7 +26,12 @@
         <intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS" />
         <intercept-url pattern="favicon.ico" access="ROLE_ANONYMOUS" />
         
+        <!-- 
         <intercept-url pattern="/users/login" access="permitAll()"/>
+         -->
+         
+        <intercept-url pattern="/users/login" access="isAnonymous()" />
+        
         <intercept-url pattern="/users/accessDenied" access="permitAll()"/>
         <intercept-url pattern="/users/create" access="permitAll()"/>
         <intercept-url pattern="/users/reset" access="permitAll()"/>

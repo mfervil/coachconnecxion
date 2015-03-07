@@ -108,7 +108,9 @@ public class UserProfileListController  {
 			// float averageRate1 = jobRatingService.getProfileRating(123);
 			// model.addAttribute("averageRate1", averageRate1);
 			
-			long totalNumPagestoDisplay =  ((Double)Math.ceil(userprofilecount/pageSize)).longValue() ;
+			long totalNumPagestoDisplay =  ((Double)Math.ceil(new Double(userprofilecount)/new Double(pageSize))).longValue() ;
+			
+			//System.out.println("The values are: " + userprofilecount + "::" + pageSize + "::" + totalNumPagestoDisplay);
 			
 			mav.addObject("coachingCategory", webRequest.getParameter("coachingCategory"));
 			mav.addObject("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));

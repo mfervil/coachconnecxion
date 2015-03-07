@@ -73,7 +73,7 @@ public class UsersServiceImpl implements UsersService {
 
         log.debug("Create user [" + user + "]");
         long userId = usersDao.save(userEntity);
-        log.info("Save to DB user with id [" + userId + "]");
+        //log.info("Save to DB user with id [" + userId + "]");
         user = BeanConverter.convert(userEntity);
         user.setId(userId);
         return user;

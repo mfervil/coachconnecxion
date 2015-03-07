@@ -73,6 +73,7 @@ public class CoachSelectionFormController  {
 				mav.addObject("coachFirstName", session.getAttribute("coachFirstName"));
 				mav.addObject("coachLastName", session.getAttribute("coachLastName"));
 				mav.addObject("state", session.getAttribute("state"));
+				mav.addObject("city", session.getAttribute("city"));
 
 				return mav;
 				
@@ -123,6 +124,7 @@ public class CoachSelectionFormController  {
 				mav.addObject("coachFirstName", webRequest.getParameter("coachFirstName"));
 				mav.addObject("coachLastName", webRequest.getParameter("coachLastName"));
 				mav.addObject("state", webRequest.getParameter("state"));
+				mav.addObject("city", webRequest.getParameter("city"));
 
 				session.setAttribute("coachingCategory", webRequest.getParameter("coachingCategory"));
 				session.setAttribute("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
@@ -131,6 +133,7 @@ public class CoachSelectionFormController  {
 				session.setAttribute("coachFirstName", webRequest.getParameter("coachFirstName"));
 				session.setAttribute("coachLastName", webRequest.getParameter("coachLastName"));
 				session.setAttribute("state", webRequest.getParameter("state"));
+				session.setAttribute("city", webRequest.getParameter("city"));
 				
 				return mav;
 			}
