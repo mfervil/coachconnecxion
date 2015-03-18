@@ -23,10 +23,15 @@
         <logout/>            
         <logout/>
         
+
+        <intercept-url pattern="/favicon.ico" access="hasRole('ROLE_ANONYMOUS')" />
+        <intercept-url pattern="favicon.ico" access="hasRole('ROLE_ANONYMOUS')" />
+
+        <!-- 
+
         <intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS" />
         <intercept-url pattern="favicon.ico" access="ROLE_ANONYMOUS" />
         
-        <!-- 
         <intercept-url pattern="/users/login" access="permitAll()"/>
          -->
          

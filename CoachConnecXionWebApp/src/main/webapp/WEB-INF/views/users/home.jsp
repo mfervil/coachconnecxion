@@ -66,6 +66,14 @@
 			<div id="menubar">
 				<%@ include file="/WEB-INF/views/common/header_no_side_body_menu.jsp" %>
 			</div>
+
+		<br><br>	
+		<p align="right">
+			<a href="https://www.facebook.com/pages/Coachconnecxion/381001272060479"><img src="${pageContext.request.contextPath}/images/social/facebook.png" alt="logo" /></a>
+			&nbsp;&nbsp;<a href="https://twitter.com/CoachConnecX"><img src="${pageContext.request.contextPath}/images/social/twitter.png" alt="logo" /></a>
+			&nbsp;&nbsp;<a href="https://plus.google.com/u/6/101269948124610306307"><img src="${pageContext.request.contextPath}/images/social/googleplus.png" alt="logo" /></a>
+			&nbsp;&nbsp;<a href="https://www.linkedin.com/company/coachconnecxion"><img src="${pageContext.request.contextPath}/images/social/linkedin.png" alt="logo" /></a>
+		</p>
 			
 		<div class="separator"></div>
 		
@@ -126,8 +134,17 @@
 					<li><a href="#">Slide 5</a></li>
 					<li><a href="#">Slide 6</a></li>
 				</ul>												
-			</div>		
+			</div>
 	</section>
+			
+		<table><tr><td >
+			<p style="font-size: 300%; color: #086A87">Welcome to CoachConnecXion<br><br>
+			<p style="font-size: 200%; color: gray">Home of the top professional coaches in the field<br><br>
+			<p style="font-size: 200%; color: gray">Our #1 goal is to help you find that great personal coach to take you to the next level<br><br>
+			<p style="font-size: 300%; color: gray">******<br><br>
+			<p style="font-size: 16px; color: gray" >If you are a certified coach who enjoys helping others sign-up with us, our customers are always looking for great coaches <br> <br>
+			<p style="font-size: 16px; color: gray" >If you are looking for a professional coach, you've come to the right place.  We have all types of coaches, including business coaches, life coaches, sports, and many more <br> <br>
+		</td></tr></table>
 		
 	</div><!-- #wrapper -->		
 	

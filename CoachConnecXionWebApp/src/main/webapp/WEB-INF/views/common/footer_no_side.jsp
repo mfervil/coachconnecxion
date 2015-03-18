@@ -47,6 +47,13 @@
 			<p>FOLLOW US ON </p>
 			--%>
 		</div>
+		<div id="left">&nbsp;</div>
+		<div id="right">
+			<a href="https://www.facebook.com/pages/Coachconnecxion/381001272060479"><img src="${pageContext.request.contextPath}/images/social/facebook.png" alt="logo" /></a>
+			&nbsp;&nbsp;<a href="https://twitter.com/CoachConnecX"><img src="${pageContext.request.contextPath}/images/social/twitter.png" alt="logo" /></a>
+			&nbsp;&nbsp;<a href="https://plus.google.com/u/6/101269948124610306307"><img src="${pageContext.request.contextPath}/images/social/googleplus.png" alt="logo" /></a>
+			&nbsp;&nbsp;<a href="https://www.linkedin.com/company/coachconnecxion"><img src="${pageContext.request.contextPath}/images/social/linkedin.png" alt="logo" /></a>
+		</div>
 	</section>
 	
 	
