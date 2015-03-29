@@ -36,7 +36,7 @@ public class CoachOrderInfomationController {
 	//@Resource(name = "paymentInformationManager")
 	private PaymentInformationManager paymentInformationManager;
 
-
+    
 	@Autowired
 	public CoachOrderInfomationController(PaymentInformationManager paymentInformationManager,
 			PaymentInformationValidator validator) {

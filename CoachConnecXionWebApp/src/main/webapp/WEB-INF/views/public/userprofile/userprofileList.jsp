@@ -27,7 +27,12 @@
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 
-	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a> &gt;&gt;<a href="${pageContext.request.contextPath}/public/coachSelection">New Search</a><br><br>
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a> &gt;&gt;<a href="${pageContext.request.contextPath}/public/coachSelection">New Search</a>
+	<c:if test="${not empty coachingcategoryname}" >
+		 &gt;&gt;<a href="${pageContext.request.contextPath}/public/landing-business-coaches">Business Coach Search</a>
+	</c:if>
+	
+		<br><br>
 			
 		<!-- CONTACT FORM -->
 		<form:form method="post" commandName="coachingRequest">

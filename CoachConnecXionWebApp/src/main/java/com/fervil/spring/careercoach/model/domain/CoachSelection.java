@@ -3,6 +3,7 @@ package com.fervil.spring.careercoach.model.domain;
 public class CoachSelection {
 
 	private int coachingCategory;
+	private String coachingcategoryname;
 	private int coachingSubcategory;
 	private int industryExperience;
 	private String companyExperience;
@@ -59,5 +60,11 @@ public class CoachSelection {
 	}
 	public void setCity(String city) {
 		this.city = city;
+	}
+	public String getCoachingcategoryname() {
+		return coachingcategoryname;
+	}
+	public void setCoachingcategoryname(String coachingcategoryname) {
+		this.coachingcategoryname = coachingcategoryname;
 	}
 }
