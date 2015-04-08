@@ -3,15 +3,16 @@
 			  <tbody >
 			    <tr>
 			    	<td  class="rightalign" ><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /></td>
-					<td class="leftalign">&nbsp;${coachingcategoryname}</td>
 					<%-- 
+					<td class="leftalign">&nbsp;${coachingcategoryname}</td>
 					<% String catId = (String)session.getAttribute("categoryId"); %>
 					<% String catName = (String)session.getAttribute("categoryName"); %>
 					--%>
+					<%-- 
 					<form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/>
 					<form:hidden path="coachingcategoryname" id="coachingcategoryname" value="${coachingcategoryname}"/>
-					
-					<%-- 
+					--%>
+					 
 			    	<td class="leftalign">
 				        <form:select size="1" path="coachingCategory" id="coachingCategory" onchange="ShowHideSubCat()" >
 				          <option selected  value="-1">All Categories</option>
@@ -41,7 +42,7 @@
 				          <option value="24">College Prep. Testing</option>
 				        </form:select>			    	
 			    	</td>
-			    	--%>
+			    	
 			    	
 			      <td class="rightalign" ><label>Industry: </label><form:errors path="industryExperience" cssClass="error" /> </td>
 				  <td  class="leftalign">	

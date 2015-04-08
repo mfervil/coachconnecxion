@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Online business strategic advisors - Business Coaches - CoachConnecXion</title>
+	<title>credit debt management services  - debt management tools - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Business coaches on our site are not only successful coaches and professionals, but they also have genuine interests in assisting you succeed with your own business" />
+	<meta name="description" content="Financial coaches can provide you the expert advice and education you need to feel confident in you financial plans and debt management.  They can help you lay out a plan to improve your financial future or simply get out of debt" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -124,7 +124,7 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Online Business Coaches </h1></div>
+		<h1>Search For Finance or Money Management Coaches </h1></div>
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
@@ -155,34 +155,29 @@ text-align:center;
 								</td>
 							</tr>
 							<tr><td>&nbsp;</td></tr>
-							<%--  Keywords
-								Online business strategic advisors - Business Coaches - CoachConnecXion							
+							<%--
+								<title>credit debt management services  - debt management tools - CoachConnecXion</title>
 							 --%>
 							<tr>
 								<td>						
 									<h3 style="text-align: left;"><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
 									<br>
-									<h2 style="text-align: left;  text-decoration: underline;">What an Online Business Coach Does For You, the Small Business Owner:</h2>
-									<h3 style="text-align: left;">Business owners seeking the expert guidance of Business Coaches typically look for coaches who not only are successful Business Coaches and professionals, but who also have a genuine interest in assisting them.  
-																	At CoachConnecXion we have a variety of business strategic advisors to help you meet your goal.  
-																	Following are the stages of the coaching process used by our professional advisors to get you to the next level. </h3> <br>
+									<h2 style="text-align: left; text-decoration: underline;">How an Online Finance-Money coach can help:</h2>
+									<h3 style="text-align: left;">A finance coach can help you focus on reaching your financial goals, and work with you to lay-out the steps required to get to the end goal.  They can provide you the expert advice and education you need to feel confident in you financial or debt management plans. 
+																The diagram below shows the different steps and actions involved in the coaching process.</h3><br>
 								</td>
-							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Consulting Coaching Therapy" height="200" width="600"/></td></tr>
-							<tr><td>	
-									<h3 style="text-decoration: underline;">Your Business Coach:</h3>
+							</tr>		
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_2.jpg" alt="Coaching Action Steps" height="200" width="600"/></td></tr>
+							<tr><td>		
+									<h3 style="text-decoration: underline;">Your Finance-Money Coach will:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Helps you look at the big picture for your business and life</li>
-										<li style="text-align: left;">Guides you in enhancing your business skills and intellectual development.</li>
-										<li style="text-align: left;">Provides candid feedback to you about your strengths and weaknesses.</li>
-										<li style="text-align: left;">Helps you identify business opportunities.</li>
-										<li style="text-align: left;">Links you with professionals and organizations that can assist you in solving problems.</li>
-										<li style="text-align: left;">Helps you through the transitional periods in starting and growing a small enterprise.</li>
-										<li style="text-align: left;">Assists you in balancing your personal with your business life.</li>
-										<li style="text-align: left;">Listens to the problems you are facing, helps you set goals and develop a plan, and requires you to carry out and implement your plans.</li>
-										<li style="text-align: left;">Encourages and motivates you, building your sense of self-worth and confidence.</li>
+										<li style="text-align: left;">Help you set your financial goals</li>
+										<li style="text-align: left;">Work with you to develop an action plan</li>
+										<li style="text-align: left;">Help you identify resources, tools and services to make the process pain free</li>
+										<li style="text-align: left;">Monitor your progress and guide you in the right direction</li>
+										<li style="text-align: left;">Work with you to understand the impact of your decisions on your financial goals</li>
 									</ul>
-									<br>Referenced from: www.lightly.com
+									<br>Referenced from: fyi.uwex.edu/
 								</td>	
 							</tr>
 						</table>		

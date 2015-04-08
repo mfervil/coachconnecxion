@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Add Coach/Trainer Education</title>
+	<title>Get Parenting Tips Daily from Family Coaches - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Area where Coaches and Trainers can add or edit their education" />
+	<meta name="description" content="Family coaches help families resolve everyday problems that occur within the family unit.  These coaches work with teens, young adults, parents and families to find out what the problems are, and what needs to be done to get your family back on the right track." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -16,37 +16,6 @@
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
 
-	<script>
-		function ShowHideSubCat() {
-			
-			var mainCombo = document.getElementById ("coachingCategory");
-
-			var subCombo1 = document.getElementById ("coachingSubcategory1");
-			var subCombo2 = document.getElementById ("coachingSubcategory2");
-			var subCombo3 = document.getElementById ("coachingSubcategory3");
-			var subCombo0 = document.getElementById ("coachingSubcategory0");
-
-			subCombo0.style.display = 'none';
-			subCombo1.style.display = 'none';
-			subCombo2.style.display = 'none';
-			subCombo3.style.display = 'none';
-
-			if (mainCombo.value == '1') {
-				subCombo1.style.display = '';
-			} else if (mainCombo.value == '2') {
-				subCombo2.style.display = '';
-			} else if (mainCombo.value == '3') {
-				subCombo3.style.display = '';
-			} else {
-				subCombo0.style.display = '';
-			}
-			
-		}
-		
-		function updateSubcategoryValue(subCatPassed){
-			document.getElementById ("coachingSubcategory").value = subCatPassed;
-		}
-	</script>		
 	
 <style type="text/css">
 table tr {
@@ -62,6 +31,7 @@ body,input {
 	padding: 0px;
 }
 
+/*
 a {
 	color: #0254EB
 }
@@ -69,6 +39,7 @@ a {
 a:visited {
 	color: #0254EB
 }
+*/
 
 #header h2 {
 	color: white;
@@ -149,186 +120,72 @@ text-align:center;
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a>
+
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		Add/Edit Education</div>
-	<div style="height: 10px"></div>
+		<h1>Search For Online Family Coaches </h1></div>
+
+	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
 
-		<tr>
-			<td style="width: 150px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
-				<table>
-					
-					<tr>
-						<td
-							style="font-size: 14px; text-align: left;"><a
-							href="profile?profileId=${profileId}" style="text-decoration: none">Profile
-								Overview </a></td>
-					</tr>
-
-					<tr>
-						<td
-							style="font-size: 14px; text-align: left;"><a
-							href="packages?profileId=${profileId}" style="text-decoration: none">Packages</a></td>
-					</tr>
-					<tr>
-						<td
-							style="font-size: 14px; text-align: left;"><a
-							href="workexperience?profileId=${profileId}" style="text-decoration: none;">Job
-								History</a></td>
-					</tr>
-					<tr>
-						<td
-							style="font-size: 14px; text-align: left;"><a
-							href="education?profileId=${profileId}" style="text-decoration: none;font-weight: :bold;">Education</a></td>
-					</tr>
-				</table>
-
-
-			</td>
-
-
-			<td>
-				<div style="text-align: left;margin-left:10px;">
-					<h1 style="font-size: 14px; color: red;">${errorMessage}</h1>
-					<input type="hidden" name="success" id="success" 
-						value="${successMessage}"></input>
-
-					<c:choose>
-						<c:when test="${not empty successMessage}">
-							<div id='myDialog'>
-								<h1 style="font-size: 14px; color: green;">${successMessage}</h1>
-								 <br>
-								 <a href="educationAdd?profileId=${profileId}" 
-								 style="font-size: 14px;text-decoration: underline;color:blue;">CREATE ANOTHER EDUCATION</a>
-
-								<c:if test="${sessionScope.newusercreated != '1'}">
-									 <br><br>
-									<a href="education?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">VIEW YOUR EDUCATION SUMMARY</a>								
-									<div style="height: 15px;"></div>
-								</c:if>
-																
-								<c:if test="${sessionScope.newusercreated == '1'}">
-									<br><br> <a href="jobhistoryAdd?profileId=${profileId}"
-										style="font-size: 14px; text-decoration: underline; color: blue;">NEXT >></a>  
-								</c:if>
-								
-							</div>
-						</c:when>
-					</c:choose>
-				</div>
-				
-					<c:url var="educationUrl" value="/educationAdd" />
-					<form:form modelAttribute="educationAttribute" method="POST" id="addEducation"
-						action="${educationUrl}">
-						<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
-						
+				<tr>
+					<td style="width: 150px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
+						<%@ include file="/WEB-INF/views/public/landingpages/left-nav-coaches.jsp" %>
+					</td>
+					<td>
 						<table>
-						<tr>
-							<td style="text-align: left; width: 150px;"><form:label
-									path="degreeLevel">Degree Type:</form:label></td>
-							<td style="text-align: left;width:200px;"><form:select
-									style="width: 202px; size =30; height: 25px;"
-									path="degreeLevel">
-
-								<form:option value="Certification">Certification</form:option>
-								<form:option value="Associates Degree">Associates Degree</form:option>
-								<form:option value="Bachelors Degree">Bachelors Degree</form:option>
-								<form:option value="Masters Degree">Masters</form:option>
-								<form:option value="Doctorate">Doctorate</form:option>
-
-								</form:select>
-								</td><td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage}</h1></td>
-						</tr>
-						<tr>
-							<td style="text-align: left; width: 150px;"><form:label
-									path="schoolName">School Name:</form:label></td>
-							<td style="text-align: left;"><form:input type="text"
-									size="30" value="" path="schoolName" maxlength="100" cssStyle="width: 197px;"/></td>
-									<td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage1}</h1></td>
-						</tr>
-						<tr>
-
-							<td style="text-align: left;"><label for="fromDate">From
-									Date:</label></td>
-							<td style="text-align: left;"><form:input type="text"
-									size="30" name="datum1" path="fromDate" cssStyle="width: 197px;"/></td>
-									<td style="text-align: left;">Ex:mm/dd/yyyy<font style="font-size: 14px; color: red;margin-left: 5px;">${errorMessage2}</font></td>
-						</tr>
-						<tr>
-							<td style="text-align: left;"><label for="toDate">To
-									Date:</label></td>
-							<td style="text-align: left;"><form:input type="text"
-									size="30" name="datum2" path="toDate" cssStyle="width: 197px;"/></td>
-									<td style="text-align: left;">Ex:mm/dd/yyyy<font style="font-size: 14px; color: red;margin-left: 5px;">${errorMessage6}</font></td>
+							<tr>
+								<td>
+								
+									<%@ include file="/WEB-INF/views/public/landingpages/searchSelection.jsp" %>
 									
-						</tr>
-						<tr>
-							<td style="text-align: left;"><form:label path="graduatedId">Graduated:</form:label></td>
-							<td style="text-align: left;"><form:select
-									style="width: 202px; height: 25px;" path="graduatedId">
-									<form:option value="0">Yes</form:option>
-									<form:option value="1">No</form:option>
-								</form:select></td>
-								<td></td>
-						</tr>
-						<tr>
-							<td style="text-align: left;"><form:label
-									path="concentrationsName">Concentrations:</form:label></td>
-							<td style="text-align: left;"><form:input type="text"
-									size="30" path="concentrationsName" maxlength="100" cssStyle="width: 197px;"/></td>
-									<td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage3}</h1></td>
-						</tr>
-
-						<tr>
-							<td style="text-align: left;"><form:label path="countryName">Country:</form:label></td>
-							<td style="text-align: left;"><form:input type="text"
-									size="30" path="countryName" maxlength="100" cssStyle="width: 197px;"/></td>
-									<td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage4}</h1></td>
-						</tr>
-						<tr>
-							<td style="text-align: left;"><form:label
-									path="locationsName">City/State:</form:label></td>
-							<td style="text-align: left;"><form:input type="text"
-									size="30" path="locationsName" maxlength="100" cssStyle="width: 197px;"/></td>
+									<%-- 
+									<% session.setAttribute("categoryName", "Business Coach"); %>
+									<% session.setAttribute("categoryId", "2"); %>
+									--%>
 									
-									<td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage5}</h1></td>
-						</tr>
-						<tr>
-						<td></td>
-							<td style="text-align: left;"><input type="submit"
-								style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right;"
-								value="Save" name="submit1" id="submit1" disabled colspan="2">
-
-								<c:if test="${sessionScope.newusercreated == '1'}">
-									&nbsp;&nbsp;&nbsp;&nbsp;<a href="jobhistoryAdd?profileId=${profileId}"
-										style="font-size: 14px; text-decoration: underline; color: blue;">SKIP EDUCATION</a>
-								</c:if>								
-							</td>
-						</tr>
-						</table>
-					</form:form>
-
-				
-				<c:if test="${sessionScope.newusercreated != '1'}">
-
-					<table style="margin-left: 0px; margin-top: -31px;">
-						<tr>
-							<td><c:url var="profileUrl" value="/education" /> <form:form
-									commandName="/education" method="GET" action="${profileUrl}">
-	
-									<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
-									<input type="submit"
-										style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right;"
-										value="Cancel">
-								</form:form></td>
-						</tr>
-					</table>
-				</c:if>				
-			</td>
-		</tr>
+									<%--
+									<jsp: include page="/WEB-INF/views/public/landingpages/searchSelection.jsp" flush="true">
+									    <jsp:param name="category" value="Business Coaches"/>
+									</jsp: include>									
+									 --%>
+									
+									
+								</td>
+							</tr>
+							<tr><td>&nbsp;</td></tr>
+							
+							<%-- 
+							<title>Get Parenting Tips Daily from Family Coaches - CoachConnecXion</title>
+							--%>
+							
+							<tr>
+								<td>						
+									<h3 style="text-align: left;"><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
+									<br>
+									<h2 style="text-align: left; text-decoration: underline;">What's the purpose of a family coach?</h2>
+									<h3 style="text-align: left;">Family coaches help families resolve everyday problems that occur within the family unit.  These coaches work with teens, young adults, parents and families to find out what the problems are, and what needs to be done to get your family back on the right track.  
+																If required, your CoachConnecXion advisor may offer you parenting tips daily that you can utilize to help tackle your frequently occurring issues. 
+																The diagram below shows the different steps and actions involved in the coaching process.</h3><br>
+								</td>
+							</tr>
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_2.jpg" alt="Coaching Action Steps" height="200" width="600"/></td></tr>
+							<tr><td>		
+									<h3 style="text-decoration: underline;">Your Family Coach may help you with the following:</h3>
+									<ul style="list-style-type: square;">
+										<li style="text-align: left;">Teen and young adult behavioral issues</li>
+										<li style="text-align: left;">Parenting skills</li>
+										<li style="text-align: left;">Resolving marital problems</li>
+										<li style="text-align: left;">Addressing work/Family life balance</li>
+									</ul>
+									<br>Referenced from: www.academyforfamilycoachtraining.com, www.lifecoach-directory.org.uk
+								</td>	
+							</tr>
+						</table>		
+					</td>
+				</tr>
 	</table>
 </section>
 <%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	
-

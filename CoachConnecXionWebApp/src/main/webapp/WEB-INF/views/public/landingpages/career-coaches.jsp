@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Add Coach/Trainer Education</title>
+	<title>career coaching services - certified career coach - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Area where Coaches and Trainers can add or edit their education" />
+	<meta name="description" content="Our career coaches will work with you to help assess your talents and help you with critical decisions concerning your career choice and direction" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -16,37 +16,6 @@
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
 
-	<script>
-		function ShowHideSubCat() {
-			
-			var mainCombo = document.getElementById ("coachingCategory");
-
-			var subCombo1 = document.getElementById ("coachingSubcategory1");
-			var subCombo2 = document.getElementById ("coachingSubcategory2");
-			var subCombo3 = document.getElementById ("coachingSubcategory3");
-			var subCombo0 = document.getElementById ("coachingSubcategory0");
-
-			subCombo0.style.display = 'none';
-			subCombo1.style.display = 'none';
-			subCombo2.style.display = 'none';
-			subCombo3.style.display = 'none';
-
-			if (mainCombo.value == '1') {
-				subCombo1.style.display = '';
-			} else if (mainCombo.value == '2') {
-				subCombo2.style.display = '';
-			} else if (mainCombo.value == '3') {
-				subCombo3.style.display = '';
-			} else {
-				subCombo0.style.display = '';
-			}
-			
-		}
-		
-		function updateSubcategoryValue(subCatPassed){
-			document.getElementById ("coachingSubcategory").value = subCatPassed;
-		}
-	</script>		
 	
 <style type="text/css">
 table tr {
@@ -62,6 +31,7 @@ body,input {
 	padding: 0px;
 }
 
+/*
 a {
 	color: #0254EB
 }
@@ -69,6 +39,7 @@ a {
 a:visited {
 	color: #0254EB
 }
+*/
 
 #header h2 {
 	color: white;
@@ -149,186 +120,77 @@ text-align:center;
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a>
+
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		Add/Edit Education</div>
-	<div style="height: 10px"></div>
+		<h1>Search For Online Career Coaches </h1>
+	</div>
+	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
 
-		<tr>
-			<td style="width: 150px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
-				<table>
-					
-					<tr>
-						<td
-							style="font-size: 14px; text-align: left;"><a
-							href="profile?profileId=${profileId}" style="text-decoration: none">Profile
-								Overview </a></td>
-					</tr>
-
-					<tr>
-						<td
-							style="font-size: 14px; text-align: left;"><a
-							href="packages?profileId=${profileId}" style="text-decoration: none">Packages</a></td>
-					</tr>
-					<tr>
-						<td
-							style="font-size: 14px; text-align: left;"><a
-							href="workexperience?profileId=${profileId}" style="text-decoration: none;">Job
-								History</a></td>
-					</tr>
-					<tr>
-						<td
-							style="font-size: 14px; text-align: left;"><a
-							href="education?profileId=${profileId}" style="text-decoration: none;font-weight: :bold;">Education</a></td>
-					</tr>
-				</table>
-
-
-			</td>
-
-
-			<td>
-				<div style="text-align: left;margin-left:10px;">
-					<h1 style="font-size: 14px; color: red;">${errorMessage}</h1>
-					<input type="hidden" name="success" id="success" 
-						value="${successMessage}"></input>
-
-					<c:choose>
-						<c:when test="${not empty successMessage}">
-							<div id='myDialog'>
-								<h1 style="font-size: 14px; color: green;">${successMessage}</h1>
-								 <br>
-								 <a href="educationAdd?profileId=${profileId}" 
-								 style="font-size: 14px;text-decoration: underline;color:blue;">CREATE ANOTHER EDUCATION</a>
-
-								<c:if test="${sessionScope.newusercreated != '1'}">
-									 <br><br>
-									<a href="education?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">VIEW YOUR EDUCATION SUMMARY</a>								
-									<div style="height: 15px;"></div>
-								</c:if>
-																
-								<c:if test="${sessionScope.newusercreated == '1'}">
-									<br><br> <a href="jobhistoryAdd?profileId=${profileId}"
-										style="font-size: 14px; text-decoration: underline; color: blue;">NEXT >></a>  
-								</c:if>
-								
-							</div>
-						</c:when>
-					</c:choose>
-				</div>
-				
-					<c:url var="educationUrl" value="/educationAdd" />
-					<form:form modelAttribute="educationAttribute" method="POST" id="addEducation"
-						action="${educationUrl}">
-						<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
-						
+				<tr>
+					<td style="width: 150px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
+						<%@ include file="/WEB-INF/views/public/landingpages/left-nav-coaches.jsp" %>
+					</td>
+					<td>
 						<table>
-						<tr>
-							<td style="text-align: left; width: 150px;"><form:label
-									path="degreeLevel">Degree Type:</form:label></td>
-							<td style="text-align: left;width:200px;"><form:select
-									style="width: 202px; size =30; height: 25px;"
-									path="degreeLevel">
-
-								<form:option value="Certification">Certification</form:option>
-								<form:option value="Associates Degree">Associates Degree</form:option>
-								<form:option value="Bachelors Degree">Bachelors Degree</form:option>
-								<form:option value="Masters Degree">Masters</form:option>
-								<form:option value="Doctorate">Doctorate</form:option>
-
-								</form:select>
-								</td><td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage}</h1></td>
-						</tr>
-						<tr>
-							<td style="text-align: left; width: 150px;"><form:label
-									path="schoolName">School Name:</form:label></td>
-							<td style="text-align: left;"><form:input type="text"
-									size="30" value="" path="schoolName" maxlength="100" cssStyle="width: 197px;"/></td>
-									<td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage1}</h1></td>
-						</tr>
-						<tr>
-
-							<td style="text-align: left;"><label for="fromDate">From
-									Date:</label></td>
-							<td style="text-align: left;"><form:input type="text"
-									size="30" name="datum1" path="fromDate" cssStyle="width: 197px;"/></td>
-									<td style="text-align: left;">Ex:mm/dd/yyyy<font style="font-size: 14px; color: red;margin-left: 5px;">${errorMessage2}</font></td>
-						</tr>
-						<tr>
-							<td style="text-align: left;"><label for="toDate">To
-									Date:</label></td>
-							<td style="text-align: left;"><form:input type="text"
-									size="30" name="datum2" path="toDate" cssStyle="width: 197px;"/></td>
-									<td style="text-align: left;">Ex:mm/dd/yyyy<font style="font-size: 14px; color: red;margin-left: 5px;">${errorMessage6}</font></td>
+							<tr>
+								<td>
+								
+									<%@ include file="/WEB-INF/views/public/landingpages/searchSelection.jsp" %>
 									
-						</tr>
-						<tr>
-							<td style="text-align: left;"><form:label path="graduatedId">Graduated:</form:label></td>
-							<td style="text-align: left;"><form:select
-									style="width: 202px; height: 25px;" path="graduatedId">
-									<form:option value="0">Yes</form:option>
-									<form:option value="1">No</form:option>
-								</form:select></td>
-								<td></td>
-						</tr>
-						<tr>
-							<td style="text-align: left;"><form:label
-									path="concentrationsName">Concentrations:</form:label></td>
-							<td style="text-align: left;"><form:input type="text"
-									size="30" path="concentrationsName" maxlength="100" cssStyle="width: 197px;"/></td>
-									<td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage3}</h1></td>
-						</tr>
-
-						<tr>
-							<td style="text-align: left;"><form:label path="countryName">Country:</form:label></td>
-							<td style="text-align: left;"><form:input type="text"
-									size="30" path="countryName" maxlength="100" cssStyle="width: 197px;"/></td>
-									<td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage4}</h1></td>
-						</tr>
-						<tr>
-							<td style="text-align: left;"><form:label
-									path="locationsName">City/State:</form:label></td>
-							<td style="text-align: left;"><form:input type="text"
-									size="30" path="locationsName" maxlength="100" cssStyle="width: 197px;"/></td>
+									<%-- 
+									<% session.setAttribute("categoryName", "Business Coach"); %>
+									<% session.setAttribute("categoryId", "2"); %>
+									--%>
 									
-									<td style="text-align: left;"><h1 style="font-size: 14px; color: red;">${errorMessage5}</h1></td>
-						</tr>
-						<tr>
-						<td></td>
-							<td style="text-align: left;"><input type="submit"
-								style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right;"
-								value="Save" name="submit1" id="submit1" disabled colspan="2">
-
-								<c:if test="${sessionScope.newusercreated == '1'}">
-									&nbsp;&nbsp;&nbsp;&nbsp;<a href="jobhistoryAdd?profileId=${profileId}"
-										style="font-size: 14px; text-decoration: underline; color: blue;">SKIP EDUCATION</a>
-								</c:if>								
-							</td>
-						</tr>
-						</table>
-					</form:form>
-
-				
-				<c:if test="${sessionScope.newusercreated != '1'}">
-
-					<table style="margin-left: 0px; margin-top: -31px;">
-						<tr>
-							<td><c:url var="profileUrl" value="/education" /> <form:form
-									commandName="/education" method="GET" action="${profileUrl}">
-	
-									<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
-									<input type="submit"
-										style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right;"
-										value="Cancel">
-								</form:form></td>
-						</tr>
-					</table>
-				</c:if>				
-			</td>
-		</tr>
+									<%--
+									<jsp: include page="/WEB-INF/views/public/landingpages/searchSelection.jsp" flush="true">
+									    <jsp:param name="category" value="Business Coaches"/>
+									</jsp: include>									
+									 --%>
+									
+									
+								</td>
+							</tr>
+							<tr><td>&nbsp;</td></tr>
+							<%-- 
+								<title>career coaching services - certified career coach - CoachConnecXion</title>
+							--%>							
+							<tr>
+								<td>						
+									<h3 style="text-align: left;"><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
+									<br>
+									<h2 style="text-align: left; text-decoration: underline;">What is career coaching?</h2>
+									<h3 style="text-align: left;">Career coaching is the process of working with people to help them assess their talents and make critical decisions about career choice and direction. 
+																At CoachConnecXion, you can find career coaching services where you can work with your ideal certified career coach. 
+																The below chart from Harvard Business Review shows how consulting and therapy is integrated into the overall coaching process.</h3><br>
+								</td>
+							</tr>		
+							<tr><td><img src="${pageContext.request.contextPath}/images/hbr_consulting_therapy.png" alt="Consulting Coaching Therapy" height="200" width="600"/></td></tr>
+							<tr><td>		
+									<h3 style="text-decoration: underline;">How can a career coach help you:</h3>
+									<ul style="list-style-type: square;">
+									    <li style="text-align: left;">Administer and interpret assessments to asses work values, interests, skills and competencies</li>
+									    <li style="text-align: left;">Identify alternative internal career options for people in transition that capitalize on individual knowledge, skill and ability profiles</li>
+									    <li style="text-align: left;">Develop specific career paths with experience, knowledge, abilities, and skills defined</li>
+									    <li style="text-align: left;">Help overcome issues such as lack of self-confidence, poor self-discipline and fear of success/failure</li>
+									    <li style="text-align: left;">Create career development plans to help employees grow and learn</li>
+									    <li style="text-align: left;">Maximize person-job-organizational fit and help kick-start a stagnant career</li>
+									    <li style="text-align: left;">Explore and prepare employees for internal job searches, including resume preparation, in-house interviewing and networking</li>
+									    <li style="text-align: left;">Identify and cultivate internal mentor and career advisor networks for personal career development</li>
+									    <li style="text-align: left;">Provide unbiased, objective career counseling intervention/mediation/facilitation for people experiencing job stress, job loss or transition during corporate reorganizations, mergers or downsizing</li>
+									    <li style="text-align: left;">Teach internal career advisors and mentors how to be more effective in guiding employee career development</li>
+									    <li style="text-align: left;">Facilitate employee training and development initiatives</li>
+									    <li style="text-align: left;">Manage outplacement strategies during times of transition</li>									</ul>
+									<br>Referenced from: www.ginacgroup.com
+								</td>	
+							</tr>
+						</table>		
+					</td>
+				</tr>
 	</table>
 </section>
 <%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	
-

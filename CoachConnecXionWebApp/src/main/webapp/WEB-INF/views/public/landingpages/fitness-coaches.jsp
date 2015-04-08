@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Online business strategic advisors - Business Coaches - CoachConnecXion</title>
+	<title>Fitness Trainer Programs - Become a Fitness Trainer - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Business coaches on our site are not only successful coaches and professionals, but they also have genuine interests in assisting you succeed with your own business" />
+	<meta name="description" content="Our fitness trainers will lead, instruct, and motivate you in exercise activities, including cardiovascular exercise (exercises for the heart and blood system), strength training, and stretching" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -124,7 +124,8 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Online Business Coaches </h1></div>
+		<h1>Search For Online Fitness Coaches </h1></div>
+		
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
@@ -155,34 +156,31 @@ text-align:center;
 								</td>
 							</tr>
 							<tr><td>&nbsp;</td></tr>
-							<%--  Keywords
-								Online business strategic advisors - Business Coaches - CoachConnecXion							
-							 --%>
-							<tr>
+							<%--
+								<title>Fitness Trainer Programs - Become a Fitness Trainer - CoachConnecXion</title>
+							 --%>							
+							<tr>											
 								<td>						
 									<h3 style="text-align: left;"><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
 									<br>
-									<h2 style="text-align: left;  text-decoration: underline;">What an Online Business Coach Does For You, the Small Business Owner:</h2>
-									<h3 style="text-align: left;">Business owners seeking the expert guidance of Business Coaches typically look for coaches who not only are successful Business Coaches and professionals, but who also have a genuine interest in assisting them.  
-																	At CoachConnecXion we have a variety of business strategic advisors to help you meet your goal.  
-																	Following are the stages of the coaching process used by our professional advisors to get you to the next level. </h3> <br>
+									<h2 style="text-align: left; text-decoration: underline;">Why should you hire a fitness coach?</h2>
+									<h3 style="text-align: left;">Your fitness trainer will lead, instruct, and motivate you in exercise activities, including cardiovascular exercises (exercises for the heart and blood system), strength training, and stretching.  
+																At CoachConnecXion, we can help you find an advisor that will identify some fitness trainer programs that best fit your lifestyle and will ultimately help you meet your goal more efficiently.
+																The below diagram shows some of the activities that may be involved in the fitness coaching process.  </h3><br>
 								</td>
-							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Consulting Coaching Therapy" height="200" width="600"/></td></tr>
-							<tr><td>	
-									<h3 style="text-decoration: underline;">Your Business Coach:</h3>
+							</tr>		 
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/exercize.jpg" alt="Excersize and Fitness" height="200" width="600"/></td></tr>
+							<tr><td>		
+									<h3 style="text-decoration: underline;">Fitness trainers typically do the following activities:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Helps you look at the big picture for your business and life</li>
-										<li style="text-align: left;">Guides you in enhancing your business skills and intellectual development.</li>
-										<li style="text-align: left;">Provides candid feedback to you about your strengths and weaknesses.</li>
-										<li style="text-align: left;">Helps you identify business opportunities.</li>
-										<li style="text-align: left;">Links you with professionals and organizations that can assist you in solving problems.</li>
-										<li style="text-align: left;">Helps you through the transitional periods in starting and growing a small enterprise.</li>
-										<li style="text-align: left;">Assists you in balancing your personal with your business life.</li>
-										<li style="text-align: left;">Listens to the problems you are facing, helps you set goals and develop a plan, and requires you to carry out and implement your plans.</li>
-										<li style="text-align: left;">Encourages and motivates you, building your sense of self-worth and confidence.</li>
+										<li style="text-align: left;">Demonstrate how to carry out various exercises and routines</li>
+										<li style="text-align: left;">Watch clients do exercises and show or tell them the correct techniques to minimize injury and improve fitness</li>
+										<li style="text-align: left;">Give alternative exercises during workouts or classes for different levels of fitness and skill </li>
+										<li style="text-align: left;">Monitor clients progress and adapt programs as needed</li>
+										<li style="text-align: left;">Explain and enforce safety rules and regulations on sports, recreational activities, and the use of exercise equipment </li>
+										<li style="text-align: left;">Give clients information or resources about nutrition, weight control, and lifestyle issues </li>
 									</ul>
-									<br>Referenced from: www.lightly.com
+									<br>Referenced from: www.sokanu.com
 								</td>	
 							</tr>
 						</table>		

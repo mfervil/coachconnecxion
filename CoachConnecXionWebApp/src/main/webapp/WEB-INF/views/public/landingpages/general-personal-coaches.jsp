@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Online business strategic advisors - Business Coaches - CoachConnecXion</title>
+	<title>Hire a Coach - Self Help Motivation - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Business coaches on our site are not only successful coaches and professionals, but they also have genuine interests in assisting you succeed with your own business" />
+	<meta name="description" content="Our personal coaches will create a safe environment in which you can more clearly see your self; the coaches will listen to you and work with you to understand whats holding you back, and what you can do to succeed." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -16,7 +16,6 @@
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
 
-	
 <style type="text/css">
 table tr {
 	border: none
@@ -124,7 +123,7 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Online Business Coaches </h1></div>
+		<h1>Search For Online Personal Coaches </h1></div>
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
@@ -138,7 +137,7 @@ text-align:center;
 							<tr>
 								<td>
 								
-									<%@ include file="/WEB-INF/views/public/landingpages/searchSelection.jsp" %>
+									<%@ include file="/WEB-INF/views/public/landingpages/generalsearchSelection.jsp" %>
 									
 									<%-- 
 									<% session.setAttribute("categoryName", "Business Coach"); %>
@@ -154,35 +153,33 @@ text-align:center;
 									
 								</td>
 							</tr>
-							<tr><td>&nbsp;</td></tr>
-							<%--  Keywords
-								Online business strategic advisors - Business Coaches - CoachConnecXion							
-							 --%>
+							
+							<%-- 
+							<title>Hire a Coach - Self Help Motivation - CoachConnecXion</title>
+							--%>
+							
+							<tr><td>
+									<h3 style="text-align: left;"><br><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
+									<br>
+									<h2 style="text-align: left; text-decoration: underline;">What an Online Personal Coach does:</h2>
+									<h3 style="text-align: left;">A personal coach creates a safe environment in which people see themselves more clearly; the coach does this by listening, asking focused questions, 
+																	reflecting back, challenging, and acknowledging the individual.  
+																	If you're serious about reaching your goals, the quickest path is to hire a coach through CoachConnecXion to work with you on self help motivation techniques 
+																	and provide guidance and training to help you get to your destination.
+																	The chart below from Harvard Business Review shows the reasons why coaches are engaged.</h3><br>
+							</td></tr>
+							<tr><td><img src="${pageContext.request.contextPath}/images/hbr_coach_info.png" alt="Reasons for coaching" height="500" width="450"/></td></tr>
 							<tr>
 								<td>						
-									<h3 style="text-align: left;"><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
-									<br>
-									<h2 style="text-align: left;  text-decoration: underline;">What an Online Business Coach Does For You, the Small Business Owner:</h2>
-									<h3 style="text-align: left;">Business owners seeking the expert guidance of Business Coaches typically look for coaches who not only are successful Business Coaches and professionals, but who also have a genuine interest in assisting them.  
-																	At CoachConnecXion we have a variety of business strategic advisors to help you meet your goal.  
-																	Following are the stages of the coaching process used by our professional advisors to get you to the next level. </h3> <br>
-								</td>
-							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Consulting Coaching Therapy" height="200" width="600"/></td></tr>
-							<tr><td>	
-									<h3 style="text-decoration: underline;">Your Business Coach:</h3>
+									<h3 style="text-decoration: underline;">A Personal Coach may be helpful for the following reasons:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Helps you look at the big picture for your business and life</li>
-										<li style="text-align: left;">Guides you in enhancing your business skills and intellectual development.</li>
-										<li style="text-align: left;">Provides candid feedback to you about your strengths and weaknesses.</li>
-										<li style="text-align: left;">Helps you identify business opportunities.</li>
-										<li style="text-align: left;">Links you with professionals and organizations that can assist you in solving problems.</li>
-										<li style="text-align: left;">Helps you through the transitional periods in starting and growing a small enterprise.</li>
-										<li style="text-align: left;">Assists you in balancing your personal with your business life.</li>
-										<li style="text-align: left;">Listens to the problems you are facing, helps you set goals and develop a plan, and requires you to carry out and implement your plans.</li>
-										<li style="text-align: left;">Encourages and motivates you, building your sense of self-worth and confidence.</li>
+										<li style="text-align: left;">Helps you more clearly identify where you are and where you want to be</li>
+										<li style="text-align: left;">Works with you to develop your potential or facilitate transition</li>
+										<li style="text-align: left;">Helps you develop a long term strategy to get you to your end goal</li>
+										<li style="text-align: left;">Works with you to understand your potential pitfalls and obstacles and helps you devise a solution to bypass those obstacles</li>
+										<li style="text-align: left;">Helps you identify your passion and purpose</li>
 									</ul>
-									<br>Referenced from: www.lightly.com
+									<br>Referenced from: www.coaching.com
 								</td>	
 							</tr>
 						</table>		
@@ -190,4 +187,4 @@ text-align:center;
 				</tr>
 	</table>
 </section>
-<%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	
+<%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>

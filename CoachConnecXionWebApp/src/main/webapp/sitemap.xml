@@ -1,88 +1,291 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-	<url>
-		<loc>http://www.coachconnecxion.com/</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://www.coachconnecxion.com/public/information?type=au</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://www.coachconnecxion.com/public/information?type=cu</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://www.coachconnecxion.com/public/information?type=pp</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://www.coachconnecxion.com/public/coachSelection</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://www.coachconnecxion.com/viewOrders</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://www.coachconnecxion.com/userprofileList</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://www.coachconnecxion.com/public/information?type=sf</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://www.coachconnecxion.com/public/information?type=co</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://www.coachconnecxion.com/public/information?type=cf</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://www.coachconnecxion.com/public/information?type=hw</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://www.coachconnecxion.com/public/information?type=tu</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://www.coachconnecxion.com/public/information?type=pp</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://www.coachconnecxion.com/public/information?type=ps</loc>
-		<lastmod>2014-11-02</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.5</priority>
-	</url>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://www.coachconnecxion.com/</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/about-us</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/contact-us</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/users/login</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/public/landing-general-personal-coaches</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/public/landing-business-coaches</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/public/landing-career-coaches</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/public/landing-corporate-coaches</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/public/landing-family-coaches</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/public/landing-finance-money-coaches</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/public/landing-fitness-coaches</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/public/landing-nutrition-coaches</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/public/landing-life-coaches</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/public/landing-relationship-coaches</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/how-it-works</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/list.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/terms-of-use</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/privacy-policy</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/safety-tips</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/users/create</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/users/reset</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/search/filters.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/recentTopics/list.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/hottestTopics/list.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/list.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/moderation/showActivityLog.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/2.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/1.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/posts/list/5.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/4.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/5.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/6.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/10.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/11.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/7.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/8.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/9.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/12.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/13.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/14.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/15.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/16.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/17.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/forums/show/1.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/2.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/posts/list/2.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/21.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/rss/recentTopics.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/posts/list/4.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/posts/list/3.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/posts/list/1.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/2.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/10.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/10.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/12.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/12.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/13.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/13.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/3.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/3.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/14.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/14.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/8.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/8.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/20.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/20.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/9.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/9.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/7.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/7.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/11.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/11.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/15.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/15.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/16.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/16.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/17.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/17.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/6.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/6.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/19.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/19.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/4.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/4.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/21.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/5.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/5.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/user/profile/18.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/18.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/pm/sendTo/1.page</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/jforum.page?module=posts&amp;action=delete&amp;post_id=2&amp;start=0</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/jforum.page?module=posts&amp;action=delete&amp;post_id=4&amp;start=0</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/jforum.page?module=posts&amp;action=delete&amp;post_id=3&amp;start=0</loc>
+</url>
+<url>
+  <loc>https://www.coachconnecxion.com/jforum.page?module=posts&amp;action=delete&amp;post_id=1&amp;start=0</loc>
+</url>
 </urlset>

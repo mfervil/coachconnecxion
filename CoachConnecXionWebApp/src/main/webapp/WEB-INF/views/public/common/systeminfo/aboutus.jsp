@@ -56,9 +56,9 @@ p {font-size:16px;}
 <div id="CoachSessions" class="vcard">
  <a class="url fn n" href="https://www.coachconnecxion.com/"></a>
  <div class="org">CoachSessions  LLC</div>
- <a class="email" href="mailto:Marc.arthur@coachconnecxion.com">Marc.arthur@coachconnecxion.com</a>
+ <a class="email" href="mailto:Marc.Arthur@coachconnecxion.com">Marc.Arthur@coachconnecxion.com</a>
  <div class="adr">
-  <div class="street-address">601 Pawnee lane</div>
+  <div class="street-address">PO Box 25354</div>
   <span class="locality">Naperville,</span>
   <span class="region">Illinois,</span>
   <span class="postal-code">60563</span>
