@@ -61,22 +61,15 @@ table tbody {
 <%-- END BODY No Side test --%>
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a><br><br>
 
 	<%-- 
-	<div style="height: 10px;"></div>
-			<table style="width: 100%; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #DEDEDE; clear: left;">
-				<tr>
-					<td style="width:530px;" ><h1 style="color: blue; font-size: 20px;margin-left: 215px;">My Package</h1></td>
-				
-					<td>
-						<div style="margin-left:170px;">
-							<c:url var="mainUrl" value="/packageAdd" />
-							<a href="${mainUrl}" style="font-size: 14px;text-decoration: underline;">ADD PACKAGES</a>
-						</div>
-					</td>
-
-				</tr>
-			</table> --%>
+		<c:if test="${sessionScope.newusercreated == '1'}">
+			<br> Done with packages: Click&nbsp;&nbsp;<a href="educationAdd?profileId=${userProfileId}"
+				style="font-size: 14px; text-decoration: underline; color: blue;">here</a>&nbsp;&nbsp;To
+			enter Training and Education.  
+		</c:if>
+	--%>
 			
 		<table style="width: 98%;"><tr><td style="width: 15%;">&nbsp;</td><td style="text-align: left"><h1 style="color: blue; font-size: 20px;">MY PACKAGES </h1></td>
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>

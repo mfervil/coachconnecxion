@@ -52,6 +52,9 @@ table tbody {
 <%-- END BODY No Side test --%>
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
+	
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a><br><br>
+	
 
 	<table style="width: 98%;">
 		<tr>
@@ -71,17 +74,35 @@ table tbody {
 						<th style="text-align: center;width: 10%;">Order Date</th>
 						<th style="text-align: center;width: 20%;">Customer Email</th>						
 						<th style="text-align: center;width: 20%;">Customer Phone</th>						
+						<th style="text-align: center;width: 20%;">Messages</th>						
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach items="${coachOrders}" var="coachOrders">
+
+							<c:set var="todisplayname" value="${coachOrders.todisplayname}"/>						
+							<c:set var="fromdisplayname" value="${coachOrders.fromdisplayname}"/>						
+					
+						<c:if test="${empty coachOrders.todisplayname}">
+							<c:set var="todisplayname" value="${coachOrders.tofirstname}"/>						
+						</c:if>
+						<c:if test="${empty coachOrders.fromdisplayname}">
+							<c:set var="fromdisplayname" value="${coachOrders.fromfirstname}"/>						
+						</c:if>
+						
 						<tr>
 							<td style="text-align: center;"><c:out value="${coachOrders.first_Name} ${coachOrders.last_Name}" /></td>
 							<td style="text-align: center;"><c:out value="${coachOrders.package_Name}" /></td>
 							<td style="text-align: center;"><c:out value="${coachOrders.package_Price}" /></td>
 							<td style="text-align: center;"><c:out value="${fn:substring(coachOrders.currentdate, 0, 10)}" /></td>
-							<td style="text-align: center;"><c:out value="${coachOrders.email}" /></td>
+							<td style="text-align: center;"><c:out value="${coachOrders.toemail}" /></td>
 							<td style="text-align: center;"><c:out value="${coachOrders.phone_Number1}-${coachOrders.phone_Number2}-${coachOrders.phone_Number3} " /></td>
+							<td style="text-align: center; 	white-space: nowrap;" ><a style="color: #0000FF;" href="${pageContext.request.contextPath}/workroom/wrsendMessage?fromprofileid=${coachOrders.fromprofileid}&orderid=${coachOrders.orderid}&toprofileid=${coachOrders.toprofileid}
+																		&fromemail=${coachOrders.fromemail}&toemail=${coachOrders.toemail}&todisplayname=${todisplayname}&fromdisplayname=${fromdisplayname}">
+																		<c:if test="${coachOrders.unreadmessages ne '0' }">New Msg(${coachOrders.unreadmessages})</c:if>
+																		<c:if test="${coachOrders.unreadmessages == '0' }">All Msg</c:if>
+															</a>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>

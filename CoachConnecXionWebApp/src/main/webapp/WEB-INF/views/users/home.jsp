@@ -6,7 +6,7 @@
 
 	<title>Certified Professional Coach - Personal Trainer Website | CoachConnecXion</title>
 	<meta name="description" content="CoachConnecXion is one of the leading Websites for Trainers and Coaches based in Illinois, USA. We Provide a listing of available certified professional coaches and trainers based on your search criteria." />
-
+	<meta name="msvalidate.01" content="18F49A45D87958CD1603B589E05269DE" /> <%-- This is used by bing --%>
 	<meta name="robots" content="NOODP,NOYDIR" />
 	
 <script>

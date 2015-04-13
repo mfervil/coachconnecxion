@@ -2,7 +2,7 @@
 			  <table style="border-spacing:2px; border-collapse:separate;">
 			  <tbody >
 			    <tr>
-			    	<td  class="rightalign" ><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /></td>
+			    	<td  class="leftalign" ><br><label>Category: </label><form:errors path="coachingCategory" cssClass="error" />
 					<%-- 
 					<td class="leftalign">&nbsp;${coachingcategoryname}</td>
 					<% String catId = (String)session.getAttribute("categoryId"); %>
@@ -12,8 +12,7 @@
 					<form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/>
 					<form:hidden path="coachingcategoryname" id="coachingcategoryname" value="${coachingcategoryname}"/>
 					--%>
-					 
-			    	<td class="leftalign">
+			    		<br>
 				        <form:select size="1" path="coachingCategory" id="coachingCategory" onchange="ShowHideSubCat()" >
 				          <option selected  value="-1">All Categories</option>
 				          <option value="1">ADD & ADHD</option>
@@ -44,8 +43,8 @@
 			    	</td>
 			    	
 			    	
-			      <td class="rightalign" ><label>Industry: </label><form:errors path="industryExperience" cssClass="error" /> </td>
-				  <td  class="leftalign">	
+			      <td class="leftalign" ><br><label>Industry: </label><form:errors path="industryExperience" cssClass="error" /> <br>
+				  	
 			      <!-- Find complete list from job categories in career builder -->
 			        <form:select size="1" path="industryExperience" >
 			          	<option selected  value="-1">All Industries</option>
@@ -162,11 +161,10 @@
 				</tr>
 				<tr>		
 
-				  <td class="rightalign" ><br><label>City: </label><form:errors path="city" cssClass="error" /> </td>
-				  <td class="leftalign"><b>City:</b> Not required for online coaching<br><form:input size="35" path="city" /></td>
+				  <td class="leftalign" ><br><label>City (Not required for online coaching): </label><form:errors path="city" cssClass="error" /> <br>
+				  <form:input size="35" path="city" /></td>
 				  
-				  <td class="rightalign" ><br><label>State/Province:</label> </td>
-				  <td  class="leftalign"><b>State:</b> Not required for online coaching<br> 
+				  <td class="leftalign" ><br><label>State/Prov.(Not required for online coaching):</label> <br>
 							<form:select size="1" path="state" id="state" ><option value="">All States</option>
 								${userProfile.state =='AL' ? "<option value='AL' selected>ALABAMA</option>" : "<option value='AL' >ALABAMA</option>"}
 								${userProfile.state =='AK' ? "<option value='AK' selected>ALASKA</option>" :  "<option value='AK' >ALASKA</option>"}
@@ -242,14 +240,11 @@
 					</td>
 				  
 				  
-			    </tr>
-			    
+			    	</tr>
 				<tr>
-				      <td class="rightalign" ><label>First Name: </label><form:errors path="coachFirstName" cssClass="error" /><br> </td>
-				      <td class="leftalign">
+				      <td class="leftalign" ><br><label>First Name: </label><form:errors path="coachFirstName" cssClass="error" /><br> 
 				        <form:input size="35" path="coachFirstName" /></td>
-				      <td class="rightalign" ><label>Last Name: </label><form:errors path="coachLastName" cssClass="error" /><br> </td>
-				      <td class="leftalign">
+				      <td class="leftalign" ><br><label>Last Name: </label><form:errors path="coachLastName" cssClass="error" /><br> 
 				        <form:input size="35" path="coachLastName" /></td>
 				</tr>
 						
@@ -261,8 +256,8 @@
 				 --%>
 
 				<tr style="background-color: white">
-					<td colspan="4" style="text-align: right;">
-						<input style"text-align: right;" type="submit" class="input-button" value="Start Your Search" />
+					<td colspan="4" style="text-align: left;">
+						<br>	<input style"text-align: right;" type="submit" class="input-button" value="Start Your Search" />
 					</td>
 				</tr>
 			  </tbody>

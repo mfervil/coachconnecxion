@@ -28,15 +28,21 @@
 <div id="content">
     <div class="pageWrapper">
         <h1>Activation</h1> <br />
-        
-        ${message}  <a href="<c:url value="/public/profile?cuin=${cuin}"/>" style="font:14px;color:#0404B4">Click here to login and create your profile</a>
+
+<%--        
+         ${message}  <a href="<c:url value="/public/profile?cuin=${cuin}"/>" style="font:14px;color:#0404B4">LOGIN AND CREATE A PROFILE TO CONTINUE</a>
+--%>
+         ${message}  <a href="<c:url value="/userprofile/systemUsageType?cuin=${cuin}"/>" style="font:14px;color:#0404B4">LOGIN AND CREATE A PROFILE TO CONTINUE</a>
 
         <br/><br/>
-
+        
+		<%--
         <p>
             Don't have an account yet? 
-            <a href="<c:url value="/users/create"/>" style="font:14px;color:#0404B4">Register here</a>
+            <a href="<c:url value="/users/create"/>" style="font:14px;color:#0404B4">REGISTER HERE</a>
         </p>
+        --%>
+        
     </div>
 
 

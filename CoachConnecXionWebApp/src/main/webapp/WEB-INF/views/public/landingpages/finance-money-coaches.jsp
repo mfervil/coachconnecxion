@@ -161,13 +161,17 @@ text-align:center;
 							<tr>
 								<td>						
 									<h3 style="text-align: left;"><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
-									<br>
-									<h2 style="text-align: left; text-decoration: underline;">How an Online Finance-Money coach can help:</h2>
-									<h3 style="text-align: left;">A finance coach can help you focus on reaching your financial goals, and work with you to lay-out the steps required to get to the end goal.  They can provide you the expert advice and education you need to feel confident in you financial or debt management plans. 
-																The diagram below shows the different steps and actions involved in the coaching process.</h3><br>
 								</td>
 							</tr>		
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_2.jpg" alt="Coaching Action Steps" height="200" width="600"/></td></tr>
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_2.jpg" alt="Coaching Action Steps" height="200" width="600"/>
+										<br>Diagram showing the different steps and actions involved in the coaching process
+							</td></tr>
+							<tr><td><br>
+									<h2 style="text-align: left; text-decoration: underline;">How an Online Finance-Money coach can help:</h2>
+									<h3 style="text-align: left;">A finance coach can help you focus on reaching your financial goals, and work with you to lay-out the steps required to get to the end goal.  They can provide you the expert advice and education you need to feel confident in you financial or debt management plans. 
+																</h3><br>
+								</td>
+							</tr>		
 							<tr><td>		
 									<h3 style="text-decoration: underline;">Your Finance-Money Coach will:</h3>
 									<ul style="list-style-type: square;">

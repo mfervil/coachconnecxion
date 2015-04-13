@@ -162,13 +162,17 @@ text-align:center;
 								<td>						
 									<h3 style="text-align: left;"><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
 									<br>
-									<h2 style="text-align: left;  text-decoration: underline;">What an Online Business Coach Does For You, the Small Business Owner:</h2>
-									<h3 style="text-align: left;">Business owners seeking the expert guidance of Business Coaches typically look for coaches who not only are successful Business Coaches and professionals, but who also have a genuine interest in assisting them.  
-																	At CoachConnecXion we have a variety of business strategic advisors to help you meet your goal.  
-																	Following are the stages of the coaching process used by our professional advisors to get you to the next level. </h3> <br>
 								</td>
 							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Consulting Coaching Therapy" height="200" width="600"/></td></tr>
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Consulting Coaching Therapy" height="200" width="600"/><br>
+										The stages of the coaching process used by professional advisors to get you to the next level <br>							
+							</td></tr>
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">What an Online Business Coach Does For You, the Small Business Owner:</h2>
+									<h3 style="text-align: left;">Business owners seeking the expert guidance of Business Coaches typically look for coaches who not only are successful Business Coaches and professionals, but who also have a genuine interest in assisting them.  
+																	At CoachConnecXion we have a variety of business strategic advisors to help you meet your goal.</h3> <br>
+								</td>
+							</tr>
 							<tr><td>	
 									<h3 style="text-decoration: underline;">Your Business Coach:</h3>
 									<ul style="list-style-type: square;">

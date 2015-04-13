@@ -160,15 +160,15 @@ text-align:center;
 							
 							<tr><td>
 									<h3 style="text-align: left;"><br><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
-									<br>
+							</td></tr>	
+								<tr><td><br><img src="${pageContext.request.contextPath}/images/hbr_coach_info.png" alt="Reasons for coaching" height="500" width="450"/></td></tr>
+							<tr><td>
 									<h2 style="text-align: left; text-decoration: underline;">What an Online Personal Coach does:</h2>
 									<h3 style="text-align: left;">A personal coach creates a safe environment in which people see themselves more clearly; the coach does this by listening, asking focused questions, 
 																	reflecting back, challenging, and acknowledging the individual.  
 																	If you're serious about reaching your goals, the quickest path is to hire a coach through CoachConnecXion to work with you on self help motivation techniques 
-																	and provide guidance and training to help you get to your destination.
-																	The chart below from Harvard Business Review shows the reasons why coaches are engaged.</h3><br>
+																	and provide guidance and training to help you get to your destination.</h3><br>
 							</td></tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/hbr_coach_info.png" alt="Reasons for coaching" height="500" width="450"/></td></tr>
 							<tr>
 								<td>						
 									<h3 style="text-decoration: underline;">A Personal Coach may be helpful for the following reasons:</h3>

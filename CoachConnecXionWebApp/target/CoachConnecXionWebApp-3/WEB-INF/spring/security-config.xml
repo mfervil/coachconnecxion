@@ -23,10 +23,20 @@
         <logout/>            
         <logout/>
         
+
+        <intercept-url pattern="/favicon.ico" access="hasRole('ROLE_ANONYMOUS')" />
+        <intercept-url pattern="favicon.ico" access="hasRole('ROLE_ANONYMOUS')" />
+
+        <!-- 
+
         <intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS" />
         <intercept-url pattern="favicon.ico" access="ROLE_ANONYMOUS" />
         
         <intercept-url pattern="/users/login" access="permitAll()"/>
+         -->
+         
+        <intercept-url pattern="/users/login" access="isAnonymous()" />
+        
         <intercept-url pattern="/users/accessDenied" access="permitAll()"/>
         <intercept-url pattern="/users/create" access="permitAll()"/>
         <intercept-url pattern="/users/reset" access="permitAll()"/>
@@ -55,6 +65,13 @@
         <intercept-url pattern="/pm/sendTo/**" access="permitAll()"/>
         <intercept-url pattern="/jforum.page" access="permitAll()"/>
         <intercept-url pattern="/rss/recentTopics.page" access="permitAll()"/>
+
+        <intercept-url pattern="/about-us" access="permitAll()"/>
+        <intercept-url pattern="/contact-us" access="permitAll()"/>
+        <intercept-url pattern="/terms-of-use" access="permitAll()"/>
+        <intercept-url pattern="/privacy-policy" access="permitAll()"/>
+        <intercept-url pattern="/safety-tips" access="permitAll()"/>
+        <intercept-url pattern="/how-it-works" access="permitAll()"/>
 
         
 <!--         
@@ -121,6 +138,7 @@
         <intercept-url pattern="/users/home" access="permitAll()"/>
         <intercept-url pattern="/users/home.jsp" access="permitAll()"/>
         <intercept-url pattern="/google2233c8da8a8a9306.html" access="permitAll()"/>
+        <intercept-url pattern="/sitemap.xml" access="permitAll()"/>
 
         <intercept-url pattern="/users/list" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/users/**" access="hasRole('ROLE_USER')"/>

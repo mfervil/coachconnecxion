@@ -162,14 +162,18 @@ text-align:center;
 							<tr>											
 								<td>						
 									<h3 style="text-align: left;"><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
-									<br>
+								</td>
+							</tr>		 
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/exercize.jpg" alt="Excersize and Fitness" height="200" width="600"/><br>
+							Diagram showing some of the activities that may be involved in the fitness coaching process.
+							</td></tr>
+							<tr><td><br>
 									<h2 style="text-align: left; text-decoration: underline;">Why should you hire a fitness coach?</h2>
 									<h3 style="text-align: left;">Your fitness trainer will lead, instruct, and motivate you in exercise activities, including cardiovascular exercises (exercises for the heart and blood system), strength training, and stretching.  
 																At CoachConnecXion, we can help you find an advisor that will identify some fitness trainer programs that best fit your lifestyle and will ultimately help you meet your goal more efficiently.
-																The below diagram shows some of the activities that may be involved in the fitness coaching process.  </h3><br>
+																  </h3><br>
 								</td>
 							</tr>		 
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/exercize.jpg" alt="Excersize and Fitness" height="200" width="600"/></td></tr>
 							<tr><td>		
 									<h3 style="text-decoration: underline;">Fitness trainers typically do the following activities:</h3>
 									<ul style="list-style-type: square;">

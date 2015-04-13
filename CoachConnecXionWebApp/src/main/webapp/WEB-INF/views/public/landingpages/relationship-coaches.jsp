@@ -162,15 +162,19 @@ text-align:center;
 							<tr>
 								<td>						
 									<h3 style="text-align: left;"><B>Coaches: </B><a  style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
-									<br>
+								</td>
+							</tr>
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/><br>
+								The stages of the coaching process used by our professionals to get you to the next level 							
+							</td></tr>
+							<tr><td>	<br>	
 									<h2 style="text-align: left; text-decoration: underline;">What an Online Relationship Coach Does For You:</h2>
 									<h3 style="text-align: left;">A relationship coach will help you identify your ideal relationships in every area of life, bring these ideal relationships into your life, set boundaries 
 																	where your current relationships do not meet your criteria and build skills to enhance current and future relationships. 
 																	The coaches at CoachConnecXion can offer both couples marriage therapy or online relationship advice to help you through your issues. 
-																	Following are the stages of the coaching process used by our professionals to get you to the next level: </h3><br>
+																	</h3><br>
 								</td>
 							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/></td></tr>
 							<tr><td>		
 									<h3 style="text-decoration: underline;">Your Relationship Coach will do the following:</h3>
 									<ul style="list-style-type: square;">

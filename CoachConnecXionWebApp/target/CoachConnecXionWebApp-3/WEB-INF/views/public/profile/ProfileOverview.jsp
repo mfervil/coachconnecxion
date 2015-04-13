@@ -7,7 +7,6 @@
 
 <%@ page import="com.fervil.spring.careercoach.util.SystemUtil" %>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,6 +45,7 @@ body,input {
 	padding: 0px;
 }
 
+/*
 a {
 	color: #0254EB
 }
@@ -53,6 +53,7 @@ a {
 a:visited {
 	color: #0254EB
 }
+*/
 
 #header h2 {
 	color: white;
@@ -134,6 +135,17 @@ table tr:nth-child(2n) {
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 
+<c:choose>  
+    <c:when test="${profileOfCurrentUser}" >  
+		<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a> <br><br>
+	</c:when>  
+	<c:otherwise>
+		<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a> &gt;&gt;<a href="${pageContext.request.contextPath}/public/coachSelection">New Search</a>
+		&gt;&gt;<a href="${pageContext.request.contextPath}/public/coachSelection?BREADCRUMB=y">Coach List</a><br><br>
+	</c:otherwise>
+</c:choose>
+
+
 	<table style="width: 900px;">
 		<tr>
 			<td style="width: 730px; padding: 5px;">
@@ -162,7 +174,7 @@ table tr:nth-child(2n) {
 					<li><a href="#overview">OVERVIEW &nbsp;&nbsp; /</a></li>
 					<li><a href="#education">TRAINING:EDUCATION &nbsp;&nbsp; /</a></li>
 					<li><a href="#jobhistory">JOB HISTORY &nbsp;&nbsp; /</a></li>
-					<li><a href="#packages">PACKAGES</a></li>
+					<li><a href="#packages">BUY SERVICES - ASK QUESTIONS</a></li>
 				</ul>
 				
 <div id="overview">
@@ -434,7 +446,10 @@ String finalPath = request.getContextPath();
 							<!-- ============================  Packages  =========================================== -->
 							<form:form	method="GET" action="${packagesUrl}">							
 							<table>
-								<tr><td><span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span></td></tr>
+								<tr><td style="text-align: left;">
+									<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>
+								<%-- <span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span> --%>
+								</td></tr>
 								<tr style="border-bottom:1px solid #000;">
 									<td style="text-align: left; font-weight: bold;"><h2>AVAILABLE PACKAGES</h2>
 									</td>
@@ -467,10 +482,15 @@ String finalPath = request.getContextPath();
 										commandName="paymentinformation">
 									<table class="data">
 										<tr>
+											<td colspan="2" style="text-align: left;"><a style="color: blue; border-style: solid; border-width: 1px;" href="/cooach/contactCoach?packageId=${availablePackages.id}&coachEmail=${profileInfo.getEmail()}">SETUP AN ASSESSMENT AND ASK QUESTIONS ABOUT THIS PACKAGE</a>
+											</td>
+										</tr>
+										<tr>
 											<td >
 												<input type="submit" class="input-button" value="Buy This Package" />
 											</td>	
-											<td width="100%"><h1 style="color: blue; text-align: center;">&nbsp;&nbsp;&nbsp;Package Name: ${availablePackages.packageName} -- Price:  ${availablePackages.priceValue} </h1></td>
+											<td width="100%"><h1 style="border-style: solid; text-align: center;">&nbsp;&nbsp;&nbsp;Package Name: ${availablePackages.packageName} -- Price:  ${availablePackages.priceValue} </h1>
+											</td>
 										</tr>
 										<tr>
 										    <td>
@@ -558,6 +578,7 @@ String finalPath = request.getContextPath();
 					</table>
 				</c:if> <br />
 			</td>
+		</tr>	
 	</table>
 </section>
 <%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	

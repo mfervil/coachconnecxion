@@ -161,13 +161,17 @@ text-align:center;
 							<tr>
 								<td>
 									<h3 style="text-align: left;"><B>Coaches: </B><a  style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
-									<br>
-									<h2 style="text-align: left; text-decoration: underline;">What an Online Life Coach from CoachConnecXion does:</h2>
-									<h3 style="text-align: left;">These coaches provide the drive and guidance individuals need to improve their careers, relationships, and overall emotional state. 
-																	Following are the stages of the coaching process used by our professionals to get you to the next level: </h3><br>
 								</td>
 							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/></td></tr>
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/> <br>
+								The stages of the coaching process used by our professionals to get you to the next level 							
+							</td></tr>
+							<tr><td>	<br>	
+									<h2 style="text-align: left; text-decoration: underline;">What an Online Life Coach from CoachConnecXion does:</h2>
+									<h3 style="text-align: left;">These coaches provide the drive and guidance individuals need to improve their careers, relationships, and overall emotional state. 
+																	</h3><br>
+								</td>
+							</tr>
 							<tr><td>		
 									<h3 style="text-decoration: underline;">A Life coach may be helpful for the following reasons:</h3>
 									<ul style="list-style-type: square;">

@@ -89,10 +89,12 @@ public class WRSendEmailAttachController {
 			
 			long fromprofileid = Long.valueOf(request.getParameter("fromprofileid"));
 			long toprofileid = Long.valueOf(request.getParameter("toprofileid"));
+
+			//May do something here.  If Order Id is null, create a dummy order for users just trying to send messages.			
 			long orderid = Long.valueOf(request.getParameter("orderid"));
-	
+
 			String fromEmail = request.getParameter("fromemail").toString();
-			String toEmail = request.getParameter("toemail").toString() ;
+			String toEmail = request.getParameter("toemail").toString();
 			
 			UserAttachment attachment=new UserAttachment();
 			attachment.setAttachmentname(attachFile.getOriginalFilename());

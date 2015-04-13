@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	
 	<!-- DISPLAY MESSAGE IF JAVA IS TURNED OFF -->
 	<noscript>		
 		<div id="notification">Please turn on javascript in your browser for the maximum experience!</div>
@@ -22,17 +25,31 @@
 				<%-- <a href="index.html"><img src="${pageContext.request.contextPath}/images/heading.jpg" alt="logo" /></a>  --%>
 				<%-- <a href="index.html"><img src="${pageContext.request.contextPath}/images/cq5_2.jpg" alt="logo" height="88" width="250"/></a>
 				<a href="index.html"><img src="${pageContext.request.contextPath}/images/coachconexion_lo_ff1.png" alt="logo" height="99" width="344"/></a>  --%>
-				<a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/images/logo/coachconnecxion_4_23.jpg" alt="logo" height="99" width="344"/></a>
+				<a href="https://www.coachconnecxion.com/"><img src="${pageContext.request.contextPath}/images/logo/coachconnecxion_4_23.jpg" alt="logo" height="99" width="344"/></a>
 			</div>
 
 			<%-- MENU --%>
 			<div id="menutopmost">
 				<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
-				<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | 
-				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | 
-				<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=tu">Terms Of Use </a> | 
-				<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy </a> | 
-				<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=ps">Safety Tips&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/about-us">About Us </a> | 
+				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> | 
+				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>
+<c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
+	<c:if test="${sessionScope.usertype == 1}">
+	 			<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>"> | NEW MESSAGES
+				(${sessionScope.nummessages}) </a>
+	</c:if>
+	<c:if test="${sessionScope.usertype == 2}">
+				<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/viewOrders"> | NEW MESSAGES
+				(${sessionScope.nummessages}) </a>
+	</c:if>
+
+</c:if>
+
+<%-- 			<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/terms-of-use">Terms Of Use </a> | 
+				<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/privacy-policy">Privacy Policy </a> | 
+				<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/safety-tips">Safety Tips&nbsp;&nbsp;&nbsp;&nbsp;</a>
+--%>				
 			</div>
 			
 			<%-- MENU --%>
@@ -107,4 +124,7 @@
 						
 		<!-- BLOG POSTS -->
 		<section id="content" style="width:100%;">
+		
+
+		
 		

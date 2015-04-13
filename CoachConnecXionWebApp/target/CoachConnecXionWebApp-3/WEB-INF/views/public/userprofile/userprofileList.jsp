@@ -26,6 +26,13 @@
 <%-- END BODY No Side test --%>
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
+
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a> &gt;&gt;<a href="${pageContext.request.contextPath}/public/coachSelection">New Search</a>
+	<c:if test="${not empty coachingcategoryname}" >
+		 &gt;&gt;<a href="${pageContext.request.contextPath}/public/landing-business-coaches">Business Coach Search</a>
+	</c:if>
+	
+		<br><br>
 			
 		<!-- CONTACT FORM -->
 		<form:form method="post" commandName="coachingRequest">
@@ -33,6 +40,17 @@
 					<thead>
 						<tr>
 						<th>LIST OF COACHES </th>
+						<th style="position: absolute; right:0px;"> 
+							Page: ${pageNumber} of ${totalpages} &nbsp;&nbsp;
+							<c:if test="${pageNumber > 1}" >
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber - 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> &lt;&lt; PREV PAGE </a> &nbsp;&nbsp;&nbsp;&nbsp;
+							</c:if>
+	
+							<c:if test="${userprofilecount > (pageNumber * pagesize) }" >
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber + 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> NEXT PAGE &gt;&gt; </a>&nbsp;&nbsp;&nbsp;&nbsp;
+							</c:if>
+						</th> 
+
 						<!--  <th>Payment Terms</th>  -->
 						</tr>
 					</thead>
@@ -86,7 +104,7 @@
 								<tr>
 									<td class="leftalign" colspan="3">
 									     ${userProfileDetails.overview} 
-									     <br><a href="profile?profileId=${userProfileDetails.user_profile_id}"><font color="blue" size="14"><ul>See Details and Video</ul></font></a> <br><br>
+									     <br><a href="profile?profileId=${userProfileDetails.user_profile_id}"><font color="blue" size="14"><ul>SEE COACH DETAILS, VIDEO AND ASK QUESTIONS</ul></font></a> <br><br>
 									</td>      
 								 </tr>
 								 
@@ -94,6 +112,19 @@
 								 <!-- <td><c:out value="${customerId}" /></td> -->
 						</c:forEach>
 					</tbody>	
+			</table>
+			<table>
+						<th></th>
+						<th style="position: absolute; right:0px;"> 
+							Page: ${pageNumber} of ${totalpages} &nbsp;&nbsp;
+							<c:if test="${pageNumber > 1}" >
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber - 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> &lt;&lt; PREV PAGE </a> &nbsp;&nbsp;&nbsp;&nbsp;
+							</c:if>
+	
+							<c:if test="${userprofilecount > (pageNumber * pagesize) }" >
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber + 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> NEXT PAGE &gt;&gt; </a>&nbsp;&nbsp;&nbsp;&nbsp;
+							</c:if>
+						</th> 
 			</table>
 		<!--  This section is opened in header_no_side.jsp -->
 		</section>
@@ -108,6 +139,9 @@
 			</section>
 		</section>	
 		--%>
+		
+		<%-- <form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/> --%>
+		<input type="hidden" name="coachingCategory" value="${coachingCategory}">
 			
 	</form:form>
 </section>

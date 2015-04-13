@@ -1,24 +1,30 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ 
+ 	<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
+  
+	<%@ include file="/WEB-INF/views/common/header_setup.jsp" %>	
 
-	<title>CoachConnecXion - Find a Coach or Trainer for self improvement</title>
-	<meta name="description" content="Find a Coach or Trainer to help you raise your game" />
+	<title>Certified Professional Coach - Personal Trainer Website | CoachConnecXion</title>
+	<meta name="description" content="CoachConnecXion is one of the leading Websites for Trainers and Coaches based in Illinois, USA. We Provide a listing of available certified professional coaches and trainers based on your search criteria." />
+	<meta name="msvalidate.01" content="18F49A45D87958CD1603B589E05269DE" /> <%-- This is used by bing --%>
+	<meta name="robots" content="NOODP,NOYDIR" />
+	
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60438004-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	
 
 </head>
+
 <body>
 
-	<!-- DISPLAY MESSAGE IF JAVA IS TURNED OFF -->
-	<noscript>		
-		<div id="notification">Please turn on javascript in your browser for the maximum experience!</div>
-	</noscript>
-	
-	<!-- DISPLAY THIS MESSAGE IF USER'S BROWSER IS IE7 OR LOWER -->
-	<div id="ie_warning"><img src="${pageContext.request.contextPath}/images/warning.png" alt="IE Warning" /><br /><strong>Your browser is out of date!</strong><br /><br />This website uses the latest web technologies so it requires an up-to-date, fast browser!<br />Try <a href="http://www.mozilla.org/en-US/firefox/new/?from=getfirefox">Firefox</a> or <a href="https://www.google.com/chrome">Chrome</a>!</div>
-	
-	<div id="toTop"><img src="${pageContext.request.contextPath}/images/back_to_top.png" alt="Back to top" title="Back to top" /></div>
-
-<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
-
-	<%@ include file="/WEB-INF/views/common/header_setup.jsp" %>	
-	
 	<div id="topline"></div>		
 	<div id="wrapper">			
 		<%-- @ include file="/WEB-INF/views/common/header_navigation_menu.jsp" --%>	
@@ -28,27 +34,50 @@
 			<div id="logo">
 				<%-- <a href="index.html"><img src="/images/heading.jpg" alt="logo" /></a>  --%>
 				<%-- <a href="index.html"><img src="/images/cq5_2.jpg" alt="logo" height="88" width="250"/></a>  --%>
-				<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/images/logo/coachconnecxion_4_23.jpg" alt="logo" height="99" width="344"/></a>
+				<a href="https://www.coachconnecxion.com/"><img src="${pageContext.request.contextPath}/images/logo/coachconnecxion_4_23.jpg" alt="logo" height="99" width="344"/></a>
 			</div>
 
 			<div id="menutopmost">
 				<%-- <a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | <a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy&nbsp;&nbsp;&nbsp;&nbsp;</a> --%>
 					<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
-					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | 
-					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | 
-					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=tu">Terms Of Use </a> | 
-					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy </a> | 
-					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=ps">Safety Tips&nbsp;&nbsp;&nbsp;&nbsp;</a>
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/about-us">About Us </a> | 
+					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> | 
+					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>
+					
+<c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
+	<c:if test="${sessionScope.usertype == 1}">
+	 			<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>"> | NEW MESSAGES
+				(${sessionScope.nummessages}) </a>
+	</c:if>
+	<c:if test="${sessionScope.usertype == 2}">
+				<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/viewOrders"> | NEW MESSAGES
+				(${sessionScope.nummessages}) </a>
+	</c:if>
+
+</c:if>
+					
+					<%-- 
+					| 
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/terms-of-use">Terms Of Use </a> | 
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/privacy-policy">Privacy Policy </a> | 
+					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/safety-tips">Safety Tips&nbsp;&nbsp;&nbsp;&nbsp;</a>
+					--%>
 			</div>
 
 			<div id="menubar">
 				<%@ include file="/WEB-INF/views/common/header_no_side_body_menu.jsp" %>
 			</div>
+
+		<br><br>	
+		<p align="right">
+			<a href="https://www.facebook.com/pages/Coachconnecxion/381001272060479"><img src="${pageContext.request.contextPath}/images/social/facebook.png" alt="logo" /></a>
+			&nbsp;&nbsp;<a href="https://twitter.com/CoachConnecX"><img src="${pageContext.request.contextPath}/images/social/twitter.png" alt="logo" /></a>
+			&nbsp;&nbsp;<a href="https://plus.google.com/u/6/101269948124610306307"><img src="${pageContext.request.contextPath}/images/social/googleplus.png" alt="logo" /></a>
+			&nbsp;&nbsp;<a href="https://www.linkedin.com/company/coachconnecxion"><img src="${pageContext.request.contextPath}/images/social/linkedin.png" alt="logo" /></a>
+		</p>
 			
 		<div class="separator"></div>
 		
-				<!--  <br><br><h1 style="color:red;">SITE IS UNDER CONSTRUCTION. COME BACK IN A FEW WEEKS TO FIND A COACH OR REGISTER AS A COACH</h1>  -->	
-					
 		<!-- ELASTIC SLIDER -->
 		<section>		
 			<div id="ei-slider" class="ei-slider">
@@ -106,8 +135,17 @@
 					<li><a href="#">Slide 5</a></li>
 					<li><a href="#">Slide 6</a></li>
 				</ul>												
-			</div>		
+			</div>
 	</section>
+			
+		<table><tr><td >
+			<p style="font-size: 300%; color: #086A87">Welcome to CoachConnecXion<br><br>
+			<p style="font-size: 200%; color: gray">Home of the top professional coaches in the field<br><br>
+			<p style="font-size: 200%; color: gray">Our #1 goal is to help you find that great personal coach to take you to the next level<br><br>
+			<p style="font-size: 300%; color: gray">******<br><br>
+			<p style="font-size: 16px; color: gray" >If you are a certified coach who enjoys helping others sign-up with us, our customers are always looking for great coaches <br> <br>
+			<p style="font-size: 16px; color: gray" >If you are looking for a professional coach, you've come to the right place.  We have all types of coaches, including business coaches, life coaches, sports, and many more <br> <br>
+		</td></tr></table>
 		
 	</div><!-- #wrapper -->		
 	

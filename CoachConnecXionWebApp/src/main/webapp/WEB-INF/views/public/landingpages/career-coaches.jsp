@@ -161,15 +161,19 @@ text-align:center;
 							--%>							
 							<tr>
 								<td>						
-									<h3 style="text-align: left;"><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
-									<br>
+									<h3 style="text-align: left;"><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free. </h3><br>
+								</td>
+							</tr>	
+							<tr><td><img src="${pageContext.request.contextPath}/images/hbr_consulting_therapy.png" alt="Consulting Coaching Therapy" height="200" width="600"/> <br>
+								Chart from Harvard Business Review showing the relationship between consulting, therapy and the coaching process.							
+							</td></tr>
+							<tr><td>	<br>
 									<h2 style="text-align: left; text-decoration: underline;">What is career coaching?</h2>
 									<h3 style="text-align: left;">Career coaching is the process of working with people to help them assess their talents and make critical decisions about career choice and direction. 
 																At CoachConnecXion, you can find career coaching services where you can work with your ideal certified career coach. 
-																The below chart from Harvard Business Review shows how consulting and therapy is integrated into the overall coaching process.</h3><br>
+																</h3><br>
 								</td>
 							</tr>		
-							<tr><td><img src="${pageContext.request.contextPath}/images/hbr_consulting_therapy.png" alt="Consulting Coaching Therapy" height="200" width="600"/></td></tr>
 							<tr><td>		
 									<h3 style="text-decoration: underline;">How can a career coach help you:</h3>
 									<ul style="list-style-type: square;">

@@ -26,38 +26,46 @@
 <div id="content">
     <div class="pageWrapper">
         <h1>Log In</h1><br>
-        <p>
+        
         <div class="signUpForm">
             <form action="<c:url value="/j_spring_security_check"/>" method="post">
                 <dl>
                     <dt><label for="email">Email:</label></dt>
-                    <dd class="clear"><input id="email" type="text" class="text required" name="j_username"/></dd>
+                    <dd class="clear"><input  size="30" id="email" type="text" class="text required" name="j_username"/></dd>
                     <dt><label for="password">Password:</label></dt>
-                    <dd class="clear"><input id="password" type="password" class="text required" name="j_password"/></dd>
+                    <dd class="clear"><input  size="30" id="password" type="password" class="text required" name="j_password"/></dd>
                 </dl>
                 <c:if test="${not empty param.login_error}">
                     <div class="error">Could not log you in.  Please verify your email and password and try again. <br> If you still can't login the system may be down, please try again at a later time</div>
                 </c:if>
                 <br>
                 <div>
-                	By clicking Sign In below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=tu">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy</a> 
+                	By clicking Sign In below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/terms-of-use">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/privacy-policy">Privacy Policy</a> 
                 </div>
                 <div class="hidden-submit"><input type="submit" value="Sign In" tabindex="-1"/></div>
                 
             </form>
             
         </div>
+        <br>
         <p style="font-size:16px">
-            <br>Don't have an account yet? 
+            Don't have an account yet? 
             <a href="<c:url value="/users/create"/>" style="font-size:16px; font-color:blue; text-decoration:underline" >Register here</a>
         </p>
+        
         <p style="font-size:16px">
             Forgot your User Name or password? 
             <a href="<c:url value="/users/reset"/>" style="font-size:16px; font-color:blue; text-decoration:underline" >Reset your account here</a>
         </p>
         <br>
         <p>
-		<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>									
+        
+		<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>
+        
+        <%-- 
+		<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>
+		--%>
+											
         </p>
         
     </div>

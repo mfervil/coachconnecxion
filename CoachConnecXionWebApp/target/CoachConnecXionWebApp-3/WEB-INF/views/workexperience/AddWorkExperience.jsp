@@ -136,7 +136,7 @@ div#myDialog {
 					<tr>
 						<td
 							style="font-size: 14px; text-align: left;"><a
-							href="" style="text-decoration: none">Portfolio</a></td>
+							href="packages?profileId=${profileId}" style="text-decoration: none">Packages</a></td>
 					</tr>
 					<tr>
 						<td
@@ -166,11 +166,17 @@ div#myDialog {
 							<div id='myDialog'>
 								<h1 style="font-size: 14px; color: green;">${successMessage}</h1>
 								<br> 
-								Click&nbsp;&nbsp;<a href="jobhistoryAdd?profileId=${profileId}"
-								style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To create another
-								employer <br>OR <br> Click&nbsp;&nbsp;<a
-									href="workexperience?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To
-								continue summary page
+								<a href="jobhistoryAdd?profileId=${profileId}"
+								style="font-size: 14px;text-decoration: underline;color:blue;">CREATE ANOTHER EMPLOYER</a>
+
+								<c:if test="${sessionScope.newusercreated != '1'}">
+									 <br> <a href="workexperience?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">VIEW WORK SUMMARY</a>
+								</c:if>	
+								
+								<c:if test="${sessionScope.newusercreated == '1'}">
+									 <br><br> <a href="public/profile?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">DONE WITH WORK HISTORY</a>
+								</c:if>	
+								
 								<div style="height: 15px;"></div>
 							</div>
 						</c:when>
@@ -251,21 +257,26 @@ div#myDialog {
 				
 
 
-
-
-				<table style="margin-top: -31px; margin-left: 0px;">
-					<tr>
-						<td><c:url var="profileUrl" value="/profile" /> <form:form
-								commandName="/workexperience" method="GET" action="${profileUrl}">
-						
-								<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
-								
-								<input type="submit"
-									style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right;"
-									value="Cancel">
-							</form:form></td>
-					</tr>
-				</table>
+				<c:if test="${sessionScope.newusercreated != '1'}">
+					<table style="margin-top: -31px; margin-left: 0px;">
+						<tr>
+							<td><c:url var="profileUrl" value="/profile" /> <form:form
+									commandName="/workexperience" method="GET" action="${profileUrl}">
+							
+									<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
+									
+									<input type="submit"
+										style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right;"
+										value="Cancel">
+								</form:form></td>
+						</tr>
+					</table>
+				</c:if>				
+				
+				<c:if test="${sessionScope.newusercreated == '1'}">
+					 <br> <a href="public/profile?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">SKIP WORK HISTORY</a>
+				</c:if>
+				
 			</td>
 		</tr>
 	</table>

@@ -76,6 +76,10 @@ select.error {
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a> &gt;&gt;<a href="${pageContext.request.contextPath}/public/coachSelection">New Search</a>
+&gt;&gt;<a href="${pageContext.request.contextPath}/public/coachSelection?BREADCRUMB=y">Coach List</a>
+&gt;&gt;<a href="${pageContext.request.contextPath}/public/profile?BREADCRUMB=y">Coach Profile</a><br><br>
+
 		<!-- CONTACT FORM -->
 		<form:form method="post" commandName="paymentInformation" >
 			<%-- <p><h1>${paymentResponse}</h1></p>
@@ -98,7 +102,9 @@ select.error {
 			</c:if>
 			</span></b>
 			
-			  	<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>									
+			  	<%-- <span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>	--%>								
+			  	
+				<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>
 			  	
 			 <p style="text-decoration:underline; font:italic bold 16px/30px Georgia, serif;">Order Details</p> 
 			 <table>

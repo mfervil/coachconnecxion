@@ -71,13 +71,25 @@ label {font-size:14px;}
 <%-- END BODY No Side test --%>
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
-			
+	
+	<table>
+	<tr>
+	<td style="text-align: left;"><a href="https://www.coachconnecxion.com">&gt;&gt;Home</a></td>
+	<td style="text-align: right;">
+		                     <span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>
+	<%-- 
+	<span id="siteseal" style="text-align:right"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>
+	--%>
+	</td>
+	</tr>
+	</table>
+			<br>
 		<!-- CONTACT FORM -->
 		<form:form method="post"  id="form" commandName="userProfile" enctype="multipart/form-data">
 		<!-- <form action="#" id="page_user_profile_form" method="post"> -->
 		<h3 style="color:red"> ${errorMessage} </h3>
 
-	<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>									
+	<h2 style="text-align: center;">Create/Update Your Coaching Profile</h2>									
 	<table style="width: 900px;">
 		<tr>
 			<td style="width: 730px; padding: 5px;">

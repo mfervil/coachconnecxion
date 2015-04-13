@@ -47,13 +47,13 @@
 					--%>
 					
                     <dt><label for="email">Email<span class="r">*</span></label></dt>
-                    <dd><form:input path="email" cssClass="text"/></dd>
+                    <dd><form:input size="30" path="email" cssClass="text"/></dd>
 
                     <dt><label for="password">Password<span class="r">*</span></label></dt>
-                    <dd><form:input path="password" cssClass="text" type="password"/></dd>
+                    <dd><form:input size="30" path="password" cssClass="text" type="password"/></dd>
 
                     <dt><label for="confirmedPassword">Confirm password<span class="r">*</span></label></dt>
-                    <dd><form:input path="confirmedPassword" cssClass="text" type="password"/></dd>
+                    <dd><form:input size="30" path="confirmedPassword" cssClass="text" type="password"/></dd>
                 </dl>
             </div>
             <br>

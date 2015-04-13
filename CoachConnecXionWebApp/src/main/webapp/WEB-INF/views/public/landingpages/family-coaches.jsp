@@ -164,14 +164,18 @@ text-align:center;
 							<tr>
 								<td>						
 									<h3 style="text-align: left;"><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
-									<br>
+								</td>
+							</tr>
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_2.jpg" alt="Coaching Action Steps" height="200" width="600"/>
+										<br>Diagram showing the different steps and actions involved in the coaching process
+							</td></tr>
+							<tr><td><br>
 									<h2 style="text-align: left; text-decoration: underline;">What's the purpose of a family coach?</h2>
 									<h3 style="text-align: left;">Family coaches help families resolve everyday problems that occur within the family unit.  These coaches work with teens, young adults, parents and families to find out what the problems are, and what needs to be done to get your family back on the right track.  
 																If required, your CoachConnecXion advisor may offer you parenting tips daily that you can utilize to help tackle your frequently occurring issues. 
-																The diagram below shows the different steps and actions involved in the coaching process.</h3><br>
+																</h3><br>
 								</td>
 							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_2.jpg" alt="Coaching Action Steps" height="200" width="600"/></td></tr>
 							<tr><td>		
 									<h3 style="text-decoration: underline;">Your Family Coach may help you with the following:</h3>
 									<ul style="list-style-type: square;">

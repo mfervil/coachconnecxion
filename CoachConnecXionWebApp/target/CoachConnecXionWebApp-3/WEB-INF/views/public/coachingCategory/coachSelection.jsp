@@ -4,10 +4,10 @@
 <html lang="en">
 
 <head>
-	<title>Find Coach or Trainer for self improvement</title>
+	<title>Find A Certified Professional Coach - Personal Development Coach | CoachConnecXion</title>
+	<meta name="description" content="CoachConnecXion provides an efficient and easy to use online system that will help people find the right coach for self improvement. We offer a list of coaches for different fields such personal development, time management, stress management and sports." />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Find a Coach or Trainer to help you improve your self" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -61,6 +61,8 @@
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 	
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a><br><br>
+	
 			<!-- CONTACT FORM -->
 		<form:form method="post" commandName="coachSelection" >
 			  <table style="border-spacing:2px; border-collapse:separate;">
@@ -96,6 +98,32 @@
 				          <option value="24">College Prep. Testing</option>
 				        </form:select>			    	
 			    	</td>
+<!-- 
+Bus:Business Management
+Bus:Career Change / Enhancement
+Bus:Leadership/Executive
+Bus:Sales
+
+hlth:Diet/Weight Loss
+hlth:Exercise
+hlth:Sports Training
+
+Lrn:College Test Prep
+Lrn:Learning Disability
+
+Mus:Music
+
+Prs:Couples/Family/Relationship
+Prs:Life/Motivational
+Prs:Personal Finance
+Prs:Retirement
+Prs:Stress Management
+
+Remove Team and Group
+Remove Hobby
+Remove Performance
+ -->			    	
+			    	
 			      <td class="rightalign" >Industry Experience: <form:errors path="industryExperience" cssClass="error" /> </td>
 				  <td  class="leftalign">	
 			      <!-- Find complete list from job categories in career builder -->

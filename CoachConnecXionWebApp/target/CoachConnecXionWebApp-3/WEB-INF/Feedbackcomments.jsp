@@ -100,6 +100,8 @@ text-align:center;
 <%-- END BODY No Side test --%>
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
+
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a> &gt;&gt;<a href="${pageContext.request.contextPath}/viewOrders">My Orders</a><br><br>
 	
 <input type="hidden" value="${RatingDone}" name="rating1" id="rating1"/>
 <input type="hidden" name="success" id="success" value="${successMessage}"></input>
@@ -109,7 +111,7 @@ text-align:center;
 								<h1 style="font-size: 14px; color: green;">${successMessage}</h1>
 								 <br>
 								 <br>
-								Click&nbsp;&nbsp;<a href="jobRating" style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To go back project list.							
+								Click&nbsp;&nbsp;<a href="jobRating" style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To go back to your order list.							
 								<div style="height: 15px;"></div>
 							</div>
 						</c:when>

@@ -51,6 +51,8 @@ p {font-size:16px;}
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 
+<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a><br><br>
+
 <h1 style="text-align:center;color:#0404B4">Privacy Policy</h1> <br>
 
 <p>Our privacy policy is simple:  We do not share, sell, or give away your information to any third party for advertising purposes.  We also do not give your credit card information to anyone.  In fact, we do not store any of your credit card information.  Once the payment process is completed, we discard the credit card information entered, and do not save it anywhere in our system.</p>

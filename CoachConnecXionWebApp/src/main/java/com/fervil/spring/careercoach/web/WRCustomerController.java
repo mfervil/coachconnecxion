@@ -643,9 +643,96 @@ public class WRCustomerController {
 				//model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
 				return new ModelAndView("public/common/error/errorpage", model);
 			}	
-			
+
 			
 		}
+
+		@RequestMapping(value = "/workroom/wrsendMessageNoOrder", method = RequestMethod.GET)
+		public ModelAndView  sendMessageNoOrder(org.springframework.web.context.request.WebRequest webRequest, HttpServletRequest request) {
+
+			//Map<String, Object> model = new HashMap<String, Object>();
+			ModelMap model = new ModelMap();
+			
+			try{
+				System.out.println("######################################### sendMessage ###############################################"); 
+	
+				//long orderid = Long.valueOf(webRequest.getParameter("orderid"));
+				long orderid = Long.valueOf(webRequest.getParameter("orderid") == null?"-1":webRequest.getParameter("orderid"));
+
+				long currentLoggedInUserProfileId = Long.valueOf(webRequest.getParameter("fromprofileid"));
+				long userCommunicatingTotoProfileId = Long.valueOf(webRequest.getParameter("toprofileid"));
+				String fromEmail = webRequest.getParameter("fromemail").toString();
+				String toEmail = webRequest.getParameter("toemail").toString() ;
+	
+				String fromdisplayname = webRequest.getParameter("fromdisplayname").toString();
+				String todisplayname = webRequest.getParameter("todisplayname").toString() ;
+				
+				System.out.println("The passed info is: " + currentLoggedInUserProfileId + ":" + userCommunicatingTotoProfileId + ":" + fromEmail + ":" + toEmail);
+				
+				//HttpSession session=request.getSession();
+				//Customer fromCustomer=(Customer)session.getAttribute("Customer");
+				List<Usermessage> messages=new ArrayList<Usermessage>();
+				
+				messages=messageService.getUserMessagesByProfileId(orderid);  
+	
+				System.out.println("WRCustomerController::wrsendMessage 1:: The messages are: " + messages.size()  );
+	
+				for(int i=0;i<messages.size();i++){
+					
+					Usermessage message=new Usermessage();
+					message=messages.get(i); 
+	
+					System.out.println("WRCustomerController::wrsendMessage 2:: The messages are: " + message.getMessageid());
+				}
+	
+				//Change the status of all the messages to read.
+				try {
+					messageService.updateReadStatus(orderid, userCommunicatingTotoProfileId, currentLoggedInUserProfileId, 0);
+					
+					//After the user sees all the emails, we want to clear the messages.
+					int numMessages =messageService.getNumberOfUnreadMsgByProfileId(currentLoggedInUserProfileId);  
+					
+					HttpSession session=request.getSession();
+					session.setAttribute("nummessages", new Integer(numMessages));
+					
+					System.out.println("fromprofileid::" + currentLoggedInUserProfileId + "::numMessages:" + numMessages);
+					//After user sees all the emails	
+					
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}  
+				
+				model.addAttribute("emailid", toEmail);  
+				model.addAttribute("name", "Marc Test Name");   
+				//model.addAttribute("id", toProfileId);
+	
+				model.addAttribute("fromprofileid", currentLoggedInUserProfileId);
+				model.addAttribute("toprofileid", userCommunicatingTotoProfileId);
+				model.addAttribute("orderid", orderid);
+	
+				model.addAttribute("fromdisplayname", fromdisplayname);
+				model.addAttribute("todisplayname", todisplayname);
+				
+				model.addAttribute("fromemail", fromEmail);
+				model.addAttribute("toemail", toEmail);
+				
+				//session.setAttribute("TO_CUSTOMER",customer );
+				model.addAttribute("skypeName","mfervil");
+				
+				model.put("messages", messages);
+				return new ModelAndView("workroom/wrEmailNoOrderForm", model); 
+			
+			} catch (Exception e) {
+		        String msg = "Error encountered while downloading your file.  The file is either corrupted or does not exist " + e;
+		        log.error(msg, e);
+		        model.put(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				//model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				return new ModelAndView("public/common/error/errorpage", model);
+			}	
+		}
+		
+		
 		
 		@RequestMapping(value = "/workroom/wrloadMessageDetails", method = RequestMethod.GET)
 		public @ResponseBody String loadSentMessage(HttpServletRequest request,HttpServletResponse response,@RequestParam("id") Integer id, Model model){

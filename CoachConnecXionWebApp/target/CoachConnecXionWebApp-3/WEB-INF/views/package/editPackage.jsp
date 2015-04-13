@@ -135,6 +135,8 @@ function disableObjects() {
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
 
+	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a> &gt;&gt;<a href="${pageContext.request.contextPath}/packages">My Packages</a><br><br>
+
 	<div style="text-align: left; margin-left: 10px;">
 
 		<input type="hidden" name="success" id="success"

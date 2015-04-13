@@ -161,15 +161,19 @@ text-align:center;
 							 --%>
 							<tr>
 								<td>						
-									<h3 style="text-align: left;"><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
-									<br>
+									<h3 style="text-align: left;"><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3><br>
+								</td>
+							</tr>
+							<tr><td><img src="${pageContext.request.contextPath}/images/hbr_consulting_therapy.png" alt="Consulting Coaching Therapy" height="200" width="600"/><br>
+								Chart from Harvard Business Review showing the relationship between consulting, therapy and the coaching process							
+							</td></tr>
+							<tr><td><br>
 									<h2 style="text-align: left; text-decoration: underline;">How an online corporate coach can help you:</h2>
 									<h3 style="text-align: left;">Corporate coaches are trained to see opportunities where others see problems.  They provide you with the tactical applications you need to address some of the most pressing challenges facing your organization today.  Some of the challenges they may help you with include, team dysfunction, stagnation, and status quo thinking. 
 																At CoachConnecXion, our corporate coaches use a variety of techniques including corporate team building games, and team building questions to see where the issues are and help drive solutions to the identified problem areas.
-																The below chart from Harvard Business Review shows the consulting and therapy related activities that should be used in the coaching process. </h3><br>
+																 </h3><br>
 								</td>
 							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/hbr_consulting_therapy.png" alt="Consulting Coaching Therapy" height="200" width="600"/></td></tr>
 							<tr><td>		
 									<h3 style="text-decoration: underline;">Corporate coaching focuses on:</h3>
 									<ul style="list-style-type: square;">
