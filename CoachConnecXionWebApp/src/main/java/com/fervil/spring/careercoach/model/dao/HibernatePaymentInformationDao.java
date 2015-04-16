@@ -18,7 +18,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
 import com.fervil.spring.careercoach.model.domain.CoachingRequest;
 import com.fervil.spring.careercoach.model.domain.PaymentInformation;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
@@ -34,7 +33,6 @@ public class HibernatePaymentInformationDao implements PaymentInformationDao {
     private static final Logger log = LoggerFactory.getLogger(CoachSelectionFormController.class);
 	
 	public void store(PaymentInformation paymentInformation) throws Exception {
-
 		
 		try {
 			/*
@@ -118,22 +116,6 @@ public class HibernatePaymentInformationDao implements PaymentInformationDao {
 		 			+ " and pd.profileId = " + coachUserProfileId
 					+ " order by pi.currentdate desc  ";
 			
-/*			
-			String sql = " Select pi.email , pi.phone_Number1, pi.phone_Number2 "
-			+ ", pi.phone_Number3 , pi.first_Name "
-			+ ", pi.last_Name, pi.street1 "
-			+ ", pi.street2 "
-			+ ",  pi.city "
-			+ ", pi.state "
-			+ ", pi.zip, pi.order_Description, pi.package_Price "
-			+ ", pi.expiration_Month_Value, pi.expiration_Year_Value, pi.state_Value "
-			+ ", pi.package_Name , pi.currentdate "
-			+ " from packagedetails pd, payment_information pi "
-			+ " Where pd.id = pi.package_Id "
-			+ " and pd.profileId = " + coachUserProfileId
-			+ " order by pi.currentdate desc";
-*/
-			
 			log.info(" HibernatePaymentInformation:findPurchasedPackages " + sql);
 
 			Query query = sessionFactory.getCurrentSession().createSQLQuery(sql); 
@@ -151,4 +133,43 @@ public class HibernatePaymentInformationDao implements PaymentInformationDao {
 		}
 	}
 	
+	public List<PaymentInformation> getPaymentRecordBypackageForUser(long packageId, String email) throws Exception {
+		try {
+			// session.beginTransaction();
+			
+			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
+					PaymentInformation.class);
+			
+			String sql = " Select pi.id orderid, pi.email toemail  "
+					+ ", pi.phone_Number1, pi.phone_Number2  "
+					+ ", pi.phone_Number3 , pi.first_Name  "
+					+ ", pi.last_Name, pi.street1  "
+					+ ", pi.street2  "
+					+ ", pi.city  "
+					+ ", pi.state  "
+					+ ", pi.zip, pi.order_Description, pi.package_Price  "
+					+ ", pi.expiration_Month_Value, pi.expiration_Year_Value, pi.state_Value  "
+					+ ", pi.package_Name , pi.currentdate  "
+					+ " from payment_information pi  "
+					+ " Where pi.package_id = " + packageId  
+					+ " and pi.email = '" + email + "' "
+					+ " order by pi.currentdate desc  ";
+			
+			log.info(" HibernatePaymentInformation:getPaymentRecordBypackageForUser " + sql);
+
+			Query query = sessionFactory.getCurrentSession().createSQLQuery(sql); 
+			
+			query.setResultTransformer(AliasToEntityMapResultTransformer.INSTANCE);
+			List list = query.list();
+		    log.info(" Number of Purchases found: " + list.size());
+		    
+			return ((List<PaymentInformation>) list);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			// tx.rollback();
+			throw e;
+		}
+		
+	};
 }

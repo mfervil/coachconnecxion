@@ -2,7 +2,6 @@ package com.fervil.spring.careercoach.service;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -83,6 +82,14 @@ public class BasicPaymentInformationManager implements PaymentInformationManager
 		return this.paymentInformationDao.findPurchasedPackages(coachUserProfileId);
 	}
     
+    public List<PaymentInformation> getPaymentRecordBypackageForUser(long packageId, String email ) throws Exception {
+		return this.paymentInformationDao.getPaymentRecordBypackageForUser(packageId, email);
+    }
+	
+	
+	//public void saveBasicPaymentInformation(PaymentInformation paymentInformation) throws Exception {
+	//	this.paymentInformationDao.store(paymentInformation); 
+	//}
     
 	@Override
 	public String[] processPaymentInfo(PaymentInformation paymentInformation, String coachEmail)  throws Exception {
@@ -146,6 +153,14 @@ public class BasicPaymentInformationManager implements PaymentInformationManager
 			
 		}		
 		return response;
+	}
+
+	@Override
+	public void storePaymentInformation(PaymentInformation paymentInformation)
+			throws Exception {
+		
+		System.out.println("Inside storePaymentInformation");
+		this.paymentInformationDao.store(paymentInformation); 
 	}
 	
 	

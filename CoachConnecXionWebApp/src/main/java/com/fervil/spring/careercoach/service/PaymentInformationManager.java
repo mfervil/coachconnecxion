@@ -20,5 +20,7 @@ public interface PaymentInformationManager  extends Serializable {
     public UserProfile findById(String id) throws Exception ;	
     public String [] processPaymentInfo(PaymentInformation paymentInformation, String coachEmail) throws Exception ;
     public List<PaymentInformation> findPurchasedPackages(long coachUserProfileId) throws Exception;
+    public void storePaymentInformation(PaymentInformation paymentInformation) throws Exception;
+    public List<PaymentInformation> getPaymentRecordBypackageForUser(long packageId, String email) throws Exception;
     
 }

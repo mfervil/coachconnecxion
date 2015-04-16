@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-	<title>Fitness Trainer Programs - Become a Fitness Trainer - CoachConnecXion</title>
+	<title>Find Fitness Coaches Programs or Become a Fitness Trainer-CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
 	<meta name="description" content="Our fitness trainers will lead, instruct, and motivate you in exercise activities, including cardiovascular exercise (exercises for the heart and blood system), strength training, and stretching" />

@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-	<title>nutrition health dieting - CoachConnecXion</title>
+	<title>Nutrition Coaches - Nutrition Health - CoachConnecxion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
 	<meta name="description" content="Our nutrition coaches can help educate you on what to eat in order to lead a healthy lifestyle or achieve a specific health or weight-related goal" />

@@ -49,11 +49,14 @@ import com.connection.model.UserAttachment;
 import com.connection.model.Usermessage;
 import com.connection.service.CustomerService;
 import com.connection.service.MessageService;
+import com.fervil.spring.careercoach.model.domain.PaymentInformation;
 import com.fervil.spring.careercoach.util.Constants;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.fervil.spring.careercoach.model.dao.PaymentInformationDao;
+
 
 @Controller
 @RequestMapping("/workroom/wrsendEmail")
@@ -95,7 +98,7 @@ public class WRSendEmailAttachController {
 
 			String fromEmail = request.getParameter("fromemail").toString();
 			String toEmail = request.getParameter("toemail").toString();
-			
+
 			UserAttachment attachment=new UserAttachment();
 			attachment.setAttachmentname(attachFile.getOriginalFilename());
 			Usermessage message2=new Usermessage();

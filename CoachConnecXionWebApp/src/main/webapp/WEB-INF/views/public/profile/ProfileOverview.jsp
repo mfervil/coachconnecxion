@@ -482,8 +482,11 @@ String finalPath = request.getContextPath();
 										commandName="paymentinformation">
 									<table class="data">
 										<tr>
-											<td colspan="2" style="text-align: left;"><a style="color: blue; border-style: solid; border-width: 1px;" href="/cooach/contactCoach?packageId=${availablePackages.id}&coachEmail=${profileInfo.getEmail()}">SETUP AN ASSESSMENT AND ASK QUESTIONS ABOUT THIS PACKAGE</a>
-											</td>
+											<td colspan="2" style="text-align: left;">
+											<a style="color: blue; border-style: solid; border-width: 1px;" 
+											href="${pageContext.request.contextPath}/workroom/wrsendMessageNoOrder?coachProfileId=${profileId}&coachDisplayName=${profileInfo.getDisplayName()}&packageId=${availablePackages.id}&coachEmail=${profileInfo.getEmail()}&packageName=${availablePackages.packageName}&packagePrice=${availablePackages.priceValue}">
+											SETUP AN ASSESSMENT AND ASK QUESTIONS ABOUT THIS PACKAGE</a>
+											</td> 
 										</tr>
 										<tr>
 											<td >

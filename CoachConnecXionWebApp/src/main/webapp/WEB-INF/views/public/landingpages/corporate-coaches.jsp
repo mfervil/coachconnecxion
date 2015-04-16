@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-	<title>Corporate Team Building Games - Team Building Questions - CoachConnecXion</title>
+	<title>Corporate Coaches-Team Building Games and Questions-CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
 	<meta name="description" content="Our corporate coaches will help you address some of the most pressing challenges facing your organization today.  Some of the organizational challenges they may help you with include team disfunction, stagnation, and status quo thinking" />

@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-	<title>Hire a Coach - Self Help Motivation - CoachConnecXion</title>
+	<title>Personal Coaches-Hire a Coach-Self Help Motivation - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
 	<meta name="description" content="Our personal coaches will create a safe environment in which you can more clearly see your self; the coaches will listen to you and work with you to understand whats holding you back, and what you can do to succeed." />

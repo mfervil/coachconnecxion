@@ -44,4 +44,31 @@ public class SystemUtil<Static> {
 		return userProfileId;
 		
 	}
+
+	public synchronized static UserProfile getUserProfile(HttpServletRequest request, UserProfileManager userProfileManager) throws Exception {
+		//long userProfileId = -1;
+		HttpSession session = request.getSession();
+
+		//userProfileId = session.getAttribute("userProfileId") == null?-1:(Long)session.getAttribute("userProfileId");
+		
+		UserProfile userProfile = null;
+		
+		long userId = SecurityUtils.getCurrentUser() == null?-1:SecurityUtils.getCurrentUser().getId();
+
+		System.out.println(" The userId is: " + userId);
+
+		List<UserProfile> usrList = userProfileManager.findByUserId(userId);
+		
+		//int profileType = 0;
+		for(int j=0; j<usrList.size();j++ ){			
+			userProfile = usrList.get(j);
+			break;
+		}
+
+		return userProfile;
+		
+	}
+
+
+
 }

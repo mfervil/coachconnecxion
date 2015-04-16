@@ -18,4 +18,6 @@ public interface PaymentInformationDao {
 	public List<PaymentInformation> findByCoachUserId(long id)  throws Exception ;
 	
 	public List<PaymentInformation> findPurchasedPackages(long id)  throws Exception;
+	
+	public List<PaymentInformation> getPaymentRecordBypackageForUser(long packageId, String email) throws Exception;
 }

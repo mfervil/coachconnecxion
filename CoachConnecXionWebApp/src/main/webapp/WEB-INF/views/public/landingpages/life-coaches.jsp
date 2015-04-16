@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-	<title>self help motivation - CoachConnecXion</title>
+	<title>Life Coaches - Self Help Motivation - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
 	<meta name="description" content="The role of Our life coaches is to provide the drive and guidance you need to improve your self.  Our our life coaches may be able to help you with your relationship, your career, and your overall emotional health." />

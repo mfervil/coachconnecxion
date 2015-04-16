@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-	<title>career coaching services - certified career coach - CoachConnecXion</title>
+	<title>Certified Career Coaches-Career Coaching Services-CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
 	<meta name="description" content="Our career coaches will work with you to help assess your talents and help you with critical decisions concerning your career choice and direction" />

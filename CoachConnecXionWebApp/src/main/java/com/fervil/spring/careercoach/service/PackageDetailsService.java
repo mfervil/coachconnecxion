@@ -235,7 +235,7 @@ public class PackageDetailsService {
 				+ " and up1.email = pi.email  "
 				+ " and up.user_profile_id = pd.PROFILEID  "
 	 			+ " and up1.user_profile_id = " + clientUserProfileId
-				+ " order by pi.currentdate desc  ";		
+				+ " order by pi.currentdate desc  ";
 
 				//log.info(" HibernatePaymentInformation:findPurchasedPackages " + sql);
 		

@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-	<title>Online business strategic advisors - Business Coaches - CoachConnecXion</title>
+	<title>Business Coaches - Online business strategic advisors-CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
 	<meta name="description" content="Business coaches on our site are not only successful coaches and professionals, but they also have genuine interests in assisting you succeed with your own business" />
