@@ -18,7 +18,7 @@
 					<li><a href="#">CLIENTS</a>
 						<ul>	
 							<!-- <li><a href="${pageContext.request.contextPath}/public/coachSelection">FIND A COACH</a></li>  -->
-							<li><a href="${pageContext.request.contextPath}/viewOrders">MY COACHING PURCHASES</a></li>
+							<li><a href="${pageContext.request.contextPath}/viewOrders">PURCHASES & MESSAGES</a></li>
 							<li><a href="${pageContext.request.contextPath}/viewOrders">COMMENTS & RATINGS</a></li>
 							<!-- <li><a href="${pageContext.request.contextPath}/public/information?type=so">SEARCH OVERVIEW</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/information?type=sf">FAQ</a></li>

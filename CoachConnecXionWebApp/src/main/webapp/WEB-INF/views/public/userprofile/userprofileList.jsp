@@ -104,7 +104,7 @@
 								<tr>
 									<td class="leftalign" colspan="3">
 									     ${userProfileDetails.overview} 
-									     <br><a href="profile?profileId=${userProfileDetails.user_profile_id}"><font color="blue" size="14"><ul>SEE COACH DETAILS, VIDEO AND ASK QUESTIONS</ul></font></a> <br><br>
+									     <br><a href="profile?profileId=${userProfileDetails.user_profile_id}"><font color="blue" size="14"><ul>SEE COACH DETAILS & VIDEO, ASK QUESTIONS, PROVIDE FEEDBACK & RATINGS </ul></font></a> <br><br>
 									</td>      
 								 </tr>
 								 

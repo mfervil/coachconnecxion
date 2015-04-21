@@ -82,7 +82,7 @@ public class BasicPaymentInformationManager implements PaymentInformationManager
 		return this.paymentInformationDao.findPurchasedPackages(coachUserProfileId);
 	}
     
-    public List<PaymentInformation> getPaymentRecordBypackageForUser(long packageId, String email ) throws Exception {
+    public List<HashMap> getPaymentRecordBypackageForUser(long packageId, String email ) throws Exception {
 		return this.paymentInformationDao.getPaymentRecordBypackageForUser(packageId, email);
     }
 	
@@ -159,7 +159,6 @@ public class BasicPaymentInformationManager implements PaymentInformationManager
 	public void storePaymentInformation(PaymentInformation paymentInformation)
 			throws Exception {
 		
-		System.out.println("Inside storePaymentInformation");
 		this.paymentInformationDao.store(paymentInformation); 
 	}
 	

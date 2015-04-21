@@ -42,7 +42,7 @@
 					<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/about-us">About Us </a> | 
 					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> | 
-					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>
+					<a style="font-size:12px;color:#0404B4; font-weight: bold;" href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>
 					
 <c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
 	<c:if test="${sessionScope.usertype == 1}">
@@ -69,7 +69,7 @@
 			</div>
 
 		<br><br>	
-		<p align="right">
+		<p style="text-align: right;">
 			<a href="https://www.facebook.com/pages/Coachconnecxion/381001272060479"><img src="${pageContext.request.contextPath}/images/social/facebook.png" alt="logo" /></a>
 			&nbsp;&nbsp;<a href="https://twitter.com/CoachConnecX"><img src="${pageContext.request.contextPath}/images/social/twitter.png" alt="logo" /></a>
 			&nbsp;&nbsp;<a href="https://plus.google.com/u/6/101269948124610306307"><img src="${pageContext.request.contextPath}/images/social/googleplus.png" alt="logo" /></a>
@@ -150,6 +150,7 @@
 	</div><!-- #wrapper -->		
 	
 	<%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	
-	
+<!-- 	
 </body>
 </html>
+ -->

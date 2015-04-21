@@ -1,6 +1,7 @@
 package com.fervil.spring.careercoach.service;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
 
 import org.jetbrains.annotations.NotNull;
@@ -21,6 +22,6 @@ public interface PaymentInformationManager  extends Serializable {
     public String [] processPaymentInfo(PaymentInformation paymentInformation, String coachEmail) throws Exception ;
     public List<PaymentInformation> findPurchasedPackages(long coachUserProfileId) throws Exception;
     public void storePaymentInformation(PaymentInformation paymentInformation) throws Exception;
-    public List<PaymentInformation> getPaymentRecordBypackageForUser(long packageId, String email) throws Exception;
+    public List<HashMap> getPaymentRecordBypackageForUser(long packageId, String email) throws Exception;
     
 }

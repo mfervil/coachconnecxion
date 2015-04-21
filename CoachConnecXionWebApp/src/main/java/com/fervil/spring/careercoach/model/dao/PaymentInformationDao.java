@@ -1,5 +1,6 @@
 package com.fervil.spring.careercoach.model.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.fervil.spring.careercoach.model.domain.CoachingRequest;
@@ -19,5 +20,5 @@ public interface PaymentInformationDao {
 	
 	public List<PaymentInformation> findPurchasedPackages(long id)  throws Exception;
 	
-	public List<PaymentInformation> getPaymentRecordBypackageForUser(long packageId, String email) throws Exception;
+	public List<HashMap> getPaymentRecordBypackageForUser(long packageId, String email) throws Exception;
 }

@@ -156,6 +156,7 @@ public class JobRatingService {
 		existingJobrating.setAverageRating(jobratingDetails.getAverageRating());
 		existingJobrating.setRatingDate(jobratingDetails.getRatingDate());
 		existingJobrating.setRatingDone(1);
+		
 		session.saveOrUpdate(existingJobrating);
 	}
 

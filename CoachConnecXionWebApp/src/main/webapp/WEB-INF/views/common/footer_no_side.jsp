@@ -5,7 +5,7 @@
 		<div class="separator"></div>
 		
 		<div class="clear"></div>		
-	</div><!-- #boxed-page-bg -->			
+	<!--  </div>#boxed-page-bg REMOVING PER THE VALIDATOR-->			
 	<div id="wrapper-boxed-page-bottom"></div>
 	
 	<!-- FOOTER LINE -->
@@ -17,7 +17,7 @@
 				<%-- <a  style="font-size:12px;" href="${pageContext.request.contextPath}/">Home </a> | <a style="font-size:12px;" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | <a style="font-size:12px;"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | <a style="font-size:12px;" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy</a> --%>
 
 				<%-- MENU --%>
-				<div id="menutopmost">
+				<div id="menubottompmost">
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/about-us">About Us </a> | 
 					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> |
@@ -57,8 +57,8 @@
 	</section>
 	
 	
-	</div> <!-- #background	-->	
-	 </div> <!-- #background_repeat -->	
+	<!-- </div>  #background	COMMENTED OUT PER VALIDATOR -->	
+	<!-- </div>  #background_repeat 	COMMENTED OUT PER VALIDATOR  -->	
 	
-</body>
+</body> 	
 </html>

@@ -252,10 +252,18 @@ String finalPath = request.getContextPath();
 							</table>
 
 							<table border="1">
-							<tr> <td class="rightalign"><b>City:&nbsp;</b></td> <td class="leftalign">${profileInfo.getCity()} </td> <td class="rightalign"><b>State:&nbsp;</b> </td> <td class="leftalign">${profileInfo.getState()} </td>
+							<tr> <td class="leftalign"><b>City:&nbsp;</b> ${profileInfo.getCity()} </td> <td class="leftalign"><b>State:&nbsp;</b> </td> <td class="leftalign">${profileInfo.getState()} </td>
 							</tr>
 							<tr>
-								 <!--  <td class="rightalign"><b>Clients:&nbsp;</b> </td> <td class="leftalign"><c:out value="${totalClients}"></c:out> </td>  --> <td class="rightalign"><b>Average Rating:&nbsp;</b> </td> <td class="leftalign"><%@ include file="/WEB-INF/views/common/average_rating.jsp" %> </td>
+								 <!--  <td class="rightalign"><b>Clients:&nbsp;</b> </td> <td class="leftalign"><c:out value="${totalClients}"></c:out> </td>  --> <td class="leftalign"><b>Average Rating:&nbsp;</b> <%@ include file="/WEB-INF/views/common/average_rating.jsp" %> </td>
+							</tr>
+							<tr>
+								<td style="text-align: left;"><br>
+									<a style ="background-color: #0099CC; color: white; width: 200px; padding: 3px; border: 1px solid navy;" 
+									href="${pageContext.request.contextPath}/feedbackAddNoOrder?vendorName=${profileInfo.getDisplayName()}&vendorId=${profileInfo.userProfileId}&customerId=${profileId}">
+										Provide Feedback & Rating
+									</a>
+								</td> 
 							</tr>
 							<%--
 							<tr>
@@ -482,36 +490,40 @@ String finalPath = request.getContextPath();
 										commandName="paymentinformation">
 									<table class="data">
 										<tr>
-											<td colspan="2" style="text-align: left;">
-											<a style="color: blue; border-style: solid; border-width: 1px;" 
-											href="${pageContext.request.contextPath}/workroom/wrsendMessageNoOrder?coachProfileId=${profileId}&coachDisplayName=${profileInfo.getDisplayName()}&packageId=${availablePackages.id}&coachEmail=${profileInfo.getEmail()}&packageName=${availablePackages.packageName}&packagePrice=${availablePackages.priceValue}">
-											SETUP AN ASSESSMENT AND ASK QUESTIONS ABOUT THIS PACKAGE</a>
+											<td style="text-align: left;">
+												<input style="color: white; border: 1px solid navy; background-color: #0099CC; padding: 3px; border: 1px; solid gray" type="submit" class="input-button" value="Buy This Package" />
+											</td>	
+
+											<td style="text-align: left;">
+												<!-- <a style="color: blue; border-style: solid; border-width: 1px  solid navy; padding: 5px;" --> 
+												<a style ="background-color: #0099CC;
+														    color: white;	
+														    width: 200px;
+														    padding: 3px;
+														    border: 1px solid navy;"
+													href="${pageContext.request.contextPath}/workroom/wrsendMessageNoOrder?coachProfileId=${profileId}&coachDisplayName=${profileInfo.getDisplayName()}&packageId=${availablePackages.id}&coachEmail=${profileInfo.getEmail()}&packageName=${availablePackages.packageName}&packagePrice=${availablePackages.priceValue}">
+													Assessment & Ask Questions
+												</a>
+												
 											</td> 
 										</tr>
 										<tr>
-											<td >
-												<input type="submit" class="input-button" value="Buy This Package" />
-											</td>	
-											<td width="100%"><h1 style="border-style: solid; text-align: center;">&nbsp;&nbsp;&nbsp;Package Name: ${availablePackages.packageName} -- Price:  ${availablePackages.priceValue} </h1>
+											<td width="100%" colspan=2><h1 style="border-style: solid; text-align: center;"><br>Package Name: ${availablePackages.packageName} -- Price:  ${availablePackages.priceValue} </h1>
 											</td>
 										</tr>
 										<tr>
-										    <td>
-													<input type="hidden" name="packageId" id="packageId" value="${availablePackages.id}"></input>
-													<input type="hidden" name="packageName" id="packageName" value="${availablePackages.packageName}"></input>
-													<input type="hidden" name="packagePrice" id="packagePrice" value="${availablePackages.priceValue}"></input>
-													<input type="hidden" name="coachEmail" id="coachEmail" value="${profileInfo.getEmail()}"></input>
-										    </td>
-											<!--  <td><a href="http://www.secureinfossl.com/carts/shopping_cart/oneClickProductBuy/a645047933ed7b2eb3be5defd91e083e/0"><img src="https://www.secureinfossl.com${pageContext.request.contextPath}/images/cart_buttons/cart_button_6.gif" border="0"></a></td>  -->
-										</tr>
-										<tr>
-											<td style="text-align: left;" colspan="2"><h2>Overview </h2>${availablePackages.overView} <br> &nbsp;</td>
+											<td style="text-align: left;" colspan="2"><br><h2>Overview </h2>${availablePackages.overView} <br> &nbsp;</td>
 										</tr>
 										<tr>
 											<td style="text-align: left;" colspan="2"><h2>Details </h2>${availablePackages.packageDetails} </td>
 										</tr>
 										<tr><td>&nbsp;</td></tr>
 									</table>
+										<input type="hidden" name="packageId" id="packageId" value="${availablePackages.id}"></input>
+										<input type="hidden" name="packageName" id="packageName" value="${availablePackages.packageName}"></input>
+										<input type="hidden" name="packagePrice" id="packagePrice" value="${availablePackages.priceValue}"></input>
+										<input type="hidden" name="coachEmail" id="coachEmail" value="${profileInfo.getEmail()}"></input>
+
 							    	</form:form>
 							    	<hr>
 								</c:forEach>

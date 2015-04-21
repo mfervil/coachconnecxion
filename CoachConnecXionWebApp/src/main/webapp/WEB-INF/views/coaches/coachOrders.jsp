@@ -63,7 +63,7 @@ table tbody {
 			
 			<h1 style="font-size:14px;">${message}</h1>
 
-			<h2 style="font-size:16px; text-align: center; font-weight:bold;">PACKAGES PURCHASED</h2>
+			<h2 style="font-size:16px; text-align: center; font-weight:bold;">PURCHASES & MESSAGES</h2>
 			<br>
 			<table style="border: 1px solid; width: 100%; text-align: center">
 				<thead style="background: #EAEAEA;">

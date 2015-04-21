@@ -110,8 +110,6 @@ public class UserProfileListController  {
 			
 			long totalNumPagestoDisplay =  ((Double)Math.ceil(new Double(userprofilecount)/new Double(pageSize))).longValue() ;
 			
-			//System.out.println("The values are: " + userprofilecount + "::" + pageSize + "::" + totalNumPagestoDisplay);
-			
 			mav.addObject("coachingCategory", webRequest.getParameter("coachingCategory"));
 			mav.addObject("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
 			mav.addObject("industryExperience", webRequest.getParameter("industryExperience"));

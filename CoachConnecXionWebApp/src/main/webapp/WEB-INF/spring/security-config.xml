@@ -72,7 +72,7 @@
         <intercept-url pattern="/privacy-policy" access="permitAll()"/>
         <intercept-url pattern="/safety-tips" access="permitAll()"/>
         <intercept-url pattern="/how-it-works" access="permitAll()"/>
-
+		<intercept-url pattern="/feedbackAddNoOrder" access="permitAll()"/>								
         
 <!--         
         <intercept-url pattern="/userprofile/**" access="permitAll()"/>

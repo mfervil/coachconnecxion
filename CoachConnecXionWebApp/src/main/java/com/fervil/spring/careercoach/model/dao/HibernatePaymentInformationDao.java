@@ -1,5 +1,6 @@
 package com.fervil.spring.careercoach.model.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.imageio.spi.ServiceRegistry;
@@ -42,10 +43,25 @@ public class HibernatePaymentInformationDao implements PaymentInformationDao {
 			tx.commit();
 			*/
 
+			//DO NOT SAVE THE CREDIT CARD INFORMATION TO DATABASE
+			
+			paymentInformation.setCreditCardNumber1("0");
+			paymentInformation.setCreditCardNumber2("0");
+			paymentInformation.setCreditCardNumber3("0");
+			if (paymentInformation.getCreditCardNumber4() != null){
+				paymentInformation.setCreditCardNumber4(paymentInformation.getCreditCardNumber4().substring(2) );
+			}
+			paymentInformation.setExpirationMonth(0);
+			paymentInformation.setExpirationMonthValue("0");
+			paymentInformation.setExpirationYear(0);
+			paymentInformation.setExpirationYearValue("0");
+			paymentInformation.setCvv2(0);
+			
 			sessionFactory.getCurrentSession().saveOrUpdate(paymentInformation);
 			
 		} catch (Exception e) {
-			//tx.rollback();			
+			//tx.rollback();		
+			e.printStackTrace();
 			throw e;
 		} //finally {
 			//session.close();
@@ -107,12 +123,13 @@ public class HibernatePaymentInformationDao implements PaymentInformationDao {
 					+ ", pi.state  "
 					+ ", pi.zip, pi.order_Description, pi.package_Price  "
 					+ ", pi.expiration_Month_Value, pi.expiration_Year_Value, pi.state_Value  "
-					+ ", pi.package_Name , pi.currentdate  "
+					+ ", pi.package_Name , pi.currentdate, pi.entrytype  "
 					+ ", (select count(*) from message where toprofileid=" + coachUserProfileId + " and read_status=1 and orderid = pi.id) unreadmessages "  //find all unread messages coming to me
 					+ " from packagedetails pd, payment_information pi, user_profile up, user_profile up1  "
 					+ " Where pd.id = pi.package_Id  "
 					+ " and up.email = pi.email  "
 					+ " and up1.user_profile_id = pd.PROFILEID  "
+					+ " and pi.entrytype in (0, 1) "
 		 			+ " and pd.profileId = " + coachUserProfileId
 					+ " order by pi.currentdate desc  ";
 			
@@ -133,26 +150,27 @@ public class HibernatePaymentInformationDao implements PaymentInformationDao {
 		}
 	}
 	
-	public List<PaymentInformation> getPaymentRecordBypackageForUser(long packageId, String email) throws Exception {
+	public List<HashMap> getPaymentRecordBypackageForUser(long packageId, String email) throws Exception {
 		try {
 			// session.beginTransaction();
 			
 			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
 					PaymentInformation.class);
 			
-			String sql = " Select pi.id orderid, pi.email toemail  "
-					+ ", pi.phone_Number1, pi.phone_Number2  "
-					+ ", pi.phone_Number3 , pi.first_Name  "
-					+ ", pi.last_Name, pi.street1  "
+			String sql = " Select pi.id, pi.email email  "
+					+ ", pi.phone_Number1 phoneNumber1, pi.phone_Number2  phoneNumber2"
+					+ ", pi.phone_Number3 phoneNumber3, pi.first_Name firstName "
+					+ ", pi.last_Name lastName, pi.street1  "
 					+ ", pi.street2  "
 					+ ", pi.city  "
 					+ ", pi.state  "
-					+ ", pi.zip, pi.order_Description, pi.package_Price  "
-					+ ", pi.expiration_Month_Value, pi.expiration_Year_Value, pi.state_Value  "
-					+ ", pi.package_Name , pi.currentdate  "
+					+ ", pi.zip, pi.order_Description orderDescription, pi.package_Price packagePrice "
+					+ ", pi.expiration_Month_Value expirationMonthValue, pi.expiration_Year_Value expirationYearValue, pi.state_Value stateValue "
+					+ ", pi.package_Name packageName, pi.currentdate orderdate"
 					+ " from payment_information pi  "
 					+ " Where pi.package_id = " + packageId  
 					+ " and pi.email = '" + email + "' "
+					+ " and pi.entrytype = 1 "
 					+ " order by pi.currentdate desc  ";
 			
 			log.info(" HibernatePaymentInformation:getPaymentRecordBypackageForUser " + sql);
@@ -163,7 +181,7 @@ public class HibernatePaymentInformationDao implements PaymentInformationDao {
 			List list = query.list();
 		    log.info(" Number of Purchases found: " + list.size());
 		    
-			return ((List<PaymentInformation>) list);
+			return ((List<HashMap>) list);
 
 		} catch (Exception e) {
 			e.printStackTrace();

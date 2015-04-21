@@ -69,7 +69,7 @@ table tbody {
 			<c:url var="mainUrl" value="/packageAdd" />
 			<h1 style="font-size:14px;">${message}</h1>
 
-			<h2 style="font-size:16px; text-align: center; font-weight:bold;">PACKAGES AND MESSAGES</h2>
+			<h2 style="font-size:16px; text-align: center; font-weight:bold;">PURCHASES AND MESSAGES</h2>
 			<br>
 			<table style="border: 1px solid; width: 100%; text-align: center">
 				<thead style="background: #EAEAEA;">
@@ -101,16 +101,17 @@ table tbody {
 							<td style="text-align: center;"><c:out value="${todisplayname}" /></td>
 							<td style="text-align: center;"><c:out value="${packages.packageName}" /></td>
 
-							<c:if test="${ packages.package_Price gt 0}">
+							<!-- NEED TO MAKE SURE I RETURN ENTRY TYPES OF 0 OR 1 ONLY -->
+							<c:if test="${ packages.Entrytype != 1}">
 								<td style="text-align: center;"><c:out value="${packages.priceValue}" /></td>
 								<td style="text-align: center;"><c:out value="${fn:substring(packages.orderdate, 0, 10)}" /></td>
 								<td style="text-align: center;"><c:out value="${packages.toemail}" /></td>
 								<td style="text-align: center;"><c:out value="${packages.tophone}" /></td>
 								<td style="text-align: center;">
-								<a style="color: #0000FF;" href="${pageContext.request.contextPath}/feedbackAdd?vendorId=${packages.userProfileId}&packageId=${packages.packageId}&paymentId=${packages.paymentId}&customerId=${currentUserId}&projectName=${packages.packagename}&vendorName=${packages.displayname}" >Rate this job</a> </td>
+								<a style="color: #0000FF;" href="${pageContext.request.contextPath}/feedbackAdd?vendorName=${todisplayname}&projectName=${packages.packageName}&vendorId=${packages.toprofileid}&packageId=${packages.packageId}&paymentId=${packages.orderid}&customerId=${currentUserId}&projectName=${packages.packagename}&vendorName=${packages.displayname}" >Rate this job</a> </td>
 							</c:if>
 
-							<c:if test="${ packages.package_Price lt 1}">
+							<c:if test="${ packages.entrytype == 1}">
 								<td style="text-align: left; font-weight: bold" colspan="5">THIS ENTRY NOT AN ORDER -- USE ONLY TO SEND/GET MESSAGES TO COACH</td>
 							</c:if>
 							

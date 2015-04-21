@@ -33,6 +33,16 @@ public class PaymentInformation {
 		this.id = id;
 	}
 
+	@Column(name = "entrytype")
+	private int entrytype;
+	public int getEntrytype() {
+		return entrytype;
+	}
+
+	public void setEntrytype(int entrytype) {
+		this.entrytype = entrytype;
+	}
+
 	@Column(name = "credit_card_type")
 	private String creditCardType;
 	@Column(name = "credit_card_number1")

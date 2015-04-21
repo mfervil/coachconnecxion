@@ -225,7 +225,7 @@
 
 				<tr style="background-color: white">
 					<td colspan="4" style="text-align: left;">
-						<br>	<input style"text-align: right;" type="submit" class="input-button" value="Start Your Search" />
+						<br>	<input type="submit" class="input-button" value="Start Your Search" />
 					</td>
 				</tr>
 			  </tbody>

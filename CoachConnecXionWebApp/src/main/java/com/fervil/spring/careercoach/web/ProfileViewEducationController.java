@@ -738,7 +738,6 @@ public class ProfileViewEducationController {
 										.parse(educationDetails.getToDate());
 								if (date3.compareTo(date4) < 0) {
 									
-									//System.out.println("Date1 is before Date2");
 								} else if (date3.compareTo(date4) == 0) {
 									//System.out.println("Date1 is equal to Date2");
 								} else {

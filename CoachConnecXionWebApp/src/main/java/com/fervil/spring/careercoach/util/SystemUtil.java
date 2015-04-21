@@ -55,8 +55,6 @@ public class SystemUtil<Static> {
 		
 		long userId = SecurityUtils.getCurrentUser() == null?-1:SecurityUtils.getCurrentUser().getId();
 
-		System.out.println(" The userId is: " + userId);
-
 		List<UserProfile> usrList = userProfileManager.findByUserId(userId);
 		
 		//int profileType = 0;

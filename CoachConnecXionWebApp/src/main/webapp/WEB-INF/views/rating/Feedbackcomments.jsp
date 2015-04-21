@@ -113,7 +113,7 @@ text-align:center;
 								<h1 style="font-size: 14px; color: green;">${successMessage}</h1>
 								 <br>
 								 <br>
-								Click&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/viewOrders" style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To go back project list.							
+								Click&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/viewOrders" style="font-size: 14px;text-decoration: underline;color:blue;">here</a>&nbsp;&nbsp;To go back to project list.							
 								<div style="height: 15px;"></div>
 							</div>
 						</c:when>

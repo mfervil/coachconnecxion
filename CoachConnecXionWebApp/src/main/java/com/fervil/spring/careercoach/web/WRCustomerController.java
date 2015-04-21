@@ -574,8 +574,6 @@ public class WRCustomerController {
 			ModelMap model = new ModelMap();
 			
 			try{
-				System.out.println("######################################### sendMessage ###############################################"); 
-	
 				
 				long orderid = Long.valueOf(webRequest.getParameter("orderid"));
 	
@@ -587,8 +585,6 @@ public class WRCustomerController {
 				String fromdisplayname = webRequest.getParameter("fromdisplayname").toString();
 				String todisplayname = webRequest.getParameter("todisplayname").toString() ;
 				
-				
-				System.out.println("The passed info is: " + currentLoggedInUserProfileId + ":" + userCommunicatingTotoProfileId + ":" + fromEmail + ":" + toEmail);
 				
 				//System.out.println("############  EMAIL "+customerService.loadCustomer(customerbean).getEmailid()); 
 				/*
@@ -612,14 +608,11 @@ public class WRCustomerController {
 				
 				messages=messageService.getUserMessagesByProfileId(orderid);  
 	
-				System.out.println("WRCustomerController::wrsendMessage 1:: The messages are: " + messages.size()  );
-	
 				for(int i=0;i<messages.size();i++){
 					
 					Usermessage message=new Usermessage();
 					message=messages.get(i); 
 	
-					System.out.println("WRCustomerController::wrsendMessage 2:: The messages are: " + message.getMessageid());
 				}
 	
 				//Change the status of all the messages to read.
@@ -632,17 +625,13 @@ public class WRCustomerController {
 					HttpSession session=request.getSession();
 					session.setAttribute("nummessages", new Integer(numMessages));
 					
-					System.out.println("fromprofileid::" + currentLoggedInUserProfileId + "::numMessages:" + numMessages);
-				//After user sees all the emails	
-					
-					
-					
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}  
 				
 				model.addAttribute("emailid", toEmail);  
+				// TODO Check why my name and test message is still here.
 				model.addAttribute("name", "Marc Test Name");   
 				//model.addAttribute("id", toProfileId);
 	
@@ -700,11 +689,6 @@ public class WRCustomerController {
 						}
 					}
 					
-					//Customer customer2=new Customer();
-					
-					System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^customer.getCustomername()  "+customer.getCustomername());
-					System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^customer2.getCustomername()  "+customer2.getCustomername());
-					 
 					messages=messageService.getUserMessages(customer,customer2);    
 				 
 					String result="";
