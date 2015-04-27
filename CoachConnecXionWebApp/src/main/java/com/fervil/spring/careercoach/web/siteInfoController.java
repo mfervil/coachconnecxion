@@ -21,11 +21,11 @@ import com.fervil.spring.careercoach.util.Constants;
 public class siteInfoController {
     private static final Logger log = LoggerFactory.getLogger(siteInfoController.class);
 	
-/*    
+/*      
 	@RequestMapping(value = "/public/information", method = RequestMethod.GET)
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response, Model model) {
             //throws ServletException, IOException {
-
+   
     	Map<String, Object> myModel = new HashMap<String, Object>();
     	try{	
 	        String now = (new java.util.Date()).toString();

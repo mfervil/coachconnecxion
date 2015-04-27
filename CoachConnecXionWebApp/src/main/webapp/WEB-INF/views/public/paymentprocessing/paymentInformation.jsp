@@ -592,7 +592,7 @@ select.error {
 				<tr><td></td></tr>
 				<tr>
 					<td>
-	                	By clicking Submit Payment Information below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=tu">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy</a> 
+	                	By clicking Submit Payment Information below, you agree to our <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/terms-of-use">Terms of Service</a> and <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/privacy-policy">Privacy Policy</a> 
 					</td>
 				</tr>
 				

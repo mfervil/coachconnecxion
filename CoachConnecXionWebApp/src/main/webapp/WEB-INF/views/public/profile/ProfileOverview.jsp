@@ -175,6 +175,9 @@ table tr:nth-child(2n) {
 					<li><a href="#education">TRAINING:EDUCATION &nbsp;&nbsp; /</a></li>
 					<li><a href="#jobhistory">JOB HISTORY &nbsp;&nbsp; /</a></li>
 					<li><a href="#packages">BUY SERVICES - ASK QUESTIONS</a></li>
+					<li > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
+					<span id="siteseal"  style="text-align: right; align-items: right; right: 0px; align: right"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>
+					</li>
 				</ul>
 				
 <div id="overview">
@@ -257,14 +260,16 @@ String finalPath = request.getContextPath();
 							<tr>
 								 <!--  <td class="rightalign"><b>Clients:&nbsp;</b> </td> <td class="leftalign"><c:out value="${totalClients}"></c:out> </td>  --> <td class="leftalign"><b>Average Rating:&nbsp;</b> <%@ include file="/WEB-INF/views/common/average_rating.jsp" %> </td>
 							</tr>
-							<tr>
-								<td style="text-align: left;"><br>
-									<a style ="background-color: #0099CC; color: white; width: 200px; padding: 3px; border: 1px solid navy;" 
-									href="${pageContext.request.contextPath}/feedbackAddNoOrder?vendorName=${profileInfo.getDisplayName()}&vendorId=${profileInfo.userProfileId}&customerId=${profileId}">
-										Provide Feedback & Rating
-									</a>
-								</td> 
-							</tr>
+							<c:if test="${not profileOfCurrentUser}" > 					
+								<tr>
+									<td style="text-align: left;"><br>
+										<a style ="background-color: #0099CC; color: white; width: 200px; padding: 3px; border: 1px solid navy;" 
+										href="${pageContext.request.contextPath}/feedbackAddNoOrder?vendorName=${profileInfo.getDisplayName()}&vendorId=${profileInfo.userProfileId}&customerId=${profileId}">
+											Provide Feedback & Rating
+										</a>
+									</td> 
+								</tr>
+							</c:if>	
 							<%--
 							<tr>
 								 <td class="rightalign" nowrap><b>Position:&nbsp;</b> </td> <td class="leftalign" colspan="3"> ${profileInfo.getSummaryOfHighestPosition()} </td>
@@ -454,10 +459,11 @@ String finalPath = request.getContextPath();
 							<!-- ============================  Packages  =========================================== -->
 							<form:form	method="GET" action="${packagesUrl}">							
 							<table>
-								<tr><td style="text-align: left;">
-									<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>
-								<%-- <span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span> --%>
-								</td></tr>
+								<%-- <tr><td style="text-align: left;">
+										<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>
+								 		<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span> 
+									</td></tr> 
+								--%>
 								<tr style="border-bottom:1px solid #000;">
 									<td style="text-align: left; font-weight: bold;"><h2>AVAILABLE PACKAGES</h2>
 									</td>
