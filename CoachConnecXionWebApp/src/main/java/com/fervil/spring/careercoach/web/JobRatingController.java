@@ -22,10 +22,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fervil.spring.careercoach.model.domain.JobratingDetails;
 import com.fervil.spring.careercoach.model.domain.PaymentInformation;
+import com.fervil.spring.careercoach.model.domain.UserProfile;
 import com.fervil.spring.careercoach.service.JobRatingService;
 import com.fervil.spring.careercoach.service.PaymentInformationManager;
 import com.fervil.spring.careercoach.service.PaymentInformationValidator;
+import com.fervil.spring.careercoach.service.UserProfileManager;
 import com.fervil.spring.careercoach.util.Constants;
+import com.fervil.spring.careercoach.util.SystemUtil;
 
 /**
  * Handles and retrieves person request
@@ -42,6 +45,9 @@ public class JobRatingController {
 		//this.validator = validator;
 	}		
 
+	@Resource(name = "userProfileManager")
+	private UserProfileManager userProfileManager;
+	
 	//@Resource(name = "paymentInformationManager")
 	private PaymentInformationManager paymentInformationManager;
 	
@@ -266,7 +272,16 @@ public class JobRatingController {
 
 			//Get the customer Id and the date Also save vendor Id, packageId, payment id
 
-			jobratingDetails.setCustomerId(Integer.valueOf(request.getParameter("customerId"))  );
+			UserProfile userprofile = SystemUtil.getUserProfile(request, userProfileManager); 
+
+			if (userprofile == null) {
+				jobratingDetails.setCustomerId(Integer.valueOf(request.getParameter("customerId"))  );
+				jobratingDetails.setEmail(request.getParameter("Email"));
+			} else {
+				jobratingDetails.setCustomerId(userprofile.getUserProfileId().intValue() );
+				jobratingDetails.setEmail(userprofile.getEmail());
+			}
+			
 			jobratingDetails.setVendorId(Long.valueOf(request.getParameter("vendorId"))  );
 			jobratingDetails.setPackageId(-1);
 			
@@ -294,12 +309,9 @@ public class JobRatingController {
 			
 			//jobratingDetails.setProjectName(request.getParameter("projectName"));
 			jobratingDetails.setVendorName(request.getParameter("vendorName"));
-			
 			jobratingDetails.setAwardedDate( new Date().toString() );  //Used to be awarded date
-
 			jobratingDetails.setFeedBacks(request.getParameter("TextArea1"));
-			jobratingDetails.setEmail(request.getParameter("Email"));
-
+			jobratingDetails.setProjectName(request.getParameter("projectName")); 
  			jobratingDetails.setQualityDetails(quality11);
 			jobratingDetails.setExperienceDetails(quality22);
 			jobratingDetails.setResponseDetails(quality33);
@@ -325,6 +337,13 @@ public class JobRatingController {
 			if (request.getParameter("Email") == ""
 					|| request.getParameter("Email").isEmpty()) {
 				model.addAttribute("emailerrorMessage", "Email is a required field!");
+				model.addAttribute("successMessage", "");
+				errorsFound = true;
+			}
+			
+			if (request.getParameter("projectName") == ""
+					|| request.getParameter("projectName").isEmpty()) {
+				model.addAttribute("projectNameerrorMessage", "Service Description is a required field!");
 				model.addAttribute("successMessage", "");
 				errorsFound = true;
 			}
