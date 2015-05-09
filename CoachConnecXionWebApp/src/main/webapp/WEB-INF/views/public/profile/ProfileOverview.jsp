@@ -174,7 +174,16 @@ table tr:nth-child(2n) {
 					<li><a href="#overview">OVERVIEW &nbsp;&nbsp; /</a></li>
 					<li><a href="#education">TRAINING:EDUCATION &nbsp;&nbsp; /</a></li>
 					<li><a href="#jobhistory">JOB HISTORY &nbsp;&nbsp; /</a></li>
-					<li><a href="#packages">BUY SERVICES - ASK QUESTIONS</a></li>
+
+					<c:choose>  
+					    <c:when test="${profileOfCurrentUser}" >  
+							<li><a href="#packages">SELL SERVICES - ASK QUESTIONS</a></li>
+						</c:when>  
+						<c:otherwise>
+							<li><a href="#packages">BUY SERVICES - ASK QUESTIONS</a></li>
+						</c:otherwise>
+					</c:choose>
+					
 					<li > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
 					<span id="siteseal"  style="text-align: right; align-items: right; right: 0px; align: right"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=ajQKa9YShJk85DvQ57knD36bbht7vtTcFqVvPUdH7u5AlWR8VQVRv"></script></span>
 					</li>
