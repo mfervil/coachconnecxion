@@ -37,4 +37,18 @@ public class CreateBlogPostValidator implements Validator {
                 "required.creatorlastname", fieldisRequired);
 */
     }
+    
+    public void validateComment(Object target, Errors errors){
+    	String fieldisRequired = " Required field";
+    	
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email",
+                "required.email", fieldisRequired);
+
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name",
+                "required.name", fieldisRequired);
+        
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "comment",
+                "required.comment", fieldisRequired);
+    	
+    }
 }

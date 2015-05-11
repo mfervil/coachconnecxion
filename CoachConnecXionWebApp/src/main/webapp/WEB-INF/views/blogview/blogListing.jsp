@@ -112,27 +112,42 @@
 				<td style="width: 730px; padding: 5px;">
 					<table>
 						<tr>
-							<td style="margin-top: 4px;"> <!-- style="margin-top -->
-								<c:forEach items="${blogPostListing}" varStatus="status" var="blogPost">
-									<br>
-									<table>
-										<tr>
-											<td style=" vertical-align: top; padding: 5px; text-align: left; background-color: #CCCCFF; white-space: nowrap;" >Posted by: ${blogPost.creatorfirstname} ${blogPost.creatorlastname}<br>
-											Date: ${blogPost.publishmonth} / ${blogPost.publishday} / ${blogPost.publishyear} </td>
-											<td style="text-align: left; width: 100%"><h1 style="color: #9966FF">&nbsp;&nbsp;${blogPost.blogtitle}</h1></td>
-										</tr>
-									</table>
-									<table>
-										<tr><td>&nbsp;</td></tr>
-										<tr>
-											<td class="leftalign" > ${blogPost.blogposting} </td>
-										</tr>
-										<tr><td style="text-align: left"><a href="${pageContext.request.contextPath}/update-blog/blogId/${blogPost.blogid}">__</a></td></tr>
-									</table>
-									<hr class="drop_shadow">
-								</c:forEach>	
+							<td style="margin-top: 4px; vertical-align: top;"> <!-- style="margin-top -->
+							
+							<c:choose>
+							    <c:when test="${not empty blogPostListing}">
+    							
+									<c:forEach items="${blogPostListing}" varStatus="status" var="blogPost">
+										<br>
+										<table>
+											<tr>
+												<td style=" vertical-align: top; padding: 5px; text-align: left; background-color: #CCCCFF; white-space: nowrap;" >Posted by: ${blogPost.creatorfirstname} ${blogPost.creatorlastname}<br>
+												Date: ${blogPost.publishmonth} / ${blogPost.publishday} / ${blogPost.publishyear} </td>
+												<td style="text-align: left; width: 100%"><h1 style="color: #9966FF">&nbsp;&nbsp;${blogPost.blogtitle}</h1></td>
+											</tr>
+										</table>
+										<table>
+											<tr><td>&nbsp;</td></tr>
+											<tr>
+												<td class="leftalign" > ${blogPost.blogposting} </td>
+											</tr>
+											<tr><td style="text-align: left">
+												<a href="${pageContext.request.contextPath}/update-blog/blogId/${blogPost.blogid}">.</a>
+												<a style="color: blue" href="${pageContext.request.contextPath}/blogview/professional-and-life-coaches/blogref/${blogPost.blogid}">More... View / Leave Comments</a>
+											</td></tr>
+										</table>
+										<hr class="drop_shadow">
+									</c:forEach>	
+						    </c:when>
+						    <c:otherwise>								
+								<p style="color: red; font-size: 14px;"> NO BLOG POSTS AVAILABLE FOR THIS SELECTION	</p>								
+						    </c:otherwise>
+						</c:choose> 							
+								
 							</td> <!-- End style="margin-top -->
 							<td style="vertical-align: text-top; white-space: nowrap; text-align: left; ">
+								<a style="color: blue;" href="${pageContext.request.contextPath}/blogview/recent-personal-coach-blogs"> &nbsp; ** &nbsp; RECENT BLOGS &nbsp; ** &nbsp;</a>
+								<br><br>
 								&nbsp; ** &nbsp; ARCHIVES &nbsp; ** <br>
 								<c:forEach items="${blogmonths}" varStatus="status" var="blogmonths">
 									<c:set var="dateParts" value="${fn:split(blogmonths, '*')}" />

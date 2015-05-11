@@ -28,9 +28,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 
+import com.fervil.spring.careercoach.model.domain.BlogComment;
 import com.fervil.spring.careercoach.model.domain.BlogPost;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
 import com.fervil.spring.careercoach.service.BasicBlogManager;
+import com.fervil.spring.careercoach.service.BlogCommentManager;
 import com.fervil.spring.careercoach.service.BlogManager;
 import com.fervil.spring.careercoach.service.CreateBlogPostValidator;
 import com.fervil.spring.careercoach.service.UserProfileManager;
@@ -47,6 +49,9 @@ public class BlogController {
 
 	@Resource(name = "blogManager")
 	private BlogManager blogManager;   
+
+	@Resource(name = "blogCommentManager")
+	private BlogCommentManager blogCommentManager;   
 
 	@Resource(name = "userProfileManager")
 	private UserProfileManager userProfileManager;
@@ -218,14 +223,14 @@ public class BlogController {
 	}
 
 	//Getting the last 10 blogs
-	@RequestMapping(value = "/recent-personal-coach-blogs", method = RequestMethod.GET)
+	@RequestMapping(value = "/blogview/recent-personal-coach-blogs", method = RequestMethod.GET)
 	public String getRecentCoachBlogs( Model model ) {
 		
 		try {
 				List<BlogPost> blogPostListing = blogManager.getRecentBlogPosts(10);
 				model.addAttribute("blogPostListing", blogPostListing);
 				model.addAttribute("blogmonths", getMonthsForArchive());
-				return "blogview/recentblogposts"; 
+				return "blogview/blogListing"; 
 		} catch (Exception e) {
 	            String msg = "Failed to find Blog by id. Error " + e;
 	            log.error(msg, e);
@@ -233,7 +238,8 @@ public class BlogController {
 				return "public/common/error/errorpage";
 		}
 	}
-	
+
+	/*
 	@RequestMapping(value = "/getcoachblog/blogId/{blogId}", method = RequestMethod.GET)
 	public String getCoachBlogPost(@PathVariable("blogId") long blogId,  Model model ) {
 		
@@ -248,14 +254,15 @@ public class BlogController {
 				return "public/common/error/errorpage";
 		}
 	}
-
+	*/
+	
 	@RequestMapping(value = "/blogview/professional-coaches/month/{month}/year/{year}", method = RequestMethod.GET)
 	public String getCoachBlogYearMonth(@PathVariable("month") int blogMonth, @PathVariable("year") int blogYear, Model model ) {
 		try {
 			List<BlogPost> blogPostListing =  blogManager.findBlogPostsByMonthYear(blogMonth, blogYear);
 			model.addAttribute("blogPostListing", blogPostListing);
 			model.addAttribute("blogmonths", getMonthsForArchive());
-			return "blogview/recentblogposts"; 
+			return "blogview/blogListing"; 
 		} catch (Exception e) {
 	            String msg = "Failed to find Blog by Month and Year. Error " + e;
 	            log.error(msg, e);
@@ -264,6 +271,79 @@ public class BlogController {
 		}
 	}
 
+	@RequestMapping(value = "/blogview/professional-and-life-coaches/blogref/{blogref}", method = RequestMethod.GET)
+	public String getindIndividualBlog(@PathVariable("blogref") int blogid, Model model ) {
+		try {
+			BlogPost blogPost =  blogManager.findById(blogid);
+			
+			model.addAttribute("monthname", new DateFormatSymbols().getMonths()[blogPost.getPublishmonth()]);
+			model.addAttribute("blogmonths", getMonthsForArchive());
+			
+			model.addAttribute("blogId", blogPost.getBlogid());
+			model.addAttribute("blogPost", blogPost);
+			
+			BlogComment blogComment = new BlogComment();
+			blogComment.setBlogid(blogid);
+			List<BlogComment> blogCommentList = blogCommentManager.findByBlogId(blogid);
+			
+			model.addAttribute("blogComment", blogComment);
+			model.addAttribute("blogCommentList", blogCommentList);
+			
+			return "blogview/blogposting";
+			
+		} catch (Exception e) {
+	            String msg = "Failed to find selected Blog. Error " + e;
+	            log.error(msg, e);
+				model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				return "public/common/error/errorpage";
+		}
+	}
+	
+	@RequestMapping(value = "/blogview/blog-comment-update/blogref/{blogref}", method = RequestMethod.POST)
+	public String updateBlog(@PathVariable("blogref") long blogId, 
+			@ModelAttribute("blogComment") BlogComment blogComment,
+			BindingResult result, SessionStatus status, ModelMap model, HttpServletRequest request, HttpServletResponse response,
+			org.springframework.web.context.request.WebRequest webRequest, HttpSession crdUsersession) {
+		
+			validator.validateComment(blogComment, result);
+
+		try {
+
+			BlogPost blogPost =  blogManager.findById(blogId);
+			
+	        if (result.hasErrors()) {
+				model.addAttribute("blogmonths", getMonthsForArchive());
+				model.addAttribute("blogPost", blogPost);
+				model.addAttribute("blogComment", blogComment);
+				return "blogview/blogposting";
+			} else {
+				blogCommentManager.storeBlogComment(blogComment);
+				
+				model.addAttribute("blogmonths", getMonthsForArchive());
+
+				blogComment.setEmail("");
+				blogComment.setName("");
+				blogComment.setWebsite("");
+				blogComment.setComment("");
+				
+				List<BlogComment> blogComments = blogCommentManager.findByBlogId(blogId);
+				model.addAttribute(blogComments);
+
+				System.out.print("The number of comments are: " + blogComments.size() );
+				
+				model.addAttribute("blogPost", blogPost);
+				model.addAttribute("blogComment", blogComment);
+				return "blogview/blogposting";
+			}	
+		} catch (Exception e) {
+	            String msg = "Failed to update the blog comment. Error " + e;
+	            log.error(msg, e);
+				model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				return "public/common/error/errorpage";
+		}
+	}
+
+	
 	public List<String> getMonthsForArchive(){
 		DateFormat df = new SimpleDateFormat("MMMM dd, yyyy"); 
 		Date date;
@@ -274,7 +354,8 @@ public class BlogController {
 			cal = Calendar.getInstance();
 			cal.add(Calendar.MONTH, (i * -1));
 			date = cal.getTime();
-			monthList.add(df.format(date) + "*" + cal.get(cal.MONTH + 1) + "*" + cal.get(Calendar.YEAR));
+			int blogMonth = cal.get(cal.MONTH) + 1;
+			monthList.add(df.format(date) + "*" + blogMonth + "*" + cal.get(Calendar.YEAR));
 		}
 		
 		return monthList;

@@ -98,8 +98,8 @@ label {font-size:14px;}
 						
 				<hr>
 				<br>
-				<table>
 
+				<table>
 				<tr><td class="leftalign" nowrap><form:errors path="blogtitle"><br></form:errors><label>User Email: </label>${userEmail} <br></td> 
 				<tr><td class="leftalign" nowrap><form:errors path="blogtitle"><br></form:errors><label>*Blog Title: </label> <form:input size="75" path="blogtitle" /> </td> 
 				</tr>

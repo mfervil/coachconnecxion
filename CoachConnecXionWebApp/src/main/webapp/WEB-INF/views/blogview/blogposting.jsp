@@ -1,11 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Create user profile</title>
+	<title>${blogPost.blogtitle}</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
 	<meta name="description" content="Create a profile to become a Coach or Trainer" />
@@ -84,39 +85,89 @@ label {font-size:14px;}
 	</tr>
 	</table>
 			<br>
-		<!-- CONTACT FORM -->
-		<form:form method="post" commandName="blogPost" id="blogPostForm" enctype="multipart/form-data">
-		<h3 style="color:red"> ${errorMessage} </h3>
      
 	<table style="width: 900px;">
 		<tr>
 				<td style="width: 730px; padding: 5px;">
-					<table>
-						<tr>
-							<td style="margin-top: 4px;"> <!-- style="margin-top -->
-					<br>
-					<table>
-					<tr>
-						<td style=" vertical-align: top; padding: 5px; text-align: left; background-color: #CCCCFF; white-space: nowrap;" >Posted by: ${blogPost.creatorfirstname} ${blogPost.creatorlastname}<br>${monthname} 5, 2015</td>
-						<td style="text-align: left; width: 100%"><h1 style="color: #9966FF">&nbsp;&nbsp;${blogPost.blogtitle} -- ${blogPost.publishyear}/${blogPost.publishmonth}/${blogPost.publishday}</h1></td>
-					</tr>
-					</table>
-					<table>
-					<tr><td>&nbsp;</td></tr>
-					<tr>
-						<td class="leftalign" > ${blogPost.blogposting} </td>
-					</tr>
-					<tr><td style="text-align: left"><a href="${pageContext.request.contextPath}/update-blog/blogId/${blogId}">__</a></td></tr>
-				</table>
-	
-							</td> <!-- End style="margin-top -->
-						</tr>
-	
-					</table>			
+				
+					<!-- BLOG FORM -->
+					<form:form method="post" commandName="blogPost" id="blogPostForm" enctype="multipart/form-data">
+						<h3 style="color:red"> ${errorMessage} </h3>
+					
+						<table>
+								<tr>
+									<td style="margin-top: 4px; vertical-align: text-top;"> <!-- style="margin-top -->
+										<br>
+										<table>
+											<tr>
+												<td style=" vertical-align: top; padding: 5px; text-align: left; background-color: #CCCCFF; white-space: nowrap;" >Posted by: ${blogPost.creatorfirstname} ${blogPost.creatorlastname}<br>${monthname} ${blogPost.publishmonth}, ${blogPost.publishyear}</td>
+												<td style="text-align: left; width: 100%"><h1 style="color: #9966FF">&nbsp;&nbsp;${blogPost.blogtitle}</h1></td>
+											</tr>
+										</table>
+										<table>
+											<tr><td>&nbsp;</td></tr>
+											<tr>
+												<td style="text-align: left; vertical-align: text-top;" > ${blogPost.blogposting} </td>
+											</tr>
+											<tr><td style="text-align: left"><a href="${pageContext.request.contextPath}/update-blog/blogId/${blogId}">__</a></td></tr>
+										</table>
+									</td> <!-- End style="margin-top -->
+									<td style="vertical-align: text-top; white-space: nowrap; text-align: left; ">
+										<a style="color: blue;" href="${pageContext.request.contextPath}/blogview/recent-personal-coach-blogs"> &nbsp; ** &nbsp; RECENT BLOGS &nbsp; ** &nbsp;</a>
+										<br><br>
+										&nbsp; ** &nbsp; ARCHIVES &nbsp; ** <br>
+										<c:forEach items="${blogmonths}" varStatus="status" var="blogmonths">
+											<c:set var="dateParts" value="${fn:split(blogmonths, '*')}" />
+											<a style="color: blue;" href="${pageContext.request.contextPath}/blogview/professional-coaches/month/${dateParts[1]}/year/${dateParts[2]}">&nbsp; * &nbsp; ${dateParts[0]}</a>
+											<br>
+										</c:forEach>							
+									</td>
+								</tr>
+						</table>	
+					</form:form>
+
+					<!-- BLOG FORM -->
+					<c:url var="blogUrl" value="/blogview/blog-comment-update/blogref/${blogComment.blogid}" />
+					<form:form modelAttribute="blogComment" method="POST" id="addComment" action="${blogUrl}">	
+										
+						<c:forEach items="${blogComments}" varStatus="status" var="blogComments">
+							<p>${blogComments.comment}</p><br>
+						</c:forEach>							
+										
+						<form:hidden path="blogid" />
+					
+					<%-- <form:form method="post" commandName="blogCommentPost" id="blogCommentPostForm" enctype="multipart/form-data"> --%>
+							<table>
+							<tr><td class="leftalign" nowrap><form:errors path="email"><br></form:errors><label>*Email (EMAIL IS NEVER MADE PUBLIC) </label> <font style="font-size: 14px; color: red;"> <form:errors path="email" cssClass="error" /></font> <br>
+								<form:input size="50" path="email" /> </td> 
+							</tr>
+							<tr><td class="leftalign" nowrap><form:errors path="name"><br></form:errors><label>*Name </label> <font style="font-size: 14px; color: red;"> <form:errors path="name" cssClass="error" /></font> <br>
+								<form:input size="50" path="name" /> </td> 
+							</tr>
+							<tr><td class="leftalign" nowrap><form:errors path="website"><br></form:errors><label>Website: </label> <br>
+								<form:input size="50" path="website" /> </td> 
+							</tr>
+
+							<tr>
+								<td class="leftalign" > <label>*LEAVE A COMMENT </label> <font style="font-size: 14px; color: red;"> <form:errors path="comment" cssClass="error" /></font><br>
+									<form:textarea  name="comment" class="required" cols="75"
+									id="wysiwyg" rows="5" path="comment" value="&nbsp;"/> 
+								</td>
+							</tr>
+						</table>
+						<table>
+							<tr>
+								<td class="leftalign">
+									<input type="submit" class="input-button" value="CANCEL" />
+									<input type="submit" class="input-button" value="SUBMIT" />
+								</td>
+							</tr>
+						</table>
+					</form:form>
+							
 				</td>
 			</tr>	
 		</table>
 		<input type="hidden" name="blogId" id="blogId" value="${blogId}"></input>
-		</form:form>
 </section>
 <%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>
