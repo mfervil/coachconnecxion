@@ -28,6 +28,8 @@ public class Constants {
 	public static final String CORPORATE_COACHES_CATEGORY_NAME = "Corporate / Team Building";
 	public static final int CORPORATE_COACHES_CATEGORY_ID = 23;
 
+	public static final String COACHING_CATEGORY_NAME_SEPERATOR = "ZZZ";
+	  
 	/*
     <option value="1">ADD & ADHD</option>
     <option value="2">Business</option>

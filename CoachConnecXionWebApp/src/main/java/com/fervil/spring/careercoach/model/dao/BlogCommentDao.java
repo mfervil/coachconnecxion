@@ -11,5 +11,7 @@ public interface BlogCommentDao {
     public BlogComment findById(long id) throws Exception ;
 
     public List<BlogComment> findByBlogId(long blogId) throws Exception ;
+
+    public List<BlogComment> findByBlogIdStatus(long blogId, int status) throws Exception ;
     
 }

@@ -60,12 +60,17 @@
 	<bean id="blogPostDao"
           class="com.fervil.spring.careercoach.model.dao.HibernateBlogPostDao">
     </bean>
-
 	<bean id="blogCommentManager" class="com.fervil.spring.careercoach.service.BasicBlogCommentManager">
 		<property name="blogCommentDao" ref="blogCommentDao" />
 	</bean>
 	<bean id="blogCommentDao"
           class="com.fervil.spring.careercoach.model.dao.HibernateBlogCommentDao">
+    </bean>
+	<bean id="coachingCategoryManager" class="com.fervil.spring.careercoach.service.BasicCoachingCategoryManager">
+		<property name="coachingCategoryDao" ref="coachingCategoryDao" />
+	</bean>
+	<bean id="coachingCategoryDao"
+          class="com.fervil.spring.careercoach.model.dao.HibernateCoachingCategoryDao">
     </bean>
 
     

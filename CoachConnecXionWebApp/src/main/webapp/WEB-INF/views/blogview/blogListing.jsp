@@ -118,6 +118,7 @@
 							    <c:when test="${not empty blogPostListing}">
     							
 									<c:forEach items="${blogPostListing}" varStatus="status" var="blogPost">
+										<a name="${blogPost.blogid}"></a>
 										<br>
 										<table>
 											<tr>
@@ -146,14 +147,24 @@
 								
 							</td> <!-- End style="margin-top -->
 							<td style="vertical-align: text-top; white-space: nowrap; text-align: left; ">
-								<a style="color: blue;" href="${pageContext.request.contextPath}/blogview/recent-personal-coach-blogs"> &nbsp; ** &nbsp; RECENT BLOGS &nbsp; ** &nbsp;</a>
-								<br><br>
+							<%@ include file="/WEB-INF/views/blogview/blogRecents.jsp" %>
+							<br>
+							<%@ include file="/WEB-INF/views/blogview/blogArchives.jsp" %>
+							<%--
+								<a style="color: blue;" href="${pageContext.request.contextPath}/blogview/recent-personal-coach-blogs"> &nbsp; ** &nbsp; MOST RECENT BLOGS &nbsp; ** &nbsp;</a>
+								
+								<c:forEach items="${blogPostListing}" varStatus="status" var="blogPost">
+									<p><a style="color: blue;" href="#${blogPost.blogid}">&nbsp;*&nbsp;${fn:substring(blogPost.blogtitle, 0, 29)}...</a></p>								
+								</c:forEach>	
+								
+								<br>
 								&nbsp; ** &nbsp; ARCHIVES &nbsp; ** <br>
 								<c:forEach items="${blogmonths}" varStatus="status" var="blogmonths">
 									<c:set var="dateParts" value="${fn:split(blogmonths, '*')}" />
-									<a style="color: blue;" href="${pageContext.request.contextPath}/blogview/professional-coaches/month/${dateParts[1]}/year/${dateParts[2]}">&nbsp; * &nbsp; ${dateParts[0]}</a>
+									<a style="color: blue;" href="${pageContext.request.contextPath}/blogview/professional-coaches/month/${dateParts[1]}/year/${dateParts[2]}">&nbsp;*&nbsp;${dateParts[0]}</a>
 									<br>
 								</c:forEach>							
+							 --%>
 							</td>
 						</tr>
 					</table>			

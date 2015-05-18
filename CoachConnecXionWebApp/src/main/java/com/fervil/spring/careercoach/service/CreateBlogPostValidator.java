@@ -23,10 +23,14 @@ public class CreateBlogPostValidator implements Validator {
     	String fieldisRequired = " Required field";
     	
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "blogtitle",
-                "required.blogtitle", fieldisRequired);
+                "required.blogtitle", "Blog Title is required");
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "blogposting",
-                "required.blogposting", fieldisRequired);
+                "required.blogposting", "Blog Post Details is required");
+        
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "coachingcategory",
+                "required.coachingcategory", "Blog Category is required");
+        
 /*        
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "creatorfirstname",
                 "required.creatorfirstname", fieldisRequired);
@@ -42,13 +46,13 @@ public class CreateBlogPostValidator implements Validator {
     	String fieldisRequired = " Required field";
     	
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email",
-                "required.email", fieldisRequired);
+                "required.email", "Email is required");
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name",
-                "required.name", fieldisRequired);
+                "required.name", "Name is required");
         
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "comment",
-                "required.comment", fieldisRequired);
+                "required.comment", "Comment is required");
     	
     }
 }

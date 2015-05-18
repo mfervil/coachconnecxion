@@ -61,13 +61,16 @@ public class BlogPost {
 	
 	@Override
 	public String toString() {
-		return "BlogPost [blogid=" + blogid + ", blogtitle=" + blogtitle
-				+ ", publishdate=" + publishdate + ", updateddate="
-				+ updateddate + ", creatorfirstname=" + creatorfirstname
-				+ ", creatorlastname=" + creatorlastname + ", creatoremail="
-				+ creatoremail + ", blogposting=" + blogposting
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+		return "BlogPost [blogid=" + blogid + ", publishyear=" + publishyear
+				+ ", publishmonth=" + publishmonth + ", publishday="
+				+ publishday + ", userprofileid=" + userprofileid
+				+ ", blogtitle=" + blogtitle + ", publishdate=" + publishdate
+				+ ", updateddate=" + updateddate + ", creatorfirstname="
+				+ creatorfirstname + ", creatorlastname=" + creatorlastname
+				+ ", creatoremail=" + creatoremail + ", blogposting="
+				+ blogposting + ", coachingcategory=" + coachingcategory
+				+ ", coachingcategoryId=" + coachingcategoryId
+				+ ", coachingcategoryName=" + coachingcategoryName + "]";
 	}
 
 	@Column(name = "blogtitle")
@@ -154,6 +157,37 @@ public class BlogPost {
 	
 	@Column(name = "blogposting", nullable = false,  columnDefinition="LONGTEXT")
 	private String blogposting;
+	
+	public long getCoachingcategoryId() {
+		return coachingcategoryId;
+	}
+
+	public void setCoachingcategoryId(long coachingcategoryId) {
+		this.coachingcategoryId = coachingcategoryId;
+	}
+
+	public String getCoachingcategoryName() {
+		return coachingcategoryName;
+	}
+
+	public void setCoachingcategoryName(String coachingcategoryName) {
+		this.coachingcategoryName = coachingcategoryName;
+	}
+
+	public String getCoachingcategory() {
+		return coachingcategory;
+	}
+
+	public void setCoachingcategory(String coachingcategory) {
+		this.coachingcategory = coachingcategory;
+	}
+
+	@Column(name = "COACHING_CATEGORY")
+	private String coachingcategory;
+	@Column(name = "COACHING_CATEGORY_ID")
+	private long coachingcategoryId;
+	@Column(name = "COACHING_CATEGORY_NAME")
+	private String coachingcategoryName;
 	
 
 }
