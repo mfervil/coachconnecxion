@@ -9,7 +9,6 @@ import com.fervil.spring.careercoach.model.domain.BlogPost;
 @Transactional
 public interface BlogManager  extends Serializable {
 	
-
     public void storeBlog(BlogPost blogPost) throws Exception;
     public BlogPost findById(long id) throws Exception;	
     public List<BlogPost> findByProfileId(long profileid) throws Exception;	

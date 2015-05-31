@@ -51,7 +51,7 @@
 		<div class="separator"></div>
 
 		<div ">
-			<b>AVAILABLE COACHES:&nbsp;</b> <a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches">ALL PERSONAL COACHES</a> | 
+			<b>AVAILABLE COACHES:&nbsp;</b> <a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches">ADVANCED SEARCH</a> | 
 			<a href="${pageContext.request.contextPath}/public/landing-business-coaches">BUSINESS COACHES</a> | 
 			<a href="${pageContext.request.contextPath}/public/landing-career-coaches">CAREER COACHES</a> | 
 			<a href="${pageContext.request.contextPath}/public/landing-corporate-coaches">CORPORATE COACHES</a> | 

@@ -32,5 +32,4 @@ public interface UserProfileManager  extends Serializable {
     public UserProfile findById(String id) throws Exception;	
     public UserProfile findById(long id) throws Exception;	
     public List<UserProfile> findByUserId(long id) throws Exception;	
-    
 }

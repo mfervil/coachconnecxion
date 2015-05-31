@@ -553,8 +553,8 @@ public String saveBlogPostWithId(@PathVariable("blogId") long blogId,
 		}
 	}
 
-	@RequestMapping(value = "/blogview/professional-and-life-coaches/blogref/{blogref}", method = RequestMethod.GET)
-	public String getindIndividualBlog(@PathVariable("blogref") int blogid, Model model ) {
+	@RequestMapping(value = "/blogview/professional-and-life-coaches/blogref/{blogref}/cattitle/{cattitle}", method = RequestMethod.GET)
+	public String getindIndividualBlog(@PathVariable("blogref") int blogid, @PathVariable("cattitle") String cattitle, Model model ) {
 		try {
 			BlogPost blogPost =  blogManager.findById(blogid);
 			

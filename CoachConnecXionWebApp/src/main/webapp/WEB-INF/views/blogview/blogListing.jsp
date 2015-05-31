@@ -134,7 +134,7 @@
 											</tr>
 											<tr><td style="text-align: left">
 												<a href="${pageContext.request.contextPath}/update-blog/blogId/${blogPost.blogid}">.</a>
-												<a style="color: blue" href="${pageContext.request.contextPath}/blogview/professional-and-life-coaches/blogref/${blogPost.blogid}">More... View / Leave Comments</a>
+												<a style="color: blue" href="${pageContext.request.contextPath}/blogview/professional-and-life-coaches/blogref/${blogPost.blogid}/cattitle/${fn:replace(blogPost.coachingcategoryName, ' ', '-')}-${fn:replace(blogPost.blogtitle, ' ', '-')}">More... View / Leave Comments</a>
 											</td></tr>
 										</table>
 										<hr class="drop_shadow">

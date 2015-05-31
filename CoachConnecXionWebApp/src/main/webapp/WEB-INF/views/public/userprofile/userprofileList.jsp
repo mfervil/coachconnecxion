@@ -43,11 +43,13 @@
 						<th style="position: absolute; right:0px;"> 
 							Page: ${pageNumber} of ${totalpages} &nbsp;&nbsp;
 							<c:if test="${pageNumber > 1}" >
-								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber - 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> &lt;&lt; PREV PAGE </a> &nbsp;&nbsp;&nbsp;&nbsp;
+								<%-- <a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber - 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> &lt;&lt; PREV PAGE </a> &nbsp;&nbsp;&nbsp;&nbsp;
+								--%>
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/coachprofileList/coachingCategory/${coachingCategory}/coachingSubcategory/${coachingSubcategory}/industryExperience/${industryExperience}/companyExperience/${companyExperience}/coachFirstName/${coachFirstName}/coachLastName/${coachLastName}/city/${city}/state/${state}/pageNumber/${pageNumber - 1}/userprofilecount/${userprofilecount}/pagesize/${pagesize}"> &lt;&lt; PREV PAGE </a> &nbsp;&nbsp;&nbsp;&nbsp;
 							</c:if>
 	
 							<c:if test="${userprofilecount > (pageNumber * pagesize) }" >
-								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber + 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> NEXT PAGE &gt;&gt; </a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/coachprofileList/coachingCategory/${coachingCategory}/coachingSubcategory/${coachingSubcategory}/industryExperience/${industryExperience}/companyExperience/${companyExperience}/coachFirstName/${coachFirstName}/coachLastName/${coachLastName}/city/${city}/state/${state}/pageNumber/${pageNumber + 1}/userprofilecount/${userprofilecount}/pagesize/${pagesize}"> NEXT PAGE &gt;&gt; </a>&nbsp;&nbsp;&nbsp;&nbsp;
 							</c:if>
 						</th> 
 
@@ -118,11 +120,11 @@
 						<th style="position: absolute; right:0px;"> 
 							Page: ${pageNumber} of ${totalpages} &nbsp;&nbsp;
 							<c:if test="${pageNumber > 1}" >
-								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber - 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> &lt;&lt; PREV PAGE </a> &nbsp;&nbsp;&nbsp;&nbsp;
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/coachprofileList/coachingCategory/${coachingCategory}/coachingSubcategory/${coachingSubcategory}/industryExperience/${industryExperience}/companyExperience/${companyExperience}/coachFirstName/${coachFirstName}/coachLastName/${coachLastName}/city/${city}/state/${state}/pageNumber/${pageNumber - 1}/userprofilecount/${userprofilecount}/pagesize/${pagesize}"> &lt;&lt; PREV PAGE </a> &nbsp;&nbsp;&nbsp;&nbsp;
 							</c:if>
 	
 							<c:if test="${userprofilecount > (pageNumber * pagesize) }" >
-								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber + 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> NEXT PAGE &gt;&gt; </a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/coachprofileList/coachingCategory/${coachingCategory}/coachingSubcategory/${coachingSubcategory}/industryExperience/${industryExperience}/companyExperience/${companyExperience}/coachFirstName/${coachFirstName}/coachLastName/${coachLastName}/city/${city}/state/${state}/pageNumber/${pageNumber + 1}/userprofilecount/${userprofilecount}/pagesize/${pagesize}"> NEXT PAGE &gt;&gt; </a>&nbsp;&nbsp;&nbsp;&nbsp;
 							</c:if>
 						</th> 
 			</table>

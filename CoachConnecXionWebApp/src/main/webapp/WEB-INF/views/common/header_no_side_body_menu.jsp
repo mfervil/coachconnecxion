@@ -1,8 +1,9 @@
 			<%-- MENU --%>
 			<nav>
-				<ul id="menu">
+				<ul id="menu">   
 					<li><a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches">FIND A COACH</a>
 						<ul>	
+							<li><a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches" style="text-decoration: underline;">ADVANCED SEARCHES</a>
 							<li><a href="${pageContext.request.contextPath}/public/landing-business-coaches">BUSINESS COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-career-coaches">CAREER COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-corporate-coaches">CORPORATE COACHES</a></li>

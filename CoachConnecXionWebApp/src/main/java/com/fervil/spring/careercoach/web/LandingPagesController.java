@@ -395,6 +395,7 @@ public class LandingPagesController {
 			mav.addObject("coachingCategory", "");
 
 			mav.addObject("coachSelection", coachSelection);
+			//mav.setViewName ("public/landingpages/general-personal-coaches-cs");
 			mav.setViewName ("public/landingpages/general-personal-coaches");
 			return mav;
 		}

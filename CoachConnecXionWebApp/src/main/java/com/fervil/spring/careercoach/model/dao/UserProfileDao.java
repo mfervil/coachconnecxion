@@ -31,4 +31,5 @@ public interface UserProfileDao {
     		int coachingSubcategory, int industryExperience,
     		String companyExperience, String coachFirstName,
     		String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception ;
+
 }

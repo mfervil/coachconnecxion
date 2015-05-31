@@ -37,7 +37,6 @@ public class BasicUserProfileManager implements UserProfileManager {
         return userProfileDao.findAll();
 	}
 
-    
     @NotNull
     @Override
 	public List<HashMap> getUserProfiles(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception {

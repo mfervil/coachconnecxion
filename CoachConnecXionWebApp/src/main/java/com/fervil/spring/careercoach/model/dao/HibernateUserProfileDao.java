@@ -17,7 +17,6 @@ import org.springframework.stereotype.Repository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 import com.fervil.spring.careercoach.model.domain.UserProfile;
 import com.fervil.spring.careercoach.web.CoachSelectionFormController;
 
@@ -103,6 +102,20 @@ public class HibernateUserProfileDao implements UserProfileDao {
 		}
 	}
 
+	public String getInitialSQL(){
+		
+		String sql = " select u.city, u.state, u.user_profile_id, u.language, u.display_name, u.coaching_category, u.overview, u.profilepicture, u.profilepicturestring, u.profile_picture_type, " +
+		" (select c.coaching_category_name from coaching_category c where u.coachingcategory1 = c.coaching_category_id) coaching_category_name1, " +
+		" (select c.coaching_category_name from coaching_category c where u.coachingcategory2 = c.coaching_category_id) coaching_category_name2, " +
+		" (select c.coaching_category_name from coaching_category c where u.coachingcategory3 = c.coaching_category_id) coaching_category_name3, " +
+		" (select count(*) from packages_sold ps where ps.user_profile_id = u.user_profile_id) num_clients, " +  
+		" (select min(p.price)  from package p where p.user_profile_id = u.user_profile_id) packages_from, " + 
+		" (select avg(averagerating) from jobratingdetails j where j.user_profile_id=u.user_profile_id) rating " + 
+		" from user_profile u ";
+		
+		return sql;
+		
+	}
 	public String getCriteria(int coachingCategory,
 			int coachingSubcategory, int industryExperience,
 			String companyExperience, String coachFirstName,
@@ -248,7 +261,9 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
 			CRITERIA = CRITERIA + " account_type = 1";
 			*/
-			
+	
+			String sql = getInitialSQL() + " " + CRITERIA;
+			/*
 			String sql = " select u.city, u.state, u.user_profile_id, u.language, u.display_name, u.coaching_category, u.overview, u.profilepicture, u.profilepicturestring, u.profile_picture_type, " +
 			" (select c.coaching_category_name from coaching_category c where u.coachingcategory1 = c.coaching_category_id) coaching_category_name1, " +
 			" (select c.coaching_category_name from coaching_category c where u.coachingcategory2 = c.coaching_category_id) coaching_category_name2, " +
@@ -258,6 +273,7 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			" (select avg(averagerating) from jobratingdetails j where j.user_profile_id=u.user_profile_id) rating " + 
 			" from user_profile u " +
 			 CRITERIA;
+			*/
 			
 			log.info(" findFilteredUserProfiles:::: " + sql);
 
@@ -283,7 +299,6 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			throw e;
 		}
 	}
-	
 	
 	public void delete(String id)  throws Exception {
 		Session session = sessionFactory.openSession();

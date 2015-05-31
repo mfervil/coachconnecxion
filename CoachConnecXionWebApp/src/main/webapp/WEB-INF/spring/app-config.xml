@@ -72,6 +72,12 @@
 	<bean id="coachingCategoryDao"
           class="com.fervil.spring.careercoach.model.dao.HibernateCoachingCategoryDao">
     </bean>
+	<bean id="cityManager" class="com.fervil.spring.careercoach.service.BasicCityManager">
+		<property name="cityExtendedDao" ref="cityExtendedDao" />
+	</bean>
+	<bean id="cityExtendedDao"
+          class="com.fervil.spring.careercoach.model.dao.HibernateCityExtendedDao">
+    </bean>
 
     
     <!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
