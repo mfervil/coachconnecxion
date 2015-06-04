@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
@@ -254,7 +255,7 @@ public class LandingPagesController {
 			return mav;
 		}
 		
-		@RequestMapping(value = "/public/landing-finance-coaches", method = RequestMethod.POST)
+		@RequestMapping(value = "/public/landing-finance-money-coaches", method = RequestMethod.POST)
 		public ModelAndView submitFinanceForm( 
 				@ModelAttribute("coachSelection") CoachSelection coachSelection,
 				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
@@ -420,9 +421,38 @@ public class LandingPagesController {
 		}
 		
 		private void setMavSession(ModelAndView mav, HttpSession session, org.springframework.web.context.request.WebRequest webRequest) throws Exception{
+			
+			//Update with new URL 5/31/2015
+			//mav.setViewName ("redirect:userprofileList?coachingcategory=" + webRequest.getParameter("coachingCategory") );
 
-			mav.setViewName ("redirect:userprofileList?coachingcategory=" + webRequest.getParameter("coachingCategory") );
+			/*
+			mav.setViewName ("redirect:coachprofileListAdvance/coachingCategory/" + webRequest.getParameter("coachingCategory") + 
+					"/coachingSubcategory/" + Constants.DEFAULT_URL_NUMBER + 
+					"/industryExperience/" + Constants.DEFAULT_URL_NUMBER +
+					"/companyExperience/"  + Constants.DEFAULT_URL_STRING + 
+					"/coachFirstName/"  + Constants.DEFAULT_URL_STRING + 
+					"/coachLastName/"  + Constants.DEFAULT_URL_STRING + 
+					"/city/"  + Constants.DEFAULT_URL_STRING + 
+					"/state/"  + Constants.DEFAULT_URL_STRING + 
+					"/pageNumber/1" 
+			);
+			*/
+			
+			mav.setViewName ("redirect:coachprofileListAdvance/coachingCategory/" + webRequest.getParameter("coachingCategory") + 
+					"/coachingSubcategory/" + webRequest.getParameter("coachingSubcategory") + 
+					"/industryExperience/" + webRequest.getParameter("industryExperience") +
+					"/companyExperience/"  + (webRequest.getParameter("companyExperience") == null || webRequest.getParameter("companyExperience").trim().equals("") ?Constants.DEFAULT_URL_STRING:webRequest.getParameter("companyExperience") )+ 
+					"/coachFirstName/"  + (webRequest.getParameter("coachFirstName")  == null || webRequest.getParameter("coachFirstName").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("coachFirstName") ) + 
+					"/coachLastName/"  + (webRequest.getParameter("coachLastName")  == null || webRequest.getParameter("coachLastName").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("coachLastName") ) + 
+					"/city/"  + (webRequest.getParameter("city")  == null || webRequest.getParameter("city").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("city") ) + 
+					"/state/"  + (webRequest.getParameter("state")  == null || webRequest.getParameter("state").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("state") ) + 
+					"/pageNumber/1" 
+			);
+
+			
+			
 			//mav.addObject("userProfiles", userProfiles);
+			/* REMOVING SINCE WE DO NOT WANT TO PASS THESE ATTRIBUTES IN THE URL
 			mav.addObject("coachingCategory", webRequest.getParameter("coachingCategory"));
 			mav.addObject("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
 			mav.addObject("industryExperience", webRequest.getParameter("industryExperience"));
@@ -432,7 +462,8 @@ public class LandingPagesController {
 			mav.addObject("state", webRequest.getParameter("state"));
 			mav.addObject("city", webRequest.getParameter("city"));
 			mav.addObject("coachingcategoryname", webRequest.getParameter("coachingcategoryname"));
-
+			*/
+			
 			session.setAttribute("coachingCategory", webRequest.getParameter("coachingCategory"));
 			session.setAttribute("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
 			session.setAttribute("industryExperience", webRequest.getParameter("industryExperience"));

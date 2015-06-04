@@ -51,12 +51,12 @@
 		<div class="separator"></div>
 
 		<div ">
-			<b>AVAILABLE COACHES:&nbsp;</b> <a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches">ADVANCED SEARCH</a> | 
+			<b>AVAILABLE COACHES:&nbsp;</b> <%-- <a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches">ADVANCED SEARCH</a> |--%> 
 			<a href="${pageContext.request.contextPath}/public/landing-business-coaches">BUSINESS COACHES</a> | 
 			<a href="${pageContext.request.contextPath}/public/landing-career-coaches">CAREER COACHES</a> | 
 			<a href="${pageContext.request.contextPath}/public/landing-corporate-coaches">CORPORATE COACHES</a> | 
 			<a href="${pageContext.request.contextPath}/public/landing-family-coaches">FAMILY COACHES</a> | 
-			<a href="${pageContext.request.contextPath}/public/landing-finance-money-coaches">FINANCE/MONEY COACHES</a> | 
+			<a href="${pageContext.request.contextPath}/public/landing-finance-money-coaches">FINANCE / MONEY COACHES</a> | 
 			<a href="${pageContext.request.contextPath}/public/landing-fitness-coaches">FITNESS COACHES</a> | 
 			<a href="${pageContext.request.contextPath}/public/landing-nutrition-coaches">NUTRITION COACHES</a> | 
 			<a href="${pageContext.request.contextPath}/public/landing-life-coaches">LIFE COACHES</a> | 

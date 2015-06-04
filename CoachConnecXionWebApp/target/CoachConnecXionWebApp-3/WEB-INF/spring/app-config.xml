@@ -54,6 +54,31 @@
 	<bean id="coachingRequestDao"
           class="com.fervil.spring.careercoach.model.dao.HibernateCoachingRequestDao">
     </bean>
+	<bean id="blogManager" class="com.fervil.spring.careercoach.service.BasicBlogManager">
+		<property name="blogPostDao" ref="blogPostDao" />
+	</bean>
+	<bean id="blogPostDao"
+          class="com.fervil.spring.careercoach.model.dao.HibernateBlogPostDao">
+    </bean>
+	<bean id="blogCommentManager" class="com.fervil.spring.careercoach.service.BasicBlogCommentManager">
+		<property name="blogCommentDao" ref="blogCommentDao" />
+	</bean>
+	<bean id="blogCommentDao"
+          class="com.fervil.spring.careercoach.model.dao.HibernateBlogCommentDao">
+    </bean>
+	<bean id="coachingCategoryManager" class="com.fervil.spring.careercoach.service.BasicCoachingCategoryManager">
+		<property name="coachingCategoryDao" ref="coachingCategoryDao" />
+	</bean>
+	<bean id="coachingCategoryDao"
+          class="com.fervil.spring.careercoach.model.dao.HibernateCoachingCategoryDao">
+    </bean>
+	<bean id="cityManager" class="com.fervil.spring.careercoach.service.BasicCityManager">
+		<property name="cityExtendedDao" ref="cityExtendedDao" />
+	</bean>
+	<bean id="cityExtendedDao"
+          class="com.fervil.spring.careercoach.model.dao.HibernateCityExtendedDao">
+    </bean>
+
     
     <!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager"

@@ -1,11 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
+<%@ page import="com.fervil.spring.careercoach.util.Constants" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Personal Coaches-Hire a Coach-Self Help Motivation - CoachConnecXion</title>
+	<title>${coachtype}-Hire a Coach-Self Help Motivation - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
 	<meta name="description" content="Our personal coaches will create a safe environment in which you can more clearly see your self; the coaches will listen to you and work with you to understand whats holding you back, and what you can do to succeed." />
@@ -123,7 +124,8 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Online Personal Coaches </h1></div>
+		<h1 >Select a city below for ${coachtype}. (Most can also work remotely)<br>&nbsp;</h1>
+	</div>
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
@@ -133,46 +135,64 @@ text-align:center;
 						<%@ include file="/WEB-INF/views/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
-						<c:set var="count" value="0" scope="page" />
+						<c:set var="count" value="2" scope="page" />
 						
 						<table>
 							<tr>
-									<td>
+									<td  style="vertical-align: top; text-align: left;">
 										<c:set var="count" value="0" scope="page" />
 										<c:forEach items="${cities}" varStatus="status" var="cities">
 											<c:set var="count" value="${count + 1}" scope="page"/>
-											<c:if test="${count <= itemsperrow}">
-												<a href="${pageContext.request.contextPath}/public/userprofileList/coachtypeid/${coachtypeid}/coachtype/${coachtype}/statecode/${statecode}/state/${state}/cityname/${cities.city}/pagenumber/1"> ${cities.city} </a>
-												<br>
-											</c:if>
+											<c:choose>
+	    										<c:when test="${count == 1}"> <%-- This is to handle All Coaches scenario --%>
+														<a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches"> ${cities.city} </a>
+														<br>
+	    										</c:when>
+	    										<c:when test="${count == 2 && itemsperrow > 1}"> <%-- This is to handle All Coaches scenario --%>
+														<a href="${pageContext.request.contextPath}/public/find-a-coach-by-city-state/coachtypeid/${coachtypeid}/coachtype/${coachtype}/statecode/${statecode}/state/${state}/cityname/<%=Constants.DEFAULT_URL_STRING %>/pagenumber/1"> ${cities.city}</a>
+														<br>
+	    										</c:when>
+											<c:when test="${count <= itemsperrow}">
+													<a href="${pageContext.request.contextPath}/public/find-a-coach-by-city-state/coachtypeid/${coachtypeid}/coachtype/${coachtype}/statecode/${statecode}/state/${state}/cityname/${cities.city}/pagenumber/1"> ${cities.city} coaches</a>
+													<br>
+											</c:when>	
+											</c:choose>	
 										</c:forEach>
 									</td>
-									<td>
+									<td  style="vertical-align: top; text-align: left;">
 										<c:set var="count" value="0" scope="page" />
 										<c:forEach items="${cities}" varStatus="status" var="cities">
 											<c:set var="count" value="${count + 1}" scope="page"/>
 											<c:if test="${count > itemsperrow && count <= itemsperrow * 2}">
-												<a href="${pageContext.request.contextPath}/public/userprofileList/coachtypeid/${coachtypeid}/coachtype/${coachtype}/statecode/${statecode}/state/${state}/cityname/${cities.city}/pagenumber/1"> ${cities.city} </a>
-												<br>
+												<c:choose>
+	    										<c:when test="${count == 2 && itemsperrow <= 4}"> <%-- This is to handle All Coaches for a state --%>
+														<a href="${pageContext.request.contextPath}/public/find-a-coach-by-city-state/coachtypeid/${coachtypeid}/coachtype/${coachtype}/statecode/${statecode}/state/${state}/cityname/<%=Constants.DEFAULT_URL_STRING %>/pagenumber/1"> ${cities.city}</a>
+														<br>
+	    										</c:when>
+	    										<c:when test="${count != 1}"> <%-- This is to handle All Coaches for a state --%>
+													<a href="${pageContext.request.contextPath}/public/find-a-coach-by-city-state/coachtypeid/${coachtypeid}/coachtype/${coachtype}/statecode/${statecode}/state/${state}/cityname/${cities.city}/pagenumber/1"> ${cities.city} coaches</a>
+													<br>
+												</c:when>
+												</c:choose>	
 											</c:if>
 										</c:forEach>
 									</td>
-									<td>
+									<td  style="vertical-align: top; text-align: left;">
 										<c:set var="count" value="0" scope="page" />
 										<c:forEach items="${cities}" varStatus="status" var="cities">
 											<c:set var="count" value="${count + 1}" scope="page"/>
 											<c:if test="${count > itemsperrow * 2 && count <= itemsperrow * 3}">
-												<a href="${pageContext.request.contextPath}/public/userprofileList/coachtypeid/${coachtypeid}/coachtype/${coachtype}/statecode/${statecode}/state/${state}/cityname/${cities.city}/pagenumber/1"> ${cities.city} </a>
+												<a href="${pageContext.request.contextPath}/public/find-a-coach-by-city-state/coachtypeid/${coachtypeid}/coachtype/${coachtype}/statecode/${statecode}/state/${state}/cityname/${cities.city}/pagenumber/1"> ${cities.city} coaches</a>
 												<br>
 											</c:if>
 										</c:forEach>
 									</td>
-									<td>
+									<td  style="vertical-align: top; text-align: left;">
 										<c:set var="count" value="0" scope="page" />
 										<c:forEach items="${cities}" varStatus="status" var="cities">
 											<c:set var="count" value="${count + 1}" scope="page"/>
 											<c:if test="${count > itemsperrow * 3 && count <= itemsperrow * 4}">
-												<a href="${pageContext.request.contextPath}/public/userprofileList/coachtypeid/${coachtypeid}/coachtype/${coachtype}/statecode/${statecode}/state/${state}/cityname/${cities.city}/pagenumber/1"> ${cities.city} </a>
+												<a href="${pageContext.request.contextPath}/public/find-a-coach-by-city-state/coachtypeid/${coachtypeid}/coachtype/${coachtype}/statecode/${statecode}/state/${state}/cityname/${cities.city}/pagenumber/1"> ${cities.city} coaches</a>
 												<br>
 											</c:if>
 										</c:forEach>

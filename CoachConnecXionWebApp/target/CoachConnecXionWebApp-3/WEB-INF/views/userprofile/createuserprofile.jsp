@@ -43,8 +43,8 @@
 				$('#wysiwygskills').wysiwyg();
 
 			});
-		</script>
-		<script type="text/javascript">
+</script>
+<script type="text/javascript">
 			$(function()
 
 			{
@@ -54,7 +54,7 @@
 			});
 </script>
 
-    <script>
+<script>
     $(document).ready(function(){
             $('#form').validate();
     })

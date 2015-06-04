@@ -33,7 +33,7 @@
 				<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
 				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/about-us">About Us </a> | 
 				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> | 
-				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>
+				<a style="font-size:12px;color:#0404B4; font-weight: bold;"  href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>
 <c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
 	<c:if test="${sessionScope.usertype == 1}">
 	 			<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>"> | NEW MESSAGES

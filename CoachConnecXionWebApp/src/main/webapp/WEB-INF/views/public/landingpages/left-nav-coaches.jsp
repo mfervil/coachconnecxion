@@ -1,9 +1,4 @@
 <table>
-	<%-- <tr>
-		<td  style="text-align: left;">
-		<a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches" style="text-decoration: none; font-size: 14px; ">Advanced Search </a></td>
-	</tr>
-	--%>
 	<tr>
 		<td  style="text-align: left;  text-decoration: underline; font-weight: bold;">
 			City/State Searches 
@@ -27,7 +22,7 @@
 	</tr>
 	<tr>
 		<td style="text-align: left;">
-		<a href="${pageContext.request.contextPath}/public/coachcitystate/coachtypeid/10/coachtype/Finance-Money-Coaches" style="text-decoration: none; font-size: 14px; ">Finance/Money Coaches</a></td>
+		<a href="${pageContext.request.contextPath}/public/coachcitystate/coachtypeid/10/coachtype/Finance-Money-Coaches" style="text-decoration: none; font-size: 14px; ">Finance / Money Coaches</a></td>
 	</tr>
 	<tr>
 		<td style="text-align: left;">

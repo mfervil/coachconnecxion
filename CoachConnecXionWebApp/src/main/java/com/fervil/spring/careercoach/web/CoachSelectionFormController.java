@@ -65,7 +65,32 @@ public class CoachSelectionFormController  {
 		try{	
 			
 			if (webRequest.getParameter("BREADCRUMB") != null && session.getAttribute("coachingCategory") != null){
-				mav.setViewName ("redirect:userprofileList?coachingcategory=" + webRequest.getParameter("coachingCategory") );
+				//MAF 5/11/2014 mav.setViewName ("redirect:userprofileList?coachingcategory=" + webRequest.getParameter("coachingCategory") );
+
+				/*
+				mav.setViewName ("redirect:coachprofileList/coachingcategory/" + webRequest.getParameter("coachingCategory") + 
+						"/coachingSubcategory/" + Constants.DEFAULT_URL_NUMBER + 
+						"/industryExperience/" + Constants.DEFAULT_URL_NUMBER +
+						"/companyExperience/"  + Constants.DEFAULT_URL_STRING + 
+						"/coachFirstName/"  + Constants.DEFAULT_URL_STRING + 
+						"/coachLastName/"  + Constants.DEFAULT_URL_STRING + 
+						"/city/"  + Constants.DEFAULT_URL_STRING + 
+						"/state/"  + Constants.DEFAULT_URL_STRING + 
+						"/pageNumber/1" 
+				);
+				*/
+				mav.setViewName ("redirect:coachprofileList/coachingcategory/" + webRequest.getParameter("coachingCategory") + 
+						"/coachingSubcategory/" + webRequest.getParameter("coachingSubcategory") + 
+						"/industryExperience/" + webRequest.getParameter("industryExperience") +
+						"/companyExperience/"  + webRequest.getParameter("companyExperience") + 
+						"/coachFirstName/"  + webRequest.getParameter("coachFirstName") + 
+						"/coachLastName/"  + webRequest.getParameter("coachLastName") + 
+						"/city/"  + webRequest.getParameter("city") + 
+						"/state/"  + webRequest.getParameter("state") + 
+						"/pageNumber/1" 
+				);
+
+				
 				mav.addObject("coachingCategory", session.getAttribute("coachingCategory"));
 				mav.addObject("coachingSubcategory", session.getAttribute("coachingSubcategory"));
 				mav.addObject("industryExperience", session.getAttribute("industryExperience"));
@@ -115,8 +140,21 @@ public class CoachSelectionFormController  {
 			    //return "redirect:/AboutYourProperty.htm";
 				
 				ModelAndView mav = new ModelAndView ();
-				mav.setViewName ("redirect:userprofileList?coachingcategory=" + webRequest.getParameter("coachingCategory") );
-				//mav.addObject("userProfiles", userProfiles);
+				//MAF 5/11/2015 mav.setViewName ("redirect:userprofileList?coachingcategory=" + webRequest.getParameter("coachingCategory") );
+
+				mav.setViewName ("redirect:coachprofileList/coachingcategory/" + webRequest.getParameter("coachingCategory") + 
+						"/coachingSubcategory/" + webRequest.getParameter("coachingSubcategory") + 
+						"/industryExperience/" + webRequest.getParameter("industryExperience") +
+						"/companyExperience/"  + webRequest.getParameter("companyExperience") + 
+						"/coachFirstName/"  + webRequest.getParameter("coachFirstName") + 
+						"/coachLastName/"  + webRequest.getParameter("coachLastName") + 
+						"/city/"  + webRequest.getParameter("city") + 
+						"/state/"  + webRequest.getParameter("state") + 
+						"/pageNumber/1" 
+				);
+
+				
+				
 				mav.addObject("coachingCategory", webRequest.getParameter("coachingCategory"));
 				mav.addObject("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
 				mav.addObject("industryExperience", webRequest.getParameter("industryExperience"));

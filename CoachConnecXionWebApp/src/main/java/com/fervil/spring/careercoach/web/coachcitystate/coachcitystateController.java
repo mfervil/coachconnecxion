@@ -65,11 +65,24 @@ public class coachcitystateController {
 
 		try{
 			
-			List<HashMap> cities = cityManager.findCitiesWithCoaches(statecode, coachtypeid);
+			//Adding default entries for the cities page
+			HashMap cityState1 = new HashMap();
+			//cityState1.put("state", "All coaches");
+			cityState1.put("city", "All coaches");
 
+			HashMap cityState2 = new HashMap();
+			//cityState2.put("state", state);
+			cityState2.put("city", "All " + state + " coaches");
+			
+			List<HashMap> cities = cityManager.findCitiesWithCoaches(statecode, coachtypeid);
+			cities.add(0, cityState1);
+			cities.add(1, cityState2);
+			
+			
+			
 			log.info("Number of cities returned: " + cities.size());
 			
-			double itemsPerRow = Math.ceil(((double)cities.size())/ 4);
+			double itemsPerRow = Math.ceil(((double)cities.size() )/ 4);
 
 			log.info("Items Per Row Number of cities returned: " + itemsPerRow);
 			

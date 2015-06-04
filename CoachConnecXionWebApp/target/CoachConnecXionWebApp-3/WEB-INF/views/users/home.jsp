@@ -4,7 +4,7 @@
   
 	<%@ include file="/WEB-INF/views/common/header_setup.jsp" %>	
 
-	<title>Certified Professional Coach - Personal Trainer Website | CoachConnecXion</title>
+	<title>Professional coaches-Personal Trainers-Hire a Coach-CoachConnecXion</title>
 	<meta name="description" content="CoachConnecXion is one of the leading Websites for Trainers and Coaches based in Illinois, USA. We Provide a listing of available certified professional coaches and trainers based on your search criteria." />
 	<meta name="msvalidate.01" content="18F49A45D87958CD1603B589E05269DE" /> <%-- This is used by bing --%>
 	<meta name="robots" content="NOODP,NOYDIR" />
@@ -42,7 +42,7 @@
 					<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/about-us">About Us </a> | 
 					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> | 
-					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>
+					<a style="font-size:12px;color:#0404B4; font-weight: bold;" href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>
 					
 <c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
 	<c:if test="${sessionScope.usertype == 1}">
@@ -69,11 +69,11 @@
 			</div>
 
 		<br><br>	
-		<p align="right">
-			<a href="https://www.facebook.com/pages/Coachconnecxion/381001272060479"><img src="${pageContext.request.contextPath}/images/social/facebook.png" alt="logo" /></a>
-			&nbsp;&nbsp;<a href="https://twitter.com/CoachConnecX"><img src="${pageContext.request.contextPath}/images/social/twitter.png" alt="logo" /></a>
-			&nbsp;&nbsp;<a href="https://plus.google.com/u/6/101269948124610306307"><img src="${pageContext.request.contextPath}/images/social/googleplus.png" alt="logo" /></a>
-			&nbsp;&nbsp;<a href="https://www.linkedin.com/company/coachconnecxion"><img src="${pageContext.request.contextPath}/images/social/linkedin.png" alt="logo" /></a>
+		<p style="text-align: right;">
+			<a href="https://www.facebook.com/pages/Coachconnecxion/381001272060479"><img src="${pageContext.request.contextPath}/images/social/facebook.png" alt="facebook" /></a>
+			&nbsp;&nbsp;<a href="https://twitter.com/CoachConnecX"><img src="${pageContext.request.contextPath}/images/social/twitter.png" alt="twitter" /></a>
+			&nbsp;&nbsp;<a href="https://plus.google.com/u/6/101269948124610306307"><img src="${pageContext.request.contextPath}/images/social/googleplus.png" alt="googleplus" /></a>
+			&nbsp;&nbsp;<a href="https://www.linkedin.com/company/coachconnecxion"><img src="${pageContext.request.contextPath}/images/social/linkedin.png" alt="linkedin" /></a>
 		</p>
 			
 		<div class="separator"></div>
@@ -150,6 +150,7 @@
 	</div><!-- #wrapper -->		
 	
 	<%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	
-	
+<!-- 	
 </body>
 </html>
+ -->

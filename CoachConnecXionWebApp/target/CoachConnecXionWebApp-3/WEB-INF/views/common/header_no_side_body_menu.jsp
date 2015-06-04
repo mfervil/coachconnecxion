@@ -1,13 +1,15 @@
 			<%-- MENU --%>
 			<nav>
-				<ul id="menu">
-					<li><a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches">FIND A COACH</a>
+				<ul id="menu">   
+					<li><a href="#">FIND A COACH</a>
 						<ul>	
+							<li style="text-decoration: underline;">ADVANCED SEARCHES</li>
+							<li><a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches" style="text-decoration: underline;">ALL COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-business-coaches">BUSINESS COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-career-coaches">CAREER COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-corporate-coaches">CORPORATE COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-family-coaches">FAMILY COACHES</a></li>
-							<li><a href="${pageContext.request.contextPath}/public/landing-finance-money-coaches">FINANCE/MONEY COACHES</a></li>
+							<li><a href="${pageContext.request.contextPath}/public/landing-finance-money-coaches">FINANCE / MONEY COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-fitness-coaches">FITNESS COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-nutrition-coaches">NUTRITION COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-life-coaches">LIFE COACHES</a></li>
@@ -18,7 +20,7 @@
 					<li><a href="#">CLIENTS</a>
 						<ul>	
 							<!-- <li><a href="${pageContext.request.contextPath}/public/coachSelection">FIND A COACH</a></li>  -->
-							<li><a href="${pageContext.request.contextPath}/viewOrders">MY COACHING PURCHASES</a></li>
+							<li><a href="${pageContext.request.contextPath}/viewOrders">PURCHASES & MESSAGES</a></li>
 							<li><a href="${pageContext.request.contextPath}/viewOrders">COMMENTS & RATINGS</a></li>
 							<!-- <li><a href="${pageContext.request.contextPath}/public/information?type=so">SEARCH OVERVIEW</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/information?type=sf">FAQ</a></li>
@@ -48,7 +50,14 @@
 						</ul>
 					</li>
 					--%>	
-					<li><a href="${pageContext.request.contextPath}/forums/list.page">DISCUSSIONS</a></li>
+					<li><a href="#">BLOG/FORUM</a>
+						<ul>
+							<li><a href="${pageContext.request.contextPath}/blogview/recent-personal-coach-blogs">BLOG</a></li>
+							<li><a href="${pageContext.request.contextPath}/forums/list.page">DISCUSSION FORUM</a></li>
+						</ul>
+					</li>
+
+
 				</ul>
 				<!-- 
 				<select id="responsive-menu">
