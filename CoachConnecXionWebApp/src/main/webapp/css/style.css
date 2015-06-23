@@ -556,9 +556,11 @@ table td:first-child {
 	display: block;	
 }
 
+/* MAF June 18
 #menu li:hover ul li:hover {	
 	height: 36px;	
 }
+*/
 
 #menu li:hover ul li {
 	border: 0px;

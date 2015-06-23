@@ -1,5 +1,5 @@
 		<form:form method="post" commandName="coachSelection" >
-			  <table style="border-spacing:2px; border-collapse:separate;">
+			  <table style="border-spacing:2px; width: 100%; border-collapse:separate;">
 			  <tbody >
 			    <tr>
 			    	<td  class="leftalign" ><br><label>Category: </label><form:errors path="coachingCategory" cssClass="error" />

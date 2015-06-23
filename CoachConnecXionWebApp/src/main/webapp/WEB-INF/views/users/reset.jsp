@@ -37,7 +37,7 @@
                 <span class="r" style="color: red">${errorMsg}</span> <br>
         <p style="font-size:16px">
             Don't have an account or your email does not exist? 
-            <a href="<c:url value="/users/create"/>" style="font-size:16px; font-color:blue; text-decoration:underline" >Register here</a>
+            <a  rel="nofollow" href="<c:url value="/users/create"/>" style="font-size:16px; font-color:blue; text-decoration:underline" >Register here</a>
             <br>Forgot your User Name or Password? Fill-out the information below and click Reset Account 
         </p> <br>
                 <dl>

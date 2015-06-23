@@ -9,7 +9,7 @@
 	<div id="wrapper-boxed-page-bottom"></div>
 	
 	<!-- FOOTER LINE -->
-	<section id="footer-line">
+	<section id="footerline">
 		<div id="left">
 			<p style="font-size:12px;"><span class="colorizer">CoachConnecXion.com</span> BY CoachSessions LLC &COPY; 2014  - ALL RIGHTS RESERVED!</p>
 		</div>
@@ -50,7 +50,7 @@
 		
 		<div class="separator"></div>
 
-		<div ">
+		<div id="landingLinks">
 			<b>AVAILABLE COACHES:&nbsp;</b> <%-- <a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches">ADVANCED SEARCH</a> |--%> 
 			<a href="${pageContext.request.contextPath}/public/landing-business-coaches">BUSINESS COACHES</a> | 
 			<a href="${pageContext.request.contextPath}/public/landing-career-coaches">CAREER COACHES</a> | 

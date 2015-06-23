@@ -22,6 +22,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -191,6 +192,59 @@ public class ProfileViewController {
 			return "public/common/error/errorpage";
 		}	
 	}
+	
+	@RequestMapping(value = "/public/coachprofile/profileId/{profileId}", method = RequestMethod.GET)
+	public String getCoachProfile(Model model, org.springframework.web.context.request.WebRequest webRequest, 
+			HttpServletRequest request, HttpSession session,
+			@PathVariable("profileId") long profileId) {
+		log.debug("Received request to show profile: getCoachProfile");
+
+		try{	
+
+			session.setAttribute("profileViewCoachProfileId", profileId);
+
+			List<ResumesCertificates> addResumes = addresumeService.getResumesById(profileId);
+			model.addAttribute("addResumes", addResumes);
+			
+			List<EducationDetails> addEducations = addEducationService.getEducationById(profileId);
+			model.addAttribute("addEducations", addEducations);
+	
+			List<Experiencedetails> addExperiences = addWorkExperienceService.getWorkExperiencesById(profileId);
+			model.addAttribute("addExperiences", addExperiences);
+			
+			List<PackageDetails> availablePackages = packageDetailsService.getPackagesByProfileId(profileId);
+			model.addAttribute("availablePackages", availablePackages);
+	
+			float averageRate1 = jobRatingService.getProfileRating(profileId);
+			Integer totalClients = jobRatingService.totalClientCount(profileId);
+	
+			UserProfile userProfile = userProfileManager.findById(profileId);
+			
+			long loggedInUserProfileId = SystemUtil.getUserProfileId(request, userProfileManager);
+			if (loggedInUserProfileId == profileId){
+				model.addAttribute("profileOfCurrentUser", true);
+			}
+			
+			String youtubeEmbed = "";
+			if (userProfile.getVideo_url() != null && userProfile.getVideo_url().length() > 8){
+				youtubeEmbed = getYouTubeEmbed(userProfile.getVideo_url());
+				model.addAttribute("embed", youtubeEmbed);
+			}
+			
+			model.addAttribute("profileInfo", userProfile);
+			model.addAttribute("averageRate1", averageRate1);
+			model.addAttribute("totalClients", totalClients);
+			model.addAttribute("profileId", profileId);
+	
+			return "public/profile/ProfileOverview";
+		} catch (Exception e) {
+	        String msg = "The request failed. Error " + e;
+	        log.error(msg, e);
+			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+			return "public/common/error/errorpage";
+		}	
+	}
+	
 
 	String getYouTubeEmbed(String videoURL){
 		String embed = "";

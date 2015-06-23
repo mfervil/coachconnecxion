@@ -272,7 +272,7 @@ String finalPath = request.getContextPath();
 							<c:if test="${not profileOfCurrentUser}" > 					
 								<tr>
 									<td style="text-align: left;"><br>
-										<a style ="background-color: #0099CC; color: white; width: 200px; padding: 3px; border: 1px solid navy;" 
+										<a  rel="nofollow" style ="background-color: #0099CC; color: white; width: 200px; padding: 3px; border: 1px solid navy;" 
 										href="${pageContext.request.contextPath}/feedbackAddNoOrder?vendorName=${profileInfo.getDisplayName()}&vendorId=${profileInfo.userProfileId}&customerId=${profileId}">
 											Provide Feedback & Rating
 										</a>

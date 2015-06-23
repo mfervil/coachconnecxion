@@ -122,18 +122,18 @@ text-align:center;
 	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a>
 
 	<div
-		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
+		style="text-align: center; width: 100%x; font-size: large; font-weight: bold; color: blue">
 		<h1>Search For Online Personal Coaches </h1></div>
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
-	<table style="width: 900px;">
+	<table style="width: 100%;">
 
 				<tr>
-					<td style="width: 150px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
+					<td style="width: 20%; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
 						<%@ include file="/WEB-INF/views/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
-					<td>
-						<table>
+					<td style="width: 80%;">
+						<table style="width: 100%;">
 							<tr>
 								<td>
 								
@@ -159,7 +159,7 @@ text-align:center;
 							--%>
 							
 							<tr><td>
-									<h3 style="text-align: left;"><br><B>Coaches: </B><a style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
+									<h3 style="text-align: left;"><br><B>Coaches: </B><a  rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
 							</td></tr>	
 								<tr><td><br><img src="${pageContext.request.contextPath}/images/hbr_coach_info.png" alt="Reasons for coaching" height="500" width="450"/></td></tr>
 							<tr><td>

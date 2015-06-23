@@ -50,12 +50,12 @@
         <br>
         <p style="font-size:16px">
             Don't have an account yet? 
-            <a href="<c:url value="/users/create"/>" style="font-size:16px; font-color:blue; text-decoration:underline" >Register here</a>
+            <a  rel="nofollow" href="<c:url value="/users/create"/>" style="font-size:16px; font-color:blue; text-decoration:underline" >Register here</a>
         </p>
         
         <p style="font-size:16px">
             Forgot your User Name or password? 
-            <a href="<c:url value="/users/reset"/>" style="font-size:16px; font-color:blue; text-decoration:underline" >Reset your account here</a>
+            <a  rel="nofollow" href="<c:url value="/users/reset"/>" style="font-size:16px; font-color:blue; text-decoration:underline" >Reset your account here</a>
         </p>
         <br>
         <p>

@@ -86,16 +86,17 @@
 									<td class="leftalign" width="125px;" height="115px" >
 											<c:choose>
     											<c:when test="${empty userProfileDetails.profile_picture_type}">
-													<a href="profile?profileId=${userProfileDetails.user_profile_id}"><img id="photo2" src="https://s3.amazonaws.com/ccxvi/nopicture.png" width="125px;""/></a>
+													<a  rel="nofollow" href="${pageContext.request.contextPath}/public/profile?profileId=${userProfileDetails.user_profile_id}"><img id="photo2" src="https://s3.amazonaws.com/ccxvi/nopicture.png" width="125px;"/></a>
 												</c:when>
     											<c:otherwise>
-													<a href="profile?profileId=${userProfileDetails.user_profile_id}"><img id="photo2" src="https://s3.amazonaws.com/ccxvi/ccxv1${userProfileDetails.user_profile_id}.${userProfileDetails.profile_picture_type}" width="125px;" /></a>
+													<a  rel="nofollow" href="${pageContext.request.contextPath}/public/profile?profileId=${userProfileDetails.user_profile_id}"><img id="photo2" src="https://s3.amazonaws.com/ccxvi/ccxv1${userProfileDetails.user_profile_id}.${userProfileDetails.profile_picture_type}" width="125px;" /></a>
     											</c:otherwise>
-											</c:choose>			
+											</c:choose>
+											<br><a href="${pageContext.request.contextPath}/public/coachprofile/profileId/${userProfileDetails.user_profile_id}" style="font-size: 6px;">public coach details</a>			
 									</td>																		
 								
 									<td class="leftalign" width="100%"> <br> 
-										 <b> &nbsp;&nbsp;<a href="profile?profileId=${userProfileDetails.user_profile_id}"><font color="blue" style="font-size:16px">${userProfileDetails.display_name}</font></a></b> &nbsp;&nbsp;<%@ include file="/WEB-INF/views/common/average_rating.jsp" %>	
+										 <b> &nbsp;&nbsp;<a  rel="nofollow" href="${pageContext.request.contextPath}/public/profile?profileId=${userProfileDetails.user_profile_id}"><font color="blue" style="font-size:16px">${userProfileDetails.display_name}</font></a></b> &nbsp;&nbsp;<%@ include file="/WEB-INF/views/common/average_rating.jsp" %>	
 										 <br> <b>&nbsp;&nbsp;City:</b> ${userProfileDetails.city} || ${userProfileDetails.profilepicturestring} &nbsp;&nbsp;<b>State/Province: </b> ${userProfileDetails.state} 
 									     <br> <!-- <b>&nbsp;&nbsp;# Clients:</b> ${userProfileDetails.num_clients}  
 									      &nbsp;&nbsp;<b> Packages from:</b>&nbsp;$${userProfileDetails.packages_from} --> 
@@ -106,7 +107,7 @@
 								<tr>
 									<td class="leftalign" colspan="3">
 									     ${userProfileDetails.overview} 
-									     <br><a href="profile?profileId=${userProfileDetails.user_profile_id}"><font color="blue" size="14"><ul>SEE COACH DETAILS & VIDEO, ASK QUESTIONS, PROVIDE FEEDBACK & RATINGS </ul></font></a> <br><br>
+									     <br><a  rel="nofollow" href="${pageContext.request.contextPath}/public/profile?profileId=${userProfileDetails.user_profile_id}"><font color="blue" size="14"><ul>SEE COACH DETAILS & VIDEO, ASK QUESTIONS, PROVIDE FEEDBACK & RATINGS </ul></font></a> <br><br>
 									</td>      
 								 </tr>
 								 
