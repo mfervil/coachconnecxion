@@ -61,6 +61,7 @@ Google Emails
 		ccnxn14$   77
 		git mfl@yahoo.com ccnxn14$
 		jforum ccnxn14$
+		superpages Ccnxn14
 
 		marc.arthur@coachconnecxion.com ccnnilxn14$ - LinkedIn
 
@@ -407,10 +408,18 @@ Gmail contact
                 <_aws_prod_jdbc.url>jdbc:mysql://ccnxnawsprodbid.clqxraftqadk.us-east-1.rds.amazonaws.com:3306/careercoach</_aws_prod_jdbc.url>
                 <_aws_prod_jdbc.username>ccnxnawsprodb</_aws_prod_jdbc.username>  
                 <_aws_prod_jdbc.password>cpdcnxn14db$</_aws_prod_jdbc.password>
--->
+
                 <_aws_prod_v1_jdbc.url>jdbc:mysql://aa1iz6j3sxnd9x9.clqxraftqadk.us-east-1.rds.amazonaws.com:3306/careercoach</_aws_prod_v1_jdbc.url>
                 <_aws_prod_v1_jdbc.username>ccnxnawsprodb</_aws_prod_v1_jdbc.username>  
                 <_aws_prod_v1_jdbc.password>cpdcnxn14db$</_aws_prod_v1_jdbc.password>
+-->
+
+                <_aws_prod_v1_jdbc.url>jdbc:mysql://coachconnecxiondbamazonfree2.clqxraftqadk.us-east-1.rds.amazonaws.com:3306/careercoach</_aws_prod_v1_jdbc.url>
+                <_aws_prod_v1_jdbc.username>f2ccnxnawsprodb</_aws_prod_v1_jdbc.username>  
+                <_aws_prod_v1_jdbc.password>f2cpdcnxn14db$</_aws_prod_v1_jdbc.password>
+
+
+
 
                 <_test.jdbc.username>root</_test.jdbc.username>
                 <_test.jdbc.password>14fifi14</_test.jdbc.password>

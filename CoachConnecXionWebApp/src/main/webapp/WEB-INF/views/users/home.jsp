@@ -4,8 +4,8 @@
   
 	<%@ include file="/WEB-INF/views/common/header_setup.jsp" %>	
 
-	<title>Professional coaches-Personal Trainers-Hire a Coach-CoachConnecXion</title>
-	<meta name="description" content="CoachConnecXion is one of the leading Websites for Trainers and Coaches based in Illinois, USA. We Provide a listing of available certified professional coaches and trainers based on your search criteria." />
+	<title>Professional - Personal - Career coaches and Trainers : CoachConnecXion</title>
+	<meta name="description" content="CoachConnecXion.com matches individuals with life, personal, professional and career coaches.  Our aim is to help witth individual growth" />
 	<meta name="msvalidate.01" content="18F49A45D87958CD1603B589E05269DE" /> <%-- This is used by bing --%>
 	<meta name="robots" content="NOODP,NOYDIR" />
 	
@@ -142,7 +142,7 @@
 			
 		<table><tr><td >
 			<p style="font-size: 300%; color: #086A87">Welcome to CoachConnecXion<br><br>
-			<p style="font-size: 200%; color: gray">Home of the top professional coaches in the field<br><br>
+			<H1 style="font-size: 200%; color: gray">Home of the top professional, career and personal coaches in the industry<br><br></H1>
 			<p style="font-size: 200%; color: gray">Our #1 goal is to help you find that great personal coach to take you to the next level<br><br>
 			<p style="font-size: 300%; color: gray">******<br><br>
 			<p style="font-size: 16px; color: gray" >If you are a certified coach who enjoys helping others sign-up with us, our customers are always looking for great coaches <br> <br>

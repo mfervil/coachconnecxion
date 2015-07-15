@@ -141,6 +141,8 @@
         <intercept-url pattern="/google2233c8da8a8a9306.html" access="permitAll()"/>
         <intercept-url pattern="/oyPsW6jU.html" access="permitAll()"/>
         <intercept-url pattern="/sitemap.xml" access="permitAll()"/>
+        <intercept-url pattern="/test.jsp" access="permitAll()"/>
+        <intercept-url pattern="/test1.jsp" access="permitAll()"/>
 
         <intercept-url pattern="/users/list" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/users/**" access="hasRole('ROLE_USER')"/>
