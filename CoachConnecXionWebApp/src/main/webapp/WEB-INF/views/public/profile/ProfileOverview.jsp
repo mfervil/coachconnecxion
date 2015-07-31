@@ -195,7 +195,10 @@ String finalPath = request.getContextPath();
 %>
 
 <c:set var="tmpprofileId" value ="${userProfileDetails.user_profile_id}" />
-<% String finalURL = finalPath + Constants.UPLOAD_DIRECTORY + "/" + request.getAttribute("profileId") + "/" + "USERPROFILEIMAGE" + request.getAttribute("profileId") + ".jpg"; 
+<% 
+
+	/*
+	String finalURL = finalPath + Constants.UPLOAD_DIRECTORY + "/" + request.getAttribute("profileId") + "/" + "USERPROFILEIMAGE" + request.getAttribute("profileId") + ".jpg"; 
 
 	ServletContext app = getServletContext();
 	String path1 = app.getRealPath(".." + finalURL);
@@ -207,7 +210,7 @@ String finalPath = request.getContextPath();
 	}	
 
 	//long userProfileId = SystemUtil.getUserProfileId(request);
-	
+	*/
 	
 %>
 

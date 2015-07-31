@@ -66,7 +66,10 @@
 								<c:set var="averageRate1" value ="${userProfileDetails.rating}"/>
 
 								<c:set var="tmpprofileId" value ="${userProfileDetails.user_profile_id}" />
-								<% String finalURL = finalPath + Constants.UPLOAD_DIRECTORY + "/" + pageContext.getAttribute("tmpprofileId") + "/" + "USERPROFILEIMAGE" + pageContext.getAttribute("tmpprofileId") + ".jpg"; 
+								<% 
+								
+								/*
+									String finalURL = finalPath + Constants.UPLOAD_DIRECTORY + "/" + pageContext.getAttribute("tmpprofileId") + "/" + "USERPROFILEIMAGE" + pageContext.getAttribute("tmpprofileId") + ".jpg"; 
 								
 									ServletContext app = getServletContext();
 									String path1 = app.getRealPath(".." + finalURL);
@@ -79,7 +82,8 @@
 										//finalURL = "${pageContext.request.contextPath}${pageContext.request.contextPath}/images/general/nopicture.png"; 
 										finalURL = finalPath + "/images/general/nopicture.png"; //used for image below in source field  inital value was in JSP script src=finalURL "
 
-									}	
+									}
+								*/	
 								%>
 								
 								<tr> 
