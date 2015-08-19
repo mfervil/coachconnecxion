@@ -104,6 +104,18 @@ public class PaymentInformation {
 	private int packageId;
 	@Column(name = "currentdate")
 	private Date orderdate;
+	
+	/*
+	 * NEED TO PUT THE PROPER DATE IN THE DATABASE	
+	 * 
+	 * java.util.Date dt = new java.util.Date();
+
+	 	java.text.SimpleDateFormat sdf = 
+     	new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+		String currentTime = sdf.format(dt);
+	 * 
+	 */
 
     @Size(min = 3, max = 20, message = "{password.error.size}")
     @Pattern(regexp = "[^\\s\\{\\}]+$", message = "{password.error.symbols}")

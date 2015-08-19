@@ -244,9 +244,10 @@ table td.topalign {
 
 table td:first-child {	
 	padding-left: 10px;
+	padding-top:20px;
 }
 
-
+#content table td:first-child {padding-top:0;}
 
 /* JAVASCRIPT FALLBACK */
 
@@ -321,7 +322,8 @@ table td:first-child {
 	background-image: url('../images/topline.gif');
 	background-position: top center;
 	background-repeat: no-repeat;	
-	width: 1000px;
+	width: 100%;
+	max-width:1000px;
 	min-height: 500px;
 	margin: 0px auto;		
 	margin-top: 1px;
@@ -422,8 +424,8 @@ table td:first-child {
 #background_repeat{
 	width: 100%;		
 	min-height: 100%;	
-	background-image: url('../images/background_loop.jpg');
-	background-repeat: repeat-x;
+	/*background-image: url('../images/background_loop.jpg');
+	background-repeat: repeat-x; */
 	background-color: #fbfbfb;
 	background-position: top center;		
 	z-index: 1;		
@@ -436,7 +438,7 @@ table td:first-child {
 	min-height: 100%;	
 	position: relative;
 	z-index: 1;	
-	background-image: url('../images/background.jpg');
+	/*background-image: url('../images/background.jpg');  */
 	background-repeat: no-repeat;
 	background-position: top center;	
 	float: left;
@@ -490,14 +492,18 @@ table td:first-child {
 */
 #wrapper-boxed-page-bottom{	
 	height: 69px;
-	width: 982px;
+	max-width: 982px;
+	width:100%;
 	margin: 0px auto;
 	margin-bottom: 20px;
 	position: relative;
 	z-index: 3;
 	background-image: url('../images/boxed-page-bottom.png');
 	background-repeat: no-repeat;
+	background-size:100%;
 }
+
+
 
 
 
@@ -2253,3 +2259,4 @@ form .compact label.error {
 }
 
 
+#paymentinformation table td:first-child {padding-top:0;}

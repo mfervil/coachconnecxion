@@ -1,0 +1,41 @@
+.jqueryslidemenu ul ul{
+	background:#e5e5e5 url(ie.png) top left repeat-x;
+	overflow:visible;
+	border:1px solid #dddddd;
+	border-top:1px solid #fff;}
+	
+.jqueryslidemenu ul ul ul{border-top:1px solid #ddd;}	
+	
+.avatar, .small_frame img, img.small_frame,
+.fancy_table,.widget_calendar table,.fancy_titled_box,.fancy_box,
+img.framed,.video_frame{border:1px solid #eee !important;background:#e5e5e5 url(ie.png) top left repeat-x !important;}
+
+.wp-pagenavi a,.wp-pagenavi span.current,.wp-pagenavi span.extend,
+.fancy_table,.widget_calendar table,.fancy_titled_box,.fancy_box,
+.toggle_frame , .pullquote_right, .pullquote_left,.wp-caption,
+.webtreats_flickr_widget img, dl.gallery-item img,
+.color_scheme_box_content{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f2f2f2') !important; /* for IE */
+	border:1px solid #eee !important;}
+
+img.fade_hover:hover,img.portfolio_hover:hover,
+pre,.simple_box{border:1px solid #ddd !important;}
+
+input.tooltip_search_field:focus,
+#footer input[type=text],#footer input[type=password],#footer textarea,
+#footer input[type=text]:focus,#footer input[type=password]:focus,#footer textarea:focus
+{border:0px none !important;}
+
+
+button.search-go{position:relative;top:10px;left:5px;}
+.comment_bubble{background:url("comment_bubble.png") no-repeat scroll -6px -7px transparent;position:relative;top:-25px;height:30px;}
+
+
+
+button.fancy_button{background:none;width:1;overflow:visible;padding: 0;}
+	
+button.fancy_button span{
+	background-position:-60px -122px;
+	display:block;
+	line-height:10px;
+	padding:15px 21px 17px 21px;}

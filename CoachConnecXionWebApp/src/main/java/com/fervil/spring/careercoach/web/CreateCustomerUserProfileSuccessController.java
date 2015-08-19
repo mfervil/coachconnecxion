@@ -21,7 +21,7 @@ import com.fervil.spring.careercoach.util.Constants;
 @Controller
 @RequestMapping("/createcustomeruserprofilesuccess/userProfileId/{userProfileId}")
 public class CreateCustomerUserProfileSuccessController {
-    private static final Logger log = LoggerFactory.getLogger(CreateUserProfileSuccessController.class);
+    private static final Logger log = LoggerFactory.getLogger(CreateCustomerUserProfileSuccessController.class);
 	
     @RequestMapping(method=RequestMethod.GET)
     public ModelAndView createBillPaySuccess(@PathVariable("userProfileId") String userProfileId, Model model) {

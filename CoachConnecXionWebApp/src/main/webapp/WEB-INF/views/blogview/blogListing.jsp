@@ -107,12 +107,12 @@
 		<form:form method="post" commandName="blogPost" id="blogPostForm" enctype="multipart/form-data">
 		<h3 style="color:red"> ${errorMessage} </h3>
      
-	<table style="width: 900px;">
+	<table style="width: 900px;"  class="blog-page-table">
 			<tr>
-				<td style="width: 730px; padding: 5px;">
+				<td style="width: 730px; padding: 5px;" >
 					<table>
-						<tr>
-							<td style="margin-top: 4px; vertical-align: top;"> <!-- style="margin-top -->
+						<tr class="blog-page-table-tr">
+							<td style="margin-top: 4px; vertical-align: top;" class="mobile-second"> <!-- margin-top -->
 							
 							<c:choose>
 							    <c:when test="${not empty blogPostListing}">
@@ -146,7 +146,7 @@
 						</c:choose> 							
 								
 							</td> <!-- End style="margin-top -->
-							<td style="vertical-align: text-top; white-space: nowrap; text-align: left; ">
+							<td style="vertical-align: text-top; white-space: nowrap; text-align: left; " class="mobile-first">
 							<%@ include file="/WEB-INF/views/blogview/blogRecents.jsp" %>
 							<br>
 							<%@ include file="/WEB-INF/views/blogview/blogArchives.jsp" %>

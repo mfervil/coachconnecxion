@@ -207,11 +207,20 @@ Gmail contact
         </dependency>
 
         <!-- MySQL JDBC Connector -->
+		<!-- 
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.21</version>
         </dependency>
+         -->
+         
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.36</version>
+		</dependency>        
+        
 
         <!-- Mail -->
         <dependency>
@@ -413,7 +422,7 @@ Gmail contact
                 <_aws_prod_v1_jdbc.username>ccnxnawsprodb</_aws_prod_v1_jdbc.username>  
                 <_aws_prod_v1_jdbc.password>cpdcnxn14db$</_aws_prod_v1_jdbc.password>
 -->
-
+				<!--  If DB changes remember to also change DB in mysql.properties for JForumn -->
                 <_aws_prod_v1_jdbc.url>jdbc:mysql://coachconnecxiondbamazonfree2.clqxraftqadk.us-east-1.rds.amazonaws.com:3306/careercoach</_aws_prod_v1_jdbc.url>
                 <_aws_prod_v1_jdbc.username>f2ccnxnawsprodb</_aws_prod_v1_jdbc.username>  
                 <_aws_prod_v1_jdbc.password>f2cpdcnxn14db$</_aws_prod_v1_jdbc.password>

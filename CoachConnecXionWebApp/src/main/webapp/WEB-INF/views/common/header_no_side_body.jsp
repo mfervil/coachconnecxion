@@ -31,6 +31,8 @@
 			<%-- MENU --%>
 			<div id="menutopmost">
 				<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
+				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/coach">Coaching </a> | 
+				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor">Tutoring </a> | 
 				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/about-us">About Us </a> | 
 				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> | 
 				<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold;"  href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>

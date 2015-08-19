@@ -88,7 +88,7 @@ label {font-size:14px;}
 	</table>
 			<br>
      
-	<table style="width: 900px;">
+	<table style="width: 900px;" class="blog-page-table">
 		<tr>
 				<td style="width: 730px; padding: 5px;">
 				

@@ -83,8 +83,17 @@ ul
 
 <h1 style="text-align:center;font-weight: bold;">PRIVACY POLICY</h1><br>
 
+	<%@ include file="/WEB-INF/views/public/common/legal/privacypolicy_body.jsp" %>
+
+<%-- 
+<p>- Coach in the context of this document refers to any individual or entity providing a service, such as a personal life coach or a math tutor.
+<br>- Client in the context of this document refers to any individual or entity receiving a service, such as a math student or a career professional.
+</p>
+<hr>
+
+<br>
 <p><span style='color:black'>We know that you buy our products and services and
-use our Website because you trust us. This notice explains how we protect your
+use our website because you trust us. This notice explains how we protect your
 privacy and treat your personal information. It applies to current and former
 customers. &quot;Personal information&quot; here means anything we know about
 you personally.</span></p><br>
@@ -104,7 +113,7 @@ access. We comply with all laws that apply to us.</span></p><br>
 share depend on the product or service you have with us. The type of
 information that we currently collect is used primarily to identify you as a
 valid user to our system, and to facilitate the payment process, and the
-interaction between coaches, and those seeking to be coached.  Currently we
+interaction between coaches and clients.  Currently we
 collect and save the following personal information:</span></p>
 
 <p class=MsoNormal><span style='color:black'>Name, Address, City, State,
@@ -188,6 +197,8 @@ you write, include your name, address, and policy or account number.</span></p><
 <p><span style='color:black'>Please note that this Privacy Policy may change
 from time to time. If we make any material changes, we will notify you as
 required by law.</span></p>
+
+--%>
 
 </div>
 

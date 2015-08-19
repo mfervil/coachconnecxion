@@ -182,9 +182,10 @@ header, section, footer, aside, nav, article, figure {
 
 table {		
 	clear: left;		
-	width: 100%;
+	width: 100% !important;
 	border-bottom: 1px solid #dedede;	
 	font-size: 11px;
+	margin-bottom:15px;
 }
 
 table th {
@@ -217,6 +218,7 @@ table td {
 	padding-left: 4px;
 	padding-right: 4px;
 	width: auto;
+	padding-top:20px;
 }
 
 
@@ -438,7 +440,7 @@ table td {
 header nav {
 	width: 100%;
 	margin: 0px auto;
-	text-align: center;
+	text-align: left;
 	float: left;
 	margin-bottom: 40px;
 }
@@ -495,7 +497,7 @@ header nav {
 }
 
 #menu li:hover ul li:hover {	
-	height: 36px;	
+	
 }
 
 #menu li:hover ul li {
@@ -2105,3 +2107,124 @@ p.tags{
 
 
 
+@media screen and (min-width:516px) and (max-width:767px) {
+	table td.leftalign {display:block; clear:both; width:100%; text-align:left; max-width:90%;}
+table tr td img {max-width:95% !important; height:auto !important;}
+table td {height:auto; padding-top:5px; text-align:left;}
+table tr {display:block; float:left;}
+	table td.leftalign select, table td.leftalign input {max-width:100%;}
+	
+	
+table {
+    border-bottom: 1px solid #dedede;
+    clear: left;
+    display: block;
+    font-size: 11px;
+    margin-bottom: 15px;
+    position: relative;
+    width: 100%;
+}
+
+table tbody {
+    border: medium none;
+    clear: both;
+    display: inline-block;
+    height: auto;
+    position: relative;
+    width: 100%;
+}
+table thead {
+    border: medium none;
+    clear: both;
+    display: inline-block;
+    height: auto;
+    position: relative;
+    width: 100%;
+}
+
+table tr {
+    border: medium none;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+table td {
+    display: inline-block;
+    float: left;
+	width:100% !important;
+    height: auto !important;
+    padding-top: 5px;
+    position: relative;
+    text-align: left;
+}
+
+#content div {max-width:100% !important;}
+.howit-works-table {  border-bottom: 1px solid #dedede;
+    clear: left;
+    display: block;
+    font-size: 11px;
+    margin-bottom: 15px;
+    position: relative;}
+.howit-works-table  tr {
+    border: medium none;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+.howit-works-table tr td {max-width:45% !important;}
+#profilevideo iframe {max-width:100% !important; height:auto !important;}
+
+		.blog-page-table-tr {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+
+  .blog-page-table-tr .mobile-second {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+
+	width:100%;
+  }
+
+  .blog-page-table-tr .mobile-first {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+
+  }
+
+
+}
+
+#content div {max-width:100% !important;}
+
+
+
+table tbody {width:100% !important; display:block;}
+table tr {width:100% !important; display:block;}
+table {width:98% !important; display:block;}
+
+.content1 {width:100% !important;}
+.content1 tbody {width:100% !important;}
+.content1 tbody tr{width:100% !important;}
+.content1 tbody tr td{width:22% !important; padding:1% !important; word-wrap:break-word;}
+#coachingRequest table thead {height:50px;}

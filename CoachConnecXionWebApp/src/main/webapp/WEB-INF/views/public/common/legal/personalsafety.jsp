@@ -83,6 +83,15 @@ ul
 
 <h1 style="text-align:center;font-weight: bold;">Personal Safety</h1><br>
 
+	<%@ include file="/WEB-INF/views/public/common/legal/personalsafety_body.jsp" %>
+
+<%-- 
+<p>- Coach in the context of this document refers to any individual or entity providing a service, such as a personal life coach or a math tutor.
+<br>- Client in the context of this document refers to any individual or entity receiving a service, such as a math student or a career professional.
+</p>
+<hr>
+
+<br>
 <p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
 font-family:"Times New Roman","serif"'>The majority of Internet users are
 trustworthy and well-intentioned.</span></p>
@@ -102,7 +111,7 @@ if meeting in person, follow the guidelines below to stay safe.</span></p><br>
       person</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
       font-family:"Times New Roman","serif"'>Get phone number and address of
-      the person you’re meeting and pass it on to a friend or family member</span></li>
+      the person you are meeting and pass it on to a friend or family member</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
       font-family:"Times New Roman","serif"'>Insist on a public meeting place
       like a cafe or public library.</span></li>
@@ -143,19 +152,19 @@ if meeting in person, follow the guidelines below to stay safe.</span></p><br>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
       font-family:"Times New Roman","serif"'>Never give out your financial
       information (such as you social security number, credit card number or
-      bank information) to any person or company you meet through  this site</span></li>
+      bank information) to any person or company you meet through this site</span></li>
  </ul>
  <br>
 <h3 style="text-align:left;font-weight: bold;">Guard your personal and online access information</h3>
 <ul style="list-style-type:circle">
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-      font-family:"Times New Roman","serif"'>Do not give our your personal
+      font-family:"Times New Roman","serif"'>Do not give out your personal
       information </span><span style='font-size:12.0pt;font-family:"Times New Roman","serif"'>such
       as full name, phone number, email and address unless you trust the person
       and can verify their identity</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
       font-family:"Times New Roman","serif"'>Be extra cautious when accessing
-      your account in a public place.  Make sure no one is looking over your
+      your account in a public place.  Make sure no one is looking over your
       shoulder</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
       font-family:"Times New Roman","serif"'>If accessing your account over a
@@ -163,8 +172,8 @@ if meeting in person, follow the guidelines below to stay safe.</span></p><br>
       sign-in feature and clear all saved passwords.</span></li>
   <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
       font-family:"Times New Roman","serif"'>Do not send your user name and
-      password to anyone in email.  CoachConnecXion.com will never send emails
-      asking for your username and password    </span></li>
+      password to anyone in email.  CoachConnecXion.com will never send emails
+      asking for your username and password. </span></li>
  </ul><br>
 <h3 style="text-align:left;font-weight: bold;">Be Web Wise: Beware of people who exhibit the behaviors below and stay away from them</h3>
 <ul style="list-style-type:circle">
@@ -232,6 +241,7 @@ safety online, check out these resources:</span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
+--%>
 </div>
 
 </section>

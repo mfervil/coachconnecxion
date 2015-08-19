@@ -92,7 +92,7 @@ label {font-size:14px;}
 		<h3 style="color:red"> ${errorMessage} </h3>
      
 	<h2 style="text-align: center;">Create/Update Your Personal Coach Blog Posting</h2>									
-	<table style="width: 900px;">
+	<table style="width: 900px;"  class="blog-page-table">
 		<tr>
 			<td style="width: 730px; padding: 5px;">
 				<table>

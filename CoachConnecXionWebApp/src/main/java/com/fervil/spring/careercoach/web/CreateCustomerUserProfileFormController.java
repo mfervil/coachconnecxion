@@ -56,7 +56,7 @@ import java.util.UUID;
 @RequestMapping("/createcustomeruserprofile") 
 public class CreateCustomerUserProfileFormController {
 	
-    private static final Logger log = LoggerFactory.getLogger(CreateUserProfileFormController.class);
+    private static final Logger log = LoggerFactory.getLogger(CreateCustomerUserProfileFormController.class);
 	
 	@Autowired
 	private SessionFactory sessionFactory;

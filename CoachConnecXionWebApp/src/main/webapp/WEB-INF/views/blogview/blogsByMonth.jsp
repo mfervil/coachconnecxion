@@ -88,7 +88,7 @@ label {font-size:14px;}
 		<form:form method="post" commandName="blogPost" id="blogPostForm" enctype="multipart/form-data">
 		<h3 style="color:red"> ${errorMessage} </h3>
      
-	<table style="width: 900px;">
+	<table style="width: 900px;"  class="blog-page-table">
 		<tr>
 				<td style="width: 730px; padding: 5px;">
 					<table>
