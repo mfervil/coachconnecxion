@@ -14,7 +14,7 @@
 <%-- BEGIN Header No Side test --%>
 <%-- END Header No Side test --%>
 
-	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
+	<%@ include file="/WEB-INF/views/tutor/common/header_no_side_head.jsp" %>
 
 	
 <style type="text/css">
@@ -118,27 +118,27 @@ text-align:center;
 <%-- BEGIN BODY No Side test --%>
 <%-- END BODY No Side test --%>
 
-	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
+	<%@ include file="/WEB-INF/views/tutor/common/header_no_side_body.jsp" %>
 
 	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a>
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Business Coaches </h1></div>
+		<h1>Search For Art Tutors </h1></div>
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
 
 				<tr>
-					<td style="width: 150px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
-						<%@ include file="/WEB-INF/views/public/landingpages/left-nav-coaches.jsp" %>
+					<td style="width: 200px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
+						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
 						<table>
 							<tr>
 								<td>
 								
-									<%@ include file="/WEB-INF/views/public/landingpages/searchSelection.jsp" %>
+									<%@ include file="/WEB-INF/views/tutor/public/landingpages/searchSelection.jsp" %>
 									
 									<%-- 
 									<% session.setAttribute("categoryName", "Business Coach"); %>
@@ -146,7 +146,7 @@ text-align:center;
 									--%>
 									
 									<%--
-									<jsp: include page="/WEB-INF/views/public/landingpages/searchSelection.jsp" flush="true">
+									<jsp: include page="/WEB-INF/views/tutor/public/landingpages/searchSelection.jsp" flush="true">
 									    <jsp:param name="category" value="Business Coaches"/>
 									</jsp: include>									
 									 --%>
@@ -160,7 +160,7 @@ text-align:center;
 							 --%>
 							<tr>
 								<td>						
-									<h3 style="text-align: left;"><B>Coaches: </B><a  rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
+									<h3 style="text-align: left;"><B>Coaches: </B><a  rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/tutor/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
 									<br>
 								</td>
 							</tr>
@@ -194,4 +194,4 @@ text-align:center;
 				</tr>
 	</table>
 </section>
-<%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	
+<%@ include file="/WEB-INF/views/tutor/common/footer_no_side.jsp" %>	

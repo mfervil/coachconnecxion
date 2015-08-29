@@ -20,7 +20,7 @@ import com.fervil.spring.careercoach.util.Constants;
 public class TutorLandingPagesController {
     private static final Logger log = LoggerFactory.getLogger(TutorLandingPagesController.class);
 	
-		@RequestMapping(value = "/tutor/public/landing-business-coaches", method = RequestMethod.GET)
+		@RequestMapping(value = "/tutor/public/landing-art-tutor", method = RequestMethod.GET)
 		public ModelAndView businessCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
 			log.debug("Received request to show business coaches");
@@ -29,15 +29,16 @@ public class TutorLandingPagesController {
 			
 			CoachSelection coachSelection = new CoachSelection();
 
-			mav.addObject("coachingcategoryname", Constants.BUSINESS_COACHES_CATEGORY_NAME);
-			mav.addObject("coachingCategory", Constants.BUSINESS_COACHES_CATEGORY_ID);
+			mav.addObject("coachingcategoryname", Constants.ART_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.ART_TUTOR_CATEGORY_ID);
 
 			mav.addObject("coachSelection", coachSelection);
-			mav.setViewName ("tutor/public/landingpages/business-coaches");
+			
+			mav.setViewName ("tutor/public/landingpages/art-tutor");
 			return mav;
 		}
 		
-		@RequestMapping(value = "/tutor/public/landing-business-coaches", method = RequestMethod.POST)
+		@RequestMapping(value = "/tutor/public/landing-art-tutor", method = RequestMethod.POST)
 		public ModelAndView submitForm( 
 				@ModelAttribute("coachSelection") CoachSelection coachSelection,
 				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
@@ -50,30 +51,8 @@ public class TutorLandingPagesController {
 					ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
 
-					/*
-					mav.setViewName ("redirect:userprofileList?coachingcategory=" + webRequest.getParameter("coachingCategory") );
-					mav.addObject("coachingCategory", webRequest.getParameter("coachingCategory"));
-					mav.addObject("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
-					mav.addObject("industryExperience", webRequest.getParameter("industryExperience"));
-					mav.addObject("companyExperience", webRequest.getParameter("companyExperience"));
-					mav.addObject("coachFirstName", webRequest.getParameter("coachFirstName"));
-					mav.addObject("coachLastName", webRequest.getParameter("coachLastName"));
-					mav.addObject("state", webRequest.getParameter("state"));
-					mav.addObject("city", webRequest.getParameter("city"));
-					mav.addObject("coachingcategoryname", webRequest.getParameter("coachingcategoryname"));
-
-					session.setAttribute("coachingCategory", webRequest.getParameter("coachingCategory"));
-					session.setAttribute("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
-					session.setAttribute("industryExperience", webRequest.getParameter("industryExperience"));
-					session.setAttribute("companyExperience", webRequest.getParameter("companyExperience"));
-					session.setAttribute("coachFirstName", webRequest.getParameter("coachFirstName"));
-					session.setAttribute("coachLastName", webRequest.getParameter("coachLastName"));
-					session.setAttribute("state", webRequest.getParameter("state"));
-					session.setAttribute("city", webRequest.getParameter("city"));
-					session.setAttribute("coachingcategoryname", webRequest.getParameter("coachingcategoryname"));
-					*/
-					
 					return mav;
+					
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
 		        log.error(msg, e);
@@ -82,7 +61,7 @@ public class TutorLandingPagesController {
 			}	
 		}
 		
-		@RequestMapping(value = "/tutor/public/landing-fitness-coaches", method = RequestMethod.GET)
+		@RequestMapping(value = "/tutor/public/landing-business-tutor", method = RequestMethod.GET)
 		public ModelAndView fitnessCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
 			log.debug("Received request to show fitness coaches");
@@ -91,15 +70,15 @@ public class TutorLandingPagesController {
 			
 			CoachSelection coachSelection = new CoachSelection();
 
-			mav.addObject("coachingcategoryname", Constants.FITNESS_COACHES_CATEGORY_NAME);
-			mav.addObject("coachingCategory", Constants.FITNESS_COACHES_CATEGORY_ID);
+			mav.addObject("coachingcategoryname", Constants.BUSINESS_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.BUSINESS_TUTOR_CATEGORY_ID);
 
 			mav.addObject("coachSelection", coachSelection);
-			mav.setViewName ("tutor/public/landingpages/fitness-coaches");
+			mav.setViewName ("tutor/public/landingpages/business-tutor");
 			return mav;
 		}
 		
-		@RequestMapping(value = "/tutor/public/landing-fitness-coaches", method = RequestMethod.POST)
+		@RequestMapping(value = "/tutor/public/landing-business-tutor", method = RequestMethod.POST)
 		public ModelAndView submitFitnessForm( 
 				@ModelAttribute("coachSelection") CoachSelection coachSelection,
 				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
@@ -121,7 +100,7 @@ public class TutorLandingPagesController {
 		
 		
 		
-		@RequestMapping(value = "/tutor/public/landing-career-coaches", method = RequestMethod.GET)
+		@RequestMapping(value = "/tutor/public/landing-computer-business-tutor", method = RequestMethod.GET)
 		public ModelAndView careerCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
 			log.debug("Received request to show career coaches");
@@ -130,15 +109,15 @@ public class TutorLandingPagesController {
 			
 			CoachSelection coachSelection = new CoachSelection();
 
-			mav.addObject("coachingcategoryname", Constants.CAREER_COACHES_CATEGORY_NAME);
-			mav.addObject("coachingCategory", Constants.CAREER_COACHES_CATEGORY_ID);
+			mav.addObject("coachingcategoryname", Constants.COMPUTER_BUSINESS_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.COMPUTER_PROGRAMMING_TUTOR_CATEGORY_ID);
 
 			mav.addObject("coachSelection", coachSelection);
-			mav.setViewName ("tutor/public/landingpages/career-coaches");
+			mav.setViewName ("tutor/public/landingpages/computer-business-tutor");
 			return mav;
 		}
 		
-		@RequestMapping(value = "/tutor/public/landing-career-coaches", method = RequestMethod.POST)
+		@RequestMapping(value = "/tutor/public/landing-computer-business-tutor", method = RequestMethod.POST)
 		public ModelAndView submitCareerForm( 
 				@ModelAttribute("coachSelection") CoachSelection coachSelection,
 				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
@@ -159,7 +138,7 @@ public class TutorLandingPagesController {
 		}
 
 		
-		@RequestMapping(value = "/tutor/public/landing-nutrition-coaches", method = RequestMethod.GET)
+		@RequestMapping(value = "/tutor/public/landing-computer-programming-tutor", method = RequestMethod.GET)
 		public ModelAndView nutritionCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
 			log.debug("Received request to show nutrition coaches");
@@ -168,15 +147,15 @@ public class TutorLandingPagesController {
 			
 			CoachSelection coachSelection = new CoachSelection();
 
-			mav.addObject("coachingcategoryname", Constants.NUTRITION_COACHES_CATEGORY_NAME);
-			mav.addObject("coachingCategory", Constants.NUTRITION_COACHES_CATEGORY_ID);
+			mav.addObject("coachingcategoryname", Constants.COMPUTER_PROGRAMMING_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.COMPUTER_PROGRAMMING_TUTOR_CATEGORY_ID);
 
 			mav.addObject("coachSelection", coachSelection);
-			mav.setViewName ("tutor/public/landingpages/nutrition-coaches");
+			mav.setViewName ("tutor/public/landingpages/computer-programming-tutor");
 			return mav;
 		}
 		
-		@RequestMapping(value = "/tutor/public/landing-nutrition-coaches", method = RequestMethod.POST)
+		@RequestMapping(value = "/tutor/public/landing-computer-programming-tutor", method = RequestMethod.POST)
 		public ModelAndView submitNutritionForm( 
 				@ModelAttribute("coachSelection") CoachSelection coachSelection,
 				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
@@ -197,7 +176,7 @@ public class TutorLandingPagesController {
 		}
 		
 		
-		@RequestMapping(value = "/tutor/public/landing-family-coaches", method = RequestMethod.GET)
+		@RequestMapping(value = "/tutor/public/landing-communication-presentation-tutor", method = RequestMethod.GET)
 		public ModelAndView familyCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
 			log.debug("Received request to show family coaches");
@@ -206,15 +185,15 @@ public class TutorLandingPagesController {
 			
 			CoachSelection coachSelection = new CoachSelection();
 
-			mav.addObject("coachingcategoryname", Constants.FAMILY_COACHES_CATEGORY_NAME);
-			mav.addObject("coachingCategory", Constants.FAMILY_COACHES_CATEGORY_ID);
+			mav.addObject("coachingcategoryname", Constants.COMMUNICATION_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.COMMUNICATION_TUTOR_CATEGORY_ID);
 
 			mav.addObject("coachSelection", coachSelection);
-			mav.setViewName ("tutor/public/landingpages/family-coaches");
+			mav.setViewName ("tutor/public/landingpages/communication-presentation-tutor");
 			return mav;
 		}
 		
-		@RequestMapping(value = "/tutor/public/landing-family-coaches", method = RequestMethod.POST)
+		@RequestMapping(value = "/tutor/public/landing-communication-presentation-tutor", method = RequestMethod.POST)
 		public ModelAndView submitFamilyForm( 
 				@ModelAttribute("coachSelection") CoachSelection coachSelection,
 				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
@@ -235,7 +214,7 @@ public class TutorLandingPagesController {
 		}
 		
 		
-		@RequestMapping(value = "/tutor/public/landing-finance-money-coaches", method = RequestMethod.GET)
+		@RequestMapping(value = "/tutor/public/landing-english-tutor", method = RequestMethod.GET)
 		public ModelAndView financeCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
 			log.debug("Received request to show finance coaches");
@@ -244,15 +223,15 @@ public class TutorLandingPagesController {
 			
 			CoachSelection coachSelection = new CoachSelection();
 
-			mav.addObject("coachingcategoryname", Constants.FINANCE_COACHES_CATEGORY_NAME);
-			mav.addObject("coachingCategory", Constants.FINANCE_COACHES_CATEGORY_ID);
+			mav.addObject("coachingcategoryname", Constants.ENGLISH_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.ENGLISH_TUTOR_CATEGORY_ID);
 
 			mav.addObject("coachSelection", coachSelection);
-			mav.setViewName ("tutor/public/landingpages/finance-money-coaches");
+			mav.setViewName ("tutor/public/landingpages/english-tutor");
 			return mav;
 		}
 		
-		@RequestMapping(value = "/tutor/public/landing-finance-money-coaches", method = RequestMethod.POST)
+		@RequestMapping(value = "/tutor/public/landing-english-tutor", method = RequestMethod.POST)
 		public ModelAndView submitFinanceForm( 
 				@ModelAttribute("coachSelection") CoachSelection coachSelection,
 				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
@@ -272,7 +251,7 @@ public class TutorLandingPagesController {
 		}
 		
 		
-		@RequestMapping(value = "/tutor/public/landing-life-coaches", method = RequestMethod.GET)
+		@RequestMapping(value = "/tutor/public/landing-history-tutor", method = RequestMethod.GET)
 		public ModelAndView lifeCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
 			log.debug("Received request to show life coaches");
@@ -281,15 +260,15 @@ public class TutorLandingPagesController {
 			
 			CoachSelection coachSelection = new CoachSelection();
 
-			mav.addObject("coachingcategoryname", Constants.LIFE_COACHES_CATEGORY_NAME);
-			mav.addObject("coachingCategory", Constants.LIFE_COACHES_CATEGORY_ID);
+			mav.addObject("coachingcategoryname", Constants.HISTORY_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.HISTORY_TUTOR_CATEGORY_ID);
 
 			mav.addObject("coachSelection", coachSelection);
-			mav.setViewName ("tutor/public/landingpages/life-coaches");
+			mav.setViewName ("tutor/public/landingpages/history-tutor");
 			return mav;
 		}
 		
-		@RequestMapping(value = "/tutor/public/landing-life-coaches", method = RequestMethod.POST)
+		@RequestMapping(value = "/tutor/public/landing-history-tutor", method = RequestMethod.POST)
 		public ModelAndView submitLifeForm( 
 				@ModelAttribute("coachSelection") CoachSelection coachSelection,
 				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
@@ -309,7 +288,7 @@ public class TutorLandingPagesController {
 		}
 
 		
-		@RequestMapping(value = "/tutor/public/landing-relationship-coaches", method = RequestMethod.GET)
+		@RequestMapping(value = "/tutor/public/landing-homeschool-tutor", method = RequestMethod.GET)
 		public ModelAndView relationshipCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
 			log.debug("Received request to show relationship coaches");
@@ -317,15 +296,15 @@ public class TutorLandingPagesController {
 			ModelAndView mav = new ModelAndView ();
 			CoachSelection coachSelection = new CoachSelection();
 
-			mav.addObject("coachingcategoryname", Constants.RELATIONSHIP_COACHES_CATEGORY_NAME);
-			mav.addObject("coachingCategory", Constants.RELATIONSHIP_COACHES_CATEGORY_ID);
+			mav.addObject("coachingcategoryname", Constants.HOMESCHOOL_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.HOMESCHOOL_TUTOR_CATEGORY_ID);
 
 			mav.addObject("coachSelection", coachSelection);
-			mav.setViewName ("tutor/public/landingpages/relationship-coaches");
+			mav.setViewName ("tutor/public/landingpages/homeschool-tutor");
 			return mav;
 		}
 		
-		@RequestMapping(value = "/tutor/public/landing-relationship-coaches", method = RequestMethod.POST)
+		@RequestMapping(value = "/tutor/public/landing-homeschool-tutor", method = RequestMethod.POST)
 		public ModelAndView submitRelationshipForm( 
 				@ModelAttribute("coachSelection") CoachSelection coachSelection,
 				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
@@ -345,7 +324,7 @@ public class TutorLandingPagesController {
 		}
 		
 		
-		@RequestMapping(value = "/tutor/public/landing-corporate-coaches", method = RequestMethod.GET)
+		@RequestMapping(value = "/tutor/public/landing-language-tutor", method = RequestMethod.GET)
 		public ModelAndView corporateCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
 			log.debug("Received request to show corporate coaches");
@@ -353,15 +332,15 @@ public class TutorLandingPagesController {
 			ModelAndView mav = new ModelAndView ();
 			CoachSelection coachSelection = new CoachSelection();
 
-			mav.addObject("coachingcategoryname", Constants.CORPORATE_COACHES_CATEGORY_NAME);
-			mav.addObject("coachingCategory", Constants.CORPORATE_COACHES_CATEGORY_ID);
+			mav.addObject("coachingcategoryname", Constants.LANGUAGE_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.LANGUAGE_TUTOR_CATEGORY_ID);
 
 			mav.addObject("coachSelection", coachSelection);
-			mav.setViewName ("tutor/public/landingpages/corporate-coaches");
+			mav.setViewName ("tutor/public/landingpages/language-tutor");
 			return mav;
 		}
 		
-		@RequestMapping(value = "/tutor/public/landing-corporate-coaches", method = RequestMethod.POST)
+		@RequestMapping(value = "/tutor/public/landing-language-tutor", method = RequestMethod.POST)
 		public ModelAndView submitCorporateForm( 
 				@ModelAttribute("coachSelection") CoachSelection coachSelection,
 				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
@@ -381,7 +360,7 @@ public class TutorLandingPagesController {
 		}
 
 		
-		@RequestMapping(value = "/tutor/public/landing-general-personal-coaches", method = RequestMethod.GET)
+		@RequestMapping(value = "/tutor/public/landing-math-tutor", method = RequestMethod.GET)
 		public ModelAndView genralCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
 			log.debug("Received request to show corporate coaches");
@@ -389,16 +368,16 @@ public class TutorLandingPagesController {
 			ModelAndView mav = new ModelAndView ();
 			CoachSelection coachSelection = new CoachSelection();
 
-			mav.addObject("coachingcategoryname", "");
-			mav.addObject("coachingCategory", "");
+			mav.addObject("coachingcategoryname", Constants.LANGUAGE_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.LANGUAGE_TUTOR_CATEGORY_ID);
 
 			mav.addObject("coachSelection", coachSelection);
 			//mav.setViewName ("public/landingpages/general-personal-coaches-cs");
-			mav.setViewName ("tutor/public/landingpages/general-personal-coaches");
+			mav.setViewName ("tutor/public/landingpages/math-tutor");
 			return mav;
 		}
 		
-		@RequestMapping(value = "/tutor/public/landing-general-personal-coaches", method = RequestMethod.POST)
+		@RequestMapping(value = "/tutor/public/landing-math-tutor", method = RequestMethod.POST)
 		public ModelAndView submitGeneralForm( 
 				@ModelAttribute("coachSelection") CoachSelection coachSelection,
 				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
@@ -417,27 +396,159 @@ public class TutorLandingPagesController {
 			}	
 		}
 		
+		@RequestMapping(value = "/tutor/public/landing-science-tutor", method = RequestMethod.GET)
+		public ModelAndView scienceTutorreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
+
+			log.debug("Received request to show corporate coaches");
+			
+			ModelAndView mav = new ModelAndView ();
+			CoachSelection coachSelection = new CoachSelection();
+
+			mav.addObject("coachingcategoryname", Constants.SCIENCE_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.SCIENCE_TUTOR_CATEGORY_ID);
+
+			mav.addObject("coachSelection", coachSelection);
+			//mav.setViewName ("public/landingpages/general-personal-coaches-cs");
+			mav.setViewName ("tutor/public/landingpages/science-tutor");
+			return mav;
+		}
+		
+		@RequestMapping(value = "/tutor/public/landing-science-tutor", method = RequestMethod.POST)
+		public ModelAndView submitScienceTutorForm( 
+				@ModelAttribute("coachSelection") CoachSelection coachSelection,
+				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
+				Model model, HttpSession session) {
+			
+			try{
+					ModelAndView mav = new ModelAndView ();
+					setMavSession(mav, session, webRequest);
+					
+					return mav;
+			} catch (Exception e) {
+		        String msg = "The request failed. Error " + e;
+		        log.error(msg, e);
+				model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				return new ModelAndView("tutor/public/common/error/errorpage");
+			}	
+		}
+		
+		
+		@RequestMapping(value = "/tutor/public/landing-add-adhd-tutor", method = RequestMethod.GET)
+		public ModelAndView addAdhdTutorReturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
+
+			log.debug("Received request to show corporate coaches");
+			
+			ModelAndView mav = new ModelAndView ();
+			CoachSelection coachSelection = new CoachSelection();
+
+			mav.addObject("coachingcategoryname", Constants.SPECIAL_NEEDS_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.SPECIAL_NEEDS_TUTOR_CATEGORY_ID);
+
+			mav.addObject("coachSelection", coachSelection);
+			//mav.setViewName ("public/landingpages/general-personal-coaches-cs");
+			mav.setViewName ("tutor/public/landingpages/add-adhd-tutor");
+			return mav;
+		}
+		
+		@RequestMapping(value = "/tutor/public/landing-add-adhd-tutor", method = RequestMethod.POST)
+		public ModelAndView submitaddAdhdTutorTutorForm( 
+				@ModelAttribute("coachSelection") CoachSelection coachSelection,
+				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
+				Model model, HttpSession session) {
+			
+			try{
+					ModelAndView mav = new ModelAndView ();
+					setMavSession(mav, session, webRequest);
+					
+					return mav;
+			} catch (Exception e) {
+		        String msg = "The request failed. Error " + e;
+		        log.error(msg, e);
+				model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				return new ModelAndView("tutor/public/common/error/errorpage");
+			}	
+		}
+		
+		@RequestMapping(value = "/tutor/public/landing-sat-act-gmat-lsat-tutor", method = RequestMethod.GET)
+		public ModelAndView gmatLsatReturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
+
+			log.debug("Received request to show corporate coaches");
+			
+			ModelAndView mav = new ModelAndView ();
+			CoachSelection coachSelection = new CoachSelection();
+
+			mav.addObject("coachingcategoryname", Constants.TEST_PREP_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.TEST_PREP_TUTOR_CATEGORY_ID);
+
+			mav.addObject("coachSelection", coachSelection);
+			//mav.setViewName ("public/landingpages/general-personal-coaches-cs");
+			mav.setViewName ("tutor/public/landingpages/test-prep-tutor");
+			return mav;
+		}
+		
+		@RequestMapping(value = "/tutor/public/landing-sat-act-gmat-lsat-tutor", method = RequestMethod.POST)
+		public ModelAndView submitgmatLsatTutorForm( 
+				@ModelAttribute("coachSelection") CoachSelection coachSelection,
+				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
+				Model model, HttpSession session) {
+			
+			try{
+					ModelAndView mav = new ModelAndView ();
+					setMavSession(mav, session, webRequest);
+					
+					return mav;
+			} catch (Exception e) {
+		        String msg = "The request failed. Error " + e;
+		        log.error(msg, e);
+				model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				return new ModelAndView("tutor/public/common/error/errorpage");
+			}	
+		}
+		
+		@RequestMapping(value = "/tutor/public/landing-music-tutor", method = RequestMethod.GET)
+		public ModelAndView gmatmusicTutorReturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
+
+			log.debug("Received request to show corporate coaches");
+			
+			ModelAndView mav = new ModelAndView ();
+			CoachSelection coachSelection = new CoachSelection();
+
+			mav.addObject("coachingcategoryname", Constants.MUSIC_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.MUSIC_TUTOR_CATEGORY_ID);
+
+			mav.addObject("coachSelection", coachSelection);
+			mav.setViewName ("tutor/public/landingpages/music-tutor");
+			return mav;
+		}
+		
+		@RequestMapping(value = "/tutor/public/landing-music-tutor", method = RequestMethod.POST)
+		public ModelAndView submitmusicTutorForm( 
+				@ModelAttribute("coachSelection") CoachSelection coachSelection,
+				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
+				Model model, HttpSession session) {
+			
+			try{
+					ModelAndView mav = new ModelAndView ();
+					setMavSession(mav, session, webRequest);
+					
+					return mav;
+			} catch (Exception e) {
+		        String msg = "The request failed. Error " + e;
+		        log.error(msg, e);
+				model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				return new ModelAndView("tutor/public/common/error/errorpage");
+			}	
+		}
+		
+		
 		private void setMavSession(ModelAndView mav, HttpSession session, org.springframework.web.context.request.WebRequest webRequest) throws Exception{
 			
-			//Update with new URL 5/31/2015
-			//mav.setViewName ("redirect:userprofileList?coachingcategory=" + webRequest.getParameter("coachingCategory") );
-
-			/*
 			mav.setViewName ("redirect:coachprofileListAdvance/coachingCategory/" + webRequest.getParameter("coachingCategory") + 
-					"/coachingSubcategory/" + Constants.DEFAULT_URL_NUMBER + 
-					"/industryExperience/" + Constants.DEFAULT_URL_NUMBER +
-					"/companyExperience/"  + Constants.DEFAULT_URL_STRING + 
-					"/coachFirstName/"  + Constants.DEFAULT_URL_STRING + 
-					"/coachLastName/"  + Constants.DEFAULT_URL_STRING + 
-					"/city/"  + Constants.DEFAULT_URL_STRING + 
-					"/state/"  + Constants.DEFAULT_URL_STRING + 
-					"/pageNumber/1" 
-			);
-			*/
-			
-			mav.setViewName ("redirect:tutor/coachprofileListAdvance/coachingCategory/" + webRequest.getParameter("coachingCategory") + 
 					"/coachingSubcategory/" + webRequest.getParameter("coachingSubcategory") + 
 					"/industryExperience/" + webRequest.getParameter("industryExperience") +
+					"/gradelevel/" + webRequest.getParameter("gradelevel") + 
+					"/maxrate/" + webRequest.getParameter("maxrate") +
+					"/subject/"  + (webRequest.getParameter("subject")  == null || webRequest.getParameter("subject").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("subject") ) +
 					"/companyExperience/"  + (webRequest.getParameter("companyExperience") == null || webRequest.getParameter("companyExperience").trim().equals("") ?Constants.DEFAULT_URL_STRING:webRequest.getParameter("companyExperience") )+ 
 					"/coachFirstName/"  + (webRequest.getParameter("coachFirstName")  == null || webRequest.getParameter("coachFirstName").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("coachFirstName") ) + 
 					"/coachLastName/"  + (webRequest.getParameter("coachLastName")  == null || webRequest.getParameter("coachLastName").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("coachLastName") ) + 
@@ -445,21 +556,6 @@ public class TutorLandingPagesController {
 					"/state/"  + (webRequest.getParameter("state")  == null || webRequest.getParameter("state").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("state") ) + 
 					"/pageNumber/1" 
 			);
-
-			
-			
-			//mav.addObject("userProfiles", userProfiles);
-			/* REMOVING SINCE WE DO NOT WANT TO PASS THESE ATTRIBUTES IN THE URL
-			mav.addObject("coachingCategory", webRequest.getParameter("coachingCategory"));
-			mav.addObject("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
-			mav.addObject("industryExperience", webRequest.getParameter("industryExperience"));
-			mav.addObject("companyExperience", webRequest.getParameter("companyExperience"));
-			mav.addObject("coachFirstName", webRequest.getParameter("coachFirstName"));
-			mav.addObject("coachLastName", webRequest.getParameter("coachLastName"));
-			mav.addObject("state", webRequest.getParameter("state"));
-			mav.addObject("city", webRequest.getParameter("city"));
-			mav.addObject("coachingcategoryname", webRequest.getParameter("coachingcategoryname"));
-			*/
 			
 			session.setAttribute("coachingCategory", webRequest.getParameter("coachingCategory"));
 			session.setAttribute("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
@@ -469,11 +565,9 @@ public class TutorLandingPagesController {
 			session.setAttribute("coachLastName", webRequest.getParameter("coachLastName"));
 			session.setAttribute("state", webRequest.getParameter("state"));
 			session.setAttribute("city", webRequest.getParameter("city"));
-			session.setAttribute("coachingcategoryname", webRequest.getParameter("coachingcategoryname"));
-			
-		}
-		
-
-		
-		
+			session.setAttribute("coachingcategoryname", webRequest.getParameter("coachingcategoryname"));			
+			session.setAttribute("gradelevel", webRequest.getParameter("gradelevel"));
+			session.setAttribute("maxrate", webRequest.getParameter("maxrate"));
+			session.setAttribute("subject", webRequest.getParameter("subject"));
+		}		
 }

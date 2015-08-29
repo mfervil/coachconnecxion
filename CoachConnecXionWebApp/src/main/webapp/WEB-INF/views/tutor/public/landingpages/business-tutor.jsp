@@ -5,16 +5,17 @@
 <html lang="en">
 
 <head>
-	<title>Nutrition Coaches - Nutrition Health - CoachConnecxion</title>
+	<title>Business Coaches - Online business strategic advisors-CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our nutrition coaches can help educate you on what to eat in order to lead a healthy lifestyle or achieve a specific health or weight-related goal" />
+	<meta name="description" content="Business coaches on our site are not only successful coaches and professionals, but they also have genuine interests in assisting you succeed with your own business" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
 <%-- END Header No Side test --%>
 
 	<%@ include file="/WEB-INF/views/tutor/common/header_no_side_head.jsp" %>
+
 	
 <style type="text/css">
 table tr {
@@ -123,17 +124,17 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Online Nutrition Coach </h1></div>
+		<h1>Search For Business Tutors </h1></div>
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
 
 				<tr>
-					<td style="width: 150px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
+					<td style="width: 200px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
 						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
-						<table>  
+						<table>
 							<tr>
 								<td>
 								
@@ -153,37 +154,39 @@ text-align:center;
 									
 								</td>
 							</tr>
-							<%-- 
-								<title>nutrition health dieting - CoachConnecXion</title>
-							--%>
 							<tr><td>&nbsp;</td></tr>
+							<%--  Keywords
+								Online business strategic advisors - Business Coaches - CoachConnecXion							
+							 --%>
 							<tr>
 								<td>						
-									<h3 style="text-align: left;"><B>Coaches: </B><a   rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/tutor/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
+									<h3 style="text-align: left;"><B>Coaches: </B><a  rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/tutor/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
+									<br>
 								</td>
 							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/><br>
-								The stages of the coaching process used by our professionals to get you to the next level
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Consulting Coaching Therapy" height="200" width="600"/><br>
+										The stages of the coaching process used by professional advisors to get you to the next level <br>							
 							</td></tr>
-							<tr><td><br>	
-									<h2 style="text-align: left; text-decoration: underline;">What an Online Nutrition Coach Does For You:</h2>
-									<h3 style="text-align: left;">Nutrition coaches better known as dietitians or nutritionists are experts in food and nutrition. 
-																	The CoachConnecXion professionals will advise you on nutrition health dieting issues and provide guidance 
-																	on what to eat in order to lead a healthy lifestyle or achieve a specific health-related goal. 
-																	 </h3><br>
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">What an Online Business Coach Does For You, the Small Business Owner:</h2>
+									<h3 style="text-align: left;">Business owners seeking the expert guidance of Business Coaches typically look for coaches who not only are successful Business Coaches and professionals, but who also have a genuine interest in assisting them.  
+																	At CoachConnecXion we have a variety of business strategic advisors to help you meet your goal.</h3> <br>
 								</td>
 							</tr>
-							<tr><td>		
-									<h3 style="text-decoration: underline;">Nutrition coaches typically help with the following:</h3>
+							<tr><td>	
+									<h3 style="text-decoration: underline;">Your Business Coach:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Assess your health needs and diet</li>
-										<li style="text-align: left;">Counsel you on nutrition issues and healthy eating habits</li>
-										<li style="text-align: left;">Help you develop meal plans, taking both cost and your preferences into account</li>
-										<li style="text-align: left;">Evaluate the effects of meal plans and change the plans as needed</li>
-										<li style="text-align: left;">Discuss your diet and nutrition, and the relationship between good eating habits and preventing or managing specific diseases</li>
-										<li style="text-align: left;">Help you update your nutrition goals and document your progress</li>
+										<li style="text-align: left;">Helps you look at the big picture for your business and life</li>
+										<li style="text-align: left;">Guides you in enhancing your business skills and intellectual development.</li>
+										<li style="text-align: left;">Provides candid feedback to you about your strengths and weaknesses.</li>
+										<li style="text-align: left;">Helps you identify business opportunities.</li>
+										<li style="text-align: left;">Links you with professionals and organizations that can assist you in solving problems.</li>
+										<li style="text-align: left;">Helps you through the transitional periods in starting and growing a small enterprise.</li>
+										<li style="text-align: left;">Assists you in balancing your personal with your business life.</li>
+										<li style="text-align: left;">Listens to the problems you are facing, helps you set goals and develop a plan, and requires you to carry out and implement your plans.</li>
+										<li style="text-align: left;">Encourages and motivates you, building your sense of self-worth and confidence.</li>
 									</ul>
-									<br>Referenced from: www.bls.gov
+									<br>Referenced from: www.lightly.com
 								</td>	
 							</tr>
 						</table>		

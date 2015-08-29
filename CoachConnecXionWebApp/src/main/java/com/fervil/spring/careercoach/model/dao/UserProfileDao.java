@@ -27,6 +27,12 @@ public interface UserProfileDao {
     		String companyExperience, String coachFirstName,
     		String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception ;
 
+    public List<HashMap> findFilteredUserProfilesForTutors(int coachingCategory,
+    		int coachingSubcategory, int industryExperience,
+    		String companyExperience, String coachFirstName,
+    		String coachLastName, String city, String state, int pageSize, int pageNumber, String gradelevel, int maxrate, String subject) throws Exception ;
+    
+    
     public int findFilteredUserProfilesCount(int coachingCategory,
     		int coachingSubcategory, int industryExperience,
     		String companyExperience, String coachFirstName,

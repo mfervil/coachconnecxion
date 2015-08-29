@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Money and Finance Coaches-credit debt management services and tools-CoachConnecXion</title>
+	<title>Family Coaches with Parenting Tips Daily - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Financial coaches can provide you the expert advice and education you need to feel confident in you financial plans and debt management.  They can help you lay out a plan to improve your financial future or simply get out of debt" />
+	<meta name="description" content="Family coaches help families resolve everyday problems that occur within the family unit.  These coaches work with teens, young adults, parents and families to find out what the problems are, and what needs to be done to get your family back on the right track." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -124,13 +124,14 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Finance or Money Management Coaches </h1></div>
+		<h1>Search For English Tutors </h1></div>
+
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
 
 				<tr>
-					<td style="width: 150px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
+					<td style="width: 200px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
 						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
@@ -155,33 +156,35 @@ text-align:center;
 								</td>
 							</tr>
 							<tr><td>&nbsp;</td></tr>
-							<%--
-								<title>credit debt management services  - debt management tools - CoachConnecXion</title>
-							 --%>
+							
+							<%-- 
+							<title>Get Parenting Tips Daily from Family Coaches - CoachConnecXion</title>
+							--%>
+							
 							<tr>
 								<td>						
 									<h3 style="text-align: left;"><B>Coaches: </B><a  rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/tutor/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
 								</td>
-							</tr>		
+							</tr>
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_2.jpg" alt="Coaching Action Steps" height="200" width="600"/>
 										<br>Diagram showing the different steps and actions involved in the coaching process
 							</td></tr>
 							<tr><td><br>
-									<h2 style="text-align: left; text-decoration: underline;">How an Online Finance-Money coach can help:</h2>
-									<h3 style="text-align: left;">A finance coach can help you focus on reaching your financial goals, and work with you to lay-out the steps required to get to the end goal.  They can provide you the expert advice and education you need to feel confident in you financial or debt management plans. 
+									<h2 style="text-align: left; text-decoration: underline;">What's the purpose of a family coach?</h2>
+									<h3 style="text-align: left;">Family coaches help families resolve everyday problems that occur within the family unit.  These coaches work with teens, young adults, parents and families to find out what the problems are, and what needs to be done to get your family back on the right track.  
+																If required, your CoachConnecXion advisor may offer you parenting tips daily that you can utilize to help tackle your frequently occurring issues. 
 																</h3><br>
 								</td>
-							</tr>		
+							</tr>
 							<tr><td>		
-									<h3 style="text-decoration: underline;">Your Finance-Money Coach will:</h3>
+									<h3 style="text-decoration: underline;">Your Family Coach may help you with the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Help you set your financial goals</li>
-										<li style="text-align: left;">Work with you to develop an action plan</li>
-										<li style="text-align: left;">Help you identify resources, tools and services to make the process pain free</li>
-										<li style="text-align: left;">Monitor your progress and guide you in the right direction</li>
-										<li style="text-align: left;">Work with you to understand the impact of your decisions on your financial goals</li>
+										<li style="text-align: left;">Teen and young adult behavioral issues</li>
+										<li style="text-align: left;">Parenting skills</li>
+										<li style="text-align: left;">Resolving marital problems</li>
+										<li style="text-align: left;">Addressing work/Family life balance</li>
 									</ul>
-									<br>Referenced from: fyi.uwex.edu/
+									<br>Referenced from: www.academyforfamilycoachtraining.com, www.lifecoach-directory.org.uk
 								</td>	
 							</tr>
 						</table>		

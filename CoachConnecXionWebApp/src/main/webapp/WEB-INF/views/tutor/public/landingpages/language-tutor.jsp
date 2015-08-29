@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Family Coaches with Parenting Tips Daily - CoachConnecXion</title>
+	<title>Relationship Coaches-Couples Marriage Therapy and Online Advice</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Family coaches help families resolve everyday problems that occur within the family unit.  These coaches work with teens, young adults, parents and families to find out what the problems are, and what needs to be done to get your family back on the right track." />
+	<meta name="description" content="Relationship coaches can help you set-up your criteria for a successful relationship, and help you build the skills to enhance current and future relationships" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -124,14 +124,14 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Online Family Coaches </h1></div>
+		<h1>Search For Language Tutors</h1></div>
 
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
 
 				<tr>
-					<td style="width: 150px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
+					<td style="width: 200px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
 						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
@@ -156,35 +156,35 @@ text-align:center;
 								</td>
 							</tr>
 							<tr><td>&nbsp;</td></tr>
-							
-							<%-- 
-							<title>Get Parenting Tips Daily from Family Coaches - CoachConnecXion</title>
-							--%>
-							
+							<%--
+								<title>couples marriage therapy and online relationship advice coaches</title>
+							 --%>
 							<tr>
 								<td>						
-									<h3 style="text-align: left;"><B>Coaches: </B><a  rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/tutor/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
+									<h3 style="text-align: left;"><B>Coaches: </B><a   rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/tutor/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
 								</td>
 							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_2.jpg" alt="Coaching Action Steps" height="200" width="600"/>
-										<br>Diagram showing the different steps and actions involved in the coaching process
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/><br>
+								The stages of the coaching process used by our professionals to get you to the next level 							
 							</td></tr>
-							<tr><td><br>
-									<h2 style="text-align: left; text-decoration: underline;">What's the purpose of a family coach?</h2>
-									<h3 style="text-align: left;">Family coaches help families resolve everyday problems that occur within the family unit.  These coaches work with teens, young adults, parents and families to find out what the problems are, and what needs to be done to get your family back on the right track.  
-																If required, your CoachConnecXion advisor may offer you parenting tips daily that you can utilize to help tackle your frequently occurring issues. 
-																</h3><br>
+							<tr><td>	<br>	
+									<h2 style="text-align: left; text-decoration: underline;">What an Online Relationship Coach Does For You:</h2>
+									<h3 style="text-align: left;">A relationship coach will help you identify your ideal relationships in every area of life, bring these ideal relationships into your life, set boundaries 
+																	where your current relationships do not meet your criteria and build skills to enhance current and future relationships. 
+																	The coaches at CoachConnecXion can offer both couples marriage therapy or online relationship advice to help you through your issues. 
+																	</h3><br>
 								</td>
 							</tr>
 							<tr><td>		
-									<h3 style="text-decoration: underline;">Your Family Coach may help you with the following:</h3>
+									<h3 style="text-decoration: underline;">Your Relationship Coach will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Teen and young adult behavioral issues</li>
-										<li style="text-align: left;">Parenting skills</li>
-										<li style="text-align: left;">Resolving marital problems</li>
-										<li style="text-align: left;">Addressing work/Family life balance</li>
+										<li style="text-align: left;">help you question your assumptions</li>
+										<li style="text-align: left;">Work with you to address your patterns and blocks</li>
+										<li style="text-align: left;">Encourage you to cultivate clearer, healthier parameters for both one-on-one and group relationships</li>
+										<li style="text-align: left;">Discover new mechanisms for listening and expressing yourself</li>
+										<li style="text-align: left;">Help you become consciously aware of how you "show up" and, ultimately, work toward greater fulfillment and personal transformation</li>
 									</ul>
-									<br>Referenced from: www.academyforfamilycoachtraining.com, www.lifecoach-directory.org.uk
+									<br>Referenced from: www.worldcoachinstitute.com, www.ipeccoaching.com
 								</td>	
 							</tr>
 						</table>		

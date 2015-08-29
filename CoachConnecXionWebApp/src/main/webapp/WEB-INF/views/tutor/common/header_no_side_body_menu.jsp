@@ -4,16 +4,21 @@
 					<li><a href="#">FIND A TUTOR</a>
 						<ul>	
 							<li style="text-decoration: underline;">ADVANCED SEARCHES</li>
-							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-general-personal-coaches" style="text-decoration: underline;">ALL COACHES</a></li>
-							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-business-coaches">BUSINESS COACHES</a></li>
-							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-career-coaches">CAREER COACHES</a></li>
-							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-corporate-coaches">CORPORATE COACHES</a></li>
-							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-family-coaches">FAMILY COACHES</a></li>
-							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-finance-money-coaches">FINANCE / MONEY COACHES</a></li>
-							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-fitness-coaches">FITNESS COACHES</a></li>
-							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-nutrition-coaches">NUTRITION COACHES</a></li>
-							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-life-coaches">LIFE COACHES</a></li>
-							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-relationship-coaches">RELATIONSHIP COACHES</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-general-personal-tutors" style="text-decoration: underline;">ALL SUBJECTS</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-art-tutor">ART</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-business-tutor">BUSINESS</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-computer-business-tutor">COMPUTER BS. (WORD, EXCEL, PPT, ETC..)</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-computer-programming-tutor">COMPUTER DEV. (JAVA, C#, .NET, ASP/JSP/HTML, NETWORK, ETC...)</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-communication-presentation-tutor">COMMUNICATION/PRESENTATION</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-english-tutor">ENGLISH</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-history-tutor">HISTORY</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-homeschool-tutor">HOMESCHOOL</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-language-tutor">LANGUAGE</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-math-tutor">MATH</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-music-tutor">MUSIC</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-science-tutor">SCIENCE</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-add-adhd-tutor">SPECIAL NEEDS (ADD/ADHD/ETC...)</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-sat-act-gmat-lsat-tutor">TEST PREPARATION (SAT/ACT/GMAT/LSAT/ETC...)</a></li>
 						</ul>
 					</li>
 

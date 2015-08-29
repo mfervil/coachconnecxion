@@ -5,16 +5,16 @@
 <html lang="en">
 
 <head>
-	<title>Corporate Coaches-Team Building Games and Questions-CoachConnecXion</title>
+	<title>Life Coaches - Self Help Motivation - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our corporate coaches will help you address some of the most pressing challenges facing your organization today.  Some of the organizational challenges they may help you with include team disfunction, stagnation, and status quo thinking" />
+	<meta name="description" content="The role of Our life coaches is to provide the drive and guidance you need to improve your self.  Our our life coaches may be able to help you with your relationship, your career, and your overall emotional health." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
 <%-- END Header No Side test --%>
 
-	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
+	<%@ include file="/WEB-INF/views/tutor/common/header_no_side_head.jsp" %>
 
 	
 <style type="text/css">
@@ -118,28 +118,27 @@ text-align:center;
 <%-- BEGIN BODY No Side test --%>
 <%-- END BODY No Side test --%>
 
-	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
+	<%@ include file="/WEB-INF/views/tutor/common/header_no_side_body.jsp" %>
 
 	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a>
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Corporate Coaches or Team Coaches</h1></div>
-		
+		<h1>Search For Special Needs (ADD / ADHD) Tutors </h1></div>
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
 
 				<tr>
-					<td style="width: 150px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
-						<%@ include file="/WEB-INF/views/public/landingpages/left-nav-coaches.jsp" %>
+					<td style="width: 200px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
+						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
 						<table>
 							<tr>
 								<td>
 								
-									<%@ include file="/WEB-INF/views/public/landingpages/searchSelection.jsp" %>
+									<%@ include file="/WEB-INF/views/tutor/public/landingpages/searchSelection.jsp" %>
 									
 									<%-- 
 									<% session.setAttribute("categoryName", "Business Coach"); %>
@@ -147,7 +146,7 @@ text-align:center;
 									--%>
 									
 									<%--
-									<jsp: include page="/WEB-INF/views/public/landingpages/searchSelection.jsp" flush="true">
+									<jsp: include page="/WEB-INF/views/tutor/public/landingpages/searchSelection.jsp" flush="true">
 									    <jsp:param name="category" value="Business Coaches"/>
 									</jsp: include>									
 									 --%>
@@ -157,33 +156,35 @@ text-align:center;
 							</tr>
 							<tr><td>&nbsp;</td></tr>
 							<%--
-								<title>Corporate Team Building Games - Team Building Questions - CoachConnecXion</title>
+								<title>self help motivation - CoachConnecXion</title>
 							 --%>
 							<tr>
-								<td>						
-									<h3 style="text-align: left;"><B>Coaches: </B><a  rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3><br>
+								<td>
+									<h3 style="text-align: left;"><B>Coaches: </B><a   rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/tutor/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
 								</td>
 							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/hbr_consulting_therapy.png" alt="Consulting Coaching Therapy" height="200" width="600"/><br>
-								Chart from Harvard Business Review showing the relationship between consulting, therapy and the coaching process							
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/> <br>
+								The stages of the coaching process used by our professionals to get you to the next level 							
 							</td></tr>
-							<tr><td><br>
-									<h2 style="text-align: left; text-decoration: underline;">How an online corporate coach can help you:</h2>
-									<h3 style="text-align: left;">Corporate coaches are trained to see opportunities where others see problems.  They provide you with the tactical applications you need to address some of the most pressing challenges facing your organization today.  Some of the challenges they may help you with include, team dysfunction, stagnation, and status quo thinking. 
-																At CoachConnecXion, our corporate coaches use a variety of techniques including corporate team building games, and team building questions to see where the issues are and help drive solutions to the identified problem areas.
-																 </h3><br>
+							<tr><td>	<br>	
+									<h2 style="text-align: left; text-decoration: underline;">What an Online Life Coach from CoachConnecXion does:</h2>
+									<h3 style="text-align: left;">These coaches provide the drive and guidance individuals need to improve their careers, relationships, and overall emotional state. 
+																	</h3><br>
 								</td>
 							</tr>
 							<tr><td>		
-									<h3 style="text-decoration: underline;">Corporate coaching focuses on:</h3>
+									<h3 style="text-decoration: underline;">A Life coach may be helpful for the following reasons:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Managers</li>
-										<li style="text-align: left;">HR personnel</li>
-										<li style="text-align: left;">Administrative staff</li>
-										<li style="text-align: left;">High potential employees</li>
-										<li style="text-align: left;">Team dynamics</li>
+										<li style="text-align: left;">Need some guidance on moving forward in your career</li>
+										<li style="text-align: left;">Want to learn how to take advantage of your strengths and talents</li>
+										<li style="text-align: left;">Don't know what to do about a major life decision, such as a move or promotion</li>
+										<li style="text-align: left;">Don't have an acceptable work-life balance</li>
+										<li style="text-align: left;">Have a lot of stress</li>
+										<li style="text-align: left;">Need help recognizing your skills and achieving your dreams</li>
+										<li style="text-align: left;">Having trouble moving past challenges that stand in the way of your goals</li>
+										<li style="text-align: left;">Provide self help motivation tools and techniques to help you along the way to your goal</li>
 									</ul>
-									<br>Referenced from: www.ipeccoaching.com
+									<br>Referenced from: www.webmd.com
 								</td>	
 							</tr>
 						</table>		
@@ -191,4 +192,4 @@ text-align:center;
 				</tr>
 	</table>
 </section>
-<%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	
+<%@ include file="/WEB-INF/views/tutor/common/footer_no_side.jsp" %>	

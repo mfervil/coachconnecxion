@@ -42,6 +42,13 @@ public class BasicUserProfileManager implements UserProfileManager {
 	public List<HashMap> getUserProfiles(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception {
         return userProfileDao.findFilteredUserProfiles(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
     }
+
+    @NotNull
+    @Override
+	public List<HashMap> getUserProfilesForTutors(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber, String gradelevel, int maxrate, String subject) throws Exception {
+        return userProfileDao.findFilteredUserProfilesForTutors(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber, gradelevel, maxrate, subject);
+    }
+    
     
     @NotNull
     @Override

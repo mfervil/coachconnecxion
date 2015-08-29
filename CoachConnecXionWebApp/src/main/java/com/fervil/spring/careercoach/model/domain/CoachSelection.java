@@ -12,6 +12,25 @@ public class CoachSelection {
 	private String city;
 	private String state;
 
+/////////    Added for Tutors    ///////////	
+	private String gradelevel;
+	private int maxrate;
+	private String subject;
+	
+	public String getGradelevel() {
+		return gradelevel;
+	}
+	public void setGradelevel(String gradelevel) {
+		this.gradelevel = gradelevel;
+	}
+	public int getMaxrate() {
+		return maxrate;
+	}
+	public void setMaxrate(int maxrate) {
+		this.maxrate = maxrate;
+	}
+///////////////////////////////////////////
+	
 	public String getState() {
 		return state;
 	}
@@ -66,5 +85,11 @@ public class CoachSelection {
 	}
 	public void setCoachingcategoryname(String coachingcategoryname) {
 		this.coachingcategoryname = coachingcategoryname;
+	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
 }

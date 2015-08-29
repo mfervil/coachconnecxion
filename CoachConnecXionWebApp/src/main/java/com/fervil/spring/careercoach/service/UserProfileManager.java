@@ -26,6 +26,12 @@ public interface UserProfileManager  extends Serializable {
 			int coachingSubcategory, int industryExperience, 
 			String companyExperience, String coachFirstName, 
 			String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception;
+
+    @NotNull
+	public List<HashMap> getUserProfilesForTutors(int coachingCategory, 
+			int coachingSubcategory, int industryExperience, 
+			String companyExperience, String coachFirstName, 
+			String coachLastName, String city, String state, int pageSize, int pageNumber, String gradelevel, int maxrate, String subject) throws Exception;
     
     public void storeUserProfile(UserProfile userProfile) throws Exception;
     public void deleteUserProfile(String id) throws Exception;

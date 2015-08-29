@@ -1,130 +1,56 @@
 		<form:form method="post" commandName="coachSelection" >
+			<form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/>
+			<form:hidden path="coachingcategoryname" id="coachingcategoryname" value="${coachingcategoryname}"/>
+
 			  <table style="border-spacing:2px; border-collapse:separate;">
 			  <tbody >
 			    <tr>
 			    	<td  class="leftalign" ><br><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /><br>
 					${coachingcategoryname}</td>
-					<%-- 
-					<% String catId = (String)session.getAttribute("categoryId"); %>
-					<% String catName = (String)session.getAttribute("categoryName"); %>
-					--%>
-					<form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/>
-					<form:hidden path="coachingcategoryname" id="coachingcategoryname" value="${coachingcategoryname}"/>
-					
-			      <td class="leftalign" ><br><label>Industry: </label><form:errors path="industryExperience" cssClass="error" /> <br>
+
+				  <td class="leftalign" ><br><label>Subject (Ex. math, chemistry, anatomy): </label><form:errors path="subject" cssClass="error" /> <br>
+				  <form:input size="35" path="subject" /></td>
+
+				</tr>
+				<tr>
+			      <td class="leftalign" ><br><label>Max Hourly Rate: </label><form:errors path="maxrate" cssClass="error" /><br> 
+			        <form:select size="1" path="maxrate" >
+			          	<option selected  value="-1">All</option>
+						<option value="10">&lt; 10 </option>
+						<option value="20">&lt; 20 </option>
+						<option value="30">&lt; 30 </option>
+						<option value="40">&lt; 40 </option>
+						<option value="50">&lt; 50 </option>
+						<option value="60">&lt; 60 </option>
+						<option value="70">&lt; 70 </option>
+						<option value="80">&lt; 80 </option>
+						<option value="90">&lt; 90 </option>
+						<option value="100">&lt; 100 </option>
+						<option value="110">&lt; 110 </option>
+						<option value="120">&lt; 120 </option>
+						<option value="130">&lt; 130 </option>
+						<option value="140">&lt; 140 </option>
+						<option value="150">&lt; 150 </option>
+						<option value="160">&lt; 160 </option>
+						<option value="170">&lt; 170 </option>
+						<option value="180">&lt; 180 </option>
+						<option value="190">&lt; 190 </option>
+						<option value="200">&lt; 200 </option>
+					</form:select>
+			      </td>
+				
+			      <td class="leftalign" ><br><label>Grade Level: </label><form:errors path="gradelevel" cssClass="error" /> <br>
 			      <!-- Find complete list from job categories in career builder -->
-			        <form:select size="1" path="industryExperience" >
-			          	<option selected  value="-1">All Industries</option>
-						<option value="1">Accounting - Finance</option>
-						<option value="2">Advertising</option>
-						<option value="3">Agriculture</option>
-						<option value="4">Airline - Aviation</option>
-						<option value="5">Appliance &amp; Electronics</option>
-						<option value="6">Architecture - Building</option>
-						<option value="7">Art - Photography - Journalism</option>
-						<option value="8">Automotive - Motor Vehicles - Parts</option>
-						<option value="9">Banking - Financial Services</option>
-						<option value="10">Beauty / Wellness / Grooming</option>
-						<option value="11">Biotechnology</option>
-						<option value="12">Broadcasting - Radio - TV</option>
-						<option value="13">Building Materials</option>
-						<option value="14">Call Center / SSO / BPO</option>
-						<option value="15">Chemical</option>
-						<option value="16">Coffee Shop</option>
-						<option value="17">Computer Hardware</option>
-						<option value="18">Computer Software</option>
-						<option value="19">Construction</option>
-						<option value="20">Consulting</option>
-						<option value="21">Consumer Products</option>
-						<option value="22">Cosmetics &amp; Beauty</option>
-						<option value="23">Credit - Loan - Collections</option>
-						<option value="24">Defense - Aerospace</option>
-						<option value="25">Department Store</option>
-						<option value="26">Education - Teaching - Administration</option>
-						<option value="27">Electronics</option>
-						<option value="28">Employment - Recruiting - Staffing</option>
-						<option value="29">Energy - Utilities - Gas - Electric</option>
-						<option value="30">Engineering - Machinery</option>
-						<option value="31">Engineering - Precision</option>
-						<option value="32">Engineering - Services</option>
-						<option value="33">Entertainment</option>
-						<option value="34">Environmental</option>
-						<option value="35">Exercise - Fitness</option>
-						<option value="36">Exhibitions / Event Management / MICE</option>
-						<option value="37">Eye Care</option>
-						<option value="38">Fashion - Apparel - Textile</option>
-						<option value="39">Food</option>
-						<option value="40">Full Service Restaurant</option>
-						<option value="41">Funeral - Cemetery</option>
-						<option value="42">Furniture</option>
-						<option value="43">Gas / Convenience Store</option>
-						<option value="44">Government - Civil Service</option>
-						<option value="45">Grocery &amp; Pharmacy</option>
-						<option value="46">Hardware / Home Improvement</option>
-						<option value="47">Healthcare - Health Services</option>
-						<option value="48">Home D&#233;cor and Kitchen</option>
-						<option value="49">Homebuilding</option>
-						<option value="50">Hospitality</option>
-						<option value="51">Hotel - Resort</option>
-						<option value="52">HVAC</option>
-						<option value="53">Import - Export</option>
-						<option value="54">Industrial</option>
-						<option value="55">Insurance</option>
-						<option value="56">Internet - ECommerce</option>
-						<option value="57">Jewelry</option>
-						<option value="58">Landscaping</option>
-						<option value="59">Law Enforcement</option>
-						<option value="60">Legal</option>
-						<option value="61">Library Science</option>
-						<option value="62">Managed Care</option>
-						<option value="63">Manufacturing</option>
-						<option value="64">Marine / Maritime</option>
-						<option value="65">Maritime - Offshore &amp; Marine Engineering</option>
-						<option value="66">Maritime - Port</option>
-						<option value="67">Maritime - Shipping</option>
-						<option value="68">Mass Merchandiser</option>
-						<option value="69">Medical Equipment</option>
-						<option value="70">Merchandising</option>
-						<option value="71">Military</option>
-						<option value="72">Mining / Drilling / Resources</option>
-						<option value="73">Mortgage</option>
-						<option value="74">Newspaper</option>
-						<option value="75">Not for Profit - Charitable</option>
-						<option value="76">Office Supplies - Equipment</option>
-						<option value="77">Oil Refining - Petroleum - Drilling</option>
-						<option value="78">Other</option>
-						<option value="79">Other Great Industries</option>
-						<option value="80">Packaging</option>
-						<option value="81">Pet Store</option>
-						<option value="82">Pharmaceutical</option>
-						<option value="83">Polymer / Plastic / Rubber</option>
-						<option value="84">Printing - Publishing</option>
-						<option value="85">Public Relations</option>
-						<option value="86">Quick Service or Fast Food Restaurant</option>
-						<option value="87">Real Estate - Property Mgt</option>
-						<option value="88">Recreation</option>
-						<option value="89">Repair / Maintenance Services</option>
-						<option value="90">Research &amp; Development</option>
-						<option value="91">Restaurant</option>
-						<option value="92">Retail</option>
-						<option value="93">Retail Bank</option>
-						<option value="94">Sales - Marketing</option>
-						<option value="95">Science &amp; Technology</option>
-						<option value="96">Securities</option>
-						<option value="97">Security</option>
-						<option value="98">Semiconductor</option>
-						<option value="99">Services - Corporate B2B</option>
-						<option value="100">Social Services</option>
-						<option value="101">Sporting Goods</option>
-						<option value="102">Telecommunications</option>
-						<option value="103">Training</option>
-						<option value="104">Transportation</option>
-						<option value="105">Travel</option>
-						<option value="106">Wireless</option>
-						<option value="107">Wood / Fibre / Paper</option>		
+			        <form:select size="1" path="gradelevel" >
+			          	<option selected  value="-1">All Grades</option>
+						<option value="a">Elementary (K - 6)</option>
+						<option value="b">Junior High (6 - 8)</option>
+						<option value="c">High School (8 - 12)</option>
+						<option value="d">College</option>
+						<option value="e">Professional</option>
+						<option value="f">Leisure</option>
 					</form:select>
 			     </td>
-			     
 				</tr>
 				<tr>		
 
@@ -205,8 +131,6 @@
 								${userProfile.state =='YT' ? "<option value='YT' selected>YUKEN</option>" :  "<option value='YT' >YUKEN</option>"}
 						</form:select>					
 					</td>
-				  
-				  
 			    </tr>
 			    
 				<tr>
@@ -216,22 +140,16 @@
 				        <form:input size="35" path="coachLastName" /></td>
 				</tr>
 						
-				<%--
-				<tr>
-				  <td class="rightalign" >Company Experience: <form:errors path="companyExperience" cssClass="error" /> </td>
-				  <td class="leftalign"><form:input size="35" path="companyExperience" /></td>
-				</tr>
-				 --%>
-
 				<tr style="background-color: white">
 					<td colspan="4" style="text-align: left;">
 						<br>	<input type="submit" class="input-button" value="Start Your Search" />
 					</td>
 				</tr>
+				
 			  </tbody>
 			  </table>
 			   	
-			
 		<form:hidden path="coachingSubcategory" id="coachingSubcategory" value="-1"/>
+		<form:hidden path="industryExperience" id="industryExperience" value="-1"/>
 		</form:form>
 

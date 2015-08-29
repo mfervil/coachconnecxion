@@ -116,6 +116,7 @@ public class HibernateUserProfileDao implements UserProfileDao {
 		return sql;
 		
 	}
+	
 	public String getCriteria(int coachingCategory,
 			int coachingSubcategory, int industryExperience,
 			String companyExperience, String coachFirstName,
@@ -299,6 +300,69 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			throw e;
 		}
 	}
+
+	public List findFilteredUserProfilesForTutors(int coachingCategory,
+			int coachingSubcategory, int industryExperience,
+			String companyExperience, String coachFirstName,
+			String coachLastName, String city, String state, int pageSize, int pageNumber, String gradelevel, int maxrate, String subject)  throws Exception {
+
+		try {
+			// session.beginTransaction();
+			
+		    log.info("Coaching Category: " + coachingCategory);
+		    log.info("Coaching Sub Category: " + coachingSubcategory);
+
+			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
+					UserProfile.class);
+
+			String  CRITERIA = getCriteria(coachingCategory,
+					coachingSubcategory, industryExperience,
+					companyExperience, coachFirstName,
+					coachLastName, city, state, pageSize, pageNumber);
+
+			if (gradelevel != null  && !gradelevel.equals("") && !gradelevel.equals("-1") ) {
+				CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+				CRITERIA = CRITERIA + " gradelevel like '%" + gradelevel + "%'";				
+			}
+
+			if (maxrate > 0) {
+				CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+				CRITERIA = CRITERIA + " rate <= " + maxrate ;				
+			}
+			
+			if (subject != null  && !subject.equals("")  && !subject.equals("null")  ) {
+				CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+				CRITERIA = CRITERIA + " UPPER(service_description) like '%" + subject.toUpperCase().trim() + "%'";				
+			}
+
+			
+			String sql = getInitialSQL() + " " + CRITERIA;
+			
+			log.info(" findFilteredUserProfilesForTutors:::: " + sql);
+
+			Query query = sessionFactory.getCurrentSession().createSQLQuery(sql); 
+		    log.info("1 findFilteredUserProfilesForTutors::Number of Coaches found: " + query.list().size());
+			
+	        //query.setFirstResult(((pageNumber - 1) * pageSize) + 1 );
+
+	        query.setFirstResult(((pageNumber - 1) * pageSize) );
+	        log.info("2 findFilteredUserProfilesForTutors::Number of Coaches found: " + query.list().size());
+	        query.setMaxResults(pageSize);
+			
+		    log.info("3 findFilteredUserProfilesForTutors::Number of Coaches found: " + query.list().size());
+			query.setResultTransformer(AliasToEntityMapResultTransformer.INSTANCE);
+		    log.info("4 findFilteredUserProfiles::Number of Coaches found: " + query.list().size());
+			List list = query.list();
+		    log.info("5 findFilteredUserProfilesForTutors::Number of Coaches found: " + query.list().size());
+		    
+			return ((List<HashMap>) list);
+
+		} catch (Exception e) {
+			// tx.rollback();
+			throw e;
+		}
+	}
+	
 	
 	public void delete(String id)  throws Exception {
 		Session session = sessionFactory.openSession();

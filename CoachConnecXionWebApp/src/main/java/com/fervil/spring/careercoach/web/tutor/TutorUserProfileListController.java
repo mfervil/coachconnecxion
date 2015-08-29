@@ -132,11 +132,14 @@ public class TutorUserProfileListController  {
 	}
 
 	//List coaches for advanced searches where all criteria may be passed, and some may be left blank..... 
-	@RequestMapping(value = "/tutor/public/coachprofileListAdvance/coachingCategory/{coachingCategory}/coachingSubcategory/{coachingSubcategory}/industryExperience/{industryExperience}/companyExperience/{companyExperience}/coachFirstName/{coachFirstName}/coachLastName/{coachLastName}/city/{city}/state/{state}/pageNumber/{pageNumber}", method = RequestMethod.GET)
+	@RequestMapping(value = "/tutor/public/coachprofileListAdvance/coachingCategory/{coachingCategory}/coachingSubcategory/{coachingSubcategory}/industryExperience/{industryExperience}/gradelevel/{gradelevel}/maxrate/{maxrate}/subject/{subject}/companyExperience/{companyExperience}/coachFirstName/{coachFirstName}/coachLastName/{coachLastName}/city/{city}/state/{state}/pageNumber/{pageNumber}", method = RequestMethod.GET)
 	public ModelAndView listCoachProfiles(ModelMap model, org.springframework.web.context.request.WebRequest webRequest,
 				@PathVariable("coachingCategory") int coachingCategory, 
 				@PathVariable("coachingSubcategory") int coachingSubcategory, 
 				@PathVariable("industryExperience") int industryExperience, 
+				@PathVariable("gradelevel") String gradelevel, 
+				@PathVariable("maxrate") int maxrate, 
+				@PathVariable("subject") String subject, 
 				@PathVariable("companyExperience") String companyExperience, 
 				@PathVariable("coachFirstName") String coachFirstName, 
 				@PathVariable("coachLastName") String coachLastName, 
@@ -149,13 +152,6 @@ public class TutorUserProfileListController  {
 
 		try{
 
-			/*
-			int coachingCategory = webRequest.getParameter("coachingCategory") == null?-1:Integer.valueOf(webRequest.getParameter("coachingCategory"));
-			int coachingSubcategory = webRequest.getParameter("coachingSubcategory") == null?-1:Integer.valueOf(webRequest.getParameter("coachingSubcategory"));
-			int industryExperience = webRequest.getParameter("industryExperience") == null?-1:Integer.valueOf(webRequest.getParameter("industryExperience"));
-			int pageNumber = webRequest.getParameter("pageNumber") == null?1:Integer.valueOf(webRequest.getParameter("pageNumber"));
-			*/
-			
 			String tmpcompanyExperience = (companyExperience == null || companyExperience.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":companyExperience;
 			String tmpcoachFirstName = (coachFirstName == null || coachFirstName.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":coachFirstName;
 			String tmpcoachLastName = (coachLastName == null || coachLastName.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":coachLastName;
@@ -164,14 +160,18 @@ public class TutorUserProfileListController  {
 			
 			pageNumber = (pageNumber < 1 )?1:pageNumber;
 			
-			List<HashMap> userProfiles = userProfileManager.getUserProfiles(
+			List<HashMap> userProfiles = userProfileManager.getUserProfilesForTutors(
 					coachingCategory, coachingSubcategory, industryExperience,tmpcompanyExperience, 
-					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber);
+					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber, gradelevel, maxrate, subject);
 
+			//Remember to add this change of code to the coaching category
+			int userprofilecount = userProfiles.size();
+			
+			/*
 			int userprofilecount = userProfileManager.findFilteredUserProfilesCount(
 					coachingCategory, coachingSubcategory, industryExperience,tmpcompanyExperience, 
 					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber);
-			
+			*/
 			
 			ModelAndView mav = new ModelAndView ();
 			mav.setViewName ("tutor/public/userprofile/userprofileList");
@@ -195,7 +195,7 @@ public class TutorUserProfileListController  {
 			mav.addObject("pagesize", pageSize);
 			mav.addObject("totalpages", totalNumPagestoDisplay);
 			
-			log.info("Number of coaches returned to UserProfileListController: " + userProfiles.size());
+			log.info("Number of tutors returned to UserProfileListController: " + userProfiles.size());
 			
 			return mav;
 		} catch (Exception e) {

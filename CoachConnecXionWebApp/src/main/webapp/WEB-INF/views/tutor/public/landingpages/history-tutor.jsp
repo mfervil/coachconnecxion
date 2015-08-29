@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Corporate Coaches-Team Building Games and Questions-CoachConnecXion</title>
+	<title>Money and Finance Coaches-credit debt management services and tools-CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our corporate coaches will help you address some of the most pressing challenges facing your organization today.  Some of the organizational challenges they may help you with include team disfunction, stagnation, and status quo thinking" />
+	<meta name="description" content="Financial coaches can provide you the expert advice and education you need to feel confident in you financial plans and debt management.  They can help you lay out a plan to improve your financial future or simply get out of debt" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -124,14 +124,13 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Online Corporate Coaches or Team Coaches</h1></div>
-		
+		<h1>Search For History Tutors </h1></div>
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
 
 				<tr>
-					<td style="width: 150px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
+					<td style="width: 200px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
 						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
@@ -157,33 +156,32 @@ text-align:center;
 							</tr>
 							<tr><td>&nbsp;</td></tr>
 							<%--
-								<title>Corporate Team Building Games - Team Building Questions - CoachConnecXion</title>
+								<title>credit debt management services  - debt management tools - CoachConnecXion</title>
 							 --%>
 							<tr>
 								<td>						
-									<h3 style="text-align: left;"><B>Coaches: </B><a  rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/tutor/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3><br>
+									<h3 style="text-align: left;"><B>Coaches: </B><a  rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/tutor/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
 								</td>
-							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/hbr_consulting_therapy.png" alt="Consulting Coaching Therapy" height="200" width="600"/><br>
-								Chart from Harvard Business Review showing the relationship between consulting, therapy and the coaching process							
+							</tr>		
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_2.jpg" alt="Coaching Action Steps" height="200" width="600"/>
+										<br>Diagram showing the different steps and actions involved in the coaching process
 							</td></tr>
 							<tr><td><br>
-									<h2 style="text-align: left; text-decoration: underline;">How an online corporate coach can help you:</h2>
-									<h3 style="text-align: left;">Corporate coaches are trained to see opportunities where others see problems.  They provide you with the tactical applications you need to address some of the most pressing challenges facing your organization today.  Some of the challenges they may help you with include, team dysfunction, stagnation, and status quo thinking. 
-																At CoachConnecXion, our corporate coaches use a variety of techniques including corporate team building games, and team building questions to see where the issues are and help drive solutions to the identified problem areas.
-																 </h3><br>
+									<h2 style="text-align: left; text-decoration: underline;">How an Online Finance-Money coach can help:</h2>
+									<h3 style="text-align: left;">A finance coach can help you focus on reaching your financial goals, and work with you to lay-out the steps required to get to the end goal.  They can provide you the expert advice and education you need to feel confident in you financial or debt management plans. 
+																</h3><br>
 								</td>
-							</tr>
+							</tr>		
 							<tr><td>		
-									<h3 style="text-decoration: underline;">Corporate coaching focuses on:</h3>
+									<h3 style="text-decoration: underline;">Your Finance-Money Coach will:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Managers</li>
-										<li style="text-align: left;">HR personnel</li>
-										<li style="text-align: left;">Administrative staff</li>
-										<li style="text-align: left;">High potential employees</li>
-										<li style="text-align: left;">Team dynamics</li>
+										<li style="text-align: left;">Help you set your financial goals</li>
+										<li style="text-align: left;">Work with you to develop an action plan</li>
+										<li style="text-align: left;">Help you identify resources, tools and services to make the process pain free</li>
+										<li style="text-align: left;">Monitor your progress and guide you in the right direction</li>
+										<li style="text-align: left;">Work with you to understand the impact of your decisions on your financial goals</li>
 									</ul>
-									<br>Referenced from: www.ipeccoaching.com
+									<br>Referenced from: fyi.uwex.edu/
 								</td>	
 							</tr>
 						</table>		

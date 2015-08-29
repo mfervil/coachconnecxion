@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Relationship Coaches-Couples Marriage Therapy and Online Advice</title>
+	<title>Life Coaches - Self Help Motivation - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Relationship coaches can help you set-up your criteria for a successful relationship, and help you build the skills to enhance current and future relationships" />
+	<meta name="description" content="The role of Our life coaches is to provide the drive and guidance you need to improve your self.  Our our life coaches may be able to help you with your relationship, your career, and your overall emotional health." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -124,14 +124,13 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Online Relationship Coaches </h1></div>
-
+		<h1>Search For Math Tutors </h1></div>
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
 
 				<tr>
-					<td style="width: 150px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
+					<td style="width: 200px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
 						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
@@ -157,34 +156,35 @@ text-align:center;
 							</tr>
 							<tr><td>&nbsp;</td></tr>
 							<%--
-								<title>couples marriage therapy and online relationship advice coaches</title>
+								<title>self help motivation - CoachConnecXion</title>
 							 --%>
 							<tr>
-								<td>						
+								<td>
 									<h3 style="text-align: left;"><B>Coaches: </B><a   rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/tutor/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
 								</td>
 							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/><br>
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/> <br>
 								The stages of the coaching process used by our professionals to get you to the next level 							
 							</td></tr>
 							<tr><td>	<br>	
-									<h2 style="text-align: left; text-decoration: underline;">What an Online Relationship Coach Does For You:</h2>
-									<h3 style="text-align: left;">A relationship coach will help you identify your ideal relationships in every area of life, bring these ideal relationships into your life, set boundaries 
-																	where your current relationships do not meet your criteria and build skills to enhance current and future relationships. 
-																	The coaches at CoachConnecXion can offer both couples marriage therapy or online relationship advice to help you through your issues. 
+									<h2 style="text-align: left; text-decoration: underline;">What an Online Life Coach from CoachConnecXion does:</h2>
+									<h3 style="text-align: left;">These coaches provide the drive and guidance individuals need to improve their careers, relationships, and overall emotional state. 
 																	</h3><br>
 								</td>
 							</tr>
 							<tr><td>		
-									<h3 style="text-decoration: underline;">Your Relationship Coach will do the following:</h3>
+									<h3 style="text-decoration: underline;">A Life coach may be helpful for the following reasons:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">help you question your assumptions</li>
-										<li style="text-align: left;">Work with you to address your patterns and blocks</li>
-										<li style="text-align: left;">Encourage you to cultivate clearer, healthier parameters for both one-on-one and group relationships</li>
-										<li style="text-align: left;">Discover new mechanisms for listening and expressing yourself</li>
-										<li style="text-align: left;">Help you become consciously aware of how you "show up" and, ultimately, work toward greater fulfillment and personal transformation</li>
+										<li style="text-align: left;">Need some guidance on moving forward in your career</li>
+										<li style="text-align: left;">Want to learn how to take advantage of your strengths and talents</li>
+										<li style="text-align: left;">Don't know what to do about a major life decision, such as a move or promotion</li>
+										<li style="text-align: left;">Don't have an acceptable work-life balance</li>
+										<li style="text-align: left;">Have a lot of stress</li>
+										<li style="text-align: left;">Need help recognizing your skills and achieving your dreams</li>
+										<li style="text-align: left;">Having trouble moving past challenges that stand in the way of your goals</li>
+										<li style="text-align: left;">Provide self help motivation tools and techniques to help you along the way to your goal</li>
 									</ul>
-									<br>Referenced from: www.worldcoachinstitute.com, www.ipeccoaching.com
+									<br>Referenced from: www.webmd.com
 								</td>	
 							</tr>
 						</table>		
