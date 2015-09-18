@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fervil.spring.careercoach.model.domain.PackageDetails;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
 import com.fervil.spring.careercoach.web.CoachSelectionFormController;
 
@@ -64,7 +65,7 @@ public class HibernateUserProfileDao implements UserProfileDao {
 
 		}
 	}
-
+	
 	public void delete(long id)  throws Exception {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.getTransaction();

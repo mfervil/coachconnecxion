@@ -170,7 +170,7 @@ div#myDialog {
 				</div>
 				
 					<c:url var="jobHistoryUrl"
-						value="/experienceEdit?id=${jobHistoryAttribute.id}" />
+						value="/tutor/experienceEdit?id=${jobHistoryAttribute.id}" />
 					<form:form modelAttribute="jobHistoryAttribute" method="POST"
 						action="${jobHistoryUrl}" id="addWorkExperience">
 <table>
@@ -240,7 +240,7 @@ div#myDialog {
 				
 				<table style="margin-top: -32px; margin-left: 0px;">
 					<tr>
-						<td><c:url var="profileUrl" value="/workexperience" /> <form:form
+						<td><c:url var="profileUrl" value="/tutor/workexperience" /> <form:form
 								commandName="/workexperience" method="GET" action="${profileUrl}">
 								<input type="submit"
 									style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right;"

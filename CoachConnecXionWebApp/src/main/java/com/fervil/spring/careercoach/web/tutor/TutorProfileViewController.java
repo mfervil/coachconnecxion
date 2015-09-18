@@ -121,7 +121,7 @@ public class TutorProfileViewController {
 			}else if (webRequest.getParameter("profileId") == null ){
 				//cuin is the current logged in user
 				if (webRequest.getParameter("cuin") == null){
-					return "redirect:tutor/users/login";
+					return "redirect:/users/login";
 				} else { //Don't have profileId but am logged into the system
 
 					//This logic is for new members who have created an account but have not yet created a profile

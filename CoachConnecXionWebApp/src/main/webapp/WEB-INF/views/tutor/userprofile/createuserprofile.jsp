@@ -1,6 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<jsp:useBean id="now" class="java.util.Date" />
+<fmt:formatDate var="year" value="${now}" pattern="yyyy" />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,7 +73,7 @@ label {font-size:14px;}
 <%-- BEGIN BODY No Side test --%>
 <%-- END BODY No Side test --%>
 
-	<%@ include file="/WEB-INF/views/common/header_no_side_body.jsp" %>
+	<%@ include file="/WEB-INF/views/tutor/common/header_no_side_body.jsp" %>
 	
 	<table>
 	<tr>
@@ -89,7 +92,7 @@ label {font-size:14px;}
 		<!-- <form action="#" id="page_user_profile_form" method="post"> -->
 		<h3 style="color:red"> ${errorMessage} </h3>
 
-	<h2 style="text-align: center;">Create/Update Your Coaching Profile</h2>									
+	<h2 style="text-align: center;">Create/Update Your Profile</h2>									
 	<table style="width: 900px;">
 		<tr>
 			<td style="width: 730px; padding: 5px;">
@@ -98,24 +101,27 @@ label {font-size:14px;}
 						<td style="margin-top: 4px;"> <!-- style="margin-top -->
 						
 
-	<table style="border:1px solid black; width:100%">	
-				<%-- <tr><td colspan="2" ><label style="font-size:20px;">PROFILE INFORMATION</label></td> </tr>  --%>
+	<table style="border:1px solid black; width:100%; border-spacing: 40px 10px;" >	
 				<tr><td class="leftalign" nowrap colspan="2" ><label>Upload Image/Logo: <b>${userProfile.profile_picture_name}</b></label> <input type="file" name="frmprofilepicture"
 					id="frmprofilepicture" ></input></td> 
 					<td class="leftalign" nowrap ><label>YouTube Video Link </label> <form:input size="25" path="video_url" /><br> <b>Link ex.: https://www.youtube.com/watch?v=1234 </b></td>
 				</tr>
-				<tr><td class="leftalign" nowrap><form:errors path="firstname"><form:errors path="firstname" cssClass="error" /><br></form:errors><label>*First Name:</label> <form:input size="25" path="firstname" /> </td> 
+				<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+				<tr><td class="leftalign" nowrap><form:errors path="firstname"><br><form:errors path="firstname" cssClass="error" /><br></form:errors><label>*First Name:</label> <form:input size="25" path="firstname" /> </td> 
 					<td class="leftalign" nowrap><form:errors path="middleinitial"><form:errors path="middleinitial" cssClass="error" /><br></form:errors><label>Middle Initial:</label> <form:input size="2" path="middleinitial" /> </td>
 					<td class="leftalign" nowrap><form:errors path="lastname"><form:errors path="lastname" cssClass="error" /><br></form:errors><label>*Last Name:</label> <form:input size="25" path="lastname" /> </td>
 				</tr>
-				<tr><td class="leftalign" nowrap><form:errors path="displayName"><form:errors path="displayName" cssClass="error" /><br></form:errors><span class="required">*</span> <label>Display Name:</label> <form:input size="20" path="displayName" /> </td> 
+				<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+				<tr><td class="leftalign" nowrap><form:errors path="displayName"><br><form:errors path="displayName" cssClass="error" /><br></form:errors><span class="required">*</span> <label>Display Name:</label> <form:input size="20" path="displayName" /> </td> 
 					<td class="leftalign" nowrap><form:errors path="email"><form:errors path="email" cssClass="error" /><br></form:errors><span class="required">*</span> <label>Email:</label> <form:input size="25" path="email" /> </td>
 					<td class="leftalign" nowrap><form:errors path="phone"><form:errors path="phone" cssClass="error" /><br></form:errors><span class="required">*</span><label>Phone:</label> <form:input size="25" path="phone" /> </td>
 				</tr>
-				<tr><td class="leftalign" nowrap colspan="2"><form:errors path="address"><form:errors path="address" cssClass="error" /><br></form:errors><span class="required">*</span><label>Address:</label> <form:input size="50" path="address" /> </td> 
+				<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+				<tr><td class="leftalign" nowrap colspan="2"><form:errors path="address"><br><form:errors path="address" cssClass="error" /><br></form:errors><span class="required">*</span><label>Address:</label> <form:input size="50" path="address" /> </td> 
 					<td class="leftalign" nowrap><label>Suite/Apt #:</label> <form:input size="25" path="apartment" /> </td>
 				</tr>
-				<tr><td class="leftalign" nowrap><form:errors path="city"><form:errors path="city" cssClass="error" /><br></form:errors><span class="required">*</span><label>City:</label> <form:input size="25" path="city" /> </td> 
+				<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+				<tr><td class="leftalign" nowrap><form:errors path="city"><br><form:errors path="city" cssClass="error" /><br></form:errors><span class="required">*</span><label>City:</label> <form:input size="25" path="city" /> </td> 
 					<td class="leftalign" nowrap><form:errors path="state"><form:errors path="state" cssClass="error" /><br></form:errors><span class="required">*</span><label>State/Prov:</label> <%-- <form:input size="20" path="state" /> --%>
 							<form:select size="1" path="state" id="state" ><option value="">SELECT YOUR STATE</option>
 								${userProfile.state =='AL' ? "<option value='AL' selected>ALABAMA</option>" : "<option value='AL' >ALABAMA</option>"}
@@ -193,451 +199,277 @@ label {font-size:14px;}
 					</td>
 					<td class="leftalign" nowrap><form:errors path="zipcode"><form:errors path="zipcode" cssClass="error" /><br></form:errors><span class="required">*</span><label>Zipcode:</label> <form:input size="25" path="zipcode" /> </td>
 				</tr>
+				<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+				<tr>
+					<td class="leftalign" nowrap><form:errors path="dobmonth"><form:errors path="dobmonth" cssClass="error" /><br></form:errors><span class="required">*</span>
+					 <label>Birth Date: </label> 
+				        <form:select size="1" path="dobmonth" id="dobmonth" >
+				          <option selected  value="-1">Month</option>
+				          ${userProfile.dobmonth =='1' ? "<option value='1' selected>Jan</option>" : "<option value='1' >Jan</option>"}
+				          ${userProfile.dobmonth =='2' ? "<option value='2' selected>Feb</option>" : "<option value='2' >Feb</option>"}
+				          ${userProfile.dobmonth =='3' ? "<option value='3' selected>Mar</option>" : "<option value='3' >Mar</option>"}
+				          ${userProfile.dobmonth =='4' ? "<option value='4' selected>Apr</option>" : "<option value='4' >Apr</option>"}
+				          ${userProfile.dobmonth =='5' ? "<option value='5' selected>May</option>" : "<option value='5' >May</option>"}
+				          ${userProfile.dobmonth =='6' ? "<option value='6' selected>Jun</option>" : "<option value='6' >Jun</option>"}
+				          ${userProfile.dobmonth =='7' ? "<option value='7' selected>Jul</option>" : "<option value='7' >Jul</option>"}
+				          ${userProfile.dobmonth =='8' ? "<option value='8' selected>Aug</option>" : "<option value='8' >Aug</option>"}
+				          ${userProfile.dobmonth =='9' ? "<option value='9' selected>Sep</option>" : "<option value='9' >Sep</option>"}
+				          ${userProfile.dobmonth =='10' ? "<option value='10' selected>Oct</option>" : "<option value='10' >Oct</option>"}
+				          ${userProfile.dobmonth =='11' ? "<option value='11' selected>Nov</option>" : "<option value='11' >Nov</option>"}
+				          ${userProfile.dobmonth =='12' ? "<option value='12' selected>Dec</option>" : "<option value='12' >Dec</option>"}
+				        </form:select>  
+				        <form:select size="1" path="dobday" id="dobday" >
+				          <option selected  value="-1">Day</option>
+				          ${userProfile.dobday =='1' ? "<option value='1' selected>1</option>" : "<option value='1' >1</option>"}
+				          ${userProfile.dobday =='2' ? "<option value='2' selected>2</option>" : "<option value='2' >2</option>"}
+				          ${userProfile.dobday =='3' ? "<option value='3' selected>3</option>" : "<option value='3' >3</option>"}
+				          ${userProfile.dobday =='4' ? "<option value='4' selected>4</option>" : "<option value='4' >4</option>"}
+				          ${userProfile.dobday =='5' ? "<option value='5' selected>5</option>" : "<option value='5' >5</option>"}
+				          ${userProfile.dobday =='6' ? "<option value='6' selected>6</option>" : "<option value='6' >6</option>"}
+				          ${userProfile.dobday =='7' ? "<option value='7' selected>7</option>" : "<option value='7' >7</option>"}
+				          ${userProfile.dobday =='8' ? "<option value='8' selected>8</option>" : "<option value='8' >8</option>"}
+				          ${userProfile.dobday =='9' ? "<option value='9' selected>9</option>" : "<option value='9' >9</option>"}
+				          ${userProfile.dobday =='10' ? "<option value='10' selected>10</option>" : "<option value='10' >10</option>"}
+				          ${userProfile.dobday =='11' ? "<option value='11' selected>11</option>" : "<option value='11' >11</option>"}
+				          ${userProfile.dobday =='12' ? "<option value='12' selected>12</option>" : "<option value='12' >12</option>"}
+				          ${userProfile.dobday =='13' ? "<option value='13' selected>13</option>" : "<option value='13' >13</option>"}
+				          ${userProfile.dobday =='14' ? "<option value='14' selected>14</option>" : "<option value='14' >14</option>"}
+				          ${userProfile.dobday =='15' ? "<option value='15' selected>15</option>" : "<option value='15' >15</option>"}
+				          ${userProfile.dobday =='16' ? "<option value='16' selected>16</option>" : "<option value='16' >16</option>"}
+				          ${userProfile.dobday =='17' ? "<option value='17' selected>17</option>" : "<option value='17' >17</option>"}
+				          ${userProfile.dobday =='18' ? "<option value='18' selected>18</option>" : "<option value='18' >18</option>"}
+				          ${userProfile.dobday =='19' ? "<option value='19' selected>19</option>" : "<option value='19' >19</option>"}
+				          ${userProfile.dobday =='20' ? "<option value='20' selected>20</option>" : "<option value='20' >20</option>"}
+				          ${userProfile.dobday =='21' ? "<option value='21' selected>21</option>" : "<option value='21' >21</option>"}
+				          ${userProfile.dobday =='22' ? "<option value='22' selected>22</option>" : "<option value='22' >22</option>"}
+				          ${userProfile.dobday =='23' ? "<option value='23' selected>23</option>" : "<option value='23' >23</option>"}
+				          ${userProfile.dobday =='24' ? "<option value='24' selected>24</option>" : "<option value='24' >24</option>"}
+				          ${userProfile.dobday =='25' ? "<option value='25' selected>25</option>" : "<option value='25' >25</option>"}
+				          ${userProfile.dobday =='26' ? "<option value='26' selected>26</option>" : "<option value='26' >26</option>"}
+				          ${userProfile.dobday =='27' ? "<option value='27' selected>27</option>" : "<option value='27' >27</option>"}
+				          ${userProfile.dobday =='28' ? "<option value='28' selected>28</option>" : "<option value='28' >28</option>"}
+				          ${userProfile.dobday =='29' ? "<option value='29' selected>29</option>" : "<option value='29' >29</option>"}
+				          ${userProfile.dobday =='30' ? "<option value='30' selected>30</option>" : "<option value='30' >30</option>"}
+				          ${userProfile.dobday =='31' ? "<option value='31' selected>31</option>" : "<option value='31' >31</option>"}
+				        </form:select>  
+				        <form:select size="1" path="dobyear" id="dobyear" >
+				          <option selected  value="-1">Year</option>
+				          <c:forEach var="i" begin="10" end="90">
+				          	<c:if test="${userProfile.dobyear == year - i }">
+				          		<option value='${year - i}' selected>${year - i}</option>
+				          	</c:if>
+				          	<c:if test="${userProfile.dobyear != year - i }">
+				          		<option value='${year - i}' >${year - i}</option>
+				          	</c:if>
+				          </c:forEach>
+				        </form:select>  
+
+					</td>
+					<td class="leftalign" nowrap><form:errors path="gender"><form:errors path="gender" cssClass="error" /><br></form:errors><span class="required">*</span>
+						<label>Gender</label>  
+				        <form:select size="1" path="gender" id="gender" >
+				          <option selected  value="-1">Select Gender</option>
+				          ${userProfile.gender =='m' ? "<option value='m' selected>Male</option>" : "<option value='m' >Male</option>"}
+				          ${userProfile.gender =='f' ? "<option value='f' selected>Female</option>" : "<option value='f' >Female</option>"}
+				        </form:select>  
+					</td>
+					<td class="leftalign" nowrap><form:errors path="experience"><form:errors path="experience" cssClass="error" /><br></form:errors><span class="required">*</span>
+						<label>Experience</label>
+				        <form:select size="1" path="experience" id="experience" >
+				          <option selected  value="-1">Select Experience</option>
+				          ${userProfile.experience =='1' ? "<option value='1' selected>1 year</option>" : "<option value='1' >1 year</option>"}
+				          ${userProfile.experience =='2' ? "<option value='2' selected>2 years</option>" : "<option value='2' >2 years</option>"}
+				          ${userProfile.experience =='3' ? "<option value='3' selected>3 years</option>" : "<option value='3' >3 years</option>"}
+				          ${userProfile.experience =='4' ? "<option value='4' selected>4 years</option>" : "<option value='4' >4 years</option>"}
+				          ${userProfile.experience =='5' ? "<option value='5' selected>5 years</option>" : "<option value='5' >5 years</option>"}
+				          ${userProfile.experience =='6' ? "<option value='6' selected>6 years</option>" : "<option value='6' >6 years</option>"}
+				          ${userProfile.experience =='7' ? "<option value='7' selected>7 years</option>" : "<option value='7' >7 years</option>"}
+				          ${userProfile.experience =='8' ? "<option value='8' selected>8 years</option>" : "<option value='8' >8 years</option>"}
+				          ${userProfile.experience =='9' ? "<option value='9' selected>9 years</option>" : "<option value='9' >9 years</option>"}
+				          ${userProfile.experience =='10' ? "<option value='10' selected>10 years</option>" : "<option value='10' >10 years</option>"}
+				          ${userProfile.experience =='11' ? "<option value='11' selected>11 years</option>" : "<option value='11' >11 years</option>"}
+				          ${userProfile.experience =='12' ? "<option value='12' selected>12 years</option>" : "<option value='12' >12 years</option>"}
+				          ${userProfile.experience =='13' ? "<option value='13' selected>13 years</option>" : "<option value='13' >13 years</option>"}
+				          ${userProfile.experience =='14' ? "<option value='14' selected>14 years</option>" : "<option value='14' >14 years</option>"}
+				          ${userProfile.experience =='15' ? "<option value='15' selected>15 years</option>" : "<option value='15' >15 years</option>"}
+				          ${userProfile.experience =='16' ? "<option value='16' selected>16 years</option>" : "<option value='16' >16 years</option>"}
+				          ${userProfile.experience =='17' ? "<option value='17' selected>17 years</option>" : "<option value='17' >17 years</option>"}
+				          ${userProfile.experience =='18' ? "<option value='18' selected>18 years</option>" : "<option value='18' >18 years</option>"}
+				          ${userProfile.experience =='19' ? "<option value='19' selected>19 years</option>" : "<option value='19' >19 years</option>"}
+				          ${userProfile.experience =='20' ? "<option value='20' selected>20 years</option>" : "<option value='20' >20 years</option>"}
+				          ${userProfile.experience =='21' ? "<option value='&gt; 20' selected>&gt 20 years</option>" : "<option value='21' >&gt; 20 years</option>"}
+				        </form:select>  
+					</td>
+				</tr>
 	</table>
 	<hr>
 	<br>
 	<table style="border:1px solid black;">			
-			    <tr>
-			    	<td class="leftalign" nowrap><form:errors path="coachingcategory1" cssClass="error" /><br><label>*Coaching Categories</label><br>
-				        <form:select size="1" path="coachingcategory1" id="coachingcategory1" >
-				          <option selected  value="-1">Select a Category</option>
-				          ${userProfile.coachingcategory1 =='1' ? "<option value='1' selected>ADD & ADHD</option>" : "<option value='1' >ADD & ADHD</option>"}
-				          ${userProfile.coachingcategory1 =='2' ? "<option value='2' selected>Business</option>" : "<option value='2' >Business</option>"}
-				          ${userProfile.coachingcategory1 =='3' ? "<option value='3' selected>Career Change & Enhancement</option>" : "<option value='3' >Career Change & Enhancement</option>"}
-				          ${userProfile.coachingcategory1 =='4' ? "<option value='4' selected>Couples</option>" : "<option value='4' >Couples</option>"}
-				          ${userProfile.coachingcategory1 =='5' ? "<option value='5' selected>Diet/Weight Loss</option>" : "<option value='5' >Diet/Weight Loss</option>"}
-				          ${userProfile.coachingcategory1 =='6' ? "<option value='6' selected>Disability</option>" : "<option value='6' >Disability</option>"}
-				          ${userProfile.coachingcategory1 =='7' ? "<option value='7' selected>Exercise</option>" : "<option value='7' >Exercise</option>"}
-				          ${userProfile.coachingcategory1 =='8' ? "<option value='8' selected>Executive</option>" : "<option value='8' >Executive</option>"}
-				          ${userProfile.coachingcategory1 =='9' ? "<option value='9' selected>Family</option>" : "<option value='9' >Family</option>"}
-				          ${userProfile.coachingcategory1 =='10' ? "<option value='10' selected>Finance</option>" : "<option value='10' >Finance</option>"}
-				          ${userProfile.coachingcategory1 =='11' ? "<option value='11' selected>Hobby</option>" : "<option value='11' >Hobby</option>"}
-				          ${userProfile.coachingcategory1 =='12' ? "<option value='12' selected>Leadership</option>" : "<option value='12' >Leadership</option>"}
-				          ${userProfile.coachingcategory1 =='13' ? "<option value='13' selected>Life</option>" : "<option value='13' >Life</option>"}
-				          ${userProfile.coachingcategory1 =='14' ? "<option value='14' selected>Management</option>" : "<option value='14' >Management</option>"}
-				          ${userProfile.coachingcategory1 =='15' ? "<option value='15' selected>Music</option>" : "<option value='15' >Music</option>"}
-				          ${userProfile.coachingcategory1 =='16' ? "<option value='16' selected>Motivational</option>" : "<option value='16' >Motivational</option>"}
-				          ${userProfile.coachingcategory1 =='17' ? "<option value='17' selected>Performance</option>" : "<option value='17' >Performance</option>"}
-				          ${userProfile.coachingcategory1 =='18' ? "<option value='18' selected>Relationship</option>" : "<option value='18' >Relationship</option>"}
-				          ${userProfile.coachingcategory1 =='19' ? "<option value='19' selected>Retirement</option>" : "<option value='19' >Retirement</option>"}
-				          ${userProfile.coachingcategory1 =='20' ? "<option value='20' selected>Sales</option>" : "<option value='20' >Sales</option>"}
-				          ${userProfile.coachingcategory1 =='21' ? "<option value='21' selected>Stress Management</option>" : "<option value='21' >Stress Management</option>"}
-				          ${userProfile.coachingcategory1 =='22' ? "<option value='22' selected>Sports Training</option>" : "<option value='22' >Sports Training</option>"}
-				          ${userProfile.coachingcategory1 =='23' ? "<option value='23' selected>Team and Group</option>" : "<option value='23' >Team and Group</option>"}
-				        </form:select>
-				        <br>				        
-				        <form:select size="1" path="coachingcategory2" id="coachingcategory2" >
-				          <option selected  value="-1">Select a Category</option>
-				          ${userProfile.coachingcategory2 =='1' ? "<option value='1' selected>ADD & ADHD</option>" : "<option value='1' >ADD & ADHD</option>"}
-				          ${userProfile.coachingcategory2 =='2' ? "<option value='2' selected>Business</option>" : "<option value='2' >Business</option>"}
-				          ${userProfile.coachingcategory2 =='3' ? "<option value='3' selected>Career Change & Enhancement</option>" : "<option value='3' >Career Change & Enhancement</option>"}
-				          ${userProfile.coachingcategory2 =='4' ? "<option value='4' selected>Couples</option>" : "<option value='4' >Couples</option>"}
-				          ${userProfile.coachingcategory2 =='5' ? "<option value='5' selected>Diet/Weight Loss</option>" : "<option value='5' >Diet/Weight Loss</option>"}
-				          ${userProfile.coachingcategory2 =='6' ? "<option value='6' selected>Disability</option>" : "<option value='6' >Disability</option>"}
-				          ${userProfile.coachingcategory2 =='7' ? "<option value='7' selected>Exercise</option>" : "<option value='7' >Exercise</option>"}
-				          ${userProfile.coachingcategory2 =='8' ? "<option value='8' selected>Executive</option>" : "<option value='8' >Executive</option>"}
-				          ${userProfile.coachingcategory2 =='9' ? "<option value='9' selected>Family</option>" : "<option value='9' >Family</option>"}
-				          ${userProfile.coachingcategory2 =='10' ? "<option value='10' selected>Finance</option>" : "<option value='10' >Finance</option>"}
-				          ${userProfile.coachingcategory2 =='11' ? "<option value='11' selected>Hobby</option>" : "<option value='11' >Hobby</option>"}
-				          ${userProfile.coachingcategory2 =='12' ? "<option value='12' selected>Leadership</option>" : "<option value='12' >Leadership</option>"}
-				          ${userProfile.coachingcategory2 =='13' ? "<option value='13' selected>Life</option>" : "<option value='13' >Life</option>"}
-				          ${userProfile.coachingcategory2 =='14' ? "<option value='14' selected>Management</option>" : "<option value='14' >Management</option>"}
-				          ${userProfile.coachingcategory2 =='15' ? "<option value='15' selected>Music</option>" : "<option value='15' >Music</option>"}
-				          ${userProfile.coachingcategory2 =='16' ? "<option value='16' selected>Motivational</option>" : "<option value='16' >Motivational</option>"}
-				          ${userProfile.coachingcategory2 =='17' ? "<option value='17' selected>Performance</option>" : "<option value='17' >Performance</option>"}
-				          ${userProfile.coachingcategory2 =='18' ? "<option value='18' selected>Relationship</option>" : "<option value='18' >Relationship</option>"}
-				          ${userProfile.coachingcategory2 =='19' ? "<option value='19' selected>Retirement</option>" : "<option value='19' >Retirement</option>"}
-				          ${userProfile.coachingcategory2 =='20' ? "<option value='20' selected>Sales</option>" : "<option value='20' >Sales</option>"}
-				          ${userProfile.coachingcategory2 =='21' ? "<option value='21' selected>Stress Management</option>" : "<option value='21' >Stress Management</option>"}
-				          ${userProfile.coachingcategory2 =='22' ? "<option value='22' selected>Sports Training</option>" : "<option value='22' >Sports Training</option>"}
-				          ${userProfile.coachingcategory2 =='23' ? "<option value='23' selected>Team and Group</option>" : "<option value='23' >Team and Group</option>"}
-				        </form:select>
-				        <br>
-				        <form:select size="1" path="coachingcategory3" id="coachingcategory3" >
-				          <option selected  value="-1">Select a Category</option>
-				          ${userProfile.coachingcategory3 =='1' ? "<option value='1' selected>ADD & ADHD</option>" : "<option value='1' >ADD & ADHD</option>"}
-				          ${userProfile.coachingcategory3 =='2' ? "<option value='2' selected>Business</option>" : "<option value='2' >Business</option>"}
-				          ${userProfile.coachingcategory3 =='3' ? "<option value='3' selected>Career Change & Enhancement</option>" : "<option value='3' >Career Change & Enhancement</option>"}
-				          ${userProfile.coachingcategory3 =='4' ? "<option value='4' selected>Couples</option>" : "<option value='4' >Couples</option>"}
-				          ${userProfile.coachingcategory3 =='5' ? "<option value='5' selected>Diet/Weight Loss</option>" : "<option value='5' >Diet/Weight Loss</option>"}
-				          ${userProfile.coachingcategory3 =='6' ? "<option value='6' selected>Disability</option>" : "<option value='6' >Disability</option>"}
-				          ${userProfile.coachingcategory3 =='7' ? "<option value='7' selected>Exercise</option>" : "<option value='7' >Exercise</option>"}
-				          ${userProfile.coachingcategory3 =='8' ? "<option value='8' selected>Executive</option>" : "<option value='8' >Executive</option>"}
-				          ${userProfile.coachingcategory3 =='9' ? "<option value='9' selected>Family</option>" : "<option value='9' >Family</option>"}
-				          ${userProfile.coachingcategory3 =='10' ? "<option value='10' selected>Finance</option>" : "<option value='10' >Finance</option>"}
-				          ${userProfile.coachingcategory3 =='11' ? "<option value='11' selected>Hobby</option>" : "<option value='11' >Hobby</option>"}
-				          ${userProfile.coachingcategory3 =='12' ? "<option value='12' selected>Leadership</option>" : "<option value='12' >Leadership</option>"}
-				          ${userProfile.coachingcategory3 =='13' ? "<option value='13' selected>Life</option>" : "<option value='13' >Life</option>"}
-				          ${userProfile.coachingcategory3 =='14' ? "<option value='14' selected>Management</option>" : "<option value='14' >Management</option>"}
-				          ${userProfile.coachingcategory3 =='15' ? "<option value='15' selected>Music</option>" : "<option value='15' >Music</option>"}
-				          ${userProfile.coachingcategory3 =='16' ? "<option value='16' selected>Motivational</option>" : "<option value='16' >Motivational</option>"}
-				          ${userProfile.coachingcategory3 =='17' ? "<option value='17' selected>Performance</option>" : "<option value='17' >Performance</option>"}
-				          ${userProfile.coachingcategory3 =='18' ? "<option value='18' selected>Relationship</option>" : "<option value='18' >Relationship</option>"}
-				          ${userProfile.coachingcategory3 =='19' ? "<option value='19' selected>Retirement</option>" : "<option value='19' >Retirement</option>"}
-				          ${userProfile.coachingcategory3 =='20' ? "<option value='20' selected>Sales</option>" : "<option value='20' >Sales</option>"}
-				          ${userProfile.coachingcategory3 =='21' ? "<option value='21' selected>Stress Management</option>" : "<option value='21' >Stress Management</option>"}
-				          ${userProfile.coachingcategory3 =='22' ? "<option value='22' selected>Sports Training</option>" : "<option value='22' >Sports Training</option>"}
-				          ${userProfile.coachingcategory3 =='23' ? "<option value='23' selected>Team and Group</option>" : "<option value='23' >Team and Group</option>"}
-				        </form:select>			    	
-			    	</td>
-
-			    	<td class="leftalign" nowrap><br><label>Industries of Focus</label> <form:errors path="industryfocus1" cssClass="error" nowrap="true" /><br>
-				        <form:select size="1" path="industryfocus1" id="industryfocus1" >
-				          <option selected  value="-1">Select an Industry</option>
-								${userProfile.industryfocus1 =='1'  ? "<option value='1' selected>Accounting - Finance</option>" : "<option value='1'>Accounting - Finance</option>"}
-								${userProfile.industryfocus1 =='2'  ? "<option value='2' selected>Advertising</option>" : "<option value='2'>Advertising</option>"}
-								${userProfile.industryfocus1 =='3'  ? "<option value='3' selected>Agriculture</option>" : "<option value='3'>Agriculture</option>"}
-								${userProfile.industryfocus1 =='4'  ? "<option value='4' selected>Airline - Aviation</option>" : "<option value='4'>Airline - Aviation</option>"}
-								${userProfile.industryfocus1 =='5'  ? "<option value='5' selected>Appliance &amp; Electronics</option>" : "<option value='5'>Appliance &amp; Electronics</option>"}
-								${userProfile.industryfocus1 =='6'  ? "<option value='6' selected>Architecture - Building</option>" : "<option value='6'>Architecture - Building</option>"}
-								${userProfile.industryfocus1 =='7'  ? "<option value='7' selected>Art - Photography - Journalism</option>" : "<option value='7'>Art - Photography - Journalism</option>"}
-								${userProfile.industryfocus1 =='8'  ? "<option value='8' selected>Automotive - Motor Vehicles - Parts</option>" : "<option value='8'>Automotive - Motor Vehicles - Parts</option>"}
-								${userProfile.industryfocus1 =='9'  ? "<option value='9' selected>Banking - Financial Services</option>" : "<option value='9'>Banking - Financial Services</option>"}
-								${userProfile.industryfocus1 =='10'  ? "<option value='10' selected>Beauty / Wellness / Grooming</option>" : "<option value='10'>Beauty / Wellness / Grooming</option>"}
-								${userProfile.industryfocus1 =='11'  ? "<option value='11' selected>Biotechnology</option>" : "<option value='11'>Biotechnology</option>"}
-								${userProfile.industryfocus1 =='12'  ? "<option value='12' selected>Broadcasting - Radio - TV</option>" : "<option value='12'>Broadcasting - Radio - TV</option>"}
-								${userProfile.industryfocus1 =='13'  ? "<option value='13' selected>Building Materials</option>" : "<option value='13'>Building Materials</option>"}
-								${userProfile.industryfocus1 =='14'  ? "<option value='14' selected>Call Center / SSO / BPO</option>" : "<option value='14'>Call Center / SSO / BPO</option>"}
-								${userProfile.industryfocus1 =='15'  ? "<option value='15' selected>Chemical</option>" : "<option value='15'>Chemical</option>"}
-								${userProfile.industryfocus1 =='16'  ? "<option value='16' selected>Coffee Shop</option>" : "<option value='16'>Coffee Shop</option>"}
-								${userProfile.industryfocus1 =='17'  ? "<option value='17' selected>Computer Hardware</option>" : "<option value='17'>Computer Hardware</option>"}
-								${userProfile.industryfocus1 =='18'  ? "<option value='18' selected>Computer Software</option>" : "<option value='18'>Computer Software</option>"}
-								${userProfile.industryfocus1 =='19'  ? "<option value='19' selected>Construction</option>" : "<option value='19'>Construction</option>"}
-								${userProfile.industryfocus1 =='20'  ? "<option value='20' selected>Consulting</option>" : "<option value='20'>Consulting</option>"}
-								${userProfile.industryfocus1 =='21'  ? "<option value='21' selected>Consumer Products</option>" : "<option value='21'>Consumer Products</option>"}
-								${userProfile.industryfocus1 =='22'  ? "<option value='22' selected>Cosmetics &amp; Beauty</option>" : "<option value='22'>Cosmetics &amp; Beauty</option>"}
-								${userProfile.industryfocus1 =='23'  ? "<option value='23' selected>Credit - Loan - Collections</option>" : "<option value='23'>Credit - Loan - Collections</option>"}
-								${userProfile.industryfocus1 =='24' ? "<option value='24' selected>Defense - Aerospace</option>" : "<option value='24'>Defense - Aerospace</option>"}
-								${userProfile.industryfocus1 =='25' ? "<option value='25' selected>Department Store</option>" : "<option value='25'>Department Store</option>"}
-								${userProfile.industryfocus1 =='26' ? "<option value='26' selected>Education - Teaching - Administration</option>" : "<option value='26'>Education - Teaching - Administration</option>"}
-								${userProfile.industryfocus1 =='27' ? "<option value='27' selected>Electronics</option>" : "<option value='27'>Electronics</option>"}
-								${userProfile.industryfocus1 =='28' ? "<option value='28' selected>Employment - Recruiting - Staffing</option>" : "<option value='28'>Employment - Recruiting - Staffing</option>"}
-								${userProfile.industryfocus1 =='29' ? "<option value='29' selected>Energy - Utilities - Gas - Electric</option>" : "<option value='29'>Energy - Utilities - Gas - Electric</option>"}
-								${userProfile.industryfocus1 =='30' ? "<option value='30' selected>Engineering - Machinery</option>" : "<option value='30'>Engineering - Machinery</option>"}
-								${userProfile.industryfocus1 =='31' ? "<option value='31' selected>Engineering - Precision</option>" : "<option value='31'>Engineering - Precision</option>"}
-								${userProfile.industryfocus1 =='32' ? "<option value='32' selected>Engineering - Services</option>" : "<option value='32'>Engineering - Services</option>"}
-								${userProfile.industryfocus1 =='33' ? "<option value='33' selected>Entertainment</option>" : "<option value='33'>Entertainment</option>"}
-								${userProfile.industryfocus1 =='34' ? "<option value='34' selected>Environmental</option>" : "<option value='34'>Environmental</option>"}
-								${userProfile.industryfocus1 =='35' ? "<option value='35' selected>Exercise - Fitness</option>" : "<option value='35'>Exercise - Fitness</option>"}
-								${userProfile.industryfocus1 =='36' ? "<option value='36' selected>Exhibitions / Event Management / MICE</option>" : "<option value='36'>Exhibitions / Event Management / MICE</option>"}
-								${userProfile.industryfocus1 =='37' ? "<option value='37' selected>Eye Care</option>" : "<option value='37'>Eye Care</option>"}
-								${userProfile.industryfocus1 =='38' ? "<option value='38' selected>Fashion - Apparel - Textile</option>" : "<option value='38'>Fashion - Apparel - Textile</option>"}
-								${userProfile.industryfocus1 =='39' ? "<option value='39' selected>Food</option>" : "<option value='39'>Food</option>"}
-								${userProfile.industryfocus1 =='40' ? "<option value='40' selected>Full Service Restaurant</option>" : "<option value='40'>Full Service Restaurant</option>"}
-								${userProfile.industryfocus1 =='41' ? "<option value='41' selected>Funeral - Cemetery</option>" : "<option value='41'>Funeral - Cemetery</option>"}
-								${userProfile.industryfocus1 =='42' ? "<option value='42' selected>Furniture</option>" : "<option value='42'>Furniture</option>"}
-								${userProfile.industryfocus1 =='43' ? "<option value='43' selected>Gas / Convenience Store</option>" : "<option value='43'>Gas / Convenience Store</option>"}
-								${userProfile.industryfocus1 =='44' ? "<option value='44' selected>Government - Civil Service</option>" : "<option value='44'>Government - Civil Service</option>"}
-								${userProfile.industryfocus1 =='45' ? "<option value='45' selected>Grocery &amp; Pharmacy</option>" : "<option value='45'>Grocery &amp; Pharmacy</option>"}
-								${userProfile.industryfocus1 =='46' ? "<option value='46' selected>Hardware / Home Improvement</option>" : "<option value='46'>Hardware / Home Improvement</option>"}
-								${userProfile.industryfocus1 =='47' ? "<option value='47' selected>Healthcare - Health Services</option>" : "<option value='47'>Healthcare - Health Services</option>"}
-								${userProfile.industryfocus1 =='48' ? "<option value='48' selected>Home D&#233;cor and Kitchen</option>" : "<option value='48'>Home D&#233;cor and Kitchen</option>"}
-								${userProfile.industryfocus1 =='49' ? "<option value='49' selected>Homebuilding</option>" : "<option value='49'>Homebuilding</option>"}
-								${userProfile.industryfocus1 =='50' ? "<option value='50' selected>Hospitality</option>" : "<option value='50'>Hospitality</option>"}
-								${userProfile.industryfocus1 =='51' ? "<option value='51' selected>Hotel - Resort</option>" : "<option value='51'>Hotel - Resort</option>"}
-								${userProfile.industryfocus1 =='52' ? "<option value='52' selected>HVAC</option>" : "<option value='52'>HVAC</option>"}
-								${userProfile.industryfocus1 =='53' ? "<option value='53' selected>Import - Export</option>" : "<option value='53'>Import - Export</option>"}
-								${userProfile.industryfocus1 =='54' ? "<option value='54' selected>Industrial</option>" : "<option value='54'>Industrial</option>"}
-								${userProfile.industryfocus1 =='55' ? "<option value='55' selected>Insurance</option>" : "<option value='55'>Insurance</option>"}
-								${userProfile.industryfocus1 =='56' ? "<option value='56' selected>Internet - ECommerce</option>" : "<option value='56'>Internet - ECommerce</option>"}
-								${userProfile.industryfocus1 =='57' ? "<option value='57' selected>Jewelry</option>" : "<option value='57'>Jewelry</option>"}
-								${userProfile.industryfocus1 =='58' ? "<option value='58' selected>Landscaping</option>" : "<option value='58'>Landscaping</option>"}
-								${userProfile.industryfocus1 =='59' ? "<option value='59' selected>Law Enforcement</option>" : "<option value='59'>Law Enforcement</option>"}
-								${userProfile.industryfocus1 =='60' ? "<option value='60' selected>Legal</option>" : "<option value='60'>Legal</option>"}
-								${userProfile.industryfocus1 =='61' ? "<option value='61' selected>Library Science</option>" : "<option value='61'>Library Science</option>"}
-								${userProfile.industryfocus1 =='62' ? "<option value='62' selected>Managed Care</option>" : "<option value='62'>Managed Care</option>"}
-								${userProfile.industryfocus1 =='63' ? "<option value='63' selected>Manufacturing</option>" : "<option value='63'>Manufacturing</option>"}
-								${userProfile.industryfocus1 =='64' ? "<option value='64' selected>Marine / Maritime</option>" : "<option value='64'>Marine / Maritime</option>"}
-								${userProfile.industryfocus1 =='65' ? "<option value='65' selected>Maritime - Offshore &amp; Marine Engineering</option>" : "<option value='65'>Maritime - Offshore &amp; Marine Engineering</option>"}
-								${userProfile.industryfocus1 =='66' ? "<option value='66' selected>Maritime - Port</option>" : "<option value='66'>Maritime - Port</option>"}
-								${userProfile.industryfocus1 =='67' ? "<option value='67' selected>Maritime - Shipping</option>" : "<option value='67'>Maritime - Shipping</option>"}
-								${userProfile.industryfocus1 =='68' ? "<option value='68' selected>Mass Merchandiser</option>" : "<option value='68'>Mass Merchandiser</option>"}
-								${userProfile.industryfocus1 =='69' ? "<option value='69' selected>Medical Equipment</option>" : "<option value='69'>Medical Equipment</option>"}
-								${userProfile.industryfocus1 =='70' ? "<option value='70' selected>Merchandising</option>" : "<option value='70'>Merchandising</option>"}
-								${userProfile.industryfocus1 =='71' ? "<option value='71' selected>Military</option>" : "<option value='71'>Military</option>"}
-								${userProfile.industryfocus1 =='72' ? "<option value='72' selected>Mining / Drilling / Resources</option>" : "<option value='72'>Mining / Drilling / Resources</option>"}
-								${userProfile.industryfocus1 =='73' ? "<option value='73' selected>Mortgage</option>" : "<option value='73'>Mortgage</option>"}
-								${userProfile.industryfocus1 =='74' ? "<option value='74' selected>Newspaper</option>" : "<option value='74'>Newspaper</option>"}
-								${userProfile.industryfocus1 =='75' ? "<option value='75' selected>Not for Profit - Charitable</option>" : "<option value='75'>Not for Profit - Charitable</option>"}
-								${userProfile.industryfocus1 =='76' ? "<option value='76' selected>Office Supplies - Equipment</option>" : "<option value='76'>Office Supplies - Equipment</option>"}
-								${userProfile.industryfocus1 =='77' ? "<option value='77' selected>Oil Refining - Petroleum - Drilling</option>" : "<option value='77'>Oil Refining - Petroleum - Drilling</option>"}
-								${userProfile.industryfocus1 =='78' ? "<option value='78' selected>Other</option>" : "<option value='78'>Other</option>"}
-								${userProfile.industryfocus1 =='79' ? "<option value='79' selected>Other Great Industries</option>" : "<option value='79'>Other Great Industries</option>"}
-								${userProfile.industryfocus1 =='80' ? "<option value='80' selected>Packaging</option>" : "<option value='80'>Packaging</option>"}
-								${userProfile.industryfocus1 =='81' ? "<option value='81' selected>Pet Store</option>" : "<option value='81'>Pet Store</option>"}
-								${userProfile.industryfocus1 =='82' ? "<option value='82' selected>Pharmaceutical</option>" : "<option value='82'>Pharmaceutical</option>"}
-								${userProfile.industryfocus1 =='83' ? "<option value='83' selected>Polymer / Plastic / Rubber</option>" : "<option value='83'>Polymer / Plastic / Rubber</option>"}
-								${userProfile.industryfocus1 =='84' ? "<option value='84' selected>Printing - Publishing</option>" : "<option value='84'>Printing - Publishing</option>"}
-								${userProfile.industryfocus1 =='85' ? "<option value='85' selected>Public Relations</option>" : "<option value='85'>Public Relations</option>"}
-								${userProfile.industryfocus1 =='86' ? "<option value='86' selected>Quick Service or Fast Food Restaurant</option>" : "<option value='86'>Quick Service or Fast Food Restaurant</option>"}
-								${userProfile.industryfocus1 =='87' ? "<option value='87' selected>Real Estate - Property Mgt</option>" : "<option value='87'>Real Estate - Property Mgt</option>"}
-								${userProfile.industryfocus1 =='88' ? "<option value='88' selected>Recreation</option>" : "<option value='88'>Recreation</option>"}
-								${userProfile.industryfocus1 =='89' ? "<option value='89' selected>Repair / Maintenance Services</option>" : "<option value='89'>Repair / Maintenance Services</option>"}
-								${userProfile.industryfocus1 =='90' ? "<option value='90' selected>Research &amp; Development</option>" : "<option value='90'>Research &amp; Development</option>"}
-								${userProfile.industryfocus1 =='91' ? "<option value='91' selected>Restaurant</option>" : "<option value='91'>Restaurant</option>"}
-								${userProfile.industryfocus1 =='92' ? "<option value='92' selected>Retail</option>" : "<option value='92'>Retail</option>"}
-								${userProfile.industryfocus1 =='93' ? "<option value='93' selected>Retail Bank</option>" : "<option value='93'>Retail Bank</option>"}
-								${userProfile.industryfocus1 =='94' ? "<option value='94' selected>Sales - Marketing</option>" : "<option value='94'>Sales - Marketing</option>"}
-								${userProfile.industryfocus1 =='95' ? "<option value='95' selected>Science &amp; Technology</option>" : "<option value='95'>Science &amp; Technology</option>"}
-								${userProfile.industryfocus1 =='96' ? "<option value='96' selected>Securities</option>" : "<option value='96'>Securities</option>"}
-								${userProfile.industryfocus1 =='97' ? "<option value='97' selected>Security</option>" : "<option value='97'>Security</option>"}
-								${userProfile.industryfocus1 =='98' ? "<option value='98' selected>Semiconductor</option>" : "<option value='98'>Semiconductor</option>"}
-								${userProfile.industryfocus1 =='99' ? "<option value='99' selected>Services - Corporate B2B</option>" : "<option value='99'>Services - Corporate B2B</option>"}
-								${userProfile.industryfocus1 =='100' ? "<option value='100' selected>Social Services</option>" : "<option value='100'>Social Services</option>"}
-								${userProfile.industryfocus1 =='101' ? "<option value='101' selected>Sporting Goods</option>" : "<option value='101'>Sporting Goods</option>"}
-								${userProfile.industryfocus1 =='102' ? "<option value='102' selected>Telecommunications</option>" : "<option value='102'>Telecommunications</option>"}
-								${userProfile.industryfocus1 =='103' ? "<option value='103' selected>Training</option>" : "<option value='103'>Training</option>"}
-								${userProfile.industryfocus1 =='104' ? "<option value='104' selected>Transportation</option>" : "<option value='104'>Transportation</option>"}
-								${userProfile.industryfocus1 =='105' ? "<option value='105' selected>Travel</option>" : "<option value='105'>Travel</option>"}
-								${userProfile.industryfocus1 =='106' ? "<option value='106' selected>Wireless</option>" : "<option value='106'>Wireless</option>"}
-								${userProfile.industryfocus1 =='107' ? "<option value='107' selected>Wood / Fibre / Paper</option>" : "<option value='107'>Wood / Fibre / Paper</option>"}
-				        </form:select>
-						<br>
-				        <form:select size="1" path="industryfocus2" id="industryfocus2" >
-				          <option selected  value="-1">Select an Industry</option>
-								${userProfile.industryfocus1 =='1'  ? "<option value='1' selected>Accounting - Finance</option>" : "<option value='1'>Accounting - Finance</option>"}
-								${userProfile.industryfocus1 =='2'  ? "<option value='2' selected>Advertising</option>" : "<option value='2'>Advertising</option>"}
-								${userProfile.industryfocus1 =='3'  ? "<option value='3' selected>Agriculture</option>" : "<option value='3'>Agriculture</option>"}
-								${userProfile.industryfocus1 =='4'  ? "<option value='4' selected>Airline - Aviation</option>" : "<option value='4'>Airline - Aviation</option>"}
-								${userProfile.industryfocus1 =='5'  ? "<option value='5' selected>Appliance &amp; Electronics</option>" : "<option value='5'>Appliance &amp; Electronics</option>"}
-								${userProfile.industryfocus1 =='6'  ? "<option value='6' selected>Architecture - Building</option>" : "<option value='6'>Architecture - Building</option>"}
-								${userProfile.industryfocus1 =='7'  ? "<option value='7' selected>Art - Photography - Journalism</option>" : "<option value='7'>Art - Photography - Journalism</option>"}
-								${userProfile.industryfocus1 =='8'  ? "<option value='8' selected>Automotive - Motor Vehicles - Parts</option>" : "<option value='8'>Automotive - Motor Vehicles - Parts</option>"}
-								${userProfile.industryfocus1 =='9'  ? "<option value='9' selected>Banking - Financial Services</option>" : "<option value='9'>Banking - Financial Services</option>"}
-								${userProfile.industryfocus1 =='10'  ? "<option value='10' selected>Beauty / Wellness / Grooming</option>" : "<option value='10'>Beauty / Wellness / Grooming</option>"}
-								${userProfile.industryfocus1 =='11'  ? "<option value='11' selected>Biotechnology</option>" : "<option value='11'>Biotechnology</option>"}
-								${userProfile.industryfocus1 =='12'  ? "<option value='12' selected>Broadcasting - Radio - TV</option>" : "<option value='12'>Broadcasting - Radio - TV</option>"}
-								${userProfile.industryfocus1 =='13'  ? "<option value='13' selected>Building Materials</option>" : "<option value='13'>Building Materials</option>"}
-								${userProfile.industryfocus1 =='14'  ? "<option value='14' selected>Call Center / SSO / BPO</option>" : "<option value='14'>Call Center / SSO / BPO</option>"}
-								${userProfile.industryfocus1 =='15'  ? "<option value='15' selected>Chemical</option>" : "<option value='15'>Chemical</option>"}
-								${userProfile.industryfocus1 =='16'  ? "<option value='16' selected>Coffee Shop</option>" : "<option value='16'>Coffee Shop</option>"}
-								${userProfile.industryfocus1 =='17'  ? "<option value='17' selected>Computer Hardware</option>" : "<option value='17'>Computer Hardware</option>"}
-								${userProfile.industryfocus1 =='18'  ? "<option value='18' selected>Computer Software</option>" : "<option value='18'>Computer Software</option>"}
-								${userProfile.industryfocus1 =='19'  ? "<option value='19' selected>Construction</option>" : "<option value='19'>Construction</option>"}
-								${userProfile.industryfocus1 =='20'  ? "<option value='20' selected>Consulting</option>" : "<option value='20'>Consulting</option>"}
-								${userProfile.industryfocus1 =='21'  ? "<option value='21' selected>Consumer Products</option>" : "<option value='21'>Consumer Products</option>"}
-								${userProfile.industryfocus1 =='22'  ? "<option value='22' selected>Cosmetics &amp; Beauty</option>" : "<option value='22'>Cosmetics &amp; Beauty</option>"}
-								${userProfile.industryfocus1 =='23'  ? "<option value='23' selected>Credit - Loan - Collections</option>" : "<option value='23'>Credit - Loan - Collections</option>"}
-								${userProfile.industryfocus1 =='24' ? "<option value='24' selected>Defense - Aerospace</option>" : "<option value='24'>Defense - Aerospace</option>"}
-								${userProfile.industryfocus1 =='25' ? "<option value='25' selected>Department Store</option>" : "<option value='25'>Department Store</option>"}
-								${userProfile.industryfocus1 =='26' ? "<option value='26' selected>Education - Teaching - Administration</option>" : "<option value='26'>Education - Teaching - Administration</option>"}
-								${userProfile.industryfocus1 =='27' ? "<option value='27' selected>Electronics</option>" : "<option value='27'>Electronics</option>"}
-								${userProfile.industryfocus1 =='28' ? "<option value='28' selected>Employment - Recruiting - Staffing</option>" : "<option value='28'>Employment - Recruiting - Staffing</option>"}
-								${userProfile.industryfocus1 =='29' ? "<option value='29' selected>Energy - Utilities - Gas - Electric</option>" : "<option value='29'>Energy - Utilities - Gas - Electric</option>"}
-								${userProfile.industryfocus1 =='30' ? "<option value='30' selected>Engineering - Machinery</option>" : "<option value='30'>Engineering - Machinery</option>"}
-								${userProfile.industryfocus1 =='31' ? "<option value='31' selected>Engineering - Precision</option>" : "<option value='31'>Engineering - Precision</option>"}
-								${userProfile.industryfocus1 =='32' ? "<option value='32' selected>Engineering - Services</option>" : "<option value='32'>Engineering - Services</option>"}
-								${userProfile.industryfocus1 =='33' ? "<option value='33' selected>Entertainment</option>" : "<option value='33'>Entertainment</option>"}
-								${userProfile.industryfocus1 =='34' ? "<option value='34' selected>Environmental</option>" : "<option value='34'>Environmental</option>"}
-								${userProfile.industryfocus1 =='35' ? "<option value='35' selected>Exercise - Fitness</option>" : "<option value='35'>Exercise - Fitness</option>"}
-								${userProfile.industryfocus1 =='36' ? "<option value='36' selected>Exhibitions / Event Management / MICE</option>" : "<option value='36'>Exhibitions / Event Management / MICE</option>"}
-								${userProfile.industryfocus1 =='37' ? "<option value='37' selected>Eye Care</option>" : "<option value='37'>Eye Care</option>"}
-								${userProfile.industryfocus1 =='38' ? "<option value='38' selected>Fashion - Apparel - Textile</option>" : "<option value='38'>Fashion - Apparel - Textile</option>"}
-								${userProfile.industryfocus1 =='39' ? "<option value='39' selected>Food</option>" : "<option value='39'>Food</option>"}
-								${userProfile.industryfocus1 =='40' ? "<option value='40' selected>Full Service Restaurant</option>" : "<option value='40'>Full Service Restaurant</option>"}
-								${userProfile.industryfocus1 =='41' ? "<option value='41' selected>Funeral - Cemetery</option>" : "<option value='41'>Funeral - Cemetery</option>"}
-								${userProfile.industryfocus1 =='42' ? "<option value='42' selected>Furniture</option>" : "<option value='42'>Furniture</option>"}
-								${userProfile.industryfocus1 =='43' ? "<option value='43' selected>Gas / Convenience Store</option>" : "<option value='43'>Gas / Convenience Store</option>"}
-								${userProfile.industryfocus1 =='44' ? "<option value='44' selected>Government - Civil Service</option>" : "<option value='44'>Government - Civil Service</option>"}
-								${userProfile.industryfocus1 =='45' ? "<option value='45' selected>Grocery &amp; Pharmacy</option>" : "<option value='45'>Grocery &amp; Pharmacy</option>"}
-								${userProfile.industryfocus1 =='46' ? "<option value='46' selected>Hardware / Home Improvement</option>" : "<option value='46'>Hardware / Home Improvement</option>"}
-								${userProfile.industryfocus1 =='47' ? "<option value='47' selected>Healthcare - Health Services</option>" : "<option value='47'>Healthcare - Health Services</option>"}
-								${userProfile.industryfocus1 =='48' ? "<option value='48' selected>Home D&#233;cor and Kitchen</option>" : "<option value='48'>Home D&#233;cor and Kitchen</option>"}
-								${userProfile.industryfocus1 =='49' ? "<option value='49' selected>Homebuilding</option>" : "<option value='49'>Homebuilding</option>"}
-								${userProfile.industryfocus1 =='50' ? "<option value='50' selected>Hospitality</option>" : "<option value='50'>Hospitality</option>"}
-								${userProfile.industryfocus1 =='51' ? "<option value='51' selected>Hotel - Resort</option>" : "<option value='51'>Hotel - Resort</option>"}
-								${userProfile.industryfocus1 =='52' ? "<option value='52' selected>HVAC</option>" : "<option value='52'>HVAC</option>"}
-								${userProfile.industryfocus1 =='53' ? "<option value='53' selected>Import - Export</option>" : "<option value='53'>Import - Export</option>"}
-								${userProfile.industryfocus1 =='54' ? "<option value='54' selected>Industrial</option>" : "<option value='54'>Industrial</option>"}
-								${userProfile.industryfocus1 =='55' ? "<option value='55' selected>Insurance</option>" : "<option value='55'>Insurance</option>"}
-								${userProfile.industryfocus1 =='56' ? "<option value='56' selected>Internet - ECommerce</option>" : "<option value='56'>Internet - ECommerce</option>"}
-								${userProfile.industryfocus1 =='57' ? "<option value='57' selected>Jewelry</option>" : "<option value='57'>Jewelry</option>"}
-								${userProfile.industryfocus1 =='58' ? "<option value='58' selected>Landscaping</option>" : "<option value='58'>Landscaping</option>"}
-								${userProfile.industryfocus1 =='59' ? "<option value='59' selected>Law Enforcement</option>" : "<option value='59'>Law Enforcement</option>"}
-								${userProfile.industryfocus1 =='60' ? "<option value='60' selected>Legal</option>" : "<option value='60'>Legal</option>"}
-								${userProfile.industryfocus1 =='61' ? "<option value='61' selected>Library Science</option>" : "<option value='61'>Library Science</option>"}
-								${userProfile.industryfocus1 =='62' ? "<option value='62' selected>Managed Care</option>" : "<option value='62'>Managed Care</option>"}
-								${userProfile.industryfocus1 =='63' ? "<option value='63' selected>Manufacturing</option>" : "<option value='63'>Manufacturing</option>"}
-								${userProfile.industryfocus1 =='64' ? "<option value='64' selected>Marine / Maritime</option>" : "<option value='64'>Marine / Maritime</option>"}
-								${userProfile.industryfocus1 =='65' ? "<option value='65' selected>Maritime - Offshore &amp; Marine Engineering</option>" : "<option value='65'>Maritime - Offshore &amp; Marine Engineering</option>"}
-								${userProfile.industryfocus1 =='66' ? "<option value='66' selected>Maritime - Port</option>" : "<option value='66'>Maritime - Port</option>"}
-								${userProfile.industryfocus1 =='67' ? "<option value='67' selected>Maritime - Shipping</option>" : "<option value='67'>Maritime - Shipping</option>"}
-								${userProfile.industryfocus1 =='68' ? "<option value='68' selected>Mass Merchandiser</option>" : "<option value='68'>Mass Merchandiser</option>"}
-								${userProfile.industryfocus1 =='69' ? "<option value='69' selected>Medical Equipment</option>" : "<option value='69'>Medical Equipment</option>"}
-								${userProfile.industryfocus1 =='70' ? "<option value='70' selected>Merchandising</option>" : "<option value='70'>Merchandising</option>"}
-								${userProfile.industryfocus1 =='71' ? "<option value='71' selected>Military</option>" : "<option value='71'>Military</option>"}
-								${userProfile.industryfocus1 =='72' ? "<option value='72' selected>Mining / Drilling / Resources</option>" : "<option value='72'>Mining / Drilling / Resources</option>"}
-								${userProfile.industryfocus1 =='73' ? "<option value='73' selected>Mortgage</option>" : "<option value='73'>Mortgage</option>"}
-								${userProfile.industryfocus1 =='74' ? "<option value='74' selected>Newspaper</option>" : "<option value='74'>Newspaper</option>"}
-								${userProfile.industryfocus1 =='75' ? "<option value='75' selected>Not for Profit - Charitable</option>" : "<option value='75'>Not for Profit - Charitable</option>"}
-								${userProfile.industryfocus1 =='76' ? "<option value='76' selected>Office Supplies - Equipment</option>" : "<option value='76'>Office Supplies - Equipment</option>"}
-								${userProfile.industryfocus1 =='77' ? "<option value='77' selected>Oil Refining - Petroleum - Drilling</option>" : "<option value='77'>Oil Refining - Petroleum - Drilling</option>"}
-								${userProfile.industryfocus1 =='78' ? "<option value='78' selected>Other</option>" : "<option value='78'>Other</option>"}
-								${userProfile.industryfocus1 =='79' ? "<option value='79' selected>Other Great Industries</option>" : "<option value='79'>Other Great Industries</option>"}
-								${userProfile.industryfocus1 =='80' ? "<option value='80' selected>Packaging</option>" : "<option value='80'>Packaging</option>"}
-								${userProfile.industryfocus1 =='81' ? "<option value='81' selected>Pet Store</option>" : "<option value='81'>Pet Store</option>"}
-								${userProfile.industryfocus1 =='82' ? "<option value='82' selected>Pharmaceutical</option>" : "<option value='82'>Pharmaceutical</option>"}
-								${userProfile.industryfocus1 =='83' ? "<option value='83' selected>Polymer / Plastic / Rubber</option>" : "<option value='83'>Polymer / Plastic / Rubber</option>"}
-								${userProfile.industryfocus1 =='84' ? "<option value='84' selected>Printing - Publishing</option>" : "<option value='84'>Printing - Publishing</option>"}
-								${userProfile.industryfocus1 =='85' ? "<option value='85' selected>Public Relations</option>" : "<option value='85'>Public Relations</option>"}
-								${userProfile.industryfocus1 =='86' ? "<option value='86' selected>Quick Service or Fast Food Restaurant</option>" : "<option value='86'>Quick Service or Fast Food Restaurant</option>"}
-								${userProfile.industryfocus1 =='87' ? "<option value='87' selected>Real Estate - Property Mgt</option>" : "<option value='87'>Real Estate - Property Mgt</option>"}
-								${userProfile.industryfocus1 =='88' ? "<option value='88' selected>Recreation</option>" : "<option value='88'>Recreation</option>"}
-								${userProfile.industryfocus1 =='89' ? "<option value='89' selected>Repair / Maintenance Services</option>" : "<option value='89'>Repair / Maintenance Services</option>"}
-								${userProfile.industryfocus1 =='90' ? "<option value='90' selected>Research &amp; Development</option>" : "<option value='90'>Research &amp; Development</option>"}
-								${userProfile.industryfocus1 =='91' ? "<option value='91' selected>Restaurant</option>" : "<option value='91'>Restaurant</option>"}
-								${userProfile.industryfocus1 =='92' ? "<option value='92' selected>Retail</option>" : "<option value='92'>Retail</option>"}
-								${userProfile.industryfocus1 =='93' ? "<option value='93' selected>Retail Bank</option>" : "<option value='93'>Retail Bank</option>"}
-								${userProfile.industryfocus1 =='94' ? "<option value='94' selected>Sales - Marketing</option>" : "<option value='94'>Sales - Marketing</option>"}
-								${userProfile.industryfocus1 =='95' ? "<option value='95' selected>Science &amp; Technology</option>" : "<option value='95'>Science &amp; Technology</option>"}
-								${userProfile.industryfocus1 =='96' ? "<option value='96' selected>Securities</option>" : "<option value='96'>Securities</option>"}
-								${userProfile.industryfocus1 =='97' ? "<option value='97' selected>Security</option>" : "<option value='97'>Security</option>"}
-								${userProfile.industryfocus1 =='98' ? "<option value='98' selected>Semiconductor</option>" : "<option value='98'>Semiconductor</option>"}
-								${userProfile.industryfocus1 =='99' ? "<option value='99' selected>Services - Corporate B2B</option>" : "<option value='99'>Services - Corporate B2B</option>"}
-								${userProfile.industryfocus1 =='100' ? "<option value='100' selected>Social Services</option>" : "<option value='100'>Social Services</option>"}
-								${userProfile.industryfocus1 =='101' ? "<option value='101' selected>Sporting Goods</option>" : "<option value='101'>Sporting Goods</option>"}
-								${userProfile.industryfocus1 =='102' ? "<option value='102' selected>Telecommunications</option>" : "<option value='102'>Telecommunications</option>"}
-								${userProfile.industryfocus1 =='103' ? "<option value='103' selected>Training</option>" : "<option value='103'>Training</option>"}
-								${userProfile.industryfocus1 =='104' ? "<option value='104' selected>Transportation</option>" : "<option value='104'>Transportation</option>"}
-								${userProfile.industryfocus1 =='105' ? "<option value='105' selected>Travel</option>" : "<option value='105'>Travel</option>"}
-								${userProfile.industryfocus1 =='106' ? "<option value='106' selected>Wireless</option>" : "<option value='106'>Wireless</option>"}
-								${userProfile.industryfocus1 =='107' ? "<option value='107' selected>Wood / Fibre / Paper</option>" : "<option value='107'>Wood / Fibre / Paper</option>"}
-				        </form:select><br>
-				        <form:select size="1" path="industryfocus3" id="industryfocus3" >
-				          <option selected  value="-1">Select an Industry</option>
-								${userProfile.industryfocus1 =='1'  ? "<option value='1' selected>Accounting - Finance</option>" : "<option value='1'>Accounting - Finance</option>"}
-								${userProfile.industryfocus1 =='2'  ? "<option value='2' selected>Advertising</option>" : "<option value='2'>Advertising</option>"}
-								${userProfile.industryfocus1 =='3'  ? "<option value='3' selected>Agriculture</option>" : "<option value='3'>Agriculture</option>"}
-								${userProfile.industryfocus1 =='4'  ? "<option value='4' selected>Airline - Aviation</option>" : "<option value='4'>Airline - Aviation</option>"}
-								${userProfile.industryfocus1 =='5'  ? "<option value='5' selected>Appliance &amp; Electronics</option>" : "<option value='5'>Appliance &amp; Electronics</option>"}
-								${userProfile.industryfocus1 =='6'  ? "<option value='6' selected>Architecture - Building</option>" : "<option value='6'>Architecture - Building</option>"}
-								${userProfile.industryfocus1 =='7'  ? "<option value='7' selected>Art - Photography - Journalism</option>" : "<option value='7'>Art - Photography - Journalism</option>"}
-								${userProfile.industryfocus1 =='8'  ? "<option value='8' selected>Automotive - Motor Vehicles - Parts</option>" : "<option value='8'>Automotive - Motor Vehicles - Parts</option>"}
-								${userProfile.industryfocus1 =='9'  ? "<option value='9' selected>Banking - Financial Services</option>" : "<option value='9'>Banking - Financial Services</option>"}
-								${userProfile.industryfocus1 =='10'  ? "<option value='10' selected>Beauty / Wellness / Grooming</option>" : "<option value='10'>Beauty / Wellness / Grooming</option>"}
-								${userProfile.industryfocus1 =='11'  ? "<option value='11' selected>Biotechnology</option>" : "<option value='11'>Biotechnology</option>"}
-								${userProfile.industryfocus1 =='12'  ? "<option value='12' selected>Broadcasting - Radio - TV</option>" : "<option value='12'>Broadcasting - Radio - TV</option>"}
-								${userProfile.industryfocus1 =='13'  ? "<option value='13' selected>Building Materials</option>" : "<option value='13'>Building Materials</option>"}
-								${userProfile.industryfocus1 =='14'  ? "<option value='14' selected>Call Center / SSO / BPO</option>" : "<option value='14'>Call Center / SSO / BPO</option>"}
-								${userProfile.industryfocus1 =='15'  ? "<option value='15' selected>Chemical</option>" : "<option value='15'>Chemical</option>"}
-								${userProfile.industryfocus1 =='16'  ? "<option value='16' selected>Coffee Shop</option>" : "<option value='16'>Coffee Shop</option>"}
-								${userProfile.industryfocus1 =='17'  ? "<option value='17' selected>Computer Hardware</option>" : "<option value='17'>Computer Hardware</option>"}
-								${userProfile.industryfocus1 =='18'  ? "<option value='18' selected>Computer Software</option>" : "<option value='18'>Computer Software</option>"}
-								${userProfile.industryfocus1 =='19'  ? "<option value='19' selected>Construction</option>" : "<option value='19'>Construction</option>"}
-								${userProfile.industryfocus1 =='20'  ? "<option value='20' selected>Consulting</option>" : "<option value='20'>Consulting</option>"}
-								${userProfile.industryfocus1 =='21'  ? "<option value='21' selected>Consumer Products</option>" : "<option value='21'>Consumer Products</option>"}
-								${userProfile.industryfocus1 =='22'  ? "<option value='22' selected>Cosmetics &amp; Beauty</option>" : "<option value='22'>Cosmetics &amp; Beauty</option>"}
-								${userProfile.industryfocus1 =='23'  ? "<option value='23' selected>Credit - Loan - Collections</option>" : "<option value='23'>Credit - Loan - Collections</option>"}
-								${userProfile.industryfocus1 =='24' ? "<option value='24' selected>Defense - Aerospace</option>" : "<option value='24'>Defense - Aerospace</option>"}
-								${userProfile.industryfocus1 =='25' ? "<option value='25' selected>Department Store</option>" : "<option value='25'>Department Store</option>"}
-								${userProfile.industryfocus1 =='26' ? "<option value='26' selected>Education - Teaching - Administration</option>" : "<option value='26'>Education - Teaching - Administration</option>"}
-								${userProfile.industryfocus1 =='27' ? "<option value='27' selected>Electronics</option>" : "<option value='27'>Electronics</option>"}
-								${userProfile.industryfocus1 =='28' ? "<option value='28' selected>Employment - Recruiting - Staffing</option>" : "<option value='28'>Employment - Recruiting - Staffing</option>"}
-								${userProfile.industryfocus1 =='29' ? "<option value='29' selected>Energy - Utilities - Gas - Electric</option>" : "<option value='29'>Energy - Utilities - Gas - Electric</option>"}
-								${userProfile.industryfocus1 =='30' ? "<option value='30' selected>Engineering - Machinery</option>" : "<option value='30'>Engineering - Machinery</option>"}
-								${userProfile.industryfocus1 =='31' ? "<option value='31' selected>Engineering - Precision</option>" : "<option value='31'>Engineering - Precision</option>"}
-								${userProfile.industryfocus1 =='32' ? "<option value='32' selected>Engineering - Services</option>" : "<option value='32'>Engineering - Services</option>"}
-								${userProfile.industryfocus1 =='33' ? "<option value='33' selected>Entertainment</option>" : "<option value='33'>Entertainment</option>"}
-								${userProfile.industryfocus1 =='34' ? "<option value='34' selected>Environmental</option>" : "<option value='34'>Environmental</option>"}
-								${userProfile.industryfocus1 =='35' ? "<option value='35' selected>Exercise - Fitness</option>" : "<option value='35'>Exercise - Fitness</option>"}
-								${userProfile.industryfocus1 =='36' ? "<option value='36' selected>Exhibitions / Event Management / MICE</option>" : "<option value='36'>Exhibitions / Event Management / MICE</option>"}
-								${userProfile.industryfocus1 =='37' ? "<option value='37' selected>Eye Care</option>" : "<option value='37'>Eye Care</option>"}
-								${userProfile.industryfocus1 =='38' ? "<option value='38' selected>Fashion - Apparel - Textile</option>" : "<option value='38'>Fashion - Apparel - Textile</option>"}
-								${userProfile.industryfocus1 =='39' ? "<option value='39' selected>Food</option>" : "<option value='39'>Food</option>"}
-								${userProfile.industryfocus1 =='40' ? "<option value='40' selected>Full Service Restaurant</option>" : "<option value='40'>Full Service Restaurant</option>"}
-								${userProfile.industryfocus1 =='41' ? "<option value='41' selected>Funeral - Cemetery</option>" : "<option value='41'>Funeral - Cemetery</option>"}
-								${userProfile.industryfocus1 =='42' ? "<option value='42' selected>Furniture</option>" : "<option value='42'>Furniture</option>"}
-								${userProfile.industryfocus1 =='43' ? "<option value='43' selected>Gas / Convenience Store</option>" : "<option value='43'>Gas / Convenience Store</option>"}
-								${userProfile.industryfocus1 =='44' ? "<option value='44' selected>Government - Civil Service</option>" : "<option value='44'>Government - Civil Service</option>"}
-								${userProfile.industryfocus1 =='45' ? "<option value='45' selected>Grocery &amp; Pharmacy</option>" : "<option value='45'>Grocery &amp; Pharmacy</option>"}
-								${userProfile.industryfocus1 =='46' ? "<option value='46' selected>Hardware / Home Improvement</option>" : "<option value='46'>Hardware / Home Improvement</option>"}
-								${userProfile.industryfocus1 =='47' ? "<option value='47' selected>Healthcare - Health Services</option>" : "<option value='47'>Healthcare - Health Services</option>"}
-								${userProfile.industryfocus1 =='48' ? "<option value='48' selected>Home D&#233;cor and Kitchen</option>" : "<option value='48'>Home D&#233;cor and Kitchen</option>"}
-								${userProfile.industryfocus1 =='49' ? "<option value='49' selected>Homebuilding</option>" : "<option value='49'>Homebuilding</option>"}
-								${userProfile.industryfocus1 =='50' ? "<option value='50' selected>Hospitality</option>" : "<option value='50'>Hospitality</option>"}
-								${userProfile.industryfocus1 =='51' ? "<option value='51' selected>Hotel - Resort</option>" : "<option value='51'>Hotel - Resort</option>"}
-								${userProfile.industryfocus1 =='52' ? "<option value='52' selected>HVAC</option>" : "<option value='52'>HVAC</option>"}
-								${userProfile.industryfocus1 =='53' ? "<option value='53' selected>Import - Export</option>" : "<option value='53'>Import - Export</option>"}
-								${userProfile.industryfocus1 =='54' ? "<option value='54' selected>Industrial</option>" : "<option value='54'>Industrial</option>"}
-								${userProfile.industryfocus1 =='55' ? "<option value='55' selected>Insurance</option>" : "<option value='55'>Insurance</option>"}
-								${userProfile.industryfocus1 =='56' ? "<option value='56' selected>Internet - ECommerce</option>" : "<option value='56'>Internet - ECommerce</option>"}
-								${userProfile.industryfocus1 =='57' ? "<option value='57' selected>Jewelry</option>" : "<option value='57'>Jewelry</option>"}
-								${userProfile.industryfocus1 =='58' ? "<option value='58' selected>Landscaping</option>" : "<option value='58'>Landscaping</option>"}
-								${userProfile.industryfocus1 =='59' ? "<option value='59' selected>Law Enforcement</option>" : "<option value='59'>Law Enforcement</option>"}
-								${userProfile.industryfocus1 =='60' ? "<option value='60' selected>Legal</option>" : "<option value='60'>Legal</option>"}
-								${userProfile.industryfocus1 =='61' ? "<option value='61' selected>Library Science</option>" : "<option value='61'>Library Science</option>"}
-								${userProfile.industryfocus1 =='62' ? "<option value='62' selected>Managed Care</option>" : "<option value='62'>Managed Care</option>"}
-								${userProfile.industryfocus1 =='63' ? "<option value='63' selected>Manufacturing</option>" : "<option value='63'>Manufacturing</option>"}
-								${userProfile.industryfocus1 =='64' ? "<option value='64' selected>Marine / Maritime</option>" : "<option value='64'>Marine / Maritime</option>"}
-								${userProfile.industryfocus1 =='65' ? "<option value='65' selected>Maritime - Offshore &amp; Marine Engineering</option>" : "<option value='65'>Maritime - Offshore &amp; Marine Engineering</option>"}
-								${userProfile.industryfocus1 =='66' ? "<option value='66' selected>Maritime - Port</option>" : "<option value='66'>Maritime - Port</option>"}
-								${userProfile.industryfocus1 =='67' ? "<option value='67' selected>Maritime - Shipping</option>" : "<option value='67'>Maritime - Shipping</option>"}
-								${userProfile.industryfocus1 =='68' ? "<option value='68' selected>Mass Merchandiser</option>" : "<option value='68'>Mass Merchandiser</option>"}
-								${userProfile.industryfocus1 =='69' ? "<option value='69' selected>Medical Equipment</option>" : "<option value='69'>Medical Equipment</option>"}
-								${userProfile.industryfocus1 =='70' ? "<option value='70' selected>Merchandising</option>" : "<option value='70'>Merchandising</option>"}
-								${userProfile.industryfocus1 =='71' ? "<option value='71' selected>Military</option>" : "<option value='71'>Military</option>"}
-								${userProfile.industryfocus1 =='72' ? "<option value='72' selected>Mining / Drilling / Resources</option>" : "<option value='72'>Mining / Drilling / Resources</option>"}
-								${userProfile.industryfocus1 =='73' ? "<option value='73' selected>Mortgage</option>" : "<option value='73'>Mortgage</option>"}
-								${userProfile.industryfocus1 =='74' ? "<option value='74' selected>Newspaper</option>" : "<option value='74'>Newspaper</option>"}
-								${userProfile.industryfocus1 =='75' ? "<option value='75' selected>Not for Profit - Charitable</option>" : "<option value='75'>Not for Profit - Charitable</option>"}
-								${userProfile.industryfocus1 =='76' ? "<option value='76' selected>Office Supplies - Equipment</option>" : "<option value='76'>Office Supplies - Equipment</option>"}
-								${userProfile.industryfocus1 =='77' ? "<option value='77' selected>Oil Refining - Petroleum - Drilling</option>" : "<option value='77'>Oil Refining - Petroleum - Drilling</option>"}
-								${userProfile.industryfocus1 =='78' ? "<option value='78' selected>Other</option>" : "<option value='78'>Other</option>"}
-								${userProfile.industryfocus1 =='79' ? "<option value='79' selected>Other Great Industries</option>" : "<option value='79'>Other Great Industries</option>"}
-								${userProfile.industryfocus1 =='80' ? "<option value='80' selected>Packaging</option>" : "<option value='80'>Packaging</option>"}
-								${userProfile.industryfocus1 =='81' ? "<option value='81' selected>Pet Store</option>" : "<option value='81'>Pet Store</option>"}
-								${userProfile.industryfocus1 =='82' ? "<option value='82' selected>Pharmaceutical</option>" : "<option value='82'>Pharmaceutical</option>"}
-								${userProfile.industryfocus1 =='83' ? "<option value='83' selected>Polymer / Plastic / Rubber</option>" : "<option value='83'>Polymer / Plastic / Rubber</option>"}
-								${userProfile.industryfocus1 =='84' ? "<option value='84' selected>Printing - Publishing</option>" : "<option value='84'>Printing - Publishing</option>"}
-								${userProfile.industryfocus1 =='85' ? "<option value='85' selected>Public Relations</option>" : "<option value='85'>Public Relations</option>"}
-								${userProfile.industryfocus1 =='86' ? "<option value='86' selected>Quick Service or Fast Food Restaurant</option>" : "<option value='86'>Quick Service or Fast Food Restaurant</option>"}
-								${userProfile.industryfocus1 =='87' ? "<option value='87' selected>Real Estate - Property Mgt</option>" : "<option value='87'>Real Estate - Property Mgt</option>"}
-								${userProfile.industryfocus1 =='88' ? "<option value='88' selected>Recreation</option>" : "<option value='88'>Recreation</option>"}
-								${userProfile.industryfocus1 =='89' ? "<option value='89' selected>Repair / Maintenance Services</option>" : "<option value='89'>Repair / Maintenance Services</option>"}
-								${userProfile.industryfocus1 =='90' ? "<option value='90' selected>Research &amp; Development</option>" : "<option value='90'>Research &amp; Development</option>"}
-								${userProfile.industryfocus1 =='91' ? "<option value='91' selected>Restaurant</option>" : "<option value='91'>Restaurant</option>"}
-								${userProfile.industryfocus1 =='92' ? "<option value='92' selected>Retail</option>" : "<option value='92'>Retail</option>"}
-								${userProfile.industryfocus1 =='93' ? "<option value='93' selected>Retail Bank</option>" : "<option value='93'>Retail Bank</option>"}
-								${userProfile.industryfocus1 =='94' ? "<option value='94' selected>Sales - Marketing</option>" : "<option value='94'>Sales - Marketing</option>"}
-								${userProfile.industryfocus1 =='95' ? "<option value='95' selected>Science &amp; Technology</option>" : "<option value='95'>Science &amp; Technology</option>"}
-								${userProfile.industryfocus1 =='96' ? "<option value='96' selected>Securities</option>" : "<option value='96'>Securities</option>"}
-								${userProfile.industryfocus1 =='97' ? "<option value='97' selected>Security</option>" : "<option value='97'>Security</option>"}
-								${userProfile.industryfocus1 =='98' ? "<option value='98' selected>Semiconductor</option>" : "<option value='98'>Semiconductor</option>"}
-								${userProfile.industryfocus1 =='99' ? "<option value='99' selected>Services - Corporate B2B</option>" : "<option value='99'>Services - Corporate B2B</option>"}
-								${userProfile.industryfocus1 =='100' ? "<option value='100' selected>Social Services</option>" : "<option value='100'>Social Services</option>"}
-								${userProfile.industryfocus1 =='101' ? "<option value='101' selected>Sporting Goods</option>" : "<option value='101'>Sporting Goods</option>"}
-								${userProfile.industryfocus1 =='102' ? "<option value='102' selected>Telecommunications</option>" : "<option value='102'>Telecommunications</option>"}
-								${userProfile.industryfocus1 =='103' ? "<option value='103' selected>Training</option>" : "<option value='103'>Training</option>"}
-								${userProfile.industryfocus1 =='104' ? "<option value='104' selected>Transportation</option>" : "<option value='104'>Transportation</option>"}
-								${userProfile.industryfocus1 =='105' ? "<option value='105' selected>Travel</option>" : "<option value='105'>Travel</option>"}
-								${userProfile.industryfocus1 =='106' ? "<option value='106' selected>Wireless</option>" : "<option value='106'>Wireless</option>"}
-								${userProfile.industryfocus1 =='107' ? "<option value='107' selected>Wood / Fibre / Paper</option>" : "<option value='107'>Wood / Fibre / Paper</option>"}
-				        </form:select>			    	
-			    	</td>
-			    	<td class="leftalign" nowrap><br><label>Company Experiences</label> <br>
-			    	<form:input size="25" path="companyexperience1" /><br>
-					<form:input size="25" path="companyexperience2" /><br>
-					<form:input size="25" path="companyexperience3" />
-					</td>
+				<tr><td class="leftalign" nowrap>
+					    <form:errors path="coachstyleinperson"><form:errors path="coachstyleinperson" cssClass="error" /><br></form:errors><span class="required">*</span>	
+					    <label>How do you coach:</label> 
+				            <form:checkbox path="coachstyleonline" value="1" />Online
+				            <form:checkbox path="coachstyleinperson" value="1" />In-Person
+				    </td>
+				    
+			      <td class="leftalign" nowrap>
+			      		<form:errors path="hourlyrate"><form:errors path="hourlyrate" cssClass="error" /><br></form:errors><span class="required">*</span> 
+					<label>Hourly Rate: </label>
+			        	<form:select size="1" path="hourlyrate" >
+			          	<option selected  value="-1">Select Your Rate</option>
+			          	${userProfile.hourlyrate =='10' ? "<option value='10' selected>10</option>" : "<option value='10' >10</option>"}
+			          	${userProfile.hourlyrate =='15' ? "<option value='15' selected>15</option>" : "<option value='15' >15</option>"}
+			          	${userProfile.hourlyrate =='20' ? "<option value='20' selected>20</option>" : "<option value='20' >20</option>"}
+			          	${userProfile.hourlyrate =='25' ? "<option value='25' selected>25</option>" : "<option value='25' >25</option>"}
+			          	${userProfile.hourlyrate =='30' ? "<option value='30' selected>30</option>" : "<option value='30' >30</option>"}
+			          	${userProfile.hourlyrate =='35' ? "<option value='35' selected>35</option>" : "<option value='35' >35</option>"}
+			          	${userProfile.hourlyrate =='40' ? "<option value='40' selected>40</option>" : "<option value='40' >40</option>"}
+			          	${userProfile.hourlyrate =='45' ? "<option value='45' selected>45</option>" : "<option value='45' >45</option>"}
+			          	${userProfile.hourlyrate =='50' ? "<option value='50' selected>50</option>" : "<option value='50' >50</option>"}
+			          	${userProfile.hourlyrate =='55' ? "<option value='55' selected>55</option>" : "<option value='55' >55</option>"}
+			          	${userProfile.hourlyrate =='60' ? "<option value='60' selected>60</option>" : "<option value='60' >60</option>"}
+			          	${userProfile.hourlyrate =='65' ? "<option value='65' selected>65</option>" : "<option value='65' >65</option>"}
+			          	${userProfile.hourlyrate =='70' ? "<option value='70' selected>70</option>" : "<option value='70' >70</option>"}
+			          	${userProfile.hourlyrate =='75' ? "<option value='75' selected>75</option>" : "<option value='75' >75</option>"}
+			          	${userProfile.hourlyrate =='80' ? "<option value='80' selected>80</option>" : "<option value='80' >80</option>"}
+			          	${userProfile.hourlyrate =='85' ? "<option value='85' selected>85</option>" : "<option value='85' >85</option>"}
+			          	${userProfile.hourlyrate =='90' ? "<option value='90' selected>90</option>" : "<option value='90' >90</option>"}
+			          	${userProfile.hourlyrate =='95' ? "<option value='95' selected>95</option>" : "<option value='95' >95</option>"}
+			          	${userProfile.hourlyrate =='100' ? "<option value='100' selected>100</option>" : "<option value='100' >100</option>"}
+			          	${userProfile.hourlyrate =='105' ? "<option value='105' selected>105</option>" : "<option value='105' >105</option>"}
+			          	${userProfile.hourlyrate =='110' ? "<option value='110' selected>110</option>" : "<option value='110' >110</option>"}
+			          	${userProfile.hourlyrate =='115' ? "<option value='115' selected>115</option>" : "<option value='115' >115</option>"}
+			          	${userProfile.hourlyrate =='120' ? "<option value='120' selected>120</option>" : "<option value='120' >120</option>"}
+			          	${userProfile.hourlyrate =='125' ? "<option value='125' selected>125</option>" : "<option value='125' >125</option>"}
+			          	${userProfile.hourlyrate =='130' ? "<option value='130' selected>130</option>" : "<option value='130' >130</option>"}
+			          	${userProfile.hourlyrate =='135' ? "<option value='135' selected>135</option>" : "<option value='135' >135</option>"}
+			          	${userProfile.hourlyrate =='140' ? "<option value='140' selected>140</option>" : "<option value='140' >140</option>"}
+			          	${userProfile.hourlyrate =='145' ? "<option value='145' selected>145</option>" : "<option value='145' >145</option>"}
+			          	${userProfile.hourlyrate =='150' ? "<option value='150' selected>150</option>" : "<option value='150' >150</option>"}
+			          	${userProfile.hourlyrate =='155' ? "<option value='155' selected>155</option>" : "<option value='155' >155</option>"}
+			          	${userProfile.hourlyrate =='160' ? "<option value='160' selected>160</option>" : "<option value='160' >160</option>"}
+			          	${userProfile.hourlyrate =='165' ? "<option value='165' selected>165</option>" : "<option value='165' >165</option>"}
+			          	${userProfile.hourlyrate =='170' ? "<option value='170' selected>170</option>" : "<option value='170' >170</option>"}
+			          	${userProfile.hourlyrate =='175' ? "<option value='175' selected>175</option>" : "<option value='175' >175</option>"}
+			          	${userProfile.hourlyrate =='180' ? "<option value='180' selected>180</option>" : "<option value='180' >180</option>"}
+			          	${userProfile.hourlyrate =='185' ? "<option value='185' selected>185</option>" : "<option value='185' >185</option>"}
+			          	${userProfile.hourlyrate =='190' ? "<option value='190' selected>190</option>" : "<option value='190' >190</option>"}
+			          	${userProfile.hourlyrate =='195' ? "<option value='195' selected>195</option>" : "<option value='195' >195</option>"}
+			          	${userProfile.hourlyrate =='200' ? "<option value='200' selected>200</option>" : "<option value='200' >200</option>"}
+			          	
+					</form:select> 
+			      </td> 
+				    
 				</tr>
+
+				<tr><td class="leftalign" nowrap colspan="3">
+					    <form:errors path="lvlelementary" cssClass="error" /><br><span class="required">*</span>
+					    <label>Levels:</label> 
+				            <form:checkbox path="lvlelementary" value="1" />Elementary (K - 6)
+				            <form:checkbox path="lvljuniorhigh" value="1" />Junior High (6 - 8)
+				            <form:checkbox path="lvlhighschool" value="1" />High School (8 - 12)
+				            <form:checkbox path="lvlcollege" value="1" />College 
+				            <form:checkbox path="lvlprofessional" value="1" />Professional
+				            <form:checkbox path="lvlleisure" value="1" />Leisure
+				</td></tr>
+
+			    <tr>
+			    	<td class="leftalign" nowrap><form:errors path="coachingcategory1" cssClass="error" /><label>*Subject 1</label><br>
+				        <form:select size="1" path="coachingcategory1" id="coachingcategory1" >
+				          <option selected  value="-1">Select a Subject</option>
+				          ${userProfile.coachingcategory1 =='1010' ? "<option value='1010' selected>Art</option>" : "<option value='1010' >Art</option>"}
+				          ${userProfile.coachingcategory1 =='1020' ? "<option value='1020' selected>Business</option>" : "<option value='1020' >Business</option>"}
+				          ${userProfile.coachingcategory1 =='1030' ? "<option value='1030' selected>Computer Bs. (Word, Excel, Etc..)</option>" : "<option value='1030' >Computer Bs. (Word, Excel, Etc..)</option>"}
+				          ${userProfile.coachingcategory1 =='1040' ? "<option value='1040' selected>Computer prog. (Java, .Net, etc..)</option>" : "<option value='1040' >Computer prog. (Java, .Net, etc..)</option>"}
+				          ${userProfile.coachingcategory1 =='1050' ? "<option value='1050' selected>Communication</option>" : "<option value='1050' >Communication</option>"}
+				          ${userProfile.coachingcategory1 =='1060' ? "<option value='1060' selected>English</option>" : "<option value='1060' >English</option>"}
+				          ${userProfile.coachingcategory1 =='1070' ? "<option value='1070' selected>History</option>" : "<option value='1070' >History</option>"}
+				          ${userProfile.coachingcategory1 =='1080' ? "<option value='1080' selected>Homeschool</option>" : "<option value='1080' >Homeschool</option>"}
+				          ${userProfile.coachingcategory1 =='1090' ? "<option value='1090' selected>Language</option>" : "<option value='1090' >Language</option>"}
+				          ${userProfile.coachingcategory1 =='1100' ? "<option value='1100' selected>Math</option>" : "<option value='1100' >Math</option>"}
+				          ${userProfile.coachingcategory1 =='1110' ? "<option value='1110' selected>Music</option>" : "<option value='1110' >Music</option>"}
+				          ${userProfile.coachingcategory1 =='1120' ? "<option value='1120' selected>Science</option>" : "<option value='1120' >Science</option>"}
+				          ${userProfile.coachingcategory1 =='1130' ? "<option value='1130' selected>Special Needs (ADD, ADHD, etc..)</option>" : "<option value='1130' >Special Needs (ADD, ADHD, etc..)</option>"}
+				          ${userProfile.coachingcategory1 =='1140' ? "<option value='1140' selected>Test Prep.((SAT, ACT, GMAT, etc..)</option>" : "<option value='1140' >Test Prep.((SAT, ACT, GMAT, etc..)</option>"}
+				        </form:select>
+			        </td>
+		    		<td class="leftalign" nowrap><label>Subject 2</label><br>
+				        <form:select size="1" path="coachingcategory2" id="coachingcategory2" >
+				          <option selected  value="-1">Select a Subject</option>
+				          ${userProfile.coachingcategory2 =='1010' ? "<option value='1010' selected>Art</option>" : "<option value='1010' >Art</option>"}
+				          ${userProfile.coachingcategory2 =='1020' ? "<option value='1020' selected>Business</option>" : "<option value='1020' >Business</option>"}
+				          ${userProfile.coachingcategory2 =='1030' ? "<option value='1030' selected>Computer Bs. (Word, Excel, Etc..)</option>" : "<option value='1030' >Computer Bs. (Word, Excel, Etc..)</option>"}
+				          ${userProfile.coachingcategory2 =='1040' ? "<option value='1040' selected>Computer prog. (Java, .Net, etc..)</option>" : "<option value='1040' >Computer prog. (Java, .Net, etc..)</option>"}
+				          ${userProfile.coachingcategory2 =='1050' ? "<option value='1050' selected>Communication</option>" : "<option value='1050' >Communication</option>"}
+				          ${userProfile.coachingcategory2 =='1060' ? "<option value='1060' selected>English</option>" : "<option value='1060' >English</option>"}
+				          ${userProfile.coachingcategory2 =='1070' ? "<option value='1070' selected>History</option>" : "<option value='1070' >History</option>"}
+				          ${userProfile.coachingcategory2 =='1080' ? "<option value='1080' selected>Homeschool</option>" : "<option value='1080' >Homeschool</option>"}
+				          ${userProfile.coachingcategory2 =='1090' ? "<option value='1090' selected>Language</option>" : "<option value='1090' >Language</option>"}
+				          ${userProfile.coachingcategory2 =='1100' ? "<option value='1100' selected>Math</option>" : "<option value='1100' >Math</option>"}
+				          ${userProfile.coachingcategory2 =='1110' ? "<option value='1110' selected>Music</option>" : "<option value='1110' >Music</option>"}
+				          ${userProfile.coachingcategory2 =='1120' ? "<option value='1120' selected>Science</option>" : "<option value='1120' >Science</option>"}
+				          ${userProfile.coachingcategory2 =='1130' ? "<option value='1130' selected>Special Needs (ADD, ADHD, etc..)</option>" : "<option value='1130' >Special Needs (ADD, ADHD, etc..)</option>"}
+				          ${userProfile.coachingcategory2 =='1140' ? "<option value='1140' selected>Test Prep.((SAT, ACT, GMAT, etc..)</option>" : "<option value='1140' >Test Prep.((SAT, ACT, GMAT, etc..)</option>"}
+				        </form:select>
+			        </td>
+		    		<td class="leftalign" nowrap><label>Subject 3</label><br>
+				        <form:select size="1" path="coachingcategory3" id="coachingcategory3" >
+				          <option selected  value="-1">Select a Subject</option>
+				          ${userProfile.coachingcategory3 =='1010' ? "<option value='1010' selected>Art</option>" : "<option value='1010' >Art</option>"}
+				          ${userProfile.coachingcategory3 =='1020' ? "<option value='1020' selected>Business</option>" : "<option value='1020' >Business</option>"}
+				          ${userProfile.coachingcategory3 =='1030' ? "<option value='1030' selected>Computer Bs. (Word, Excel, Etc..)</option>" : "<option value='1030' >Computer Bs. (Word, Excel, Etc..)</option>"}
+				          ${userProfile.coachingcategory3 =='1040' ? "<option value='1040' selected>Computer prog. (Java, .Net, etc..)</option>" : "<option value='1040' >Computer prog. (Java, .Net, etc..)</option>"}
+				          ${userProfile.coachingcategory3 =='1050' ? "<option value='1050' selected>Communication</option>" : "<option value='1050' >Communication</option>"}
+				          ${userProfile.coachingcategory3 =='1060' ? "<option value='1060' selected>English</option>" : "<option value='1060' >English</option>"}
+				          ${userProfile.coachingcategory3 =='1070' ? "<option value='1070' selected>History</option>" : "<option value='1070' >History</option>"}
+				          ${userProfile.coachingcategory3 =='1080' ? "<option value='1080' selected>Homeschool</option>" : "<option value='1080' >Homeschool</option>"}
+				          ${userProfile.coachingcategory3 =='1090' ? "<option value='1090' selected>Language</option>" : "<option value='1090' >Language</option>"}
+				          ${userProfile.coachingcategory3 =='1100' ? "<option value='1100' selected>Math</option>" : "<option value='1100' >Math</option>"}
+				          ${userProfile.coachingcategory3 =='1110' ? "<option value='1110' selected>Music</option>" : "<option value='1110' >Music</option>"}
+				          ${userProfile.coachingcategory3 =='1120' ? "<option value='1120' selected>Science</option>" : "<option value='1120' >Science</option>"}
+				          ${userProfile.coachingcategory3 =='1130' ? "<option value='1130' selected>Special Needs (ADD, ADHD, etc..)</option>" : "<option value='1130' >Special Needs (ADD, ADHD, etc..)</option>"}
+				          ${userProfile.coachingcategory3 =='1140' ? "<option value='1140' selected>Test Prep.((SAT, ACT, GMAT, etc..)</option>" : "<option value='1140' >Test Prep.((SAT, ACT, GMAT, etc..)</option>"}
+				        </form:select>			    	
+			    	</td>
+				</tr>
+				<tr><td>&nbsp;</td></tr>
+					<tr>
+						<td class="leftalign" colspan="3"> <label>Classes: List all classes you are capable of tutoring (ex. algebra, chemistry, anatomy, etc...)</label> 
+							<form:errors path="skillsExpertise" cssClass="error" />
+							<form:textarea rows="2" cols="100" name="wysiwygskills"
+							id="wysiwygskills" path="skillsExpertise" /> 
+						</td>
+					</tr>
 				</table>
+				<%-- 
+				<table>
+					<tr>
+						<td class="leftalign" colspan="3"> <label>Classes: List all classes you are capable of tutoring (ex. algebra 1, algebra 2, chemistry, anatomy, etc...)</label> <form:errors path="skillsExpertise" cssClass="error" />
+						<font style="font-size: 14px; color: red;"><form:errors path="skillsExpertise" cssClass="error" /></font><br> 
+							<form:textarea rows="2" cols="100" name="wysiwygskills"
+							id="wysiwygskills" path="skillsExpertise" /> 
+						</td>
+					</tr>
+				</table>
+				--%>
 				<hr>
 				<br>
 				<table>
 				<tr>
-					<td class="leftalign" > <label>Overview: Provide an overview of your business </label> <font style="font-size: 14px; color: red;"> <form:errors path="overview" cssClass="error" /></font><br>
+					<td class="leftalign" > <label>Overview / Bio: Provide an overview of your background, and what makes you the ideal tutor </label> <font style="font-size: 14px; color: red;"> <form:errors path="overview" cssClass="error" /></font><br>
 						<form:textarea  name="wysiwyg" class="required" cols="100"
 						id="wysiwyg" rows="10" path="overview" value="&nbsp;"/> 
 					</td>
 				</tr>
 				<tr><td>&nbsp;</td></tr>
 				<tr>	
-				<td class="leftalign" nowrap> <label>Service Description: Describe the services that you offer</label> <form:errors path="serviceDescription" cssClass="error" /> 
+				<td class="leftalign" nowrap> <label>Qualifications: Detail out what qualifies you to tutor in each of the subjects you've selected</label>  
 				<font style="font-size: 14px; color: red;"><form:errors path="serviceDescription" cssClass="error" /></font> <br>
 					<div style="height: 10px;"></div>
 					<form:textarea name="wysiwyg1" class="required" cols="100"
 					 id="wysiwyg1" rows="10" path="serviceDescription" value="&nbsp;"/>
 				</td>
+<%--
 				</tr>	
 				<tr><td>&nbsp;</td></tr>
 				<tr>
@@ -655,6 +487,7 @@ label {font-size:14px;}
 						id="wysiwygkeywords" path="keywords" /> 
 					</td>
 				</tr>
+--%>				
 			</table>
 			<table>
 				<tr>
@@ -677,4 +510,4 @@ label {font-size:14px;}
 		<input type="hidden" name="profile_picture_name" id="profile_picture_name" value="${userProfile.profile_picture_name}"></input>
 		</form:form>
 </section>
-<%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	
+<%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>

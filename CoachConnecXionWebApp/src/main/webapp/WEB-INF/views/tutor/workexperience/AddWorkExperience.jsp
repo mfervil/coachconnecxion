@@ -132,12 +132,6 @@ div#myDialog {
 							href="profile?profileId=${profileId}" style="text-decoration: none">Profile
 								Overview </a></td>
 					</tr>
-
-					<tr>
-						<td
-							style="font-size: 14px; text-align: left;"><a
-							href="packages?profileId=${profileId}" style="text-decoration: none">Packages</a></td>
-					</tr>
 					<tr>
 						<td
 							style="font-size: 14px; text-align: left;"><a
@@ -170,7 +164,7 @@ div#myDialog {
 								style="font-size: 14px;text-decoration: underline;color:blue;">CREATE ANOTHER EMPLOYER</a>
 
 								<c:if test="${sessionScope.newusercreated != '1'}">
-									 <br> <a href="workexperience?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">VIEW WORK SUMMARY</a>
+									 <br><br> <a href="workexperience?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">VIEW WORK SUMMARY</a>
 								</c:if>	
 								
 								<c:if test="${sessionScope.newusercreated == '1'}">
@@ -184,7 +178,7 @@ div#myDialog {
 
 				</div>
 				
-					<c:url var="jobHistoryUrl" value="/jobhistoryAdd" />
+					<c:url var="jobHistoryUrl" value="/tutor/jobhistoryAdd" />
 					<form:form modelAttribute="jobHistoryAttribute" method="POST" id="addWorkExperience"
 						action="${jobHistoryUrl}">
 						<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
@@ -260,7 +254,7 @@ div#myDialog {
 				<c:if test="${sessionScope.newusercreated != '1'}">
 					<table style="margin-top: -31px; margin-left: 0px;">
 						<tr>
-							<td><c:url var="profileUrl" value="/profile" /> <form:form
+							<td><c:url var="profileUrl" value="public/profile" /> <form:form
 									commandName="/workexperience" method="GET" action="${profileUrl}">
 							
 									<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
@@ -281,4 +275,4 @@ div#myDialog {
 		</tr>
 	</table>
 </section>
-<%@ include file="/WEB-INF/views/tutor/common/footer_no_side.jsp" %>	
+<%@ include file="/WEB-INF/views/tutor/common/footer_no_side.jsp" %>

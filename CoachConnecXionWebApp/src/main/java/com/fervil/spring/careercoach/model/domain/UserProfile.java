@@ -15,6 +15,7 @@ import javax.persistence.TemporalType;
 
 import java.sql.Blob;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "USER_PROFILE")
@@ -82,7 +83,48 @@ public class UserProfile  implements Serializable {
 	private long user_user_id;
 	private int accountType;
 	private String email;
+	
+	@Column(name = "gender")
+	private String gender;
+	@Column(name = "dobmonth")
+	private int dobmonth;
+	@Column(name = "dobday")
+	private int dobday;
+	@Column(name = "dobyear")
+	private int dobyear;
+	@Column(name = "experience")
+	private int experience;
+	@Column(name = "coachstyleonline")
+	private String coachstyleonline;		
+	public String getCoachstyleonline() {
+		return coachstyleonline;
+	}
 
+	private String lvlelementary;
+	private String lvljuniorhigh;
+	private String lvlhighschool;
+	private String lvlcollege;
+	private String lvlprofessional;
+	private String lvlleisure;
+	
+	
+	public void setCoachstyleonline(String coachstyleonline) {
+		this.coachstyleonline = coachstyleonline;
+	}
+
+
+	public String getCoachstyleinperson() {
+		return coachstyleinperson;
+	}
+
+
+	public void setCoachstyleinperson(String coachstyleinperson) {
+		this.coachstyleinperson = coachstyleinperson;
+	}
+
+	@Column(name = "coachstyleinperson")
+	private String coachstyleinperson;		
+	
 	@Column(name = "profilepicturestring")
 	private String profilepicturestring;
 	
@@ -270,7 +312,7 @@ public class UserProfile  implements Serializable {
 
 	private String summaryOfHighestPosition;
 	private String companyOfHighestPosition;
-	private double hourlyRate;
+	private double hourlyrate;
 	private String paymentTerms;
 
 	@Column(name = "keywords", nullable = false, columnDefinition="TEXT")
@@ -432,14 +474,14 @@ public class UserProfile  implements Serializable {
 		this.companyOfHighestPosition = companyOfHighestPosition;
 	}
 	
-	@Column(name = "hourlyRate", nullable = false)
-	public double getHourlyRate(){
-		return hourlyRate;
+	@Column(name = "hourlyrate", nullable = false)
+	public double getHourlyrate(){
+		return hourlyrate;
 	}
 
 	
-	public void setHourlyRate (double hourlyRate){
-		this.hourlyRate = hourlyRate;
+	public void setHourlyrate (double hourlyrate){
+		this.hourlyrate = hourlyrate;
 	}
 	
 	@Column(name = "paymentTerms", nullable = false)
@@ -632,12 +674,14 @@ public class UserProfile  implements Serializable {
 				+ phone + ", displayName=" + displayName + ", userProfileType="
 				+ userProfileType + ", user_user_id=" + user_user_id
 				+ ", accountType=" + accountType + ", email=" + email
-				+ ", coachingcategory1=" + coachingcategory1
-				+ ", coachingcategory2=" + coachingcategory2
-				+ ", coachingcategory3=" + coachingcategory3
-				+ ", industryfocus1=" + industryfocus1 + ", industryfocus2="
-				+ industryfocus2 + ", industryfocus3=" + industryfocus3
-				+ ", companyexperience1=" + companyexperience1
+				+ ", dobmonth=" + dobmonth + ", dobday=" + dobday
+				+ ", dobyear=" + dobyear + ", profilepicturestring="
+				+ profilepicturestring + ", coachingcategory1="
+				+ coachingcategory1 + ", coachingcategory2="
+				+ coachingcategory2 + ", coachingcategory3="
+				+ coachingcategory3 + ", industryfocus1=" + industryfocus1
+				+ ", industryfocus2=" + industryfocus2 + ", industryfocus3="
+				+ industryfocus3 + ", companyexperience1=" + companyexperience1
 				+ ", companyexperience2=" + companyexperience2
 				+ ", companyexperience3=" + companyexperience3 + ", address="
 				+ address + ", apartment=" + apartment + ", city=" + city
@@ -646,7 +690,7 @@ public class UserProfile  implements Serializable {
 				+ ", skillsExpertise=" + skillsExpertise
 				+ ", summaryOfHighestPosition=" + summaryOfHighestPosition
 				+ ", companyOfHighestPosition=" + companyOfHighestPosition
-				+ ", hourlyRate=" + hourlyRate + ", paymentTerms="
+				+ ", hourlyrate=" + hourlyrate + ", paymentTerms="
 				+ paymentTerms + ", keywords=" + keywords + ", modifiedDate="
 				+ modifiedDate + ", coaching_category=" + coaching_category
 				+ ", company_experience=" + company_experience + ", firstname="
@@ -657,4 +701,123 @@ public class UserProfile  implements Serializable {
 				+ profile_picture_type + ", profile_picture_name="
 				+ profile_picture_name + ", video_url=" + video_url + "]";
 	}
+
+
+	public int getDobmonth() {
+		return dobmonth;
+	}
+
+
+	public void setDobmonth(int dobmonth) {
+		this.dobmonth = dobmonth;
+	}
+
+
+	public int getDobday() {
+		return dobday;
+	}
+
+
+	public void setDobday(int dobday) {
+		this.dobday = dobday;
+	}
+
+
+	public int getDobyear() {
+		return dobyear;
+	}
+
+
+	public void setDobyear(int dobyear) {
+		this.dobyear = dobyear;
+	}
+
+
+	public String getGender() {
+		return gender;
+	}
+
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+
+	public int getExperience() {
+		return experience;
+	}
+
+
+	public void setExperience(int experience) {
+		this.experience = experience;
+	}
+
+
+	public String getLvlelementary() {
+		return lvlelementary;
+	}
+
+
+	public void setLvlelementary(String lvlelementary) {
+		this.lvlelementary = lvlelementary;
+	}
+
+
+	public String getLvljuniorhigh() {
+		return lvljuniorhigh;
+	}
+
+
+	public void setLvljuniorhigh(String lvljuniorhigh) {
+		this.lvljuniorhigh = lvljuniorhigh;
+	}
+
+
+	public String getLvlhighschool() {
+		return lvlhighschool;
+	}
+
+
+	public void setLvlhighschool(String lvlhighschool) {
+		this.lvlhighschool = lvlhighschool;
+	}
+
+
+	public String getLvlcollege() {
+		return lvlcollege;
+	}
+
+
+	public void setLvlcollege(String lvlcollege) {
+		this.lvlcollege = lvlcollege;
+	}
+
+
+	public String getLvlprofessional() {
+		return lvlprofessional;
+	}
+
+
+	public String getLvlleisure() {
+		return lvlleisure;
+	}
+
+	public long getUser_user_id() {
+		return user_user_id;
+	}
+
+
+	public void setUser_user_id(long user_user_id) {
+		this.user_user_id = user_user_id;
+	}
+
+	public void setLvlprofessional(String lvlprofessional) {
+		this.lvlprofessional = lvlprofessional;
+	}
+
+
+	public void setLvlleisure(String lvlleisure) {
+		this.lvlleisure = lvlleisure;
+	}
+
 }

@@ -73,7 +73,7 @@ a.morelink {
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">Work
 		Experience</div>
 	<div style="width: 900px;">
-		<c:url var="jobhistoryUrl" value="/jobhistoryAdd" />
+		<c:url var="jobhistoryUrl" value="/tutor/jobhistoryAdd" />
 		<form:form method="GET" action="${jobhistoryUrl}"
 			commandName="jobHostoryAttribute">
 
@@ -124,9 +124,9 @@ a.morelink {
 				<table style="text-align: center;">
 					<tbody>
 						<c:forEach items="${addExperiences}" var="Experience">
-							<c:url var="editUrl" value="/experienceEdit?id=${Experience.id}&profileId=${profileId}" />
+							<c:url var="editUrl" value="experienceEdit?id=${Experience.id}&profileId=${profileId}" />
 							<c:url var="deleteUrl"
-								value="/experienceDelete?id=${Experience.id}&profileId=${profileId}" />
+								value="experienceDelete?id=${Experience.id}&profileId=${profileId}" />
 							<tr>
 								<td style="text-align: left;">
 									<table>

@@ -196,7 +196,7 @@ text-align:center;
 					</c:choose>
 				</div>
 				
-					<c:url var="educationUrl" value="/educationEdit?id=${educationAttribute.id}" />
+					<c:url var="educationUrl" value="/tutor/educationEdit?id=${educationAttribute.id}" />
 					<form:form modelAttribute="educationAttribute" method="POST" id="addWorkExperience"
 						action="${educationUrl}">
 						<table>
@@ -280,7 +280,7 @@ text-align:center;
 		
 				<table style="margin-left:0px;margin-top: -31px; ">
 					<tr>
-						<td><c:url var="profileUrl" value="/education" /> <form:form
+						<td><c:url var="profileUrl" value="/tutor/education" /> <form:form
 								commandName="/education" method="GET" action="${profileUrl}">
 								<input type="submit"
 									style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right;"

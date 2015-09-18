@@ -7,6 +7,7 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.fervil.spring.careercoach.model.domain.PackageDetails;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
 
 @Transactional
@@ -34,6 +35,7 @@ public interface UserProfileManager  extends Serializable {
 			String coachLastName, String city, String state, int pageSize, int pageNumber, String gradelevel, int maxrate, String subject) throws Exception;
     
     public void storeUserProfile(UserProfile userProfile) throws Exception;
+    public void storeUserProfileForTutor(UserProfile userProfile, PackageDetails tutorPackage) throws Exception;
     public void deleteUserProfile(String id) throws Exception;
     public UserProfile findById(String id) throws Exception;	
     public UserProfile findById(long id) throws Exception;	

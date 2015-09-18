@@ -37,6 +37,7 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.fervil.spring.careercoach.model.domain.PackageDetails;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
 import com.fervil.spring.careercoach.service.CreateUserProfileValidator;
 import com.fervil.spring.careercoach.service.UserProfileManager;
@@ -128,7 +129,7 @@ public class TutorCreateUserProfileFormController {
 			BindingResult result, SessionStatus status, ModelMap model, HttpServletRequest request, HttpServletResponse response,
 			org.springframework.web.context.request.WebRequest webRequest, HttpSession crdUsersession) {
 		
-		validator.validate(userProfile, result);
+		validator.validateTutor(userProfile, result);
 
 		try {
 		
@@ -170,7 +171,13 @@ public class TutorCreateUserProfileFormController {
 					userProfile.setProfile_picture_type(ext); 
 				}
 
-				userProfileManager.storeUserProfile(userProfile);
+				//userProfileManager.storeUserProfile(userProfile);
+				PackageDetails tutorPackage = new PackageDetails();
+				tutorPackage.setOverView(userProfile.getOverview() + "Tutering service");
+				tutorPackage.setPackageDetails(userProfile.getServiceDescription());
+				tutorPackage.setPackageName(userProfile.getDisplayName()  + "Tutering service" );
+				tutorPackage.setPriceValue(new Float(userProfile.getHourlyrate()));
+				userProfileManager.storeUserProfileForTutor(userProfile, tutorPackage); //This call creates a user profile and a package
 				status.setComplete();
 
 				//saveMultipartToDisk(profilepicture, userProfile);
@@ -186,9 +193,11 @@ public class TutorCreateUserProfileFormController {
 
 				if (crdUsersession.getAttribute("createUserProfileProfileId") == null){
 					//If it is a new user, after a profile is created, they need to create a package
-					return "redirect:tutor/packageAdd";
+					//return "redirect:/tutor/packageAdd";
+					//For tutors create a default package, and redirect to education page
+					return "redirect:/tutor/educationAdd?profileId=" + userProfile.getUserProfileId();
 				} else {
-					return "redirect:tutor/createuserprofilesuccess/userProfileId/" + userProfile.getUserProfileId();
+					return "redirect:/tutor/createuserprofilesuccess/userProfileId/" + userProfile.getUserProfileId();
 				}
 			}
 		} catch (Exception e) {

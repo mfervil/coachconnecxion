@@ -170,11 +170,6 @@ text-align:center;
 					<tr>
 						<td
 							style="font-size: 14px; text-align: left;"><a
-							href="packages?profileId=${profileId}" style="text-decoration: none">Packages</a></td>
-					</tr>
-					<tr>
-						<td
-							style="font-size: 14px; text-align: left;"><a
 							href="workexperience?profileId=${profileId}" style="text-decoration: none;">Job
 								History</a></td>
 					</tr>
@@ -219,7 +214,7 @@ text-align:center;
 					</c:choose>
 				</div>
 				
-					<c:url var="educationUrl" value="/educationAdd" />
+					<c:url var="educationUrl" value="/tutor/educationAdd" />
 					<form:form modelAttribute="educationAttribute" method="POST" id="addEducation"
 						action="${educationUrl}">
 						<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
@@ -316,7 +311,7 @@ text-align:center;
 					<table style="margin-left: 0px; margin-top: -31px;">
 						<tr>
 							<td><c:url var="profileUrl" value="/education" /> <form:form
-									commandName="/education" method="GET" action="${profileUrl}">
+									commandName="/tutor/education" method="GET" action="${profileUrl}">
 	
 									<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
 									<input type="submit"
@@ -331,4 +326,3 @@ text-align:center;
 	</table>
 </section>
 <%@ include file="/WEB-INF/views/tutor/common/footer_no_side.jsp" %>	
-

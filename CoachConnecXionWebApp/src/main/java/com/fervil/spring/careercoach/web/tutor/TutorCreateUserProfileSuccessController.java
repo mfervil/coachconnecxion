@@ -21,13 +21,14 @@ public class TutorCreateUserProfileSuccessController {
 	
     @RequestMapping(method=RequestMethod.GET)
     public ModelAndView createBillPaySuccess(@PathVariable("userProfileId") String userProfileId, Model model) {
-    	Map<String, Object> myModel = new HashMap<String, Object>();
 	    try{	
-	    	//myModel.put("userProfileId", userProfileId);
-	    	myModel.put("message", "Congratulations! Your profile has been successfully created.");
-	    	myModel.put("profileId", userProfileId);
 	    	
-	    	return new ModelAndView("tutor/userprofile/createUserProfileSuccess", "model", myModel);
+	    	ModelAndView mav = new ModelAndView ();
+			mav.addObject("profileId", userProfileId);
+			mav.addObject("message", "Congratulations! Your profile has been successfully created.");
+	    	
+			mav.setViewName ("tutor/userprofile/createUserProfileSuccess");
+			return mav;
 	    	
 		} catch (Exception e) {
 	        String msg = "The request failed. Error " + e;

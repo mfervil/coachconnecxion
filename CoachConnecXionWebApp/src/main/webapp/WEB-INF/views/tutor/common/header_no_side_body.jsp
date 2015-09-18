@@ -35,7 +35,7 @@
 				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor">Tutoring </a> | 
 				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/about-us">About Us </a> | 
 				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/contact-us">Contact Us </a> | 
-				<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold;"  href="${pageContext.request.contextPath}/tutor/users/login">Sign in-Register</a>
+				<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold;"  href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>
 <c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
 	<c:if test="${sessionScope.usertype == 1}">
 	 			<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>"> | NEW MESSAGES

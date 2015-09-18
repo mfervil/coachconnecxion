@@ -41,9 +41,9 @@ text-align:center;
 	padding:10px;
 }
 </style>
-<link href="css/webwidget_rating_bar.css" rel="stylesheet" type="text/css"></link>
-<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
-<script type="text/javascript" src="js/webwidget_rating_bar.js"></script>
+<link href="${pageContext.request.contextPath}/css/webwidget_rating_bar.css" rel="stylesheet" type="text/css"></link>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/webwidget_rating_bar.js"></script>
 <script>
 	function valueCheck() {
 		var value = document.getElementById('my_text_input').value;

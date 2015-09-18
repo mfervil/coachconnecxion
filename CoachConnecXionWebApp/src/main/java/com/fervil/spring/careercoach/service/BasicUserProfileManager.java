@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.apache.commons.codec.binary.Base64;
@@ -14,7 +16,9 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.fervil.spring.careercoach.model.dao.UserProfileDao;
+import com.fervil.spring.careercoach.model.domain.PackageDetails;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
 
 @Service
@@ -28,9 +32,13 @@ public class BasicUserProfileManager implements UserProfileManager {
 	/**
 	 * 
 	 */
+
 	@Autowired
 	private UserProfileDao userProfileDao;
 
+	@Resource(name = "packageDetailsService")
+	private PackageDetailsService packageDetailsService;
+	
     @NotNull
     @Override
     public List<UserProfile> getUserProfiles() throws Exception {
@@ -150,6 +158,13 @@ public class BasicUserProfileManager implements UserProfileManager {
     
     public void storeUserProfile(UserProfile userProfile) throws Exception {
     	userProfileDao.store(userProfile);
+    }
+
+    public void storeUserProfileForTutor(UserProfile userProfile, PackageDetails tutorPackage) throws Exception {
+    	userProfileDao.store(userProfile);
+
+    	tutorPackage.setProfileId(userProfile.getUserProfileId());
+    	packageDetailsService.add(tutorPackage);
     }
 
 	public UserProfile findById(String id) throws Exception {

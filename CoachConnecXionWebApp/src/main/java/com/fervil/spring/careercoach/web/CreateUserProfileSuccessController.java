@@ -9,9 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.ui.Model;
-
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,19 +23,20 @@ public class CreateUserProfileSuccessController {
 	
     @RequestMapping(method=RequestMethod.GET)
     public ModelAndView createBillPaySuccess(@PathVariable("userProfileId") String userProfileId, Model model) {
-    	Map<String, Object> myModel = new HashMap<String, Object>();
 	    try{	
-	    	//myModel.put("userProfileId", userProfileId);
-	    	myModel.put("message", "Congratulations! Your profile has been successfully created.");
-	    	myModel.put("profileId", userProfileId);
 	    	
-	    	return new ModelAndView("userprofile/createUserProfileSuccess", "model", myModel);
+	    	ModelAndView mav = new ModelAndView ();
+			mav.addObject("profileId", userProfileId);
+			mav.addObject("message", "Congratulations! Your profile has been successfully created.");
+	    	
+			mav.setViewName ("userprofile/createUserProfileSuccess");
+			return mav;
 	    	
 		} catch (Exception e) {
 	        String msg = "The request failed. Error " + e;
 	        log.error(msg, e);
 	        model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
-	        return new ModelAndView("public/common/error/errorpage");
+	        return new ModelAndView("tutor/public/common/error/errorpage");
 		}	
     }
 }

@@ -50,9 +50,13 @@ span.required {color:red;font-weight:bold}
 
 <span style="font-size: 1.25em;"> What is your main purpose for using the system? </span>
 
-	<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); "> <a href="${pageContext.request.contextPath}/tutor/public/profile?cuin=${cuin}" style="color:blue;">**CLICK HERE IF YOU WANT TO COACH OTHERS**</a> </span></b>
+	<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); "> <a href="${pageContext.request.contextPath}/public/profile?cuin=${cuin}" style="color:blue;">**COACHING -- I want to coach others**</a> </span></b>
 
-	<br><br><b> <span style="font-size: 1.25em; color:red; "> <a href="${pageContext.request.contextPath}/tutor/public/createCustomerUserProfile" style="color:blue;">**CLICK HERE IF YOU ARE LOOKING FOR A COACH**</a> </span></b>
+	<br><br><b> <span style="font-size: 1.25em; color:red; "> <a href="${pageContext.request.contextPath}/public/createCustomerUserProfile" style="color:blue;">**COACHING - I am looking for a coach**</a> </span></b>
+
+	<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); "> <a href="${pageContext.request.contextPath}/tutor/public/profile?cuin=${cuin}" style="color:blue;">**TUTORING -- I want to tutor others**</a> </span></b>
+
+	<br><br><b> <span style="font-size: 1.25em; color:red; "> <a href="${pageContext.request.contextPath}/tutor/public/createCustomerUserProfile" style="color:blue;">**TUTORING - I am looking for a tutor**</a> </span></b>
 
 </td></tr>
 

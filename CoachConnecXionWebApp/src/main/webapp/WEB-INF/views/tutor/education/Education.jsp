@@ -141,7 +141,7 @@ text-align:center;
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">Education</div>
 	<div style="width: 900px;">
-		<c:url var="educationUrl" value="/educationAdd" />
+		<c:url var="educationUrl" value="/tutor/educationAdd" />
 		<form:form method="GET" action="${educationUrl}">
 		
 		<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
@@ -202,9 +202,9 @@ text-align:center;
 				<table style="text-align: center;">
 					<tbody>
 						<c:forEach items="${addEducations}" var="Educations">
-							<c:url var="editUrl" value="/educationEdit?id=${Educations.id}&profileId=${profileId}" />
+							<c:url var="editUrl" value="educationEdit?id=${Educations.id}&profileId=${profileId}" />
 							<c:url var="deleteUrl"
-								value="/educationDelete?id=${Educations.id}&profileId=${profileId}" />
+								value="educationDelete?id=${Educations.id}&profileId=${profileId}" />
 							<tr>
 
 								<td style="text-align: left;">

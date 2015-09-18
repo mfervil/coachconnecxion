@@ -143,7 +143,11 @@ public class TutorCreateCustomerUserProfileFormController {
 				userProfileManager.storeUserProfile(userProfile);
 				status.setComplete();
 
-				return "redirect:tutor/createcustomeruserprofilesuccess/userProfileId/" + userProfile.getUserProfileId();				
+				/*
+				 * For Tutors create a default package.......
+				 */
+				
+				return "redirect:/tutor/createcustomeruserprofilesuccess/userProfileId/" + userProfile.getUserProfileId();				
 				
 //				if (crdUsersession.getAttribute("createUserProfileProfileId") == null){
 					//If it is a new user, after a profile is created, they need to create a package

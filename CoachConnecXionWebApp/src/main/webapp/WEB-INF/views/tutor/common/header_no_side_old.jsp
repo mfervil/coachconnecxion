@@ -116,7 +116,7 @@
 					<li><a href="${pageContext.request.contextPath}/tutor/information?type=hw">HOW IT WORKS</a></li>
 					<li><a href="${pageContext.request.contextPath}/tutor/information?type=bl">BLOG</a></li>
 					<li><a href="${pageContext.request.contextPath}/tutor/information?type=au">ABOUT US</a></li>
-					<li><a href="${pageContext.request.contextPath}/tutor/users/login">SIGN IN-REGISTER</a></li>
+					<li><a href="${pageContext.request.contextPath}/users/login">SIGN IN-REGISTER</a></li>
 				</ul>
 				<%--
 				<select id="responsive-menu">

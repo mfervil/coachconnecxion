@@ -109,7 +109,7 @@ public class TutorCreateCoachingRequestFormController {
 				coachingRequestManager.storeCoachingRequest(coachingRequest);
 				
 				status.setComplete();
-				return "redirect:tutor/userprofile/createcoachingRequestsuccess/coachingRequestId/" + coachingRequest.getCoachingRequestId();
+				return "redirect:/tutor/userprofile/createcoachingRequestsuccess/coachingRequestId/" + coachingRequest.getCoachingRequestId();
 			}
 	        
 		} catch (Exception e) {

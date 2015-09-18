@@ -71,7 +71,7 @@ public class TutorCoachSelectionFormController  {
 						"/pageNumber/1" 
 				);
 				*/
-				mav.setViewName ("redirect:tutor/coachprofileList/coachingcategory/" + webRequest.getParameter("coachingCategory") + 
+				mav.setViewName ("redirect:/tutor/coachprofileList/coachingcategory/" + webRequest.getParameter("coachingCategory") + 
 						"/coachingSubcategory/" + webRequest.getParameter("coachingSubcategory") + 
 						"/industryExperience/" + webRequest.getParameter("industryExperience") +
 						"/companyExperience/"  + webRequest.getParameter("companyExperience") + 
@@ -133,7 +133,7 @@ public class TutorCoachSelectionFormController  {
 				ModelAndView mav = new ModelAndView ();
 				//MAF 5/11/2015 mav.setViewName ("redirect:userprofileList?coachingcategory=" + webRequest.getParameter("coachingCategory") );
 
-				mav.setViewName ("redirect:tutor/coachprofileList/coachingcategory/" + webRequest.getParameter("coachingCategory") + 
+				mav.setViewName ("redirect:/tutor/coachprofileList/coachingcategory/" + webRequest.getParameter("coachingCategory") + 
 						"/coachingSubcategory/" + webRequest.getParameter("coachingSubcategory") + 
 						"/industryExperience/" + webRequest.getParameter("industryExperience") +
 						"/companyExperience/"  + webRequest.getParameter("companyExperience") + 
