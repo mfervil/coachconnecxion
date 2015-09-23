@@ -11,11 +11,20 @@ public class CoachSelection {
 	private String coachLastName;
 	private String city;
 	private String state;
-
+	private String coachstyle;	
+	private String coachstyleonline;	
+	private String coachstyleinperson;	
+	private String zipcode;
+	
 /////////    Added for Tutors    ///////////	
 	private String gradelevel;
 	private int maxrate;
 	private String subject;
+
+	public CoachSelection() {
+		coachstyle = "coachstyleinperson";
+	}
+	
 	
 	public String getGradelevel() {
 		return gradelevel;
@@ -91,5 +100,41 @@ public class CoachSelection {
 	}
 	public void setSubject(String subject) {
 		this.subject = subject;
+	}
+	public String getCoachstyleonline() {
+		return coachstyleonline;
+	}
+	public void setCoachstyleonline(String coachstyleonline) {
+		this.coachstyleonline = coachstyleonline;
+	}
+	public String getCoachstyleinperson() {
+		return coachstyleinperson;
+	}
+	public void setCoachstyleinperson(String coachstyleinperson) {
+		this.coachstyleinperson = coachstyleinperson;
+	}
+	/**
+	 * @return the zipcode
+	 */
+	public String getZipcode() {
+		return zipcode;
+	}
+	/**
+	 * @param zipcode the zipcode to set
+	 */
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+	/**
+	 * @return the coachstyle
+	 */
+	public String getCoachstyle() {
+		return coachstyle;
+	}
+	/**
+	 * @param coachstyle the coachstyle to set
+	 */
+	public void setCoachstyle(String coachstyle) {
+		this.coachstyle = coachstyle;
 	}
 }

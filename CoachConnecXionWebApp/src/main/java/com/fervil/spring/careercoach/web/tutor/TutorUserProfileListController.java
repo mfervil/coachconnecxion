@@ -1,14 +1,21 @@
 package com.fervil.spring.careercoach.web.tutor;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -22,10 +29,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fervil.spring.careercoach.model.domain.CoachingRequest;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
+import com.fervil.spring.careercoach.model.domain.Zipcode;
+import com.fervil.spring.careercoach.model.domain.ZipcodeContainer;
 import com.fervil.spring.careercoach.service.JobRatingService;
 import com.fervil.spring.careercoach.service.SelectedCoachesValidator;
 import com.fervil.spring.careercoach.service.UserProfileManager;
 import com.fervil.spring.careercoach.util.Constants;
+import com.google.gson.Gson;
+
+import org.springframework.web.client.RestTemplate;
 
 //@RequestMapping("/public/userprofileList")
 @Controller
@@ -132,8 +144,8 @@ public class TutorUserProfileListController  {
 	}
 
 	//List coaches for advanced searches where all criteria may be passed, and some may be left blank..... 
-	@RequestMapping(value = "/tutor/public/coachprofileListAdvance/coachingCategory/{coachingCategory}/coachingSubcategory/{coachingSubcategory}/industryExperience/{industryExperience}/gradelevel/{gradelevel}/maxrate/{maxrate}/subject/{subject}/companyExperience/{companyExperience}/coachFirstName/{coachFirstName}/coachLastName/{coachLastName}/city/{city}/state/{state}/pageNumber/{pageNumber}", method = RequestMethod.GET)
-	public ModelAndView listCoachProfiles(ModelMap model, org.springframework.web.context.request.WebRequest webRequest,
+	@RequestMapping(value = "/tutor/public/coachprofileListAdvance/coachingCategory/{coachingCategory}/coachingSubcategory/{coachingSubcategory}/industryExperience/{industryExperience}/gradelevel/{gradelevel}/maxrate/{maxrate}/subject/{subject}/companyExperience/{companyExperience}/coachFirstName/{coachFirstName}/coachLastName/{coachLastName}/city/{city}/state/{state}/pageNumber/{pageNumber}/zipcode/{zipcode}/coachstyleinperson/{coachstyleinperson}/coachstyleonline/{coachstyleonline}", method = RequestMethod.GET)
+	public ModelAndView listCoachProfiles(ModelMap model, org.springframework.web.context.request.WebRequest webRequest, 
 				@PathVariable("coachingCategory") int coachingCategory, 
 				@PathVariable("coachingSubcategory") int coachingSubcategory, 
 				@PathVariable("industryExperience") int industryExperience, 
@@ -145,24 +157,36 @@ public class TutorUserProfileListController  {
 				@PathVariable("coachLastName") String coachLastName, 
 				@PathVariable("city") String city, 
 				@PathVariable("state") String state, 
-				@PathVariable("pageNumber") int pageNumber 
+				@PathVariable("pageNumber") int pageNumber, 
+				@PathVariable("zipcode") String zipcode, 
+				@PathVariable("coachstyleinperson") String coachstyleinperson, 
+				@PathVariable("coachstyleonline") String coachstyleonline 
 			) {
 
 	    	Map<String, Object> myModel = new HashMap<String, Object>();
 
 		try{
 
+			String tmpzip = (zipcode == null || zipcode.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":zipcode;
+			
+			String zipcodes = "";
+			if (!tmpzip.equalsIgnoreCase("")) {
+				zipcodes= getNearestZipCodes(tmpzip); };
+
 			String tmpcompanyExperience = (companyExperience == null || companyExperience.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":companyExperience;
 			String tmpcoachFirstName = (coachFirstName == null || coachFirstName.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":coachFirstName;
 			String tmpcoachLastName = (coachLastName == null || coachLastName.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":coachLastName;
 			String tmpcity = (city == null || city.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":city;
 			String tmpstate = (state == null || state.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":state;
+			String tmpcoachstyleinperson = (coachstyleinperson == null || coachstyleinperson.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":"1";
+			String tmpcoachstyleonline = (coachstyleonline == null || coachstyleonline.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":"1";
 			
 			pageNumber = (pageNumber < 1 )?1:pageNumber;
 			
 			List<HashMap> userProfiles = userProfileManager.getUserProfilesForTutors(
 					coachingCategory, coachingSubcategory, industryExperience,tmpcompanyExperience, 
-					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber, gradelevel, maxrate, subject);
+					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber, 
+					gradelevel, maxrate, subject, zipcodes, tmpcoachstyleinperson, tmpcoachstyleonline);
 
 			//Remember to add this change of code to the coaching category
 			int userprofilecount = userProfiles.size();
@@ -194,6 +218,8 @@ public class TutorUserProfileListController  {
 			mav.addObject("userprofilecount", userprofilecount);
 			mav.addObject("pagesize", pageSize);
 			mav.addObject("totalpages", totalNumPagestoDisplay);
+			mav.addObject("coachstyleinperson", coachstyleinperson);
+			mav.addObject("coachstyleonline", coachstyleonline);
 			
 			log.info("Number of tutors returned to UserProfileListController: " + userProfiles.size());
 			
@@ -206,6 +232,67 @@ public class TutorUserProfileListController  {
 		}	
 	}
 	
+	public String getNearestZipCodes(String zipcode){
+		String zipList="";
+		
+		/*
+		RestTemplate restTemplate = new RestTemplate();
+		String jsonUrl = "https://www.zipwise.com/webservices/radius.php?key=ut5elgroqwapjwq6&zip=" + zipcode + "&radius=5&format=json";
+
+        ResponseEntity<Zipcode[]> entity = restTemplate.getForEntity(jsonUrl, Zipcode[].class);
+        List<Zipcode> zipdataList = Arrays.asList(entity.getBody());
+
+        int i=0;
+        for(Zipcode zip : zipdataList) {
+        	if (i>0) zipList = zipList + ","; 
+        	zipList = "'" + zip.getZip();
+
+        	System.out.println(i);
+        }
+        */
+		
+		//List<LinkedHashMap> emps = restTemplate.getForObject("https://www.zipwise.com/webservices/radius.php?key=ut5elgroqwapjwq6&zip=90210&radius=5&format=json", List.class);
+        //System.out.println(emps.size());
+        /*
+        int i=0;
+        for(LinkedHashMap map : emps){
+        	if (i>0) zipList = zipList + ","; 
+        	zipList = "'" + map.get("zip").toString() + "'";
+            System.out.println("ID="+map.get("id")+",Name="+map.get("name")+",CreatedDate="+map.get("createdDate"));
+            i++;
+        }
+        */
+		
+		zipList = "'60563','60555','60540','60567','60502','60532','60566','60189','60599'";
+        System.out.println(" The zipcode list is: " + zipList);
+        return zipList;
+        
+        /*
+		String response ="";
+		Gson g = new Gson();
+		ZipcodeContainer vc = g.fromJson(response, ZipcodeContainer.class);	
+								
+		HashMap<String, String> hm = new HashMap<String,String>();
+		for(Zipcode v: vc.zipcodes){
+		  hm.put(v.getId(), v.getName());  
+		}		
+		*/
+		
+		
+		//https://www.zipwise.com/webservices/radius.php?key=YOUR_API_KEY&zip=90210&radius=2&format=json
+/*			
+			URL url = new URL("https://www.zipwise.com/webservices/radius.php?key=YOUR_API_KEY&zip=90210&radius=2&format=json");
+			BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+
+			JSONParser parser=new JSONParser();
+			Object object = parser.parse(in);
+
+			JSONArray array = (JSONArray) object;        
+			JSONObject object2 = (JSONObject)array.get(0);
+			System.out.println(object2.get("hello")); 			
+*/			
+			
+	}
 	
 	//@RequestMapping(value = "/public/userprofileList", method = RequestMethod.GET)
 	//Searches for coaches where category type, city and state are always passed.

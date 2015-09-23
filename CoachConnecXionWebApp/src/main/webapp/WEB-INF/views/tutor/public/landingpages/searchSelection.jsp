@@ -5,41 +5,60 @@
 			  <table style="border-spacing:2px; border-collapse:separate;">
 			  <tbody >
 			    <tr>
-			    	<td  class="leftalign" ><br><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /><br>
+			    	<td  class="leftalign" ><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /><br>
 					${coachingcategoryname}</td>
 
-				  <td class="leftalign" ><br><label>Subject (Ex. math, chemistry, anatomy): </label><form:errors path="subject" cssClass="error" /> <br>
+				  <td class="leftalign" ><br><label>Subject (Ex. Algebra, chemistry, anatomy): </label><form:errors path="subject" cssClass="error" /> <br>
 				  <form:input size="35" path="subject" /></td>
 
 				</tr>
 				<tr>
-			      <td class="leftalign" ><br><label>Max Hourly Rate: </label><form:errors path="maxrate" cssClass="error" /><br> 
+			      <td class="leftalign" ><label>Max Hourly Rate: </label><form:errors path="maxrate" cssClass="error" /><br> 
 			        <form:select size="1" path="maxrate" >
 			          	<option selected  value="-1">All</option>
-						<option value="10">&lt; 10 </option>
-						<option value="20">&lt; 20 </option>
-						<option value="30">&lt; 30 </option>
-						<option value="40">&lt; 40 </option>
-						<option value="50">&lt; 50 </option>
-						<option value="60">&lt; 60 </option>
-						<option value="70">&lt; 70 </option>
-						<option value="80">&lt; 80 </option>
-						<option value="90">&lt; 90 </option>
-						<option value="100">&lt; 100 </option>
-						<option value="110">&lt; 110 </option>
-						<option value="120">&lt; 120 </option>
-						<option value="130">&lt; 130 </option>
-						<option value="140">&lt; 140 </option>
-						<option value="150">&lt; 150 </option>
-						<option value="160">&lt; 160 </option>
-						<option value="170">&lt; 170 </option>
-						<option value="180">&lt; 180 </option>
-						<option value="190">&lt; 190 </option>
-						<option value="200">&lt; 200 </option>
+						<option value="10">10</option>
+						<option value="15">15</option>
+						<option value="20">20</option>
+						<option value="25">25</option>
+						<option value="30">30</option>
+						<option value="35">35</option>
+						<option value="40">40</option>
+						<option value="45">45</option>
+						<option value="50">50</option>
+						<option value="55">55</option>
+						<option value="60">60</option>
+						<option value="65">65</option>
+						<option value="70">70</option>
+						<option value="75">75</option>
+						<option value="80">80</option>
+						<option value="85">85</option>
+						<option value="90">90</option>
+						<option value="95">95</option>
+						<option value="100">100</option>
+						<option value="105">105</option>
+						<option value="110">110</option>
+						<option value="115">115</option>
+						<option value="120">120</option>
+						<option value="125">125</option>
+						<option value="130">130</option>
+						<option value="135">135</option>
+						<option value="140">140</option>
+						<option value="145">145</option>
+						<option value="150">150</option>
+						<option value="155">155</option>
+						<option value="160">160</option>
+						<option value="165">165</option>
+						<option value="170">170</option>
+						<option value="175">175</option>
+						<option value="180">180</option>
+						<option value="185">185</option>
+						<option value="190">190</option>
+						<option value="195">195</option>
+						<option value="200">200</option>
 					</form:select>
 			      </td>
 				
-			      <td class="leftalign" ><br><label>Grade Level: </label><form:errors path="gradelevel" cssClass="error" /> <br>
+			      <td class="leftalign" ><label>Grade Level: </label><form:errors path="gradelevel" cssClass="error" /> <br>
 			      <!-- Find complete list from job categories in career builder -->
 			        <form:select size="1" path="gradelevel" >
 			          	<option selected  value="-1">All Grades</option>
@@ -52,9 +71,9 @@
 					</form:select>
 			     </td>
 				</tr>
+				<%-- 
 				<tr>		
-
-				  <td class="leftalign" ><br><label>City (Not required for online coaching): </label><form:errors path="city" cssClass="error" /> <br>
+				  <td class="leftalign" ><label>City (Not required for online coaching): </label><form:errors path="city" cssClass="error" /> <br>
 				  <form:input size="35" path="city" /></td>
 				  
 				  <td class="leftalign" ><br><label>State/Prov. (Not required for online coaching):</label> <br> 
@@ -132,14 +151,22 @@
 						</form:select>					
 					</td>
 			    </tr>
-			    
+			    --%>
 				<tr>
-				      <td class="leftalign" ><br><label>First Name: </label><form:errors path="coachFirstName" cssClass="error" /><br> 
+				      <td class="leftalign" ><label>Tutor First Name: </label><form:errors path="coachFirstName" cssClass="error" /><br> 
 				        <form:input size="35" path="coachFirstName" /></td>
-				      <td class="leftalign" ><br><label>Last Name: </label><form:errors path="coachLastName" cssClass="error" /><br> 
+				      <td class="leftalign" ><label>Tutor Last Name: </label><form:errors path="coachLastName" cssClass="error" /><br> 
 				        <form:input size="35" path="coachLastName" /></td>
 				</tr>
-						
+			    <tr>
+				      <td class="leftalign" ><label>Preferred Coaching Type: </label><form:errors path="coachstyleonline" cssClass="error" /><br> 
+				            <form:radiobutton path="coachstyle" value="coachstyleinperson" /> In-Person Coaching
+				            <form:radiobutton path="coachstyle" value="coachstyleonline" /> Online Coaching
+				      </td>
+				      <td class="leftalign" ><label>Zipcode: </label><form:errors path="zipcode" cssClass="error" /><br> 
+				        <form:input size="10" path="zipcode" />
+				      </td>
+			    </tr>
 				<tr style="background-color: white">
 					<td colspan="4" style="text-align: left;">
 						<br>	<input type="submit" class="input-button" value="Start Your Search" />

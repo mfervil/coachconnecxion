@@ -1,9 +1,11 @@
 package com.fervil.spring.careercoach.web.tutor;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,12 +16,32 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fervil.spring.careercoach.model.domain.CoachSelection;
+import com.fervil.spring.careercoach.service.CoachSelectionManager;
+import com.fervil.spring.careercoach.service.CoachSelectionValidator;
+import com.fervil.spring.careercoach.service.CreateCustomerUserProfileValidator;
+import com.fervil.spring.careercoach.service.CreateUserProfileValidator;
+import com.fervil.spring.careercoach.service.TutorSelectionValidator;
 import com.fervil.spring.careercoach.util.Constants;
 
 @Controller
 public class TutorLandingPagesController {
     private static final Logger log = LoggerFactory.getLogger(TutorLandingPagesController.class);
 	
+    	@Resource(name = "tutorSelectionValidator")
+    	private TutorSelectionValidator validator;
+
+    	//@Resource(name = "userProfileValidator")
+    	//private CreateUserProfileValidator validator;
+    	
+    	
+/*    	
+    	@Autowired
+    	public TutorLandingPagesController(TutorSelectionValidator validator) {
+    		this.validator = validator;
+    	}
+*/    	
+    	
+    	
 		@RequestMapping(value = "/tutor/public/landing-art-tutor", method = RequestMethod.GET)
 		public ModelAndView businessCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
@@ -45,12 +67,22 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 
 		    //Map<String, Object> myModel = new HashMap<String, Object>();
+			System.out.println("Inside the post method of /tutor/public/landing-art-tutor");
 			
 			try{
-
 					ModelAndView mav = new ModelAndView ();
+					
+					//Validation logic goes here
+					validator.validate(coachSelection, result);
+					if (result.hasErrors()){
+			    		mav.addObject("coachSelection", coachSelection);
+			    		mav.setViewName ("tutor/public/landingpages/art-tutor");
+			    		
+						return mav;
+					}
+					
+					
 					setMavSession(mav, session, webRequest);
-
 					return mav;
 					
 			} catch (Exception e) {
@@ -540,10 +572,52 @@ public class TutorLandingPagesController {
 			}	
 		}
 		
+		@RequestMapping(value = "/tutor/public/landing-general-personal-tutors", method = RequestMethod.GET)
+		public ModelAndView genralTutorreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
+
+			log.debug("Received request to show corporate coaches");
+			
+			ModelAndView mav = new ModelAndView ();
+			CoachSelection coachSelection = new CoachSelection();
+
+			mav.addObject("coachingcategoryname", "");
+			mav.addObject("coachingCategory", "");
+
+			mav.addObject("coachSelection", coachSelection);
+			//mav.setViewName ("public/landingpages/general-personal-coaches-cs");
+			mav.setViewName ("tutor/public/landingpages/general-personal-tutors");
+			return mav;
+		}
+		
+		@RequestMapping(value = "/tutor/public/landing-general-personal-tutors", method = RequestMethod.POST)
+		public ModelAndView submitGeneralTutorForm( 
+				@ModelAttribute("coachSelection") CoachSelection coachSelection,
+				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
+				Model model, HttpSession session) {
+			
+			try{
+					ModelAndView mav = new ModelAndView ();
+					setMavSession(mav, session, webRequest);
+					
+					return mav;
+			} catch (Exception e) {
+		        String msg = "The request failed. Error " + e;
+		        log.error(msg, e);
+				model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+				return new ModelAndView("tutor/public/common/error/errorpage");
+			}	
+		}
+		
+
 		
 		private void setMavSession(ModelAndView mav, HttpSession session, org.springframework.web.context.request.WebRequest webRequest) throws Exception{
+
+            //if (userProfile.getCoachstyleinperson() == null && userProfile.getCoachstyleonline()==null  ) {
+    		//	errors.rejectValue("coachstyleinperson", "invalid.coachstyleinperson", " You must select your coaching preference(s)");
+            //}
 			
-			mav.setViewName ("redirect:coachprofileListAdvance/coachingCategory/" + webRequest.getParameter("coachingCategory") + 
+			
+			mav.setViewName ("redirect:/tutor/public/coachprofileListAdvance/coachingCategory/" + webRequest.getParameter("coachingCategory") + 
 					"/coachingSubcategory/" + webRequest.getParameter("coachingSubcategory") + 
 					"/industryExperience/" + webRequest.getParameter("industryExperience") +
 					"/gradelevel/" + webRequest.getParameter("gradelevel") + 
@@ -554,7 +628,10 @@ public class TutorLandingPagesController {
 					"/coachLastName/"  + (webRequest.getParameter("coachLastName")  == null || webRequest.getParameter("coachLastName").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("coachLastName") ) + 
 					"/city/"  + (webRequest.getParameter("city")  == null || webRequest.getParameter("city").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("city") ) + 
 					"/state/"  + (webRequest.getParameter("state")  == null || webRequest.getParameter("state").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("state") ) + 
-					"/pageNumber/1" 
+					"/pageNumber/1" +
+					"/zipcode/"  + (webRequest.getParameter("zipcode")  == null || webRequest.getParameter("zipcode").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("zipcode") ) +  
+					"/coachstyleinperson/"  + (webRequest.getParameter("coachstyle").equalsIgnoreCase("coachstyleinperson")?"1":Constants.DEFAULT_URL_STRING ) + 
+					"/coachstyleonline/"  + (webRequest.getParameter("coachstyle").equalsIgnoreCase("coachstyleonline")?"1":Constants.DEFAULT_URL_STRING ) 
 			);
 			
 			session.setAttribute("coachingCategory", webRequest.getParameter("coachingCategory"));
@@ -569,5 +646,8 @@ public class TutorLandingPagesController {
 			session.setAttribute("gradelevel", webRequest.getParameter("gradelevel"));
 			session.setAttribute("maxrate", webRequest.getParameter("maxrate"));
 			session.setAttribute("subject", webRequest.getParameter("subject"));
+			session.setAttribute("zipcode", webRequest.getParameter("zipcode"));
+			session.setAttribute("coachstyleinperson", webRequest.getParameter("coachstyleinperson"));
+			session.setAttribute("coachstyleonline", webRequest.getParameter("coachstyleonline"));
 		}		
 }

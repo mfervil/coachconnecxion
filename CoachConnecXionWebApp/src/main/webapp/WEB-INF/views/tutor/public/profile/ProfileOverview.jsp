@@ -242,6 +242,8 @@ table tr:nth-child(2n) {
 										</tr>
 										
 										<%--- New Code --%>
+										<c:if test="${not profileOfCurrentUser}" > 					
+										
 												<c:url var="paymentinformation" value="/public/paymentinformation" />
 												<form:form method="GET" action="${paymentinformation}" name="coachinfoForm"
 													commandName="paymentinformation">
@@ -294,6 +296,7 @@ table tr:nth-child(2n) {
 														<c:set var="count" value="${count + 1}" scope="page"/>
 													</c:forEach>
 										    	</form:form>
+										</c:if>    	
 										</table>
 								</td>
 							</tr>

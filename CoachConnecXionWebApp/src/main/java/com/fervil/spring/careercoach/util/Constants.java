@@ -64,6 +64,10 @@ public class Constants {
 	public static final String COACHING_CATEGORY_NAME_SEPERATOR = "ZZZ";
 	public static final String DEFAULT_URL_STRING = "null";
 	public static final int DEFAULT_URL_NUMBER = -1;
+	
+	public static final String COACH_STYLE_IN_PERSON = "coachstyleinperson";
+	public static final String COACH_STYLE_ONLINE = "coachstyleonline";
+	
 	  
 	/*
     <option value="1">ADD & ADHD</option>

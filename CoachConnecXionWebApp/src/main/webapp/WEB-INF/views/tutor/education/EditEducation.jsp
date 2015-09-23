@@ -163,13 +163,13 @@ text-align:center;
 					<tr>
 						<td
 							style="font-size: 14px; text-align: left;"><a
-							href="workexperience" style="text-decoration: none;">Job
+							href="workexperience?profileId=${profileId}" style="text-decoration: none;">Job
 								History</a></td>
 					</tr>
 					<tr>
 						<td
 							style="font-size: 14px; text-align: left;"><a
-							href="education" style="text-decoration: none;font-weight: bold;">Education</a></td>
+							href="education?profileId=${profileId}" style="text-decoration: none;font-weight: bold;">Education</a></td>
 					</tr>
 				</table>
 

@@ -305,7 +305,8 @@ public class HibernateUserProfileDao implements UserProfileDao {
 	public List findFilteredUserProfilesForTutors(int coachingCategory,
 			int coachingSubcategory, int industryExperience,
 			String companyExperience, String coachFirstName,
-			String coachLastName, String city, String state, int pageSize, int pageNumber, String gradelevel, int maxrate, String subject)  throws Exception {
+			String coachLastName, String city, String state, int pageSize, 
+			int pageNumber, String gradelevel, int maxrate, String subject, String zipcodes, String coachstyleinperson, String coachstyleonline)  throws Exception {
 
 		try {
 			// session.beginTransaction();
@@ -321,11 +322,15 @@ public class HibernateUserProfileDao implements UserProfileDao {
 					companyExperience, coachFirstName,
 					coachLastName, city, state, pageSize, pageNumber);
 
+			/*
+			 * We're not filtering by gradelevel
+			 * 
 			if (gradelevel != null  && !gradelevel.equals("") && !gradelevel.equals("-1") ) {
 				CRITERIA += CRITERIA.contains("where")?" and ":" where ";
 				CRITERIA = CRITERIA + " gradelevel like '%" + gradelevel + "%'";				
 			}
-
+			*/
+			
 			if (maxrate > 0) {
 				CRITERIA += CRITERIA.contains("where")?" and ":" where ";
 				CRITERIA = CRITERIA + " rate <= " + maxrate ;				
@@ -336,6 +341,20 @@ public class HibernateUserProfileDao implements UserProfileDao {
 				CRITERIA = CRITERIA + " UPPER(service_description) like '%" + subject.toUpperCase().trim() + "%'";				
 			}
 
+			if (zipcodes != null  && !zipcodes.equals("")) {
+				CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+				CRITERIA = CRITERIA + " zipcode in (" + zipcodes + ") ";
+			}
+
+			if (coachstyleinperson != null && !coachstyleinperson.equals("") ) {
+				CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+				CRITERIA = CRITERIA + " coachstyleinperson = 1" ;				
+			}
+			
+			if (coachstyleonline != null && !coachstyleonline.equals("") ) {
+				CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+				CRITERIA = CRITERIA + " coachstyleonline = 1" ;				
+			}
 			
 			String sql = getInitialSQL() + " " + CRITERIA;
 			

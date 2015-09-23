@@ -151,7 +151,7 @@ public class TutorPaymentInformationFormController  {
 					        up.setEmail(webRequest.getParameter("email"));
 					        
 					        up.setAccountType(2);
-					        up.setHourlyRate(0);
+					        up.setHourlyrate(new Double(0));
 					        up.setUserProfileType(2);
 					        up.setUser_userId(user.getId());
 					        up.setCoachingcategory1(17);

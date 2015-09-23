@@ -131,13 +131,13 @@ div#myDialog {
 					<tr>
 						<td
 							style="font-size: 14px; text-align: left;"><a
-							href="workexperience" style="text-decoration: none;font-weight:bold;">Job
+							href="workexperience?profileId=${profileId}" style="text-decoration: none;font-weight:bold;">Job
 								History</a></td>
 					</tr>
 					<tr>
 						<td
 							style="font-size: 14px; text-align: left;"><a
-							href="education" style="text-decoration: none">Education</a></td>
+							href="education?profileId=${profileId}" style="text-decoration: none">Education</a></td>
 					</tr>
 				</table>
 

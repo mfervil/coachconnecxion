@@ -37,6 +37,7 @@
 
     <context:component-scan base-package="ua.com.bitlab.springsecuritydemo.web.controllers"/>
 	<context:component-scan base-package="com.fervil.spring.careercoach.web" />
+	<context:component-scan base-package="com.fervil.spring.careercoach.web.tutor" />
 
 
     <!-- Resolves view names to protected .jsp resources within the /WEB-INF/views directory -->
