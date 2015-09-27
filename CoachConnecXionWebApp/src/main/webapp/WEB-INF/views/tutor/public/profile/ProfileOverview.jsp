@@ -244,7 +244,7 @@ table tr:nth-child(2n) {
 										<%--- New Code --%>
 										<c:if test="${not profileOfCurrentUser}" > 					
 										
-												<c:url var="paymentinformation" value="/public/paymentinformation" />
+												<c:url var="paymentinformation" value="/tutor/public/paymentinformation" />
 												<form:form method="GET" action="${paymentinformation}" name="coachinfoForm"
 													commandName="paymentinformation">
 												

@@ -144,7 +144,7 @@ public class TutorUserProfileListController  {
 	}
 
 	//List coaches for advanced searches where all criteria may be passed, and some may be left blank..... 
-	@RequestMapping(value = "/tutor/public/coachprofileListAdvance/coachingCategory/{coachingCategory}/coachingSubcategory/{coachingSubcategory}/industryExperience/{industryExperience}/gradelevel/{gradelevel}/maxrate/{maxrate}/subject/{subject}/companyExperience/{companyExperience}/coachFirstName/{coachFirstName}/coachLastName/{coachLastName}/city/{city}/state/{state}/pageNumber/{pageNumber}/zipcode/{zipcode}/coachstyleinperson/{coachstyleinperson}/coachstyleonline/{coachstyleonline}", method = RequestMethod.GET)
+	@RequestMapping(value = "/tutor/public/coachprofileListAdvance/coachingCategory/{coachingCategory}/coachingSubcategory/{coachingSubcategory}/industryExperience/{industryExperience}/companyExperience/{companyExperience}/gradelevel/{gradelevel}/maxrate/{maxrate}/subject/{subject}/coachFirstName/{coachFirstName}/coachLastName/{coachLastName}/city/{city}/state/{state}/pageNumber/{pageNumber}/zipcode/{zipcode}/coachstyleinperson/{coachstyleinperson}/coachstyleonline/{coachstyleonline}", method = RequestMethod.GET)
 	public ModelAndView listCoachProfiles(ModelMap model, org.springframework.web.context.request.WebRequest webRequest, 
 				@PathVariable("coachingCategory") int coachingCategory, 
 				@PathVariable("coachingSubcategory") int coachingSubcategory, 
@@ -188,14 +188,9 @@ public class TutorUserProfileListController  {
 					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber, 
 					gradelevel, maxrate, subject, zipcodes, tmpcoachstyleinperson, tmpcoachstyleonline);
 
-			//Remember to add this change of code to the coaching category
-			int userprofilecount = userProfiles.size();
-			
-			/*
 			int userprofilecount = userProfileManager.findFilteredUserProfilesCount(
 					coachingCategory, coachingSubcategory, industryExperience,tmpcompanyExperience, 
 					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber);
-			*/
 			
 			ModelAndView mav = new ModelAndView ();
 			mav.setViewName ("tutor/public/userprofile/userprofileList");

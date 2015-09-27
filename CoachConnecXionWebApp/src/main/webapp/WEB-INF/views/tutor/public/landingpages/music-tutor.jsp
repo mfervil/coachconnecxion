@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Personal Coaches-Hire a Coach-Self Help Motivation - CoachConnecXion</title>
+	<title>Life Coaches - Self Help Motivation - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our personal coaches will create a safe environment in which you can more clearly see your self; the coaches will listen to you and work with you to understand whats holding you back, and what you can do to succeed." />
+	<meta name="description" content="The role of Our life coaches is to provide the drive and guidance you need to improve your self.  Our our life coaches may be able to help you with your relationship, your career, and your overall emotional health." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -16,6 +16,7 @@
 
 	<%@ include file="/WEB-INF/views/tutor/common/header_no_side_head.jsp" %>
 
+	
 <style type="text/css">
 table tr {
 	border: none
@@ -122,18 +123,18 @@ text-align:center;
 	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a>
 
 	<div
-		style="text-align: center; width: 100%x; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Personal Coaches </h1></div>
+		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
+		<h1>Search For Music Tutors</h1></div>
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
-	<table style="width: 100%;">
+	<table style="width: 900px;">
 
 				<tr>
-					<td style="width: 20%; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
+					<td style="width: 200px; vertical-align: top;background-color: #EAEAEA;padding: 5px;">
 						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
-					<td style="width: 80%;">
-						<table style="width: 100%;">
+					<td>
+						<table>
 							<tr>
 								<td>
 								
@@ -153,33 +154,37 @@ text-align:center;
 									
 								</td>
 							</tr>
-							
-							<%-- 
-							<title>Hire a Coach - Self Help Motivation - CoachConnecXion</title>
-							--%>
-							
-							<tr><td>
-									<h3 style="text-align: left;"><br><B>Coaches: </B><a  rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/tutor/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
-							</td></tr>	
-								<tr><td><br><img src="${pageContext.request.contextPath}/images/hbr_coach_info.png" alt="Reasons for coaching" height="500" width="450"/></td></tr>
-							<tr><td>
-									<h2 style="text-align: left; text-decoration: underline;">What an Online Personal Coach does:</h2>
-									<h3 style="text-align: left;">A personal coach creates a safe environment in which people see themselves more clearly; the coach does this by listening, asking focused questions, 
-																	reflecting back, challenging, and acknowledging the individual.  
-																	If you're serious about reaching your goals, the quickest path is to hire a coach through CoachConnecXion to work with you on self help motivation techniques 
-																	and provide guidance and training to help you get to your destination.</h3><br>
-							</td></tr>
+							<tr><td>&nbsp;</td></tr>
+							<%--
+								<title>self help motivation - CoachConnecXion</title>
+							 --%>
 							<tr>
-								<td>						
-									<h3 style="text-decoration: underline;">A Personal Coach may be helpful for the following reasons:</h3>
+								<td>
+									<h3 style="text-align: left;"><B>Coaches: </B><a   rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/tutor/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
+								</td>
+							</tr>
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/> <br>
+								The stages of the coaching process used by our professionals to get you to the next level 							
+							</td></tr>
+							<tr><td>	<br>	
+									<h2 style="text-align: left; text-decoration: underline;">What an Online Life Coach from CoachConnecXion does:</h2>
+									<h3 style="text-align: left;">These coaches provide the drive and guidance individuals need to improve their careers, relationships, and overall emotional state. 
+																	</h3><br>
+								</td>
+							</tr>
+							<tr><td>		
+									<h3 style="text-decoration: underline;">A Life coach may be helpful for the following reasons:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Helps you more clearly identify where you are and where you want to be</li>
-										<li style="text-align: left;">Works with you to develop your potential or facilitate transition</li>
-										<li style="text-align: left;">Helps you develop a long term strategy to get you to your end goal</li>
-										<li style="text-align: left;">Works with you to understand your potential pitfalls and obstacles and helps you devise a solution to bypass those obstacles</li>
-										<li style="text-align: left;">Helps you identify your passion and purpose</li>
+										<li style="text-align: left;">Need some guidance on moving forward in your career</li>
+										<li style="text-align: left;">Want to learn how to take advantage of your strengths and talents</li>
+										<li style="text-align: left;">Don't know what to do about a major life decision, such as a move or promotion</li>
+										<li style="text-align: left;">Don't have an acceptable work-life balance</li>
+										<li style="text-align: left;">Have a lot of stress</li>
+										<li style="text-align: left;">Need help recognizing your skills and achieving your dreams</li>
+										<li style="text-align: left;">Having trouble moving past challenges that stand in the way of your goals</li>
+										<li style="text-align: left;">Provide self help motivation tools and techniques to help you along the way to your goal</li>
 									</ul>
-									<br>Referenced from: www.coaching.com
+									<br>Referenced from: www.webmd.com
 								</td>	
 							</tr>
 						</table>		
@@ -187,4 +192,4 @@ text-align:center;
 				</tr>
 	</table>
 </section>
-<%@ include file="/WEB-INF/views/tutor/common/footer_no_side.jsp" %>
+<%@ include file="/WEB-INF/views/tutor/common/footer_no_side.jsp" %>	

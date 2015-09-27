@@ -61,4 +61,15 @@
 			supplied: "m4a, oga"
 		});
 	});
+	
+	$(document).ready(function() {
+		   $('input[type="radio"]').click(function() {
+		       if($(this).attr('id') == 'coachstyleinperson') {
+		            $('#showzipecode').show();           
+		       }
+		       else {
+		            $('#showzipecode').hide();   
+		       }
+		   });
+		});
 	</script>

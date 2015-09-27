@@ -9,7 +9,7 @@
 							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-business-tutor">BUSINESS</a></li>
 							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-computer-business-tutor">COMPUTER BS. (WORD, EXCEL, PPT, ETC..)</a></li>
 							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-computer-programming-tutor">COMPUTER DEV. (JAVA, C#, .NET, ASP/JSP/HTML, NETWORK, ETC...)</a></li>
-							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-communication-presentation-tutor">COMMUNICATION/PRESENTATION</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-communication-presentation-tutor">COMMUNICATION & PRESENTATION</a></li>
 							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-english-tutor">ENGLISH</a></li>
 							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-history-tutor">HISTORY</a></li>
 							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-homeschool-tutor">HOMESCHOOL</a></li>

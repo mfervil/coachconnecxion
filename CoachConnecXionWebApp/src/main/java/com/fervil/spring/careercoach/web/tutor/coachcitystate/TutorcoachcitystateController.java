@@ -46,12 +46,12 @@ public class TutorcoachcitystateController {
 			
 			//Adding default entries for the cities page
 			HashMap cityState1 = new HashMap();
-			//cityState1.put("state", "All coaches");
-			cityState1.put("city", "All coaches");
+			//cityState1.put("state", "All tutors");
+			cityState1.put("city", "All tutors");
 
 			HashMap cityState2 = new HashMap();
 			//cityState2.put("state", state);
-			cityState2.put("city", "All " + state + " coaches");
+			cityState2.put("city", "All " + state + " tutors");
 			
 			List<HashMap> cities = cityManager.findCitiesWithCoaches(statecode, coachtypeid);
 			cities.add(0, cityState1);

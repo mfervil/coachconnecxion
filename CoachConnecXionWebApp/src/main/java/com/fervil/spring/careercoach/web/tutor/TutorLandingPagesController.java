@@ -30,18 +30,6 @@ public class TutorLandingPagesController {
     	@Resource(name = "tutorSelectionValidator")
     	private TutorSelectionValidator validator;
 
-    	//@Resource(name = "userProfileValidator")
-    	//private CreateUserProfileValidator validator;
-    	
-    	
-/*    	
-    	@Autowired
-    	public TutorLandingPagesController(TutorSelectionValidator validator) {
-    		this.validator = validator;
-    	}
-*/    	
-    	
-    	
 		@RequestMapping(value = "/tutor/public/landing-art-tutor", method = RequestMethod.GET)
 		public ModelAndView businessCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
@@ -67,24 +55,35 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 
 		    //Map<String, Object> myModel = new HashMap<String, Object>();
-			System.out.println("Inside the post method of /tutor/public/landing-art-tutor");
+			//System.out.println("Inside the post method of /tutor/public/landing-art-tutor");
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
-					
-					//Validation logic goes here
-					validator.validate(coachSelection, result);
-					if (result.hasErrors()){
-			    		mav.addObject("coachSelection", coachSelection);
-			    		mav.setViewName ("tutor/public/landingpages/art-tutor");
-			    		
-						return mav;
-					}
-					
-					
-					setMavSession(mav, session, webRequest);
+				
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/art-tutor", coachSelection, result, session);
+
+				/*
+				String coachingCategory = webRequest.getParameter("coachingCategory");
+				String coachingcategoryname = webRequest.getParameter("coachingcategoryname");
+				
+				ModelAndView mav = new ModelAndView ();
+				
+				
+	    		mav.addObject("coachSelection", coachSelection);
+
+	    		//Validation logic goes here
+				validator.validate(coachSelection, result);
+	    		if (result.hasErrors()){
+		    		mav.setViewName ("tutor/public/landingpages/art-tutor");
+
+		    		mav.addObject("coachingCategory", coachingCategory);
+		    		mav.addObject("coachingcategoryname", coachingcategoryname);
+		    		
 					return mav;
-					
+				}
+				setMavSession(mav, session, webRequest);
+				*/
+				
+				return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
 		        log.error(msg, e);
@@ -92,7 +91,6 @@ public class TutorLandingPagesController {
 				return new ModelAndView("tutor/public/common/error/errorpage");
 			}	
 		}
-		
 		@RequestMapping(value = "/tutor/public/landing-business-tutor", method = RequestMethod.GET)
 		public ModelAndView fitnessCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
@@ -117,10 +115,30 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/business-tutor", coachSelection, result, session);
+				
+				/*
+				ModelAndView mav = new ModelAndView ();
+				
+				String coachingCategory = webRequest.getParameter("coachingCategory");
+				String coachingcategoryname = webRequest.getParameter("coachingcategoryname");
 
-					ModelAndView mav = new ModelAndView ();
+	    		//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/business-tutor");
+
+		    		mav.addObject("coachingCategory", coachingCategory);
+		    		mav.addObject("coachingcategoryname", coachingcategoryname);
+		    		
+					return mav;
+				}
+
+					//ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/
+				
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -156,10 +174,29 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/computer-business-tutor", coachSelection, result, session);
 
-					ModelAndView mav = new ModelAndView ();
+				/*
+				ModelAndView mav = new ModelAndView ();
+
+				String coachingCategory = webRequest.getParameter("coachingCategory");
+				String coachingcategoryname = webRequest.getParameter("coachingcategoryname");
+				
+				//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/computer-business-tutor");
+
+		    		mav.addObject("coachingCategory", coachingCategory);
+		    		mav.addObject("coachingcategoryname", coachingcategoryname);
+		    		
+					return mav;
+				}
+				
+					//ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/	
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -194,10 +231,23 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/computer-programming-tutor", coachSelection, result, session);
 
-					ModelAndView mav = new ModelAndView ();
+				/*
+				ModelAndView mav = new ModelAndView ();
+				
+				//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/computer-programming-tutor");
+		    		
+					return mav;
+				}
+
+					//ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/	
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -233,9 +283,24 @@ public class TutorLandingPagesController {
 			
 			try{
 
-					ModelAndView mav = new ModelAndView ();
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/communication-presentation-tutor", coachSelection, result, session);
+
+				/*
+				ModelAndView mav = new ModelAndView ();
+				
+				//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/communication-presentation-tutor");
+		    		
+					return mav;
+				}
+
+					//ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/
+				
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -270,9 +335,22 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/english-tutor", coachSelection, result, session);
+
+				/*
+				ModelAndView mav = new ModelAndView ();
+				
+				//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/english-tutor");
+		    		
+					return mav;
+				}
+					//ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/	
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -307,9 +385,22 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/history-tutor", coachSelection, result, session);
+
+				/*
+				ModelAndView mav = new ModelAndView ();
+				
+				//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/history-tutor");
+		    		
+					return mav;
+				}
+//					ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/	
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -343,9 +434,22 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/homeschool-tutor", coachSelection, result, session);
+
+				/*
+				ModelAndView mav = new ModelAndView ();
+				
+				//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/homeschool-tutor");
+		    		
+					return mav;
+				}
+//					ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/	
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -379,9 +483,22 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/language-tutor", coachSelection, result, session);
+
+				/*
+				ModelAndView mav = new ModelAndView ();
+				
+				//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/language-tutor");
+		    		
+					return mav;
+				}
+//					ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/	
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -400,8 +517,8 @@ public class TutorLandingPagesController {
 			ModelAndView mav = new ModelAndView ();
 			CoachSelection coachSelection = new CoachSelection();
 
-			mav.addObject("coachingcategoryname", Constants.LANGUAGE_TUTOR_CATEGORY_NAME);
-			mav.addObject("coachingCategory", Constants.LANGUAGE_TUTOR_CATEGORY_ID);
+			mav.addObject("coachingcategoryname", Constants.MATH_TUTOR_CATEGORY_NAME);
+			mav.addObject("coachingCategory", Constants.MATH_TUTOR_CATEGORY_ID);
 
 			mav.addObject("coachSelection", coachSelection);
 			//mav.setViewName ("public/landingpages/general-personal-coaches-cs");
@@ -416,9 +533,22 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/math-tutor", coachSelection, result, session);
+
+				/*
+				ModelAndView mav = new ModelAndView ();
+				
+				//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/math-tutor");
+		    		
+					return mav;
+				}
+//					ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/	
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -452,9 +582,22 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/science-tutor", coachSelection, result, session);
+
+				/*
+				ModelAndView mav = new ModelAndView ();
+				
+				//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/science-tutor");
+		    		
+					return mav;
+				}
+//					ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/	
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -489,9 +632,22 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/add-adhd-tutor", coachSelection, result, session);
+
+				/*
+				ModelAndView mav = new ModelAndView ();
+				
+				//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/add-adhd-tutor");
+		    		
+					return mav;
+				}
+//					ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/	
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -525,9 +681,22 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/test-prep-tutor", coachSelection, result, session);
+
+				/*
+				ModelAndView mav = new ModelAndView ();
+				
+				//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/test-prep-tutor");
+		    		
+					return mav;
+				}
+//					ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/	
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -560,9 +729,22 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/music-tutor", coachSelection, result, session);
+
+				/*
+				ModelAndView mav = new ModelAndView ();
+				
+				//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/music-tutor");
+		    		
+					return mav;
+				}
+//					ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/	
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -577,8 +759,11 @@ public class TutorLandingPagesController {
 
 			log.debug("Received request to show corporate coaches");
 			
+			
 			ModelAndView mav = new ModelAndView ();
 			CoachSelection coachSelection = new CoachSelection();
+
+    		mav.addObject("general", "1");
 
 			mav.addObject("coachingcategoryname", "");
 			mav.addObject("coachingCategory", "");
@@ -596,9 +781,24 @@ public class TutorLandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
+				ModelAndView mav = getMAV(webRequest, "tutor/public/landingpages/general-personal-tutors", coachSelection, result, session);
+
+				mav.addObject("general", "1");
+				
+				/*
+				ModelAndView mav = new ModelAndView ();
+				
+				//Validation logic goes here
+				validator.validate(coachSelection, result);
+				if (result.hasErrors()){
+		    		mav.addObject("coachSelection", coachSelection);
+		    		mav.setViewName ("tutor/public/landingpages/general-personal-tutors");
+		    		
+					return mav;
+				}
+//					ModelAndView mav = new ModelAndView ();
 					setMavSession(mav, session, webRequest);
-					
+				*/	
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;
@@ -607,8 +807,6 @@ public class TutorLandingPagesController {
 				return new ModelAndView("tutor/public/common/error/errorpage");
 			}	
 		}
-		
-
 		
 		private void setMavSession(ModelAndView mav, HttpSession session, org.springframework.web.context.request.WebRequest webRequest) throws Exception{
 
@@ -620,10 +818,10 @@ public class TutorLandingPagesController {
 			mav.setViewName ("redirect:/tutor/public/coachprofileListAdvance/coachingCategory/" + webRequest.getParameter("coachingCategory") + 
 					"/coachingSubcategory/" + webRequest.getParameter("coachingSubcategory") + 
 					"/industryExperience/" + webRequest.getParameter("industryExperience") +
+					"/companyExperience/"  + (webRequest.getParameter("companyExperience") == null || webRequest.getParameter("companyExperience").trim().equals("") ?Constants.DEFAULT_URL_STRING:webRequest.getParameter("companyExperience") )+ 
 					"/gradelevel/" + webRequest.getParameter("gradelevel") + 
 					"/maxrate/" + webRequest.getParameter("maxrate") +
 					"/subject/"  + (webRequest.getParameter("subject")  == null || webRequest.getParameter("subject").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("subject") ) +
-					"/companyExperience/"  + (webRequest.getParameter("companyExperience") == null || webRequest.getParameter("companyExperience").trim().equals("") ?Constants.DEFAULT_URL_STRING:webRequest.getParameter("companyExperience") )+ 
 					"/coachFirstName/"  + (webRequest.getParameter("coachFirstName")  == null || webRequest.getParameter("coachFirstName").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("coachFirstName") ) + 
 					"/coachLastName/"  + (webRequest.getParameter("coachLastName")  == null || webRequest.getParameter("coachLastName").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("coachLastName") ) + 
 					"/city/"  + (webRequest.getParameter("city")  == null || webRequest.getParameter("city").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("city") ) + 
@@ -650,4 +848,34 @@ public class TutorLandingPagesController {
 			session.setAttribute("coachstyleinperson", webRequest.getParameter("coachstyleinperson"));
 			session.setAttribute("coachstyleonline", webRequest.getParameter("coachstyleonline"));
 		}		
+		
+
+		ModelAndView getMAV(org.springframework.web.context.request.WebRequest webRequest, String viewName, CoachSelection coachSelection, BindingResult result, HttpSession session) throws Exception
+		{
+			String coachingCategory = webRequest.getParameter("coachingCategory");
+			String coachingcategoryname = webRequest.getParameter("coachingcategoryname");
+			
+			ModelAndView mav = new ModelAndView ();
+			
+    		mav.addObject("coachSelection", coachSelection);
+
+    		mav.addObject("maxrate", coachSelection.getMaxrate());
+    		mav.addObject("gradelevel", coachSelection.getGradelevel());
+    		
+    		//Validation logic goes here
+			validator.validate(coachSelection, result);
+    		if (result.hasErrors()){
+	    		mav.setViewName (viewName);
+
+	    		if (coachingCategory != null){
+		    		mav.addObject("coachingCategory", coachingCategory);
+		    		mav.addObject("coachingcategoryname", coachingcategoryname);
+	    		}
+	    		
+				return mav;
+			}
+			setMavSession(mav, session, webRequest);
+			
+			return mav;
+		}
 }

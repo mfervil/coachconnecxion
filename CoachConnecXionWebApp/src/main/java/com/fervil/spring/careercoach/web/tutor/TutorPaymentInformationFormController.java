@@ -71,6 +71,7 @@ public class TutorPaymentInformationFormController  {
         Map<String, Object> myModel = new HashMap<String, Object>();
 
 		try{	
+			
 			PaymentInformation paymentInformation = new PaymentInformation();
 			
 			ModelAndView mav = new ModelAndView ();

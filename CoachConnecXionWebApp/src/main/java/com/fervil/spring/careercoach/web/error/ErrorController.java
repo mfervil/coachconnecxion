@@ -22,7 +22,29 @@ public class ErrorController {
     private static final Logger log = LoggerFactory.getLogger(ErrorController.class);
 	
 @RequestMapping(value = "/error404", method = RequestMethod.GET)
-public ModelAndView getHowItWorks(HttpServletRequest request, HttpServletResponse response, Model model) {
+public ModelAndView errorProcessing404(HttpServletRequest request, HttpServletResponse response, Model model) {
+
+	Map<String, Object> myModel = new HashMap<String, Object>();
+	try{	
+
+		String now = (new java.util.Date()).toString();
+        myModel.put("now", now);
+		String navPage = "public/common/error/error404";
+
+		//String navPage = "public/common/systeminfo/aboutus";
+        
+        return new ModelAndView(navPage, "model", myModel);
+
+	} catch (Exception e) {
+        String msg = "The request failed. Error " + e;
+        log.error(msg, e);
+		model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+        return new ModelAndView("public/common/error/errorpage", "model", myModel);
+	}	
+}	
+
+@RequestMapping(value = "/error400", method = RequestMethod.GET)
+public ModelAndView errorProcessing400(HttpServletRequest request, HttpServletResponse response, Model model) {
 
 	Map<String, Object> myModel = new HashMap<String, Object>();
 	try{	
