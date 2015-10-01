@@ -34,7 +34,7 @@ public interface UserProfileManager  extends Serializable {
 			String companyExperience, String coachFirstName, 
 			String coachLastName, String city, String state, int pageSize, int pageNumber, 
 			String gradelevel, int maxrate, String subject, String zipcodes, 
-			String tmpcoachstyleinperson, String tmpcoachstyleonline) throws Exception;
+			String tmpcoachstyleinperson, String tmpcoachstyleonline, String sort) throws Exception;
     
     public void storeUserProfile(UserProfile userProfile) throws Exception;
     public void storeUserProfileForTutor(UserProfile userProfile, PackageDetails tutorPackage) throws Exception;

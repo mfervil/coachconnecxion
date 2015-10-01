@@ -80,6 +80,9 @@ public class CreateUserProfileValidator implements Validator {
             
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "overview",
                     "required.overview", fieldisRequired);
+
+            //ValidationUtils.rejectIfEmptyOrWhitespace(errors, "availability",
+            //        "required.availability", fieldisRequired);
             
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "serviceDescription",
                     "required.serviceDescription", fieldisRequired);

@@ -829,7 +829,8 @@ public class TutorLandingPagesController {
 					"/pageNumber/1" +
 					"/zipcode/"  + (webRequest.getParameter("zipcode")  == null || webRequest.getParameter("zipcode").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("zipcode") ) +  
 					"/coachstyleinperson/"  + (webRequest.getParameter("coachstyle").equalsIgnoreCase("coachstyleinperson")?"1":Constants.DEFAULT_URL_STRING ) + 
-					"/coachstyleonline/"  + (webRequest.getParameter("coachstyle").equalsIgnoreCase("coachstyleonline")?"1":Constants.DEFAULT_URL_STRING ) 
+					"/coachstyleonline/"  + (webRequest.getParameter("coachstyle").equalsIgnoreCase("coachstyleonline")?"1":Constants.DEFAULT_URL_STRING ) + 
+					"/sortcoachlist/-1" 
 			);
 			
 			session.setAttribute("coachingCategory", webRequest.getParameter("coachingCategory"));
@@ -847,6 +848,7 @@ public class TutorLandingPagesController {
 			session.setAttribute("zipcode", webRequest.getParameter("zipcode"));
 			session.setAttribute("coachstyleinperson", webRequest.getParameter("coachstyleinperson"));
 			session.setAttribute("coachstyleonline", webRequest.getParameter("coachstyleonline"));
+			session.setAttribute("sortcoachlist", "-1");
 		}		
 		
 

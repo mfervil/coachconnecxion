@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fervil.spring.careercoach.model.domain.CoachSelection;
 import com.fervil.spring.careercoach.model.domain.CoachingRequest;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
 import com.fervil.spring.careercoach.model.domain.Zipcode;
@@ -107,6 +108,7 @@ public class TutorUserProfileListController  {
 			ModelAndView mav = new ModelAndView ();
 			mav.setViewName ("tutor/public/userprofile/userprofileList");
 			mav.addObject("userProfiles", userProfiles);
+			mav.addObject("coachSelection", new CoachSelection());
 			
 			CoachingRequest coachingRequest = new CoachingRequest();
 			mav.addObject("coachingRequest", coachingRequest);
@@ -144,7 +146,7 @@ public class TutorUserProfileListController  {
 	}
 
 	//List coaches for advanced searches where all criteria may be passed, and some may be left blank..... 
-	@RequestMapping(value = "/tutor/public/coachprofileListAdvance/coachingCategory/{coachingCategory}/coachingSubcategory/{coachingSubcategory}/industryExperience/{industryExperience}/companyExperience/{companyExperience}/gradelevel/{gradelevel}/maxrate/{maxrate}/subject/{subject}/coachFirstName/{coachFirstName}/coachLastName/{coachLastName}/city/{city}/state/{state}/pageNumber/{pageNumber}/zipcode/{zipcode}/coachstyleinperson/{coachstyleinperson}/coachstyleonline/{coachstyleonline}", method = RequestMethod.GET)
+	@RequestMapping(value = "/tutor/public/coachprofileListAdvance/coachingCategory/{coachingCategory}/coachingSubcategory/{coachingSubcategory}/industryExperience/{industryExperience}/companyExperience/{companyExperience}/gradelevel/{gradelevel}/maxrate/{maxrate}/subject/{subject}/coachFirstName/{coachFirstName}/coachLastName/{coachLastName}/city/{city}/state/{state}/pageNumber/{pageNumber}/zipcode/{zipcode}/coachstyleinperson/{coachstyleinperson}/coachstyleonline/{coachstyleonline}/sortcoachlist/{sortcoachlist}", method = RequestMethod.GET)
 	public ModelAndView listCoachProfiles(ModelMap model, org.springframework.web.context.request.WebRequest webRequest, 
 				@PathVariable("coachingCategory") int coachingCategory, 
 				@PathVariable("coachingSubcategory") int coachingSubcategory, 
@@ -160,7 +162,8 @@ public class TutorUserProfileListController  {
 				@PathVariable("pageNumber") int pageNumber, 
 				@PathVariable("zipcode") String zipcode, 
 				@PathVariable("coachstyleinperson") String coachstyleinperson, 
-				@PathVariable("coachstyleonline") String coachstyleonline 
+				@PathVariable("coachstyleonline") String coachstyleonline,
+				@PathVariable("sortcoachlist") int sortcoachlist 
 			) {
 
 	    	Map<String, Object> myModel = new HashMap<String, Object>();
@@ -183,10 +186,25 @@ public class TutorUserProfileListController  {
 			
 			pageNumber = (pageNumber < 1 )?1:pageNumber;
 			
+			String sort ="";
+			
+			 switch (sortcoachlist) {
+	            case 1:  sort = "-1";
+	                     break;
+	            case 2: sort = " order by packages_from desc ";
+                	break;
+	            case 3: sort = " order by packages_from asc ";
+                	break;
+	            case 4: sort = " order by rating desc ";
+                	break;
+	            default: sort = "-1";
+                	break;
+			 }	                     
+			
 			List<HashMap> userProfiles = userProfileManager.getUserProfilesForTutors(
 					coachingCategory, coachingSubcategory, industryExperience,tmpcompanyExperience, 
 					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber, 
-					gradelevel, maxrate, subject, zipcodes, tmpcoachstyleinperson, tmpcoachstyleonline);
+					gradelevel, maxrate, subject, zipcodes, tmpcoachstyleinperson, tmpcoachstyleonline, sort);
 
 			int userprofilecount = userProfileManager.findFilteredUserProfilesCount(
 					coachingCategory, coachingSubcategory, industryExperience,tmpcompanyExperience, 
@@ -195,6 +213,7 @@ public class TutorUserProfileListController  {
 			ModelAndView mav = new ModelAndView ();
 			mav.setViewName ("tutor/public/userprofile/userprofileList");
 			mav.addObject("userProfiles", userProfiles);
+			mav.addObject("coachSelection", new CoachSelection());
 			
 			CoachingRequest coachingRequest = new CoachingRequest();
 			mav.addObject("coachingRequest", coachingRequest);
@@ -215,6 +234,7 @@ public class TutorUserProfileListController  {
 			mav.addObject("totalpages", totalNumPagestoDisplay);
 			mav.addObject("coachstyleinperson", coachstyleinperson);
 			mav.addObject("coachstyleonline", coachstyleonline);
+			mav.addObject("sortcoachlist", sortcoachlist);
 			
 			log.info("Number of tutors returned to UserProfileListController: " + userProfiles.size());
 			
@@ -313,6 +333,7 @@ public class TutorUserProfileListController  {
 			ModelAndView mav = new ModelAndView ();
 			mav.setViewName ("tutor/public/userprofile/userprofileList");
 			mav.addObject("userProfiles", userProfiles);
+			mav.addObject("coachSelection", new CoachSelection());
 			
 			CoachingRequest coachingRequest = new CoachingRequest();
 			mav.addObject("coachingRequest", coachingRequest);
@@ -361,6 +382,7 @@ public class TutorUserProfileListController  {
 	    		ModelAndView mav = new ModelAndView ();
 	    		mav.setViewName ("tutor/public/userprofile/userprofileList");
 	    		mav.addObject("userProfiles", userProfiles);
+	    		mav.addObject("coachSelection", new CoachSelection());
 	    		
 	    		//CoachingRequest coachingRequest = new CoachingRequest();
 	    		mav.addObject("coachingRequest", coachingRequest);

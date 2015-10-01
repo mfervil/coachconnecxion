@@ -93,9 +93,9 @@
 		<br>
 		<div style="padding: 20px;"></div>
 
-		<div  class="list-row"><a style="font-size: 20px" href="${pageContext.request.contextPath}/coach">COACHING SERVICES</a></div>
-		<div  class="list-row"><a style="font-size: 20px" href="${pageContext.request.contextPath}/tutor">TUTORING SERVICES</a></div>
-		<div  class="list-row"><a style="font-size: 20px" href="${pageContext.request.contextPath}/training">TRAINING SERVICES</a></div>
+		<div  class="list-row"><a style="font-size: 20px" href="${pageContext.request.contextPath}/coach/public">COACHING SERVICES</a></div>
+		<div  class="list-row"><a style="font-size: 20px" href="${pageContext.request.contextPath}/tutor/public">TUTORING SERVICES</a></div>
+		<div  class="list-row"><a style="font-size: 20px" href="${pageContext.request.contextPath}/training/public">TRAINING SERVICES</a></div>
 
 		<div style="padding: 20px;">
 			<p style="font-size: 300%; color: #086A87">Welcome to CoachConnecXion<br><br>

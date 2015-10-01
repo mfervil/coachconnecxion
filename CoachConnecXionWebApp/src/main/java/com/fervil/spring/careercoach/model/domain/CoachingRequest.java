@@ -73,6 +73,20 @@ public class CoachingRequest  implements Serializable {
 		this.subcategory = subcategory;
 	}
 */	
+	
+/*	
+	private int sortcoachlist;
+
+	public int getSortcoachlist() {
+		return sortcoachlist;
+	}
+
+	public void setSortcoachlist(int sortcoachlist) {
+		this.sortcoachlist = sortcoachlist;
+	}
+	
+	*/
+	
 	@Column(name = "Request_Name", length = 75)
 	public String getRequest_name() {
 		return request_name;

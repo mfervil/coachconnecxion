@@ -177,7 +177,8 @@ table tr:nth-child(2n) {
 											<ul >
 												<li><a href="#overview">OVERVIEW &nbsp;&nbsp; /</a></li>
 												<li><a href="#education">TRAINING:EDUCATION &nbsp;&nbsp; /</a></li>
-												<li><a href="#jobhistory">JOB HISTORY &nbsp;&nbsp;</a></li>
+												<li><a href="#jobhistory">JOB HISTORY &nbsp;&nbsp; /</a></li>
+												<li><a href="#availability">TUTOR AVAILABILITY &nbsp;&nbsp;</a></li>
 												<%--
 												<c:choose>  
 												    <c:when test="${profileOfCurrentUser}" >  
@@ -233,7 +234,8 @@ table tr:nth-child(2n) {
 										</table>
 			
 										<table border="1">
-										<tr> <td class="leftalign" style="color:green"><b>$${profileInfo.getHourlyrate()} / HOUR</b> </td> <td class="leftalign"><b>Location:&nbsp;</b> </td> <td class="leftalign"><c:if test="${profileInfo.getCoachstyleinperson() == 1}" > + In Person</c:if> <c:if test="${profileInfo.getCoachstyleonline() == 1}" > + Online</c:if></td>
+										<%-- <tr> <td class="leftalign" style="color:green"><b>Rate:</b> $${profileInfo.getHourlyrate()} / HOUR</b> </td> <td class="leftalign"><b>Tutoring Type:&nbsp;</b> </td> <td class="leftalign"><c:if test="${profileInfo.getCoachstyleinperson() == 1}" > + In Person</c:if> <c:if test="${profileInfo.getCoachstyleonline() == 1}" > + Online</c:if></td> --%>
+										<tr> <td class="leftalign" style="color:green"><b>Rate:</b> $<fmt:formatNumber type="number" maxFractionDigits="0" value="${profileInfo.getHourlyrate()}" /> / HOUR </td> <td class="leftalign"><b>Tutoring Type:&nbsp;</b> </td> <td class="leftalign"><c:if test="${profileInfo.getCoachstyleinperson() == 1}" > + In Person</c:if> <c:if test="${profileInfo.getCoachstyleonline() == 1}" > + Online</c:if></td>
 										</tr>
 										<tr> <td class="leftalign"><b>City:&nbsp;</b> ${profileInfo.getCity()} </td> <td class="leftalign"><b>State:&nbsp;</b> </td> <td class="leftalign">${profileInfo.getState()} </td>
 										</tr>
@@ -340,6 +342,23 @@ table tr:nth-child(2n) {
 								</tr>
 							</table> <br></br>
 							</div><!-- end of overview -->
+							
+<div id="availability">
+							<table>
+								<tr style="border-bottom:1px solid #000;">
+									<td style="text-align: left; font-weight: bold;"><h2>TUTOR AVAILABILITY</h2></td>
+								</tr>
+							</table> 
+							<hr>
+								<table class="data">
+									<tr>
+										<td style="text-align: left; font-weight: bold;width:200px;">${profileInfo.getAvailability()}</td>
+									</tr>
+									<tr><td>&nbsp;</td></tr>
+								</table>
+								
+</div><!-- Availability -->
+							
 <div id="jobhistory">
 							
 							<table>

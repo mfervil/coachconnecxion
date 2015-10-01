@@ -137,4 +137,5 @@ public class CoachSelection {
 	public void setCoachstyle(String coachstyle) {
 		this.coachstyle = coachstyle;
 	}
+
 }

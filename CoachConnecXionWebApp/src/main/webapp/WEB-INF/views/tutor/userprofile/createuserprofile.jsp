@@ -374,7 +374,7 @@ label {font-size:14px;}
 				</td></tr>
 
 			    <tr>
-			    	<td class="leftalign" nowrap><form:errors path="coachingcategory1" cssClass="error" /><label>*Subject 1</label><br>
+			    	<td class="leftalign" nowrap><form:errors path="coachingcategory1" cssClass="error" /><br><label>*Subject 1</label><br>
 				        <form:select size="1" path="coachingcategory1" id="coachingcategory1" >
 				          <option selected  value="-1">Select a Subject</option>
 				          ${userProfile.coachingcategory1 =='1010' ? "<option value='1010' selected>Art</option>" : "<option value='1010' >Art</option>"}
@@ -393,7 +393,7 @@ label {font-size:14px;}
 				          ${userProfile.coachingcategory1 =='1140' ? "<option value='1140' selected>Test Prep.((SAT, ACT, GMAT, etc..)</option>" : "<option value='1140' >Test Prep.((SAT, ACT, GMAT, etc..)</option>"}
 				        </form:select>
 			        </td>
-		    		<td class="leftalign" nowrap><label>Subject 2</label><br>
+		    		<td class="leftalign" nowrap><br><label>Subject 2</label><br>
 				        <form:select size="1" path="coachingcategory2" id="coachingcategory2" >
 				          <option selected  value="-1">Select a Subject</option>
 				          ${userProfile.coachingcategory2 =='1010' ? "<option value='1010' selected>Art</option>" : "<option value='1010' >Art</option>"}
@@ -412,7 +412,7 @@ label {font-size:14px;}
 				          ${userProfile.coachingcategory2 =='1140' ? "<option value='1140' selected>Test Prep.((SAT, ACT, GMAT, etc..)</option>" : "<option value='1140' >Test Prep.((SAT, ACT, GMAT, etc..)</option>"}
 				        </form:select>
 			        </td>
-		    		<td class="leftalign" nowrap><label>Subject 3</label><br>
+		    		<td class="leftalign" nowrap><br><label>Subject 3</label><br>
 				        <form:select size="1" path="coachingcategory3" id="coachingcategory3" >
 				          <option selected  value="-1">Select a Subject</option>
 				          ${userProfile.coachingcategory3 =='1010' ? "<option value='1010' selected>Art</option>" : "<option value='1010' >Art</option>"}
@@ -440,6 +440,16 @@ label {font-size:14px;}
 							id="wysiwygskills" path="skillsExpertise" /> 
 						</td>
 					</tr>
+
+				<tr><td>&nbsp;</td></tr>
+					<tr>
+						<td class="leftalign" colspan="3"> <label>Availability: Update your availability to tutor below</label> 
+							<form:errors path="availability" cssClass="error" />
+							<form:textarea rows="6" cols="100" name="wysiwygskills"
+							id="wysiwygskills" path="availability" /> 
+						</td>
+				</tr>
+
 				</table>
 				<%-- 
 				<table>

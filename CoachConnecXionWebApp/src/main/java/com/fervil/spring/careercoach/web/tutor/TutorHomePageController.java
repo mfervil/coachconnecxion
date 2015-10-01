@@ -32,7 +32,7 @@ public class TutorHomePageController {
     private static final Logger log = LoggerFactory.getLogger(TutorHomePageController.class);
 	
     //Method used to diplay the tutor home page 	
-	@RequestMapping(value = "/tutor", method = RequestMethod.GET)
+	@RequestMapping(value = "/tutor/public", method = RequestMethod.GET)
 	public ModelAndView fitnessCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
 		log.debug("Received request to show tutor home page");

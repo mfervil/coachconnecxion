@@ -108,6 +108,12 @@ public class TutorCreateUserProfileFormController {
 
 			//model.addAttribute("profileId", webRequest.getParameter("profileId")); //Removed for breadcrumb
 			
+			String availability = " Monday: 8AM - 10PM \r Tuesday: 8AM - 10PM \r Wednesday: 8AM - 10PM \r Thursday: 8AM - 10PM \r Friday: 8AM - 10PM \r Saturday: 8AM - 4PM \r Sunday: Not Available \r";
+			
+			if (userProfile.getAvailability() == null || userProfile.getAvailability().trim().equalsIgnoreCase("") ) {
+				userProfile.setAvailability(availability);
+			}
+			
 			model.addAttribute("profileId", profileId);
 			model.addAttribute("userProfile", userProfile);
 			return "tutor/userprofile/createuserprofile"; 

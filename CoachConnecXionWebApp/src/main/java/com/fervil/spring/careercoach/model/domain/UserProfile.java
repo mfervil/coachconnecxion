@@ -306,6 +306,9 @@ public class UserProfile  implements Serializable {
 
 	@Column(name = "serviceDescription", nullable = false, columnDefinition="TEXT")
 	private String serviceDescription="&nbsp;";
+
+	@Column(name = "availability", nullable = false, columnDefinition="TEXT")
+	private String availability=" ";
 	
 	@Column(name = "skillsExpertise", nullable = false, columnDefinition="TEXT")
 	private String skillsExpertise="&nbsp;";
@@ -818,6 +821,16 @@ public class UserProfile  implements Serializable {
 
 	public void setLvlleisure(String lvlleisure) {
 		this.lvlleisure = lvlleisure;
+	}
+
+
+	public String getAvailability() {
+		return availability;
+	}
+
+
+	public void setAvailability(String availability) {
+		this.availability = availability;
 	}
 
 }

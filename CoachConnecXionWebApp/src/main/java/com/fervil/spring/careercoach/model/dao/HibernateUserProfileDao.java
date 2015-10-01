@@ -110,8 +110,8 @@ public class HibernateUserProfileDao implements UserProfileDao {
 		" (select c.coaching_category_name from coaching_category c where u.coachingcategory2 = c.coaching_category_id) coaching_category_name2, " +
 		" (select c.coaching_category_name from coaching_category c where u.coachingcategory3 = c.coaching_category_id) coaching_category_name3, " +
 		" (select count(*) from packages_sold ps where ps.user_profile_id = u.user_profile_id) num_clients, " +  
-		" (select min(p.price)  from package p where p.user_profile_id = u.user_profile_id) packages_from, " + 
-		" (select avg(averagerating) from jobratingdetails j where j.user_profile_id=u.user_profile_id) rating " + 
+		" (select min(p.price)  from packagedetails p where p.PROFILEID = u.user_profile_id) packages_from, " + 
+		" (select avg(averagerating) from jobratingdetails j where j.user_profile_id=u.user_profile_id) rating, u.coachstyleonline, u.coachstyleinperson " + 
 		" from user_profile u ";
 		
 		return sql;
@@ -306,7 +306,8 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			int coachingSubcategory, int industryExperience,
 			String companyExperience, String coachFirstName,
 			String coachLastName, String city, String state, int pageSize, 
-			int pageNumber, String gradelevel, int maxrate, String subject, String zipcodes, String coachstyleinperson, String coachstyleonline)  throws Exception {
+			int pageNumber, String gradelevel, int maxrate, String subject, 
+			String zipcodes, String coachstyleinperson, String coachstyleonline, String sort)  throws Exception {
 
 		try {
 			// session.beginTransaction();
@@ -355,6 +356,11 @@ public class HibernateUserProfileDao implements UserProfileDao {
 				CRITERIA += CRITERIA.contains("where")?" and ":" where ";
 				CRITERIA = CRITERIA + " coachstyleonline = 1" ;				
 			}
+
+			if (!sort.equals("-1") ) {
+				CRITERIA = CRITERIA + sort ;				
+			}
+			
 			
 			String sql = getInitialSQL() + " " + CRITERIA;
 			

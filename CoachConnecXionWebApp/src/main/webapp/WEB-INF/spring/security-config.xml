@@ -76,8 +76,8 @@
 		<intercept-url pattern="/feedbackAddNoOrder" access="permitAll()"/>								
 		<intercept-url pattern="/blogview/**" access="permitAll()"/>	
 		
-        <intercept-url pattern="/tutor" access="permitAll()"/>
-        <intercept-url pattern="/tutor/**" access="permitAll()"/>
+        
+        <intercept-url pattern="/coach/public/**" access="permitAll()"/>
         <intercept-url pattern="/tutor/public/**" access="permitAll()"/>
         <intercept-url pattern="/tutor/public/profile/**" access="permitAll()"/>
         <intercept-url pattern="/tutor/user/profile/**" access="permitAll()"/>
