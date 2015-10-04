@@ -39,7 +39,7 @@ public class TutorHomePageController {
 		
 		ModelAndView mav = new ModelAndView ();
 		
-		mav.setViewName ("tutor/users/home");
+		mav.setViewName ("tutor/users/tutorhome");
 		return mav;
 	}
 }

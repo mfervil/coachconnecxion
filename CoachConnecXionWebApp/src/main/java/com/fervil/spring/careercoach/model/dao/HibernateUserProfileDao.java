@@ -111,7 +111,7 @@ public class HibernateUserProfileDao implements UserProfileDao {
 		" (select c.coaching_category_name from coaching_category c where u.coachingcategory3 = c.coaching_category_id) coaching_category_name3, " +
 		" (select count(*) from packages_sold ps where ps.user_profile_id = u.user_profile_id) num_clients, " +  
 		" (select min(p.price)  from packagedetails p where p.PROFILEID = u.user_profile_id) packages_from, " + 
-		" (select avg(averagerating) from jobratingdetails j where j.user_profile_id=u.user_profile_id) rating, u.coachstyleonline, u.coachstyleinperson " + 
+		" (select avg(averagerating) from jobratingdetails j where j.user_profile_id=u.user_profile_id) rating, u.coachstyleonline, u.coachstyleinperson, u.hourlyrate " + 
 		" from user_profile u ";
 		
 		return sql;

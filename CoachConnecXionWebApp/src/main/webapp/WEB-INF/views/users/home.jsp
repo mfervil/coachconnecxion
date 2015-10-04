@@ -57,7 +57,7 @@
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/about-us">About Us </a> | 
 					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> | 
 					--%>
-					<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold;" href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>
+					<a  rel="nofollow" style="font-size:16px;color:#0404B4; font-weight: bold; background-color: #B0C4DE; border: 1px solid navy;" href="${pageContext.request.contextPath}/users/login">Login | Sign Up</a>
 					
 <c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
 	<c:if test="${sessionScope.usertype == 1}">

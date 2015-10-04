@@ -2,7 +2,7 @@
  
  	<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
   
-	<%@ include file="/WEB-INF/views/tutor/common/header_setup.jsp" %>	
+	<%@ include file="/WEB-INF/views/common/header_setup.jsp" %>	
 
 	<title>Math - Science - English Tutors for all grades : CoachConnecXion</title>
 	<meta name="description" content="CoachConnecXion.com matches individuals with life, personal, professional and career coaches.  Our aim is to help witth individual growth" />
@@ -37,12 +37,14 @@
 
 			<div id="menutopmost">
 				<%-- <a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | <a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy&nbsp;&nbsp;&nbsp;&nbsp;</a> --%>
+				<a style="font-size:16px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/public">[SWITCH TO TUTORING SITE] &nbsp;&nbsp;&nbsp;&nbsp; </a> | 
 					<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
-				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/coach">Coaching </a> | 
-				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor">Tutoring </a> | 
+<!-- 				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/coach/public">Coaching </a> | 
+				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/public">Tutoring </a> | 
+ -->
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/tutor/about-us">About Us </a> | 
 					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/contact-us">Contact Us </a> | 
-					<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold;" href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>
+					<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold; background-color: #B0C4DE; border: 1px solid navy;" href="${pageContext.request.contextPath}/users/login">Login | Sign Up</a>
 					
 <c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
 	<c:if test="${sessionScope.usertype == 1}">
@@ -65,7 +67,7 @@
 			</div>
 
 			<div id="menubar">
-				<%@ include file="/WEB-INF/views/tutor/common/header_no_side_body_menu.jsp" %>
+				<%@ include file="/WEB-INF/views/common/header_no_side_body_menu.jsp" %>
 			</div>
 
 		<br><br>	

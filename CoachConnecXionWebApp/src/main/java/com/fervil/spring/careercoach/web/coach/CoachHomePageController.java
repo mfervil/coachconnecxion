@@ -37,9 +37,10 @@ public class CoachHomePageController {
 
 		log.debug("Received request to show tutor home page");
 		
+		
 		ModelAndView mav = new ModelAndView ();
 		
-		mav.setViewName ("coach/users/home");
+		mav.setViewName ("coach/users/coachhome");
 		return mav;
 	}
 }

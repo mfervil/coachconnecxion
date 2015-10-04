@@ -37,13 +37,13 @@
 
 			<div id="menutopmost">
 				<%-- <a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | <a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy&nbsp;&nbsp;&nbsp;&nbsp;</a> --%>
+				<a style="font-size:16px;color:#0404B4"  href="${pageContext.request.contextPath}/coach/public">[SWITCH TO COACHING SITE] &nbsp;&nbsp;&nbsp;&nbsp; </a> | 
 					<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
-				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/coach">Coaching </a> | 
-				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor">Tutoring </a> | 
+				<!-- <a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/public">Tutoring </a> |  --> 
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/tutor/about-us">About Us </a> | 
 					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/contact-us">Contact Us </a> | 
-					<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold;" href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>
-					
+					<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold; background-color: #B0C4DE; border: 1px solid navy;" href="${pageContext.request.contextPath}/users/login">Login | Sign Up</a>
+
 <c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
 	<c:if test="${sessionScope.usertype == 1}">
 	 			<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>"> | NEW MESSAGES
@@ -85,10 +85,11 @@
 			<div id="ei-slider" class="ei-slider">
 				<ul class="ei-slider-large">
                      <li>
-						<img src="${pageContext.request.contextPath}/images/HomePage/Coach_1.png" alt="Business Coach"/>
-						<div class="ei-title black_bg">
-							<h2>DON'T HAVE THE EXPERIENCE</h2>
-							<h3>GET A TUTOR WHO'S BEEN THERE AND DONE THAT</h3>
+						<img src="${pageContext.request.contextPath}/images/tutor/homepage/graduation_4.png" alt="Tutors for Graduation"/>
+						<%-- <div class="ei-title black_bg"> --%>
+						<div class="ei-title ">
+							<h2>IS YOUR DREAM OF GRADUATION SLIPPING AWAY</h2>
+							<h3>THE RIGHT TUTOR CAN GET YOU BACK ON TRACK</h3>
 						</div>
 					</li>
                      <li>
@@ -99,10 +100,10 @@
 						</div>
 					</li>
                      <li>
-						<img src="${pageContext.request.contextPath}/images/HomePage/mountain.jpg" alt="Corporate Coach"/>
-						<div class="ei-title black_bg">
-							<h2>LOOKING FOR A FINAL PULL</h2>
-							<h3>OR PUSH TO GET YOU TO THE TOP</h3>
+						<img src="${pageContext.request.contextPath}/images/tutor/homepage/distressed_2.png" alt="Tutors for Struggling Students"/>
+						<div class="ei-title ">
+							<h2>IS YOUR CHILD STESSED AND STRUGLING WITH SCHOOL</h2>
+							<h3>A TUTOR MAY BE THE PERFECT SOLUTION</h3>
 						</div>
 					</li>
 					<li>
@@ -113,17 +114,17 @@
 						</div>
 					</li>
 					<li>
-						<img src="${pageContext.request.contextPath}/images/HomePage/exercize.jpg" alt="Excersize Coach"/>
+						<img src="${pageContext.request.contextPath}/images/tutor/homepage/musictutor_2.png" alt="Music Tutors"/>
 						<div class="ei-title">
-							<h2>LOOKING TO LOSE THOSE 5 EXTRA POUNDS</h2>
-							<h3>A PERSONAL TUTOR MAY BE YOUR ANSWER</h3>
+							<h2>STRUGGLING AND UNABLE TO FIND THE RIGHT TONE</h2>
+							<h3>A MUSIC TUTOR CAN HELP YOU HIT THE NOTE</h3>
 						</div>						
 					</li>
 					<li>
-						<img src="${pageContext.request.contextPath}/images/HomePage/chef.jpg" alt="New Field Coach"/>
+						<img src="${pageContext.request.contextPath}/images/tutor/homepage/seniortutoring_2.png" alt="Tutoring for Seniors"/>
 						<div class="ei-title ">
-							<h2>TRYING SOMETHING NEW</h2>
-							<h3>A TUTOR IN THE FIELD IS THE QUICKEST ROUTE</h3>
+							<h2>TUTORING CAN HELP ANYONE</h2>
+							<h3>NO MATTER YOUR AGE OR STAGE IN LIFE</h3>
 						</div>						
 					</li>									
 				</ul>

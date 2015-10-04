@@ -120,7 +120,7 @@
 								
 									<td class="leftalign" width="100%"> <br> 
 										 <b> &nbsp;&nbsp;<a  rel="nofollow" href="${pageContext.request.contextPath}/tutor/public/profile?profileId=${userProfileDetails.user_profile_id}"><font color="blue" style="font-size:16px">${userProfileDetails.display_name}</font></a></b> &nbsp;&nbsp;<%@ include file="/WEB-INF/views/tutor/common/average_rating.jsp" %>	
-										 <br><br> <p style="color:green"><b>&nbsp;&nbsp;Rate: </b> $<fmt:formatNumber type="number" maxFractionDigits="0" value="${userProfileDetails.packages_from}" /> / HOUR  &nbsp; &nbsp;<b>Tutoring Type:&nbsp;</b>  <c:if test="${userProfileDetails.coachstyleinperson == 1}" > + In Person</c:if> <c:if test="${userProfileDetails.coachstyleonline == 1}" > + Online</c:if></p>
+										 <br><br> <p style="color:green"><b>&nbsp;&nbsp;Rate: </b> $<fmt:formatNumber type="number" maxFractionDigits="0" value="${userProfileDetails.hourlyrate}" /> / HOUR  &nbsp; &nbsp;<b>Tutoring Type:&nbsp;</b>  <c:if test="${userProfileDetails.coachstyleinperson == 1}" > + In Person</c:if> <c:if test="${userProfileDetails.coachstyleonline == 1}" > + Online</c:if></p>
 										 <b>&nbsp;&nbsp;City:</b> ${userProfileDetails.city} || ${userProfileDetails.profilepicturestring} &nbsp;&nbsp;<b>State/Province: </b> ${userProfileDetails.state} 
 									     <br> <!-- <b>&nbsp;&nbsp;# Clients:</b> ${userProfileDetails.num_clients}  
 									      &nbsp;&nbsp;<b> Packages from:</b>&nbsp;$${userProfileDetails.packages_from} --> 

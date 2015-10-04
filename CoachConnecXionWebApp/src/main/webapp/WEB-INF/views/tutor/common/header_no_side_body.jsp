@@ -30,12 +30,14 @@
 
 			<%-- MENU --%>
 			<div id="menutopmost">
+				<a style="font-size:16px;color:#0404B4"  href="${pageContext.request.contextPath}/coach/public">[SWITCH TO COACHING SITE] &nbsp;&nbsp;&nbsp;&nbsp; </a> | 
 				<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
-				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/coach">Coaching </a> | 
-				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor">Tutoring </a> | 
+<!--  				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/coach/public">Coaching </a> | 
+				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/public">Tutoring </a> | 
+-->
 				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/about-us">About Us </a> | 
 				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/contact-us">Contact Us </a> | 
-				<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold;"  href="${pageContext.request.contextPath}/users/login">Sign in-Register</a>
+				<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold; background-color: #B0C4DE; border: 1px solid navy;"  href="${pageContext.request.contextPath}/users/login">Login | Sign Up</a>
 <c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
 	<c:if test="${sessionScope.usertype == 1}">
 	 			<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>"> | NEW MESSAGES

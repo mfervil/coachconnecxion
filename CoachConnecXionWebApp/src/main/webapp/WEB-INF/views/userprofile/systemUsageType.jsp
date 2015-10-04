@@ -19,6 +19,49 @@
 <style>
 span.required {color:red;font-weight:bold}
 </style>
+
+<style type="text/css">
+    .Table
+    {
+        display: table;
+    }
+    .Title
+    {
+        display: table-caption;
+        text-align: center;
+        font-weight: bold;
+        font-size: larger;
+    }
+    .Heading
+    {
+        display: table-row;
+        font-weight: bold;
+        text-align: center;
+    }
+    .Row
+    {
+        display: table-row;
+    }
+    .list-row {
+        background:#f4f4f4;
+        border:2px solid blue;
+        width: 600px;
+        margin: auto;
+        text-align: center;
+        vertical-align: middle;
+        top: 50%;
+        padding: 20px 0px;
+        }
+        
+    .Cell
+    {
+        width: 300px;
+        display: table-cell;
+        padding-left: 40px;
+        padding-right: 40px;
+        text-align: center;
+    }
+</style>
 	
 </head>
 <body >
@@ -48,16 +91,29 @@ span.required {color:red;font-weight:bold}
 <%-- <b>The user profile has been created successfully for the customer with ID <c:out value="${model.userProfileId}"/>.</b> 
 <b> <span style="font-size: 1.25em;"> <c:out value="${model.message}"/> </span></b>--%>
 
-<span style="font-size: 1.25em;"> What is your main purpose for using the system? </span>
+<span style="font-size: 25px;"><br>Your Primary Goal on CoachConnecXion is to: <br><br></span>
 
-	<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); "> <a href="${pageContext.request.contextPath}/public/profile?cuin=${cuin}" style="color:blue;">**COACHING -- I want to coach others**</a> </span></b>
 
-	<br><br><b> <span style="font-size: 1.25em; color:red; "> <a href="${pageContext.request.contextPath}/public/createCustomerUserProfile" style="color:blue;">**COACHING - I am looking for a coach**</a> </span></b>
+	<div id="useractions">
+		<div class="list-row">
+			<div class="Cell" >
+				<a style="font-size: 20px;" href="${pageContext.request.contextPath}/public/profile?cuin=${cuin}">COACH OTHERS</a>
+			</div>
+			<div class="Cell" >
+			    <a style="font-size: 20px; " href="${pageContext.request.contextPath}/public/createCustomerUserProfile">FIND A COACH</a>
+			</div>
+		    </div>
+		    <div class="list-row">
+			<div class="Cell">
+			    <a style="font-size: 20px" href="${pageContext.request.contextPath}/tutor/public/profile?cuin=${cuin}">TUTOR OTHERS</a>
+			</div>
+			<div class="Cell">
+			    <a style="font-size: 20px" href="${pageContext.request.contextPath}/tutor/public/createCustomerUserProfile">FIND A TUTOR</a>
+			</div>
+		    </div>	
+	</div>
 
-	<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); "> <a href="${pageContext.request.contextPath}/tutor/public/profile?cuin=${cuin}" style="color:blue;">**TUTORING -- I want to tutor others**</a> </span></b>
-
-	<br><br><b> <span style="font-size: 1.25em; color:red; "> <a href="${pageContext.request.contextPath}/tutor/public/createCustomerUserProfile" style="color:blue;">**TUTORING - I am looking for a tutor**</a> </span></b>
-
+	<div><br>&nbsp;</div>
 </td></tr>
 
 			</table>
@@ -71,4 +127,4 @@ span.required {color:red;font-weight:bold}
 			
 		</form:form>
 </section>
-<%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	
+<%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>
