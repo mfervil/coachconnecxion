@@ -173,22 +173,28 @@ text-align:center;
 																	At CoachConnecXion we have a variety of business strategic advisors to help you meet your goal.</h3> <br>
 								</td>
 							</tr>
+							
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">What a business tutor does for you, the struggling business, accounting or finance student:</h2>
+									<h3 style="text-align: left;">Individuals seeking to improve improve their grades in business related classes or those trying to get a head start in class should engage the help of a tutor.  A tutor with special knowledge and insight in the subject can offer specific advice and guidance to the struggling student.  At CoachConnecXion.com, we have a variety of business tutors with focus in finance, accounting, business administration who can help you with your deficiencies and help you bring up those grades. </h3> <br>
+								</td>
+							</tr>
 							<tr><td>	
-									<h3 style="text-decoration: underline;">Your Business Coach:</h3>
+									<h3 style="text-decoration: underline;">Your business tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Helps you look at the big picture for your business and life</li>
-										<li style="text-align: left;">Guides you in enhancing your business skills and intellectual development.</li>
-										<li style="text-align: left;">Provides candid feedback to you about your strengths and weaknesses.</li>
-										<li style="text-align: left;">Helps you identify business opportunities.</li>
-										<li style="text-align: left;">Links you with professionals and organizations that can assist you in solving problems.</li>
-										<li style="text-align: left;">Helps you through the transitional periods in starting and growing a small enterprise.</li>
-										<li style="text-align: left;">Assists you in balancing your personal with your business life.</li>
-										<li style="text-align: left;">Listens to the problems you are facing, helps you set goals and develop a plan, and requires you to carry out and implement your plans.</li>
-										<li style="text-align: left;">Encourages and motivates you, building your sense of self-worth and confidence.</li>
+										<li style="text-align: left;">Help you improve your overall knowledge in business by filling-in those technical gaps</li>
+										<li style="text-align: left;">Provide a better understanding of the fundamentals that you may have missed in earlier classes</li>
+										<li style="text-align: left;">Help you improve your grades in the class by providing specialized lessons geared toward your area of challenge</li>
+										<li style="text-align: left;">Provide homework help to ensure you fully understand the subject matter</li>
+										<li style="text-align: left;">Help you get ready for quizzes and tests</li>
+										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to completing homeworks and preparing for tests and quizzes</li>
+										<li style="text-align: left;">Work with you on time management issues so your class assignments and homeworks can be completed thoroughly and on time</li>
+										<li style="text-align: left;">Help you build your confidence level so you can learn better and perform better on tests and quizzes</li>
+										<li style="text-align: left;">Decrease some of the supervision required of parents and help the student become more independent</li>
 									</ul>
-									<br>Referenced from: www.lightly.com
 								</td>	
 							</tr>
+
 						</table>		
 					</td>
 				</tr>

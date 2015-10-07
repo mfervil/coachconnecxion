@@ -166,27 +166,29 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/> <br>
 								The stages of the coaching process used by our professionals to get you to the next level 							
 							</td></tr>
-							<tr><td>	<br>	
-									<h2 style="text-align: left; text-decoration: underline;">What an Online Life Coach from CoachConnecXion does:</h2>
-									<h3 style="text-align: left;">These coaches provide the drive and guidance individuals need to improve their careers, relationships, and overall emotional state. 
-																	</h3><br>
+							
+							
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">How a business related computer tutor can help you:</h2>
+									<h3 style="text-align: left;">Individuals seeking to improve their computer skills so they can be more efficient and more comfortable with business software programs should engage the help of a computer tutor.  A tutor with experience with software systems can provide guidance to help you update your skills very quickly.  At CoachConnecXion.com, we have have a many tutors with knowledge in a host of software systems, including, Access, Excel, Word, Powerpoint, etc...  </h3> <br>
 								</td>
 							</tr>
-							<tr><td>		
-									<h3 style="text-decoration: underline;">A Life coach may be helpful for the following reasons:</h3>
+							<tr><td>	
+									<h3 style="text-decoration: underline;">Your Computer Business tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Need some guidance on moving forward in your career</li>
-										<li style="text-align: left;">Want to learn how to take advantage of your strengths and talents</li>
-										<li style="text-align: left;">Don't know what to do about a major life decision, such as a move or promotion</li>
-										<li style="text-align: left;">Don't have an acceptable work-life balance</li>
-										<li style="text-align: left;">Have a lot of stress</li>
-										<li style="text-align: left;">Need help recognizing your skills and achieving your dreams</li>
-										<li style="text-align: left;">Having trouble moving past challenges that stand in the way of your goals</li>
-										<li style="text-align: left;">Provide self help motivation tools and techniques to help you along the way to your goal</li>
+										<li style="text-align: left;">Help you improve your overall skills with software systems by helping you fill-in the gaps in your knowledge area</li>
+										<li style="text-align: left;">Provide a better understanding of the fundamentals that you may not be familiar with</li>
+										<li style="text-align: left;">Help you improve your grades in class by providing specialized lessons geared toward your area of challenge</li>
+										<li style="text-align: left;">Provide homework help if applicable to ensure you fully understand the subject and software tools</li>
+										<li style="text-align: left;">If taking a class, help you get ready for projects</li>
+										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to homework and preparing for tests and quizzes</li>
+										<li style="text-align: left;">If taking a class, work with you on time management issues so your class assignments and homeworks can be completed on time</li>
+										<li style="text-align: left;">Help you build your confidence level and work with you to be more comfortable when using software systems</li>
 									</ul>
-									<br>Referenced from: www.webmd.com
 								</td>	
 							</tr>
+							
+							
 						</table>		
 					</td>
 				</tr>

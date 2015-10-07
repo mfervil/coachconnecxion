@@ -166,27 +166,30 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/> <br>
 								The stages of the coaching process used by our professionals to get you to the next level 							
 							</td></tr>
-							<tr><td>	<br>	
-									<h2 style="text-align: left; text-decoration: underline;">What an Online Life Coach from CoachConnecXion does:</h2>
-									<h3 style="text-align: left;">These coaches provide the drive and guidance individuals need to improve their careers, relationships, and overall emotional state. 
-																	</h3><br>
+							
+							
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">What a special education tutor with knowledge in ADD / ADHD does for you, if you're a struggling student with learning difficulties:</h2>
+									<h3 style="text-align: left;">Individuals with learning problems seeking to overcome their learning difficulties, should engage a tutor to help them take advantage of their strengths while also addressing the weak areas.  At CoachConnecXion.com, we have a variety of special education tutors, who are well versed in a variety of subjects to help you move forward and make progress</h3> <br>
 								</td>
 							</tr>
-							<tr><td>		
-									<h3 style="text-decoration: underline;">A Life coach may be helpful for the following reasons:</h3>
+							<tr><td>	
+									<h3 style="text-decoration: underline;">Your special education ADD / ADHD tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Need some guidance on moving forward in your career</li>
-										<li style="text-align: left;">Want to learn how to take advantage of your strengths and talents</li>
-										<li style="text-align: left;">Don't know what to do about a major life decision, such as a move or promotion</li>
-										<li style="text-align: left;">Don't have an acceptable work-life balance</li>
-										<li style="text-align: left;">Have a lot of stress</li>
-										<li style="text-align: left;">Need help recognizing your skills and achieving your dreams</li>
-										<li style="text-align: left;">Having trouble moving past challenges that stand in the way of your goals</li>
-										<li style="text-align: left;">Provide self help motivation tools and techniques to help you along the way to your goal</li>
+										<li style="text-align: left;">Help you improve your skills by identifying your difficulties and providing you targeted instructions on how to overcome those difficulties</li>
+										<li style="text-align: left;">Provide insight on what can be done to help you better learn different subjects so you can more easily move effectively move through the material</li>
+										<li style="text-align: left;">Help you improve your skills and grades by providing specialized lessons geared toward your area of need</li>
+										<li style="text-align: left;">Provide homework help to ensure you fully understand the concepts and know how to properly apply the concepts</li>
+										<li style="text-align: left;">Help you get ready for tests, quizzes and other special assignments</li>
+										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to completing required projects and assignments</li>
+										<li style="text-align: left;">Work with you on time management issues so you can take full advantage of your special skills and environment and not get so easily distracted</li>
+										<li style="text-align: left;">Help you build your confidence level so you can more effectively complete tasks on your own</li>
+										<li style="text-align: left;">Decrease some of the supervision required of parents and help the student become a more independent and self sufficient learner</li>
 									</ul>
-									<br>Referenced from: www.webmd.com
 								</td>	
 							</tr>
+							
+							
 						</table>		
 					</td>
 				</tr>

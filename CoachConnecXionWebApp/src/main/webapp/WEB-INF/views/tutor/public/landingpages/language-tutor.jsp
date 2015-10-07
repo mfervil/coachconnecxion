@@ -167,26 +167,27 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/><br>
 								The stages of the coaching process used by our professionals to get you to the next level 							
 							</td></tr>
-							<tr><td>	<br>	
-									<h2 style="text-align: left; text-decoration: underline;">What an Online Relationship Coach Does For You:</h2>
-									<h3 style="text-align: left;">A relationship coach will help you identify your ideal relationships in every area of life, bring these ideal relationships into your life, set boundaries 
-																	where your current relationships do not meet your criteria and build skills to enhance current and future relationships. 
-																	The coaches at CoachConnecXion can offer both couples marriage therapy or online relationship advice to help you through your issues. 
-																	</h3><br>
+
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">How a language tutor can help you:</h2>
+									<h3 style="text-align: left;">Individuals seeking to improve their language skills so they can write and converse in a foreign language should engage the help of a tutor.  A tutor who is bi-langual can teach you the nuances of a foreign language, and help you become a better speaker and writer.  At CoachConnecXion.com, we have have tutors knowledgeable in a variety of languages, including, English, French, Spanish, Italian, German, etc...</h3> <br>
 								</td>
 							</tr>
-							<tr><td>		
-									<h3 style="text-decoration: underline;">Your Relationship Coach will do the following:</h3>
+							<tr><td>	
+									<h3 style="text-decoration: underline;">Your Language tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">help you question your assumptions</li>
-										<li style="text-align: left;">Work with you to address your patterns and blocks</li>
-										<li style="text-align: left;">Encourage you to cultivate clearer, healthier parameters for both one-on-one and group relationships</li>
-										<li style="text-align: left;">Discover new mechanisms for listening and expressing yourself</li>
-										<li style="text-align: left;">Help you become consciously aware of how you "show up" and, ultimately, work toward greater fulfillment and personal transformation</li>
+										<li style="text-align: left;">Help you improve your overall language skills by helping you fill-in the gaps in your knowledge area</li>
+										<li style="text-align: left;">Provide a better understanding of the fundamentals of the language that you may not fully understand</li>
+										<li style="text-align: left;">Help you improve your grades in class by providing specialized lessons geared toward your area of challenge</li>
+										<li style="text-align: left;">Provide homework help if applicable to ensure you fully understand the concept at hand</li>
+										<li style="text-align: left;">If taking a class, help you get ready for projects, tests and quizzes</li>
+										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to homework and preparing for tests and quizzes</li>
+										<li style="text-align: left;">If taking a class, work with you on time management issues so your class assignments and homeworks can be completed on time</li>
+										<li style="text-align: left;">Help you build your confidence level, especially when speaking to others</li>
 									</ul>
-									<br>Referenced from: www.worldcoachinstitute.com, www.ipeccoaching.com
 								</td>	
 							</tr>
+
 						</table>		
 					</td>
 				</tr>

@@ -17,7 +17,7 @@
 							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-math-tutor">MATH</a></li>
 							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-music-tutor">MUSIC</a></li>
 							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-science-tutor">SCIENCE</a></li>
-							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-add-adhd-tutor">SPECIAL NEEDS (ADD/ADHD/ETC...)</a></li>
+							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-add-adhd-tutor">SPECIAL NEEDS (ADD / ADHD / ETC...)</a></li>
 							<li><a href="${pageContext.request.contextPath}/tutor/public/landing-sat-act-gmat-lsat-tutor">TEST PREPARATION (SAT/ACT/GMAT/LSAT/ETC...)</a></li>
 						</ul>
 					</li>

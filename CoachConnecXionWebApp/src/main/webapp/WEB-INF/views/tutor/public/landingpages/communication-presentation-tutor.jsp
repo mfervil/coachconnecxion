@@ -167,25 +167,25 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/hbr_consulting_therapy.png" alt="Consulting Coaching Therapy" height="200" width="600"/><br>
 								Chart from Harvard Business Review showing the relationship between consulting, therapy and the coaching process							
 							</td></tr>
-							<tr><td><br>
-									<h2 style="text-align: left; text-decoration: underline;">How an online corporate coach can help you:</h2>
-									<h3 style="text-align: left;">Corporate coaches are trained to see opportunities where others see problems.  They provide you with the tactical applications you need to address some of the most pressing challenges facing your organization today.  Some of the challenges they may help you with include, team dysfunction, stagnation, and status quo thinking. 
-																At CoachConnecXion, our corporate coaches use a variety of techniques including corporate team building games, and team building questions to see where the issues are and help drive solutions to the identified problem areas.
-																 </h3><br>
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">How a communication/presentation tutor can help you:</h2>
+									<h3 style="text-align: left;">Individuals seeking to quickly and effectively improve their communication and presentation skills should engage the help of a tutor.  A tutor with expertise in communication and presentation can provide guidance to help you quickly master those techniques of effective communication and presentation.  At CoachConnecXion.com, we have have tutors well versed in communication and presentation that you can pick from.</h3> <br>
 								</td>
 							</tr>
-							<tr><td>		
-									<h3 style="text-decoration: underline;">Corporate coaching focuses on:</h3>
+							<tr><td>	
+									<h3 style="text-decoration: underline;">Your Communication and Presentation tutor may help you with the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Managers</li>
-										<li style="text-align: left;">HR personnel</li>
-										<li style="text-align: left;">Administrative staff</li>
-										<li style="text-align: left;">High potential employees</li>
-										<li style="text-align: left;">Team dynamics</li>
+										<li style="text-align: left;">Help you improve your overall communication skills by identifying gaps in your approach and providing you instructions on how to fix those gaps</li>
+										<li style="text-align: left;">Provide you a better understanding of the fundamentals of communication and presentation that you may not be familiar with</li>
+										<li style="text-align: left;">If taking a class, the tutor will help you improve your grades by providing specialized lessons geared toward your area of challenge</li>
+										<li style="text-align: left;">Provide homework help, if applicable, to ensure you fully understand communication and presentation concepts and how to apply them</li>
+										<li style="text-align: left;">Help you get ready for group presentation and work with you to practice and master the presentation before the big day</li>
+										<li style="text-align: left;">Work with you to stay on track for classes, and help you with time management issues so your class assignments and homeworks can be completed on time</li>
+										<li style="text-align: left;">Help you build your confidence level so you can be more comfortable when presenting to diverse audiences</li>
 									</ul>
-									<br>Referenced from: www.ipeccoaching.com
 								</td>	
 							</tr>
+
 						</table>		
 					</td>
 				</tr>

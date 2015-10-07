@@ -166,27 +166,26 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/> <br>
 								The stages of the coaching process used by our professionals to get you to the next level 							
 							</td></tr>
-							<tr><td>	<br>	
-									<h2 style="text-align: left; text-decoration: underline;">What an Online Life Coach from CoachConnecXion does:</h2>
-									<h3 style="text-align: left;">These coaches provide the drive and guidance individuals need to improve their careers, relationships, and overall emotional state. 
-																	</h3><br>
+							
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">What an music tutor does for you, the struggling artist:</h2>
+									<h3 style="text-align: left;">Individuals seeking to improve their knowledge or skill in music, or students trying to improve their grades or get a head start in music class should engage the help of a music tutor.  A music tutor with experience, knowledge and expertise in the field can offer specific advice and guidance to the struggling musician.  At CoachConnecXion.com, we have a variety of music tutors to help you with your deficiencies and ultimately meet your overall goals. </h3> <br>
 								</td>
 							</tr>
-							<tr><td>		
-									<h3 style="text-decoration: underline;">A Life coach may be helpful for the following reasons:</h3>
+							<tr><td>	
+									<h3 style="text-decoration: underline;">Your music tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Need some guidance on moving forward in your career</li>
-										<li style="text-align: left;">Want to learn how to take advantage of your strengths and talents</li>
-										<li style="text-align: left;">Don't know what to do about a major life decision, such as a move or promotion</li>
-										<li style="text-align: left;">Don't have an acceptable work-life balance</li>
-										<li style="text-align: left;">Have a lot of stress</li>
-										<li style="text-align: left;">Need help recognizing your skills and achieving your dreams</li>
-										<li style="text-align: left;">Having trouble moving past challenges that stand in the way of your goals</li>
-										<li style="text-align: left;">Provide self help motivation tools and techniques to help you along the way to your goal</li>
+										<li style="text-align: left;">Help you improve your skills in music by helping you fill-in the gaps in your knowledge area</li>
+										<li style="text-align: left;">Provide a better understanding of the fundamentals that you may not have</li>
+										<li style="text-align: left;">Help you improve yourself by providing specialized lessons geared toward your area of challenge</li>
+										<li style="text-align: left;">Provide homework help if applicable to ensure you fully understand the the musical concepts</li>
+										<li style="text-align: left;">Help you get ready for recitals with the proper techniques</li>
+										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to practicing and preparing for recitals</li>
+										<li style="text-align: left;">Help you build your confidence level so you can learn better and perform to your optimal capabilities</li>
 									</ul>
-									<br>Referenced from: www.webmd.com
 								</td>	
 							</tr>
+
 						</table>		
 					</td>
 				</tr>

@@ -169,24 +169,28 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_2.jpg" alt="Coaching Action Steps" height="200" width="600"/>
 										<br>Diagram showing the different steps and actions involved in the coaching process
 							</td></tr>
-							<tr><td><br>
-									<h2 style="text-align: left; text-decoration: underline;">What's the purpose of a family coach?</h2>
-									<h3 style="text-align: left;">Family coaches help families resolve everyday problems that occur within the family unit.  These coaches work with teens, young adults, parents and families to find out what the problems are, and what needs to be done to get your family back on the right track.  
-																If required, your CoachConnecXion advisor may offer you parenting tips daily that you can utilize to help tackle your frequently occurring issues. 
-																</h3><br>
+							
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">What an English tutor does for you, the English student, struggling to complete that dissertation, or finish that research paper:</h2>
+									<h3 style="text-align: left;">Individuals seeking to improve their grades in English class or those trying to better understand how to structure research or business papers should seek the help of a tutor to get them over that hurdle.  At CoachConnecXion.com, we have a variety of english tutors; some are focus on research papers, others focus more on grammar and sentence structure, some focus more on business related tasks, in either case we have tutors who can help you on your specific need. </h3> <br>
 								</td>
 							</tr>
-							<tr><td>		
-									<h3 style="text-decoration: underline;">Your Family Coach may help you with the following:</h3>
+							<tr><td>	
+									<h3 style="text-decoration: underline;">Your English tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Teen and young adult behavioral issues</li>
-										<li style="text-align: left;">Parenting skills</li>
-										<li style="text-align: left;">Resolving marital problems</li>
-										<li style="text-align: left;">Addressing work/Family life balance</li>
+										<li style="text-align: left;">Help you improve your skills in the english language by identifying gaps in your knowledge and providing you instructions on how to fix them</li>
+										<li style="text-align: left;">Provide a better understanding of the fundamentals that you may have missed in earlier classes</li>
+										<li style="text-align: left;">Help you improve your grades in your english related classes by providing specialized lessons geared toward your area of challenge</li>
+										<li style="text-align: left;">Provide homework help if needed to ensure you fully understand the concepts and how to apply them</li>
+										<li style="text-align: left;">Help you get ready for quizzes, papers, presentations, and research related tasks</li>
+										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to completing long and complex papers</li>
+										<li style="text-align: left;">Work with you on time management issues so you better pace your self and complete your homework within the provided time frame</li>
+										<li style="text-align: left;">Help you build your confidence level so you can more effectively complete tasks on your own</li>
+										<li style="text-align: left;">Decrease some of the supervision required of parents and help the student become more independent and self sufficient</li>
 									</ul>
-									<br>Referenced from: www.academyforfamilycoachtraining.com, www.lifecoach-directory.org.uk
 								</td>	
 							</tr>
+
 						</table>		
 					</td>
 				</tr>

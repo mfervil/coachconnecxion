@@ -166,22 +166,25 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_2.jpg" alt="Coaching Action Steps" height="200" width="600"/>
 										<br>Diagram showing the different steps and actions involved in the coaching process
 							</td></tr>
-							<tr><td><br>
-									<h2 style="text-align: left; text-decoration: underline;">How an Online Finance-Money coach can help:</h2>
-									<h3 style="text-align: left;">A finance coach can help you focus on reaching your financial goals, and work with you to lay-out the steps required to get to the end goal.  They can provide you the expert advice and education you need to feel confident in you financial or debt management plans. 
-																</h3><br>
+							
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">What a English tutor does for you, the English student, struggling to complete that dissertation, or finish that research paper:</h2>
+									<h3 style="text-align: left;">Individuals seeking to improve improve their grades in English class or those trying to better understand how to structure research or business papers should seek the help of a tutor to get them over that hurdle.  At CoachConnecXion.com, we have a variety of english tutors; some are focus on research papers, others focus more on grammar and sentence structure, some focus more on business related tasks, in either case we have tutors who can help you on your specific need. </h3> <br>
 								</td>
-							</tr>		
-							<tr><td>		
-									<h3 style="text-decoration: underline;">Your Finance-Money Coach will:</h3>
+							</tr>
+							<tr><td>	
+									<h3 style="text-decoration: underline;">Your History tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Help you set your financial goals</li>
-										<li style="text-align: left;">Work with you to develop an action plan</li>
-										<li style="text-align: left;">Help you identify resources, tools and services to make the process pain free</li>
-										<li style="text-align: left;">Monitor your progress and guide you in the right direction</li>
-										<li style="text-align: left;">Work with you to understand the impact of your decisions on your financial goals</li>
+										<li style="text-align: left;">Help you improve your skills in History by identifying knowledge gaps and providing you instructions on how to fill those gaps</li>
+										<li style="text-align: left;">Provide a better understanding of some of the historical facts and their relevance so you have proper context when deciphering historical documents</li>
+										<li style="text-align: left;">Help you improve your grades in your History related classes by providing specialized lessons geared toward your area of challenge</li>
+										<li style="text-align: left;">Provide homework help if needed to ensure you fully understand historical significance and overall concepts and how to apply them</li>
+										<li style="text-align: left;">Help you get ready for quizzes, tests, papers, presentations, and research related projects</li>
+										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to completing long and complex history projects</li>
+										<li style="text-align: left;">Work with you on time management issues so you can better pace yourself and ultimately complete your homework assignments within the allotted time frame</li>
+										<li style="text-align: left;">Help you build your confidence level so you can more effectively complete tasks on your own, and discuss complex historical events</li>
+										<li style="text-align: left;">Decrease some of the supervision required of parents, and help the student become more independent and self sufficient</li>
 									</ul>
-									<br>Referenced from: fyi.uwex.edu/
 								</td>	
 							</tr>
 						</table>		

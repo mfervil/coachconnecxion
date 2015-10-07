@@ -165,27 +165,29 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/><br>
 								The stages of the coaching process used by our professionals to get you to the next level
 							</td></tr>
-							<tr><td><br>	
-									<h2 style="text-align: left; text-decoration: underline;">What an Online Nutrition Coach Does For You:</h2>
-									<h3 style="text-align: left;">Nutrition coaches better known as dietitians or nutritionists are experts in food and nutrition. 
-																	The CoachConnecXion professionals will advise you on nutrition health dieting issues and provide guidance 
-																	on what to eat in order to lead a healthy lifestyle or achieve a specific health-related goal. 
-																	 </h3><br>
+							
+							
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">What a Homeschool tutor does for you, if you're struggling to understand complex subjects, or if you just need someone to walk you through some subjects you're not too comfortable with:</h2>
+									<h3 style="text-align: left;">Homeschooled individuals seeking to improve their understanding of any subject, rather it be math, english or science, should engage a tutor to help them get un-tangled.  At CoachConnecXion.com, we have a variety of homeschool tutors; who are well versed in a variety of subjects to help you move forward and make progress</h3> <br>
 								</td>
 							</tr>
-							<tr><td>		
-									<h3 style="text-decoration: underline;">Nutrition coaches typically help with the following:</h3>
+							<tr><td>	
+									<h3 style="text-decoration: underline;">Your Homeschool tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Assess your health needs and diet</li>
-										<li style="text-align: left;">Counsel you on nutrition issues and healthy eating habits</li>
-										<li style="text-align: left;">Help you develop meal plans, taking both cost and your preferences into account</li>
-										<li style="text-align: left;">Evaluate the effects of meal plans and change the plans as needed</li>
-										<li style="text-align: left;">Discuss your diet and nutrition, and the relationship between good eating habits and preventing or managing specific diseases</li>
-										<li style="text-align: left;">Help you update your nutrition goals and document your progress</li>
+										<li style="text-align: left;">Help you improve your skills by identifying gaps in your knowledge base and providing you instructions on how to fill those gaps</li>
+										<li style="text-align: left;">Provide a better understanding of some of the subjects at issue so you can more easily move through the study material</li>
+										<li style="text-align: left;">Help you improve your skills and grades by providing specialized lessons geared toward your area of need</li>
+										<li style="text-align: left;">Provide homework help to ensure you fully understand the concepts and how to apply them</li>
+										<li style="text-align: left;">Help you get ready for tests and other special assignments</li>
+										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to completing the required work</li>
+										<li style="text-align: left;">Work with you on time management issues so you can take full advantage of your environment and not get distracted</li>
+										<li style="text-align: left;">Help you build your confidence level so you can more effectively complete tasks on your own, and effectively go through the online material</li>
+										<li style="text-align: left;">Decrease some of the supervision required of parents and help the student become a more independent and self sufficient learner</li>
 									</ul>
-									<br>Referenced from: www.bls.gov
 								</td>	
 							</tr>
+
 						</table>		
 					</td>
 				</tr>

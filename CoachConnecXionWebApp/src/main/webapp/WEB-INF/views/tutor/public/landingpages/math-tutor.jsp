@@ -166,27 +166,28 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/> <br>
 								The stages of the coaching process used by our professionals to get you to the next level 							
 							</td></tr>
-							<tr><td>	<br>	
-									<h2 style="text-align: left; text-decoration: underline;">What an Online Life Coach from CoachConnecXion does:</h2>
-									<h3 style="text-align: left;">These coaches provide the drive and guidance individuals need to improve their careers, relationships, and overall emotional state. 
-																	</h3><br>
+							
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">What a Math tutor does for you, the Math student, struggling with math concepts that seem completely foreign to you:</h2>
+									<h3 style="text-align: left;">Individuals seeking to improve their grades in Math class or those trying to better understand math concepts in general should seek the help of a tutor to get them over that hurdle.  At CoachConnecXion.com, we have a variety of Math tutors, from elementary math to advanced calculus and differential equation </h3> <br>
 								</td>
 							</tr>
-							<tr><td>		
-									<h3 style="text-decoration: underline;">A Life coach may be helpful for the following reasons:</h3>
+							<tr><td>	
+									<h3 style="text-decoration: underline;">Your Math tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Need some guidance on moving forward in your career</li>
-										<li style="text-align: left;">Want to learn how to take advantage of your strengths and talents</li>
-										<li style="text-align: left;">Don't know what to do about a major life decision, such as a move or promotion</li>
-										<li style="text-align: left;">Don't have an acceptable work-life balance</li>
-										<li style="text-align: left;">Have a lot of stress</li>
-										<li style="text-align: left;">Need help recognizing your skills and achieving your dreams</li>
-										<li style="text-align: left;">Having trouble moving past challenges that stand in the way of your goals</li>
-										<li style="text-align: left;">Provide self help motivation tools and techniques to help you along the way to your goal</li>
+										<li style="text-align: left;">Help you improve your skills in Math by identifying gaps in your knowledge and providing you instructions on how to fill those gaps</li>
+										<li style="text-align: left;">Provide a better understanding of the fundamentals that you may have missed in earlier classes</li>
+										<li style="text-align: left;">Help you improve your grades in your Math related classes by providing specialized lessons geared toward your area of challenge</li>
+										<li style="text-align: left;">Provide homework help if needed to ensure you fully understand the concepts and how to apply them</li>
+										<li style="text-align: left;">Help you get ready for quizzes, class tests, and standardized tests</li>
+										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to completing long and complex math assignments</li>
+										<li style="text-align: left;">Work with you on time management issues so you better pace your self and complete your homework within the allotted</li>
+										<li style="text-align: left;">Help you build your confidence level so you can more effectively complete tasks, and tackle more complex problems</li>
+										<li style="text-align: left;">Decrease some of the supervision required of parents and help you become more independent and self sufficient</li>
 									</ul>
-									<br>Referenced from: www.webmd.com
 								</td>	
 							</tr>
+
 						</table>		
 					</td>
 				</tr>

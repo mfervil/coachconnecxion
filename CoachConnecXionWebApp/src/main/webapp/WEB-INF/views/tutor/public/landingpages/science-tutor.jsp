@@ -166,27 +166,30 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/> <br>
 								The stages of the coaching process used by our professionals to get you to the next level 							
 							</td></tr>
-							<tr><td>	<br>	
-									<h2 style="text-align: left; text-decoration: underline;">What an Online Life Coach from CoachConnecXion does:</h2>
-									<h3 style="text-align: left;">These coaches provide the drive and guidance individuals need to improve their careers, relationships, and overall emotional state. 
-																	</h3><br>
+							
+							
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">What a science tutor does for you, the student struggling with science concepts that seem completely out of your reach:</h2>
+									<h3 style="text-align: left;">Individuals seeking to improve their grades in science class or those trying to better understand science concepts in general should seek the help of a tutor to get them over that hurdle.  At CoachConnecXion.com, we have a variety of science tutors, from anatomy to physics to chemistry and everything in between</h3> <br>
 								</td>
 							</tr>
-							<tr><td>		
-									<h3 style="text-decoration: underline;">A Life coach may be helpful for the following reasons:</h3>
+							<tr><td>	
+									<h3 style="text-decoration: underline;">Your science tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Need some guidance on moving forward in your career</li>
-										<li style="text-align: left;">Want to learn how to take advantage of your strengths and talents</li>
-										<li style="text-align: left;">Don't know what to do about a major life decision, such as a move or promotion</li>
-										<li style="text-align: left;">Don't have an acceptable work-life balance</li>
-										<li style="text-align: left;">Have a lot of stress</li>
-										<li style="text-align: left;">Need help recognizing your skills and achieving your dreams</li>
-										<li style="text-align: left;">Having trouble moving past challenges that stand in the way of your goals</li>
-										<li style="text-align: left;">Provide self help motivation tools and techniques to help you along the way to your goal</li>
+										<li style="text-align: left;">Help you improve your skills in science by identifying gaps in your knowledge and providing you instructions to help you better understand the subject</li>
+										<li style="text-align: left;">Provide a better understanding of the fundamentals that you may have missed in earlier classes</li>
+										<li style="text-align: left;">Help you improve your grades in your science related classes by providing specialized lessons geared toward your weak area</li>
+										<li style="text-align: left;">Provide homework help to ensure you fully understand the the fundamentals of science and how to apply the concepts</li>
+										<li style="text-align: left;">Help you get ready for quizzes, tests, and research projects</li>
+										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to completing complex science assignments</li>
+										<li style="text-align: left;">Work with you on time management issues so you better pace yourself and complete your homework assignments on time</li>
+										<li style="text-align: left;">Help you build your confidence level so you can more effectively complete tasks, and tackle complex problems</li>
+										<li style="text-align: left;">Decrease some of the supervision required of parents and help you become more independent and self sufficient</li>
 									</ul>
-									<br>Referenced from: www.webmd.com
 								</td>	
 							</tr>
+							
+							
 						</table>		
 					</td>
 				</tr>

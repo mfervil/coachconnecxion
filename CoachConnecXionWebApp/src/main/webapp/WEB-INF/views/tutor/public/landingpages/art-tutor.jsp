@@ -167,26 +167,25 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Consulting Coaching Therapy" height="200" width="600"/><br>
 										The stages of the coaching process used by professional advisors to get you to the next level <br>							
 							</td></tr>
+							
 							<tr><td> <br>		
-									<h2 style="text-align: left;  text-decoration: underline;">What an Online Business Coach Does For You, the Small Business Owner:</h2>
-									<h3 style="text-align: left;">Business owners seeking the expert guidance of Business Coaches typically look for coaches who not only are successful Business Coaches and professionals, but who also have a genuine interest in assisting them.  
-																	At CoachConnecXion we have a variety of business strategic advisors to help you meet your goal.</h3> <br>
+									<h2 style="text-align: left;  text-decoration: underline;">What an art tutor does for you, the struggling artist:</h2>
+									<h3 style="text-align: left;">Individuals seeking to improve their knowledge or skill in art, or students trying to improve their grades or get a head start in art class should engage the help of an art tutor.  An art tutor with experience, knowledge and expertise in the field can offer specific advice and guidance to the struggling artist.  At CoachConnecXion.com, we have a variety of art tutors to help you with your deficiencies and ultimately meet your overall goals. </h3> <br>
 								</td>
 							</tr>
 							<tr><td>	
-									<h3 style="text-decoration: underline;">Your Business Coach:</h3>
+									<h3 style="text-decoration: underline;">Your art tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Helps you look at the big picture for your business and life</li>
-										<li style="text-align: left;">Guides you in enhancing your business skills and intellectual development.</li>
-										<li style="text-align: left;">Provides candid feedback to you about your strengths and weaknesses.</li>
-										<li style="text-align: left;">Helps you identify business opportunities.</li>
-										<li style="text-align: left;">Links you with professionals and organizations that can assist you in solving problems.</li>
-										<li style="text-align: left;">Helps you through the transitional periods in starting and growing a small enterprise.</li>
-										<li style="text-align: left;">Assists you in balancing your personal with your business life.</li>
-										<li style="text-align: left;">Listens to the problems you are facing, helps you set goals and develop a plan, and requires you to carry out and implement your plans.</li>
-										<li style="text-align: left;">Encourages and motivates you, building your sense of self-worth and confidence.</li>
+										<li style="text-align: left;">Help you improve your overall skills in art by helping you fill-in the gaps in your knowledge</li>
+										<li style="text-align: left;">Provide a better understanding of the fundamentals that you may have missed in earlier classes</li>
+										<li style="text-align: left;">Help you improve your grades in art class by providing specialized lessons geared toward your area of challenge</li>
+										<li style="text-align: left;">Provide homework help to ensure you fully understand the subject</li>
+										<li style="text-align: left;">Help you get ready for recitals and presentations with the proper techniques</li>
+										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to homework and preparation for tests and quizzes</li>
+										<li style="text-align: left;">Work with you on time management issues so your class assignments and homeworks can be completed on time</li>
+										<li style="text-align: left;">Help you build your confidence level in art so you can learn better and perform when required</li>
+										<li style="text-align: left;">Decrease some of the supervision required of parents and help the student become more independent</li>
 									</ul>
-									<br>Referenced from: www.lightly.com
 								</td>	
 							</tr>
 						</table>		

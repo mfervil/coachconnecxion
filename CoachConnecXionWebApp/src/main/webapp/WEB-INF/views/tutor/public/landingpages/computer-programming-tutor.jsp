@@ -167,31 +167,25 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/hbr_consulting_therapy.png" alt="Consulting Coaching Therapy" height="200" width="600"/> <br>
 								Chart from Harvard Business Review showing the relationship between consulting, therapy and the coaching process.							
 							</td></tr>
-							<tr><td>	<br>
-									<h2 style="text-align: left; text-decoration: underline;">What is career coaching?</h2>
-									<h3 style="text-align: left;">Career coaching is the process of working with people to help them assess their talents and make critical decisions about career choice and direction. 
-																At CoachConnecXion, you can find career coaching services where you can work with your ideal certified career coach. 
-																</h3><br>
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">How a systems computer tutor can help you:</h2>
+									<h3 style="text-align: left;">Individuals seeking to improve their technical skills in computer systems including software programming and development, networking and computer security should engage the help of a technical computer tutor.  A tutor with expertise in a certain computer domain can provide guidance to help you quickly master cetain technical skills.  At CoachConnecXion.com, we have have tutors with knowledge in programming, networking, security, web development, etc..  </h3> <br>
 								</td>
-							</tr>		
-							<tr><td>		
-									<h3 style="text-decoration: underline;">How can a career coach help you:</h3>
+							</tr>
+							<tr><td>	
+									<h3 style="text-decoration: underline;">Your Technical Computer tutor may help you with the following:</h3>
 									<ul style="list-style-type: square;">
-									    <li style="text-align: left;">Administer and interpret assessments to asses work values, interests, skills and competencies</li>
-									    <li style="text-align: left;">Identify alternative internal career options for people in transition that capitalize on individual knowledge, skill and ability profiles</li>
-									    <li style="text-align: left;">Develop specific career paths with experience, knowledge, abilities, and skills defined</li>
-									    <li style="text-align: left;">Help overcome issues such as lack of self-confidence, poor self-discipline and fear of success/failure</li>
-									    <li style="text-align: left;">Create career development plans to help employees grow and learn</li>
-									    <li style="text-align: left;">Maximize person-job-organizational fit and help kick-start a stagnant career</li>
-									    <li style="text-align: left;">Explore and prepare employees for internal job searches, including resume preparation, in-house interviewing and networking</li>
-									    <li style="text-align: left;">Identify and cultivate internal mentor and career advisor networks for personal career development</li>
-									    <li style="text-align: left;">Provide unbiased, objective career counseling intervention/mediation/facilitation for people experiencing job stress, job loss or transition during corporate reorganizations, mergers or downsizing</li>
-									    <li style="text-align: left;">Teach internal career advisors and mentors how to be more effective in guiding employee career development</li>
-									    <li style="text-align: left;">Facilitate employee training and development initiatives</li>
-									    <li style="text-align: left;">Manage outplacement strategies during times of transition</li>									</ul>
-									<br>Referenced from: www.ginacgroup.com
+										<li style="text-align: left;">Help you improve your overall skills with software development and programming by helping you fill-in the gaps in your knowledge area</li>
+										<li style="text-align: left;">Provide a better understanding of the fundamentals that you may not be familiar with</li>
+										<li style="text-align: left;">If in class, help you improve your grades by providing specialized lessons geared toward your area of challenge</li>
+										<li style="text-align: left;">Provide homework help if applicable to ensure you fully understand the subject, tools and technologies</li>
+										<li style="text-align: left;">Help you get ready for projects, development and configuration tasks</li>
+										<li style="text-align: left;">Work with you to stay on track for classes, help you with time management issues so your class assignments and homeworks can be completed on time</li>
+										<li style="text-align: left;">Help you build your confidence level and work with you to be more comfortable in your desired area of technical experties</li>
+									</ul>
 								</td>	
 							</tr>
+
 						</table>		
 					</td>
 				</tr>
