@@ -5,8 +5,8 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Zipcode {
-    @JsonProperty("zipcodes")
-    Zipcode[] zipcodes;	
+    //@JsonProperty("zipcodes")
+    //Zipcode[] zipcodes;	
 	
 	  private String zip; 
 	  private String city; 

@@ -3,6 +3,7 @@ package com.fervil.spring.careercoach.web.tutor;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -16,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -239,6 +241,15 @@ public class TutorUserProfileListController  {
 			log.info("Number of tutors returned to UserProfileListController: " + userProfiles.size());
 			
 			return mav;
+			
+		} catch (HttpMessageNotReadableException e) {
+	        String msg = "The request failed. HttpMessageNotReadableException: Error " + e;
+	        log.error(msg, e);
+			ModelAndView mav = new ModelAndView ();
+			mav.setViewName ("tutor/public/userprofile/userprofileList");
+			mav.addObject("userProfiles", new ArrayList());
+			mav.addObject("coachSelection", new CoachSelection());
+			return mav;
 		} catch (Exception e) {
 	        String msg = "The request failed. Error " + e;
 	        log.error(msg, e);
@@ -250,62 +261,25 @@ public class TutorUserProfileListController  {
 	public String getNearestZipCodes(String zipcode){
 		String zipList="";
 		
-		/*
 		RestTemplate restTemplate = new RestTemplate();
-		String jsonUrl = "https://www.zipwise.com/webservices/radius.php?key=ut5elgroqwapjwq6&zip=" + zipcode + "&radius=5&format=json";
+		
+		String jsonUrl = "https://www.zipwise.com/webservices/radius.php?key=7wntjyde93vph7m3&zip=" + zipcode + "&radius=50&format=json";
 
-        ResponseEntity<Zipcode[]> entity = restTemplate.getForEntity(jsonUrl, Zipcode[].class);
-        List<Zipcode> zipdataList = Arrays.asList(entity.getBody());
+		System.setProperty("jsse.enableSNIExtension", "false");
+		
+        List<Zipcode> zipdataList = restTemplate.getForObject(jsonUrl, ZipcodeContainer.class).getResults();
 
         int i=0;
         for(Zipcode zip : zipdataList) {
         	if (i>0) zipList = zipList + ","; 
-        	zipList = "'" + zip.getZip();
+        	zipList = zipList + "'" + zip.getZip() + "'";
 
-        	System.out.println(i);
+        	i++;
         }
-        */
-		
-		//List<LinkedHashMap> emps = restTemplate.getForObject("https://www.zipwise.com/webservices/radius.php?key=ut5elgroqwapjwq6&zip=90210&radius=5&format=json", List.class);
-        //System.out.println(emps.size());
-        /*
-        int i=0;
-        for(LinkedHashMap map : emps){
-        	if (i>0) zipList = zipList + ","; 
-        	zipList = "'" + map.get("zip").toString() + "'";
-            System.out.println("ID="+map.get("id")+",Name="+map.get("name")+",CreatedDate="+map.get("createdDate"));
-            i++;
-        }
-        */
-		
-		zipList = "'60563','60555','60540','60567','60502','60532','60566','60189','60599'";
-        System.out.println(" The zipcode list is: " + zipList);
-        return zipList;
         
-        /*
-		String response ="";
-		Gson g = new Gson();
-		ZipcodeContainer vc = g.fromJson(response, ZipcodeContainer.class);	
-								
-		HashMap<String, String> hm = new HashMap<String,String>();
-		for(Zipcode v: vc.zipcodes){
-		  hm.put(v.getId(), v.getName());  
-		}		
-		*/
-		
-		
-		//https://www.zipwise.com/webservices/radius.php?key=YOUR_API_KEY&zip=90210&radius=2&format=json
-/*			
-			URL url = new URL("https://www.zipwise.com/webservices/radius.php?key=YOUR_API_KEY&zip=90210&radius=2&format=json");
-			BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
-
-			JSONParser parser=new JSONParser();
-			Object object = parser.parse(in);
-
-			JSONArray array = (JSONArray) object;        
-			JSONObject object2 = (JSONObject)array.get(0);
-			System.out.println(object2.get("hello")); 			
-*/			
+        System.out.println(zipList);
+        
+        return zipList;
 			
 	}
 	

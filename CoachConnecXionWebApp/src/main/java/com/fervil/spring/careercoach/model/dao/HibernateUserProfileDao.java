@@ -50,6 +50,7 @@ public class HibernateUserProfileDao implements UserProfileDao {
 		// Transaction tx = sessionFactory.getCurrentSession().getTransaction();
 		try {
 
+			//See what needs to be done to throw this Exception properly
 			// tx.begin();
 			sessionFactory.getCurrentSession().saveOrUpdate(UserProfile);
 			// session.save(UserProfile);
@@ -359,6 +360,12 @@ public class HibernateUserProfileDao implements UserProfileDao {
 
 			if (!sort.equals("-1") ) {
 				CRITERIA = CRITERIA + sort ;				
+			}
+
+			if (sort.equals("-1") ) {
+				if (coachstyleinperson != null && !coachstyleinperson.equals("") ) {
+					CRITERIA = CRITERIA + "  ORDER BY FIELD(zipcode, '" + zipcodes.replaceAll("'", "") + "')" ;				
+				}	
 			}
 			
 			

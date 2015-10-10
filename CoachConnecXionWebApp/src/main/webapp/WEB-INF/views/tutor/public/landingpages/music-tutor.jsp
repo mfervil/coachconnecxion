@@ -168,7 +168,7 @@ text-align:center;
 							</td></tr>
 							
 							<tr><td> <br>		
-									<h2 style="text-align: left;  text-decoration: underline;">What an music tutor does for you, the struggling artist:</h2>
+									<h2 style="text-align: left;  text-decoration: underline;">What a music tutor does for you, the struggling artist:</h2>
 									<h3 style="text-align: left;">Individuals seeking to improve their knowledge or skill in music, or students trying to improve their grades or get a head start in music class should engage the help of a music tutor.  A music tutor with experience, knowledge and expertise in the field can offer specific advice and guidance to the struggling musician.  At CoachConnecXion.com, we have a variety of music tutors to help you with your deficiencies and ultimately meet your overall goals. </h3> <br>
 								</td>
 							</tr>

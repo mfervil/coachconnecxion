@@ -170,21 +170,20 @@ text-align:center;
 							
 							<tr><td> <br>		
 									<h2 style="text-align: left;  text-decoration: underline;">What an art tutor does for you, the struggling artist:</h2>
-									<h3 style="text-align: left;">Individuals seeking to improve their knowledge or skill in art, or students trying to improve their grades or get a head start in art class should engage the help of an art tutor.  An art tutor with experience, knowledge and expertise in the field can offer specific advice and guidance to the struggling artist.  At CoachConnecXion.com, we have a variety of art tutors to help you with your deficiencies and ultimately meet your overall goals. </h3> <br>
+									<h3 style="text-align: left;">Individuals seeking to improve their knowledge or skill in art, or students trying to improve their grades or get a head start in art class should engage the help of an art tutor.  An art tutor with experience, knowledge, and expertise in the field can offer specific advice and guidance to the struggling artist.  At CoachConnecXion.com, we have a variety of art tutors to help you with your deficiencies and meet your overall goals. </h3> <br>
 								</td>
 							</tr>
 							<tr><td>	
 									<h3 style="text-decoration: underline;">Your art tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
 										<li style="text-align: left;">Help you improve your overall skills in art by helping you fill-in the gaps in your knowledge</li>
-										<li style="text-align: left;">Provide a better understanding of the fundamentals that you may have missed in earlier classes</li>
+										<li style="text-align: left;">Provide a better understanding of the fundamentals that you may have missed in earlier art classes</li>
 										<li style="text-align: left;">Help you improve your grades in art class by providing specialized lessons geared toward your area of challenge</li>
-										<li style="text-align: left;">Provide homework help to ensure you fully understand the subject</li>
+										<li style="text-align: left;">Provide help and guidance to ensure you fully understand the subject</li>
 										<li style="text-align: left;">Help you get ready for recitals and presentations with the proper techniques</li>
-										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to homework and preparation for tests and quizzes</li>
-										<li style="text-align: left;">Work with you on time management issues so your class assignments and homeworks can be completed on time</li>
-										<li style="text-align: left;">Help you build your confidence level in art so you can learn better and perform when required</li>
-										<li style="text-align: left;">Decrease some of the supervision required of parents and help the student become more independent</li>
+										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to preparation</li>
+										<li style="text-align: left;">Work with you on time management issues so your assignments and projects can be completed on time</li>
+										<li style="text-align: left;">Help you build your confidence level in art so you can be more comfortable when tacking new projects</li>
 									</ul>
 								</td>	
 							</tr>

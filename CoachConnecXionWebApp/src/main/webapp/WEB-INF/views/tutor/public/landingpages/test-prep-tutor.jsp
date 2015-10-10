@@ -165,25 +165,23 @@ text-align:center;
 							</tr>
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/> <br>
 								The stages of the coaching process used by our professionals to get you to the next level 							
-							</td></tr>
-							
+							</td></tr>							
 							
 							<tr><td> <br>		
-									<h2 style="text-align: left;  text-decoration: underline;">How a business related computer tutor can help you:</h2>
-									<h3 style="text-align: left;">Individuals seeking to improve their computer skills so they can be more efficient and more comfortable with business software programs should engage the help of a computer tutor.  A tutor with experience with software systems can provide guidance to help you update your skills very quickly.  At CoachConnecXion.com, we have have a many tutors with knowledge in a host of software systems, including, Access, Excel, Word, Powerpoint, etc...  </h3> <br>
+									<h2 style="text-align: left;  text-decoration: underline;">How a test preparation tutor can help you:</h2>
+									<h3 style="text-align: left;">Individuals seeking to improve their test taking skills or knowledge should engage the help of a tutor.  A tutor with experience in test taking strategies can provide guidance and direction that will help you quickly raise your score.  At CoachConnecXion.com, we have have many tutors with knowledge and insight of different tests, including ACT, SAT, GMAT, LSAT, etc... </h3> <br>
 								</td>
 							</tr>
 							<tr><td>	
-									<h3 style="text-decoration: underline;">Your Computer Business tutor will do the following:</h3>
+									<h3 style="text-decoration: underline;">Your test preparation tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Help you improve your overall skills with software systems by helping you fill-in the gaps in your knowledge area</li>
-										<li style="text-align: left;">Provide a better understanding of the fundamentals that you may not be familiar with</li>
-										<li style="text-align: left;">Help you improve your grades in class by providing specialized lessons geared toward your area of challenge</li>
-										<li style="text-align: left;">Provide homework help if applicable to ensure you fully understand the subject and software tools</li>
-										<li style="text-align: left;">If taking a class, help you get ready for projects</li>
-										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to homework and preparing for tests and quizzes</li>
-										<li style="text-align: left;">If taking a class, work with you on time management issues so your class assignments and homeworks can be completed on time</li>
-										<li style="text-align: left;">Help you build your confidence level and work with you to be more comfortable when using software systems</li>
+										<li style="text-align: left;">Help you improve your overall test taking skills by helping you identify the gaps in your knowledge and filling-in those gaps</li>
+										<li style="text-align: left;">Provide a better understanding of test taking strategies that you may not be familiar with</li>
+										<li style="text-align: left;">Help you improve your grades in class and your score in standardized tests by providing specialized instructions geared toward your area of weakness</li>
+										<li style="text-align: left;">Provide help with the test study materials to ensure you are well versed on the concepts and you are comfortable with the subject matter of the tests before your exam</li>
+										<li style="text-align: left;">Provide a system of accountability and help you be more responsible when it comes to studying and preparing for the tests</li>
+										<li style="text-align: left;">Work with you on time management issues so you can make the most of your time and fully prepare for the tests</li>
+										<li style="text-align: left;">Help build your confidence level and work with you to be more comfortable and relaxed when sitting-in for tests</li>
 									</ul>
 								</td>	
 							</tr>

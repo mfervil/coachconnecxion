@@ -79,7 +79,13 @@
 						String finalPath = request.getContextPath();
 					
 					%>
+					
+   					<c:if test="${empty userProfiles}">
+						<p style="color: red; text-align: center; font-size: 16px;"> NO RECORDS FOUND.  TRY TO WIDEN YOUR SEARCH FOR BETTER RESULTS. <br> <br></p>
+					</c:if>
+					
 					<tbody>
+
 						<c:forEach items="${userProfiles}" varStatus="status" var="userProfileDetails">
 						
 								<c:set var="averageRate1" value ="${userProfileDetails.rating}"/>

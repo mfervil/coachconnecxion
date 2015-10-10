@@ -224,7 +224,7 @@ table tr:nth-child(2n) {
 												<td style="float: left; color: blue; font-weight: bold; font-size: 20px;">${profileInfo.getDisplayName()}
 												</td>
 												<c:if test="${profileOfCurrentUser}" > 					
-													<td style="float: right;"><a href="../createuserprofile?profileId=${profileId}" >&nbsp;&nbsp;&nbsp;EDIT MY PROFILE</a> </td>
+													<td style="float: right;"><a href="../createuserprofile?profileId=${profileId}"  style="color: blue; text-decoration: underline;">&nbsp;EDIT MY PROFILE</a> </td>
 												</c:if>
 											<%--	<td style="float: right;"><input type="submit" value="Edit Profile"
 													style="text-decoration: none; font-size: 14px; background-color: lightblue; background-position: right;" />

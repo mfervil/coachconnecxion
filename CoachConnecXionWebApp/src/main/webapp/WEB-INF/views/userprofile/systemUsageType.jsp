@@ -91,7 +91,7 @@ span.required {color:red;font-weight:bold}
 <%-- <b>The user profile has been created successfully for the customer with ID <c:out value="${model.userProfileId}"/>.</b> 
 <b> <span style="font-size: 1.25em;"> <c:out value="${model.message}"/> </span></b>--%>
 
-<span style="font-size: 25px;"><br>Your Primary Goal on CoachConnecXion is to: <br><br></span>
+<span style="font-size: 25px;"><br>Your Primary Goal on CoachConnecXion.com is to: <br><br></span>
 
 
 	<div id="useractions">

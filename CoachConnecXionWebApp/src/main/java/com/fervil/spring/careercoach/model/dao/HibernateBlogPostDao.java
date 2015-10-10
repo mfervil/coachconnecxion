@@ -1,4 +1,4 @@
-package com.fervil.spring.careercoach.model.dao;
+ package com.fervil.spring.careercoach.model.dao;
 
 import java.util.List;
 

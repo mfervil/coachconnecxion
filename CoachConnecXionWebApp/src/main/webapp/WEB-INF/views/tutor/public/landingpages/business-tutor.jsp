@@ -167,12 +167,6 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Consulting Coaching Therapy" height="200" width="600"/><br>
 										The stages of the coaching process used by professional advisors to get you to the next level <br>							
 							</td></tr>
-							<tr><td> <br>		
-									<h2 style="text-align: left;  text-decoration: underline;">What an Online Business Coach Does For You, the Small Business Owner:</h2>
-									<h3 style="text-align: left;">Business owners seeking the expert guidance of Business Coaches typically look for coaches who not only are successful Business Coaches and professionals, but who also have a genuine interest in assisting them.  
-																	At CoachConnecXion we have a variety of business strategic advisors to help you meet your goal.</h3> <br>
-								</td>
-							</tr>
 							
 							<tr><td> <br>		
 									<h2 style="text-align: left;  text-decoration: underline;">What a business tutor does for you, the struggling business, accounting or finance student:</h2>

@@ -108,7 +108,7 @@ label {font-size:14px;}
 				</tr>
 				<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 				<tr><td class="leftalign" nowrap><form:errors path="firstname"><br><form:errors path="firstname" cssClass="error" /><br></form:errors><label>*First Name:</label> <form:input size="25" path="firstname" /> </td> 
-					<td class="leftalign" nowrap><form:errors path="middleinitial"><form:errors path="middleinitial" cssClass="error" /><br></form:errors><label>Middle Initial:</label> <form:input size="2" path="middleinitial" /> </td>
+					<td class="leftalign" nowrap><form:errors path="middleinitial"><form:errors path="middleinitial" cssClass="error" /><br></form:errors><label>Middle Initial:</label> <form:input size="2" maxlength="2" path="middleinitial" /> </td>
 					<td class="leftalign" nowrap><form:errors path="lastname"><form:errors path="lastname" cssClass="error" /><br></form:errors><label>*Last Name:</label> <form:input size="25" path="lastname" /> </td>
 				</tr>
 				<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>

@@ -170,7 +170,7 @@ text-align:center;
 							
 							<tr><td> <br>		
 									<h2 style="text-align: left;  text-decoration: underline;">How a business related computer tutor can help you:</h2>
-									<h3 style="text-align: left;">Individuals seeking to improve their computer skills so they can be more efficient and more comfortable with business software programs should engage the help of a computer tutor.  A tutor with experience with software systems can provide guidance to help you update your skills very quickly.  At CoachConnecXion.com, we have have a many tutors with knowledge in a host of software systems, including, Access, Excel, Word, Powerpoint, etc...  </h3> <br>
+									<h3 style="text-align: left;">Individuals seeking to improve their computer skills so they can be more efficient and more comfortable with business software programs should engage the help of a computer tutor.  A tutor with experience with software systems can provide guidance to help you update your skills very quickly.  At CoachConnecXion.com, we have have many tutors with knowledge in a host of software systems, including, Access, Excel, Word, Powerpoint, etc...  </h3> <br>
 								</td>
 							</tr>
 							<tr><td>	

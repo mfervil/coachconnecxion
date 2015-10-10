@@ -32,7 +32,7 @@
 <%--        
          ${message}  <a href="<c:url value="/public/profile?cuin=${cuin}"/>" style="font:14px;color:#0404B4">LOGIN AND CREATE A PROFILE TO CONTINUE</a>
 --%>
-         ${message}  <a href="<c:url value="/userprofile/systemUsageType?cuin=${cuin}"/>" style="font:14px;color:#0404B4">LOGIN AND CREATE A PROFILE TO CONTINUE</a>
+         ${message}  <a href="<c:url value="/userprofile/systemUsageType?cuin=${cuin}"/>" style="font:14px;color:#0404B4"><br> CLICK HERE TO LOGIN AND CREATE A PROFILE TO CONTINUE</a>
 
         <br/><br/>
         

@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils;
 
@@ -210,7 +211,7 @@ public class TutorCreateUserProfileFormController {
 	            String msg = "Failed to create user. Error " + e;
 	            log.error(msg, e);
 				model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
-				return "tutor/userprofile/createuserprofile";
+				return "tutor/public/common/error/errorpage";
 		}
 	}
 
