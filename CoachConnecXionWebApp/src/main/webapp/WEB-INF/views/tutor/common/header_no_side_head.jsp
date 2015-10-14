@@ -67,7 +67,7 @@
 		       if($(this).attr('id') == 'coachstyleinperson') {
 		            $('#showzipecode').show();           
 		       }
-		       else {
+		       else if($(this).attr('id') == 'coachstyleonline') {
 		            $('#showzipecode').hide();   
 		       }
 		   });

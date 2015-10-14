@@ -65,6 +65,28 @@ public ModelAndView errorProcessing400(HttpServletRequest request, HttpServletRe
 	}	
 }	
 
+@RequestMapping(value = "/error500", method = RequestMethod.GET)
+public ModelAndView errorProcessing500(HttpServletRequest request, HttpServletResponse response, Model model) {
+
+	Map<String, Object> myModel = new HashMap<String, Object>();
+	try{	
+
+		String now = (new java.util.Date()).toString();
+        myModel.put("now", now);
+		String navPage = "public/common/error/error500";
+
+		//String navPage = "public/common/systeminfo/aboutus";
+        
+        return new ModelAndView(navPage, "model", myModel);
+
+	} catch (Exception e) {
+        String msg = "The request failed. Error " + e;
+        log.error(msg, e);
+		model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+        return new ModelAndView("public/common/error/errorpage", "model", myModel);
+	}	
+}	
+
 	public String GetLinks(String URLstring) throws Exception {
 		/*Written by Marc Arthur
 		*  Returns links (HTML)
