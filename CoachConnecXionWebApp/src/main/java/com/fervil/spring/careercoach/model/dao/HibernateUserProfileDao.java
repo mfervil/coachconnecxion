@@ -468,4 +468,58 @@ public class HibernateUserProfileDao implements UserProfileDao {
 		}
 	}
 	
+    public List findTutorsToContact(int category, String course, int coachstyleonline, int coachstyleinperson, String zipcodes) throws Exception {
+
+		try {
+			// session.beginTransaction();
+			
+		    log.info("Coaching Category: " + category);
+		    log.info("course: " + course);
+
+			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
+					UserProfile.class);
+
+			String sql = " select u.firstname, u.lastname, u.city, u.state, u.user_profile_id, u.language, u.display_name, u.coaching_category, u.overview, u.email " +
+					" from user_profile u "
+					+ " where (coachingcategory1 = " + category + " or coachingcategory2 = " + category + " or coachingcategory3 = " + category + ") " 
+					+ " and zipcode in (" + zipcodes + ") " 
+					+ " and LOWER(skills_expertise) like '%" + course.toLowerCase().replaceAll(" ", "%") + "%'";
+	
+					if (coachstyleinperson != -1 ) {
+						sql = sql + " and coachstyleinperson = 1";
+					}
+
+					if (coachstyleonline != -1 ) {
+						sql = sql + " and coachstyleonline = 1 ";
+					}
+			
+					if (!zipcodes.trim().equals("") ){
+						if (coachstyleinperson != -1  ) {
+							sql = sql + "  ORDER BY FIELD(zipcode, '" + zipcodes.replaceAll("'", "") + "')" ;				
+						}	
+					}
+					
+			log.info(" findTutorsToContact:::: " + sql);
+
+			Query query = sessionFactory.getCurrentSession().createSQLQuery(sql); 
+		    log.info("1 findTutorsToContact::Number of Tutors to Contact found: " + query.list().size());
+			
+	        query.setFirstResult(1 );
+	        log.info("2 findTutorsToContact::Number of Coaches found: " + query.list().size());
+	        query.setMaxResults(100);
+			
+			query.setResultTransformer(AliasToEntityMapResultTransformer.INSTANCE);
+			List list = query.list();
+		    
+			return ((List<HashMap>) list);
+
+		} catch (Exception e) {
+			// tx.rollback();
+			throw e;
+		}
+    	
+    }
+
+	
+	
 }

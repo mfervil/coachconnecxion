@@ -28,12 +28,17 @@ public class Contacttutor {
 	String zipcode;
 	long userprofileid;
 	String coachstylepreference;
+	int daysavailable;
+	int weeksavailable;
+	String city;
+	String state;
+	String studentemail;
+	
+	private String tutorcase=" ";
+	
 
 	@Column(name = "availability", nullable = false, columnDefinition="TEXT")
 	String availability;
-
-	int daysavailable;
-	int weeksavailable;
 
 	@Column(name = "overview", nullable = false, columnDefinition="TEXT")
 	String overview;
@@ -233,5 +238,29 @@ public class Contacttutor {
 	}
 	public void setCoachstylepreference(String coachstylepreference) {
 		this.coachstylepreference = coachstylepreference;
+	}
+	public String getTutorcase() {
+		return tutorcase;
+	}
+	public void setTutorcase(String tutorcase) {
+		this.tutorcase = tutorcase;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getStudentemail() {
+		return studentemail;
+	}
+	public void setStudentemail(String studentemail) {
+		this.studentemail = studentemail;
 	}
 }

@@ -186,4 +186,10 @@ public class BasicUserProfileManager implements UserProfileManager {
     public void setUserProfileDao(UserProfileDao userProfileDao) throws Exception {
         this.userProfileDao = userProfileDao;
     }
+    
+    public List<HashMap> getUserProfiles(int category, String course, int coachstyleonline, int coachstyleinperson, String zipcodes) throws Exception {
+        return userProfileDao.findTutorsToContact(category, course, coachstyleonline, coachstyleinperson, zipcodes);
+    }
+
+
 }

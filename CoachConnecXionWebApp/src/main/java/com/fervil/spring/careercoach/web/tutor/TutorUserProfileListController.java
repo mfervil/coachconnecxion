@@ -263,7 +263,9 @@ public class TutorUserProfileListController  {
 		
 		RestTemplate restTemplate = new RestTemplate();
 		
-		String jsonUrl = "https://www.zipwise.com/webservices/radius.php?key=7wntjyde93vph7m3&zip=" + zipcode + "&radius=50&format=json";
+		//String jsonUrl = "https://www.zipwise.com/webservices/radius.php?key=7wntjyde93vph7m3&zip=zzzipcodeee&radius=50&format=json";
+
+		String jsonUrl = Constants.JSON_URL.replace("zzzipcodeee", zipcode);
 
 		System.setProperty("jsse.enableSNIExtension", "false");
 		

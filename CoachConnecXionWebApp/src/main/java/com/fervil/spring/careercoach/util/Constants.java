@@ -68,7 +68,10 @@ public class Constants {
 	public static final String COACH_STYLE_IN_PERSON = "coachstyleinperson";
 	public static final String COACH_STYLE_ONLINE = "coachstyleonline";
 	
-	  
+	public static final String JSON_URL = "https://www.zipwise.com/webservices/radius.php?key=7wntjyde93vph7m3&zip=zzzipcodeee&radius=50&format=json";
+	
+	
+	
 	/*
     <option value="1">ADD & ADHD</option>
     <option value="2">Business</option>

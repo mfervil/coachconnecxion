@@ -66,7 +66,7 @@ public class SmtpMailService implements MailService {
         });
         log.debug("Message to [" + email + "] sent");
     }
-
+    
     @Override
     public void sendResetMessage(final String email, final String subject, final String text) {
         log.debug("Sending message to email [" + email + "] ");

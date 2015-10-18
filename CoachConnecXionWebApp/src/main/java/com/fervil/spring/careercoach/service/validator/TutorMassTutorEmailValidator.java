@@ -63,9 +63,9 @@ public class TutorMassTutorEmailValidator implements Validator {
 
         if (contacttutor.getCoachstylepreference() != null){
 	        if ((contacttutor.getCoachstylepreference().equals("1") || contacttutor.getCoachstylepreference().equals("3"))   &&
-	        		contacttutor.getZipcode().trim().equals("") )	
+	        		(contacttutor.getZipcode().trim().equals("") || contacttutor.getCity().trim().equals("")  || contacttutor.getState().trim().equals("")  )  )	
 	        {
-				errors.rejectValue("zipcode", "zipcode.category", " If you want in-person coaching, you must enter your zipcode");
+				errors.rejectValue("zipcode", "zipcode.category", " If you want in-person coaching, you must enter zipcode, city and state.");
 	        }
         }    
     }    

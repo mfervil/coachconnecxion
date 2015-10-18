@@ -88,7 +88,7 @@ a.morelink {
 div#myDialog {
 text-align:center;
 	position: absolute;
-	top: 50%;
+	top: 25%;
 	left: 50%;
 	width: 350px;
 	
@@ -141,7 +141,7 @@ text-align:center;
 	<%@ include file="/WEB-INF/views/tutor/common/header_no_side_body.jsp" %>
 
 	<div style="text-align: center; width: 900px; font-size: large; color: #00008B;">
-		Contact Tutor Network<br><br></div>
+		Contact Tutor Network -- Review & Click Confirm Below<br><br></div>
 		
 	<div style="height: 10px"></div>
 
@@ -159,30 +159,31 @@ text-align:center;
 					<c:choose>
 						<c:when test="${not empty successMessage}">
 							<div id='myDialog'>
-								<h1 style="font-size: 14px; color: green;">${successMessage}</h1>
+								<h1 style="font-size: 18px; color: green;">${successMessage}</h1>
 								 <br>
-								 <a href="educationAdd?profileId=${profileId}" 
-								 style="font-size: 14px;text-decoration: underline;color:blue;">CREATE ANOTHER EDUCATION</a>
+								 <a href="${pageContext.request.contextPath}/tutor/public" 
+								 style="font-size: 16px;text-decoration: underline;color:blue;">Click to return to Tutor Home Page</a>
 
-								<c:if test="${sessionScope.newusercreated != '1'}">
-									 <br><br>
-									<a href="education?profileId=${profileId}" style="font-size: 14px;text-decoration: underline;color:blue;">VIEW YOUR EDUCATION SUMMARY</a>								
-									<div style="height: 15px;"></div>
-								</c:if>
-																
-								<c:if test="${sessionScope.newusercreated == '1'}">
-									<br><br> <a href="jobhistoryAdd?profileId=${profileId}"
-										style="font-size: 14px; text-decoration: underline; color: blue;">NEXT >></a>  
-								</c:if>
-								
 							</div>
 						</c:when>
 					</c:choose>
 				</div>
 				
-					<c:url var="contacttutorurl" value="/tutor/contact/mass-email-to-tutors" />
-					<form:form method="POST" id="contacttutor" commandName="contacttutor" >
-						<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
+					<c:url var="contacttutorconfirmurl" value="/tutor/contact/mass-email-to-tutors-confirm" />
+					<form:form method="POST" id="contacttutor" commandName="contacttutor" 
+					action="${contacttutorconfirmurl}">
+					
+						<input type="hidden" name="hcategory" id="hcategory" value="${contacttutor.category}"></input>
+						<input type="hidden" name="hcoachstylepreference" id="hcoachstylepreference" value="${contacttutor.coachstylepreference}"></input>
+						<input type="hidden" name="hgradelevel" id="hgradelevel" value="${contacttutor.gradelevel}"></input>
+						<input type="hidden" name="hstartmonth" id="hstartmonth" value="${contacttutor.startmonth}"></input>
+						<input type="hidden" name="hstartday" id="hstartday" value="${contacttutor.startday}"></input>
+						<input type="hidden" name="hstartyear" id="hstartyear" value="${contacttutor.startyear}"></input>
+						<input type="hidden" name="hdaysavailable" id="hdaysavailable" value="${contacttutor.daysavailable}"></input>
+						<input type="hidden" name="hweeksavailable" id="hweeksavailable" value="${contacttutor.weeksavailable}"></input>
+						<input type="hidden" name="hcity" id="hcity" value="${contacttutor.city}"></input>
+						<input type="hidden" name="hstate" id="hstate" value="${contacttutor.state}"></input>
+						<input type="hidden" name="hstudentemail" id="hstudentemail" value="${contacttutor.studentemail}"></input>
 						
 						<table>
 						<tr>
@@ -190,7 +191,7 @@ text-align:center;
 							<td class="rightalign" nowrap><form:errors path="category"><br><form:errors path="category" cssClass="error" /> 
 							<br></form:errors><label>*What subject do you need tutoring for: &nbsp;</label> </td>
 					    	<td class="leftalign">
-						        <form:select size="1" path="category" id="category" >
+						        <form:select disabled="true" size="1" path="category" id="category" >
 						          <option value="-1">Select a Subject</option>
 						          ${contacttutor.category =='1010' ? "<option selected value='1010' >Art</option>" : "<option value='1010' >Art</option>"}
 						          ${contacttutor.category =='1020' ? "<option selected  value='1020' >Business</option>" : "<option value='1020' >Business</option>"}
@@ -216,7 +217,7 @@ text-align:center;
 								<br></form:errors>
 								<label>*What is the course name (ex: algebra 1, chemistry, anatomy): &nbsp; </label> 
 							</td>
-							<td style="text-align: left;"><form:input size="25" path="course" /> </td> 
+							<td style="text-align: left;"><form:input readonly="true" size="25" path="course" /> </td> 
 						</tr>
 						<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
 						
@@ -231,9 +232,9 @@ text-align:center;
 				            	<form:checkbox path="coachstyleinperson" value="1" />&nbsp;In-Person
 				            	 --%>
 				            	 
-				            	<form:radiobutton path="coachstylepreference" id="1" value="1"/> In person only
-	                 			<form:radiobutton path="coachstylepreference" id="2" value="2"/> Online only
-	                 			<form:radiobutton path="coachstylepreference" id="3" value="3"/> In Person or Online
+				            	<form:radiobutton disabled="true" path="coachstylepreference" id="1" value="1"/> In person only
+	                 			<form:radiobutton disabled="true" path="coachstylepreference" id="2" value="2"/> Online only
+	                 			<form:radiobutton disabled="true" path="coachstylepreference" id="3" value="3"/> In Person or Online
 				            	
 				    		</td>
 						</tr>
@@ -246,27 +247,17 @@ text-align:center;
 							<td  class="leftalign">
 								<div id='showzipecodecoachstylepreference' style='display:block'>
 								      <!-- <label>What is the zipcode of the tutoring location: </label><form:errors path="zipcode" cssClass="error" /> -->
-									<form:input size="10" path="zipcode" /> &nbsp; City: <form:input size="10" path="city" />  &nbsp; State: <form:input size="10" path="state" />
+									<form:input readonly="true" size="10" path="zipcode" />
 								</div>
 							</td>
 						</tr>
-
-						<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-						<tr>
-							<td style="text-align: right;"><form:errors path="course"><br><form:errors path="studentemail" cssClass="error" /> 
-								<br></form:errors>
-								<label>*What is your email address: &nbsp; </label> 
-							</td>
-							<td style="text-align: left;"><form:input size="25" path="studentemail" /> </td> 
-						</tr>
-						
 						<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
 						<tr>
 						  <td  style="text-align: right;" ><form:errors path="gradelevel"><form:errors path="gradelevel" cssClass="error" /><br></form:errors><span class="required">*</span>
 					      	<label>What Grade Level is the student: &nbsp; </label>
 					      </td>
 					      <td style="text-align: left;">
-					        <form:select size="1" path="gradelevel" >
+					        <form:select disabled="true" size="1" path="gradelevel" >
 					          	<option value="-1">Select your grade level:</option>
 								${contacttutor.gradelevel =='a' ? "<option selected value='a'>Elementary (K - 6)</option>" : "<option value='a'>Elementary (K - 6)</option>"}
 								${contacttutor.gradelevel =='b' ? "<option  selected value='b'>Junior High (6 - 8)</option>" : "<option value='b'>Junior High (6 - 8)</option>"}
@@ -283,7 +274,7 @@ text-align:center;
 							 	<label>When would you like to start lessons: &nbsp; </label> 
 							 </td>
 							 <td style="text-align: left;" >
-						        <form:select size="1" path="startmonth" id="startmonth" >
+						        <form:select disabled="true" size="1" path="startmonth" id="startmonth" >
 						          <option value="-1">Month</option>
 						          ${contacttutor.startmonth =='1' ? "<option  selected value='1' >Jan</option>" : "<option value='1' >Jan</option>"}
 						          ${contacttutor.startmonth =='2' ? "<option  selected value='2' >Feb</option>" : "<option value='2' >Feb</option>"}
@@ -298,7 +289,7 @@ text-align:center;
 						          ${contacttutor.startmonth =='11' ? "<option  selected value='11' >Nov</option>" : "<option value='11' >Nov</option>"}
 						          ${contacttutor.startmonth =='12' ? "<option  selected value='12' >Dec</option>" : "<option value='12' >Dec</option>"}
 						        </form:select>  
-						        <form:select size="1" path="startday" id="startday" >
+						        <form:select disabled="true" size="1" path="startday" id="startday" >
 						          <option selected  value="-1">Day</option>
 						          ${contacttutor.startday =='1' ? "<option  selected value='1' >01</option>" : "<option value='1' >01</option>"}
 						          ${contacttutor.startday =='2' ? "<option  selected value='2' >02</option>" : "<option value='2' >02</option>"}
@@ -332,7 +323,7 @@ text-align:center;
 						          ${contacttutor.startday =='30' ? "<option  selected value='30' >30</option>" : "<option value='30' >30</option>"}
 						          ${contacttutor.startday =='31' ? "<option  selected value='31' >31</option>" : "<option value='31' >31</option>"}
 						        </form:select>  
-						        <form:select size="1" path="startyear" id="startyear" >
+						        <form:select disabled="true" size="1" path="startyear" id="startyear" >
 						          <option selected  value="-1">Select year</option>
 						          <c:forEach var="i" begin="${year}" end="${year + 3}">
 						          		<c:if test="${contacttutor.startyear == i}">
@@ -354,7 +345,7 @@ text-align:center;
 								
 							</td>
 							<td style="text-align: left;" >
-								<form:textarea rows="6" cols="50" name="wysiwygskills"
+								<form:textarea readonly="true" rows="6" cols="50" name="wysiwygskills"
 								id="wysiwygskills" path="availability" /> 
 							</td>
 						</tr>
@@ -364,7 +355,7 @@ text-align:center;
 							 	<label>How many days a week do you expect to meet with the tutor: &nbsp; </label> 
 							 </td>
 							 <td style="text-align: left;" >
-						        <form:select size="1" path="daysavailable" id="daysavailable" >
+						        <form:select disabled="true" size="1" path="daysavailable" id="daysavailable" >
 						          <option value="-1">Select days</option>
 							          ${contacttutor.daysavailable =='1' ? "<option  selected value='1' > 01 </option>" : "<option value='1' > 01 </option>"}
 							          ${contacttutor.daysavailable =='2' ? "<option  selected value='2' > 02 </option>" : "<option value='2' > 02 </option>"}
@@ -382,7 +373,7 @@ text-align:center;
 							 	<label>Number of weeks do you expect to work with the tutor: &nbsp; </label>
 							 </td>
 							 <td  style="text-align: left;" >
-						        <form:select size="1" path="weeksavailable" id="weeksavailable" > 
+						        <form:select disabled="true" size="1" path="weeksavailable" id="weeksavailable" > 
 						          <option value="-1">Select weeks</option>
 						          ${contacttutor.weeksavailable =='1' ? "<option  selected value='1' > 01 </option>" : "<option value='1' > 01 </option>"}
 						          ${contacttutor.weeksavailable =='2' ? "<option  selected value='2' > 02 </option>" : "<option value='2' > 02 </option>"}
@@ -445,7 +436,7 @@ text-align:center;
 							    <label>Overview / Describe why you are seeking tutoring: &nbsp; </label> 
 							</td>
 							<td  style="text-align: left;" >
-								<form:textarea  name="wysiwyg" class="required" cols="50"
+								<form:textarea readonly="true" name="wysiwyg" class="required" cols="50"
 								id="wysiwyg" rows="6" path="overview" value="&nbsp;"/>
 							</td>
 						</tr>
@@ -455,7 +446,7 @@ text-align:center;
 						<td></td>
 							<td style="text-align: left;"><input type="submit"
 								style="text-decoration: none; font-size: 14px; text-align: right; background-color: lightblue; background-position: right;"
-								value="Send your requests to tutors" name="submit1" id="submit1" disabled colspan="2">
+								value="Confirm & Send your requests to tutors" name="submit1" id="submit1" disabled colspan="2">
 
 								<c:if test="${sessionScope.newusercreated == '1'}">
 									&nbsp;&nbsp;&nbsp;&nbsp;<a href="jobhistoryAdd?profileId=${profileId}"

@@ -2,7 +2,9 @@ package com.fervil.spring.careercoach.web.tutor;
 
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -19,15 +22,21 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
+
+import ua.com.bitlab.springsecuritydemo.services.SmtpMailService;
 
 import com.fervil.spring.careercoach.model.domain.Contacttutor;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
+import com.fervil.spring.careercoach.model.domain.Zipcode;
+import com.fervil.spring.careercoach.model.domain.ZipcodeContainer;
 import com.fervil.spring.careercoach.service.ContactTutorManager;
 import com.fervil.spring.careercoach.service.CreateUserProfileValidator;
 import com.fervil.spring.careercoach.service.UserProfileManager;
 import com.fervil.spring.careercoach.service.validator.TutorMassTutorEmailValidator;
 import com.fervil.spring.careercoach.util.Constants;
+import com.fervil.spring.careercoach.util.SystemUtil;
 
 @Controller		  
 public class TutorMassEmailToTutorController {
@@ -38,6 +47,15 @@ public class TutorMassEmailToTutorController {
 	
 	@Resource(name = "contactTutorManager")
 	private ContactTutorManager contactTutorManager;
+	
+	@Resource(name = "userProfileManager")
+	private UserProfileManager userProfileManager;
+	
+    @Autowired
+    private SmtpMailService mailService;
+    
+    private static final String dev_env = "href='http://localhost:8080/CoachConnecXionWebApp-3/tutor/contact/contactstudent?ctt1=";
+    private static final String prod_env = "href='http://www.coachconnecxion.com/tutor/contact/contactstudent?ctt1=";
 	
 
 @RequestMapping(value = "/tutor/contact/mass-email-to-tutors", method = RequestMethod.GET)
@@ -90,8 +108,12 @@ public String postEmailToTutor(HttpServletRequest request, HttpServletResponse r
 	    		model.addAttribute("contacttutor", contactTutor);
 				return "tutor/contacttutor/MassEmailToTutors";
 			} else {
-				contactTutorManager.storeContactTutor(contactTutor);
-				return "tutor/contacttutor/MassEmailToTutors";
+
+				//long profileId = SystemUtil.getUserProfileId(request, userProfileManager);
+				//contactTutor.setUserprofileid(profileId);
+				//contactTutorManager.storeContactTutor(contactTutor);
+				
+				return "tutor/contacttutor/MassEmailToTutorsConfirmation";
 			}
 		
 		} catch (Exception e) {
@@ -100,9 +122,163 @@ public String postEmailToTutor(HttpServletRequest request, HttpServletResponse r
 			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
 			return "tutor/public/common/error/errorpage";
 		}    
-	        
-	
 }	
 
+
+@RequestMapping(value = "/tutor/contact/mass-email-to-tutors-confirm", method = RequestMethod.GET)
+public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResponse response, ModelMap model, 
+		@ModelAttribute("contacttutor") Contacttutor contactTutor) {
+
+	//Map<String, Object> myModel = new HashMap<String, Object>();
+	try{	
+
+		model.addAttribute("contacttutor", contactTutor);
+		
+		return "tutor/contacttutor/MassEmailToTutorsConfirmation"; 
+
+	} catch (Exception e) {
+        String msg = "The request failed. Error " + e;
+        log.error(msg, e);
+		model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+        return "tutor/public/common/error/errorpage";
+	}	
+}	
+
+	@RequestMapping(value = "/tutor/contact/mass-email-to-tutors-confirm", method = RequestMethod.POST)
+	public String postEmailToTutorConfirm(HttpServletRequest request, HttpServletResponse response, Model model,
+		@ModelAttribute("contacttutor") Contacttutor contactTutor, BindingResult result) {
+
+		try {
+		
+				contactTutor.setCategory( new Integer(request.getParameter("hcategory")).intValue() );
+				contactTutor.setCoachstylepreference(request.getParameter("hcoachstylepreference"));
+				contactTutor.setGradelevel(request.getParameter("hgradelevel"));
+				contactTutor.setStartmonth(new Integer(request.getParameter("hstartmonth")).intValue());
+				contactTutor.setStartday(new Integer(request.getParameter("hstartday")).intValue());
+				contactTutor.setStartyear(new Integer(request.getParameter("hstartyear")).intValue());
+				contactTutor.setDaysavailable(new Integer(request.getParameter("hdaysavailable")).intValue());
+				contactTutor.setWeeksavailable(new Integer(request.getParameter("hweeksavailable")).intValue()); 
+				contactTutor.setCity(request.getParameter("city").toString() ); 
+				contactTutor.setState(request.getParameter("hstate").toString() ); 
+				contactTutor.setStudentemail(request.getParameter("hstudentemail").toString() ); 
+			
+				long profileId = SystemUtil.getUserProfileId(request, userProfileManager);
+				contactTutor.setUserprofileid(profileId);
+				contactTutorManager.storeContactTutor(contactTutor);
+		
+				///////////   SEND EMAILS TO TUTORS /////////////////////////////////////////////////////////////
+				
+				//Remove all numeric suffic after the course name.......
+				contactTutor.setCourse(contactTutor.getCourse().replaceAll("1", "").trim() );
+				contactTutor.setCourse(contactTutor.getCourse().replaceAll("2", "").trim() );
+				contactTutor.setCourse(contactTutor.getCourse().replaceAll("3", "").trim() );
+				contactTutor.setCourse(contactTutor.getCourse().replaceAll("4", "").trim() );
+				contactTutor.setCourse(contactTutor.getCourse().replaceAll("5", "").trim() );
+				contactTutor.setCourse(contactTutor.getCourse().replaceAll("6", "").trim() );
+				contactTutor.setCourse(contactTutor.getCourse().replaceAll("7", "").trim() );
+				contactTutor.setCourse(contactTutor.getCourse().replaceAll("8", "").trim() );
+				contactTutor.setCourse(contactTutor.getCourse().replaceAll("9", "").trim() );
+				
+				List <HashMap> emailList = getEmailsOfTutors(contactTutor, contactTutor.getZipcode() == null?"":contactTutor.getZipcode());
+				
+				sendEmailToTutors(emailList, contactTutor);
+				/////////////////////////////////////////////////////////////////////////////////////////////////
+				
+				model.addAttribute("successMessage", "Your request has been sent to our tutors.");
+				return "tutor/contacttutor/MassEmailToTutorsConfirmation";
+		
+		} catch (Exception e) {
+            String msg = "Failed to create user. Error " + e;
+            log.error(msg, e);
+			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
+			return "tutor/public/common/error/errorpage";
+		}    
+	}	
 	
+	private void sendEmailToTutors(List <HashMap> userprofilesDataList, Contacttutor contactTutor){
+		
+    	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    	///                          TODO TODO TODO TODO TODO                                           //////////////
+    	//@TODO  NOTE THAT WE ARE ONLY SENDING EMAILS TO THE FIRST 25 TUTORS FOUND IN THE DATABASE      //////////////
+    	//WILL NEED TO CHANGE THIS CODE IN THE FUTURE SO WE DON'T SEND TO THE SAME 25 EVERY TIME        //////////////
+    	//MAY HAVE TO IMPLEMENT SOME TYPE OF RANDOMIZER TO SELECT WHICH 25 USERS TO SEND MESSAGES TO    //////////////
+    	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    	
+		String emailbody = "";
+		
+	        for(HashMap userProfiles : userprofilesDataList) {
+				emailbody = " Hi " + userProfiles.get("firstname")	+ ", <br><br>" +  
+        		"Great news! We've identified a student looking looking for a tutor to help with " + contactTutor.getCourse() + " <br>" +
+        		" You were selected because you expressed interest in tutoring " + contactTutor.getCourse() +   " on CoachConnecXion.com <br><br>" +
+				"<a style='font-size: 16px' " + dev_env + userProfiles.get("user_profile_id") +
+				"&jbbid=" +  contactTutor.getContacttutorid() + "'> " +
+				"CLICK HERE FOR THE JOB POSTING </a>" ;
+
+				System.out.println(emailbody);
+				//mailService.sendMessage(userProfiles.get("email").toString(), "New Tutoring Request", emailbody);
+	        }
+	}
+	
+	private List <HashMap> getEmailsOfTutors(Contacttutor contactTutor, String zipcode) throws Exception {
+		int coachstyleonline = -1;
+		int coachstyleinperson = -1;
+		
+		if (contactTutor.getCoachstylepreference().trim().equals("1" )) {
+			coachstyleonline = 1;
+		} else if (contactTutor.getCoachstylepreference().trim().equals("2")) {
+			coachstyleinperson = 1;
+		} 
+		
+		String zipcodes="";
+		
+		if (!zipcode.trim().equals("")) zipcodes = getNearestZipCodes(zipcode);
+		
+		List <HashMap> userprofilesDataList = userProfileManager.getUserProfiles(contactTutor.getCategory(), contactTutor.getCourse(), 
+				coachstyleonline, coachstyleinperson, zipcodes );
+
+		/*
+		ArrayList<String> userProfilesList= new ArrayList<String>();
+		
+        int i=0;
+        for(HashMap userProfiles : userprofilesDataList) {
+        	userProfilesList.add(userProfiles.get("email").toString() );
+        	//if (i>0) userProfilesList = userProfilesList + ","; 
+        	//userProfilesList = userProfilesList + "'" + userProfiles.get("email")  + "'";
+        	//i++;
+        }
+        */
+		
+        return userprofilesDataList;
+	}
+	
+	
+	public String getNearestZipCodes(String zipcode){
+		String zipList="";
+		
+		RestTemplate restTemplate = new RestTemplate();
+		
+		//String jsonUrl = "https://www.zipwise.com/webservices/radius.php?key=7wntjyde93vph7m3&zip=zzzipcodeee&radius=50&format=json";
+
+		String jsonUrl = Constants.JSON_URL.replace("zzzipcodeee", zipcode);
+		
+		System.setProperty("jsse.enableSNIExtension", "false");
+		
+        List<Zipcode> zipdataList = restTemplate.getForObject(jsonUrl, ZipcodeContainer.class).getResults();
+
+        int i=0;
+        for(Zipcode zip : zipdataList) {
+        	if (i>0) zipList = zipList + ","; 
+        	zipList = zipList + "'" + zip.getZip() + "'";
+
+        	i++;
+        }
+        
+        System.out.println(zipList);
+        
+        return zipList;
+			
+	}
+	
+	
+
 }

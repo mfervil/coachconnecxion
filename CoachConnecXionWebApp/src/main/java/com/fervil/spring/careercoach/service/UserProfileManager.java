@@ -42,4 +42,7 @@ public interface UserProfileManager  extends Serializable {
     public UserProfile findById(String id) throws Exception;	
     public UserProfile findById(long id) throws Exception;	
     public List<UserProfile> findByUserId(long id) throws Exception;	
+    
+    public List<HashMap> getUserProfiles(int category, String course, 
+    		int coachstyleonline, int coachstyleinperson, String zipcodes) throws Exception;
 }

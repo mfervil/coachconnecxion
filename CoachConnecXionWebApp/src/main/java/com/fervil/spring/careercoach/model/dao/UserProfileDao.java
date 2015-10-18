@@ -41,4 +41,5 @@ public interface UserProfileDao {
     		String companyExperience, String coachFirstName,
     		String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception ;
 
+    public List<HashMap> findTutorsToContact(int category, String course, int coachstyleonline, int coachstyleinperson, String zipcodes) throws Exception ;
 }
