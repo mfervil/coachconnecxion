@@ -25,6 +25,7 @@
 					<li><a href="#">STUDENTS</a>
 						<ul>	
 							<!-- <li><a href="${pageContext.request.contextPath}/tutor/public/coachSelection">FIND A COACH</a></li>  -->
+							<li><a href="${pageContext.request.contextPath}/tutor/contact/mass-email-to-tutors">REQUEST TUTOR PROPOSALS</a></li>
 							<li><a href="${pageContext.request.contextPath}/tutor/viewOrders">PURCHASES & MESSAGES</a></li>
 							<li><a href="${pageContext.request.contextPath}/tutor/viewOrders">COMMENTS & RATINGS</a></li>
 							<!-- <li><a href="${pageContext.request.contextPath}/tutor/public/information?type=so">SEARCH OVERVIEW</a></li>

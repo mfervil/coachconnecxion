@@ -187,8 +187,8 @@ public class BasicUserProfileManager implements UserProfileManager {
         this.userProfileDao = userProfileDao;
     }
     
-    public List<HashMap> getUserProfiles(int category, String course, int coachstyleonline, int coachstyleinperson, String zipcodes) throws Exception {
-        return userProfileDao.findTutorsToContact(category, course, coachstyleonline, coachstyleinperson, zipcodes);
+    public List<HashMap> getUserProfiles(int category, String course, int coachstyleinperson, int coachstyleonline, String zipcodes) throws Exception {
+        return userProfileDao.findTutorsToContact(category, course, coachstyleinperson,  coachstyleonline, zipcodes);
     }
 
 

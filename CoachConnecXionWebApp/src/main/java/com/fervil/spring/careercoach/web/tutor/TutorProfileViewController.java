@@ -113,6 +113,10 @@ public class TutorProfileViewController {
 		try{	
 			long profileId = -1;
 			
+			if (webRequest.getParameter("cttrno") != null){
+				session.setAttribute("contacttutorid", webRequest.getParameter("cttrno").toString());
+			}
+		
 			// Updated for breadcrumb functionality
 			//if (webRequest.getParameter("profileId") == null){
 

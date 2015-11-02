@@ -70,7 +70,11 @@ public class Constants {
 	
 	public static final String JSON_URL = "https://www.zipwise.com/webservices/radius.php?key=7wntjyde93vph7m3&zip=zzzipcodeee&radius=50&format=json";
 	
-	
+	public static final String CONTACT_STUDENT_DEV_ENV = "href='http://localhost:8080/CoachConnecXionWebApp-3/tutor/contact/contactstudent?ctt1=";
+	public static final String CONTACT_STUDENT_PROD_ENV = "href='http://www.coachconnecxion.com/tutor/contact/contactstudent?ctt1=";
+
+	public static final String CONTACT_STUDENT_USER_PROFILE_URL_DEV = "href='http://localhost:8080/CoachConnecXionWebApp-3/tutor/public/profile?profileId=";
+	public static final String CONTACT_STUDENT_USER_PROFILE_URL_PROD = "href='http://www.coachconnecxion.com/tutor/public/profile?profileId=";
 	
 	/*
     <option value="1">ADD & ADHD</option>

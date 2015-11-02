@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,8 +27,10 @@ import org.springframework.web.servlet.ModelAndView;
 import ua.com.bitlab.springsecuritydemo.services.UsersService;
 import ua.com.bitlab.springsecuritydemo.web.beans.WebUser;
 
+import com.fervil.spring.careercoach.model.domain.Contacttutor;
 import com.fervil.spring.careercoach.model.domain.PaymentInformation;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
+import com.fervil.spring.careercoach.service.ContactTutorManager;
 import com.fervil.spring.careercoach.service.PaymentInformationManager;
 import com.fervil.spring.careercoach.service.PaymentInformationValidator;
 import com.fervil.spring.careercoach.service.UserProfileManager;
@@ -45,6 +48,9 @@ public class TutorPaymentInformationFormController  {
    	@Resource(name = "userProfileManager")
 	private UserProfileManager userProfileManager;
 
+	@Resource(name = "contactTutorManager")
+	private ContactTutorManager contactTutorManager;
+   	
     @Autowired
     private UsersService usersService;
 	
@@ -97,7 +103,7 @@ public class TutorPaymentInformationFormController  {
 	public ModelAndView submitForm( 
 			@ModelAttribute("paymentInformation") PaymentInformation paymentInformation,
 			BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest,
-			HttpServletRequest request, Model model) {
+			HttpServletRequest request, Model model, HttpSession session) {
 
 		try{
 
@@ -170,6 +176,15 @@ public class TutorPaymentInformationFormController  {
 						mav.addObject("packagePrice", webRequest.getParameter("packagePrice"));
 						mav.setViewName ("tutor/public/paymentprocessing/ConfirmationMessage");
 						
+					//////////////////////////////////////////////////////////////////////////////////////////////////////
+					/////////////UPDATE THE CONTACT TUTOR TABLE TO INDICATE A TUTOR WAS SELECTED////////////////
+						if (session.getAttribute("contacttutorid") != null){
+							long contacttutorid = Long.valueOf(session.getAttribute("contacttutorid").toString());
+							Contacttutor contactTutor = contactTutorManager.findById(contacttutorid);
+							contactTutor.setTutorselected(1);
+							contactTutorManager.storeContactTutor(contactTutor);
+						}
+					/////////////////////////////////////////////////////////////////////////////////////////////////////
 					} else {
 						mav.addObject("paymentResponse", paymentResponse[1]);
 						mav.addObject("packageName", webRequest.getParameter("packageName"));

@@ -194,7 +194,7 @@ text-align:center;
 	<%@ include file="/WEB-INF/views/tutor/common/header_no_side_body.jsp" %>
 
 	<div style="text-align: center; width: 900px; font-size: large; color: #00008B;">
-		Contact Tutor Network<br><br></div>
+		Send Proposal to Student<br><br></div>
 		
 	<div style="height: 10px"></div>
 
@@ -212,8 +212,10 @@ text-align:center;
 					<c:choose>
 						<c:when test="${not empty successMessage}">
 							<div id='myDialog'>
+								<br>
 								<h1 style="font-size: 14px; color: green;">${successMessage}</h1>
 								 <br>
+								<%-- 								 
 								 <a href="educationAdd?profileId=${profileId}" 
 								 style="font-size: 14px;text-decoration: underline;color:blue;">CREATE ANOTHER EDUCATION</a>
 
@@ -227,7 +229,7 @@ text-align:center;
 									<br><br> <a href="jobhistoryAdd?profileId=${profileId}"
 										style="font-size: 14px; text-decoration: underline; color: blue;">NEXT >></a>  
 								</c:if>
-								
+								--%>
 							</div>
 						</c:when>
 					</c:choose>
@@ -308,16 +310,35 @@ text-align:center;
 					    </c:when>
 					</c:choose>					
 						<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
-						
+
+						<form:hidden path="overview" name="overview" id="overview" value="${contacttutor.overview}"></form:hidden>
+						<form:hidden path="availability" name="availability" id="availability" value="${contacttutor.availability}"></form:hidden>
+						<form:hidden path="daysavailable" name="daysavailable" id="daysavailable" value="${contacttutor.daysavailable}"></form:hidden>
+						<form:hidden path="weeksavailable" name="weeksavailable" id="weeksavailable" value="${contacttutor.weeksavailable}"></form:hidden>
+						<form:hidden path="category" name="category" id="category" value="${contacttutor.category}"></form:hidden>
+						<form:hidden path="course" name="course" id="course" value="${contacttutor.course}"></form:hidden>
+
+						<form:hidden path="coachstylepreference" name="coachstylepreference" id="coachstylepreference" value="${contacttutor.coachstylepreference}"></form:hidden>
+						<form:hidden path="zipcode" name="zipcode" id="zipcode" value="${contacttutor.zipcode}"></form:hidden>
+						<form:hidden path="gradelevel" name="gradelevel" id="gradelevel" value="${contacttutor.gradelevel}"></form:hidden>
+						<form:hidden path="startday" name="startday" id="startday" value="${contacttutor.startday}"></form:hidden>
+						<form:hidden path="startmonth" name="startmonth" id="startmonth" value="${contacttutor.startmonth}"></form:hidden>
+						<form:hidden path="startyear" name="startyear" id="startyear" value="${contacttutor.startyear}"></form:hidden>
+						<form:hidden path="contacttutorid" name="contacttutorid" id="contacttutorid" value="${contacttutor.contacttutorid}"></form:hidden>
+						<form:hidden path="studentemail" name="studentemail" id="studentemail" value="${contacttutor.studentemail}"></form:hidden>
+
+
+
+
 						<div class="Row">
-							<div class="Column" style="text-align: left;"><b>Overview:&nbsp;</b> </div>
+							<div class="Column" style="text-align: left;"><label>Overview:&nbsp;</label> </div>
 							<div class="Column" style="text-align: left;">${contacttutor.overview} &nbsp; ${contacttutor.availability}</div>
 						</div><br>
 						<div class="Row">
-							<div class="Column" style="text-align: left;"><b>Availability:&nbsp;</b> </div>
+							<div class="Column" style="text-align: left;"><label>Availability:&nbsp;</label> </div>
 							<div class="Column" style="text-align: left;">${contacttutor.availability}<br></div>
 						</div><br>
-						<div display:inline-block; style="text-align: left;"><b>Length of Tutoring:</b> ${contacttutor.daysavailable} days a week for ${contacttutor.weeksavailable} weeks</div>
+						<div display:inline-block; style="text-align: left;"><label>Length of Tutoring:</label> ${contacttutor.daysavailable} day(s) a week for ${contacttutor.weeksavailable} weeks</div>
 						<br>
 						<table style="width: 50%;">
 							<tr>
@@ -340,9 +361,13 @@ text-align:center;
 							</tr>
 						
 							<tr>
+							<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+							<td class="leftalign"  colspan=4 > <label>Make your case why you should be selected for this tutoring job: </label> <font style="font-size: 14px; color: red;"> <form:errors path="tutorcase" cssClass="error" /></font><br>
+							<%-- 
 								<td colspan=4 style="text-align: left;">
 								<br>
 								<b>Make your case why you should be selected for this tutoring job:</b><br>
+							--%>	
 								<form:textarea  name="wysiwyg" class="required" cols="100"
 								id="wysiwyg" rows="10" path="tutorcase" value="&nbsp;"/> 
 								</td>

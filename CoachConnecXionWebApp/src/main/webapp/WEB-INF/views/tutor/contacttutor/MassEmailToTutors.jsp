@@ -246,7 +246,7 @@ text-align:center;
 							<td  class="leftalign">
 								<div id='showzipecodecoachstylepreference' style='display:block'>
 								      <!-- <label>What is the zipcode of the tutoring location: </label><form:errors path="zipcode" cssClass="error" /> -->
-									<form:input size="10" path="zipcode" /> &nbsp; City: <form:input size="10" path="city" />  &nbsp; State: <form:input size="10" path="state" />
+									<form:input size="10" path="zipcode" /> &nbsp; City: <form:input size="15" path="city" />  &nbsp; State: <form:input size="15" path="state" />
 								</div>
 							</td>
 						</tr>
@@ -255,9 +255,9 @@ text-align:center;
 						<tr>
 							<td style="text-align: right;"><form:errors path="course"><br><form:errors path="studentemail" cssClass="error" /> 
 								<br></form:errors>
-								<label>*What is your email address: &nbsp; </label> 
+								<label>The email you have on file: &nbsp; </label> 
 							</td>
-							<td style="text-align: left;"><form:input size="25" path="studentemail" /> </td> 
+							<td style="text-align: left;"><form:input  readonly="true" size="25" path="studentemail" /> </td> 
 						</tr>
 						
 						<tr><td>&nbsp;</td><td>&nbsp;</td></tr>

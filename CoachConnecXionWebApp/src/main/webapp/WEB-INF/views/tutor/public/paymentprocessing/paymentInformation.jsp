@@ -113,7 +113,7 @@ select.error {
 				      <td class="leftalign"><label>Package Name: ${paymentInformation.packageName}</label>
 					</td></tr>
 				    <tr>
-				      <td class="leftalign"><label>Package Price: ${paymentInformation.packagePrice}</label>
+				      <td class="leftalign"><label>Package Price: $ ${paymentInformation.packagePrice}</label>
 					</td></tr>
 				</tbody >
 			  </table>

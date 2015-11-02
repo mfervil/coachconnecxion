@@ -246,12 +246,22 @@ text-align:center;
 							</td>
 							<td  class="leftalign">
 								<div id='showzipecodecoachstylepreference' style='display:block'>
-								      <!-- <label>What is the zipcode of the tutoring location: </label><form:errors path="zipcode" cssClass="error" /> -->
-									<form:input readonly="true" size="10" path="zipcode" />
+								      <!-- <label>What is the zipcode of the tutoring location: </label><form:errors path="zipcode" cssClass="error" />
+									<form:input readonly="true" size="10" path="zipcode" /> -->
+									<form:input readonly="true" size="10" path="zipcode" /> &nbsp; City: <form:input readonly="true" size="15" path="city" />  &nbsp; State: <form:input readonly="true" size="15" path="state" />
 								</div>
 							</td>
 						</tr>
 						<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+						<tr>
+							<td style="text-align: right;"><form:errors path="studentemail"><br><form:errors path="studentemail" cssClass="error" /> 
+								<br></form:errors>
+								<label>The email you have on file: : &nbsp; </label> 
+							</td>
+							<td style="text-align: left;"><form:input readonly="true" size="25" path="studentemail" /> </td> 
+						</tr>
+						<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+						
 						<tr>
 						  <td  style="text-align: right;" ><form:errors path="gradelevel"><form:errors path="gradelevel" cssClass="error" /><br></form:errors><span class="required">*</span>
 					      	<label>What Grade Level is the student: &nbsp; </label>

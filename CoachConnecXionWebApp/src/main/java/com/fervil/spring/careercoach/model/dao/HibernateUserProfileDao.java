@@ -468,7 +468,7 @@ public class HibernateUserProfileDao implements UserProfileDao {
 		}
 	}
 	
-    public List findTutorsToContact(int category, String course, int coachstyleonline, int coachstyleinperson, String zipcodes) throws Exception {
+    public List findTutorsToContact(int category, String course, int coachstyleinperson, int coachstyleonline, String zipcodes) throws Exception {
 
 		try {
 			// session.beginTransaction();
@@ -479,12 +479,17 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
 					UserProfile.class);
 
-			String sql = " select u.firstname, u.lastname, u.city, u.state, u.user_profile_id, u.language, u.display_name, u.coaching_category, u.overview, u.email " +
+			String sql = "";
+			
+			sql = " select u.firstname, u.lastname, u.city, u.state, u.user_profile_id, u.language, u.display_name, u.coaching_category, u.overview, u.email " +
 					" from user_profile u "
 					+ " where (coachingcategory1 = " + category + " or coachingcategory2 = " + category + " or coachingcategory3 = " + category + ") " 
-					+ " and zipcode in (" + zipcodes + ") " 
 					+ " and LOWER(skills_expertise) like '%" + course.toLowerCase().replaceAll(" ", "%") + "%'";
 	
+					if (zipcodes.contains("'") ){
+						sql = sql + " and zipcode in (" + zipcodes + ") ";
+					}
+			
 					if (coachstyleinperson != -1 ) {
 						sql = sql + " and coachstyleinperson = 1";
 					}

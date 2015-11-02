@@ -3,14 +3,24 @@ package com.fervil.spring.careercoach.web.tutor;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.annotation.Resource;
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
@@ -31,6 +41,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fervil.spring.careercoach.model.domain.CoachSelection;
 import com.fervil.spring.careercoach.model.domain.CoachingRequest;
+import com.fervil.spring.careercoach.model.domain.Currency;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
 import com.fervil.spring.careercoach.model.domain.Zipcode;
 import com.fervil.spring.careercoach.model.domain.ZipcodeContainer;
@@ -51,6 +62,7 @@ public class TutorUserProfileListController  {
 	
 	private UserProfileManager userProfileManager;
 	private SelectedCoachesValidator validator;
+
 	
 	@Autowired
 	public TutorUserProfileListController(UserProfileManager userProfileManager,
@@ -258,19 +270,41 @@ public class TutorUserProfileListController  {
 		}	
 	}
 	
-	public String getNearestZipCodes(String zipcode){
+	public String getNearestZipCodes(String zipcode) throws Exception{
 		String zipList="";
 		
+	        javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(
+	        	    new javax.net.ssl.HostnameVerifier(){
+		        		Random rand = new Random();
+		        		String webserviceHostName = "";
+		        		
+	        	        public boolean verify(String hostname,
+	        	                javax.net.ssl.SSLSession sslSession) {
+	        	        	System.out.println("The Host Name is: " + hostname);
+	        	        	
+	        	        	webserviceHostName = "www.zipwise.com";
+	        	        	
+	        	            if (hostname.equals(webserviceHostName)) {
+	        	                return true;
+	        	            }
+	        	            return false;
+	        	        }
+	        });
+	        
+	        
 		RestTemplate restTemplate = new RestTemplate();
 		
 		//String jsonUrl = "https://www.zipwise.com/webservices/radius.php?key=7wntjyde93vph7m3&zip=zzzipcodeee&radius=50&format=json";
-
+		//String jsonUrlTest = "https://www.vineos.io/api/currency/convert?source=USD&target=MXN";
+			
 		String jsonUrl = Constants.JSON_URL.replace("zzzipcodeee", zipcode);
 
 		System.setProperty("jsse.enableSNIExtension", "false");
 		
-        List<Zipcode> zipdataList = restTemplate.getForObject(jsonUrl, ZipcodeContainer.class).getResults();
+        //Currency curr = restTemplate.getForObject(jsonUrlTest, Currency.class);
 
+        List<Zipcode> zipdataList = restTemplate.getForObject(jsonUrl, ZipcodeContainer.class).getResults();
+        
         int i=0;
         for(Zipcode zip : zipdataList) {
         	if (i>0) zipList = zipList + ","; 

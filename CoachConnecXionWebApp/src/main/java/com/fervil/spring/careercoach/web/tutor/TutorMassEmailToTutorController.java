@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 
 import javax.annotation.Resource;
@@ -54,12 +55,12 @@ public class TutorMassEmailToTutorController {
     @Autowired
     private SmtpMailService mailService;
     
-    private static final String dev_env = "href='http://localhost:8080/CoachConnecXionWebApp-3/tutor/contact/contactstudent?ctt1=";
-    private static final String prod_env = "href='http://www.coachconnecxion.com/tutor/contact/contactstudent?ctt1=";
+    //private static final String CONTACT_STUDENT_DEV_ENV = "href='http://localhost:8080/CoachConnecXionWebApp-3/tutor/contact/contactstudent?ctt1=";
+    //private static final String CONTACT_STUDENT_PROD_ENV = "href='http://www.coachconnecxion.com/tutor/contact/contactstudent?ctt1=";
 	
 
 @RequestMapping(value = "/tutor/contact/mass-email-to-tutors", method = RequestMethod.GET)
-public String getEmailToTutor(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
+public String getMassEmailToTutors(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
 	//Map<String, Object> myModel = new HashMap<String, Object>();
 	try{	
@@ -74,8 +75,13 @@ public String getEmailToTutor(HttpServletRequest request, HttpServletResponse re
 			userProfile.setAvailability(availability);
 		}
 		*/
-		contacttutor.setAvailability(availability);
 		
+		Long profileId = SystemUtil.getUserProfileId(request, userProfileManager);
+		UserProfile userprfl = userProfileManager.findById(profileId.toString());	
+		
+		contacttutor.setStudentemail(userprfl.getEmail());
+		contacttutor.setAvailability(availability);
+		contacttutor.setOverview(" ");
 		String now = (new java.util.Date()).toString();
 		model.addAttribute("contacttutor", contacttutor);
 		model.addAttribute("now", now);
@@ -168,7 +174,7 @@ public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResp
 		
 				///////////   SEND EMAILS TO TUTORS /////////////////////////////////////////////////////////////
 				
-				//Remove all numeric suffic after the course name.......
+				//Remove all numeric suffix after the course name.......
 				contactTutor.setCourse(contactTutor.getCourse().replaceAll("1", "").trim() );
 				contactTutor.setCourse(contactTutor.getCourse().replaceAll("2", "").trim() );
 				contactTutor.setCourse(contactTutor.getCourse().replaceAll("3", "").trim() );
@@ -208,14 +214,17 @@ public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResp
 		
 	        for(HashMap userProfiles : userprofilesDataList) {
 				emailbody = " Hi " + userProfiles.get("firstname")	+ ", <br><br>" +  
-        		"Great news! We've identified a student looking looking for a tutor to help with " + contactTutor.getCourse() + " <br>" +
+        		"Great news! We've identified a student looking looking for a tutor to help with " + contactTutor.getCourse() + ". <br><br>" +
         		" You were selected because you expressed interest in tutoring " + contactTutor.getCourse() +   " on CoachConnecXion.com <br><br>" +
-				"<a style='font-size: 16px' " + dev_env + userProfiles.get("user_profile_id") +
+				"<a style='font-size: 16px' " + Constants.CONTACT_STUDENT_PROD_ENV + userProfiles.get("user_profile_id") +
 				"&jbbid=" +  contactTutor.getContacttutorid() + "'> " +
-				"CLICK HERE FOR THE JOB POSTING </a>" ;
+				"CLICK HERE FOR THE JOB POSTING </a> <br><br>" +
+				" If the link above does not work, copy the following value to your browser: " + 
+				Constants.CONTACT_STUDENT_PROD_ENV + userProfiles.get("user_profile_id") +
+				"&jbbid=" +  contactTutor.getContacttutorid();
 
-				System.out.println(emailbody);
-				//mailService.sendMessage(userProfiles.get("email").toString(), "New Tutoring Request", emailbody);
+				//System.out.println(emailbody);
+				mailService.sendMessage(userProfiles.get("email").toString(), "New Tutoring Request", emailbody);
 	        }
 	}
 	
@@ -224,17 +233,19 @@ public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResp
 		int coachstyleinperson = -1;
 		
 		if (contactTutor.getCoachstylepreference().trim().equals("1" )) {
-			coachstyleonline = 1;
-		} else if (contactTutor.getCoachstylepreference().trim().equals("2")) {
 			coachstyleinperson = 1;
+		} else if (contactTutor.getCoachstylepreference().trim().equals("2")) {
+			coachstyleonline = 1;
 		} 
 		
 		String zipcodes="";
 		
-		if (!zipcode.trim().equals("")) zipcodes = getNearestZipCodes(zipcode);
+		if(coachstyleinperson == 1){  //Only find zipcodes if its in person only
+			if (!zipcode.trim().equals("")) zipcodes = getNearestZipCodes(zipcode);
+		}
 		
 		List <HashMap> userprofilesDataList = userProfileManager.getUserProfiles(contactTutor.getCategory(), contactTutor.getCourse(), 
-				coachstyleonline, coachstyleinperson, zipcodes );
+				coachstyleinperson, coachstyleonline,  zipcodes );
 
 		/*
 		ArrayList<String> userProfilesList= new ArrayList<String>();
@@ -254,6 +265,24 @@ public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResp
 	
 	public String getNearestZipCodes(String zipcode){
 		String zipList="";
+
+        javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(
+        	    new javax.net.ssl.HostnameVerifier(){
+	        		Random rand = new Random();
+	        		String webserviceHostName = "";
+	        		
+        	        public boolean verify(String hostname,
+        	                javax.net.ssl.SSLSession sslSession) {
+        	        	System.out.println("The Host Name is: " + hostname);
+        	        	
+        	        	webserviceHostName = "www.zipwise.com";
+        	        	
+        	            if (hostname.equals(webserviceHostName)) {
+        	                return true;
+        	            }
+        	            return false;
+        	        }
+        });
 		
 		RestTemplate restTemplate = new RestTemplate();
 		
@@ -273,6 +302,11 @@ public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResp
         	i++;
         }
         
+		//ZIPCODES BELOW FOR TESTING ONLY SINCE WE CANNOT GET TO THE ZIPCODE LIST LOCALLY
+        //if (zipList.trim().equals("")){
+        //	zipList = "'60563', '60519', '60555', '60567','60502', '60189', '60505','60565'";
+        //}
+		
         System.out.println(zipList);
         
         return zipList;

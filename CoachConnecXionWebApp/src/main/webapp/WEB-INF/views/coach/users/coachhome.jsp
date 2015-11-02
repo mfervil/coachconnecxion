@@ -37,7 +37,7 @@
 
 			<div id="menutopmost">
 				<%-- <a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | <a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy&nbsp;&nbsp;&nbsp;&nbsp;</a> --%>
-				<a style="font-size:16px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/public">[SWITCH TO TUTORING SITE] &nbsp;&nbsp;&nbsp;&nbsp; </a> | 
+				<a style="font-size:16px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/public">[TUTORING SERVICES] &nbsp;&nbsp;&nbsp;&nbsp; </a> | 
 					<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
 <!-- 				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/coach/public">Coaching </a> | 
 				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/public">Tutoring </a> | 

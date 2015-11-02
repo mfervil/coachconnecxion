@@ -38,7 +38,7 @@
 			 <table>
 			  	  	<tbody >
 					    <tr>
-					      <td class="centeralign">Your order has completed successfully.  Your coach will be in touch with you to setup the sessions
+					      <td class="centeralign">Your order was completed successfully.  Your tutor will be in touch with you to setup the sessions
 						</td></tr>
 			  	  	</tbody >
 			  	</table>
@@ -49,7 +49,7 @@
 					      <td class="leftalign">Package Name: ${packageName}
 						</td></tr>
 					    <tr>
-					      <td class="leftalign">Package Price: ${packagePrice}
+					      <td class="leftalign">Package Price: $ ${packagePrice}
 						</td></tr>
 				  	</tbody >
 			  	</table>

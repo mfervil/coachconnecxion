@@ -21,10 +21,10 @@ public class ContactStudentEmailValidator implements Validator {
     }
 
     public void validate(Object target, Errors errors) {
-    	String fieldisRequired = " Required field";
     	
         Contacttutor contacttutor = (Contacttutor) target;
     	
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "tutorcase", "required.tutorcase", "You must make your case why you should be chosen as the tutor");
+
     }    
 }

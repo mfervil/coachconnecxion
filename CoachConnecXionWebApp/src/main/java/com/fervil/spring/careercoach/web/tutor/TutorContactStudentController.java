@@ -54,7 +54,7 @@ public class TutorContactStudentController {
 	
 	@Resource(name = "userProfileManager")
 	private UserProfileManager userProfileManager;
-	
+	  
     @Autowired
     private SmtpMailService mailService;
 	
@@ -66,7 +66,7 @@ public String getContactStudent(HttpServletRequest request, HttpServletResponse 
 	try{	
 
 		Contacttutor ctTutor  = contactTutorManager.findById(Long.valueOf(request.getParameter("jbbid").toString()));
-		
+		ctTutor.setTutorcase(" ");
 		model.addAttribute("contacttutor", ctTutor);
 		return "tutor/contacttutor/contactstudent"; 
 
@@ -84,6 +84,9 @@ public String postContactStudent(HttpServletRequest request, HttpServletResponse
 
 		validator.validate(contactTutor, result);
 
+		//System.out.println("The tutor case is: " + contactTutor.getTutorcase().trim() );
+		
+		
 		try {
 		
 	        if (result.hasErrors()) {
@@ -91,14 +94,29 @@ public String postContactStudent(HttpServletRequest request, HttpServletResponse
 				return "tutor/contacttutor/contactstudent";
 			} else {
 
+				long profileId = SystemUtil.getUserProfileId(request, userProfileManager);
+
+				String emailbody = "";
+				
+					//emailbody = " Hi " + userProfiles.get("firstname")	+ ", <br><br>" +  
+					emailbody = " Hi " 	+ ", <br><br>" +  
+	        		"Great news! You've receivved a proposal from one of our tutors to help you with " + contactTutor.getCourse() + " <br><br>" +
+					"<p style='text-decoration: underline;'>MESSAGE FROM TUTOR: </p>"	+	
+					contactTutor.getTutorcase() +
+					"<br><br><a style='font-size: 16px' " + Constants.CONTACT_STUDENT_USER_PROFILE_URL_PROD + profileId + "&cttrno=" + contactTutor.getContacttutorid() + "'> " +
+					"CLICK HERE TO SEE THE TUTOR DETAILS, CONTACT AND MAYBE HIRE THIS TUTOR </a> <br><br>" +
+					"If the link above doesn't work, copy the address below to your browser <br>" +
+					Constants.CONTACT_STUDENT_USER_PROFILE_URL_PROD + profileId + "&cttrno=" + contactTutor.getContacttutorid();
+
+					//System.out.println(emailbody);
+					mailService.sendMessage(contactTutor.getStudentemail(), "New message from tutor", emailbody);
+				
 				//Email proposal to student.....................
-				
-				
 				//long profileId = SystemUtil.getUserProfileId(request, userProfileManager);
 				//contactTutor.setUserprofileid(profileId);
 				//contactTutorManager.storeContactTutor(contactTutor);
-				
-				return "tutor/contacttutor/MassEmailToTutorsConfirmation";
+				model.addAttribute("successMessage", "Message has been sent to the student");
+				return "tutor/contacttutor/contactstudent";
 			}
 		
 		} catch (Exception e) {

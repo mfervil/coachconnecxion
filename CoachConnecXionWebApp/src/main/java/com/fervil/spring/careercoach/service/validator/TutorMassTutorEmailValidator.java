@@ -61,6 +61,8 @@ public class TutorMassTutorEmailValidator implements Validator {
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "overview", "invalid.overview", "You must describe why you need tutoring");
 
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "studentemail", "invalid.studentemail", "You must enter your email");
+
         if (contacttutor.getCoachstylepreference() != null){
 	        if ((contacttutor.getCoachstylepreference().equals("1") || contacttutor.getCoachstylepreference().equals("3"))   &&
 	        		(contacttutor.getZipcode().trim().equals("") || contacttutor.getCity().trim().equals("")  || contacttutor.getState().trim().equals("")  )  )	
