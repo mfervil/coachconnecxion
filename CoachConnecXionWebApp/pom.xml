@@ -62,7 +62,13 @@ Google Emails
 		git mfl@yahoo.com ccnxn14$
 		jforum ccnxn14$
 		superpages Ccnxn14
+		PageTraffic: marcarthur ccnxn14$
 
+		zipwise: marc.arthur
+		Your API key is:ltjcytht0sj5uzmd 
+						7wntjyde93vph7m3 For The paid service
+		password: ccnxn14$
+		
 		marc.arthur@coachconnecxion.com ccnnilxn14$ - LinkedIn
 
 		marc.arthur@coachconnecxion.com ccnxn14$row - wordtracker
@@ -126,6 +132,12 @@ Gmail contact
     </properties>
 
     <dependencies>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.3.1</version>
+		</dependency>
 
         <!--  Spring -->
         <dependency>

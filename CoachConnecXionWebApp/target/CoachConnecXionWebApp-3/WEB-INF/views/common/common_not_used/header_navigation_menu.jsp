@@ -37,7 +37,7 @@
 					<li><a href="portfolio.html">HOW IT WORKS</a></li>
 					<li><a href="gallery.html">BLOG</a></li>
 					<li><a href="stylings-text.html">ABOUT US</a></li>
-					<li><a href="/users/login">SIGN IN-REGISTER</a></li>
+					<li><a  rel="nofollow" href="/users/login">SIGN IN-REGISTER</a></li>
 				</ul>
 				<!-- 
 				<select id="responsive-menu">

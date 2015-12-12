@@ -685,12 +685,12 @@ public String[] ExecutePayment(String paymentType, PaymentInformation paymentInf
             // Send the confirmation email to the user.
             try {
                 mailService.sendMessage(paymentInformation.getEmail(), "CoachConnecXion.com: Payment Confirmation", 
-                		"You purchased coaching package: " + paymentInformation.getPackageName() + " \n Package Price: " + paymentInformation.getPackagePrice() +
+                		"You purchased coaching package: " + paymentInformation.getPackageName() + " \n Package Price: $" + paymentInformation.getPackagePrice() +
                 		" \n Your coach will be in touch with you within a week to start the coaching session");
                 
                 mailService.sendMessage(coachEmail, "CoachConnecXion.com: New coaching request", 
                 		"You received a request for coaching services.  Here are the details below: \n" +
-                		" Pakage: " + paymentInformation.getPackageName() + " \n Package Price: " + paymentInformation.getPackagePrice() +
+                		" Pakage: " + paymentInformation.getPackageName() + " \n Package Price: $" + paymentInformation.getPackagePrice() +
                 		" Customer First Name: " + paymentInformation.getFirstName() + " Last Name: " + paymentInformation.getLastName() +
                 		" Phone: " + paymentInformation.getPhoneNumber1() + "-" + paymentInformation.getPhoneNumber2() + "-" + paymentInformation.getPhoneNumber3() +
                 		" Email: " + paymentInformation.getEmail());

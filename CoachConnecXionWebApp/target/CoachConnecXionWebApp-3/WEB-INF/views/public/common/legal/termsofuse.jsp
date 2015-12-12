@@ -81,8 +81,11 @@ ul
 
 <div class=WordSection1>
 
-<h1 style="text-align:center;font-weight: bold;">TERMS OF USE</h1>
-<br>
+<h1 style="text-align:center;font-weight: bold;">TERMS OF USE</h1><br>
+
+	<%@ include file="/WEB-INF/views/public/common/legal/termsofuse_body.jsp" %>
+
+<%-- 
 <p><span style='color:black'>By accessing, browsing or using
 www.coachconnecxion.com&nbsp;(&quot;Website&quot;), or any page thereof,
 through direct or indirect means, or alternative methods (including telephone
@@ -222,8 +225,9 @@ your purchase</span></p>
 <p><span style='color:black'>If you have questions or need assistance, please contact
 Customer Support at: marc.arthur@coachconnecxion.com</span></p><br>
 
-</div>
+--%>
 
+</div>
 
 </section>
 <%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	

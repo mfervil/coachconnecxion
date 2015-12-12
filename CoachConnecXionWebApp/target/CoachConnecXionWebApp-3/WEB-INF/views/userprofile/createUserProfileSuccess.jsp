@@ -35,7 +35,7 @@ span.required {color:red;font-weight:bold}
 		<form:form method="post" commandName="userProfile" enctype="multipart/form-data">
 		<!-- <form action="#" id="page_user_profile_form" method="post"> -->
 		<h3 style="color:red"> ${errorMessage} </h3>
-	<table style="width: 900px;">
+	<table style="width: 900px;"  class="blog-page-table">
 		<tr>
 			<td style="width: 730px; padding: 5px;">
 				<table>
@@ -55,7 +55,7 @@ span.required {color:red;font-weight:bold}
 	<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); text-decoration: underline;"> <a href="${pageContext.request.contextPath}/packageAdd">**CLICK HERE TO CREATE YOUR COACHING PACKAGES**</a> </span></b>
 </c:if>
 <c:if test="${sessionScope.newusercreated != '1'}">
-	<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); text-decoration: underline;"> <a href="${pageContext.request.contextPath}/public/profile">**CLICK HERE TO VIEW YOUR UPDATED PROFILE**</a> </span></b>
+	<br><br><b> <span style="font-size: 1.25em; color: rgb(0,0,255); text-decoration: underline;"> <a href="${pageContext.request.contextPath}/public/profile?profileId=${profileId}">**CLICK HERE TO VIEW YOUR UPDATED PROFILE**</a> </span></b>
 </c:if>
 
 </td></tr>

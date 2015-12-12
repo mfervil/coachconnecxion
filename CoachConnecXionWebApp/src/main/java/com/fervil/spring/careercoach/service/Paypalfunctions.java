@@ -435,11 +435,11 @@ public String[] ExecutePayment(String paymentType, PaymentInformation paymentInf
             }     
            try {     
                 mailService.sendMessage(coachEmail, "CoachConnecXion: New coaching request", 
-                		"You received a request for coaching services.  Here are the details below: \n" +
-                		" Pakage: " + paymentInformation.getPackageName() + " \n Package Price: $" + paymentInformation.getPackagePrice() +
-                		" Customer First Name: " + paymentInformation.getFirstName() + " Last Name: " + paymentInformation.getLastName() +
-                		" Phone: " + paymentInformation.getPhoneNumber1() + "-" + paymentInformation.getPhoneNumber2() + "-" + paymentInformation.getPhoneNumber3() +
-                		" Email: " + paymentInformation.getEmail());
+                		"You received a request for coaching services.  Here are the details below: <br> <br>" +
+                		"Pakage: " + paymentInformation.getPackageName() + " Package Price: $" + paymentInformation.getPackagePrice() +
+                		"<br>Customer First Name: " + paymentInformation.getFirstName() + " Last Name: " + paymentInformation.getLastName() +
+                		"<br>Phone: " + paymentInformation.getPhoneNumber1() + "-" + paymentInformation.getPhoneNumber2() + "-" + paymentInformation.getPhoneNumber3() +
+                		"<br>Email: " + paymentInformation.getEmail());
                 
             } catch (Exception e) {
                 String msg = "Failed to send confirmation email to coach for: " + paymentInformation.getEmail() + " Error " + e;

@@ -183,6 +183,7 @@ text-align:center;
 					<c:url var="contacttutorurl" value="/tutor/contact/mass-email-to-tutors" />
 					<form:form method="POST" id="contacttutor" commandName="contacttutor" >
 						<input type="hidden" name="profileId" id="profileId" value="${profileId}"></input>
+						<form:hidden path="studentfirstname" name="studentfirstname" id="studentfirstname" value="${contacttutor.studentfirstname}"></form:hidden>
 						
 						<table>
 						<tr>

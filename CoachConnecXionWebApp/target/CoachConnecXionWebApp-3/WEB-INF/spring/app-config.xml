@@ -16,6 +16,7 @@
     <context:component-scan base-package="ua.com.bitlab.springsecuritydemo.dao,ua.com.bitlab.springsecuritydemo.services"/>
 
 	<context:component-scan base-package="com.fervil.spring.careercoach.service" />
+	<context:component-scan base-package="com.fervil.spring.careercoach.service.validator" />
 	<context:component-scan base-package="com.fervil.spring.careercoach.model" />
 
     <import resource="hibernate-config.xml"/>
@@ -42,6 +43,12 @@
 	</bean>
 	-->
 	
+	<bean id="contactTutorManager" class="com.fervil.spring.careercoach.service.BasicContactTutorManager">
+		<property name="contactTutorDao" ref="contactTutorDao" />
+	</bean>
+	<bean id="contactTutorDao"
+          class="com.fervil.spring.careercoach.model.dao.HibernateContactTutorDao">
+    </bean>
 	<bean id="userProfileManager" class="com.fervil.spring.careercoach.service.BasicUserProfileManager">
 		<property name="userProfileDao" ref="userProfileDao" />
 	</bean>
@@ -84,5 +91,5 @@
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager"
           p:sessionFactory-ref="sessionFactory"/>
 
-    <tx:annotation-driven transaction-manager="transactionManager"/>    
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>

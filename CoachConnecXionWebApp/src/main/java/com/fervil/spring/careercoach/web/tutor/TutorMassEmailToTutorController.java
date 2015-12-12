@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -28,6 +29,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ua.com.bitlab.springsecuritydemo.services.SmtpMailService;
 
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fervil.spring.careercoach.model.domain.Contacttutor;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
 import com.fervil.spring.careercoach.model.domain.Zipcode;
@@ -80,6 +82,7 @@ public String getMassEmailToTutors(HttpServletRequest request, HttpServletRespon
 		UserProfile userprfl = userProfileManager.findById(profileId.toString());	
 		
 		contacttutor.setStudentemail(userprfl.getEmail());
+		contacttutor.setStudentfirstname(userprfl.getFirstname());
 		contacttutor.setAvailability(availability);
 		contacttutor.setOverview(" ");
 		String now = (new java.util.Date()).toString();
@@ -155,7 +158,6 @@ public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResp
 		@ModelAttribute("contacttutor") Contacttutor contactTutor, BindingResult result) {
 
 		try {
-		
 				contactTutor.setCategory( new Integer(request.getParameter("hcategory")).intValue() );
 				contactTutor.setCoachstylepreference(request.getParameter("hcoachstylepreference"));
 				contactTutor.setGradelevel(request.getParameter("hgradelevel"));
@@ -167,6 +169,7 @@ public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResp
 				contactTutor.setCity(request.getParameter("city").toString() ); 
 				contactTutor.setState(request.getParameter("hstate").toString() ); 
 				contactTutor.setStudentemail(request.getParameter("hstudentemail").toString() ); 
+				contactTutor.setStudentfirstname(request.getParameter("hstudentfirstname").toString() ); 
 			
 				long profileId = SystemUtil.getUserProfileId(request, userProfileManager);
 				contactTutor.setUserprofileid(profileId);
@@ -219,8 +222,8 @@ public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResp
 				"<a style='font-size: 16px' " + Constants.CONTACT_STUDENT_PROD_ENV + userProfiles.get("user_profile_id") +
 				"&jbbid=" +  contactTutor.getContacttutorid() + "'> " +
 				"CLICK HERE FOR THE JOB POSTING </a> <br><br>" +
-				" If the link above does not work, copy the following value to your browser: " + 
-				Constants.CONTACT_STUDENT_PROD_ENV + userProfiles.get("user_profile_id") +
+				" If the link above does not work, copy the following value to your browser: <br><br>" + 
+				Constants.CONTACT_STUDENT_PROD_ENV.replace("href='", "") + userProfiles.get("user_profile_id") +
 				"&jbbid=" +  contactTutor.getContacttutorid();
 
 				//System.out.println(emailbody);
@@ -242,6 +245,11 @@ public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResp
 		
 		if(coachstyleinperson == 1){  //Only find zipcodes if its in person only
 			if (!zipcode.trim().equals("")) zipcodes = getNearestZipCodes(zipcode);
+		}
+		
+		if (zipcodes.trim().equals("")){
+			//If we cannot find any tutors in your area, then goahead and display online tutors
+			coachstyleinperson = -1;   //Negative 1 is the default value when nothing is selected................
 		}
 		
 		List <HashMap> userprofilesDataList = userProfileManager.getUserProfiles(contactTutor.getCategory(), contactTutor.getCourse(), 
@@ -292,15 +300,24 @@ public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResp
 		
 		System.setProperty("jsse.enableSNIExtension", "false");
 		
-        List<Zipcode> zipdataList = restTemplate.getForObject(jsonUrl, ZipcodeContainer.class).getResults();
+		List<Zipcode> zipdataList =  null;
+		
+		try{
+	        zipdataList = restTemplate.getForObject(jsonUrl, ZipcodeContainer.class).getResults();
+	        
+	        int i=0;
+	        for(Zipcode zip : zipdataList) {
+	        	if (i>0) zipList = zipList + ","; 
+	        	zipList = zipList + "'" + zip.getZip() + "'";
 
-        int i=0;
-        for(Zipcode zip : zipdataList) {
-        	if (i>0) zipList = zipList + ","; 
-        	zipList = zipList + "'" + zip.getZip() + "'";
+	        	i++;
+	        }
+	        
+		} catch (HttpMessageNotReadableException e){
+			//If nothing is returned from the webservice call, return an empty zipcode list.
+			zipList = "";
+		}
 
-        	i++;
-        }
         
 		//ZIPCODES BELOW FOR TESTING ONLY SINCE WE CANNOT GET TO THE ZIPCODE LIST LOCALLY
         //if (zipList.trim().equals("")){

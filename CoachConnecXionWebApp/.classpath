@@ -41,5 +41,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/mfervil/development/git2/coachconnecxion/installcert"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

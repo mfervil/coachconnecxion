@@ -215,6 +215,12 @@ public class TutorUserProfileListController  {
                 	break;
 			 }	                     
 			
+				if (zipcodes.trim().equals("")){
+					//If we cannot find any tutors in your area, then goahead and display online tutors
+					tmpcoachstyleinperson = "";   //Negative 1 is the default value when nothing is selected................
+				}
+
+			 
 			List<HashMap> userProfiles = userProfileManager.getUserProfilesForTutors(
 					coachingCategory, coachingSubcategory, industryExperience,tmpcompanyExperience, 
 					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber, 
@@ -303,7 +309,7 @@ public class TutorUserProfileListController  {
 		
         //Currency curr = restTemplate.getForObject(jsonUrlTest, Currency.class);
 
-        List<Zipcode> zipdataList = restTemplate.getForObject(jsonUrl, ZipcodeContainer.class).getResults();
+/*        List<Zipcode> zipdataList = restTemplate.getForObject(jsonUrl, ZipcodeContainer.class).getResults();
         
         int i=0;
         for(Zipcode zip : zipdataList) {
@@ -312,6 +318,28 @@ public class TutorUserProfileListController  {
 
         	i++;
         }
+        
+*/		
+		List<Zipcode> zipdataList =  null;
+		
+		try{
+	        zipdataList = restTemplate.getForObject(jsonUrl, ZipcodeContainer.class).getResults();
+	        
+	        int i=0;
+	        for(Zipcode zip : zipdataList) {
+	        	if (i>0) zipList = zipList + ","; 
+	        	zipList = zipList + "'" + zip.getZip() + "'";
+
+	        	i++;
+	        }
+	        
+		} catch (HttpMessageNotReadableException e){
+			//If nothing is returned from the webservice call, return an empty zipcode list.
+			zipList = "";
+		}
+        
+        
+        
         
         System.out.println(zipList);
         

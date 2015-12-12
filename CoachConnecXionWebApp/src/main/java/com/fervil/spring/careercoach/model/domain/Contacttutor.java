@@ -33,6 +33,7 @@ public class Contacttutor {
 	String city;
 	String state;
 	String studentemail;
+	String studentfirstname;
 	int tutorselected;
 	
 	@Column(name = "tutorcase", nullable = false, columnDefinition="TEXT")
@@ -271,5 +272,11 @@ public class Contacttutor {
 	}
 	public void setTutorselected(int tutorselected) {
 		this.tutorselected = tutorselected;
+	}
+	public String getStudentfirstname() {
+		return studentfirstname;
+	}
+	public void setStudentfirstname(String studentfirstname) {
+		this.studentfirstname = studentfirstname;
 	}
 }

@@ -113,7 +113,9 @@
 	<!-- FOOTER LINE -->
 	<section id="footer-line">
 		<div id="left">
-			<p style="font-size:12px;"><span class="colorizer">CoachConnecXion.com</span> BY CoachSessions LLC &COPY; 2014  - ALL RIGHTS RESERVED!</p>
+			<%-- <p style="font-size:12px;"><span class="colorizer">CoachConnecXion.com</span> BY CoachSessions LLC &COPY; 2014  - ALL RIGHTS RESERVED!</p> --%>
+			<p style="font-size:12px;"><a href="https://www.coachconnecxion.com/" class="colorizer"> CoachConnecXion.com </a> BY CoachSessions LLC &COPY; 2014 - 2016 - ALL RIGHTS RESERVED! | <a href="/sitemap/">Sitempa</a></</p>
+
 		</div>
 	</section>
 	

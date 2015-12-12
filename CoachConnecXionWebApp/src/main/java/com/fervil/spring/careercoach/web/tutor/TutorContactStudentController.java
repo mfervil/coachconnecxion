@@ -99,14 +99,14 @@ public String postContactStudent(HttpServletRequest request, HttpServletResponse
 				String emailbody = "";
 				
 					//emailbody = " Hi " + userProfiles.get("firstname")	+ ", <br><br>" +  
-					emailbody = " Hi " 	+ ", <br><br>" +  
+					emailbody = " Hi " 	+ contactTutor.getStudentfirstname() + ", <br><br>" +  
 	        		"Great news! You've receivved a proposal from one of our tutors to help you with " + contactTutor.getCourse() + " <br><br>" +
 					"<p style='text-decoration: underline;'>MESSAGE FROM TUTOR: </p>"	+	
 					contactTutor.getTutorcase() +
 					"<br><br><a style='font-size: 16px' " + Constants.CONTACT_STUDENT_USER_PROFILE_URL_PROD + profileId + "&cttrno=" + contactTutor.getContacttutorid() + "'> " +
 					"CLICK HERE TO SEE THE TUTOR DETAILS, CONTACT AND MAYBE HIRE THIS TUTOR </a> <br><br>" +
 					"If the link above doesn't work, copy the address below to your browser <br>" +
-					Constants.CONTACT_STUDENT_USER_PROFILE_URL_PROD + profileId + "&cttrno=" + contactTutor.getContacttutorid();
+					Constants.CONTACT_STUDENT_USER_PROFILE_URL_PROD.replace("href='", "") + profileId + "&cttrno=" + contactTutor.getContacttutorid();
 
 					//System.out.println(emailbody);
 					mailService.sendMessage(contactTutor.getStudentemail(), "New message from tutor", emailbody);

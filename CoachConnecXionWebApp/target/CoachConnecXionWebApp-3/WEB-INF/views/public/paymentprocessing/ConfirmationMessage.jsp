@@ -49,7 +49,7 @@
 					      <td class="leftalign">Package Name: ${packageName}
 						</td></tr>
 					    <tr>
-					      <td class="leftalign">Package Price: ${packagePrice}
+					      <td class="leftalign">Package Price: $ ${packagePrice}
 						</td></tr>
 				  	</tbody >
 			  	</table>

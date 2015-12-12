@@ -195,7 +195,10 @@ String finalPath = request.getContextPath();
 %>
 
 <c:set var="tmpprofileId" value ="${userProfileDetails.user_profile_id}" />
-<% String finalURL = finalPath + Constants.UPLOAD_DIRECTORY + "/" + request.getAttribute("profileId") + "/" + "USERPROFILEIMAGE" + request.getAttribute("profileId") + ".jpg"; 
+<% 
+
+	/*
+	String finalURL = finalPath + Constants.UPLOAD_DIRECTORY + "/" + request.getAttribute("profileId") + "/" + "USERPROFILEIMAGE" + request.getAttribute("profileId") + ".jpg"; 
 
 	ServletContext app = getServletContext();
 	String path1 = app.getRealPath(".." + finalURL);
@@ -207,7 +210,7 @@ String finalPath = request.getContextPath();
 	}	
 
 	//long userProfileId = SystemUtil.getUserProfileId(request);
-	
+	*/
 	
 %>
 
@@ -254,7 +257,7 @@ String finalPath = request.getContextPath();
 									<td style="float: left; color: blue; font-weight: bold; font-size: 20px;">${profileInfo.getDisplayName()}
 									</td>
 									<c:if test="${profileOfCurrentUser}" > 					
-										<td style="float: right;"><a href="../createuserprofile?profileId=${profileId}" >&nbsp;&nbsp;&nbsp;EDIT MY PROFILE</a> </td>
+										<td style="float: right;"><a href="../createuserprofile?profileId=${profileId}" style="color: blue; text-decoration: underline;">&nbsp;EDIT MY PROFILE</a> </td>
 									</c:if>
 								<%--	<td style="float: right;"><input type="submit" value="Edit Profile"
 										style="text-decoration: none; font-size: 14px; background-color: lightblue; background-position: right;" />
@@ -272,7 +275,7 @@ String finalPath = request.getContextPath();
 							<c:if test="${not profileOfCurrentUser}" > 					
 								<tr>
 									<td style="text-align: left;"><br>
-										<a style ="background-color: #0099CC; color: white; width: 200px; padding: 3px; border: 1px solid navy;" 
+										<a  rel="nofollow" style ="background-color: #0099CC; color: white; width: 200px; padding: 3px; border: 1px solid navy;" 
 										href="${pageContext.request.contextPath}/feedbackAddNoOrder?vendorName=${profileInfo.getDisplayName()}&vendorId=${profileInfo.userProfileId}&customerId=${profileId}">
 											Provide Feedback & Rating
 										</a>

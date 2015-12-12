@@ -9,9 +9,9 @@
 	<div id="wrapper-boxed-page-bottom"></div>
 	
 	<!-- FOOTER LINE -->
-	<section id="footer-line">
+	<section id="footerline">
 		<div id="left">
-			<p style="font-size:12px;"><span class="colorizer">CoachConnecXion.com</span> BY CoachSessions LLC &COPY; 2014  - ALL RIGHTS RESERVED!</p>
+			<p style="font-size:12px;"><a href="https://www.coachconnecxion.com/" class="colorizer"> CoachConnecXion.com </a> BY CoachSessions LLC &COPY; 2014 - 2016 - ALL RIGHTS RESERVED! | <a href="/sitemap/">Sitempa</a></</p>
 		</div>
 		<div id="right">
 				<%-- <a  style="font-size:12px;" href="${pageContext.request.contextPath}/">Home </a> | <a style="font-size:12px;" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | <a style="font-size:12px;"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | <a style="font-size:12px;" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy</a> --%>
@@ -50,7 +50,7 @@
 		
 		<div class="separator"></div>
 
-		<div ">
+		<div id="landingLinks">
 			<b>AVAILABLE COACHES:&nbsp;</b> <%-- <a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches">ADVANCED SEARCH</a> |--%> 
 			<a href="${pageContext.request.contextPath}/public/landing-business-coaches">BUSINESS COACHES</a> | 
 			<a href="${pageContext.request.contextPath}/public/landing-career-coaches">CAREER COACHES</a> | 

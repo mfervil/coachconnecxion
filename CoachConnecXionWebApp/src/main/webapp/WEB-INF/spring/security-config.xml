@@ -96,6 +96,8 @@
         <intercept-url pattern="/users/home" access="permitAll()"/>
         <intercept-url pattern="/users/home.jsp" access="permitAll()"/>
         <intercept-url pattern="/google2233c8da8a8a9306.html" access="permitAll()"/>
+        <intercept-url pattern="/google8f9182d5958945e1.html" access="permitAll()"/>
+        <intercept-url pattern="/robots.txt" access="permitAll()"/>
         <intercept-url pattern="/oyPsW6jU.html" access="permitAll()"/>
         <intercept-url pattern="/sitemap.xml" access="permitAll()"/>
         <intercept-url pattern="/test.jsp" access="permitAll()"/>
