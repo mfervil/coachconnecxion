@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.fervil.spring.careercoach.model.domain.CoachingRequest;
-import com.fervil.spring.careercoach.service.CreateCoachingRequestValidator;
 import com.fervil.spring.careercoach.service.CoachingRequestManager;
+import com.fervil.spring.careercoach.service.validator.CreateCoachingRequestValidator;
 import com.fervil.spring.careercoach.util.Constants;
 
 @Controller        

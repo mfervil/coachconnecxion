@@ -16,8 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fervil.spring.careercoach.model.domain.CoachSelection;
 import com.fervil.spring.careercoach.service.CoachSelectionManager;
-import com.fervil.spring.careercoach.service.CoachSelectionValidator;
 import com.fervil.spring.careercoach.service.UserProfileManager;
+import com.fervil.spring.careercoach.service.validator.CoachSelectionValidator;
 import com.fervil.spring.careercoach.util.Constants;
 
 @Controller

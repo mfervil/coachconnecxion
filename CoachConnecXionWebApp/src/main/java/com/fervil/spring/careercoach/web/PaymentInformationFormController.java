@@ -1,10 +1,7 @@
 package com.fervil.spring.careercoach.web;
 
 import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -13,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,14 +26,12 @@ import org.springframework.web.servlet.ModelAndView;
 import ua.com.bitlab.springsecuritydemo.services.UsersService;
 import ua.com.bitlab.springsecuritydemo.web.beans.WebUser;
 
-import com.fervil.spring.careercoach.service.PaymentInformationValidator;
+import com.fervil.spring.careercoach.model.domain.PaymentInformation;
+import com.fervil.spring.careercoach.model.domain.UserProfile;
 import com.fervil.spring.careercoach.service.PaymentInformationManager;
 import com.fervil.spring.careercoach.service.UserProfileManager;
+import com.fervil.spring.careercoach.service.validator.PaymentInformationValidator;
 import com.fervil.spring.careercoach.util.Constants;
-import com.fervil.spring.careercoach.util.PayPalUtil;
-import com.fervil.spring.careercoach.model.domain.PaymentInformation;
-import com.fervil.spring.careercoach.model.domain.CoachingRequest;
-import com.fervil.spring.careercoach.model.domain.UserProfile;
 
 @Controller
 @RequestMapping("/public/paymentinformation")

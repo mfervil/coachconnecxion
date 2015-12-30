@@ -13,26 +13,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-import ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils;
 
 import com.connection.model.Usermessage;
 import com.connection.service.MessageService;
-import com.fervil.spring.careercoach.util.Constants;
-import com.fervil.spring.careercoach.util.SystemUtil;
-import com.fervil.spring.careercoach.vo.CustomerPackagesVO;
 import com.fervil.spring.careercoach.model.domain.PaymentInformation;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
-import com.fervil.spring.careercoach.service.PackageDetailsService;
 import com.fervil.spring.careercoach.service.PaymentInformationManager;
-import com.fervil.spring.careercoach.service.PaymentInformationValidator;
 import com.fervil.spring.careercoach.service.UserProfileManager;
+import com.fervil.spring.careercoach.service.validator.PaymentInformationValidator;
+import com.fervil.spring.careercoach.util.Constants;
+import com.fervil.spring.careercoach.util.SystemUtil;
 
 @Controller
 public class CoachClientNonOrderConversationController {

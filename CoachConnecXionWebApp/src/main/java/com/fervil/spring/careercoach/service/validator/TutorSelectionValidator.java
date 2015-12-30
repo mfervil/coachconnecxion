@@ -1,4 +1,4 @@
-package com.fervil.spring.careercoach.service;
+package com.fervil.spring.careercoach.service.validator;
 		
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,11 +26,11 @@ public class TutorSelectionValidator implements Validator {
         if (coachSelection.getCoachstyle().equals(Constants.COACH_STYLE_IN_PERSON) && (coachSelection.getZipcode() == null || coachSelection.getZipcode().trim().equals("") )){
 			errors.rejectValue("zipcode", "invalid.zipcode", " Zipcode is required for In-Person Tutoring.");
         }
-        
+        /*
         if (coachSelection.getCoachingCategory() < 1){
 			errors.rejectValue("coachingCategory", "invalid.coachingCategory", fieldisRequired);
         }
-
+		*/
     }
 }
 

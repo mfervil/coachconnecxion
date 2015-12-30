@@ -1,50 +1,17 @@
 		<form:form method="post" commandName="coachSelection" >
-			  <table style="border-spacing:2px; width: 100%; border-collapse:separate;">
+			  <table style="border-spacing:2px; border-collapse:separate;">
 			  <tbody >
 			    <tr>
-			    	<td  class="leftalign" ><br><label>Category: </label><form:errors path="coachingCategory" cssClass="error" />
+			    	<td  class="leftalign" ><br><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /><br>
+					${coachingcategoryname}</td>
 					<%-- 
-					<td class="leftalign">&nbsp;${coachingcategoryname}</td>
 					<% String catId = (String)session.getAttribute("categoryId"); %>
 					<% String catName = (String)session.getAttribute("categoryName"); %>
 					--%>
-					<%-- 
 					<form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/>
 					<form:hidden path="coachingcategoryname" id="coachingcategoryname" value="${coachingcategoryname}"/>
-					--%>
-			    		<br>
-				        <form:select size="1" path="coachingCategory" id="coachingCategory" onchange="ShowHideSubCat()" >
-				          <option selected  value="-1">All Categories</option>
-				          <option value="1">ADD & ADHD</option>
-				          <option value="2">Business</option>
-				          <option value="3">Career Change & Enhancement</option>
-				          <option value="4">Couples</option>
-				          <option value="5">Diet/Weight Loss</option>
-				          <option value="6">Disability</option>
-				          <option value="7">Exercise</option>
-				          <option value="8">Executive</option>
-				          <option value="9">Family</option>
-				          <option value="10">Finance</option>
-				          <option value="11">Hobby</option>
-				          <option value="12">Leadership</option>
-				          <option value="13">Life</option>
-				          <option value="14">Management</option>
-				          <option value="15">Music</option>
-				          <option value="16">Motivational</option>
-				          <option value="17">Performance</option>
-				          <option value="18">Relationship</option>
-				          <option value="19">Retirement</option>
-				          <option value="20">Sales</option>
-				          <option value="21">Stress Management</option>
-				          <option value="22">Sports Training</option>
-				          <option value="23">Team and Group</option>
-				          <option value="24">College Prep. Testing</option>
-				        </form:select>			    	
-			    	</td>
-			    	
-			    	
+					
 			      <td class="leftalign" ><br><label>Industry: </label><form:errors path="industryExperience" cssClass="error" /> <br>
-				  	
 			      <!-- Find complete list from job categories in career builder -->
 			        <form:select size="1" path="industryExperience" >
 			          	<option selected  value="-1">All Industries</option>
@@ -159,13 +126,12 @@
 			     </td>
 			     
 				</tr>
-<%-- 				
 				<tr>		
 
 				  <td class="leftalign" ><br><label>City (Not required for online coaching): </label><form:errors path="city" cssClass="error" /> <br>
 				  <form:input size="35" path="city" /></td>
 				  
-				  <td class="leftalign" ><br><label>State/Prov.(Not required for online coaching):</label> <br>
+				  <td class="leftalign" ><br><label>State/Prov. (Not required for online coaching):</label> <br> 
 							<form:select size="1" path="state" id="state" ><option value="">All States</option>
 								${userProfile.state =='AL' ? "<option value='AL' selected>ALABAMA</option>" : "<option value='AL' >ALABAMA</option>"}
 								${userProfile.state =='AK' ? "<option value='AK' selected>ALASKA</option>" :  "<option value='AK' >ALASKA</option>"}
@@ -241,28 +207,14 @@
 					</td>
 				  
 				  
-			    	</tr>
-		--%>	    	
+			    </tr>
+			    
 				<tr>
-				      <td class="leftalign" ><br><label>Coach First Name: </label><form:errors path="coachFirstName" cssClass="error" /><br> 
+				      <td class="leftalign" ><br><label>First Name: </label><form:errors path="coachFirstName" cssClass="error" /><br> 
 				        <form:input size="35" path="coachFirstName" /></td>
-				      <td class="leftalign" ><br><label>Coach Last Name: </label><form:errors path="coachLastName" cssClass="error" /><br> 
+				      <td class="leftalign" ><br><label>Last Name: </label><form:errors path="coachLastName" cssClass="error" /><br> 
 				        <form:input size="35" path="coachLastName" /></td>
 				</tr>
-				
-			    <tr>
-				      <td class="leftalign" ><label><br>Preferred Coaching Type: </label><form:errors path="coachstyleonline" cssClass="error" /><br> 
-				            <form:radiobutton path="coachstyle" id="coachstyleinperson" value="coachstyleinperson" /> In-Person Tutoring
-				            <form:radiobutton path="coachstyle" id="coachstyleonline" value="coachstyleonline" /> Online Tutoring
-				      </td>
-				      <td class="leftalign" >
-						<div id='showzipecode' style='display:block'>
-						      <label><br>Zipcode: </label><form:errors path="zipcode" cssClass="error" /><br> 
-							<form:input size="10" path="zipcode" />
-						</div>
-					</td>
-			    </tr>
-				
 						
 				<%--
 				<tr>

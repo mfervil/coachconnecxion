@@ -1,4 +1,4 @@
-package com.fervil.spring.careercoach.service;
+package com.fervil.spring.careercoach.service.validator;
 		
 import java.util.List;
 

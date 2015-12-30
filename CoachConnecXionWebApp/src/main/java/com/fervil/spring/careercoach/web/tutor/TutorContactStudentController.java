@@ -1,13 +1,5 @@
 package com.fervil.spring.careercoach.web.tutor;
 
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,20 +14,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.servlet.ModelAndView;
 
 import ua.com.bitlab.springsecuritydemo.services.SmtpMailService;
 
 import com.fervil.spring.careercoach.model.domain.Contacttutor;
-import com.fervil.spring.careercoach.model.domain.UserProfile;
-import com.fervil.spring.careercoach.model.domain.Zipcode;
-import com.fervil.spring.careercoach.model.domain.ZipcodeContainer;
 import com.fervil.spring.careercoach.service.ContactTutorManager;
-import com.fervil.spring.careercoach.service.CreateUserProfileValidator;
 import com.fervil.spring.careercoach.service.UserProfileManager;
 import com.fervil.spring.careercoach.service.validator.ContactStudentEmailValidator;
-import com.fervil.spring.careercoach.service.validator.TutorMassTutorEmailValidator;
 import com.fervil.spring.careercoach.util.Constants;
 import com.fervil.spring.careercoach.util.SystemUtil;
 

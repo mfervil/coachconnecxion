@@ -1,17 +1,40 @@
 		<form:form method="post" commandName="coachSelection" >
+	    	<c:if test="${empty general}">
+				<form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/>
+				<form:hidden path="coachingcategoryname" id="coachingcategoryname" value="${coachingcategoryname}"/>
+			</c:if>
+
 			  <table style="border-spacing:2px; border-collapse:separate;">
 			  <tbody >
 			    <tr>
-			    	<td  class="leftalign" ><br><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /><br>
-					${coachingcategoryname}</td>
-					<%-- 
-					<% String catId = (String)session.getAttribute("categoryId"); %>
-					<% String catName = (String)session.getAttribute("categoryName"); %>
-					--%>
-					<form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/>
-					<form:hidden path="coachingcategoryname" id="coachingcategoryname" value="${coachingcategoryname}"/>
+			    	<c:if test="${empty general}">
+				    	<td  class="leftalign" ><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /><br>
+						${coachingcategoryname}</td>
+					</c:if>
+
+			    	<c:if test="${not empty general}">
+			    		<td  class="leftalign" ><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /><br>
+					        <form:select size="1" path="coachingCategory" id="coachingCategory" >
+					          <option selected  value="-1">All Categories</option>
+					          ${coachingCategory =='1010' ? "<option value='1010' selected>Art Tutors</option>" : "<option value='1010'>Art Tutors</option>"}
+					          ${coachingCategory =='1020' ? "<option value='1020' selected>Business/Finance/Accounting</option>" : "<option value='1020'>Business/Finance/Accounting</option>"}
+					          ${coachingCategory =='1030' ? "<option value='1030' selected>Computer Business (Word/Excel/PPT/etc..)</option>" : "<option value='1030'>Computer Business (Word/Excel/PPT/etc..)</option>"}
+					          ${coachingCategory =='1040' ? "<option value='1040' selected>Compute Programming (Java/.Net/etc..)</option>" : "<option value='1040'>Compute Programming (Java/.Net/etc..)</option>"}
+					          ${coachingCategory =='1050' ? "<option value='1050' selected>Communication/Presentation</option>" : "<option value='1050'>Communication/Presentation</option>"}
+					          ${coachingCategory =='1060' ? "<option value='1060' selected>English Tutors</option>" : "<option value='1060'>English Tutors</option>"}
+					          ${coachingCategory =='1070' ? "<option value='1070' selected>History Tutors</option>" : "<option value='1070'>History Tutors</option>"}
+					          ${coachingCategory =='1080' ? "<option value='1080' selected>Homeschool Tutors</option>" : "<option value='1080'>Homeschool Tutors</option>"}
+					          ${coachingCategory =='1090' ? "<option value='1090' selected>Language Tutors</option>" : "<option value='1090'>Language Tutors</option>"}
+					          ${coachingCategory =='1100' ? "<option value='1100' selected>Math</option>" : "<option value='1100'>Math</option>"}
+					          ${coachingCategory =='1110' ? "<option value='1110' selected>Music</option>" : "<option value='1110'>Music</option>"}
+					          ${coachingCategory =='1120' ? "<option value='1120' selected>Science</option>" : "<option value='1120'>Science</option>"}
+					          ${coachingCategory =='1130' ? "<option value='1130' selected>Special Needs (ADD/ADHD/etc..)</option>" : "<option value='1130'>Special Needs (ADD/ADHD/etc..)</option>"}
+					          ${coachingCategory =='1140' ? "<option value='1140' selected>Test Prep(SAT/ACT/GMAT/LSAT/etc..)</option>" : "<option value='1140'>Test Prep(SAT/ACT/GMAT/LSAT/etc..)</option>"}
+					        </form:select>			    	
+						</td>
+					</c:if>
 					
-			      <td class="leftalign" ><br><label>Industry: </label><form:errors path="industryExperience" cssClass="error" /> <br>
+			      <td class="leftalign" ><label>Industry: </label><form:errors path="industryExperience" cssClass="error" /> <br>
 			      <!-- Find complete list from job categories in career builder -->
 			        <form:select size="1" path="industryExperience" >
 			          	<option selected  value="-1">All Industries</option>
@@ -124,11 +147,11 @@
 						<option value="107">Wood / Fibre / Paper</option>		
 					</form:select>
 			     </td>
-			     
+				  
 				</tr>
+				<%-- 
 				<tr>		
-
-				  <td class="leftalign" ><br><label>City (Not required for online coaching): </label><form:errors path="city" cssClass="error" /> <br>
+				  <td class="leftalign" ><label>City (Not required for online coaching): </label><form:errors path="city" cssClass="error" /> <br>
 				  <form:input size="35" path="city" /></td>
 				  
 				  <td class="leftalign" ><br><label>State/Prov. (Not required for online coaching):</label> <br> 
@@ -205,33 +228,37 @@
 								${userProfile.state =='YT' ? "<option value='YT' selected>YUKEN</option>" :  "<option value='YT' >YUKEN</option>"}
 						</form:select>					
 					</td>
-				  
-				  
+			    </tr>
+			    --%>
+				<tr>
+				      <td class="leftalign" ><label><br>Coach First Name: </label><form:errors path="coachFirstName" cssClass="error" /><br> 
+				        <form:input size="35" path="coachFirstName" /><br>&nbsp;</td>
+				      <td class="leftalign" ><label><br>Coach Last Name: </label><form:errors path="coachLastName" cssClass="error" /><br> 
+				        <form:input size="35" path="coachLastName" /><br>&nbsp;</td>
+				</tr>
+				
+			    <tr>
+				      <td class="leftalign" ><label>Preferred Coaching Type: </label><form:errors path="coachstyleonline" cssClass="error" /><br> 
+				            <form:radiobutton path="coachstyle" id="coachstyleinperson" value="coachstyleinperson" /> In-Person Tutoring
+				            <form:radiobutton path="coachstyle" id="coachstyleonline" value="coachstyleonline" /> Online Tutoring
+				      </td>
+				      <td class="leftalign" >
+						<div id='showzipecode' style='display:block'>
+						      <label>Zipcode: </label><form:errors path="zipcode" cssClass="error" /><br> 
+							<form:input size="10" path="zipcode" />
+						</div>
+					</td>
 			    </tr>
 			    
-				<tr>
-				      <td class="leftalign" ><br><label>First Name: </label><form:errors path="coachFirstName" cssClass="error" /><br> 
-				        <form:input size="35" path="coachFirstName" /></td>
-				      <td class="leftalign" ><br><label>Last Name: </label><form:errors path="coachLastName" cssClass="error" /><br> 
-				        <form:input size="35" path="coachLastName" /></td>
-				</tr>
-						
-				<%--
-				<tr>
-				  <td class="rightalign" >Company Experience: <form:errors path="companyExperience" cssClass="error" /> </td>
-				  <td class="leftalign"><form:input size="35" path="companyExperience" /></td>
-				</tr>
-				 --%>
-
 				<tr style="background-color: white">
 					<td colspan="4" style="text-align: left;">
 						<br>	<input type="submit" class="input-button" value="Start Your Search" />
 					</td>
 				</tr>
+				
 			  </tbody>
 			  </table>
 			   	
-			
 		<form:hidden path="coachingSubcategory" id="coachingSubcategory" value="-1"/>
+		<form:hidden path="industryExperience" id="industryExperience" value="-1"/>
 		</form:form>
-

@@ -34,8 +34,8 @@ import com.fervil.spring.careercoach.model.domain.UserProfile;
 import com.fervil.spring.careercoach.service.BlogCommentManager;
 import com.fervil.spring.careercoach.service.BlogManager;
 import com.fervil.spring.careercoach.service.CoachingCategoryManager;
-import com.fervil.spring.careercoach.service.CreateBlogPostValidator;
 import com.fervil.spring.careercoach.service.UserProfileManager;
+import com.fervil.spring.careercoach.service.validator.CreateBlogPostValidator;
 import com.fervil.spring.careercoach.util.Constants;
 import com.fervil.spring.careercoach.util.SystemUtil;
 

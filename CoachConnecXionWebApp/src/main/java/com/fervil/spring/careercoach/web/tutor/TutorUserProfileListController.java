@@ -1,32 +1,16 @@
 package com.fervil.spring.careercoach.web.tutor;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.security.cert.X509Certificate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
 import javax.annotation.Resource;
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
-import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,21 +21,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fervil.spring.careercoach.model.domain.CoachSelection;
 import com.fervil.spring.careercoach.model.domain.CoachingRequest;
-import com.fervil.spring.careercoach.model.domain.Currency;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
 import com.fervil.spring.careercoach.model.domain.Zipcode;
 import com.fervil.spring.careercoach.model.domain.ZipcodeContainer;
 import com.fervil.spring.careercoach.service.JobRatingService;
-import com.fervil.spring.careercoach.service.SelectedCoachesValidator;
 import com.fervil.spring.careercoach.service.UserProfileManager;
+import com.fervil.spring.careercoach.service.validator.SelectedCoachesValidator;
 import com.fervil.spring.careercoach.util.Constants;
-import com.google.gson.Gson;
-
-import org.springframework.web.client.RestTemplate;
 
 //@RequestMapping("/public/userprofileList")
 @Controller
@@ -219,17 +200,24 @@ public class TutorUserProfileListController  {
 					//If we cannot find any tutors in your area, then goahead and display online tutors
 					tmpcoachstyleinperson = "";   //Negative 1 is the default value when nothing is selected................
 				}
-
 			 
 			List<HashMap> userProfiles = userProfileManager.getUserProfilesForTutors(
 					coachingCategory, coachingSubcategory, industryExperience,tmpcompanyExperience, 
 					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber, 
 					gradelevel, maxrate, subject, zipcodes, tmpcoachstyleinperson, tmpcoachstyleonline, sort);
 
+/*			
 			int userprofilecount = userProfileManager.findFilteredUserProfilesCount(
 					coachingCategory, coachingSubcategory, industryExperience,tmpcompanyExperience, 
 					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber);
+*/
 			
+			
+			int userprofilecount = userProfileManager.findFilteredUserProfilesCountForTutors(
+					coachingCategory, coachingSubcategory, industryExperience,tmpcompanyExperience, 
+					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber, 
+					gradelevel, maxrate, subject, zipcodes, tmpcoachstyleinperson, tmpcoachstyleonline, sort);
+
 			ModelAndView mav = new ModelAndView ();
 			mav.setViewName ("tutor/public/userprofile/userprofileList");
 			mav.addObject("userProfiles", userProfiles);

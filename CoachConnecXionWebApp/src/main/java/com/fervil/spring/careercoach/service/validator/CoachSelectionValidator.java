@@ -1,4 +1,4 @@
-package com.fervil.spring.careercoach.service;
+package com.fervil.spring.careercoach.service.validator;
 		
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +9,7 @@ import org.springframework.validation.Validator;
 
 import com.fervil.spring.careercoach.model.domain.CoachSelection;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
+import com.fervil.spring.careercoach.util.Constants;
 
 @Component
 public class CoachSelectionValidator implements Validator {
@@ -22,9 +23,15 @@ public class CoachSelectionValidator implements Validator {
     	String fieldisRequired = " : This field is required.";
 
         CoachSelection coachSelection = (CoachSelection) target;
-        if (coachSelection.getCoachingCategory() <= 0) {
-			errors.rejectValue("coachingCategory", "invalid.coachingCategory", " : Must be selected.");
+        if (coachSelection.getCoachstyle().equals(Constants.COACH_STYLE_IN_PERSON) && (coachSelection.getZipcode() == null || coachSelection.getZipcode().trim().equals("") )){
+			errors.rejectValue("zipcode", "invalid.zipcode", " Zipcode is required for In-Person Coaching.");
         }
+
+        /*
+        if (coachSelection.getCoachingCategory() <= 0) {
+			errors.rejectValue("coachingCategory", "invalid.coachingCategory", " : A category must be selected.");
+        }
+        */
     }
 }
 

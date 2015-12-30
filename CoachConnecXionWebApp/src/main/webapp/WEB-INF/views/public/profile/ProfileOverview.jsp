@@ -267,6 +267,9 @@ String finalPath = request.getContextPath();
 							</table>
 
 							<table border="1">
+							<tr> <td class="leftalign"><b>Coaching Type:&nbsp;</b> <c:if test="${profileInfo.getCoachstyleinperson() == 1}" > + In Person</c:if> <c:if test="${profileInfo.getCoachstyleonline() == 1}" > + Online</c:if></td>
+							</tr>
+							
 							<tr> <td class="leftalign"><b>City:&nbsp;</b> ${profileInfo.getCity()} </td> <td class="leftalign"><b>State:&nbsp;</b> </td> <td class="leftalign">${profileInfo.getState()} </td>
 							</tr>
 							<tr>

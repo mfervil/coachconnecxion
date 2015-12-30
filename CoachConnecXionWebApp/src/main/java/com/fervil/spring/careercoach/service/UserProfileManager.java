@@ -16,18 +16,46 @@ public interface UserProfileManager  extends Serializable {
     @NotNull
 	public List<UserProfile> getUserProfiles() throws Exception;
 
+//Used for city and state searches    
     @NotNull
 	public int findFilteredUserProfilesCount(int coachingCategory, 
 			int coachingSubcategory, int industryExperience, 
 			String companyExperience, String coachFirstName, 
 			String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception;
+
+
+    //Added this area for the zipcode functionality
+    @NotNull
+	public int findFilteredUserProfilesCount(int coachingCategory, 
+			int coachingSubcategory, int industryExperience, 
+			String companyExperience, String coachFirstName, 
+			String coachLastName, String city, String state, int pageSize, int pageNumber,
+			String zipcodes, String tmpcoachstyleinperson, String tmpcoachstyleonline, String sort) throws Exception; //Added 12/17/15  
+
+    //Added this area for the zipcode functionality
+    @NotNull
+	public int findFilteredUserProfilesCountForTutors(int coachingCategory, 
+			int coachingSubcategory, int industryExperience, 
+			String companyExperience, String coachFirstName, 
+			String coachLastName, String city, String state, int pageSize, int pageNumber,
+			String gradelevel, int maxrate, String subject, String zipcodes, 
+			String tmpcoachstyleinperson, String tmpcoachstyleonline, String sort) throws Exception;
     
+    //Added this area for the zipcode functionality
     @NotNull
 	public List<HashMap> getUserProfiles(int coachingCategory, 
 			int coachingSubcategory, int industryExperience, 
 			String companyExperience, String coachFirstName, 
-			String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception;
+			String coachLastName, String city, String state, int pageSize, int pageNumber,
+			String zipcodes, String tmpcoachstyleinperson, String tmpcoachstyleonline, String sort) throws Exception; //Added 12/17/15  
 
+    //Used for city and state searches
+    @NotNull
+	public List<HashMap> getUserProfiles(int coachingCategory, 
+			int coachingSubcategory, int industryExperience, 
+			String companyExperience, String coachFirstName, 
+			String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception;  
+    
     @NotNull
 	public List<HashMap> getUserProfilesForTutors(int coachingCategory, 
 			int coachingSubcategory, int industryExperience, 
@@ -45,4 +73,7 @@ public interface UserProfileManager  extends Serializable {
     
     public List<HashMap> getUserProfiles(int category, String course, 
     		int coachstyleinperson, int coachstyleonline,  String zipcodes) throws Exception;
+    
+    public List<HashMap> getUserProfilesOfCoachesToContact(int category, int coachstyleinperson, int coachstyleonline,  String zipcodes) throws Exception;
+    
 }

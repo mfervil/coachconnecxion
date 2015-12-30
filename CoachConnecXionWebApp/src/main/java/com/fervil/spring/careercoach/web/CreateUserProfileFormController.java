@@ -1,12 +1,9 @@
 package com.fervil.spring.careercoach.web;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.IOException;
-import java.net.URLDecoder;
 import java.sql.Blob;
 import java.util.Date;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
@@ -31,24 +28,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
-import ua.com.bitlab.springsecuritydemo.services.UsersManagerServiceImpl;
 import ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils;
 
-import com.fervil.spring.careercoach.model.domain.UserProfile;
-import com.fervil.spring.careercoach.service.CreateUserProfileValidator;
-import com.fervil.spring.careercoach.service.UserProfileManager;
-import com.fervil.spring.careercoach.util.Constants;
-import com.fervil.spring.careercoach.util.SystemUtil;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.PropertiesCredentials;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-
-import java.util.UUID;
+import com.fervil.spring.careercoach.model.domain.UserProfile;
+import com.fervil.spring.careercoach.service.UserProfileManager;
+import com.fervil.spring.careercoach.service.validator.CreateUserProfileValidator;
+import com.fervil.spring.careercoach.util.Constants;
+import com.fervil.spring.careercoach.util.SystemUtil;
 
 @Transactional
 @Controller 

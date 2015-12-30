@@ -1,12 +1,8 @@
 package com.fervil.spring.careercoach.web;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.IOException;
-import java.net.URLDecoder;
-import java.sql.Blob;
 import java.util.Date;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
@@ -14,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.Hibernate;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,29 +21,23 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
-import ua.com.bitlab.springsecuritydemo.services.UsersManagerServiceImpl;
 import ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils;
 
-import com.fervil.spring.careercoach.model.domain.UserProfile;
-import com.fervil.spring.careercoach.service.CreateCustomerUserProfileValidator;
-import com.fervil.spring.careercoach.service.CreateUserProfileValidator;
-import com.fervil.spring.careercoach.service.UserProfileManager;
-import com.fervil.spring.careercoach.util.Constants;
-import com.fervil.spring.careercoach.util.SystemUtil;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.PropertiesCredentials;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-
-import java.util.UUID;
+import com.fervil.spring.careercoach.model.domain.UserProfile;
+import com.fervil.spring.careercoach.service.UserProfileManager;
+import com.fervil.spring.careercoach.service.validator.CreateCustomerUserProfileValidator;
+import com.fervil.spring.careercoach.util.Constants;
+import com.fervil.spring.careercoach.util.SystemUtil;
 
 @Transactional
 @Controller       

@@ -19,6 +19,15 @@
 
 	<%@ include file="/WEB-INF/views/common/header_no_side_head.jsp" %>
 
+<script type="text/javascript">	
+	$(document).ready(function(){
+		$("#sortcoachlist").change(function() {
+			window.location.href=$( "#sortlink" ).val() + /sortcoachlist/ + $( "#sortcoachlist" ).val();
+		});
+	});
+</script>
+
+
 </head>
 <body >
 
@@ -40,20 +49,26 @@
 					<thead>
 						<tr>
 						<th>LIST OF COACHES </th>
+						<th style="text-align: left;">
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SORT LIST BY: 
+							<select  id="sortcoachlist" name="sortcoachlist" >
+					          ${sortcoachlist =='1' ? "<option value='1' selected>Default: Best Match</option>" : "<option value='1'>Default: Best Match</option>"}
+					          ${sortcoachlist =='2' ? "<option value='2' selected>Price: Highest</option>" : "<option value='2'>Price: Highest</option>"}
+					          ${sortcoachlist =='3' ? "<option value='3' selected>Price: Lowest</option>" : "<option value='3'>Price: Lowest</option>"}
+					          ${sortcoachlist =='4' ? "<option value='4' selected>Rating: Highest</option>" : "<option value='4'>Rating: Highest</option>"}
+							</select>
+						</th>
 						<th style="position: absolute; right:0px;"> 
 							Page: ${pageNumber} of ${totalpages} &nbsp;&nbsp;
 							<c:if test="${pageNumber > 1}" >
-								<%-- <a style="color:#0000FF" href="${pageContext.request.contextPath}/public/userprofileList?coachingCategory=${coachingCategory}&coachingSubcategory=${coachingSubcategory}&industryExperience=${industryExperience}&companyExperience=${companyExperience}&coachFirstName=${coachFirstName}&coachLastName=${coachLastName}&city=${city}&state=${state}&pageNumber=${pageNumber - 1}&userprofilecount=${userprofilecount}&pagesize=${pagesize}"> &lt;&lt; PREV PAGE </a> &nbsp;&nbsp;&nbsp;&nbsp;
-								--%>
-								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/coachprofileListAdvance/coachingCategory/${coachingCategory}/coachingSubcategory/${coachingSubcategory}/industryExperience/${industryExperience}/companyExperience/${companyExperience}/coachFirstName/${coachFirstName}/coachLastName/${coachLastName}/city/${city}/state/${state}/pageNumber/${pageNumber - 1}"> &lt;&lt; PREV PAGE </a> &nbsp;&nbsp;&nbsp;&nbsp;
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/coachprofileListAdvance/coachingCategory/${coachingCategory}/coachingSubcategory/${coachingSubcategory}/industryExperience/${industryExperience}/companyExperience/${companyExperience}/coachFirstName/${coachFirstName}/coachLastName/${coachLastName}/city/${city}/state/${state}/pageNumber/${pageNumber - 1}/zipcode/${zipcode}/coachstyleinperson/${coachstyleinperson}/coachstyleonline/${coachstyleonline}/sortcoachlist/${sortcoachlist}"> &lt;&lt; PREVIOUS PAGE </a>&nbsp;&nbsp;&nbsp;&nbsp;
 							</c:if>
 	
 							<c:if test="${userprofilecount > (pageNumber * pagesize) }" >
-								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/coachprofileListAdvance/coachingCategory/${coachingCategory}/coachingSubcategory/${coachingSubcategory}/industryExperience/${industryExperience}/companyExperience/${companyExperience}/coachFirstName/${coachFirstName}/coachLastName/${coachLastName}/city/${city}/state/${state}/pageNumber/${pageNumber + 1}"> NEXT PAGE &gt;&gt; </a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/coachprofileListAdvance/coachingCategory/${coachingCategory}/coachingSubcategory/${coachingSubcategory}/industryExperience/${industryExperience}/companyExperience/${companyExperience}/coachFirstName/${coachFirstName}/coachLastName/${coachLastName}/city/${city}/state/${state}/pageNumber/${pageNumber + 1}/zipcode/${zipcode}/coachstyleinperson/${coachstyleinperson}/coachstyleonline/${coachstyleonline}/sortcoachlist/${sortcoachlist}"> NEXT PAGE &gt;&gt; </a>&nbsp;&nbsp;&nbsp;&nbsp;
 							</c:if>
 						</th> 
 
-						<!--  <th>Payment Terms</th>  -->
 						</tr>
 					</thead>
 					<%
@@ -101,6 +116,7 @@
 								
 									<td class="leftalign" width="100%"> <br> 
 										 <b> &nbsp;&nbsp;<a  rel="nofollow" href="${pageContext.request.contextPath}/public/profile?profileId=${userProfileDetails.user_profile_id}"><font color="blue" style="font-size:16px">${userProfileDetails.display_name}</font></a></b> &nbsp;&nbsp;<%@ include file="/WEB-INF/views/common/average_rating.jsp" %>	
+										 <br><br> <b>Coaching Type:&nbsp;</b>  <c:if test="${userProfileDetails.coachstyleinperson == 1}" > + In Person</c:if> <c:if test="${userProfileDetails.coachstyleonline == 1}" > + Online</c:if></p>
 										 <br> <b>&nbsp;&nbsp;City:</b> ${userProfileDetails.city} || ${userProfileDetails.profilepicturestring} &nbsp;&nbsp;<b>State/Province: </b> ${userProfileDetails.state} 
 									     <br> <!-- <b>&nbsp;&nbsp;# Clients:</b> ${userProfileDetails.num_clients}  
 									      &nbsp;&nbsp;<b> Packages from:</b>&nbsp;$${userProfileDetails.packages_from} --> 
@@ -125,11 +141,11 @@
 						<th style="position: absolute; right:0px;"> 
 							Page: ${pageNumber} of ${totalpages} &nbsp;&nbsp;
 							<c:if test="${pageNumber > 1}" >
-								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/coachprofileListAdvance/coachingCategory/${coachingCategory}/coachingSubcategory/${coachingSubcategory}/industryExperience/${industryExperience}/companyExperience/${companyExperience}/coachFirstName/${coachFirstName}/coachLastName/${coachLastName}/city/${city}/state/${state}/pageNumber/${pageNumber - 1}"> &lt;&lt; PREV PAGE </a> &nbsp;&nbsp;&nbsp;&nbsp;
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/coachprofileListAdvance/coachingCategory/${coachingCategory}/coachingSubcategory/${coachingSubcategory}/industryExperience/${industryExperience}/companyExperience/${companyExperience}/coachFirstName/${coachFirstName}/coachLastName/${coachLastName}/city/${city}/state/${state}/pageNumber/${pageNumber - 1}/zipcode/${zipcode}/coachstyleinperson/${coachstyleinperson}/coachstyleonline/${coachstyleonline}/sortcoachlist/${sortcoachlist}"> &lt;&lt; PREVIOUS PAGE </a>&nbsp;&nbsp;&nbsp;&nbsp;
 							</c:if>
 	
 							<c:if test="${userprofilecount > (pageNumber * pagesize) }" >
-								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/coachprofileListAdvance/coachingCategory/${coachingCategory}/coachingSubcategory/${coachingSubcategory}/industryExperience/${industryExperience}/companyExperience/${companyExperience}/coachFirstName/${coachFirstName}/coachLastName/${coachLastName}/city/${city}/state/${state}/pageNumber/${pageNumber + 1}"> NEXT PAGE &gt;&gt; </a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a style="color:#0000FF" href="${pageContext.request.contextPath}/public/coachprofileListAdvance/coachingCategory/${coachingCategory}/coachingSubcategory/${coachingSubcategory}/industryExperience/${industryExperience}/companyExperience/${companyExperience}/coachFirstName/${coachFirstName}/coachLastName/${coachLastName}/city/${city}/state/${state}/pageNumber/${pageNumber + 1}/zipcode/${zipcode}/coachstyleinperson/${coachstyleinperson}/coachstyleonline/${coachstyleonline}/sortcoachlist/${sortcoachlist}"> NEXT PAGE &gt;&gt; </a>&nbsp;&nbsp;&nbsp;&nbsp;
 							</c:if>
 						</th> 
 			</table>
@@ -149,6 +165,8 @@
 		
 		<%-- <form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/> --%>
 		<input type="hidden" name="coachingCategory" value="${coachingCategory}">
+		<input type="hidden" id="sortlink" name="sortlink" value="${pageContext.request.contextPath}/public/coachprofileListAdvance/coachingCategory/${coachingCategory}/coachingSubcategory/${coachingSubcategory}/industryExperience/${industryExperience}/companyExperience/${companyExperience}/coachFirstName/${coachFirstName}/coachLastName/${coachLastName}/city/${city}/state/${state}/pageNumber/1/zipcode/${zipcode}/coachstyleinperson/${coachstyleinperson}/coachstyleonline/${coachstyleonline}">
+		
 			
 	</form:form>
 </section>

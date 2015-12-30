@@ -1,28 +1,31 @@
 package com.fervil.spring.careercoach.web;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-
-
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fervil.spring.careercoach.model.domain.CoachSelection;
+import com.fervil.spring.careercoach.service.validator.CoachSelectionValidator;
 import com.fervil.spring.careercoach.util.Constants;
 
 @Controller
 public class LandingPagesController {
     private static final Logger log = LoggerFactory.getLogger(LandingPagesController.class);
 	
+		@Resource(name = "coachSelectionValidator")
+		private CoachSelectionValidator validator;
+    
+    
 		@RequestMapping(value = "/public/landing-business-coaches", method = RequestMethod.GET)
 		public ModelAndView businessCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
@@ -50,8 +53,9 @@ public class LandingPagesController {
 			
 			try{
 
-					ModelAndView mav = new ModelAndView ();
-					setMavSession(mav, session, webRequest);
+					//ModelAndView mav = new ModelAndView ();
+					//setMavSession(mav, session, webRequest);
+					ModelAndView mav = getMAV(webRequest, "/public/landing-business-coaches", coachSelection, result, session);
 
 					/*
 					mav.setViewName ("redirect:userprofileList?coachingcategory=" + webRequest.getParameter("coachingCategory") );
@@ -110,8 +114,10 @@ public class LandingPagesController {
 			
 			try{
 
-					ModelAndView mav = new ModelAndView ();
-					setMavSession(mav, session, webRequest);
+					//ModelAndView mav = new ModelAndView ();
+					//setMavSession(mav, session, webRequest);
+				
+					ModelAndView mav = getMAV(webRequest, "/public/landing-fitness-coaches", coachSelection, result, session);
 					
 					return mav;
 			} catch (Exception e) {
@@ -149,8 +155,10 @@ public class LandingPagesController {
 			
 			try{
 
-					ModelAndView mav = new ModelAndView ();
-					setMavSession(mav, session, webRequest);
+					//ModelAndView mav = new ModelAndView ();
+					//setMavSession(mav, session, webRequest);
+					
+					ModelAndView mav = getMAV(webRequest, "/public/landing-career-coaches", coachSelection, result, session);
 					
 					return mav;
 			} catch (Exception e) {
@@ -187,8 +195,10 @@ public class LandingPagesController {
 			
 			try{
 
-					ModelAndView mav = new ModelAndView ();
-					setMavSession(mav, session, webRequest);
+					//ModelAndView mav = new ModelAndView ();
+					//setMavSession(mav, session, webRequest);
+
+					ModelAndView mav = getMAV(webRequest, "/public/landing-nutrition-coaches", coachSelection, result, session);
 					
 					return mav;
 			} catch (Exception e) {
@@ -225,8 +235,9 @@ public class LandingPagesController {
 			
 			try{
 
-					ModelAndView mav = new ModelAndView ();
-					setMavSession(mav, session, webRequest);
+					//ModelAndView mav = new ModelAndView ();
+					//setMavSession(mav, session, webRequest);
+					ModelAndView mav = getMAV(webRequest, "/public/landing-family-coaches", coachSelection, result, session);
 					
 					return mav;
 			} catch (Exception e) {
@@ -262,8 +273,9 @@ public class LandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
-					setMavSession(mav, session, webRequest);
+					//ModelAndView mav = new ModelAndView ();
+					//setMavSession(mav, session, webRequest);
+					ModelAndView mav = getMAV(webRequest, "/public/landing-finance-money-coaches", coachSelection, result, session);
 					
 					return mav;
 			} catch (Exception e) {
@@ -299,8 +311,9 @@ public class LandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
-					setMavSession(mav, session, webRequest);
+					//ModelAndView mav = new ModelAndView ();
+					//setMavSession(mav, session, webRequest);
+					ModelAndView mav = getMAV(webRequest, "/public/landing-life-coaches", coachSelection, result, session);
 					
 					return mav;
 			} catch (Exception e) {
@@ -335,8 +348,9 @@ public class LandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
-					setMavSession(mav, session, webRequest);
+					//ModelAndView mav = new ModelAndView ();
+					//setMavSession(mav, session, webRequest);
+					ModelAndView mav = getMAV(webRequest, "/public/landing-relationship-coaches", coachSelection, result, session);
 					
 					return mav;
 			} catch (Exception e) {
@@ -371,8 +385,11 @@ public class LandingPagesController {
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
-					setMavSession(mav, session, webRequest);
+					//ModelAndView mav = new ModelAndView ();
+					//setMavSession(mav, session, webRequest);
+
+					ModelAndView mav = getMAV(webRequest, "/public/landing-corporate-coaches", coachSelection, result, session);
+
 					
 					return mav;
 			} catch (Exception e) {
@@ -385,7 +402,7 @@ public class LandingPagesController {
 
 		
 		@RequestMapping(value = "/public/landing-general-personal-coaches", method = RequestMethod.GET)
-		public ModelAndView genralCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
+		public ModelAndView genralCoachesProcess(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
 
 			log.debug("Received request to show corporate coaches");
 			
@@ -401,15 +418,18 @@ public class LandingPagesController {
 			return mav;
 		}
 		
+		
+		
 		@RequestMapping(value = "/public/landing-general-personal-coaches", method = RequestMethod.POST)
-		public ModelAndView submitGeneralForm( 
+		public ModelAndView genralCoachesProcess( 
 				@ModelAttribute("coachSelection") CoachSelection coachSelection,
 				BindingResult result, SessionStatus status, org.springframework.web.context.request.WebRequest webRequest, 
 				Model model, HttpSession session) {
 			
 			try{
-					ModelAndView mav = new ModelAndView ();
-					setMavSession(mav, session, webRequest);
+					
+					ModelAndView mav = getMAV(webRequest, "public/landingpages/general-personal-coaches", coachSelection, result, session);
+					
 					
 					return mav;
 			} catch (Exception e) {
@@ -421,23 +441,7 @@ public class LandingPagesController {
 		}
 		
 		private void setMavSession(ModelAndView mav, HttpSession session, org.springframework.web.context.request.WebRequest webRequest) throws Exception{
-			
-			//Update with new URL 5/31/2015
-			//mav.setViewName ("redirect:userprofileList?coachingcategory=" + webRequest.getParameter("coachingCategory") );
 
-			/*
-			mav.setViewName ("redirect:coachprofileListAdvance/coachingCategory/" + webRequest.getParameter("coachingCategory") + 
-					"/coachingSubcategory/" + Constants.DEFAULT_URL_NUMBER + 
-					"/industryExperience/" + Constants.DEFAULT_URL_NUMBER +
-					"/companyExperience/"  + Constants.DEFAULT_URL_STRING + 
-					"/coachFirstName/"  + Constants.DEFAULT_URL_STRING + 
-					"/coachLastName/"  + Constants.DEFAULT_URL_STRING + 
-					"/city/"  + Constants.DEFAULT_URL_STRING + 
-					"/state/"  + Constants.DEFAULT_URL_STRING + 
-					"/pageNumber/1" 
-			);
-			*/
-			
 			mav.setViewName ("redirect:coachprofileListAdvance/coachingCategory/" + webRequest.getParameter("coachingCategory") + 
 					"/coachingSubcategory/" + webRequest.getParameter("coachingSubcategory") + 
 					"/industryExperience/" + webRequest.getParameter("industryExperience") +
@@ -446,24 +450,13 @@ public class LandingPagesController {
 					"/coachLastName/"  + (webRequest.getParameter("coachLastName")  == null || webRequest.getParameter("coachLastName").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("coachLastName") ) + 
 					"/city/"  + (webRequest.getParameter("city")  == null || webRequest.getParameter("city").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("city") ) + 
 					"/state/"  + (webRequest.getParameter("state")  == null || webRequest.getParameter("state").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("state") ) + 
-					"/pageNumber/1" 
+					"/pageNumber/1"  +  //12/17/2015 -- Add zipcode area search and sort functionalities
+					"/zipcode/"  + (webRequest.getParameter("zipcode")  == null || webRequest.getParameter("zipcode").trim().equals("")?Constants.DEFAULT_URL_STRING:webRequest.getParameter("zipcode") ) +  
+					"/coachstyleinperson/"  + (webRequest.getParameter("coachstyle").equalsIgnoreCase("coachstyleinperson")?"1":Constants.DEFAULT_URL_STRING ) + 
+					"/coachstyleonline/"  + (webRequest.getParameter("coachstyle").equalsIgnoreCase("coachstyleonline")?"1":Constants.DEFAULT_URL_STRING ) + 
+					"/sortcoachlist/-1" 
 			);
 
-			
-			
-			//mav.addObject("userProfiles", userProfiles);
-			/* REMOVING SINCE WE DO NOT WANT TO PASS THESE ATTRIBUTES IN THE URL
-			mav.addObject("coachingCategory", webRequest.getParameter("coachingCategory"));
-			mav.addObject("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
-			mav.addObject("industryExperience", webRequest.getParameter("industryExperience"));
-			mav.addObject("companyExperience", webRequest.getParameter("companyExperience"));
-			mav.addObject("coachFirstName", webRequest.getParameter("coachFirstName"));
-			mav.addObject("coachLastName", webRequest.getParameter("coachLastName"));
-			mav.addObject("state", webRequest.getParameter("state"));
-			mav.addObject("city", webRequest.getParameter("city"));
-			mav.addObject("coachingcategoryname", webRequest.getParameter("coachingcategoryname"));
-			*/
-			
 			session.setAttribute("coachingCategory", webRequest.getParameter("coachingCategory"));
 			session.setAttribute("coachingSubcategory", webRequest.getParameter("coachingSubcategory"));
 			session.setAttribute("industryExperience", webRequest.getParameter("industryExperience"));
@@ -473,9 +466,39 @@ public class LandingPagesController {
 			session.setAttribute("state", webRequest.getParameter("state"));
 			session.setAttribute("city", webRequest.getParameter("city"));
 			session.setAttribute("coachingcategoryname", webRequest.getParameter("coachingcategoryname"));
+			session.setAttribute("zipcode", webRequest.getParameter("zipcode")); //12/17/2015  zipcode area search and sorting capabilities
+			session.setAttribute("coachstyleinperson", webRequest.getParameter("coachstyleinperson"));
+			session.setAttribute("coachstyleonline", webRequest.getParameter("coachstyleonline"));
+			session.setAttribute("sortcoachlist", "-1");
 			
 		}
 		
+
+		ModelAndView getMAV(org.springframework.web.context.request.WebRequest webRequest, String viewName, CoachSelection coachSelection, BindingResult result, HttpSession session) throws Exception
+		{
+			String coachingCategory = webRequest.getParameter("coachingCategory");
+			String coachingcategoryname = webRequest.getParameter("coachingcategoryname");
+			
+			ModelAndView mav = new ModelAndView ();
+			
+    		mav.addObject("coachSelection", coachSelection);
+
+    		//Validation logic goes here
+			validator.validate(coachSelection, result);
+    		if (result.hasErrors()){
+	    		mav.setViewName (viewName);
+
+	    		if (coachingCategory != null){
+		    		mav.addObject("coachingCategory", coachingCategory);
+		    		mav.addObject("coachingcategoryname", coachingcategoryname);
+	    		}
+	    		
+				return mav;
+			}
+			setMavSession(mav, session, webRequest);
+			
+			return mav;
+		}
 
 		
 		

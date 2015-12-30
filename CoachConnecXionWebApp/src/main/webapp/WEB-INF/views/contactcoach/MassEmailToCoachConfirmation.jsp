@@ -232,6 +232,7 @@ text-align:center;
 				            	<form:radiobutton disabled="true" path="coachstylepreference" id="1" value="1"/> In person only
 	                 			<form:radiobutton disabled="true" path="coachstylepreference" id="2" value="2"/> Online only
 	                 			<form:radiobutton disabled="true" path="coachstylepreference" id="3" value="3"/> In Person or Online
+				            	
 				    		</td>
 						</tr>
 						<tr><td>&nbsp;</td><td>&nbsp;</td></tr>

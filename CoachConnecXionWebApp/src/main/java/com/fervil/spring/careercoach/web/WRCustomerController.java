@@ -8,7 +8,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.Resource;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,13 +39,7 @@ import com.connection.model.Message;
 import com.connection.model.Usermessage;
 import com.connection.service.CustomerService;
 import com.connection.service.MessageService;
-import com.fervil.spring.careercoach.model.domain.PaymentInformation;
-import com.fervil.spring.careercoach.model.domain.UserProfile;
-import com.fervil.spring.careercoach.service.PaymentInformationManager;
-import com.fervil.spring.careercoach.service.SelectedCoachesValidator;
-import com.fervil.spring.careercoach.service.UserProfileManager;
 import com.fervil.spring.careercoach.util.Constants;
-import com.fervil.spring.careercoach.util.SystemUtil;
 
 @Scope("session")
 @Controller

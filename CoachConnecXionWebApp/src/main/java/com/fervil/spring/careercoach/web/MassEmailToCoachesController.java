@@ -1,4 +1,4 @@
-package com.fervil.spring.careercoach.web.tutor;
+package com.fervil.spring.careercoach.web;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,25 +23,25 @@ import org.springframework.web.client.RestTemplate;
 
 import ua.com.bitlab.springsecuritydemo.services.SmtpMailService;
 
-import com.fervil.spring.careercoach.model.domain.Contacttutor;
+import com.fervil.spring.careercoach.model.domain.ContactCoach;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
 import com.fervil.spring.careercoach.model.domain.Zipcode;
 import com.fervil.spring.careercoach.model.domain.ZipcodeContainer;
-import com.fervil.spring.careercoach.service.ContactTutorManager;
+import com.fervil.spring.careercoach.service.ContactCoachManager;
 import com.fervil.spring.careercoach.service.UserProfileManager;
-import com.fervil.spring.careercoach.service.validator.TutorMassTutorEmailValidator;
+import com.fervil.spring.careercoach.service.validator.MassCoachEmailValidator;
 import com.fervil.spring.careercoach.util.Constants;
 import com.fervil.spring.careercoach.util.SystemUtil;
 
 @Controller		  
-public class TutorMassEmailToTutorController {
-    private static final Logger log = LoggerFactory.getLogger(TutorMassEmailToTutorController.class);
+public class MassEmailToCoachesController {
+    private static final Logger log = LoggerFactory.getLogger(MassEmailToCoachesController.class);
     
-	@Resource(name = "massTutorContactValidator")
-	private TutorMassTutorEmailValidator validator;
+	@Resource(name = "masscoachContactValidator")
+	private MassCoachEmailValidator validator;
 	
-	@Resource(name = "contactTutorManager")
-	private ContactTutorManager contactTutorManager;
+	@Resource(name = "contactCoachManager")
+	private ContactCoachManager contactcoachManager;
 	
 	@Resource(name = "userProfileManager")
 	private UserProfileManager userProfileManager;
@@ -49,12 +49,12 @@ public class TutorMassEmailToTutorController {
     @Autowired
     private SmtpMailService mailService;
     
-    //private static final String CONTACT_STUDENT_DEV_ENV = "href='http://localhost:8080/CoachConnecXionWebApp-3/tutor/contact/contactstudent?ctt1=";
-    //private static final String CONTACT_STUDENT_PROD_ENV = "href='http://www.coachconnecxion.com/tutor/contact/contactstudent?ctt1=";
+    //private static final String CONTACT_STUDENT_DEV_ENV = "href='http://localhost:8080/CoachConnecXionWebApp-3/coach/contact/contactstudent?ctt1=";
+    //private static final String CONTACT_STUDENT_PROD_ENV = "href='http://www.coachconnecxion.com/coach/contact/contactstudent?ctt1=";
 	
 
-@RequestMapping(value = "/tutor/contact/mass-email-to-tutors", method = RequestMethod.GET)
-public String getMassEmailToTutors(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
+@RequestMapping(value = "/coach/contact/mass-email-to-coachs", method = RequestMethod.GET)
+public String getMassEmailTocoachs(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 
 	//Map<String, Object> myModel = new HashMap<String, Object>();
 	try{	
@@ -62,7 +62,7 @@ public String getMassEmailToTutors(HttpServletRequest request, HttpServletRespon
 		
 		String availability = " Monday: 3PM - 9PM \r Tuesday: 3PM - 9PM \r Wednesday: 3PM - 9PM \r Thursday: 3PM - 9PM \r Friday: 3PM - 9PM \r Saturday: Not Available \r Sunday: Not Available \r";
 		
-		Contacttutor contacttutor = new Contacttutor();
+		ContactCoach contactcoach = new ContactCoach();
 		
 		/*
 		if (userProfile.getAvailability() == null || userProfile.getAvailability().trim().equalsIgnoreCase("") ) {
@@ -73,134 +73,136 @@ public String getMassEmailToTutors(HttpServletRequest request, HttpServletRespon
 		Long profileId = SystemUtil.getUserProfileId(request, userProfileManager);
 		UserProfile userprfl = userProfileManager.findById(profileId.toString());	
 		
-		contacttutor.setStudentemail(userprfl.getEmail());
-		contacttutor.setStudentfirstname(userprfl.getFirstname());
-		contacttutor.setAvailability(availability);
-		contacttutor.setOverview(" ");
+		contactcoach.setStudentemail(userprfl.getEmail());
+		contactcoach.setStudentfirstname(userprfl.getFirstname());
+		contactcoach.setAvailability(availability);
+		contactcoach.setOverview(" ");
 		String now = (new java.util.Date()).toString();
-		model.addAttribute("contacttutor", contacttutor);
+		model.addAttribute("contactcoach", contactcoach);
 		model.addAttribute("now", now);
 		
-		return "tutor/contacttutor/MassEmailToTutors"; 
+		return "coach/contactcoach/MassEmailTocoachs"; 
 
 /*		
-		myModel.put("contacttutor", new Contacttutor());
+		myModel.put("contactcoach", new Contactcoach());
         myModel.put("now", now);
-		String navPage = "tutor/contacttutor/MassEmailToTutors";
+		String navPage = "coach/contactcoach/MassEmailTocoachs";
         return new ModelAndView(navPage, "model", myModel);
 */
 	} catch (Exception e) {
         String msg = "The request failed. Error " + e;
         log.error(msg, e);
 		model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
-        return "tutor/public/common/error/errorpage";
+        return "coach/public/common/error/errorpage";
 	}	
 }	
 
-@RequestMapping(value = "/tutor/contact/mass-email-to-tutors", method = RequestMethod.POST)
-public String postEmailToTutor(HttpServletRequest request, HttpServletResponse response, Model model,
-		@ModelAttribute("contacttutor") Contacttutor contactTutor, BindingResult result) {
+@RequestMapping(value = "/coach/contact/mass-email-to-coachs", method = RequestMethod.POST)
+public String postEmailTocoach(HttpServletRequest request, HttpServletResponse response, Model model,
+		@ModelAttribute("contactcoach") ContactCoach contactcoach, BindingResult result) {
 
-		validator.validate(contactTutor, result);
+		validator.validate(contactcoach, result);
 
 		try {
 		
 	        if (result.hasErrors()) {
-	    		model.addAttribute("contacttutor", contactTutor);
-				return "tutor/contacttutor/MassEmailToTutors";
+	    		model.addAttribute("contactcoach", contactcoach);
+				return "coach/contactcoach/MassEmailTocoachs";
 			} else {
 
 				//long profileId = SystemUtil.getUserProfileId(request, userProfileManager);
-				//contactTutor.setUserprofileid(profileId);
-				//contactTutorManager.storeContactTutor(contactTutor);
+				//contactcoach.setUserprofileid(profileId);
+				//contactcoachManager.storeContactcoach(contactcoach);
 				
-				return "tutor/contacttutor/MassEmailToTutorsConfirmation";
+				return "coach/contactcoach/MassEmailTocoachsConfirmation";
 			}
 		
 		} catch (Exception e) {
             String msg = "Failed to create user. Error " + e;
             log.error(msg, e);
 			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
-			return "tutor/public/common/error/errorpage";
+			return "coach/public/common/error/errorpage";
 		}    
 }	
 
 
-@RequestMapping(value = "/tutor/contact/mass-email-to-tutors-confirm", method = RequestMethod.GET)
-public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResponse response, ModelMap model, 
-		@ModelAttribute("contacttutor") Contacttutor contactTutor) {
+@RequestMapping(value = "/coach/contact/mass-email-to-coachs-confirm", method = RequestMethod.GET)
+public String getEmailTocoachconfirm(HttpServletRequest request, HttpServletResponse response, ModelMap model, 
+		@ModelAttribute("contactcoach") ContactCoach contactcoach) {
 
 	//Map<String, Object> myModel = new HashMap<String, Object>();
 	try{	
 
-		model.addAttribute("contacttutor", contactTutor);
+		model.addAttribute("contactcoach", contactcoach);
 		
-		return "tutor/contacttutor/MassEmailToTutorsConfirmation"; 
+		return "coach/contactcoach/MassEmailTocoachsConfirmation"; 
 
 	} catch (Exception e) {
         String msg = "The request failed. Error " + e;
         log.error(msg, e);
 		model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
-        return "tutor/public/common/error/errorpage";
+        return "coach/public/common/error/errorpage";
 	}	
 }	
 
-	@RequestMapping(value = "/tutor/contact/mass-email-to-tutors-confirm", method = RequestMethod.POST)
-	public String postEmailToTutorConfirm(HttpServletRequest request, HttpServletResponse response, Model model,
-		@ModelAttribute("contacttutor") Contacttutor contactTutor, BindingResult result) {
+	@RequestMapping(value = "/coach/contact/mass-email-to-coachs-confirm", method = RequestMethod.POST)
+	public String postEmailTocoachConfirm(HttpServletRequest request, HttpServletResponse response, Model model,
+		@ModelAttribute("contactcoach") ContactCoach contactcoach, BindingResult result) {
 
 		try {
-				contactTutor.setCategory( new Integer(request.getParameter("hcategory")).intValue() );
-				contactTutor.setCoachstylepreference(request.getParameter("hcoachstylepreference"));
-				contactTutor.setGradelevel(request.getParameter("hgradelevel"));
-				contactTutor.setStartmonth(new Integer(request.getParameter("hstartmonth")).intValue());
-				contactTutor.setStartday(new Integer(request.getParameter("hstartday")).intValue());
-				contactTutor.setStartyear(new Integer(request.getParameter("hstartyear")).intValue());
-				contactTutor.setDaysavailable(new Integer(request.getParameter("hdaysavailable")).intValue());
-				contactTutor.setWeeksavailable(new Integer(request.getParameter("hweeksavailable")).intValue()); 
-				contactTutor.setCity(request.getParameter("city").toString() ); 
-				contactTutor.setState(request.getParameter("hstate").toString() ); 
-				contactTutor.setStudentemail(request.getParameter("hstudentemail").toString() ); 
-				contactTutor.setStudentfirstname(request.getParameter("hstudentfirstname").toString() ); 
+				contactcoach.setCategory( new Integer(request.getParameter("hcategory")).intValue() );
+				contactcoach.setCoachstylepreference(request.getParameter("hcoachstylepreference"));
+				//contactcoach.setGradelevel(request.getParameter("hgradelevel"));
+				contactcoach.setStartmonth(new Integer(request.getParameter("hstartmonth")).intValue());
+				contactcoach.setStartday(new Integer(request.getParameter("hstartday")).intValue());
+				contactcoach.setStartyear(new Integer(request.getParameter("hstartyear")).intValue());
+				contactcoach.setDaysavailable(new Integer(request.getParameter("hdaysavailable")).intValue());
+				contactcoach.setWeeksavailable(new Integer(request.getParameter("hweeksavailable")).intValue()); 
+				contactcoach.setCity(request.getParameter("city").toString() ); 
+				contactcoach.setState(request.getParameter("hstate").toString() ); 
+				contactcoach.setStudentemail(request.getParameter("hstudentemail").toString() ); 
+				contactcoach.setStudentfirstname(request.getParameter("hstudentfirstname").toString() ); 
 			
 				long profileId = SystemUtil.getUserProfileId(request, userProfileManager);
-				contactTutor.setUserprofileid(profileId);
-				contactTutorManager.storeContactTutor(contactTutor);
+				contactcoach.setUserprofileid(profileId);
+				contactcoachManager.storeContactCoach(contactcoach);
 		
-				///////////   SEND EMAILS TO TUTORS /////////////////////////////////////////////////////////////
+				///////////   SEND EMAILS TO coachS /////////////////////////////////////////////////////////////
 				
 				//Remove all numeric suffix after the course name.......
-				contactTutor.setCourse(contactTutor.getCourse().replaceAll("1", "").trim() );
-				contactTutor.setCourse(contactTutor.getCourse().replaceAll("2", "").trim() );
-				contactTutor.setCourse(contactTutor.getCourse().replaceAll("3", "").trim() );
-				contactTutor.setCourse(contactTutor.getCourse().replaceAll("4", "").trim() );
-				contactTutor.setCourse(contactTutor.getCourse().replaceAll("5", "").trim() );
-				contactTutor.setCourse(contactTutor.getCourse().replaceAll("6", "").trim() );
-				contactTutor.setCourse(contactTutor.getCourse().replaceAll("7", "").trim() );
-				contactTutor.setCourse(contactTutor.getCourse().replaceAll("8", "").trim() );
-				contactTutor.setCourse(contactTutor.getCourse().replaceAll("9", "").trim() );
+				/*
+				contactcoach.setCourse(contactcoach.getCourse().replaceAll("1", "").trim() );
+				contactcoach.setCourse(contactcoach.getCourse().replaceAll("2", "").trim() );
+				contactcoach.setCourse(contactcoach.getCourse().replaceAll("3", "").trim() );
+				contactcoach.setCourse(contactcoach.getCourse().replaceAll("4", "").trim() );
+				contactcoach.setCourse(contactcoach.getCourse().replaceAll("5", "").trim() );
+				contactcoach.setCourse(contactcoach.getCourse().replaceAll("6", "").trim() );
+				contactcoach.setCourse(contactcoach.getCourse().replaceAll("7", "").trim() );
+				contactcoach.setCourse(contactcoach.getCourse().replaceAll("8", "").trim() );
+				contactcoach.setCourse(contactcoach.getCourse().replaceAll("9", "").trim() );
+				*/
 				
-				List <HashMap> emailList = getEmailsOfTutors(contactTutor, contactTutor.getZipcode() == null?"":contactTutor.getZipcode());
+				List <HashMap> emailList = getEmailsOfcoachs(contactcoach, contactcoach.getZipcode() == null?"":contactcoach.getZipcode());
 				
-				sendEmailToTutors(emailList, contactTutor);
+				sendEmailTocoachs(emailList, contactcoach);
 				/////////////////////////////////////////////////////////////////////////////////////////////////
 				
-				model.addAttribute("successMessage", "Your request has been sent to our tutors.");
-				return "tutor/contacttutor/MassEmailToTutorsConfirmation";
+				model.addAttribute("successMessage", "Your request has been sent to our coachs.");
+				return "coach/contactcoach/MassEmailTocoachsConfirmation";
 		
 		} catch (Exception e) {
             String msg = "Failed to create user. Error " + e;
             log.error(msg, e);
 			model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
-			return "tutor/public/common/error/errorpage";
+			return "coach/public/common/error/errorpage";
 		}    
 	}	
 	
-	private void sendEmailToTutors(List <HashMap> userprofilesDataList, Contacttutor contactTutor){
+	private void sendEmailTocoachs(List <HashMap> userprofilesDataList, ContactCoach contactcoach){
 		
     	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
     	///                          TODO TODO TODO TODO TODO                                           //////////////
-    	//@TODO  NOTE THAT WE ARE ONLY SENDING EMAILS TO THE FIRST 25 TUTORS FOUND IN THE DATABASE      //////////////
+    	//@TODO  NOTE THAT WE ARE ONLY SENDING EMAILS TO THE FIRST 25 coachS FOUND IN THE DATABASE      //////////////
     	//WILL NEED TO CHANGE THIS CODE IN THE FUTURE SO WE DON'T SEND TO THE SAME 25 EVERY TIME        //////////////
     	//MAY HAVE TO IMPLEMENT SOME TYPE OF RANDOMIZER TO SELECT WHICH 25 USERS TO SEND MESSAGES TO    //////////////
     	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -209,27 +211,27 @@ public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResp
 		
 	        for(HashMap userProfiles : userprofilesDataList) {
 				emailbody = " Hi " + userProfiles.get("firstname")	+ ", <br><br>" +  
-        		"Great news! We've identified a student looking looking for a tutor to help with " + contactTutor.getCourse() + ". <br><br>" +
-        		" You were selected because you expressed interest in tutoring " + contactTutor.getCourse() +   " on CoachConnecXion.com <br><br>" +
+        		"Great news! We've identified a student looking for a coach to help with " + contactcoach.getCategory() + ". <br><br>" +
+        		" You were selected because you expressed interest in coaching " + contactcoach.getCategory() +   " on CoachConnecXion.com <br><br>" +
 				"<a style='font-size: 16px' " + Constants.CONTACT_STUDENT_PROD_ENV + userProfiles.get("user_profile_id") +
-				"&jbbid=" +  contactTutor.getContacttutorid() + "'> " +
+				"&jbbid=" +  contactcoach.getContactcoachid() + "'> " +
 				"CLICK HERE FOR THE JOB POSTING </a> <br><br>" +
 				" If the link above does not work, copy the following value to your browser: <br><br>" + 
 				Constants.CONTACT_STUDENT_PROD_ENV.replace("href='", "") + userProfiles.get("user_profile_id") +
-				"&jbbid=" +  contactTutor.getContacttutorid();
+				"&jbbid=" +  contactcoach.getContactcoachid();
 
 				//System.out.println(emailbody);
-				mailService.sendMessage(userProfiles.get("email").toString(), "New Tutoring Request", emailbody);
+				mailService.sendMessage(userProfiles.get("email").toString(), "New coaching Request", emailbody);
 	        }
 	}
 	
-	private List <HashMap> getEmailsOfTutors(Contacttutor contactTutor, String zipcode) throws Exception {
+	private List <HashMap> getEmailsOfcoachs(ContactCoach contactcoach, String zipcode) throws Exception {
 		int coachstyleonline = -1;
 		int coachstyleinperson = -1;
 		
-		if (contactTutor.getCoachstylepreference().trim().equals("1" )) {
+		if (contactcoach.getCoachstylepreference().trim().equals("1" )) {
 			coachstyleinperson = 1;
-		} else if (contactTutor.getCoachstylepreference().trim().equals("2")) {
+		} else if (contactcoach.getCoachstylepreference().trim().equals("2")) {
 			coachstyleonline = 1;
 		} 
 		
@@ -240,25 +242,12 @@ public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResp
 		}
 		
 		if (zipcodes.trim().equals("")){
-			//If we cannot find any tutors in your area, then goahead and display online tutors
+			//If we cannot find any coachs in your area, then goahead and display online coachs
 			coachstyleinperson = -1;   //Negative 1 is the default value when nothing is selected................
 		}
 		
-		List <HashMap> userprofilesDataList = userProfileManager.getUserProfiles(contactTutor.getCategory(), contactTutor.getCourse(), 
-				coachstyleinperson, coachstyleonline,  zipcodes );
+		List <HashMap> userprofilesDataList = userProfileManager.getUserProfilesOfCoachesToContact(contactcoach.getCategory(), coachstyleinperson, coachstyleonline,  zipcodes );
 
-		/*
-		ArrayList<String> userProfilesList= new ArrayList<String>();
-		
-        int i=0;
-        for(HashMap userProfiles : userprofilesDataList) {
-        	userProfilesList.add(userProfiles.get("email").toString() );
-        	//if (i>0) userProfilesList = userProfilesList + ","; 
-        	//userProfilesList = userProfilesList + "'" + userProfiles.get("email")  + "'";
-        	//i++;
-        }
-        */
-		
         return userprofilesDataList;
 	}
 	

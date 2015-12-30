@@ -93,10 +93,9 @@ span.required {color:red;font-weight:bold}
 
 <span style="font-size: 25px;"><br>Your Primary Goal on CoachConnecXion.com is to: <br><br></span>
 
-
 	<div id="useractions">
 		<div class="list-row">
-			<div class="Cell" >
+			<div class="Cell" style="border-right: solid;">
 				<a style="font-size: 20px;" href="${pageContext.request.contextPath}/public/profile?cuin=${cuin}">COACH OTHERS</a>
 			</div>
 			<div class="Cell" >
@@ -104,7 +103,7 @@ span.required {color:red;font-weight:bold}
 			</div>
 		    </div>
 		    <div class="list-row">
-			<div class="Cell">
+			<div class="Cell" style="border-right: solid;">
 			    <a style="font-size: 20px" href="${pageContext.request.contextPath}/tutor/public/profile?cuin=${cuin}">TUTOR OTHERS</a>
 			</div>
 			<div class="Cell">

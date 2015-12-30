@@ -30,7 +30,7 @@
 
 			<%-- MENU --%>
 			<div id="menutopmost">
-				<a style="font-size:16px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/public">[TUTORING SERVICES] &nbsp;&nbsp;&nbsp;&nbsp; </a> | 
+				<a style="font-size:14px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/public">[GO TO TUTORING SITE] &nbsp;&nbsp;&nbsp;&nbsp; </a> | 
 				<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
 <!--  			<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/coach/public">Coaching </a> | 
 				<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/public">Tutoring </a> | 

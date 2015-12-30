@@ -1,4 +1,4 @@
-package com.fervil.spring.careercoach.service;
+package com.fervil.spring.careercoach.service.validator;
 		
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +20,7 @@ public class CreateUserProfileValidator implements Validator {
     }
 
     public void validate(Object target, Errors errors) {
-    	String fieldisRequired = " Required field";
+    	String fieldisRequired = " Required field below";
     	
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstname",
                 "required.firstname", fieldisRequired);
@@ -57,13 +57,17 @@ public class CreateUserProfileValidator implements Validator {
 
         UserProfile userProfile = (UserProfile) target;
 
+        if (userProfile.getCoachstyleinperson() == null && userProfile.getCoachstyleonline()==null  ) {
+			errors.rejectValue("coachstyleinperson", "invalid.coachstyleinperson", " You must select your coaching preference(s)");
+        }
+        
         if (userProfile.getCoachingcategory1() <= 0  && userProfile.getCoachingcategory2() <= 0 && userProfile.getCoachingcategory3() <= 0) {
 			errors.rejectValue("coachingcategory1", "invalid.coachingcategory1", " You must select at least 1 subject");
         }
     }    
     
     public void validateTutor(Object target, Errors errors) {
-        	String fieldisRequired = " Required field";
+        	String fieldisRequired = " Required field below";
         	
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstname",
                     "required.firstname", fieldisRequired);

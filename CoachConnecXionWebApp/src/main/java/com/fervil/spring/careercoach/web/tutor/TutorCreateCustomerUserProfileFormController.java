@@ -34,8 +34,8 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
-import com.fervil.spring.careercoach.service.CreateCustomerUserProfileValidator;
 import com.fervil.spring.careercoach.service.UserProfileManager;
+import com.fervil.spring.careercoach.service.validator.CreateCustomerUserProfileValidator;
 import com.fervil.spring.careercoach.util.Constants;
 import com.fervil.spring.careercoach.util.SystemUtil;
 

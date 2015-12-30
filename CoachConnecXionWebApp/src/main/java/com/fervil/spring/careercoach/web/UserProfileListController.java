@@ -1,13 +1,16 @@
 package com.fervil.spring.careercoach.web;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -16,22 +19,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractController;
-
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import com.fervil.spring.careercoach.model.domain.CoachingRequest;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
-import com.fervil.spring.careercoach.service.CreateUserProfileValidator;
+import com.fervil.spring.careercoach.model.domain.Zipcode;
+import com.fervil.spring.careercoach.model.domain.ZipcodeContainer;
 import com.fervil.spring.careercoach.service.JobRatingService;
 import com.fervil.spring.careercoach.service.UserProfileManager;
-import com.fervil.spring.careercoach.service.SelectedCoachesValidator;
+import com.fervil.spring.careercoach.service.validator.SelectedCoachesValidator;
 import com.fervil.spring.careercoach.util.Constants;
 
 //@RequestMapping("/public/userprofileList")
@@ -83,21 +81,37 @@ public class UserProfileListController  {
 			String state = webRequest.getParameter("state") == null?"":webRequest.getParameter("state");
 			int pageNumber = webRequest.getParameter("pageNumber") == null?1:Integer.valueOf(webRequest.getParameter("pageNumber"));
 			
+			String zipcode = webRequest.getParameter("zipcode") == null?"":webRequest.getParameter("zipcode");
+			String coachstyleinperson = webRequest.getParameter("coachstyleinperson") == null?"":webRequest.getParameter("coachstyleinperson");
+			String coachstyleonline = webRequest.getParameter("coachstyleonline") == null?"":webRequest.getParameter("coachstyleonline");
+			int sortcoachlist = webRequest.getParameter("sortcoachlist") == null?1:Integer.valueOf(webRequest.getParameter("sortcoachlist"));
+
+			String sort ="";
 			
-			//int pageNumber = Integer.valueOf(webRequest.getParameter("pagenumber"));
-			//int pageNumber = 2;
-			//int pageSize = 10;			
+			 switch (sortcoachlist) {
+	            case 1:  sort = "-1";
+	                     break;
+	            case 2: sort = " order by packages_from desc ";
+               	break;
+	            case 3: sort = " order by packages_from asc ";
+               	break;
+	            case 4: sort = " order by rating desc ";
+               	break;
+	            default: sort = "-1";
+               	break;
+			 }	                     
 			
-            //criteria.setFirstResult((pageNumber - 1) * pageSize);
-            //criteria.setMaxResults(pageSize);			
-			
+			String zipcodes = getNearestZipCodes(zipcode);
 			
 			List<HashMap> userProfiles = userProfileManager.getUserProfiles(
-					coachingCategory, coachingSubcategory, industryExperience,companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
+					coachingCategory, coachingSubcategory, industryExperience,companyExperience, coachFirstName, 
+					coachLastName, city, state, pageSize, pageNumber, 
+					zipcodes, coachstyleinperson, coachstyleonline, sort);
 
 			int userprofilecount = userProfileManager.findFilteredUserProfilesCount(
-					coachingCategory, coachingSubcategory, industryExperience,companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
-			
+					coachingCategory, coachingSubcategory, industryExperience,companyExperience, coachFirstName, 
+					coachLastName, city, state, pageSize, pageNumber,
+					zipcodes, coachstyleinperson, coachstyleonline, sort);
 			
 			ModelAndView mav = new ModelAndView ();
 			mav.setViewName ("public/userprofile/userprofileList");
@@ -105,9 +119,6 @@ public class UserProfileListController  {
 			
 			CoachingRequest coachingRequest = new CoachingRequest();
 			mav.addObject("coachingRequest", coachingRequest);
-			
-			// float averageRate1 = jobRatingService.getProfileRating(123);
-			// model.addAttribute("averageRate1", averageRate1);
 			
 			long totalNumPagestoDisplay =  ((Double)Math.ceil(new Double(userprofilecount)/new Double(pageSize))).longValue() ;
 			
@@ -139,7 +150,7 @@ public class UserProfileListController  {
 	}
 
 	//List coaches for advanced searches where all criteria may be passed, and some may be left blank..... 
-	@RequestMapping(value = "/public/coachprofileListAdvance/coachingCategory/{coachingCategory}/coachingSubcategory/{coachingSubcategory}/industryExperience/{industryExperience}/companyExperience/{companyExperience}/coachFirstName/{coachFirstName}/coachLastName/{coachLastName}/city/{city}/state/{state}/pageNumber/{pageNumber}", method = RequestMethod.GET)
+	@RequestMapping(value = "/public/coachprofileListAdvance/coachingCategory/{coachingCategory}/coachingSubcategory/{coachingSubcategory}/industryExperience/{industryExperience}/companyExperience/{companyExperience}/coachFirstName/{coachFirstName}/coachLastName/{coachLastName}/city/{city}/state/{state}/pageNumber/{pageNumber}/zipcode/{zipcode}/coachstyleinperson/{coachstyleinperson}/coachstyleonline/{coachstyleonline}/sortcoachlist/{sortcoachlist}", method = RequestMethod.GET)
 	public ModelAndView listCoachProfiles(ModelMap model, org.springframework.web.context.request.WebRequest webRequest,
 				@PathVariable("coachingCategory") int coachingCategory, 
 				@PathVariable("coachingSubcategory") int coachingSubcategory, 
@@ -149,12 +160,26 @@ public class UserProfileListController  {
 				@PathVariable("coachLastName") String coachLastName, 
 				@PathVariable("city") String city, 
 				@PathVariable("state") String state, 
-				@PathVariable("pageNumber") int pageNumber 
+				@PathVariable("pageNumber") int pageNumber, 
+				@PathVariable("zipcode") String zipcode, 
+				@PathVariable("coachstyleinperson") String coachstyleinperson, 
+				@PathVariable("coachstyleonline") String coachstyleonline,
+				@PathVariable("sortcoachlist") int sortcoachlist 
 			) {
 
 	    	Map<String, Object> myModel = new HashMap<String, Object>();
 
+			log.info("/public/coachprofileListAdvance/coachingCategory/{coachingCategory}/coachingSubcategory/{coachingSubcategory}/industryExperience/{industryExperience}/companyExperience/{companyExperience}/coachFirstName/{coachFirstName}/coachLastName/{coachLastName}/city/{city}/state/{state}/pageNumber/{pageNumber}/zipcode/{zipcode}/coachstyleinperson/{coachstyleinperson}/coachstyleonline/{coachstyleonline}/sortcoachlist/{sortcoachlist} " );
+	    	
+	    	
 		try{
+
+			String tmpzip = (zipcode == null || zipcode.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":zipcode;
+			
+			String zipcodes = "";
+			if (!tmpzip.equalsIgnoreCase("")) {
+				zipcodes= getNearestZipCodes(tmpzip); };
+
 
 			/*
 			int coachingCategory = webRequest.getParameter("coachingCategory") == null?-1:Integer.valueOf(webRequest.getParameter("coachingCategory"));
@@ -169,16 +194,51 @@ public class UserProfileListController  {
 			String tmpcity = (city == null || city.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":city;
 			String tmpstate = (state == null || state.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":state;
 			
+			String tmpcoachstyleinperson = (coachstyleinperson == null || coachstyleinperson.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":"1";
+			String tmpcoachstyleonline = (coachstyleonline == null || coachstyleonline.equalsIgnoreCase(Constants.DEFAULT_URL_STRING))?"":"1";
+			
 			pageNumber = (pageNumber < 1 )?1:pageNumber;
+			
+			
+			String sort ="";
+			
+			 switch (sortcoachlist) {
+	            case 1:  sort = "-1";
+	                     break;
+	            case 2: sort = " order by packages_from desc ";
+                	break;
+	            case 3: sort = " order by packages_from asc ";
+                	break;
+	            case 4: sort = " order by rating desc ";
+                	break;
+	            default: sort = "-1";
+                	break;
+			 }	                     
+			
+				if (zipcodes.trim().equals("")){
+					//If we cannot find any tutors in your area, then goahead and display online tutors
+					tmpcoachstyleinperson = "";   //Negative 1 is the default value when nothing is selected................
+				}
+			
 			
 			List<HashMap> userProfiles = userProfileManager.getUserProfiles(
 					coachingCategory, coachingSubcategory, industryExperience,tmpcompanyExperience, 
-					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber);
+					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber,
+					zipcodes, tmpcoachstyleinperson, tmpcoachstyleonline, sort);
 
+			log.info("/public/coachprofileListAdvance/coachingCategory/{coachingCategory}/coachingSubcategory/{coachingSubcategory}/industryExperience/{industryExperience}/companyExperience/{companyExperience}/coachFirstName/{coachFirstName}/coachLastName/{coachLastName}/city/{city}/state/{state}/pageNumber/{pageNumber}/zipcode/{zipcode}/coachstyleinperson/{coachstyleinperson}/coachstyleonline/{coachstyleonline}/sortcoachlist/{sortcoachlist} " 
+				  + "::" + zipcodes + "::" + tmpcoachstyleinperson + "::" + tmpcoachstyleonline + "::" + sort );
+			
+			
+/*			
 			int userprofilecount = userProfileManager.findFilteredUserProfilesCount(
 					coachingCategory, coachingSubcategory, industryExperience,tmpcompanyExperience, 
 					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber);
-			
+*/			
+			int userprofilecount = userProfileManager.findFilteredUserProfilesCount(
+					coachingCategory, coachingSubcategory, industryExperience,tmpcompanyExperience, 
+					tmpcoachFirstName, tmpcoachLastName, tmpcity, tmpstate, pageSize, pageNumber,
+					zipcodes, tmpcoachstyleinperson, tmpcoachstyleonline, sort);
 			
 			ModelAndView mav = new ModelAndView ();
 			mav.setViewName ("public/userprofile/userprofileList");
@@ -309,5 +369,74 @@ public class UserProfileListController  {
 	        return new ModelAndView("public/common/error/errorpage");
 			
 		}	
-	}	
+	}
+	
+	public String getNearestZipCodes(String zipcode) throws Exception{
+		String zipList="";
+		
+	        javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(
+	        	    new javax.net.ssl.HostnameVerifier(){
+		        		Random rand = new Random();
+		        		String webserviceHostName = "";
+		        		
+	        	        public boolean verify(String hostname,
+	        	                javax.net.ssl.SSLSession sslSession) {
+	        	        	System.out.println("The Host Name is: " + hostname);
+	        	        	
+	        	        	webserviceHostName = "www.zipwise.com";
+	        	        	
+	        	            if (hostname.equals(webserviceHostName)) {
+	        	                return true;
+	        	            }
+	        	            return false;
+	        	        }
+	        });
+	        
+	        
+		RestTemplate restTemplate = new RestTemplate();
+		
+		//String jsonUrl = "https://www.zipwise.com/webservices/radius.php?key=7wntjyde93vph7m3&zip=zzzipcodeee&radius=50&format=json";
+		//String jsonUrlTest = "https://www.vineos.io/api/currency/convert?source=USD&target=MXN";
+			
+		String jsonUrl = Constants.JSON_URL.replace("zzzipcodeee", zipcode);
+
+		System.setProperty("jsse.enableSNIExtension", "false");
+		
+        //Currency curr = restTemplate.getForObject(jsonUrlTest, Currency.class);
+
+/*        List<Zipcode> zipdataList = restTemplate.getForObject(jsonUrl, ZipcodeContainer.class).getResults();
+        
+        int i=0;
+        for(Zipcode zip : zipdataList) {
+        	if (i>0) zipList = zipList + ","; 
+        	zipList = zipList + "'" + zip.getZip() + "'";
+
+        	i++;
+        }
+        
+*/		
+		List<Zipcode> zipdataList =  null;
+		
+		try{
+	        zipdataList = restTemplate.getForObject(jsonUrl, ZipcodeContainer.class).getResults();
+	        
+	        int i=0;
+	        for(Zipcode zip : zipdataList) {
+	        	if (i>0) zipList = zipList + ","; 
+	        	zipList = zipList + "'" + zip.getZip() + "'";
+
+	        	i++;
+	        }
+	        
+		} catch (HttpMessageNotReadableException e){
+			//If nothing is returned from the webservice call, return an empty zipcode list.
+			zipList = "";
+		}
+                
+        System.out.println(zipList);
+        
+        return zipList;
+			
+	}
+
 }

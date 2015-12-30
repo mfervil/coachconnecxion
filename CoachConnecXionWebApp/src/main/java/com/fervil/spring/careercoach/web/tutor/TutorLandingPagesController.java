@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,11 +15,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fervil.spring.careercoach.model.domain.CoachSelection;
-import com.fervil.spring.careercoach.service.CoachSelectionManager;
-import com.fervil.spring.careercoach.service.CoachSelectionValidator;
-import com.fervil.spring.careercoach.service.CreateCustomerUserProfileValidator;
-import com.fervil.spring.careercoach.service.CreateUserProfileValidator;
-import com.fervil.spring.careercoach.service.TutorSelectionValidator;
+import com.fervil.spring.careercoach.service.validator.TutorSelectionValidator;
 import com.fervil.spring.careercoach.util.Constants;
 
 @Controller
@@ -785,20 +780,6 @@ public class TutorLandingPagesController {
 
 				mav.addObject("general", "1");
 				
-				/*
-				ModelAndView mav = new ModelAndView ();
-				
-				//Validation logic goes here
-				validator.validate(coachSelection, result);
-				if (result.hasErrors()){
-		    		mav.addObject("coachSelection", coachSelection);
-		    		mav.setViewName ("tutor/public/landingpages/general-personal-tutors");
-		    		
-					return mav;
-				}
-//					ModelAndView mav = new ModelAndView ();
-					setMavSession(mav, session, webRequest);
-				*/	
 					return mav;
 			} catch (Exception e) {
 		        String msg = "The request failed. Error " + e;

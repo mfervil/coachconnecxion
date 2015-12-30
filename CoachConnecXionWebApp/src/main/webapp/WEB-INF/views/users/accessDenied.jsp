@@ -26,7 +26,7 @@
 
 <div id="content">
     <div class="pageWrapper">
-        <h1>Access denied!</h1>
+        <h1>Access denied Or you are already logged-in!</h1>
     </div>
 </div>
 

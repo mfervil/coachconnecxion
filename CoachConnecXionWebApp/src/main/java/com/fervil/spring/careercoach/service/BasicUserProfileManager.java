@@ -47,29 +47,48 @@ public class BasicUserProfileManager implements UserProfileManager {
 
     @NotNull
     @Override
+	public List<HashMap> getUserProfiles(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber, String zipcodes, String coachstyleinperson, String coachstyleonline, String sort) throws Exception {
+        return userProfileDao.findFilteredUserProfiles(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber, zipcodes, coachstyleinperson, coachstyleonline, sort);
+    }
+    
+    //Used for city and state searches
+    @NotNull
+    @Override
 	public List<HashMap> getUserProfiles(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception {
         return userProfileDao.findFilteredUserProfiles(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
     }
-
+    
     @NotNull
     @Override
 	public List<HashMap> getUserProfilesForTutors(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber, String gradelevel, int maxrate, String subject, String zipcodes, String coachstyleinperson, String coachstyleonline, String sort) throws Exception {
         return userProfileDao.findFilteredUserProfilesForTutors(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber, gradelevel, maxrate, subject, zipcodes, coachstyleinperson, coachstyleonline, sort);
     }
     
-    
+    //Used for city and state searches    
     @NotNull
     @Override
 	public int findFilteredUserProfilesCount(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception {
         return userProfileDao.findFilteredUserProfilesCount(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
     }
     
+    @NotNull
+    @Override
+	public int findFilteredUserProfilesCount(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber, String zipcodes, String coachstyleinperson, String coachstyleonline, String sort) throws Exception {
+        return userProfileDao.findFilteredUserProfilesCount(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber, zipcodes, coachstyleinperson, coachstyleonline, sort);
+    }
+
+    @NotNull
+    @Override
+	public int findFilteredUserProfilesCountForTutors(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber, String gradelevel, int maxrate, String subject, String zipcodes, String coachstyleinperson, String coachstyleonline, String sort) throws Exception {
+        return userProfileDao.findFilteredUserProfilesCountForTutors(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber, gradelevel, maxrate, subject, zipcodes, coachstyleinperson, coachstyleonline, sort);
+    }
+    
     
     @NotNull
-	public List<HashMap> getUserProfilesPictureString(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception {
+	public List<HashMap> getUserProfilesPictureString(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber, String zipcodes, String coachstyleinperson, String coachstyleonline, String sort) throws Exception {
         //return userProfileDao.findFilteredUserProfiles(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state);
     
-    	List<HashMap> userProfiles = userProfileDao.findFilteredUserProfiles(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
+    	List<HashMap> userProfiles = userProfileDao.findFilteredUserProfiles(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber, zipcodes, coachstyleinperson, coachstyleonline, sort);
         
     	//List<UserProfile> newUserProfiles = new ArrayList<UserProfile>();
     	
@@ -191,5 +210,8 @@ public class BasicUserProfileManager implements UserProfileManager {
         return userProfileDao.findTutorsToContact(category, course, coachstyleinperson,  coachstyleonline, zipcodes);
     }
 
+    public List<HashMap> getUserProfilesOfCoachesToContact(int category, int coachstyleinperson, int coachstyleonline, String zipcodes) throws Exception {
+        return userProfileDao.findCoachesToContact(category, coachstyleinperson,  coachstyleonline, zipcodes);
+    }
 
 }

@@ -1,16 +1,22 @@
 package com.fervil.spring.careercoach.util;
 
 import java.util.List;
+import java.util.Random;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.web.client.RestTemplate;
 
 import ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils;
 
 import com.fervil.spring.careercoach.model.dao.HibernateUserProfileDao;
 import com.fervil.spring.careercoach.model.dao.UserProfileDao;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
+import com.fervil.spring.careercoach.model.domain.Zipcode;
+import com.fervil.spring.careercoach.model.domain.ZipcodeContainer;
 import com.fervil.spring.careercoach.service.BasicUserProfileManager;
 import com.fervil.spring.careercoach.service.UserProfileManager;
 
@@ -66,7 +72,6 @@ public class SystemUtil<Static> {
 		return userProfile;
 		
 	}
-
 
 
 }

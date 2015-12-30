@@ -23,8 +23,8 @@ import com.connection.service.MessageService;
 import com.fervil.spring.careercoach.model.domain.PaymentInformation;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
 import com.fervil.spring.careercoach.service.PaymentInformationManager;
-import com.fervil.spring.careercoach.service.PaymentInformationValidator;
 import com.fervil.spring.careercoach.service.UserProfileManager;
+import com.fervil.spring.careercoach.service.validator.PaymentInformationValidator;
 import com.fervil.spring.careercoach.util.Constants;
 import com.fervil.spring.careercoach.util.SystemUtil;
 
