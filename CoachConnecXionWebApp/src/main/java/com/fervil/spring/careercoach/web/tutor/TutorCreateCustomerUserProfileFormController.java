@@ -138,7 +138,7 @@ public class TutorCreateCustomerUserProfileFormController {
 				userProfile.setUser_userId(SecurityUtils.getCurrentUser().getId());
 				userProfile.setModifiedDate(new Date());
 				userProfile.setAccountType(2);
-				userProfile.setUserProfileType(2);
+				userProfile.setUserProfileType(4);
 
 				userProfileManager.storeUserProfile(userProfile);
 				status.setComplete();

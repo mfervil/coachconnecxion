@@ -14,4 +14,9 @@ public interface CityExtendedDao {
     public List<CityExtended> findByState(String statecode) throws Exception ;
     
     public List<HashMap> findCitiesWithCoaches(String statecode, int coachType) throws Exception ;
+
+    public List<CityExtended> findByStateForTutor(String statecode) throws Exception ;
+    
+    public List<HashMap> findCitiesWithCoachesForTutor(String statecode, int coachType) throws Exception ;
+
 }

@@ -57,6 +57,13 @@ public class BasicUserProfileManager implements UserProfileManager {
 	public List<HashMap> getUserProfiles(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception {
         return userProfileDao.findFilteredUserProfiles(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
     }
+
+    @NotNull
+    @Override
+	public List<HashMap> getUserProfilesForTutor(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception {
+        return userProfileDao.findFilteredUserProfilesForTutor(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
+    }
+    ////// End of ciity and state searches
     
     @NotNull
     @Override
@@ -70,6 +77,13 @@ public class BasicUserProfileManager implements UserProfileManager {
 	public int findFilteredUserProfilesCount(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception {
         return userProfileDao.findFilteredUserProfilesCount(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
     }
+
+    @NotNull
+    @Override
+	public int findFilteredUserProfilesCountForTutor(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception {
+        return userProfileDao.findFilteredUserProfilesCountForTutor(coachingCategory, coachingSubcategory, industryExperience, companyExperience, coachFirstName, coachLastName, city, state, pageSize, pageNumber);
+    }
+    //////////  End of city and state searches  //////////////////////////////////////////////////////////
     
     @NotNull
     @Override

@@ -57,6 +57,15 @@ public class BasicCityManager implements CityManager {
 
 		return cityExtendedDao.findByState(statecode);
 	}
+
+	@Override
+	public List<CityExtended> findByStateCodeForTutor(String statecode)
+			throws Exception {
+		// TODO Auto-generated method stub
+
+		return cityExtendedDao.findByStateForTutor(statecode);
+	}
+	
 	
 	@Override
 	public List<HashMap> findCitiesWithCoaches(String statecode, int coachType)
@@ -65,4 +74,13 @@ public class BasicCityManager implements CityManager {
 
 		return cityExtendedDao.findCitiesWithCoaches(statecode, coachType);
 	}
+	
+	@Override
+	public List<HashMap> findCitiesWithCoachesForTutor(String statecode, int coachType)
+			throws Exception {
+		// TODO Auto-generated method stub
+
+		return cityExtendedDao.findCitiesWithCoachesForTutor(statecode, coachType);
+	}
+	
 }

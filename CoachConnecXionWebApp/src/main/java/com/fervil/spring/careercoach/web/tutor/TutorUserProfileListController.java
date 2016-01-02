@@ -353,8 +353,8 @@ public class TutorUserProfileListController  {
 			//int pageNumber = webRequest.getParameter("pageNumber") == null?1:Integer.valueOf(webRequest.getParameter("pageNumber"));
 			
 			String tmpcityname = (cityname == null || cityname.trim().equals("") || cityname.equals(Constants.DEFAULT_URL_STRING)?"":cityname);
-			List<HashMap> userProfiles = userProfileManager.getUserProfiles(coachtypeid, 0, 0,"", "","", tmpcityname, statecode, pageSize, pagenumber );
-			int userprofilecount = userProfileManager.findFilteredUserProfilesCount(coachtypeid, 0, 0,"", "","", tmpcityname, statecode, pageSize, pagenumber);
+			List<HashMap> userProfiles = userProfileManager.getUserProfilesForTutor(coachtypeid, 0, 0,"", "","", tmpcityname, statecode, pageSize, pagenumber );
+			int userprofilecount = userProfileManager.findFilteredUserProfilesCountForTutor(coachtypeid, 0, 0,"", "","", tmpcityname, statecode, pageSize, pagenumber);
 			
 			ModelAndView mav = new ModelAndView ();
 			mav.setViewName ("tutor/public/userprofile/userprofileList");

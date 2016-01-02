@@ -23,6 +23,13 @@ public interface UserProfileManager  extends Serializable {
 			String companyExperience, String coachFirstName, 
 			String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception;
 
+    @NotNull
+	public int findFilteredUserProfilesCountForTutor(int coachingCategory, 
+			int coachingSubcategory, int industryExperience, 
+			String companyExperience, String coachFirstName, 
+			String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception;
+    
+////End of city and state searches /////////////////////////////////////////////////////////////////////////////    
 
     //Added this area for the zipcode functionality
     @NotNull
@@ -54,7 +61,15 @@ public interface UserProfileManager  extends Serializable {
 	public List<HashMap> getUserProfiles(int coachingCategory, 
 			int coachingSubcategory, int industryExperience, 
 			String companyExperience, String coachFirstName, 
-			String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception;  
+			String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception; 
+
+    @NotNull
+	public List<HashMap> getUserProfilesForTutor(int coachingCategory, 
+			int coachingSubcategory, int industryExperience, 
+			String companyExperience, String coachFirstName, 
+			String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception; 
+    
+    ////End of for city and state searches
     
     @NotNull
 	public List<HashMap> getUserProfilesForTutors(int coachingCategory, 

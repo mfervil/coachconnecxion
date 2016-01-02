@@ -16,4 +16,8 @@ public interface CityManager  extends Serializable {
     public CityExtended findById(int id) throws Exception;	
     public List<CityExtended> findByStateCode(String statecode) throws Exception;	
 	public List<HashMap> findCitiesWithCoaches(String statecode, int coachtype) throws Exception;    
+
+    public List<CityExtended> findByStateCodeForTutor(String statecode) throws Exception;	
+	public List<HashMap> findCitiesWithCoachesForTutor(String statecode, int coachtype) throws Exception;    
+	
 }

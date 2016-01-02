@@ -152,7 +152,7 @@ public class TutorCreateUserProfileFormController {
 				userProfile.setUser_userId(SecurityUtils.getCurrentUser().getId());
 				userProfile.setModifiedDate(new Date());
 				userProfile.setAccountType(1);
-				userProfile.setUserProfileType(1);
+				userProfile.setUserProfileType(2);
 
 				Session session = sessionFactory.getCurrentSession();
 				Blob blob = Hibernate.getLobCreator(session).createBlob(frmprofilepicture.getInputStream(), frmprofilepicture.getSize());

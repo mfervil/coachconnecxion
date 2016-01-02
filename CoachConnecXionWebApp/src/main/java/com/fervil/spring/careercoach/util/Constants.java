@@ -76,32 +76,9 @@ public class Constants {
 	public static final String CONTACT_STUDENT_USER_PROFILE_URL_DEV = "href='http://localhost:8080/CoachConnecXionWebApp-3/tutor/public/profile?profileId=";
 	public static final String CONTACT_STUDENT_USER_PROFILE_URL_PROD = "href='http://www.coachconnecxion.com/tutor/public/profile?profileId=";
 	
-	/*
-    <option value="1">ADD & ADHD</option>
-    <option value="2">Business</option>
-    <option value="3">Career Change & Enhancement</option>
-    <option value="4">Couples</option>
-    <option value="5">Diet/Weight Loss</option>
-    <option value="6">Disability</option>
-    <option value="7">Exercise</option>
-    <option value="8">Executive</option>
-    <option value="9">Family</option>
-    <option value="10">Finance</option>
-    <option value="11">Hobby</option>
-    <option value="12">Leadership</option>
-    <option value="13">Life</option>
-    <option value="14">Management</option>
-    <option value="15">Music</option>
-    <option value="16">Motivational</option>
-    <option value="17">Performance</option>
-    <option value="18">Relationship</option>
-    <option value="19">Retirement</option>
-    <option value="20">Sales</option>
-    <option value="21">Stress Management</option>
-    <option value="22">Sports Training</option>
-    <option value="23">Team and Group</option>
-    <option value="24">College Prep. Testing</option>
-	*/
-	
-	
+	public static final int COACH_USER_PROFILE_TYPE = 1;
+	public static final int TUTOR_USER_PROFILE_TYPE = 2;
+	public static final int COACH_CLIENT_USER_PROFILE_TYPE = 3;
+	public static final int TUTOR_STUDENT_USER_PROFILE_TYPE = 4;
+			
 }

@@ -127,7 +127,7 @@ text-align:center;
 	</div>
 	
 	<div style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: black">
-		<h3 >If no coaches in your area <a style="color: blue; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/public/landing-general-personal-tutors"> Click here to find an online coach</a><br>&nbsp;</h3>
+		<h3 >If no tutors in your area <a style="color: blue; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/public/landing-general-personal-tutors"> Click here to find an online tutor</a><br>&nbsp;</h3>
 	</div>
 	
 	<div style="height: 1px; background-color: #D0D0D0"></div>

@@ -69,6 +69,30 @@ public class HibernateCityExtendedDao implements CityExtendedDao {
 	}
 
 	@Override
+	public List<CityExtended> findByStateForTutor(String statecode) throws Exception {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		ThreadLocalSessionContext.bind(session);
+
+		try {
+
+			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
+					CityExtended.class);
+			
+			crit.add(Restrictions.eq("statecode", statecode));
+			crit.addOrder(Order.desc("city"));
+			List list = crit.list();
+			return ((List<CityExtended>) list);
+
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			session.close();
+		}
+	}
+	
+	
+	@Override
 	public List<HashMap> findCitiesWithCoaches(String statecode, int coachType) throws Exception {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
@@ -83,7 +107,8 @@ public class HibernateCityExtendedDao implements CityExtendedDao {
 				" and  (u.coachingcategory1 = " + coachType + " or " +
 				"  u.coachingcategory2 = " + coachType + " or " +
 				"  u.coachingcategory3 = " + coachType + ")" +
-				" and s.state_code = c.state_code ";
+				" and s.state_code = c.state_code " +
+				" and u.user_profile_type = 1 ";
 			
 			log.info(" The info is: " + sql);
 			
@@ -94,15 +119,6 @@ public class HibernateCityExtendedDao implements CityExtendedDao {
 			List list = query.list();
 			return ((List<HashMap>) list);
 			
-			/*
-			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
-					CityExtended.class);
-			crit.add(Restrictions.eq("statecode", statecode));
-			crit.addOrder(Order.desc("city"));
-			List list = crit.list();
-			return ((List<CityExtended>) list);
-			*/
-			
 		} catch (Exception e) {
 			throw e;
 		} finally {
@@ -110,5 +126,39 @@ public class HibernateCityExtendedDao implements CityExtendedDao {
 		}
 	}
 	
+	
+	@Override
+	public List<HashMap> findCitiesWithCoachesForTutor(String statecode, int coachType) throws Exception {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		ThreadLocalSessionContext.bind(session);
+
+		try {
+
+			String sql = "select distinct u.city, c.state_code, s.state " +
+				" from cities_extended c, user_profile u, states s" +
+				" Where c.state_code = '" + statecode + "'" +
+				" and c.state_code = u.state " + 
+				" and  (u.coachingcategory1 = " + coachType + " or " +
+				"  u.coachingcategory2 = " + coachType + " or " +
+				"  u.coachingcategory3 = " + coachType + ")" +
+				" and s.state_code = c.state_code " + 
+				" and u.user_profile_type = 2 ";
+			
+			log.info(" The info is: " + sql);
+			
+			Query query = sessionFactory.getCurrentSession().createSQLQuery(sql); 
+			
+			query.setResultTransformer(AliasToEntityMapResultTransformer.INSTANCE);
+			
+			List list = query.list();
+			return ((List<HashMap>) list);
+			
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			session.close();
+		}
+	}
 	
 }

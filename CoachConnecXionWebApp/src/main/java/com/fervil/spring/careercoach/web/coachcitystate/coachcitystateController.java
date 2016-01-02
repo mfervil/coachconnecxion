@@ -48,7 +48,7 @@ public class coachcitystateController {
 			//Adding default entries for the cities page
 			HashMap cityState1 = new HashMap();
 			//cityState1.put("state", "All coaches");
-			cityState1.put("city", "All coaches");
+			cityState1.put("city", "New search for coaches");
 
 			HashMap cityState2 = new HashMap();
 			//cityState2.put("state", state);

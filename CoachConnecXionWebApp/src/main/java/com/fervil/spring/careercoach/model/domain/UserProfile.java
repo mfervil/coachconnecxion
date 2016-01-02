@@ -398,7 +398,7 @@ public class UserProfile  implements Serializable {
 		this.displayName = displayName;
 	}	
 
-	@Column(name = "userProfileType", nullable = false)
+	@Column(name = "user_profile_type", nullable = false)
 	public int getUserProfileType (){
 		return userProfileType;
 	}

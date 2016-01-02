@@ -20,6 +20,7 @@ import org.slf4j.LoggerFactory;
 
 import com.fervil.spring.careercoach.model.domain.PackageDetails;
 import com.fervil.spring.careercoach.model.domain.UserProfile;
+import com.fervil.spring.careercoach.util.Constants;
 import com.fervil.spring.careercoach.web.CoachSelectionFormController;
 
 import java.util.HashMap;
@@ -214,6 +215,9 @@ public class HibernateUserProfileDao implements UserProfileDao {
 				CRITERIA = CRITERIA + " coachstyleonline = 1" ;				
 			}
 			
+			//Filter it for tutors only 12/30/2015
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			CRITERIA = CRITERIA + " user_profile_type = " + Constants.TUTOR_STUDENT_USER_PROFILE_TYPE ;				
 			
 			String sql = " select count(*) from user_profile u " + CRITERIA;
 			
@@ -232,8 +236,6 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			throw e;
 		}
     }
-
-	
 	
 //Used for city and state searches
 	public int findFilteredUserProfilesCount(int coachingCategory,
@@ -254,7 +256,11 @@ public class HibernateUserProfileDao implements UserProfileDao {
 					coachingSubcategory, industryExperience,
 					companyExperience, coachFirstName,
 					coachLastName, city, state, pageSize, pageNumber);
-	
+
+			//Filter it for tutors only 12/30/2015
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			CRITERIA = CRITERIA + " user_profile_type = " + Constants.COACH_USER_PROFILE_TYPE;				
+			
 			String sql = " select count(*) from user_profile u " + CRITERIA;
 			
 			log.info(" findFilteredUserProfilesCount:::: " + sql);
@@ -273,6 +279,50 @@ public class HibernateUserProfileDao implements UserProfileDao {
 		}
 	}
 
+	public int findFilteredUserProfilesCountForTutor(int coachingCategory,
+			int coachingSubcategory, int industryExperience,
+			String companyExperience, String coachFirstName,
+			String coachLastName, String city, String state, int pageSize, int pageNumber)  throws Exception {
+		
+		try {
+			// session.beginTransaction();
+			
+		    log.info("Coaching Category: " + coachingCategory);
+		    log.info("Coaching Sub Category: " + coachingSubcategory);
+
+			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
+					UserProfile.class);
+
+			String  CRITERIA = getCriteria(coachingCategory,
+					coachingSubcategory, industryExperience,
+					companyExperience, coachFirstName,
+					coachLastName, city, state, pageSize, pageNumber);
+			
+			//Filter it for tutors only 12/30/2015
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			CRITERIA = CRITERIA + " user_profile_type = " + Constants.TUTOR_USER_PROFILE_TYPE;				
+			
+			String sql = " select count(*) from user_profile u " + CRITERIA;
+			
+			log.info(" findFilteredUserProfilesCount:::: " + sql);
+
+			int count = ((java.math.BigInteger)sessionFactory.getCurrentSession().createSQLQuery(sql).uniqueResult()).intValue() ; 
+			
+			//query.setResultTransformer(AliasToEntityMapResultTransformer.INSTANCE);
+			//List list = query.list();
+		    log.info(" findFilteredUserProfilesCount::Number of Coaches found: " + count);
+		    
+			return count;
+
+		} catch (Exception e) {
+			// tx.rollback();
+			throw e;
+		}
+	}
+
+	
+	
+//End of use for city and state searches	
 	
 	public int findFilteredUserProfilesCount(int coachingCategory,
 			int coachingSubcategory, int industryExperience,
@@ -311,6 +361,11 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			}
 
 			//End Added 12/12/15
+			
+			//Filter it for tutors only 12/30/2015
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			CRITERIA = CRITERIA + " user_profile_type = " + Constants.COACH_USER_PROFILE_TYPE;				
+			
 			
 	
 			String sql = " select count(*) from user_profile u " + CRITERIA;
@@ -351,8 +406,62 @@ public class HibernateUserProfileDao implements UserProfileDao {
 					companyExperience, coachFirstName,
 					coachLastName, city, state, pageSize, pageNumber);
 
-			String sql = getInitialSQL() + " " + CRITERIA;
+			//Filter it for tutors only 12/30/2015
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			CRITERIA = CRITERIA + " user_profile_type = " + Constants.COACH_USER_PROFILE_TYPE ;				
 			
+			String sql = getInitialSQL() + " " + CRITERIA;
+
+			log.info(" findFilteredUserProfiles State & City :::: " + sql);
+
+			Query query = sessionFactory.getCurrentSession().createSQLQuery(sql); 
+		    log.info("1 findFilteredUserProfiles::Number of Coaches found: " + query.list().size());
+			
+	        //query.setFirstResult(((pageNumber - 1) * pageSize) + 1 );
+
+	        query.setFirstResult(((pageNumber - 1) * pageSize) );
+	        log.info("2 findFilteredUserProfiles::Number of Coaches found: " + query.list().size());
+	        query.setMaxResults(pageSize);
+			
+		    log.info("3 findFilteredUserProfiles::Number of Coaches found: " + query.list().size());
+			query.setResultTransformer(AliasToEntityMapResultTransformer.INSTANCE);
+		    log.info("4 findFilteredUserProfiles::Number of Coaches found: " + query.list().size());
+			List list = query.list();
+		    log.info("5 findFilteredUserProfiles::Number of Coaches found: " + query.list().size());
+		    
+			return ((List<HashMap>) list);
+
+		} catch (Exception e) {
+			// tx.rollback();
+			throw e;
+		}
+	}
+
+	public List findFilteredUserProfilesForTutor(int coachingCategory,
+			int coachingSubcategory, int industryExperience,
+			String companyExperience, String coachFirstName,
+			String coachLastName, String city, String state, int pageSize, int pageNumber)  throws Exception { 
+
+		try {
+			// session.beginTransaction();
+			
+		    log.info("Coaching Category: " + coachingCategory);
+		    log.info("Coaching Sub Category: " + coachingSubcategory);
+
+			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
+					UserProfile.class);
+
+			String  CRITERIA = getCriteria(coachingCategory,
+					coachingSubcategory, industryExperience,
+					companyExperience, coachFirstName,
+					coachLastName, city, state, pageSize, pageNumber);
+
+			//Filter it for tutors only 12/30/2015
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			CRITERIA = CRITERIA + " user_profile_type = " + Constants.TUTOR_USER_PROFILE_TYPE ;				
+
+			String sql = getInitialSQL() + " " + CRITERIA;
+
 			log.info(" findFilteredUserProfiles:::: " + sql);
 
 			Query query = sessionFactory.getCurrentSession().createSQLQuery(sql); 
@@ -377,6 +486,9 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			throw e;
 		}
 	}
+	
+//End of used for city and state searches 
+	
 	
 	public List findFilteredUserProfiles(int coachingCategory,
 			int coachingSubcategory, int industryExperience,
@@ -414,6 +526,10 @@ public class HibernateUserProfileDao implements UserProfileDao {
 				CRITERIA = CRITERIA + " coachstyleonline = 1" ;				
 			}
 
+			//Filter it for tutors only 12/30/2015
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			CRITERIA = CRITERIA + " user_profile_type = " + Constants.COACH_USER_PROFILE_TYPE;				
+
 			if (!sort.equals("-1") ) {
 				CRITERIA = CRITERIA + sort ;				
 			}
@@ -424,6 +540,7 @@ public class HibernateUserProfileDao implements UserProfileDao {
 				}	
 			}
 			//End Added 12/12/15
+			
 			
 			
 			String sql = getInitialSQL() + " " + CRITERIA;
@@ -508,6 +625,11 @@ public class HibernateUserProfileDao implements UserProfileDao {
 				CRITERIA = CRITERIA + " coachstyleonline = 1" ;				
 			}
 
+			//Filter it for tutors only 12/30/2015
+			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
+			CRITERIA = CRITERIA + " user_profile_type = " + Constants.TUTOR_USER_PROFILE_TYPE ;				
+			
+			
 			if (!sort.equals("-1") ) {
 				CRITERIA = CRITERIA + sort ;				
 			}

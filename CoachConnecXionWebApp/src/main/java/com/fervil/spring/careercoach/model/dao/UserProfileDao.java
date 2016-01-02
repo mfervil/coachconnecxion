@@ -30,6 +30,13 @@ public interface UserProfileDao {
     		String companyExperience, String coachFirstName,
     		String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception ; 
 
+    public List<HashMap> findFilteredUserProfilesForTutor(int coachingCategory,
+    		int coachingSubcategory, int industryExperience,
+    		String companyExperience, String coachFirstName,
+    		String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception ; 
+    
+/////    End of used for city and state searches  //////////////////////////////////////////////////////////////////    
+
     public List<HashMap> findFilteredUserProfiles(int coachingCategory,
     		int coachingSubcategory, int industryExperience,
     		String companyExperience, String coachFirstName,
@@ -49,6 +56,12 @@ public interface UserProfileDao {
     		String companyExperience, String coachFirstName,
     		String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception ;
 
+    public int findFilteredUserProfilesCountForTutor(int coachingCategory,
+    		int coachingSubcategory, int industryExperience,
+    		String companyExperience, String coachFirstName,
+    		String coachLastName, String city, String state, int pageSize, int pageNumber) throws Exception ;
+    
+//End of city and state searches    
 
 	public int findFilteredUserProfilesCountForTutors(int coachingCategory, int coachingSubcategory, int industryExperience, String companyExperience, String coachFirstName, String coachLastName, String city, String state, int pageSize, int pageNumber, String gradelevel, int maxrate, String subject, String zipcodes, String coachstyleinperson, String coachstyleonline, String sort) throws Exception;    
     
