@@ -124,11 +124,11 @@ text-align:center;
 	<a href="https://www.coachconnecxion.com">&gt;&gt;Home</a>
 
 	<div style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1 >Select a city below for ${coachtype}. <br>&nbsp;</h1>
+		<h1 >Select a city below in ${state} for ${coachtype}. <br>&nbsp;</h1>
 	</div>
 	
 	<div style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: black">
-		<h3 >If no tutors in your area <a style="color: blue; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/public/landing-general-personal-tutors"> Click here to find an online tutor</a><br>&nbsp;</h3>
+		<h3 >If no tutors in your area <a style="color: blue; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/public/landing-general-personal-tutors"> Click here to search for an online tutor</a><br>&nbsp;</h3>
 	</div>
 	
 	<div style="height: 1px; background-color: #D0D0D0"></div>

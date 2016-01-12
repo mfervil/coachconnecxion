@@ -9,7 +9,6 @@
 			  <table style="border-spacing:2px; border-collapse:separate;">
 			  <tbody >
 			    <tr>
-			    	<c:if test="${empty general}">
 				    	<td  class="leftalign" ><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /><br>
 					        <form:select size="1" path="coachingCategory" id="coachingCategory" >
 					          <option selected  value="-1">All Categories</option>
@@ -28,7 +27,6 @@
 					          ${coachingCategory =='1130' ? "<option value='1130' selected>Special Needs (ADD/ADHD/etc..)</option>" : "<option value='1130'>Special Needs (ADD/ADHD/etc..)</option>"}
 					          ${coachingCategory =='1140' ? "<option value='1140' selected>Test Prep(SAT/ACT/GMAT/LSAT/etc..)</option>" : "<option value='1140'>Test Prep(SAT/ACT/GMAT/LSAT/etc..)</option>"}
 					        </form:select>			    	
-					</c:if>
 					<%-- 
 			    	<c:if test="${not empty general}">
 			    		<td  class="leftalign" ><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /><br>

@@ -125,8 +125,13 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1 >Select a city below for ${coachtype}. (Most can also work remotely)<br>&nbsp;</h1>
+		<h1 >Select a city below in ${state} for ${coachtype}. <br>&nbsp;</h1>
 	</div>
+	
+	<div style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: black">
+		<h3 >If no coaches in your area <a style="color: blue; font-weight: bold;" href="${pageContext.request.contextPath}/public/landing-general-personal-coaches"> Click here to search for an online coach</a><br>&nbsp;</h3>
+	</div>
+	
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">

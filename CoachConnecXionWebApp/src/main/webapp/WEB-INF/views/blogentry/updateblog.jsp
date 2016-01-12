@@ -105,7 +105,7 @@ label {font-size:14px;}
 				<tr><td class="leftalign" nowrap><form:errors path="creatoremail"><br></form:errors><label>User Email: </label>${userEmail} <br></td> 
 				<tr><td class="leftalign" nowrap><form:errors path="coachingcategory"><br></form:errors><label>*Blog Category: </label>
 				        <form:select size="1" path="coachingcategory" id="coachingcategory"  >
-				          		<option value="">Select A Category</option>
+				          		<option value="">All Categories</option>
 							<c:forEach items="${coachingCategoryListing}" varStatus="status" var="coachingCategoryItem">
 				          		<%-- <option value="${coachingCategoryItem.categoryId}ZZZ${coachingCategoryItem.categoryName}">${coachingCategoryItem.categoryName}</option> --%>
 								<c:choose>
