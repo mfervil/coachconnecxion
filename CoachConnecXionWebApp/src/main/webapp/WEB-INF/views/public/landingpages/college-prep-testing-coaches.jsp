@@ -124,7 +124,7 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Business Coaches </h1></div>
+		<h1>Search For <%= Constants.COLLEGE_PREP_CATEGORY_NAME %> </h1></div>
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">

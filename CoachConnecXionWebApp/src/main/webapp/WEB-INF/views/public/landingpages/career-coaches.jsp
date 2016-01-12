@@ -125,7 +125,7 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Career Coaches </h1>
+		<h1>Search For <%= Constants.CAREER_COACHES_CATEGORY_NAME %> </h1>
 	</div>
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
