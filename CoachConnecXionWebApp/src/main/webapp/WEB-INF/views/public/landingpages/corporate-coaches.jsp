@@ -1,14 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
+<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils, com.fervil.spring.careercoach.util.Constants" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Corporate Coaches-Team Building Games and Questions-CoachConnecXion</title>
+<title>Find Corporate Coaching Services | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion has listings of professional corporate coaches. We will connect you with coaches who are trained to see opportunities where others see problems." />
+<meta name="keywords" content="corporate coaching, corporate coach, corporate coaches, coach corporate" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our corporate coaches will help you address some of the most pressing challenges facing your organization today.  Some of the organizational challenges they may help you with include team disfunction, stagnation, and status quo thinking" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

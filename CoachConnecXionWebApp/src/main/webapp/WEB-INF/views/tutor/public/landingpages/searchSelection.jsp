@@ -1,7 +1,9 @@
 		<form:form method="post" commandName="coachSelection" >
 	    	<c:if test="${empty general}">
+	    		<%-- 
 				<form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/>
 				<form:hidden path="coachingcategoryname" id="coachingcategoryname" value="${coachingcategoryname}"/>
+				--%>
 			</c:if>
 
 			  <table style="border-spacing:2px; border-collapse:separate;">
@@ -9,9 +11,25 @@
 			    <tr>
 			    	<c:if test="${empty general}">
 				    	<td  class="leftalign" ><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /><br>
-						${coachingcategoryname}</td>
+					        <form:select size="1" path="coachingCategory" id="coachingCategory" >
+					          <option selected  value="-1">All Categories</option>
+					          ${coachingCategory =='1010' ? "<option value='1010' selected>Art Tutors</option>" : "<option value='1010'>Art Tutors</option>"}
+					          ${coachingCategory =='1020' ? "<option value='1020' selected>Business/Finance/Accounting</option>" : "<option value='1020'>Business/Finance/Accounting</option>"}
+					          ${coachingCategory =='1030' ? "<option value='1030' selected>Computer Business (Word/Excel/PPT/etc..)</option>" : "<option value='1030'>Computer Business (Word/Excel/PPT/etc..)</option>"}
+					          ${coachingCategory =='1040' ? "<option value='1040' selected>Compute Programming (Java/.Net/etc..)</option>" : "<option value='1040'>Compute Programming (Java/.Net/etc..)</option>"}
+					          ${coachingCategory =='1050' ? "<option value='1050' selected>Communication/Presentation</option>" : "<option value='1050'>Communication/Presentation</option>"}
+					          ${coachingCategory =='1060' ? "<option value='1060' selected>English Tutors</option>" : "<option value='1060'>English Tutors</option>"}
+					          ${coachingCategory =='1070' ? "<option value='1070' selected>History Tutors</option>" : "<option value='1070'>History Tutors</option>"}
+					          ${coachingCategory =='1080' ? "<option value='1080' selected>Homeschool Tutors</option>" : "<option value='1080'>Homeschool Tutors</option>"}
+					          ${coachingCategory =='1090' ? "<option value='1090' selected>Language Tutors</option>" : "<option value='1090'>Language Tutors</option>"}
+					          ${coachingCategory =='1100' ? "<option value='1100' selected>Math</option>" : "<option value='1100'>Math</option>"}
+					          ${coachingCategory =='1110' ? "<option value='1110' selected>Music</option>" : "<option value='1110'>Music</option>"}
+					          ${coachingCategory =='1120' ? "<option value='1120' selected>Science</option>" : "<option value='1120'>Science</option>"}
+					          ${coachingCategory =='1130' ? "<option value='1130' selected>Special Needs (ADD/ADHD/etc..)</option>" : "<option value='1130'>Special Needs (ADD/ADHD/etc..)</option>"}
+					          ${coachingCategory =='1140' ? "<option value='1140' selected>Test Prep(SAT/ACT/GMAT/LSAT/etc..)</option>" : "<option value='1140'>Test Prep(SAT/ACT/GMAT/LSAT/etc..)</option>"}
+					        </form:select>			    	
 					</c:if>
-
+					<%-- 
 			    	<c:if test="${not empty general}">
 			    		<td  class="leftalign" ><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /><br>
 					        <form:select size="1" path="coachingCategory" id="coachingCategory" >
@@ -33,6 +51,7 @@
 					        </form:select>			    	
 						</td>
 					</c:if>
+					--%>
 					
 				  <td class="leftalign" ><br><label>Subject (Ex. Algebra, chemistry, anatomy): </label><form:errors path="subject" cssClass="error" /> <br>
 				  <form:input size="35" path="subject" /><br>&nbsp;</td>

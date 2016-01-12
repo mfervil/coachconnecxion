@@ -220,7 +220,7 @@ public class BasicUserProfileManager implements UserProfileManager {
         this.userProfileDao = userProfileDao;
     }
     
-    public List<HashMap> getUserProfiles(int category, String course, int coachstyleinperson, int coachstyleonline, String zipcodes) throws Exception {
+    public List<HashMap> getUserProfilesOfTutors(int category, String course, int coachstyleinperson, int coachstyleonline, String zipcodes) throws Exception {
         return userProfileDao.findTutorsToContact(category, course, coachstyleinperson,  coachstyleonline, zipcodes);
     }
 

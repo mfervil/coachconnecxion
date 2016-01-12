@@ -1,14 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
+<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils, com.fervil.spring.careercoach.util.Constants" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Certified Career Coaches-Career Coaching Services-CoachConnecXion</title>
+<title>Find a Career Coach | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion will help you find the leading career coach in the industry. We have listings of coaches to help you make critical decisions about your career." />
+<meta name="keywords" content="career coach, career coaching, career coaches, find career coach" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our career coaches will work with you to help assess your talents and help you with critical decisions concerning your career choice and direction" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

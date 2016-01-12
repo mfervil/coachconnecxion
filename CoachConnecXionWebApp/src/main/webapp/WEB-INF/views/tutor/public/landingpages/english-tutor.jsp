@@ -5,10 +5,11 @@
 <html lang="en">
 
 <head>
-	<title>Family Coaches with Parenting Tips Daily - CoachConnecXion</title>
+<title>Find English Tutors Near You | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion offers listings of leading english tutors in your area. We have a variety of tutors with different specialties to help you on your specific need." />
+<meta name="keywords" content="english tutor, english tutoring, english tutors, find english tutor" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Family coaches help families resolve everyday problems that occur within the family unit.  These coaches work with teens, young adults, parents and families to find out what the problems are, and what needs to be done to get your family back on the right track." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

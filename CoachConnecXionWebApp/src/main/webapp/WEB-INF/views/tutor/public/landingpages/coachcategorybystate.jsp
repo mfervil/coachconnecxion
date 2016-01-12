@@ -6,6 +6,7 @@
 <html lang="en">
 
 <head>
+
 	<title>${fn:replace(coachtype, '-', ' ')}-Hire a Coach-Self Help Motivation - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />

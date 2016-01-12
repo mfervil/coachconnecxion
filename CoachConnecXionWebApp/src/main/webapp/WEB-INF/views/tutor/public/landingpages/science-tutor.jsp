@@ -5,10 +5,11 @@
 <html lang="en">
 
 <head>
-	<title>Life Coaches - Self Help Motivation - CoachConnecXion</title>
+<title>Find Science Tutors Near You | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion offers listings of the leading science tutors in your area. We have tutors for anatomy to physics to chemistry and everything in between." />
+<meta name="keywords" content="science tutor, science tutors, science tutoring, find science tutor" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="The role of Our life coaches is to provide the drive and guidance you need to improve your self.  Our our life coaches may be able to help you with your relationship, your career, and your overall emotional health." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

@@ -5,10 +5,11 @@
 <html lang="en">
 
 <head>
-	<title>Life Coaches - Self Help Motivation - CoachConnecXion</title>
+<title>Find Test Prep Tutors Near You | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion offers listings of leading test prep tutors. Our tutors have knowledge and insight of different tests, including ACT, SAT, GMAT, LSAT and more." />
+<meta name="keywords" content="test prep tutoring, test prep tutor, test prep tutors, find test prep tutor" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="The role of Our life coaches is to provide the drive and guidance you need to improve your self.  Our our life coaches may be able to help you with your relationship, your career, and your overall emotional health." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

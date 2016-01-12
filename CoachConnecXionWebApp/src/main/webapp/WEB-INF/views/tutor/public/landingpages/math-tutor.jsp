@@ -5,10 +5,11 @@
 <html lang="en">
 
 <head>
-	<title>Life Coaches - Self Help Motivation - CoachConnecXion</title>
+<title>Find Math Tutors Near You | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion offers listings of math tutors in the area. We have a variety of math tutors, from elementary math to advanced calculus and differential equation." />
+<meta name="keywords" content="math tutor, math tutoring, math tutors, find math tutor" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="The role of Our life coaches is to provide the drive and guidance you need to improve your self.  Our our life coaches may be able to help you with your relationship, your career, and your overall emotional health." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

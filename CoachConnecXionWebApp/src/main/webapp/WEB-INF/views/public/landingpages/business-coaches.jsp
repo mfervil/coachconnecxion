@@ -1,14 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
+<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils, com.fervil.spring.careercoach.util.Constants" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Business Coaches - Online business strategic advisors-CoachConnecXion</title>
+<title>Find Business Coaching Services | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion has listings of professional business coaches online. We have a variety of business strategic advisors to help you meet your goal. " />
+<meta name="keywords" content="business coach, business coaching, business coaches, find business coach" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Business coaches on our site are not only successful coaches and professionals, but they also have genuine interests in assisting you succeed with your own business" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

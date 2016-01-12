@@ -1,14 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
+<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils, com.fervil.spring.careercoach.util.Constants" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Family Coaches with Parenting Tips Daily - CoachConnecXion</title>
+<title>Find Family Coaching Services | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion has listings of professional family coaches online. These coaches will help families resolve everyday problems that occur within them." />
+<meta name="keywords" content="family coach, family coaches, find family coach, find family coaches" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Family coaches help families resolve everyday problems that occur within the family unit.  These coaches work with teens, young adults, parents and families to find out what the problems are, and what needs to be done to get your family back on the right track." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

@@ -5,10 +5,11 @@
 <html lang="en">
 
 <head>
-	<title>Corporate Coaches-Team Building Games and Questions-CoachConnecXion</title>
+<title>Find Communication Presentation Services | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion connects people with communication presentation tutors near them. We have tutors well versed in communication and presentation to choose from." />
+<meta name="keywords" content="communication presentation tutor, communication presentation tutors, find communication presentation tutor, find communication presentation tutors" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our corporate coaches will help you address some of the most pressing challenges facing your organization today.  Some of the organizational challenges they may help you with include team disfunction, stagnation, and status quo thinking" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

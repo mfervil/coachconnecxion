@@ -1,14 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
+<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils, com.fervil.spring.careercoach.util.Constants" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Relationship Coaches-Couples Marriage Therapy and Online Advice</title>
+<title>Find a Relationship Coach | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion will help you find the perfect relationship coach. A relationship coach will help you identify your ideal relationships in every area of life." />
+<meta name="keywords" content="relationship coach, relationship coaching, relationship coaches, find relationship coach" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Relationship coaches can help you set-up your criteria for a successful relationship, and help you build the skills to enhance current and future relationships" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

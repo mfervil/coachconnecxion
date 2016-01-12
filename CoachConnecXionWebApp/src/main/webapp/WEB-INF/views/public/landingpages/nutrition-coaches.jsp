@@ -1,14 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
+<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils, com.fervil.spring.careercoach.util.Constants" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Nutrition Coaches - Nutrition Health - CoachConnecxion</title>
+<title>Personal Nutritional Coaching | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion connects you with leading professional nutrition coaches.  Better known as dieticians or nutritionists, they are experts in food and nutrition." />
+<meta name="keywords" content="nutrition coach, nutrition coaching, nutritional coaching, nutrition coaches" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our nutrition coaches can help educate you on what to eat in order to lead a healthy lifestyle or achieve a specific health or weight-related goal" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

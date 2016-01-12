@@ -217,7 +217,7 @@ public class HibernateUserProfileDao implements UserProfileDao {
 			
 			//Filter it for tutors only 12/30/2015
 			CRITERIA += CRITERIA.contains("where")?" and ":" where ";
-			CRITERIA = CRITERIA + " user_profile_type = " + Constants.TUTOR_STUDENT_USER_PROFILE_TYPE ;				
+			CRITERIA = CRITERIA + " user_profile_type = " + Constants.TUTOR_USER_PROFILE_TYPE ;				
 			
 			String sql = " select count(*) from user_profile u " + CRITERIA;
 			
@@ -769,7 +769,9 @@ public class HibernateUserProfileDao implements UserProfileDao {
 					if (coachstyleonline != -1 ) {
 						sql = sql + " and coachstyleonline = 1 ";
 					}
-			
+
+					//Don't need to add filter for user_profile_type because the coaching category will already apply the filter.
+					
 					if (!zipcodes.trim().equals("") ){
 						if (coachstyleinperson != -1  ) {
 							sql = sql + "  ORDER BY FIELD(zipcode, '" + zipcodes.replaceAll("'", "") + "')" ;				
@@ -826,6 +828,8 @@ public class HibernateUserProfileDao implements UserProfileDao {
 					if (coachstyleonline != -1 ) {
 						sql = sql + " and coachstyleonline = 1 ";
 					}
+
+					//Don't need to add filter for user_profile_type because the coaching category will already apply the filter.
 			
 					if (!zipcodes.trim().equals("") ){
 						if (coachstyleinperson != -1  ) {

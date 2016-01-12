@@ -15,30 +15,22 @@
 			    		<br>
 				        <form:select size="1" path="coachingCategory" id="coachingCategory" onchange="ShowHideSubCat()" >
 				          <option selected  value="-1">All Categories</option>
-				          <option value="1">ADD & ADHD</option>
-				          <option value="2">Business</option>
-				          <option value="3">Career Change & Enhancement</option>
-				          <option value="4">Couples</option>
-				          <option value="5">Diet/Weight Loss</option>
-				          <option value="6">Disability</option>
-				          <option value="7">Exercise</option>
-				          <option value="8">Executive</option>
-				          <option value="9">Family</option>
-				          <option value="10">Finance</option>
-				          <option value="11">Hobby</option>
-				          <option value="12">Leadership</option>
-				          <option value="13">Life</option>
-				          <option value="14">Management</option>
-				          <option value="15">Music</option>
-				          <option value="16">Motivational</option>
-				          <option value="17">Performance</option>
-				          <option value="18">Relationship</option>
-				          <option value="19">Retirement</option>
-				          <option value="20">Sales</option>
-				          <option value="21">Stress Management</option>
-				          <option value="22">Sports Training</option>
-				          <option value="23">Team and Group</option>
-				          <option value="24">College Prep. Testing</option>
+				          <option value="<%= Constants.ADD_ADHD_COACHES_CATEGORY_ID %>"><%= Constants.ADD_ADHD_COACHES_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.BUSINESS_COACHES_CATEGORY_ID %>"><%= Constants.BUSINESS_COACHES_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.CAREER_COACHES_CATEGORY_ID %>"><%= Constants.CAREER_COACHES_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.COLLEGE_PREP_CATEGORY_ID %>"><%= Constants.COLLEGE_PREP_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.NUTRITION_COACHES_CATEGORY_ID %>"><%= Constants.NUTRITION_COACHES_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.ENTREPRENEURSHIP_CATEGORY_ID %>"><%= Constants.ENTREPRENEURSHIP_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.EXECUTIVE_MANAGEMENT_COACHES_CATEGORY_ID %>"><%= Constants.EXECUTIVE_MANAGEMENT_COACHES_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.FAMILY_COACHES_CATEGORY_ID %>"><%= Constants.FAMILY_COACHES_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.FINANCE_COACHES_CATEGORY_ID %>"><%= Constants.FINANCE_COACHES_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.FITNESS_COACHES_CATEGORY_ID %>"><%= Constants.FITNESS_COACHES_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.LEADERSHIP_CATEGORY_ID %>"><%= Constants.LEADERSHIP_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.LIFE_COACHES_CATEGORY_ID %>"><%= Constants.LIFE_COACHES_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.MOTIVATAIONAL_PERFORMANCE_CATEGORY_ID %>"><%= Constants.MOTIVATAIONAL_PERFORMANCE_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.RELATIONSHIP_COACHES_CATEGORY_ID %>"><%= Constants.RELATIONSHIP_COACHES_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.SALES_CATEGORY_ID %>"><%= Constants.SALES_CATEGORY_NAME %></option>
+				          <option value="<%= Constants.TEAM_GROUP_CATEGORY_ID %>"><%= Constants.TEAM_GROUP_CATEGORY_NAME %></option>
 				        </form:select>			    	
 			    	</td>
 			    	

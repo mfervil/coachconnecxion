@@ -51,7 +51,7 @@ public String getContactStudent(HttpServletRequest request, HttpServletResponse 
 	try{	
 
 		Contacttutor ctTutor  = contactTutorManager.findById(Long.valueOf(request.getParameter("jbbid").toString()));
-		ctTutor.setTutorcase(" ");
+		ctTutor.setTutorcase(".");
 		model.addAttribute("contacttutor", ctTutor);
 		return "tutor/contacttutor/contactstudent"; 
 

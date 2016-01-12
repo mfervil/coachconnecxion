@@ -1,15 +1,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
+<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils, com.fervil.spring.careercoach.util.Constants" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Money and Finance Coaches-credit debt management services and tools-CoachConnecXion</title>
+<title>Money & Financial Coaching | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion offers access to the top finance coaches in the industry. These highly trained professionals will help you reach your financial goals." />
+<meta name="keywords" content="money coach, financial coaching, financial coach, finance coach, money coaches, finance coaches" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Financial coaches can provide you the expert advice and education you need to feel confident in you financial plans and debt management.  They can help you lay out a plan to improve your financial future or simply get out of debt" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
 <%-- END Header No Side test --%>

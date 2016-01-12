@@ -1,17 +1,39 @@
 		<form:form method="post" commandName="coachSelection" >
-	    	<c:if test="${empty general}">
-				<form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/>
-				<form:hidden path="coachingcategoryname" id="coachingcategoryname" value="${coachingcategoryname}"/>
-			</c:if>
-
+	    	<%--
+		    	<c:if test="${empty general}">
+					<form:hidden path="coachingCategory" id="coachingCategory" value="${coachingCategory}"/>
+					<form:hidden path="coachingcategoryname" id="coachingcategoryname" value="${coachingcategoryname}"/>
+				</c:if>
+	    	 --%>
+	    	 
 			  <table style="border-spacing:2px; border-collapse:separate;">
 			  <tbody >
 			    <tr>
 			    	<c:if test="${empty general}">
 				    	<td  class="leftalign" ><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /><br>
-						${coachingcategoryname}</td>
+						        <form:select size="1" path="coachingCategory" id="coachingCategory" >
+						          <option value="-1">Select a Category</option>
+						          ${coachingCategory =='1' ? "<option selected value='1' >ADD / ADHD Coaches</option>" : "<option value='1' >ADD / ADHD Coaches</option>"}
+						          ${coachingCategory =='2' ? "<option selected  value='2' >Business Coaches</option>" : "<option value='2' >Business Coaches</option>"}
+						          ${coachingCategory =='3' ? "<option  selected value='3' >Career Upgrade Coaches</option>" : "<option value='3' >Career Upgrade Coaches</option>"}
+						          ${coachingCategory =='24' ? "<option  selected value='24' >College Prep. Testing Coaches</option>" : "<option value='24' >College Prep. Testing Coaches</option>"}
+						          ${coachingCategory =='5' ? "<option  selected value='5' >Diet / Nutrition / Weight Loss Coaches</option>" : "<option value='5' >Diet / Nutrition / Weight Loss Coaches</option>"}
+						          ${coachingCategory =='25' ? "<option  selected value='25' >Entrepreneurship Coaches</option>" : "<option value='25' >Entrepreneurship Coaches</option>"}
+						          ${coachingCategory =='14' ? "<option  selected value='14' >Executive / Management Coaches</option>" : "<option value='14' >Executive / Management Coaches</option>"}
+						          ${coachingCategory =='9' ? "<option  selected value='9' >Family Coaches</option>" : "<option value='9' >Family Coaches</option>"}
+						          ${coachingCategory =='10' ? "<option  selected value='10' >Finance / Money Coaches</option>" : "<option value='10' >Finance / Money Coaches</option>"}
+						          ${coachingCategory =='22' ? "<option  selected value='22' >Health / Fitness / Exercise Coaches</option>" : "<option value='22' >Health / Fitness / Exercise Coaches</option>"}
+						          ${coachingCategory =='12' ? "<option  selected value='12' >Leadership Coaches</option>" : "<option value='12' >Leadership Coaches</option>"}
+						          ${coachingCategory =='13' ? "<option  selected value='13' >Life Coaches</option>" : "<option value='13' >Life Coaches</option>"}
+						          ${coachingCategory =='16' ? "<option  selected value='16' >Performance / Motivational Coaches</option>" : "<option value='16' >Performance / Motivational Coaches</option>"}
+						          ${coachingCategory =='18' ? "<option  selected value='18' >Relationship / Couples Coaches</option>" : "<option value='18' >Relationship / Couples Coaches</option>"}
+						          ${coachingCategory =='20' ? "<option  selected value='20' >Sales Coaches" : "<option value='20' >Sales Coaches</option>"}
+						          ${coachingCategory =='23' ? "<option  selected value='23' >Team Building and Group Coaches</option>" : "<option value='23' >Team Building and Group Coaches</option>"}
+						        </form:select>
+						</td>
 					</c:if>
 
+					<%-- 
 			    	<c:if test="${not empty general}">
 			    		<td  class="leftalign" ><label>Category: </label><form:errors path="coachingCategory" cssClass="error" /><br>
 					        <form:select size="1" path="coachingCategory" id="coachingCategory" >
@@ -33,6 +55,7 @@
 					        </form:select>			    	
 						</td>
 					</c:if>
+					--%>
 					
 			      <td class="leftalign" ><label>Industry: </label><form:errors path="industryExperience" cssClass="error" /> <br>
 			      <!-- Find complete list from job categories in career builder -->

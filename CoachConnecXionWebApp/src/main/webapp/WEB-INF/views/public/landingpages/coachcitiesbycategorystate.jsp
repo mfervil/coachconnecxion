@@ -6,10 +6,11 @@
 <html lang="en">
 
 <head>
-	<title>${coachtype}-Hire a Coach-Self Help Motivation - CoachConnecXion</title>
+<title>${state} | Find a ${coachtype} coach | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion connects professional and personal  ${coachtype} coaches with those who need them in ${state}. " />
+
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our personal coaches will create a safe environment in which you can more clearly see your self; the coaches will listen to you and work with you to understand whats holding you back, and what you can do to succeed." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

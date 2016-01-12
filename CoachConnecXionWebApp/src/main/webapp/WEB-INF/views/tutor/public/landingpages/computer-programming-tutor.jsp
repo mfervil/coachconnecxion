@@ -5,10 +5,11 @@
 <html lang="en">
 
 <head>
-	<title>Certified Career Coaches-Career Coaching Services-CoachConnecXion</title>
+<title>Computer Programming Tutors | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion offers listings of computer programming tutors. A tutor with expertise in a certain computer domain can help you master certain technical skills." />
+<meta name="keywords" content="computer programming tutor, computer programming tutors, find computer programming tutor, find computer programming tutors" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our career coaches will work with you to help assess your talents and help you with critical decisions concerning your career choice and direction" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

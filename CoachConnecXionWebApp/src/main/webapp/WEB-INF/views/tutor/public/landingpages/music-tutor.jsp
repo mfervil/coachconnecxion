@@ -5,10 +5,11 @@
 <html lang="en">
 
 <head>
-	<title>Life Coaches - Self Help Motivation - CoachConnecXion</title>
+<title>Find Music Tutoring Services | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion connects people with music tutors near them. Improve your knowledge or skill in music, improve your grades or get a head start in class." />
+<meta name="keywords" content="music tutor, music tutors, music tutoring, find music tutor" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="The role of Our life coaches is to provide the drive and guidance you need to improve your self.  Our our life coaches may be able to help you with your relationship, your career, and your overall emotional health." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

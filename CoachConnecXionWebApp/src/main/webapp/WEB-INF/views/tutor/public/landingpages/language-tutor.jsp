@@ -5,10 +5,11 @@
 <html lang="en">
 
 <head>
-	<title>Relationship Coaches-Couples Marriage Therapy and Online Advice</title>
+<title>Find Language Tutoring Services | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion connects people with local language tutors. A tutor will help improve your language skills so you can write and converse in a foreign language." />
+<meta name="keywords" content="language tutor, language tutors, find language tutor, find language tutors" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Relationship coaches can help you set-up your criteria for a successful relationship, and help you build the skills to enhance current and future relationships" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

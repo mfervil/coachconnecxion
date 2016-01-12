@@ -4,8 +4,10 @@
   
 	<%@ include file="/WEB-INF/views/common/header_setup.jsp" %>	
 
-	<title>Professional - Personal - Career coaches and Trainers : CoachConnecXion</title>
-	<meta name="description" content="CoachConnecXion.com matches individuals with life, personal, professional and career coaches.  Our aim is to help witth individual growth" />
+<title>Find a Coach or Tutor Online | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion connects coaches and tutors with those who need them. We help you find the top professional and personal coaches and tutors in the industry." />
+<meta name="keywords" content="find a tutor, find tutor, find tutors, find a coach, find coach, find coaches" />
+	
 	<meta name="msvalidate.01" content="18F49A45D87958CD1603B589E05269DE" /> <%-- This is used by bing --%>
 	<meta name="robots" content="NOODP,NOYDIR" />
 	
@@ -57,20 +59,20 @@
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/about-us">About Us </a> | 
 					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> | 
 					--%>
-					<a  rel="nofollow" style="font-size:16px;color:#0404B4; font-weight: bold; background-color: #B0C4DE; border: 1px solid navy;" href="${pageContext.request.contextPath}/users/login">Login | Sign Up</a>
-					
+					<a  rel="nofollow" style="font-size:16px;color:#0404B4; font-weight: bold; background-color: #B0C4DE; border: 1px solid navy;" href="${pageContext.request.contextPath}/users/login">Login/Sign Up</a>
+
 <c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
 	<c:if test="${sessionScope.usertype == 1}">
-	 			<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>"> | NEW MESSAGES
+	 			<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>"> | Mail
 				(${sessionScope.nummessages}) </a>
 	</c:if>
 	<c:if test="${sessionScope.usertype == 2}">
-				<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/viewOrders"> | NEW MESSAGES
+				<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/viewOrders"> | Mail
 				(${sessionScope.nummessages}) </a>
 	</c:if>
 
 </c:if>
-					
+
 			</div>
 
 			<%-- 
@@ -88,14 +90,15 @@
 		</p>
 		
 		<br>	
-			
+		
 		<div class="separator" ></div>
+		
 		<br>
 		<div style="padding: 20px;"></div>
 
 		<div  class="list-row"><a style="font-size: 20px" href="${pageContext.request.contextPath}/coach/public">COACHING SERVICES</a></div>
 		<div  class="list-row"><a style="font-size: 20px" href="${pageContext.request.contextPath}/tutor/public">TUTORING SERVICES</a></div>
-		<div  class="list-row"><a style="font-size: 20px" href="${pageContext.request.contextPath}/training/public">TRAINING SERVICES</a></div>
+		<%-- <div  class="list-row"><a style="font-size: 20px" href="${pageContext.request.contextPath}/training/public">TRAINING SERVICES</a></div> --%>
 
 		<div style="padding: 20px;">
 			<p style="font-size: 300%; color: #086A87">Welcome to CoachConnecXion<br><br>

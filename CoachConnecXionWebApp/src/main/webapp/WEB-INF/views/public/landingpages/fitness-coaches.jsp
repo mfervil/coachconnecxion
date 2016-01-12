@@ -1,14 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils" %>
+<%@ page import="ua.com.bitlab.springsecuritydemo.services.security.SecurityUtils, com.fervil.spring.careercoach.util.Constants" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Find Fitness Coaches Programs or Become a Fitness Trainer-CoachConnecXion</title>
+<title>Find a Fitness Coach | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion will help you find the leading fitness coach in the industry. Your fitness trainer will lead, instruct, and motivate you in exercise activities." />
+<meta name="keywords" content="fitness coach, fitness coaches, find fitness coach, find fitness coaches" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our fitness trainers will lead, instruct, and motivate you in exercise activities, including cardiovascular exercise (exercises for the heart and blood system), strength training, and stretching" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

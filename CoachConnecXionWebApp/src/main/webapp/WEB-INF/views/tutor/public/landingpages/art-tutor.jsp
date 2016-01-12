@@ -5,10 +5,11 @@
 <html lang="en">
 
 <head>
-	<title>Business Coaches - Online business strategic advisors-CoachConnecXion</title>
+<title>Find Art Tutoring Services | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion connects people with art tutors near them. Experienced and knowledgeable art tutors can offer specific advice and guidance to struggling artists." />
+<meta name="keywords" content="art tutor, art tutors, find art tutor, find art tutors" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Business coaches on our site are not only successful coaches and professionals, but they also have genuine interests in assisting you succeed with your own business" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

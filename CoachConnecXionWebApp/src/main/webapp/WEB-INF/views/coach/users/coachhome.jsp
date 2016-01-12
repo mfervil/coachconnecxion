@@ -4,8 +4,11 @@
   
 	<%@ include file="/WEB-INF/views/common/header_setup.jsp" %>	
 
-	<title>Math - Science - English Tutors for all grades : CoachConnecXion</title>
+<title>Personal & Professional Coaches | CoachConnecXion</title>
 	<meta name="description" content="CoachConnecXion.com matches individuals with life, personal, professional and career coaches.  Our aim is to help witth individual growth" />
+	<meta name="description" content="CoachConnecXion has listings on the top personal and professional coaches in their industries. A coach can help you reach your goals and avoid obstacles." />
+	<meta name="keywords" content="coach, coaching, coaches" />
+
 	<meta name="msvalidate.01" content="18F49A45D87958CD1603B589E05269DE" /> <%-- This is used by bing --%>
 	<meta name="robots" content="NOODP,NOYDIR" />
 	
@@ -44,20 +47,19 @@
  -->
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/tutor/about-us">About Us </a> | 
 					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/contact-us">Contact Us </a> | 
-					<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold; background-color: #B0C4DE; border: 1px solid navy;" href="${pageContext.request.contextPath}/users/login">Login | Sign Up</a>
+					<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold; background-color: #B0C4DE; border: 1px solid navy;" href="${pageContext.request.contextPath}/users/login">Login/Sign Up</a>
 					
 <c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
 	<c:if test="${sessionScope.usertype == 1}">
-	 			<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>"> | NEW MESSAGES
+	 			<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>"> | Mail
 				(${sessionScope.nummessages}) </a>
 	</c:if>
 	<c:if test="${sessionScope.usertype == 2}">
-				<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/viewOrders"> | NEW MESSAGES
+				<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/viewOrders"> | Mail
 				(${sessionScope.nummessages}) </a>
 	</c:if>
 
 </c:if>
-					
 					<%-- 
 					| 
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/tutor/terms-of-use">Terms Of Use </a> | 
@@ -143,12 +145,13 @@
 	</section>
 			
 		<table><tr><td >
-			<p style="font-size: 300%; color: #086A87">Welcome to CoachConnecXion Tutoring Service<br><br>
-			<H1 style="font-size: 200%; color: gray">Home of the top grade school, high school and college tutors in the industry<br><br></H1>
-			<p style="font-size: 200%; color: gray">Our #1 goal is to help you find that great tutor to take you to the next level<br><br>
+			<p style="font-size: 300%; color: #086A87">Welcome to CoachConnecXion<br><br>
+			<H1 style="font-size: 200%; color: gray">Home of the top professional and personal coaches in the industry<br><br></H1>
+			<p style="font-size: 200%; color: gray">Our #1 goal is to help you find that great guide to take you to the next level<br><br>
 			<p style="font-size: 300%; color: gray">******<br><br>
-			<p style="font-size: 16px; color: gray" >If you are a tutor who enjoys helping others sign-up with us, our students are always looking for great tutors <br> <br>
-			<p style="font-size: 16px; color: gray" >If you are looking for a great tutor, you've come to the right place.  We have tutors in all subjects for all grade levels <br> <br>
+			<p style="font-size: 16px; color: gray" >If you are a certified coach who enjoys helping others sign-up with us, our customers are always looking for great coaches <br> <br>
+			<p style="font-size: 16px; color: gray" >If you are looking for a professional coach or tutor, you've come to the right place.  We have all types of coaches, including business coaches, life coaches, sports coaches, and many more...
+													Our tutors can help with any subject, including math, english, and science; and work with students from elementary to college level <br> <br>
 		</td></tr></table>
 		
 	</div><!-- #wrapper -->		

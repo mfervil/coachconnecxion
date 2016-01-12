@@ -5,11 +5,10 @@
 <html lang="en">
 
 <head>
-<title>Find a Life Coach | CoachConnecXion</title>
-<meta name="description" content="CoachConnecXion will help you find the leading life coach in the industry. They provide the drive and guidance individuals need to improve their life." />
-<meta name="keywords" content="life coach, life coaching, life coaches, find life coach" />
+	<title>Entrepreneurship Coaches - Online or In-Person coaching - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
+	<meta name="description" content="Coaching to help individuals discover and apply their entrepreneurial talents to achieve maximum success" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -125,7 +124,7 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For Online Life Coaches </h1></div>
+		<h1>Search For Business Coaches </h1></div>
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
 	<table style="width: 900px;">
@@ -156,36 +155,37 @@ text-align:center;
 								</td>
 							</tr>
 							<tr><td>&nbsp;</td></tr>
-							<%--
-								<title>self help motivation - CoachConnecXion</title>
+							<%--  Keywords
+								Online business strategic advisors - Business Coaches - CoachConnecXion							
 							 --%>
 							<tr>
-								<td>
-									<h3 style="text-align: left;"><B>Coaches: </B><a   rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
+								<td>						
+									<h3 style="text-align: left;"><B>Coaches: </B><a  rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
+									<br>
 								</td>
 							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/> <br>
-								The stages of the coaching process used by our professionals to get you to the next level 							
+							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Consulting Coaching Therapy" height="200" width="600"/><br>
+										The stages of the coaching process used by professional advisors to get you to the next level <br>							
 							</td></tr>
-							<tr><td>	<br>	
-									<h2 style="text-align: left; text-decoration: underline;">What an Online Life Coach from CoachConnecXion does:</h2>
-									<h3 style="text-align: left;">These coaches provide the drive and guidance individuals need to improve their careers, relationships, and overall emotional state. 
-																	</h3><br>
+							<tr><td> <br>		
+									<h2 style="text-align: left;  text-decoration: underline;">What an Entrepreneurship Coach Does For You:</h2>
+									<h3 style="text-align: left;">If you're an entrepreneur seeking to maximize your talents, engaging a coach may be the best investment you can make.  
+																	At CoachConnecXion we have a variety of strategic business and career coaches to help you meet your goals.</h3> <br>
 								</td>
 							</tr>
-							<tr><td>		
-									<h3 style="text-decoration: underline;">A Life coach may be helpful for the following reasons:</h3>
+							<tr><td>	
+									<h3 style="text-decoration: underline;">Your Coach will help with the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Need some guidance on moving forward in your career</li>
-										<li style="text-align: left;">Want to learn how to take advantage of your strengths and talents</li>
-										<li style="text-align: left;">Don't know what to do about a major life decision, such as a move or promotion</li>
-										<li style="text-align: left;">Don't have an acceptable work-life balance</li>
-										<li style="text-align: left;">Have a lot of stress</li>
-										<li style="text-align: left;">Need help recognizing your skills and achieving your dreams</li>
-										<li style="text-align: left;">Having trouble moving past challenges that stand in the way of your goals</li>
-										<li style="text-align: left;">Provide self help motivation tools and techniques to help you along the way to your goal</li>
+										<li style="text-align: left;">Help you be more accountable.  Since there is no one else to push you, you need a coach to provide that pressue and help you move forward</li>
+										<li style="text-align: left;">Provide and outside perspective to give you a clearer picture of your environment</li>
+										<li style="text-align: left;">Provide lessons learned from prior mistakes made by others so you don't make the same mistakes</li>
+										<li style="text-align: left;">Help you more quickly identify the problem areas so small issues don't get out of hand</li>
+										<li style="text-align: left;">Help you step back and think more strategically about the business and determine how the employees and clients can best address your vision</li>
+										<li style="text-align: left;">Assist you in balancing your personal with your business life.</li>
+										<li style="text-align: left;">Work with you on the problems you're facing, help you set goals and develop a plan, and require you to carry out and implement your plans.</li>
+										<li style="text-align: left;">Encourage and motivate you, building your sense of self-worth and confidence.</li>
 									</ul>
-									<br>Referenced from: www.webmd.com
+									<br>Referenced from: http://www.entrepreneur.com/article/240247
 								</td>	
 							</tr>
 						</table>		

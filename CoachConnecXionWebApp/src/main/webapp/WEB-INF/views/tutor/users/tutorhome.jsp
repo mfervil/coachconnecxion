@@ -4,9 +4,10 @@
   
 	<%@ include file="/WEB-INF/views/tutor/common/header_setup.jsp" %>	
 
-	<title>Math - Science - English Tutors for all grades : CoachConnecXion</title>
+<title>Search for a Tutor | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion will connect you with knowledgeable tutors in your area of study. Search through our list of tutors near you." />
+<meta name="keywords" content="tutor, tutoring, tutors, tutor search" />
 	<meta name="description" content="CoachConnecXion.com matches individuals with life, personal, professional and career coaches.  Our aim is to help witth individual growth" />
-	<meta name="msvalidate.01" content="18F49A45D87958CD1603B589E05269DE" /> <%-- This is used by bing --%>
 	<meta name="robots" content="NOODP,NOYDIR" />
 	
 <script>
@@ -37,20 +38,20 @@
 
 			<div id="menutopmost">
 				<%-- <a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=au">About Us </a> | <a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/public/information?type=cu">Contact Us </a> | <a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/public/information?type=pp">Privacy Policy&nbsp;&nbsp;&nbsp;&nbsp;</a> --%>
-				<a style="font-size:16px;color:#0404B4"  href="${pageContext.request.contextPath}/coach/public">[GO TO COACHING SITE] &nbsp;&nbsp;&nbsp;&nbsp; </a> | 
+				<a style="font-size:14px;color:#0404B4"  href="${pageContext.request.contextPath}/coach/public">[GO TO COACHING SITE] &nbsp;&nbsp;&nbsp;&nbsp; </a> | 
 					<a  style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/">Home </a> | 
 				<!-- <a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/public">Tutoring </a> |  --> 
 					<a style="font-size:12px;color:#0404B4" href="${pageContext.request.contextPath}/tutor/about-us">About Us </a> | 
 					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/tutor/contact-us">Contact Us </a> | 
-					<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold; background-color: #B0C4DE; border: 1px solid navy;" href="${pageContext.request.contextPath}/users/login">Login | Sign Up</a>
+					<a  rel="nofollow" style="font-size:12px;color:#0404B4; font-weight: bold; background-color: #B0C4DE; border: 1px solid navy;" href="${pageContext.request.contextPath}/users/login">Login/Sign Up</a>
 
 <c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
 	<c:if test="${sessionScope.usertype == 1}">
-	 			<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>"> | NEW MESSAGES
+	 			<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/viewRequests?cuin=<%= SecurityUtils.getCurrentUser() == null?0:SecurityUtils.getCurrentUser().getId()%>"> | Mail
 				(${sessionScope.nummessages}) </a>
 	</c:if>
 	<c:if test="${sessionScope.usertype == 2}">
-				<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/viewOrders"> | NEW MESSAGES
+				<a style="font-size:12px;color:#FF0000; font-weight: bold;" href="${pageContext.request.contextPath}/tutor/viewOrders"> | Mail
 				(${sessionScope.nummessages}) </a>
 	</c:if>
 

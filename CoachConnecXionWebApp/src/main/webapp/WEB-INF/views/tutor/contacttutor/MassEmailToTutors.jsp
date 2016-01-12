@@ -254,7 +254,7 @@ text-align:center;
 
 						<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
 						<tr>
-							<td style="text-align: right;"><form:errors path="course"><br><form:errors path="studentemail" cssClass="error" /> 
+							<td style="text-align: right;"><form:errors path="studentemail"><br><form:errors path="studentemail" cssClass="error" /> 
 								<br></form:errors>
 								<label>The email you have on file: &nbsp; </label> 
 							</td>

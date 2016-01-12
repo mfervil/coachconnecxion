@@ -5,10 +5,11 @@
 <html lang="en">
 
 <head>
-	<title>Nutrition Coaches - Nutrition Health - CoachConnecxion</title>
+<title>Find Home School Tutors Near You | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion offers listings of the leading home school tutors in your area. A tutor can help you understand complex subjects you need help with." />
+<meta name="keywords" content="home school tutoring, homeschool tutors, homeschooling tutors, homeschool tutor" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our nutrition coaches can help educate you on what to eat in order to lead a healthy lifestyle or achieve a specific health or weight-related goal" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

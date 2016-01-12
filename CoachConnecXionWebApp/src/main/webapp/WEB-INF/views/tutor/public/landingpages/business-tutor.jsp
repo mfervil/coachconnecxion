@@ -5,10 +5,11 @@
 <html lang="en">
 
 <head>
-	<title>Business Coaches - Online business strategic advisors-CoachConnecXion</title>
+<title>Accounting, Finance & Business Tutors | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion offers listings of the top accounting, finance and business tutors. We have a variety of business tutors who can help you with your deficiencies." />
+<meta name="keywords" content="accounting tutor, finance tutor, accounting tutors, business tutor, finance tutors, business tutors" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Business coaches on our site are not only successful coaches and professionals, but they also have genuine interests in assisting you succeed with your own business" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

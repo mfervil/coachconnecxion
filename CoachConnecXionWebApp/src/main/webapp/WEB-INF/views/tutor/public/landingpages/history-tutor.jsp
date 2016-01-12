@@ -5,10 +5,11 @@
 <html lang="en">
 
 <head>
-	<title>Money and Finance Coaches-credit debt management services and tools-CoachConnecXion</title>
+<title>Find History Tutoring Services | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion connects people with history tutors near them. Get a better understanding of historical facts or improve your grades with knowledgeable tutors." />
+<meta name="keywords" content="history tutor, history tutors, history tutoring, find history tutor" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Financial coaches can provide you the expert advice and education you need to feel confident in you financial plans and debt management.  They can help you lay out a plan to improve your financial future or simply get out of debt" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

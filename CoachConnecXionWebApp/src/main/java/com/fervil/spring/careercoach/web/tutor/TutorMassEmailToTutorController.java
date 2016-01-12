@@ -244,7 +244,7 @@ public String getEmailToTutorconfirm(HttpServletRequest request, HttpServletResp
 			coachstyleinperson = -1;   //Negative 1 is the default value when nothing is selected................
 		}
 		
-		List <HashMap> userprofilesDataList = userProfileManager.getUserProfiles(contactTutor.getCategory(), contactTutor.getCourse(), 
+		List <HashMap> userprofilesDataList = userProfileManager.getUserProfilesOfTutors(contactTutor.getCategory(), contactTutor.getCourse(), 
 				coachstyleinperson, coachstyleonline,  zipcodes );
 
 		/*

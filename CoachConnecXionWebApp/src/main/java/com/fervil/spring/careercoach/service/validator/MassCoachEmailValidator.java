@@ -26,14 +26,14 @@ public class MassCoachEmailValidator implements Validator {
         ContactCoach contactCoach = (ContactCoach) target;
     	
         if (contactCoach.getCategory() <= 0  ) {
-			errors.rejectValue("category", "invalid.category", " You must select the subject for tutoring");
+			errors.rejectValue("category", "invalid.category", " You must select the category");
         }
 
         //if (contacttutor.getGradelevel().equals("-1")  ) {
 		//	errors.rejectValue("gradelevel", "invalid.gradelevel", " You must select the grade level");
         //}
         
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "course", "required.course", "The course name is required");
+        //ValidationUtils.rejectIfEmptyOrWhitespace(errors, "course", "required.course", "The course name is required");
         
         if (contactCoach.getStartmonth() <= 0  ) {
 			errors.rejectValue("startmonth", "invalid.startmonth", " You must select your desired start month");
@@ -59,7 +59,7 @@ public class MassCoachEmailValidator implements Validator {
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "availability", "invalid.availability", "You must add your availability");
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "overview", "invalid.overview", "You must describe why you need tutoring");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "overview", "invalid.overview", "You must describe why you need coaching");
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "studentemail", "invalid.studentemail", "You must enter your email");
 

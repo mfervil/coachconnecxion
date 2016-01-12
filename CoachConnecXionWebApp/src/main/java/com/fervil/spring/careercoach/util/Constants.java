@@ -11,25 +11,40 @@ public class Constants {
 	public static final String RESET_PLACE_HOLDER = "rrrresetttt";
 	
 	//Coaching Category Values
+	public static final String ADD_ADHD_COACHES_CATEGORY_NAME = "ADD / ADHD Coaches";
+	public static final int ADD_ADHD_COACHES_CATEGORY_ID = 1;
 	public static final String BUSINESS_COACHES_CATEGORY_NAME = "Business Coaches";
 	public static final int BUSINESS_COACHES_CATEGORY_ID = 2;
-	public static final String CAREER_COACHES_CATEGORY_NAME = "Career Coaches";
+	public static final String CAREER_COACHES_CATEGORY_NAME = "Career Upgrade Coaches";
 	public static final int CAREER_COACHES_CATEGORY_ID = 3;
-	public static final String NUTRITION_COACHES_CATEGORY_NAME = "Nutrition/Diet/Weight Loss";
+	public static final String COLLEGE_PREP_CATEGORY_NAME = "College Prep. Testing Coaches";
+	public static final int COLLEGE_PREP_CATEGORY_ID = 24;
+	public static final String NUTRITION_COACHES_CATEGORY_NAME = "Diet / Nutrition / Weight Loss Coaches";
 	public static final int NUTRITION_COACHES_CATEGORY_ID = 5;
+	public static final String ENTREPRENEURSHIP_CATEGORY_NAME = "Entrepreneurship Coaches";
+	public static final int ENTREPRENEURSHIP_CATEGORY_ID = 25;
+	public static final String EXECUTIVE_MANAGEMENT_COACHES_CATEGORY_NAME = "Executive / Management Coaches";
+	public static final int EXECUTIVE_MANAGEMENT_COACHES_CATEGORY_ID = 14;
 	public static final String FAMILY_COACHES_CATEGORY_NAME = "Family Coaches";
 	public static final int FAMILY_COACHES_CATEGORY_ID = 9;
-	public static final String FINANCE_COACHES_CATEGORY_NAME = "Finance Coaches";
+	public static final String FINANCE_COACHES_CATEGORY_NAME = "Finance / Money Coaches";
 	public static final int FINANCE_COACHES_CATEGORY_ID = 10;
+	public static final String FITNESS_COACHES_CATEGORY_NAME = "Health / Fitness / Exercise Coaches";
+	public static final int FITNESS_COACHES_CATEGORY_ID = 22;
+	public static final String LEADERSHIP_CATEGORY_NAME = "Leadership Coaches";
+	public static final int LEADERSHIP_CATEGORY_ID = 12;
 	public static final String LIFE_COACHES_CATEGORY_NAME = "Life Coaches";
 	public static final int LIFE_COACHES_CATEGORY_ID = 13;
-	public static final String RELATIONSHIP_COACHES_CATEGORY_NAME = "Relation Coaches";
+	public static final String MOTIVATAIONAL_PERFORMANCE_CATEGORY_NAME = "Performance / Motivational Coaches";
+	public static final int MOTIVATAIONAL_PERFORMANCE_CATEGORY_ID = 16;
+	public static final String RELATIONSHIP_COACHES_CATEGORY_NAME = "Relationship / Couples Coaches";
 	public static final int RELATIONSHIP_COACHES_CATEGORY_ID = 18;
-	public static final String FITNESS_COACHES_CATEGORY_NAME = "Fitness / Sports Training";
-	public static final int FITNESS_COACHES_CATEGORY_ID = 22;
-	public static final String CORPORATE_COACHES_CATEGORY_NAME = "Corporate / Team Building";
-	public static final int CORPORATE_COACHES_CATEGORY_ID = 23;
-
+	public static final String SALES_CATEGORY_NAME = "Sales Coaches";
+	public static final int SALES_CATEGORY_ID = 20;
+	public static final String TEAM_GROUP_CATEGORY_NAME = "Team Building and Group Coaches";
+	public static final int TEAM_GROUP_CATEGORY_ID = 23;
+	
+	
 	//Tutor Category Values
 	public static final String ART_TUTOR_CATEGORY_NAME = "Art Tutor";
 	public static final int ART_TUTOR_CATEGORY_ID = 1010;
@@ -75,6 +90,13 @@ public class Constants {
 
 	public static final String CONTACT_STUDENT_USER_PROFILE_URL_DEV = "href='http://localhost:8080/CoachConnecXionWebApp-3/tutor/public/profile?profileId=";
 	public static final String CONTACT_STUDENT_USER_PROFILE_URL_PROD = "href='http://www.coachconnecxion.com/tutor/public/profile?profileId=";
+
+	public static final String CONTACT_COACH_CLIENT_DEV_ENV = "href='http://localhost:8080/CoachConnecXionWebApp-3/coach/contact/contactclient?ctt1=";
+	public static final String CONTACT_COACH_CLIENT_PROD_ENV = "href='http://www.coachconnecxion.com/coach/contact/contactclient?ctt1=";
+
+	public static final String CONTACT_COACH_CLIENT_USER_PROFILE_URL_DEV = "href='http://localhost:8080/CoachConnecXionWebApp-3/public/profile?profileId=";
+	public static final String CONTACT_COACH_CLIENT_USER_PROFILE_URL_PROD = "href='http://www.coachconnecxion.com/public/profile?profileId=";
+	
 	
 	public static final int COACH_USER_PROFILE_TYPE = 1;
 	public static final int TUTOR_USER_PROFILE_TYPE = 2;
