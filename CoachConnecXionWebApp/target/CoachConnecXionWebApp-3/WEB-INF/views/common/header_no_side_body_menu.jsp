@@ -5,6 +5,25 @@
 						<ul>	
 							<li style="text-decoration: underline;">ADVANCED SEARCHES</li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches" style="text-decoration: underline;">ALL COACHES</a></li>
+							<li><a href="${pageContext.request.contextPath}/public/landing-add-adhd-coaches">ADD & ADHD COACHES</a></li>
+							<li><a href="${pageContext.request.contextPath}/public/landing-business-coaches">BUSINESS COACHES</a></li> 
+							<li><a href="${pageContext.request.contextPath}/public/landing-career-coaches">CAREER UPGRADE COACHES</a></li> 
+							<li><a href="${pageContext.request.contextPath}/public/landing-college-preperation-testing-coaches">COLLEGE PREP. TESTING COACHES</a></li>
+							<li><a href="${pageContext.request.contextPath}/public/landing-diet-nutrition-weigh-loss-coaches">DIET / NUTRITION / WEIGHT LOSS COACHES</a></li> 
+							<li><a href="${pageContext.request.contextPath}/public/landing-entrepreneurship-coaches">ENTREPRENEURSHIP COACHES</a></li>
+							<li><a href="${pageContext.request.contextPath}/public/landing-executive-corporate-management-coaches">EXECUTIVE / MANAGEMENT COACHES</a></li> 
+							<li><a href="${pageContext.request.contextPath}/public/landing-family-coaches">FAMILY COACHES</a></li> 
+							<li><a href="${pageContext.request.contextPath}/public/landing-finance-money-coaches" >FINANCE / MONEY COACHES</a></li> 
+							<li><a href="${pageContext.request.contextPath}/public/landing-health-fitness-exercise-coaches">HEALTH / FITNESS / EXERCISE COACHES</a></li> 
+							<li><a href="${pageContext.request.contextPath}/public/landing-leadership-coaches">LEADERSHIP COACHES</a></li>
+							<li><a href="${pageContext.request.contextPath}/public/landing-life-coaches">LIFE COACHES</a></li> 
+							<li><a href="${pageContext.request.contextPath}/public/landing-motivational-performance-coaches">PERFORMANCE / MOTIVATIONAL COACHES</a></li>
+							<li><a href="${pageContext.request.contextPath}/public/landing-relationship-couples-coaches">RELATIONSHIP / COUPLES COACHES</a></li> 
+							<li><a href="${pageContext.request.contextPath}/public/landing-sales-coaches">SALES COACHES</a></li>
+							<li><a href="${pageContext.request.contextPath}/public/landing-team-and-group-coaches">TEAM BUILDING AND GROUP COACHES</a></li>
+
+<%-- 
+							<li><a href="${pageContext.request.contextPath}/public/landing-general-personal-coaches" style="text-decoration: underline;">ALL COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-business-coaches">BUSINESS COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-career-coaches">CAREER COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-corporate-coaches">CORPORATE COACHES</a></li>
@@ -14,12 +33,14 @@
 							<li><a href="${pageContext.request.contextPath}/public/landing-nutrition-coaches">NUTRITION COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-life-coaches">LIFE COACHES</a></li>
 							<li><a href="${pageContext.request.contextPath}/public/landing-relationship-coaches">RELATIONSHIP COACHES</a></li>
+--%>							
 						</ul>
 					</li>
 
 					<li><a href="#">CLIENTS</a>
 						<ul>	
 							<!-- <li><a href="${pageContext.request.contextPath}/public/coachSelection">FIND A COACH</a></li>  -->
+							<li><a href="${pageContext.request.contextPath}/coach/contact/mass-email-to-coaches">REQUEST COACHING PROPOSALS</a></li>
 							<li><a href="${pageContext.request.contextPath}/viewOrders">PURCHASES & MESSAGES</a></li>
 							<li><a href="${pageContext.request.contextPath}/viewOrders">COMMENTS & RATINGS</a></li>
 							<!-- <li><a href="${pageContext.request.contextPath}/public/information?type=so">SEARCH OVERVIEW</a></li>

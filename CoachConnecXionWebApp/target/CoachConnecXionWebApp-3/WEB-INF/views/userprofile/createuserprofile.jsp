@@ -100,23 +100,30 @@ label {font-size:14px;}
 
 	<table style="border:1px solid black; width:100%">	
 				<%-- <tr><td colspan="2" ><label style="font-size:20px;">PROFILE INFORMATION</label></td> </tr>  --%>
-				<tr><td class="leftalign" nowrap colspan="2" ><label>Upload Image/Logo: <b>${userProfile.profile_picture_name}</b></label> <input type="file" name="frmprofilepicture"
+				<tr><td class="leftalign" nowrap>
+					    <form:errors path="coachstyleinperson"><form:errors path="coachstyleinperson" cssClass="error" /><br></form:errors><span class="required">*</span>	
+					    <label>How do you coach: </label> 
+				            <form:checkbox path="coachstyleonline" value="1" />Online
+				            <form:checkbox path="coachstyleinperson" value="1" />In-Person
+				    </td>
+				</tr>    
+				<tr><td class="leftalign" nowrap colspan="2" ><label><br>Upload Image/Logo: <b>${userProfile.profile_picture_name}</b></label> <input type="file" name="frmprofilepicture"
 					id="frmprofilepicture" ></input></td> 
-					<td class="leftalign" nowrap ><label>YouTube Video Link </label> <form:input size="25" path="video_url" /><br> <b>Link ex.: https://www.youtube.com/watch?v=1234 </b></td>
+					<td class="leftalign" nowrap ><label><br>YouTube Video Link </label> <form:input size="25" path="video_url" /><br> <b>Link ex.: https://www.youtube.com/watch?v=1234 </b></td>
 				</tr>
-				<tr><td class="leftalign" nowrap><form:errors path="firstname"><form:errors path="firstname" cssClass="error" /><br></form:errors><label>*First Name:</label> <form:input size="25" path="firstname" /> </td> 
-					<td class="leftalign" nowrap><form:errors path="middleinitial"><form:errors path="middleinitial" cssClass="error" /><br></form:errors><label>Middle Initial:</label> <form:input size="2" maxlength="2" path="middleinitial" /> </td>
-					<td class="leftalign" nowrap><form:errors path="lastname"><form:errors path="lastname" cssClass="error" /><br></form:errors><label>*Last Name:</label> <form:input size="25" path="lastname" /> </td>
+				<tr><td class="leftalign" nowrap><form:errors path="firstname"><form:errors path="firstname" cssClass="error" /><br></form:errors><label><br>*First Name:</label> <form:input size="25" path="firstname" /> </td> 
+					<td class="leftalign" nowrap><form:errors path="middleinitial"><form:errors path="middleinitial" cssClass="error" /><br></form:errors><label><br>Middle Initial:</label> <form:input size="2" maxlength="2" path="middleinitial" /> </td>
+					<td class="leftalign" nowrap><form:errors path="lastname"><form:errors path="lastname" cssClass="error" /><br></form:errors><label><br>*Last Name:</label> <form:input size="25" path="lastname" /> </td>
 				</tr>
-				<tr><td class="leftalign" nowrap><form:errors path="displayName"><form:errors path="displayName" cssClass="error" /><br></form:errors><span class="required">*</span> <label>Display Name:</label> <form:input size="20" path="displayName" /> </td> 
-					<td class="leftalign" nowrap><form:errors path="email"><form:errors path="email" cssClass="error" /><br></form:errors><span class="required">*</span> <label>Email:</label> <form:input size="25" path="email" /> </td>
-					<td class="leftalign" nowrap><form:errors path="phone"><form:errors path="phone" cssClass="error" /><br></form:errors><span class="required">*</span><label>Phone:</label> <form:input size="25" path="phone" /> </td>
+				<tr><td class="leftalign" nowrap><form:errors path="displayName"><form:errors path="displayName" cssClass="error" /><br></form:errors> <label><br>* Display Name:</label> <form:input size="20" path="displayName" /> </td> 
+					<td class="leftalign" nowrap><form:errors path="email"><form:errors path="email" cssClass="error" /><br></form:errors><label><br>* Email:</label> <form:input size="25" path="email" /> </td>
+					<td class="leftalign" nowrap><form:errors path="phone"><form:errors path="phone" cssClass="error" /><br></form:errors><label><br>* Phone:</label> <form:input size="25" path="phone" /> </td>
 				</tr>
-				<tr><td class="leftalign" nowrap colspan="2"><form:errors path="address"><form:errors path="address" cssClass="error" /><br></form:errors><span class="required">*</span><label>Address:</label> <form:input size="50" path="address" /> </td> 
-					<td class="leftalign" nowrap><label>Suite/Apt #:</label> <form:input size="25" path="apartment" /> </td>
+				<tr><td class="leftalign" nowrap colspan="2"><form:errors path="address"><form:errors path="address" cssClass="error" /><br></form:errors><label><br>* Address:</label> <form:input size="50" path="address" /> </td> 
+					<td class="leftalign" nowrap><label><br>Suite/Apt #:</label> <form:input size="25" path="apartment" /> </td>
 				</tr>
-				<tr><td class="leftalign" nowrap><form:errors path="city"><form:errors path="city" cssClass="error" /><br></form:errors><span class="required">*</span><label>City:</label> <form:input size="25" path="city" /> </td> 
-					<td class="leftalign" nowrap><form:errors path="state"><form:errors path="state" cssClass="error" /><br></form:errors><span class="required">*</span><label>State/Prov:</label> <%-- <form:input size="20" path="state" /> --%>
+				<tr><td class="leftalign" nowrap><form:errors path="city"><form:errors path="city" cssClass="error" /><br></form:errors><label><br>* City:</label> <form:input size="25" path="city" /> </td> 
+					<td class="leftalign" nowrap><form:errors path="state"><form:errors path="state" cssClass="error" /><br></form:errors><label><br>* State/Prov:</label> <%-- <form:input size="20" path="state" /> --%>
 							<form:select size="1" path="state" id="state" ><option value="">SELECT YOUR STATE</option>
 								${userProfile.state =='AL' ? "<option value='AL' selected>ALABAMA</option>" : "<option value='AL' >ALABAMA</option>"}
 								${userProfile.state =='AK' ? "<option value='AK' selected>ALASKA</option>" :  "<option value='AK' >ALASKA</option>"}
@@ -191,7 +198,7 @@ label {font-size:14px;}
 						</form:select>					
 					
 					</td>
-					<td class="leftalign" nowrap><form:errors path="zipcode"><form:errors path="zipcode" cssClass="error" /><br></form:errors><span class="required">*</span><label>Zipcode:</label> <form:input size="25" path="zipcode" /> </td>
+					<td class="leftalign" nowrap><form:errors path="zipcode"><form:errors path="zipcode" cssClass="error" /><br></form:errors><label><br> * Zipcode:</label> <form:input size="25" path="zipcode" /> </td>
 				</tr>
 	</table>
 	<hr>

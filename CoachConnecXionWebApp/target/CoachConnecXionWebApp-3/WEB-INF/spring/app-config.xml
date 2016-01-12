@@ -49,6 +49,14 @@
 	<bean id="contactTutorDao"
           class="com.fervil.spring.careercoach.model.dao.HibernateContactTutorDao">
     </bean>
+    
+	<bean id="contactCoachManager" class="com.fervil.spring.careercoach.service.BasicContactCoachManager">
+		<property name="contactCoachDao" ref="contactCoachDao" />
+	</bean>
+	<bean id="contactCoachDao"
+          class="com.fervil.spring.careercoach.model.dao.HibernateContactCoachDao">
+    </bean>
+    
 	<bean id="userProfileManager" class="com.fervil.spring.careercoach.service.BasicUserProfileManager">
 		<property name="userProfileDao" ref="userProfileDao" />
 	</bean>
