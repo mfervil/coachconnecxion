@@ -6,7 +6,7 @@
 <html lang="en">
 
 <head>
-<title>${state} | Find a ${coachtype} tutor | CoachConnecXion</title>
+<title>${state} | Find a ${coachtype} | CoachConnecXion</title>
 <meta name="description" content="CoachConnecXion connects professional and personal  ${coachtype} tutors with those who need them in ${state}. " />
 
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
