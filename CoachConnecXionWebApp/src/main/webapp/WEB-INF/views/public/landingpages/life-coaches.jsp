@@ -135,7 +135,7 @@ text-align:center;
 						<%@ include file="/WEB-INF/views/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
-						<table>
+						<table style="border-spacing: 3px; border-collapse: separate;">
 							<tr>
 								<td>
 								
@@ -167,10 +167,21 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/> <br>
 								The stages of the coaching process used by our professionals to get you to the next level 							
 							</td></tr>
-							<tr><td>	<br>	
+							<tr><td style="text-align: left;">
+							<br>
+							When you feel as though you’re stuck in a rut or need a push to be your best, a Life Coach can sometimes provide just the sort of help you need. For instance, you might need a life coach if you want to improve your work-life balance, if you need some self-motivation techniques to get you “unstuck,” or if you need some guidance in how to move forward in your career. 
+							<br><br>
+							A life coach can also help you learn to manage stress better and to identify your strengths and talents so you can use them to your best advantage. You might want to work with a life coach long term, or perhaps you just need someone to speak to when you need to make a major life decision (such as moving or changing jobs) and you’d like an unbiased opinion on your options. 
+							<br><br>
+							Whatever your reason for choosing a certified life coach, CoachConnecXion can help you find just the right one to help you make better choices and bring out your hidden talents. And if you’re a life coach yourself and are looking for new clients, click here to register -- listing with CoachConnecXion is free!
+							<br><br>							
+								<%-- 
+								<td>	<br>	
 									<h2 style="text-align: left; text-decoration: underline;">What an Online Life Coach from CoachConnecXion does:</h2>
 									<h3 style="text-align: left;">These coaches provide the drive and guidance individuals need to improve their careers, relationships, and overall emotional state. 
 																	</h3><br>
+								</td>
+								--%>
 								</td>
 							</tr>
 							<tr><td>		
@@ -185,7 +196,7 @@ text-align:center;
 										<li style="text-align: left;">Having trouble moving past challenges that stand in the way of your goals</li>
 										<li style="text-align: left;">Provide self help motivation tools and techniques to help you along the way to your goal</li>
 									</ul>
-									<br>Referenced from: www.webmd.com
+									<br>List above referenced from: www.webmd.com
 								</td>	
 							</tr>
 						</table>		

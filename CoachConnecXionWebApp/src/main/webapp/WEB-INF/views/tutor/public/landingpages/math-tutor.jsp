@@ -135,7 +135,7 @@ text-align:center;
 						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
-						<table>
+						<table style="border-spacing: 3px; border-collapse: separate;">
 							<tr>
 								<td>
 								
@@ -168,9 +168,22 @@ text-align:center;
 								The stages of the coaching process used by our professionals to get you to the next level 							
 							</td></tr>
 							
-							<tr><td> <br>		
+							<tr><td style="text-align: left;"> 
+								<br>
+								Math doesn’t come naturally to everyone, but learning math skills is necessary for success in school and in life. Get the help you need to succeed in math when you find a math tutor on CoachConnecXion!
+								<br><br>
+								We have math tutors that work with students of varying ages and levels, from elementary school through college level math. Whether your child needs help with long division and fractions, or you’re an adult struggling with a college math class that’s required for your degree, you’ll find a math tutor here who can help.
+								<br><br>
+								Some of the many things our math tutors can assist you with include: understanding math fundamentals; preparing for math quizzes, tests or standardized tests; or developing better time management skills. If you’re a parent, our math tutors can help make homework time easier by taking some of the pressure off you while making sure your child understands important concepts.
+								<br><br>
+								So use our website today to find a math tutor to help you or your child excel in math. And if you happen to be a math tutor who would like to find more clients, <a href="https://www.coachconnecxion.com/users/create"  style="color: blue;"> register with us</a> for free!
+								<br><br>
+								
+									<%-- 
+									<br>		
 									<h2 style="text-align: left;  text-decoration: underline;">What a Math tutor does for you, the Math student, struggling with math concepts that seem completely foreign to you:</h2>
 									<h3 style="text-align: left;">Individuals seeking to improve their grades in Math class or those trying to better understand math concepts in general should seek the help of a tutor to get them over that hurdle.  At CoachConnecXion.com, we have a variety of Math tutors, from elementary math to advanced calculus and differential equation </h3> <br>
+									--%>									
 								</td>
 							</tr>
 							<tr><td>	

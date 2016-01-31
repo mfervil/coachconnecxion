@@ -136,7 +136,7 @@ text-align:center;
 						<%@ include file="/WEB-INF/views/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
-						<table>
+						<table style="border-spacing: 3px; border-collapse: separate;">
 							<tr>
 								<td>
 								
@@ -168,15 +168,25 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/hbr_consulting_therapy.png" alt="Consulting Coaching Therapy" height="200" width="600"/> <br>
 								Chart from Harvard Business Review showing the relationship between consulting, therapy and the coaching process.							
 							</td></tr>
-							<tr><td>	<br>
+							<tr><td style="text-align: left;">
+								<br>	
+								Do you feel as though your career needs to be jump-started, but you don’t want to switch fields completely? It could be that you need help looking at your career and skill set through fresh eyes. A qualified Career Coach can help you craft the career of your dreams by identifying the skills you already have as well as those you might need to develop to move ahead. And CoachConnecXion is the perfect place to find the right career coach for you.
+								<br><br>
+								People turn to career coaches for help with many different issues. For example, you might want to start with an assessment of your work values, interests and skills so you can get a better idea of where you are and where you need to be. Your career coach can then help you develop a career path based on your knowledge, experience, skills and abilities -- and delineate the goals you need to meet to achieve that career path.
+								<br><br>
+								Many people go through their working lives just letting their careers take them where they will, without thinking about what they actually want out of life. A career coach can help you become more conscious in your career decisions so you can craft a more meaningful career with better work-life balance. 
+								<br><br>
+									<%-- 
+									<br>
 									<h2 style="text-align: left; text-decoration: underline;">What is career coaching?</h2>
 									<h3 style="text-align: left;">Career coaching is the process of working with people to help them assess their talents and make critical decisions about career choice and direction. 
 																At CoachConnecXion, you can find career coaching services where you can work with your ideal certified career coach. 
 																</h3><br>
+									--%>							
 								</td>
 							</tr>		
 							<tr><td>		
-									<h3 style="text-decoration: underline;">How can a career coach help you:</h3>
+									<h3 style="text-decoration: underline;">Here are some of the areas where a career coach can help you:</h3>
 									<ul style="list-style-type: square;">
 									    <li style="text-align: left;">Administer and interpret assessments to asses work values, interests, skills and competencies</li>
 									    <li style="text-align: left;">Identify alternative internal career options for people in transition that capitalize on individual knowledge, skill and ability profiles</li>
@@ -190,7 +200,7 @@ text-align:center;
 									    <li style="text-align: left;">Teach internal career advisors and mentors how to be more effective in guiding employee career development</li>
 									    <li style="text-align: left;">Facilitate employee training and development initiatives</li>
 									    <li style="text-align: left;">Manage outplacement strategies during times of transition</li>									</ul>
-									<br>Referenced from: www.ginacgroup.com
+									<br>List referenced from: www.ginacgroup.com
 								</td>	
 							</tr>
 						</table>		

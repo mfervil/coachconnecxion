@@ -107,15 +107,17 @@ label {font-size:14px;}
 				        <form:select size="1" path="coachingcategory" id="coachingcategory"  >
 				          		<option value="">All Categories</option>
 							<c:forEach items="${coachingCategoryListing}" varStatus="status" var="coachingCategoryItem">
-				          		<%-- <option value="${coachingCategoryItem.categoryId}ZZZ${coachingCategoryItem.categoryName}">${coachingCategoryItem.categoryName}</option> --%>
-								<c:choose>
-								    <c:when test="${blogPost.coachingcategoryId eq coachingCategoryItem.categoryId}">
-				          				<option value="${coachingCategoryItem.categoryId}<%=Constants.COACHING_CATEGORY_NAME_SEPERATOR %><%=Constants.COACHING_CATEGORY_NAME_SEPERATOR %>${coachingCategoryItem.categoryName}" selected>${coachingCategoryItem.categoryName}</option>
-								    </c:when>
-								    <c:otherwise>
-				          				<option value="${coachingCategoryItem.categoryId}<%=Constants.COACHING_CATEGORY_NAME_SEPERATOR %>${coachingCategoryItem.categoryName}">${coachingCategoryItem.categoryName}</option>
-								    </c:otherwise>
-								</c:choose>
+								<c:if test="${coachingCategoryItem.categoryType eq '1'}">							
+					          		<%-- <option value="${coachingCategoryItem.categoryId}ZZZ${coachingCategoryItem.categoryName}">${coachingCategoryItem.categoryName}</option> --%>
+									<c:choose>
+									    <c:when test="${blogPost.coachingcategoryId eq coachingCategoryItem.categoryId}">
+					          				<option value="${coachingCategoryItem.categoryId}<%=Constants.COACHING_CATEGORY_NAME_SEPERATOR %><%=Constants.COACHING_CATEGORY_NAME_SEPERATOR %>${coachingCategoryItem.categoryName}" selected>${coachingCategoryItem.categoryName} Coaches</option>
+									    </c:when>
+									    <c:otherwise>
+					          				<option value="${coachingCategoryItem.categoryId}<%=Constants.COACHING_CATEGORY_NAME_SEPERATOR %>${coachingCategoryItem.categoryName}">${coachingCategoryItem.categoryName} Coaches</option>
+									    </c:otherwise>
+									</c:choose>
+								</c:if>	
 							</c:forEach>
 				        </form:select>
 				        <font style="font-size: 14px; color: red;"> <form:errors path="coachingcategory" cssClass="error" /></font>			    	

@@ -16,8 +16,8 @@
 
 	<%@ include file="/WEB-INF/views/tutor/common/header_no_side_head.jsp" %>
 
-<link rel="stylesheet" href="css/jquery.wysiwyg.css" type="text/css" />
-<script type="text/javascript" src="jquery/jquery.wysiwyg.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery.wysiwyg.css" type="text/css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/jquery/jquery.wysiwyg.js"></script>
  
 <script type="text/javascript">
 	$(function()

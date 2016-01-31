@@ -5,7 +5,6 @@
 	<%@ include file="/WEB-INF/views/common/header_setup.jsp" %>	
 
 <title>Personal & Professional Coaches | CoachConnecXion</title>
-	<meta name="description" content="CoachConnecXion.com matches individuals with life, personal, professional and career coaches.  Our aim is to help witth individual growth" />
 	<meta name="description" content="CoachConnecXion has listings on the top personal and professional coaches in their industries. A coach can help you reach your goals and avoid obstacles." />
 	<meta name="keywords" content="coach, coaching, coaches" />
 

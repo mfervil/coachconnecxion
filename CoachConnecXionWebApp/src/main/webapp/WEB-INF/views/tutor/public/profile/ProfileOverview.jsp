@@ -221,7 +221,7 @@ table tr:nth-child(2n) {
 									 <td >
 										<table>
 											<tr>
-												<td style="float: left; color: blue; font-weight: bold; font-size: 20px;">${profileInfo.getDisplayName()}
+												<td style="float: left; color: blue; font-weight: bold; font-size: 20px;">${profileInfo.getDisplayName()}&nbsp;&nbsp;&nbsp;
 												</td>
 												<c:if test="${profileOfCurrentUser}" > 					
 													<td style="float: right;"><a href="../createuserprofile?profileId=${profileId}"  style="color: blue; text-decoration: underline;">&nbsp;EDIT MY PROFILE</a> </td>

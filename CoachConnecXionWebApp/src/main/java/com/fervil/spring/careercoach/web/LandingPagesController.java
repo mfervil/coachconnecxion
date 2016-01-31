@@ -334,6 +334,17 @@ public ModelAndView teamGroupsubmitForm(
 			return mav;
 		}
 		
+		@RequestMapping(value = "/public/landing-fitness-coaches", method = RequestMethod.GET)
+		public ModelAndView oldFitnessCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
+
+			log.debug("Received request to show relationship coaches: old URL");
+
+			ModelAndView mav = new ModelAndView ();
+			mav.setViewName ("redirect:/public/landing-health-fitness-exercise-coaches");
+			return mav;
+		}
+		
+		
 		@RequestMapping(value = "/public/landing-health-fitness-exercise-coaches", method = RequestMethod.POST)
 		public ModelAndView submitFitnessForm( 
 				@ModelAttribute("coachSelection") CoachSelection coachSelection,
@@ -414,6 +425,19 @@ public ModelAndView teamGroupsubmitForm(
 			mav.setViewName ("public/landingpages/nutrition-coaches");
 			return mav;
 		}
+		
+		@RequestMapping(value = "/public/landing-nutrition-coaches", method = RequestMethod.GET)
+		public ModelAndView oldNutritionCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
+
+			log.debug("Received request to show relationship coaches: old URL");
+
+			ModelAndView mav = new ModelAndView ();
+			mav.setViewName ("redirect:/public/landing-diet-nutrition-weigh-loss-coaches");
+			return mav;
+		}
+		
+		
+		
 		
 		@RequestMapping(value = "/public/landing-diet-nutrition-weigh-loss-coaches", method = RequestMethod.POST)
 		public ModelAndView submitNutritionForm( 
@@ -568,6 +592,17 @@ public ModelAndView teamGroupsubmitForm(
 			mav.setViewName ("public/landingpages/relationship-coaches");
 			return mav;
 		}
+
+		@RequestMapping(value = "/public/landing-relationship-coaches", method = RequestMethod.GET)
+		public ModelAndView oldRelationshipCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
+
+			log.debug("Received request to show relationship coaches: old URL");
+
+			ModelAndView mav = new ModelAndView ();
+			mav.setViewName ("redirect:/public/landing-relationship-couples-coaches");
+			return mav;
+		}
+		
 		
 		@RequestMapping(value = "/public/landing-relationship-couples-coaches", method = RequestMethod.POST)
 		public ModelAndView submitRelationshipForm( 
@@ -603,6 +638,19 @@ public ModelAndView teamGroupsubmitForm(
 			mav.setViewName ("public/landingpages/corporate-coaches");
 			return mav;
 		}
+
+		
+		@RequestMapping(value = "/public/landing-corporate-coaches", method = RequestMethod.GET)
+		public ModelAndView oldCorporateCoachesreturn(Model model, org.springframework.web.context.request.WebRequest webRequest, HttpSession session) {
+
+			log.debug("Received request to show relationship coaches: old URL");
+
+			ModelAndView mav = new ModelAndView ();
+			mav.setViewName ("redirect:/public/landing-executive-corporate-management-coaches");
+			return mav;
+		}
+		
+		
 		
 		@RequestMapping(value = "/public/landing-executive-corporate-management-coaches", method = RequestMethod.POST)
 		public ModelAndView submitCorporateForm( 

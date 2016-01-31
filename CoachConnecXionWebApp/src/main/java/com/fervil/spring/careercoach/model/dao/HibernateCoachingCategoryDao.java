@@ -72,6 +72,7 @@ public class HibernateCoachingCategoryDao implements CoachingCategoryDao {
 
 			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
 					CoachingCategory.class);
+			crit.addOrder(Order.asc("order"));
 			
 			List list = crit.list();
 			return ((List<CoachingCategory>) list);

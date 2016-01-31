@@ -135,7 +135,7 @@ text-align:center;
 						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
-						<table>
+						<table style="border-spacing: 3px; border-collapse: separate;">
 							<tr>
 								<td>
 								
@@ -170,12 +170,12 @@ text-align:center;
 							
 							
 							<tr><td> <br>		
-									<h2 style="text-align: left;  text-decoration: underline;">What a special education tutor with knowledge in ADD / ADHD does for you, if you're a struggling student with learning difficulties:</h2>
-									<h3 style="text-align: left;">Individuals with learning problems seeking to overcome their learning difficulties, should engage a tutor to help them take advantage of their strengths while also addressing the weak areas.  At CoachConnecXion.com, we have a variety of special education tutors, who are well versed in a variety of subjects to help you move forward and make progress</h3> <br>
+									<h2 style="text-align: left;  text-decoration: underline;">What a special needs tutor with knowledge in ADD / ADHD does for you, if you're a struggling student with learning difficulties:</h2>
+									<h3 style="text-align: left;">Individuals with learning problems seeking to overcome their learning difficulties, should engage a tutor to help them take advantage of their strengths while also addressing the weak areas.  At CoachConnecXion.com, we have a variety of special needs tutors, who are well versed in a variety of subjects to help you move forward and make progress</h3> <br>
 								</td>
 							</tr>
 							<tr><td>	
-									<h3 style="text-decoration: underline;">Your special education ADD / ADHD tutor will do the following:</h3>
+									<h3 style="text-decoration: underline;">Your special needs ADD / ADHD tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
 										<li style="text-align: left;">Help you improve your skills by identifying your difficulties and providing you targeted instructions on how to overcome those difficulties</li>
 										<li style="text-align: left;">Provide insight on what can be done to help you better learn different subjects so you can more easily move effectively move through the material</li>

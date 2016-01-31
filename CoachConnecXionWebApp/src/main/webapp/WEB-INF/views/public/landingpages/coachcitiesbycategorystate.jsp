@@ -143,7 +143,7 @@ text-align:center;
 					<td>
 						<c:set var="count" value="2" scope="page" />
 						
-						<table>
+						<table style="border-spacing: 3px; border-collapse: separate;">
 							<tr>
 									<td  style="vertical-align: top; text-align: left;">
 										<c:set var="count" value="0" scope="page" />

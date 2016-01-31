@@ -22,8 +22,8 @@ public class Package {
 	int category;
 	int subcategory;
 	float price;
-	String overview="&nbsp;";
-	String packagedetails="&nbsp;";
+	String overview=".";
+	String packagedetails=".";
 	int opt_out_days;
 	
 	@Id

@@ -136,7 +136,7 @@ text-align:center;
 						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
-						<table>
+						<table style="border-spacing: 3px; border-collapse: separate;">
 							<tr>
 								<td>
 								
@@ -171,9 +171,23 @@ text-align:center;
 										<br>Diagram showing the different steps and actions involved in the coaching process
 							</td></tr>
 							
-							<tr><td> <br>		
+							<tr><td style="text-align: left;"> 
+									<br>							
+									A skilled English tutor can help you in a variety of areas, whether you need help with an English composition class, need to ace that dissertation or research paper, or you just want to develop more effective communication skills to help you get ahead in business and life. Whether you need an English tutor for yourself or your child, you can find a tutor near you by using CoachConnecXion.
+									<br><br>
+									Our English tutors work with elementary age students through college level and beyond. For students of all ages, an English tutor can help with homework, essay organization, and preparation for quizzes and tests. 
+									<br><br>
+									Your English tutor can also provide you with a specialized area of study to address your specific needs. And if you need help with time management while working on an important paper, your English tutor can help you learn those skills as well.
+									<br><br>
+									For professionals, an English tutor can help you learn to communicate more effectively in your written correspondence and other business tasks -- helping you present a more polished image and communicate more effectively.
+									<br><br>
+									Find the right English tutor for your needs today with CoachConnecXion! And if you are a qualified English tutor and would like to register with us for free, <a href="https://www.coachconnecxion.com/users/create"  style="color: blue;"> click here</a>.
+									<br><br>
+									<%-- 
+									<br>		
 									<h2 style="text-align: left;  text-decoration: underline;">What an English tutor does for you, the English student, struggling to complete that dissertation, or finish that research paper:</h2>
 									<h3 style="text-align: left;">Individuals seeking to improve their grades in English class or those trying to better understand how to structure research or business papers should seek the help of a tutor to get them over that hurdle.  At CoachConnecXion.com, we have a variety of english tutors; some are focus on research papers, others focus more on grammar and sentence structure, some focus more on business related tasks, in either case we have tutors who can help you on your specific need. </h3> <br>
+									--%>									
 								</td>
 							</tr>
 							<tr><td>	
@@ -197,4 +211,4 @@ text-align:center;
 				</tr>
 	</table>
 </section>
-<%@ include file="/WEB-INF/views/tutor/common/footer_no_side.jsp" %>	
+<%@ include file="/WEB-INF/views/tutor/common/footer_no_side.jsp" %>

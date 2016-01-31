@@ -136,7 +136,7 @@ text-align:center;
 						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
-						<table>
+						<table style="border-spacing: 3px; border-collapse: separate;">
 							<tr>
 								<td>
 								
@@ -170,13 +170,13 @@ text-align:center;
 							</td></tr>
 							<tr><td> <br>		
 									<h2 style="text-align: left;  text-decoration: underline;">How a systems computer tutor can help you:</h2>
-									<h3 style="text-align: left;">Individuals seeking to improve their technical skills in computer systems including software programming and development, networking and computer security should engage the help of a technical computer tutor.  A tutor with expertise in a certain computer domain can provide guidance to help you quickly master cetain technical skills.  At CoachConnecXion.com, we have have tutors with knowledge in programming, networking, security, web development, etc..  </h3> <br>
+									<h3 style="text-align: left;">Individuals seeking to improve their technical skills in computer systems including computer programming and development, networking and computer security should engage the help of technical computer programming tutors and other systems tutors.  A tutor with expertise in a certain computer domain can provide guidance to help you quickly master certain technical skills.  At CoachConnecXion.com, we have have tutors with knowledge in programming, networking, security, web development, etc..  </h3> <br>
 								</td>
 							</tr>
 							<tr><td>	
-									<h3 style="text-decoration: underline;">Your Technical Computer tutor may help you with the following:</h3>
+									<h3 style="text-decoration: underline;">Find Computer programming tutors and other systems tutors to help you with the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Help you improve your overall skills with software development and programming by helping you fill-in the gaps in your knowledge area</li>
+										<li style="text-align: left;">Improve your overall skills with software development and computer programming by filling-in the gaps in your knowledge area</li>
 										<li style="text-align: left;">Provide a better understanding of the fundamentals that you may not be familiar with</li>
 										<li style="text-align: left;">If in class, help you improve your grades by providing specialized lessons geared toward your area of challenge</li>
 										<li style="text-align: left;">Provide homework help if applicable to ensure you fully understand the subject, tools and technologies</li>

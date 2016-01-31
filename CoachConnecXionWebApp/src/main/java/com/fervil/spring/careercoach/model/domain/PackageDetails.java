@@ -52,10 +52,10 @@ import javax.persistence.CascadeType;
 		private float priceValue;
 		
 		@Column(name = "OVERVIEW" , columnDefinition="TEXT")
-		private String overView="&nbsp;";
+		private String overView=".";
 		
 		@Column(name = "PACKAGEDETAIL" , columnDefinition="TEXT")
-		private String packageDetails="&nbsp;";
+		private String packageDetails=".";
 		
 		@Column(name = "OPTOUTDAYS")
 		private String optOutDays;

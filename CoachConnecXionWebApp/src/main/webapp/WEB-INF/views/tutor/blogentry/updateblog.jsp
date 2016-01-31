@@ -108,14 +108,16 @@ label {font-size:14px;}
 				          		<option value="">Select A Category</option>
 							<c:forEach items="${coachingCategoryListing}" varStatus="status" var="coachingCategoryItem">
 				          		<%-- <option value="${coachingCategoryItem.categoryId}ZZZ${coachingCategoryItem.categoryName}">${coachingCategoryItem.categoryName}</option> --%>
-								<c:choose>
-								    <c:when test="${blogPost.coachingcategoryId eq coachingCategoryItem.categoryId}">
-				          				<option value="${coachingCategoryItem.categoryId}<%=Constants.COACHING_CATEGORY_NAME_SEPERATOR %><%=Constants.COACHING_CATEGORY_NAME_SEPERATOR %>${coachingCategoryItem.categoryName}" selected>${coachingCategoryItem.categoryName}</option>
-								    </c:when>
-								    <c:otherwise>
-				          				<option value="${coachingCategoryItem.categoryId}<%=Constants.COACHING_CATEGORY_NAME_SEPERATOR %>${coachingCategoryItem.categoryName}">${coachingCategoryItem.categoryName}</option>
-								    </c:otherwise>
-								</c:choose>
+								<c:if test="${coachingCategoryItem.categoryType eq '2'}">							
+									<c:choose>
+									    <c:when test="${blogPost.coachingcategoryId eq coachingCategoryItem.categoryId}">
+					          				<option value="${coachingCategoryItem.categoryId}<%=Constants.COACHING_CATEGORY_NAME_SEPERATOR %><%=Constants.COACHING_CATEGORY_NAME_SEPERATOR %>${coachingCategoryItem.categoryName}" selected>${coachingCategoryItem.categoryName} Tutors</option>
+									    </c:when>
+									    <c:otherwise>
+					          				<option value="${coachingCategoryItem.categoryId}<%=Constants.COACHING_CATEGORY_NAME_SEPERATOR %>${coachingCategoryItem.categoryName}">${coachingCategoryItem.categoryName} Tutors</option>
+									    </c:otherwise>
+									</c:choose>
+								</c:if>	
 							</c:forEach>
 				        </form:select>
 				        <font style="font-size: 14px; color: red;"> <form:errors path="coachingcategory" cssClass="error" /></font>			    	

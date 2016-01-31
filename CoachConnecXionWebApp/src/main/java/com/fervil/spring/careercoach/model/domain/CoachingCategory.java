@@ -18,6 +18,10 @@ public class CoachingCategory {
 	private Integer parentId;
 	@Column(name = "COACHING_CATEGORY_NAME")
 	private String categoryName;
+	@Column(name = "CATEGORY_TYPE")
+	private int categoryType;
+	@Column(name = "ORDER")
+	private int order;
 	
 	public Integer getCategoryId() {
 		return categoryId;
@@ -36,6 +40,18 @@ public class CoachingCategory {
 	}
 	public void setParentId(Integer parentId) {
 		this.parentId = parentId;
+	}
+	public int getCategoryType() {
+		return categoryType;
+	}
+	public void setCategoryType(int categoryType) {
+		this.categoryType = categoryType;
+	}
+	public int getOrder() {
+		return order;
+	}
+	public void setOrder(int order) {
+		this.order = order;
 	}
 
 }

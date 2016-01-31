@@ -136,7 +136,7 @@ text-align:center;
 						<%@ include file="/WEB-INF/views/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
-						<table>
+						<table style="border-spacing: 3px; border-collapse: separate;">
 							<tr>
 								<td>
 								
@@ -165,16 +165,38 @@ text-align:center;
 									<h3 style="text-align: left;"><B>Coaches: </B><a   rel="nofollow" style="color: #0254EB; font-size: 14px; " href="${pageContext.request.contextPath}/users/create">Click here to register</a> and get new clients.  Listing on this site is free.  </h3>
 								</td>
 							</tr>
-							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/><br>
+							<tr>
+							
+							<td>
+								<img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Stages of coaching" height="200" width="600"/><br>
 								The stages of the coaching process used by our professionals to get you to the next level 							
-							</td></tr>
-							<tr><td>	<br>	
+							</td>
+							
+							
+							</tr>
+							<tr>
+								<td style="text-align: left;">
+
+								<br>
+								Whether you are currently in a relationship or not, a relationship coach can help you identify what your ideal relationship looks like -- and that includes more than just romantic relationships. The relationship experts and couples coaches you can meet through CoachConnecXion can help you learn how to set boundaries in all your relationships and build your own relationship skills so you have your best chance for happiness.
+								<br><br>
+								With our relationship coaches, you and your significant other can get the marriage therapy or advice you need to improve your relationship. An experienced, qualified relationship coach like the ones you’ll meet on CoachConnecXion can help you examine your assumptions, identify behavior patterns that are harmful to your relationships, learn how to express yourself in a more effective way, and help you set healthy boundaries for your one-on-one as well as group relationships (for example, with your peers at work).
+								<br><br>
+								The best relationships are those that are founded on mutual respect, clear boundaries and hard work. Let a couples coach or relationship from CoachConnecXion guide you in improving all your interpersonal relationships. And if you are a relationship or couples coach and would like to register with CoachConnecXion, <a href="https://www.coachconnecxion.com/users/create"  style="color: blue;">click here to register</a> and join our team!
+								<br><br>
+
+								</td>
+							
+								<%--	
+								<td>
+								<br>	
 									<h2 style="text-align: left; text-decoration: underline;">What an Online Relationship Coach Does For You:</h2>
 									<h3 style="text-align: left;">A relationship coach will help you identify your ideal relationships in every area of life, bring these ideal relationships into your life, set boundaries 
 																	where your current relationships do not meet your criteria and build skills to enhance current and future relationships. 
 																	The coaches at CoachConnecXion can offer both couples marriage therapy or online relationship advice to help you through your issues. 
-																	</h3><br>
 								</td>
+								</h3><br>
+								--%>										
 							</tr>
 							<tr><td>		
 									<h3 style="text-decoration: underline;">Your Relationship Coach will do the following:</h3>

@@ -135,7 +135,7 @@ text-align:center;
 						<%@ include file="/WEB-INF/views/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
-						<table>
+						<table style="border-spacing: 3px; border-collapse: separate;">
 							<tr>
 								<td>
 								
@@ -168,10 +168,24 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Consulting Coaching Therapy" height="200" width="600"/><br>
 										The stages of the coaching process used by professional advisors to get you to the next level <br>							
 							</td></tr>
-							<tr><td> <br>		
+							<tr><td> 
+								<br>							
+								Business owners and aspiring entrepreneurs frequently have great ideas, but just need a little guidance as they get started with a new business. But even if you’ve been in business for a while, you might still need advice sometimes. Either way, an online Business Coach from CoachConnecXion can help answer your questions and keep you and your business moving forward.
+								<br><br>
+								A business coach can help you to get through the difficult transition periods every business owner experiences when starting or growing a business. Business coaching can also assist you in identifying your own strengths and weaknesses, help you develop better work-life balance -- which is always a challenge for business owners -- and can put you in contact with organizations or professionals who can help you solve problems you may have.
+								<br><br>
+								With the help of your business coach, you can also learn how to set achievable goals and motivate yourself so you can make real progress with your plan for your business. You’ll experience more self-confidence and a greater sense of pride in your work as you achieve your dreams with the help of a qualified business coach.
+								<br><br>
+								So find your ideal business coach today with CoachConnecXion. And if you’re a business coach, <a href="https://www.coachconnecxion.com/users/create"  style="color: blue;"> register with us </a> for free and find new clients!
+								<br>
+								
+								<%-- 
+									<br>		
 									<h2 style="text-align: left;  text-decoration: underline;">What an Online Business Coach Does For You, the Small Business Owner:</h2>
 									<h3 style="text-align: left;">Business owners seeking the expert guidance of Business Coaches typically look for coaches who not only are successful Business Coaches and professionals, but who also have a genuine interest in assisting them.  
 																	At CoachConnecXion we have a variety of business strategic advisors to help you meet your goal.</h3> <br>
+								--%>
+								
 								</td>
 							</tr>
 							<tr><td>	

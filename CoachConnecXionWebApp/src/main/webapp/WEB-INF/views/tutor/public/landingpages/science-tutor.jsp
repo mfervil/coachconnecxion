@@ -135,7 +135,7 @@ text-align:center;
 						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td>
-						<table>
+						<table style="border-spacing: 3px; border-collapse: separate;">
 							<tr>
 								<td>
 								
@@ -169,9 +169,20 @@ text-align:center;
 							</td></tr>
 							
 							
-							<tr><td> <br>		
+							<tr><td style="text-align: left;"> 
+							
+									<br>
+									Science: the very mention of this subject can be daunting to some people. But if you or your child need help learning important science concepts and passing a science course -- from elementary school level to college level -- CoachConnecXion can help you find the right science expert for your needs.
+									<br><br>
+									Our science tutors can help you fill in the gaps of science knowledge, explaining concepts that may have been missed in previous science courses. They provide homework help as well as science test prep services and can even help with preparing for research projects. Best of all, our science tutors can help you or your child develop time management skills that will help you show improvement not only in your science studies, but in many other areas of life.
+									<br><br>
+									If you’re a parent whose child needs science tutoring, our tutors can help free up your time -- you’ll be able to supervise your child less during homework time, while your child gets the science concepts and skills he or she needs. So use CoachConnecXion today to find a science tutor near you. And if you are a qualified science tutor who would like to have more students, <a href="https://www.coachconnecxion.com/users/create"  style="color: blue;"> register with us</a> -- it’s free!
+									<br><br>
+									<%-- 
+									<br>		
 									<h2 style="text-align: left;  text-decoration: underline;">What a science tutor does for you, the student struggling with science concepts that seem completely out of your reach:</h2>
 									<h3 style="text-align: left;">Individuals seeking to improve their grades in science class or those trying to better understand science concepts in general should seek the help of a tutor to get them over that hurdle.  At CoachConnecXion.com, we have a variety of science tutors, from anatomy to physics to chemistry and everything in between</h3> <br>
+									--%>
 								</td>
 							</tr>
 							<tr><td>	

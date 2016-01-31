@@ -5,10 +5,10 @@
 <html lang="en">
 
 <head>
-	<title>Personal Coaches-Hire a Coach-Self Help Motivation - CoachConnecXion</title>
+	<title>Personal Tutors-Hire a tutor to improve your grades - CoachConnecXion</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Our personal coaches will create a safe environment in which you can more clearly see your self; the coaches will listen to you and work with you to understand whats holding you back, and what you can do to succeed." />
+	<meta name="description" content="Our personal tutors will work with you so you can more clearly identify your weaknesses and help you create a plan to improve your grades and knowledge." />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -133,7 +133,7 @@ text-align:center;
 						<%@ include file="/WEB-INF/views/tutor/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td style="width: 80%;">
-						<table style="width: 100%;">
+						<table style="width: 100%; border-spacing: 3px; border-collapse: separate;"">
 							<tr>
 								<td>
 								
@@ -163,23 +163,20 @@ text-align:center;
 							</td></tr>	
 								<tr><td><br><img src="${pageContext.request.contextPath}/images/hbr_coach_info.png" alt="Reasons for coaching" height="500" width="450"/></td></tr>
 							<tr><td>
-									<h2 style="text-align: left; text-decoration: underline;">What an Online Personal Coach does:</h2>
-									<h3 style="text-align: left;">A personal coach creates a safe environment in which people see themselves more clearly; the coach does this by listening, asking focused questions, 
-																	reflecting back, challenging, and acknowledging the individual.  
-																	If you're serious about reaching your goals, the quickest path is to hire a coach through CoachConnecXion to work with you on self help motivation techniques 
-																	and provide guidance and training to help you get to your destination.</h3><br>
+									<h2 style="text-align: left; text-decoration: underline;">What a Personal Tutor does:</h2>
+									<h3 style="text-align: left;">A personal tutor will work with you to help you improve your grades by identifying where you have the most challenges, and work with you to improve on those areas. 
+																	If you're serious about improving your grades and your knowledge in an area, the quickest path is to hire a personal tutor through CoachConnecXion to work with you on study techniques 
+																	and provide guidance and training to help you get to your goal.</h3><br>
 							</td></tr>
 							<tr>
 								<td>						
-									<h3 style="text-decoration: underline;">A Personal Coach may be helpful for the following reasons:</h3>
+									<h3 style="text-decoration: underline;">A Personal tutor may be helpful for the following reasons:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Helps you more clearly identify where you are and where you want to be</li>
-										<li style="text-align: left;">Works with you to develop your potential or facilitate transition</li>
-										<li style="text-align: left;">Helps you develop a long term strategy to get you to your end goal</li>
-										<li style="text-align: left;">Works with you to understand your potential pitfalls and obstacles and helps you devise a solution to bypass those obstacles</li>
-										<li style="text-align: left;">Helps you identify your passion and purpose</li>
+										<li style="text-align: left;">Helps you more clearly identify where you are and what you need to do to get to where you want to be</li>
+										<li style="text-align: left;">Works with you to develop your potential and fine-tune your studying skills</li>
+										<li style="text-align: left;">Helps you develop a long term strategy to get you the grade you want</li>
+										<li style="text-align: left;">Works with you to understand your potential pitfalls and obstacles and helps you find a solution to get around those obstacles</li>
 									</ul>
-									<br>Referenced from: www.coaching.com
 								</td>	
 							</tr>
 						</table>		

@@ -133,7 +133,7 @@ text-align:center;
 						<%@ include file="/WEB-INF/views/public/landingpages/left-nav-coaches.jsp" %>
 					</td>
 					<td style="width: 80%;">
-						<table style="width: 100%;">
+						<table style="width: 100%;  border-spacing: 3px; border-collapse: separate;"">
 							<tr>
 								<td>
 								

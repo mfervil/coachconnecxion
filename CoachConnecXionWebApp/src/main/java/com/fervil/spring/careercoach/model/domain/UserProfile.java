@@ -302,16 +302,16 @@ public class UserProfile  implements Serializable {
 	
 	
 	@Column(name = "overview", nullable = false,  columnDefinition="TEXT")
-	private String overview="&nbsp;";
+	private String overview=".";
 
 	@Column(name = "serviceDescription", nullable = false, columnDefinition="TEXT")
-	private String serviceDescription="&nbsp;";
+	private String serviceDescription=".";
 
 	@Column(name = "availability", nullable = false, columnDefinition="TEXT")
 	private String availability=" ";
 	
 	@Column(name = "skillsExpertise", nullable = false, columnDefinition="TEXT")
-	private String skillsExpertise="&nbsp;";
+	private String skillsExpertise=".";
 
 	private String summaryOfHighestPosition;
 	private String companyOfHighestPosition;
@@ -319,7 +319,7 @@ public class UserProfile  implements Serializable {
 	private String paymentTerms;
 
 	@Column(name = "keywords", nullable = false, columnDefinition="TEXT")
-	private String keywords="&nbsp;";
+	private String keywords=".";
 	
 	private Date modifiedDate;
 	
