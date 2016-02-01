@@ -186,21 +186,16 @@ text-align:center;
 								</td>
 							</tr>		
 							<tr><td>		
-									<h3 style="text-decoration: underline;">Here are some of the areas where a career coach can help you:</h3>
+									<h3 style="text-decoration: underline;">Here are some of the areas where a career coach can help you with the following:</h3>
 									<ul style="list-style-type: square;">
-									    <li style="text-align: left;">Administer and interpret assessments to asses work values, interests, skills and competencies</li>
-									    <li style="text-align: left;">Identify alternative internal career options for people in transition that capitalize on individual knowledge, skill and ability profiles</li>
-									    <li style="text-align: left;">Develop specific career paths with experience, knowledge, abilities, and skills defined</li>
-									    <li style="text-align: left;">Help overcome issues such as lack of self-confidence, poor self-discipline and fear of success/failure</li>
-									    <li style="text-align: left;">Create career development plans to help employees grow and learn</li>
-									    <li style="text-align: left;">Maximize person-job-organizational fit and help kick-start a stagnant career</li>
-									    <li style="text-align: left;">Explore and prepare employees for internal job searches, including resume preparation, in-house interviewing and networking</li>
+									    <li style="text-align: left;">Develop specific career paths keeping in mind your experience, knowledge, abilities, and skills defined</li>
+									    <li style="text-align: left;">Help you improve your self-confidence, become a more disciplined individual, and work with you to reduce your fear of success/failure</li>
+									    <li style="text-align: left;">Create a career development plan to help you assess where you are and where you want to go</li>
+									    <li style="text-align: left;">Helps you maximize your current role and advise you on how to move out of a stagnant situation</li>
+									    <li style="text-align: left;">Work with you to explore internal opportunities by helping you with resume preparation, networking and follow-through</li>
 									    <li style="text-align: left;">Identify and cultivate internal mentor and career advisor networks for personal career development</li>
-									    <li style="text-align: left;">Provide unbiased, objective career counseling intervention/mediation/facilitation for people experiencing job stress, job loss or transition during corporate reorganizations, mergers or downsizing</li>
-									    <li style="text-align: left;">Teach internal career advisors and mentors how to be more effective in guiding employee career development</li>
-									    <li style="text-align: left;">Facilitate employee training and development initiatives</li>
-									    <li style="text-align: left;">Manage outplacement strategies during times of transition</li>									</ul>
-									<br>List referenced from: www.ginacgroup.com
+									    <li style="text-align: left;">Provide unbiased, objective career counseling intervention/mediation/facilitation for people experiencing job stress, job loss or transition during corporate reorganizations, mergers or down-sizing</li>
+									</ul>
 								</td>	
 							</tr>
 						</table>		

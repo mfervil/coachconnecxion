@@ -168,7 +168,7 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/landingpages/landing_coach_3.png" alt="Consulting Coaching Therapy" height="200" width="600"/><br>
 										The stages of the coaching process used by professional advisors to get you to the next level <br>							
 							</td></tr>
-							<tr><td> 
+							<tr><td style="text-align: left;"> 
 								<br>							
 								Business owners and aspiring entrepreneurs frequently have great ideas, but just need a little guidance as they get started with a new business. But even if you’ve been in business for a while, you might still need advice sometimes. Either way, an online Business Coach from CoachConnecXion can help answer your questions and keep you and your business moving forward.
 								<br><br>
@@ -177,7 +177,7 @@ text-align:center;
 								With the help of your business coach, you can also learn how to set achievable goals and motivate yourself so you can make real progress with your plan for your business. You’ll experience more self-confidence and a greater sense of pride in your work as you achieve your dreams with the help of a qualified business coach.
 								<br><br>
 								So find your ideal business coach today with CoachConnecXion. And if you’re a business coach, <a href="https://www.coachconnecxion.com/users/create"  style="color: blue;"> register with us </a> for free and find new clients!
-								<br>
+								<br><br>
 								
 								<%-- 
 									<br>		
@@ -191,17 +191,13 @@ text-align:center;
 							<tr><td>	
 									<h3 style="text-decoration: underline;">Your Business Coach:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Helps you look at the big picture for your business and life</li>
-										<li style="text-align: left;">Guides you in enhancing your business skills and intellectual development.</li>
-										<li style="text-align: left;">Provides candid feedback to you about your strengths and weaknesses.</li>
+										<li style="text-align: left;">Helps you look at the big picture so you do not get lost in the details</li>
 										<li style="text-align: left;">Helps you identify business opportunities.</li>
-										<li style="text-align: left;">Links you with professionals and organizations that can assist you in solving problems.</li>
-										<li style="text-align: left;">Helps you through the transitional periods in starting and growing a small enterprise.</li>
-										<li style="text-align: left;">Assists you in balancing your personal with your business life.</li>
+										<li style="text-align: left;">Guides you in enhancing your business skills and intellectual development.</li>
+										<li style="text-align: left;">Helps you maximize your strengths and works with you on your weaknesses</li>
+										<li style="text-align: left;">Works with you during your transitional periods if starting or growing a small enterprise.</li>
 										<li style="text-align: left;">Listens to the problems you are facing, helps you set goals and develop a plan, and requires you to carry out and implement your plans.</li>
-										<li style="text-align: left;">Encourages and motivates you, building your sense of self-worth and confidence.</li>
 									</ul>
-									<br>Referenced from: www.lightly.com
 								</td>	
 							</tr>
 						</table>		
