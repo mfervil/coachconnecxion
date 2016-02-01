@@ -177,7 +177,7 @@ text-align:center;
 								With the help of your business coach, you can also learn how to set achievable goals and motivate yourself so you can make real progress with your plan for your business. You’ll experience more self-confidence and a greater sense of pride in your work as you achieve your dreams with the help of a qualified business coach.
 								<br><br>
 								So find your ideal business coach today with CoachConnecXion. And if you’re a business coach, <a href="https://www.coachconnecxion.com/users/create"  style="color: blue;"> register with us </a> for free and find new clients!
-								<br><br>
+								<br><br>    
 								
 								<%-- 
 									<br>		

@@ -168,7 +168,7 @@ text-align:center;
 							<tr><td><img src="${pageContext.request.contextPath}/images/hbr_consulting_therapy.png" alt="Consulting Coaching Therapy" height="200" width="600"/> <br>
 								Chart from Harvard Business Review showing the relationship between consulting, therapy and the coaching process.							
 							</td></tr>
-							<tr><td style="text-align: left;">
+							<tr><td style="text-align: left;">    
 								<br>	
 								Do you feel as though your career needs to be jump-started, but you don’t want to switch fields completely? It could be that you need help looking at your career and skill set through fresh eyes. A qualified Career Coach can help you craft the career of your dreams by identifying the skills you already have as well as those you might need to develop to move ahead. And CoachConnecXion is the perfect place to find the right career coach for you.
 								<br><br>
