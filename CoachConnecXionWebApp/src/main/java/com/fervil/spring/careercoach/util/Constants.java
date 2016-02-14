@@ -56,7 +56,7 @@ public class Constants {
 	public static final int COMPUTER_BUSINESS_TUTOR_CATEGORY_ID = 1030;
 	public static final String COMPUTER_PROGRAMMING_TUTOR_CATEGORY_NAME = "Computer Programming Tutor";
 	public static final int COMPUTER_PROGRAMMING_TUTOR_CATEGORY_ID = 1040;
-	public static final String ENGLISH_TUTOR_CATEGORY_NAME = "English Tutor";
+	public static final String ENGLISH_TUTOR_CATEGORY_NAME = "English/Reading/Writing Tutor";
 	public static final int ENGLISH_TUTOR_CATEGORY_ID = 1060;
 	public static final String HISTORY_TUTOR_CATEGORY_NAME = "History Tutor";
 	public static final int HISTORY_TUTOR_CATEGORY_ID = 1070;

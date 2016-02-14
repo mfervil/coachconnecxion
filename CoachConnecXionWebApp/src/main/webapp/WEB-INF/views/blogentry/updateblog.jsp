@@ -7,10 +7,10 @@
 <html lang="en">
 
 <head>
-	<title>Create user profile</title>
+	<title>Update of blog for personal coaching and professional coaching</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Create a profile to become a Coach or Trainer" />
+	<meta name="description" content="Creating new blogs dealing with personal coaches and professional coaches" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
@@ -126,7 +126,12 @@ label {font-size:14px;}
 				<tr><td class="leftalign" nowrap><form:errors path="blogtitle"><br></form:errors><label>*Blog Title: </label> <form:input size="75" path="blogtitle" /> 
 				        <font style="font-size: 14px; color: red;"> <form:errors path="blogtitle" cssClass="error" /></font>			    	
 				</td> 
+				</tr>	
+				<tr><td class="leftalign" nowrap><form:errors path="metadescription"><br></form:errors><label>*Meta Description: </label> <form:input size="100" path="metadescription" /> 
+				        <font style="font-size: 14px; color: red;"> <form:errors path="metadescription" cssClass="error" /></font>			    	
+				</td> 
 				</tr>																															  
+																																		  
 				<tr><td>&nbsp;</td></tr>
 				<tr>
 					<td class="leftalign" > <label>*Blog Post: Create the full blog including images </label> <font style="font-size: 14px; color: red;"> <form:errors path="blogposting" cssClass="error" /></font><br>

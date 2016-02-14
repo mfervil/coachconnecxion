@@ -169,8 +169,8 @@ text-align:center;
 							</td></tr>
 							
 							<tr><td> <br>		
-									<h2 style="text-align: left;  text-decoration: underline;">What a English tutor does for you, the English student, struggling to complete that dissertation, or finish that research paper:</h2>
-									<h3 style="text-align: left;">Individuals seeking to improve improve their grades in English class or those trying to better understand how to structure research or business papers should seek the help of a tutor to get them over that hurdle.  At CoachConnecXion.com, we have a variety of english tutors; some are focus on research papers, others focus more on grammar and sentence structure, some focus more on business related tasks, in either case we have tutors who can help you on your specific need. </h3> <br>
+									<h2 style="text-align: left;  text-decoration: underline;">What a history tutor does for you, the struggling student trying to complete that dissertation, or pushing to complete that research paper:</h2>
+									<h3 style="text-align: left;">Individuals seeking to improve their grades in History class or those trying to better understand how to structure papers should seek the help of a tutor to get them over that hurdle.  At CoachConnecXion.com, we have a variety of history tutors who can help you with your specific needs. </h3> <br>
 								</td>
 							</tr>
 							<tr><td>	

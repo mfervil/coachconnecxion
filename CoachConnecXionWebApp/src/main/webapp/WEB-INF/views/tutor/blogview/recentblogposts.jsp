@@ -6,10 +6,10 @@
 <html lang="en">
 
 <head>
-	<title>Create user profile</title>
+	<title>Recent blogs on personal tutoring and professional tutoring</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Create a profile to become a Coach or Trainer" />
+	<meta name="description" content="Advice and guidance to individuals seeking the help of personal tutors or professional tutors as well as tips and news for the personal tutors already in the field" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

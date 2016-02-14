@@ -111,7 +111,7 @@
 			</p>
 			<br>
 			<p>
-			We’ve made it our mission to match qualified, certified coaches with the customers who need their expertise. CoachConnecXion works with many different types of coaches, so try our site if you need a:
+			We&#39;ve made it our mission to match qualified, certified coaches with the customers who need their expertise. CoachConnecXion works with many different types of coaches, so try our site if you need a:
 			</p>
 			<ul>
 				<li>-- Business coach</li> 

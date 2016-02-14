@@ -201,9 +201,12 @@
 				        <form:input size="35" path="coachLastName" /><br>&nbsp;</td>
 				</tr>
 			    <tr>
-				      <td class="leftalign" ><label>Preferred Tutoring Type: </label><form:errors path="coachstyleonline" cssClass="error" /><br> 
-				            <form:radiobutton path="coachstyle" id="coachstyleinperson" value="coachstyleinperson" /> In-Person Tutoring
-				            <form:radiobutton path="coachstyle" id="coachstyleonline" value="coachstyleonline" /> Online Tutoring
+				      <td class="leftalign" ><label>Tutoring Type Desired: </label><form:errors path="coachstyleonline" cssClass="error" /><br> 
+				            <form:radiobutton path="coachstyle" id="coachstyleall" value="coachstyleall" /> Any Available
+				            <form:radiobutton path="coachstyle" id="coachstyleinperson" value="coachstyleinperson" /> In-Person Only
+				            <form:radiobutton path="coachstyle" id="coachstyleonline" value="coachstyleonline" /> Online Only
+				           
+				            
 				      </td>
 				      <td class="leftalign" >
 						<div id='showzipecode' style='display:block'>

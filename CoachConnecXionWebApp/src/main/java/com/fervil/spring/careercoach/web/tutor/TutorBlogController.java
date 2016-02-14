@@ -102,7 +102,7 @@ public class TutorBlogController {
 */	
 	//Creating a brand new blog GET
 	@RequestMapping(value = "/tutor/update-blog", method = RequestMethod.GET)
-	public String printHello(ModelMap model, org.springframework.web.context.request.WebRequest webRequest,
+	public String updateBlogGet(ModelMap model, org.springframework.web.context.request.WebRequest webRequest,
 			HttpSession session, HttpServletRequest request) {
 
 		try{
@@ -325,7 +325,7 @@ public String saveBlogPost(
 			}
 			blogManager.storeBlog(blogPost);
 			
-			model.addAttribute("monthname", new DateFormatSymbols().getMonths()[publishmonth]);
+			model.addAttribute("monthname", new DateFormatSymbols().getMonths()[publishmonth -1]);
 			
 			model.addAttribute("blogId", blogPost.getBlogid());
 			model.addAttribute("blog", blogPost);
@@ -500,7 +500,7 @@ public String saveBlogPostWithId(@PathVariable("blogId") long blogId,
 			blogComment.setBlogid(blogId);
 			//List<BlogComment> blogCommentList = blogCommentManager.findByBlogId(blogid);
 			
-			model.addAttribute("monthname", new DateFormatSymbols().getMonths()[blogPost.getPublishmonth()]);
+			model.addAttribute("monthname", new DateFormatSymbols().getMonths()[blogPost.getPublishmonth() -1 ]);
 			
 			model.addAttribute("blogComment", blogComment);
 			//model.addAttribute("blogCommentList", blogCommentList);
@@ -526,7 +526,7 @@ public String saveBlogPostWithId(@PathVariable("blogId") long blogId,
 	public String getRecentCoachBlogs( Model model ) {
 		
 		try {
-				List<BlogPost> blogPostListing = blogManager.getRecentBlogPosts(10);
+				List<BlogPost> blogPostListing = blogManager.getRecentBlogPostsTutor(10);
 				model.addAttribute("blogPostListing", blogPostListing);
 				model.addAttribute("blogmonths", getMonthsForArchive());
 				return "tutor/blogview/blogListing"; 
@@ -541,7 +541,7 @@ public String saveBlogPostWithId(@PathVariable("blogId") long blogId,
 	@RequestMapping(value = "/tutor/blogview/professional-coaches/month/{month}/year/{year}", method = RequestMethod.GET)
 	public String getCoachBlogYearMonth(@PathVariable("month") int blogMonth, @PathVariable("year") int blogYear, Model model ) {
 		try {
-			List<BlogPost> blogPostListing =  blogManager.findBlogPostsByMonthYear(blogMonth, blogYear);
+			List<BlogPost> blogPostListing =  blogManager.findBlogPostsByMonthYearTutor(blogMonth, blogYear);
 			model.addAttribute("blogPostListing", blogPostListing);
 			model.addAttribute("blogmonths", getMonthsForArchive());
 			return "tutor/blogview/blogListing"; 
@@ -558,7 +558,7 @@ public String saveBlogPostWithId(@PathVariable("blogId") long blogId,
 		try {
 			BlogPost blogPost =  blogManager.findById(blogid);
 			
-			model.addAttribute("monthname", new DateFormatSymbols().getMonths()[blogPost.getPublishmonth()]);
+			model.addAttribute("monthname", new DateFormatSymbols().getMonths()[blogPost.getPublishmonth() -1 ]);
 			model.addAttribute("blogmonths", getMonthsForArchive());
 			
 			model.addAttribute("blogId", blogPost.getBlogid());

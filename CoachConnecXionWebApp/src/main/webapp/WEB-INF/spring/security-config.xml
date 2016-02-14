@@ -52,19 +52,26 @@
         <intercept-url pattern="/images/**" access="permitAll()"/>
         <intercept-url pattern="/tutor/images/**" access="permitAll()"/>
         <intercept-url pattern="/fancybox/**" access="permitAll()"/>
-        <intercept-url pattern="/forums/**" access="permitAll()"/>
+        
+        
+        <intercept-url pattern="/forums/list.page" access="permitAll()"/>
+        <intercept-url pattern="/recentTopics/list.page" access="permitAll()"/>
+        <intercept-url pattern="/search/filters.page" access="permitAll()"/>
+        <intercept-url pattern="/hottestTopics/list.page" access="permitAll()"/>
+        <intercept-url pattern="/forums/show/**" access="permitAll()"/>
+        <intercept-url pattern="/posts/lists/**" access="permitAll()"/>
         <intercept-url pattern="/templates/**" access="permitAll()"/>
 
-        <intercept-url pattern="/search/filters.page" access="permitAll()"/>
-        <intercept-url pattern="/recentTopics/list.page" access="permitAll()"/>
-        <intercept-url pattern="/hottestTopics/list.page" access="permitAll()"/>
+		<!-- 
+        <intercept-url pattern="/jforum.page" access="permitAll()"/>
         <intercept-url pattern="/user/list.page" access="permitAll()"/>
         <intercept-url pattern="/moderation/showActivityLog.page" access="permitAll()"/>
-
+        <intercept-url pattern="/forums/**" access="permitAll()"/>
+		 -->
+		 
         <intercept-url pattern="/posts/list/**" access="permitAll()"/>
         <intercept-url pattern="/user/profile/**" access="permitAll()"/>
         <intercept-url pattern="/pm/sendTo/**" access="permitAll()"/>
-        <intercept-url pattern="/jforum.page" access="permitAll()"/>
         <intercept-url pattern="/rss/recentTopics.page" access="permitAll()"/>
 
         <intercept-url pattern="/about-us" access="permitAll()"/>

@@ -5,8 +5,8 @@
 <html lang="en">
 
 <head>
-<title>Find English Tutors Near You | CoachConnecXion</title>
-<meta name="description" content="CoachConnecXion offers listings of leading english tutors in your area. We have a variety of tutors with different specialties to help you on your specific need." />
+<title>Find English/Reading/Writing Tutors Near You | CoachConnecXion</title>
+<meta name="description" content="CoachConnecXion offers listings of leading english/Reading/Writing tutors in your area. We have a variety of tutors with different specialties to help you on your specific need." />
 <meta name="keywords" content="english tutor, english tutoring, english tutors, find english tutor" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
@@ -125,7 +125,7 @@ text-align:center;
 
 	<div
 		style="text-align: center; width: 900px; font-size: large; font-weight: bold; color: blue">
-		<h1>Search For English Tutors </h1></div>
+		<h1>Search For English/Reading/Writing Tutors </h1></div>
 
 	<div style="height: 1px; background-color: #D0D0D0"></div>
 
@@ -173,7 +173,7 @@ text-align:center;
 							
 							<tr><td style="text-align: left;"> 
 									<br>							
-									A skilled English tutor can help you in a variety of areas, whether you need help with an English composition class, need to ace that dissertation or research paper, or you just want to develop more effective communication skills to help you get ahead in business and life. Whether you need an English tutor for yourself or your child, you can find a tutor near you by using CoachConnecXion.
+									A skilled English tutor can help you in a variety of areas, whether you need help with an English composition class, need to ace that dissertation or research paper, or you just want to develop more effective communication skills to help you get ahead in business and life. Whether you need an English tutor for yourself or your child to help with reading and writing skills, you can find a tutor near you by using CoachConnecXion.
 									<br><br>
 									Our English tutors work with elementary age students through college level and beyond. For students of all ages, an English tutor can help with homework, essay organization, and preparation for quizzes and tests. 
 									<br><br>
@@ -193,7 +193,7 @@ text-align:center;
 							<tr><td>	
 									<h3 style="text-decoration: underline;">Your English tutor will do the following:</h3>
 									<ul style="list-style-type: square;">
-										<li style="text-align: left;">Help you improve your skills in the english language by identifying gaps in your knowledge and providing you instructions on how to fix them</li>
+										<li style="text-align: left;">Help you improve your reading and writing skills in the english language by identifying gaps in your knowledge and providing you instructions on how to fix them</li>
 										<li style="text-align: left;">Provide a better understanding of the fundamentals that you may have missed in earlier classes</li>
 										<li style="text-align: left;">Help you improve your grades in your english related classes by providing specialized lessons geared toward your area of challenge</li>
 										<li style="text-align: left;">Provide homework help if needed to ensure you fully understand the concepts and how to apply them</li>

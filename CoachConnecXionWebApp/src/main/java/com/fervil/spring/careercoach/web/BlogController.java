@@ -304,7 +304,7 @@ public String saveBlogPost(
 			String curLastName = curProfile.getLastname();
 
 			int publishyear = Calendar.getInstance().get(Calendar.YEAR);
-			int publishmonth = Calendar.getInstance().get(Calendar.MONTH);
+			int publishmonth = Calendar.getInstance().get(Calendar.MONTH)  + 1;
 			int publishday = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
 			
 			blogPost.setUserprofileid(currentLoggedInUserProfileId);
@@ -314,6 +314,7 @@ public String saveBlogPost(
 			blogPost.setPublishyear(publishyear);
 			blogPost.setPublishmonth(publishmonth);
 			blogPost.setPublishday(publishday);
+			blogPost.setPublishdate(Calendar.getInstance().getTime());
 			
 			String[] coachingCategoryInfo = blogPost.getCoachingcategory().split(Constants.COACHING_CATEGORY_NAME_SEPERATOR);
 			blogPost.setCoachingcategoryId(Long.valueOf(coachingCategoryInfo[0]));
@@ -325,7 +326,7 @@ public String saveBlogPost(
 			}
 			blogManager.storeBlog(blogPost);
 			
-			model.addAttribute("monthname", new DateFormatSymbols().getMonths()[publishmonth]);
+			model.addAttribute("monthname", new DateFormatSymbols().getMonths()[publishmonth -1]);
 			
 			model.addAttribute("blogId", blogPost.getBlogid());
 			model.addAttribute("blog", blogPost);
@@ -500,7 +501,7 @@ public String saveBlogPostWithId(@PathVariable("blogId") long blogId,
 			blogComment.setBlogid(blogId);
 			//List<BlogComment> blogCommentList = blogCommentManager.findByBlogId(blogid);
 			
-			model.addAttribute("monthname", new DateFormatSymbols().getMonths()[blogPost.getPublishmonth()]);
+			model.addAttribute("monthname", new DateFormatSymbols().getMonths()[blogPost.getPublishmonth() -1]);
 			
 			model.addAttribute("blogComment", blogComment);
 			//model.addAttribute("blogCommentList", blogCommentList);
@@ -531,7 +532,7 @@ public String saveBlogPostWithId(@PathVariable("blogId") long blogId,
 				model.addAttribute("blogmonths", getMonthsForArchive());
 				return "blogview/blogListing"; 
 		} catch (Exception e) {
-	            String msg = "Failed to find Blog by id. Error " + e;
+	            String msg = "Failed in blogview/recent-personal-coach-blogs. Error " + e;
 	            log.error(msg, e);
 				model.addAttribute(Constants.ERROR_MSG_KEY, Constants.ERROR_MSG);
 				return "public/common/error/errorpage";
@@ -558,7 +559,7 @@ public String saveBlogPostWithId(@PathVariable("blogId") long blogId,
 		try {
 			BlogPost blogPost =  blogManager.findById(blogid);
 			
-			model.addAttribute("monthname", new DateFormatSymbols().getMonths()[blogPost.getPublishmonth()]);
+			model.addAttribute("monthname", new DateFormatSymbols().getMonths()[blogPost.getPublishmonth() -1]);
 			model.addAttribute("blogmonths", getMonthsForArchive());
 			
 			model.addAttribute("blogId", blogPost.getBlogid());

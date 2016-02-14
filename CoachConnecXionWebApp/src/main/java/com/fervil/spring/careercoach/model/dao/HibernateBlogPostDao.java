@@ -1,4 +1,4 @@
- package com.fervil.spring.careercoach.model.dao;
+package com.fervil.spring.careercoach.model.dao;
 
 import java.util.List;
 
@@ -75,6 +75,9 @@ public class HibernateBlogPostDao implements BlogPostDao {
 			// session.beginTransaction();
 			List list = sessionFactory.getCurrentSession()
 					.createCriteria(BlogPost.class).list();
+			sessionFactory.getCurrentSession()
+			.createCriteria(BlogPost.class).add(Restrictions.lt("coachingcategoryId", Long.valueOf("100")) );
+			
 			return ((List<BlogPost>) list);
 
 		} catch (Exception e) {
@@ -84,12 +87,26 @@ public class HibernateBlogPostDao implements BlogPostDao {
 	}
 
 	@Override
-	public List<BlogPost> findRecentBlogPosts(int count) throws Exception {
+	public List<BlogPost> findAllPostTutors() throws Exception {
 
 		try {
+			
+			/*
 			// session.beginTransaction();
 			List list = sessionFactory.getCurrentSession()
-					.createCriteria(BlogPost.class).addOrder(Order.desc("publishyear")).setMaxResults(count).list();
+					.createCriteria(BlogPost.class).list();
+			sessionFactory.getCurrentSession()
+			.createCriteria(BlogPost.class).add(Restrictions.gt("coachingcategoryId", 100) );
+			
+			return ((List<BlogPost>) list);
+			*/
+
+			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
+					BlogPost.class);
+					
+			crit.add(Restrictions.gt("coachingcategoryId", Long.valueOf("100")));
+			crit.addOrder(Order.desc("publishdate"));
+			List list = crit.list();
 			return ((List<BlogPost>) list);
 
 		} catch (Exception e) {
@@ -98,6 +115,66 @@ public class HibernateBlogPostDao implements BlogPostDao {
 		}
 	}
 	
+	
+	@Override
+	public List<BlogPost> findRecentBlogPosts(int count) throws Exception {
+
+		try {
+
+			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
+					BlogPost.class);
+					
+			crit.add(Restrictions.lt("coachingcategoryId", Long.valueOf("100")));
+			crit.addOrder(Order.desc("publishdate"));
+			crit.setMaxResults(count);
+			List list = crit.list();
+			return ((List<BlogPost>) list);
+			
+			/*
+			// session.beginTransaction();
+			List list = sessionFactory.getCurrentSession()
+					.createCriteria(BlogPost.class).addOrder(Order.desc("publishdate")).setMaxResults(count).list();
+			sessionFactory.getCurrentSession()
+			.createCriteria(BlogPost.class).add(Restrictions.lt("coachingcategoryId", 100) );
+			
+			return ((List<BlogPost>) list);
+			*/
+		} catch (Exception e) {
+			// tx.rollback();
+			throw e;
+		}
+	}
+	
+	@Override
+	public List<BlogPost> findRecentBlogPostsTutors(int count) throws Exception {
+
+		try {
+
+			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
+					BlogPost.class);
+					
+			crit.add(Restrictions.gt("coachingcategoryId", Long.valueOf("100")));
+			crit.addOrder(Order.desc("publishdate"));
+			crit.setMaxResults(count);
+			List list = crit.list();
+			return ((List<BlogPost>) list);
+			
+			/*
+			// session.beginTransaction();
+			List list = sessionFactory.getCurrentSession()
+					.createCriteria(BlogPost.class).addOrder(Order.desc("publishdate")).setMaxResults(count).list();
+
+			sessionFactory.getCurrentSession()
+			.createCriteria(BlogPost.class).add(Restrictions.gt("coachingcategoryId", 100) );
+			
+			return ((List<BlogPost>) list);
+			*/
+
+		} catch (Exception e) {
+			// tx.rollback();
+			throw e;
+		}
+	}
 	
 	@Override
 	public BlogPost findById(long id)  throws Exception {
@@ -150,6 +227,7 @@ public class HibernateBlogPostDao implements BlogPostDao {
 			
 			crit.add(Restrictions.eq("publishyear", year));
 			crit.add(Restrictions.eq("publishmonth", month));
+			crit.add(Restrictions.lt("coachingcategoryId", Long.valueOf("100")) );
 			crit.addOrder(Order.desc("publishdate"));
 			List list = crit.list();
 			return ((List<BlogPost>) list);
@@ -160,4 +238,30 @@ public class HibernateBlogPostDao implements BlogPostDao {
 			session.close();
 		}
 	}	
+	
+	@Override
+	public List<BlogPost> findBlogPostsByMonthYearTutor(int month, int year) throws Exception {
+		Session session = sessionFactory.openSession();
+		ThreadLocalSessionContext.bind(session);
+	
+		try {
+	
+			Criteria crit = sessionFactory.getCurrentSession().createCriteria(
+					BlogPost.class);
+			
+			crit.add(Restrictions.eq("publishyear", year));
+			crit.add(Restrictions.eq("publishmonth", month));
+			crit.add(Restrictions.gt("coachingcategoryId", Long.valueOf("100")) );
+			crit.addOrder(Order.desc("publishdate"));
+			
+			List list = crit.list();
+			return ((List<BlogPost>) list);
+	
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			session.close();
+		}
+	}	
+	
 }

@@ -30,6 +30,10 @@ public class CreateBlogPostValidator implements Validator {
         
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "coachingcategory",
                 "required.coachingcategory", "Blog Category is required");
+
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "metadescription",
+                "required.coachingcategory", "Meta Description is required");
+        
         
 /*        
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "creatorfirstname",

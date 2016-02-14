@@ -22,7 +22,7 @@ public class CoachSelection {
 	private String subject;
 
 	public CoachSelection() {
-		coachstyle = "coachstyleinperson";
+		coachstyle = "coachstyleall";
 	}
 	
 	

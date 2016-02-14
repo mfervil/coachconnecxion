@@ -17,6 +17,9 @@ public class BlogPost {
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long blogid;
 
+	@Column(name = "metadescription")
+	public String metadescription;
+	
 	public int getPublishyear() {
 		return publishyear;
 	}
@@ -61,7 +64,8 @@ public class BlogPost {
 	
 	@Override
 	public String toString() {
-		return "BlogPost [blogid=" + blogid + ", publishyear=" + publishyear
+		return "BlogPost [blogid=" + blogid + ", metadescription="
+				+ metadescription + ", publishyear=" + publishyear
 				+ ", publishmonth=" + publishmonth + ", publishday="
 				+ publishday + ", userprofileid=" + userprofileid
 				+ ", blogtitle=" + blogtitle + ", publishdate=" + publishdate
@@ -188,6 +192,14 @@ public class BlogPost {
 	private long coachingcategoryId;
 	@Column(name = "COACHING_CATEGORY_NAME")
 	private String coachingcategoryName;
+
+	public String getMetadescription() {
+		return metadescription;
+	}
+
+	public void setMetadescription(String metadescription) {
+		this.metadescription = metadescription;
+	}
 	
 
 }

@@ -176,7 +176,7 @@ text-align:center;
 									<br><br>
 									Our science tutors can help you fill in the gaps of science knowledge, explaining concepts that may have been missed in previous science courses. They provide homework help as well as science test prep services and can even help with preparing for research projects. Best of all, our science tutors can help you or your child develop time management skills that will help you show improvement not only in your science studies, but in many other areas of life.
 									<br><br>
-									If you’re a parent whose child needs science tutoring, our tutors can help free up your time -- you’ll be able to supervise your child less during homework time, while your child gets the science concepts and skills he or she needs. So use CoachConnecXion today to find a science tutor near you. And if you are a qualified science tutor who would like to have more students, <a href="https://www.coachconnecxion.com/users/create"  style="color: blue;"> register with us</a> -- it’s free!
+									If you&#39;re a parent whose child needs science tutoring, our tutors can help free up your time -- you&#39;ll be able to supervise your child less during homework time, while your child gets the science concepts and skills he or she needs. So use CoachConnecXion today to find a science tutor near you. And if you are a qualified science tutor who would like to have more students, <a href="https://www.coachconnecxion.com/users/create"  style="color: blue;"> register with us</a> -- it’s free!
 									<br><br>
 									<%-- 
 									<br>		

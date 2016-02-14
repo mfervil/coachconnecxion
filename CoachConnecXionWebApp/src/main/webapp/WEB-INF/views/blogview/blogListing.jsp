@@ -6,10 +6,10 @@
 <html lang="en">
 
 <head>
-	<title>Create user profile</title>
+	<title>Blog listing of personal coaches and professional coaches</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Create a profile to become a Coach or Trainer" />
+	<meta name="description" content="News and information for individuals seeking personal coaches or professional coaches and tips and guidance for aspiring coaches as well as the veteran coaches already in the field" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>

@@ -76,4 +76,15 @@ public class BasicBlogManager implements BlogManager {
 			throws Exception {
 		return blogPostDao.findBlogPostsByMonthYear(month, year);
 	}
+
+	@Override
+	public List<BlogPost> getRecentBlogPostsTutor(int count) throws Exception {
+        return blogPostDao.findRecentBlogPostsTutors(count);
+	}
+
+	@Override
+	public List<BlogPost> findBlogPostsByMonthYearTutor(int blogMonth,
+			int blogYear) throws Exception  {
+		return blogPostDao.findBlogPostsByMonthYearTutor(blogMonth, blogYear);
+	}
 }

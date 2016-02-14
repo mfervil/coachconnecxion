@@ -8,10 +8,10 @@
 <html lang="en">
 
 <head>
-	<title>${blogPost.coachingcategoryName}--${blogPost.blogtitle}</title>
+	<title>${blogPost.coachingcategoryName} Coaches ${blogPost.blogtitle}</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta charset="utf-8" />
-	<meta name="description" content="Create a profile to become a Coach or Trainer" />
+	<meta name="description" content="${blogPost.metadescription}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <%-- BEGIN Header No Side test --%>
