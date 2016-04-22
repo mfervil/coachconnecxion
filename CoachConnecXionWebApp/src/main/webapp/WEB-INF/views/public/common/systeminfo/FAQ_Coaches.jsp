@@ -58,7 +58,7 @@ Bellow are the commonly asked questions for coaches looking for clients.
 </p>
 <br>
 <ul >
-<li style="text-align:left;">Q. What's the best way to work with your client <br>
+<li style="text-align:left;">Q. What&#39;s the best way to work with your client <br>
 A. The best way to interact with your client is through phone and email.  We do not recommend meeting face to face
 <br> <br>
 </li>

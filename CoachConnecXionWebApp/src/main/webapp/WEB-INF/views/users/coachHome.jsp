@@ -88,15 +88,15 @@
                      <li>
 						<img src="${pageContext.request.contextPath}/images/HomePage/Coach_1.png" alt="Business Coach"/>
 						<div class="ei-title black_bg">
-							<h2>DON'T HAVE THE EXPERIENCE</h2>
-							<h3>GET A COACH WHO'S BEEN THERE AND DONE THAT</h3>
+							<h2>DON&#39;T HAVE THE EXPERIENCE</h2>
+							<h3>GET A COACH WHO&#39;S BEEN THERE AND DONE THAT</h3>
 						</div>
 					</li>
                      <li>
 						<img src="${pageContext.request.contextPath}/images/HomePage/skilled.jpg" alt="Business Coach"/>
 						<div class="ei-title ">
 							<h2>ARE YOUR SKILLS OUTDATED </h2>
-							<h3>FIND A COACH WHO'S TECHNICALLY SAVVY</h3>
+							<h3>FIND A COACH WHO&#39;S TECHNICALLY SAVVY</h3>
 						</div>
 					</li>
                      <li>
@@ -147,7 +147,7 @@
 			<p style="font-size: 200%; color: gray">Our #1 goal is to help you find that great personal coach to take you to the next level<br><br>
 			<p style="font-size: 300%; color: gray">******<br><br>
 			<p style="font-size: 16px; color: gray" >If you are a certified coach who enjoys helping others sign-up with us, our customers are always looking for great coaches <br> <br>
-			<p style="font-size: 16px; color: gray" >If you are looking for a professional coach, you've come to the right place.  We have all types of coaches, including business coaches, life coaches, sports, and many more <br> <br>
+			<p style="font-size: 16px; color: gray" >If you are looking for a professional coach, you&#39;ve come to the right place.  We have all types of coaches, including business coaches, life coaches, sports, and many more <br> <br>
 		</td></tr></table>
 		
 	</div><!-- #wrapper -->		

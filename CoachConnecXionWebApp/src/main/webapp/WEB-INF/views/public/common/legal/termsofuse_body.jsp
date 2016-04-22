@@ -46,7 +46,7 @@ services, may be the trademarks of their respective owners.</span></p>
 <br>
 <p><span style='color:black'>Pursuant to Title 17, United States Code, Section
 512(c)(2), notifications of claimed copyright infringement should be sent to
-the service provider's designated agent. Written notification must be submitted
+the service provider&#39;s designated agent. Written notification must be submitted
 to the following designated agent:</span></p>
 
 <p class=MsoNormal><span style='color:black'>Marc Arthur</span></p>
@@ -98,7 +98,7 @@ USE OF ANY PRODUCT OR SERVICE CONTENT (OR PRODUCT) POSTED, TRANSMITTED, OR
 OTHERWISE MADE AVAILABLE VIA THE SERVICE, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGES. BECAUSE SOME STATES OR JURISDICTIONS DO NOT ALLOW THE EXCLUSION
 OR THE LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, IN SUCH
-STATES OR JURISDICTIONS, OWNER'S LIABILITY SHALL BE LIMITED TO THE EXTENT
+STATES OR JURISDICTIONS, OWNER&#39;S LIABILITY SHALL BE LIMITED TO THE EXTENT
 PERMITTED BY LAW.</span></p>
 <br>
 <h3 style="text-align:left;font-weight: bold;">Indemnity</h3>

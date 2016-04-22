@@ -21,6 +21,38 @@
 
 </script>
 	
+<style type="text/css">
+    .Table
+    {
+        display: table;
+    }
+    .Title
+    {
+        display: table-caption;
+        text-align: center;
+        font-weight: bold;
+        font-size: larger;
+    }
+    .Heading
+    {
+        display: table-row;
+        font-weight: bold;
+        text-align: center;
+    }
+    .Row
+    {
+        display: table-row;
+    }
+    .Cell
+    {
+        display: table-cell;
+        border: solid;
+        border-width: thin;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center;
+    }
+</style>
 
 </head>
 
@@ -82,7 +114,39 @@
 		<div class="separator"></div>
 		
 		<!-- ELASTIC SLIDER -->
-		<section>		
+		<section>	
+		
+			<div class="Table" style="width: 100%">		
+				<div class="Row">
+					<div class="Cell">
+					<a style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-math-tutor">MATH TUTORS</a>
+					</div>
+					<div class="Cell">
+					<a style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-science-tutor">SCIENCE TUTORS</a> 
+					</div>
+					<div class="Cell">
+					<a style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-english-tutor">ENGLISH TUTORS</a> 
+					</div>
+					<div class="Cell">
+					<a style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-language-tutor">LANGUAGE TUTORS</a> 
+					</div>
+					<div class="Cell">
+					<a style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-sat-act-gmat-lsat-tutor">TESTING (ACT/SAT/GMAT/ETC...) TUTORS</a>
+					</div>
+					<div class="Cell">
+					<a style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-general-personal-tutors">FIND MORE TUTORS...</a> 
+					</div>
+				</div>
+			</div>
+			<div class="Table" style="width: 100%">		
+				<div class="Row">
+					<div class="Cell" style="white-space: nowrap; text-align: left; font-size: 14px;">
+					Students are looking for great tutors all the time: <a style="font-size:14px;color:#0404B4; font-weight: bold; background-color: #B0C4DE; border: 1px solid navy; "  href="${pageContext.request.contextPath}/users/create">Tutors Get Listed for Free</a> 
+					</div>
+				</div>	
+			</div>			
+		
+		
 			<div id="ei-slider" class="ei-slider">
 				<ul class="ei-slider-large">
                      <li>
@@ -97,7 +161,7 @@
 						<img src="${pageContext.request.contextPath}/images/HomePage/skilled.jpg" alt="Business Coach"/>
 						<div class="ei-title ">
 							<h2>ARE YOUR SKILLS OUTDATED </h2>
-							<h3>FIND A TUTOR WHO'S TECHNICALLY SAVVY</h3>
+							<h3>FIND A TUTOR WHO&#39;S TECHNICALLY SAVVY</h3>
 						</div>
 					</li>
                      <li>
@@ -148,7 +212,7 @@
 			<p style="font-size: 200%; color: gray">Our #1 goal is to help you find that great tutor to take you to the next level<br><br>
 			<p style="font-size: 300%; color: gray">******<br><br>
 			<p style="font-size: 16px; color: gray" >If you are a tutor who enjoys helping others sign-up with us, our students are always looking for great tutors <br> <br>
-			<p style="font-size: 16px; color: gray" >If you are looking for a great tutor, you've come to the right place.  We have tutors in all subjects for all grade levels <br> <br>
+			<p style="font-size: 16px; color: gray" >If you are looking for a great tutor, you&#39;ve come to the right place.  We have tutors in all subjects for all grade levels <br> <br>
 		</td></tr></table>
 		
 	</div><!-- #wrapper -->		

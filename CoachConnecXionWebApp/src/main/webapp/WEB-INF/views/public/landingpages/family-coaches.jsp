@@ -171,7 +171,7 @@ text-align:center;
 										<br>Diagram showing the different steps and actions involved in the coaching process
 							</td></tr>
 							<tr><td><br>
-									<h2 style="text-align: left; text-decoration: underline;">What's the purpose of a family coach?</h2>
+									<h2 style="text-align: left; text-decoration: underline;">What&#39;s the purpose of a family coach?</h2>
 									<h3 style="text-align: left;">Family coaches help families resolve everyday problems that occur within the family unit.  These coaches work with teens, young adults, parents and families to find out what the problems are, and what needs to be done to get your family back on the right track.  
 																If required, your CoachConnecXion advisor may offer you parenting tips daily that you can utilize to help tackle your frequently occurring issues. 
 																</h3><br>

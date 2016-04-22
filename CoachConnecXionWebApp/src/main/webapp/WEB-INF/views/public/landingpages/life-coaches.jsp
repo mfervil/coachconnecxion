@@ -189,8 +189,8 @@ text-align:center;
 									<ul style="list-style-type: square;">
 										<li style="text-align: left;">Need some guidance on moving forward in your career</li>
 										<li style="text-align: left;">Want to learn how to take advantage of your strengths and talents</li>
-										<li style="text-align: left;">Don't know what to do about a major life decision, such as a move or promotion</li>
-										<li style="text-align: left;">Don't have an acceptable work-life balance</li>
+										<li style="text-align: left;">Don&#39;t know what to do about a major life decision, such as a move or promotion</li>
+										<li style="text-align: left;">Don&#39;t have an acceptable work-life balance</li>
 										<li style="text-align: left;">Have a lot of stress</li>
 										<li style="text-align: left;">Need help recognizing your skills and achieving your dreams</li>
 										<li style="text-align: left;">Having trouble moving past challenges that stand in the way of your goals</li>

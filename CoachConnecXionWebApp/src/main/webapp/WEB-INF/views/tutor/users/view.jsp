@@ -26,7 +26,7 @@
 
 <div id="content">
     <div class="pageWrapper">
-        <h1>User's profile</h1>
+        <h1>User&#39;s profile</h1>
 
         <dl>
             <dt><label>Username:</label></dt>

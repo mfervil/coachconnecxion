@@ -22,6 +22,47 @@
 
 </script>
 	
+<style> 
+.coachcolumn {
+    -webkit-columns: 100px 2; /* Chrome, Safari, Opera */
+    -moz-columns: 100px 2; /* Firefox */
+    columns: 100px 2;
+}
+</style>
+
+<style type="text/css">
+    .Table
+    {
+        display: table;
+    }
+    .Title
+    {
+        display: table-caption;
+        text-align: center;
+        font-weight: bold;
+        font-size: larger;
+    }
+    .Heading
+    {
+        display: table-row;
+        font-weight: bold;
+        text-align: center;
+    }
+    .Row
+    {
+        display: table-row;
+    }
+    .Cell
+    {
+        display: table-cell;
+        border: solid;
+        border-width: thin;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center;
+    }
+</style>
+
 
 </head>
 
@@ -84,63 +125,95 @@
 		<div class="separator"></div>
 		
 		<!-- ELASTIC SLIDER -->
-		<section>		
-			<div id="ei-slider" class="ei-slider">
-				<ul class="ei-slider-large">
-                     <li>
-						<img src="${pageContext.request.contextPath}/images/HomePage/Coach_1.png" alt="Business Coach"/>
-						<div class="ei-title black_bg">
-							<h2>DON'T HAVE THE EXPERIENCE</h2>
-							<h3>GET A TUTOR WHO'S BEEN THERE AND DONE THAT</h3>
-						</div>
-					</li>
-                     <li>
-						<img src="${pageContext.request.contextPath}/images/HomePage/skilled.jpg" alt="Business Coach"/>
-						<div class="ei-title ">
-							<h2>ARE YOUR SKILLS OUTDATED </h2>
-							<h3>FIND A TUTOR WHO'S TECHNICALLY SAVVY</h3>
-						</div>
-					</li>
-                     <li>
-						<img src="${pageContext.request.contextPath}/images/HomePage/mountain.jpg" alt="Corporate Coach"/>
-						<div class="ei-title black_bg">
-							<h2>LOOKING FOR A FINAL PULL</h2>
-							<h3>OR PUSH TO GET YOU TO THE TOP</h3>
-						</div>
-					</li>
-					<li>
-						<img src="${pageContext.request.contextPath}/images/HomePage/remote.jpg" alt="Coaching Any Time Any Plance"/>
-						<div class="ei-title ">
-							<h2>GET TUTORED ANY TIME ANY PLACE</h2>
-							<h3>EVEN IN THE COMFORT OF YOUR OWN HOME</h3>
-						</div>
-					</li>
-					<li>
-						<img src="${pageContext.request.contextPath}/images/HomePage/exercize.jpg" alt="Excersize Coach"/>
-						<div class="ei-title">
-							<h2>LOOKING TO LOSE THOSE 5 EXTRA POUNDS</h2>
-							<h3>A PERSONAL TUTOR MAY BE YOUR ANSWER</h3>
-						</div>						
-					</li>
-					<li>
-						<img src="${pageContext.request.contextPath}/images/HomePage/chef.jpg" alt="New Field Coach"/>
-						<div class="ei-title ">
-							<h2>TRYING SOMETHING NEW</h2>
-							<h3>A TUTOR IN THE FIELD IS THE QUICKEST ROUTE</h3>
-						</div>						
-					</li>									
-				</ul>
-								
-				<ul class="ei-slider-thumbs">
-					<li class="ei-slider-element">Current</li>
-					<li><a href="#">Slide 1</a></li>
-					<li><a href="#">Slide 2</a></li>
-					<li><a href="#">Slide 3</a></li>
-					<li><a href="#">Slide 4</a></li>
-					<li><a href="#">Slide 5</a></li>
-					<li><a href="#">Slide 6</a></li>
-				</ul>												
+		<section>	
+			<div class="Table" style="width: 100%">		
+				<div class="Row">
+					<div class="Cell">
+					<a style="color:#0404B4" href="${pageContext.request.contextPath}/public/landing-life-coaches">LIFE COACHES</a>
+					</div>
+					<div class="Cell">
+					<a  style="color:#0404B4" href="${pageContext.request.contextPath}/public/landing-career-coaches">CAREER COACHES</a> 
+					</div>
+					<div class="Cell">
+					<a  style="color:#0404B4" href="${pageContext.request.contextPath}/public/landing-business-coaches">BUSINESS COACHES</a> 
+					</div>
+					<div class="Cell">
+					<a  style="color:#0404B4" href="${pageContext.request.contextPath}/public/landing-relationship-couples-coaches">RELATIONSHIP COACHES</a> 
+					</div>
+					<div class="Cell">
+					<a  style="color:#0404B4" href="${pageContext.request.contextPath}/public/landing-leadership-coaches">LEADERSHIP COACHES</a> 
+					</div>
+					<div class="Cell">
+					<a style="color:#0404B4"  href="${pageContext.request.contextPath}/public/landing-general-personal-coaches">FIND MORE COACHES...</a> 
+					</div>
+				
+				</div>
 			</div>
+			<div class="Table" style="width: 100%">		
+				<div class="Row">
+					<div class="Cell" style="white-space: nowrap; text-align: left; font-size: 14px;">
+					Clients are looking for great coaches all the time: <a style="font-size:14px;color:#0404B4; font-weight: bold; background-color: #B0C4DE; border: 1px solid navy; "  href="${pageContext.request.contextPath}/users/create">Coaches Get Listed for Free</a> 
+					</div>
+				</div>	
+			</div>			
+
+				<div id="ei-slider" class="ei-slider">
+					<ul class="ei-slider-large">
+			     <li>
+							<img src="${pageContext.request.contextPath}/images/HomePage/Coach_1.png" alt="Business Coach"/>
+							<div class="ei-title black_bg">
+								<h2>DON&#39;T HAVE THE EXPERIENCE</h2>
+								<h3>GET A COACH WHO&#39;S BEEN THERE AND DONE THAT</h3>
+							</div>
+						</li>
+			     <li>
+							<img src="${pageContext.request.contextPath}/images/HomePage/skilled.jpg" alt="Business Coach"/>
+							<div class="ei-title ">
+								<h2>ARE YOUR SKILLS OUTDATED </h2>
+								<h3>FIND A COACH WHO&#39;S TECHNICALLY SAVVY</h3>
+							</div>
+						</li>
+			     <li>
+							<img src="${pageContext.request.contextPath}/images/HomePage/mountain.jpg" alt="Corporate Coach"/>
+							<div class="ei-title black_bg">
+								<h2>LOOKING FOR A FINAL PULL</h2>
+								<h3>OR PUSH TO GET YOU TO THE TOP</h3>
+							</div>
+						</li>
+						<li>
+							<img src="${pageContext.request.contextPath}/images/HomePage/remote.jpg" alt="Coaching Any Time Any Plance"/>
+							<div class="ei-title ">
+								<h2>GET COACHED ANY TIME ANY PLACE</h2>
+								<h3>EVEN IN THE COMFORT OF YOUR OWN HOME</h3>
+							</div>
+						</li>
+						<li>
+							<img src="${pageContext.request.contextPath}/images/HomePage/exercize.jpg" alt="Excersize Coach"/>
+							<div class="ei-title">
+								<h2>LOOKING TO LOSE THOSE 5 EXTRA POUNDS</h2>
+								<h3>A PERSONAL COACH MAY BE YOUR ANSWER</h3>
+							</div>						
+						</li>
+						<li>
+							<img src="${pageContext.request.contextPath}/images/HomePage/chef.jpg" alt="New Field Coach"/>
+							<div class="ei-title ">
+								<h2>TRYING SOMETHING NEW</h2>
+								<h3>A COACH IN THE FIELD IS THE QUICKEST ROUTE</h3>
+							</div>						
+						</li>									
+					</ul>
+
+					<ul class="ei-slider-thumbs">
+						<li class="ei-slider-element">Current</li>
+						<li><a href="#">Slide 1</a></li>
+						<li><a href="#">Slide 2</a></li>
+						<li><a href="#">Slide 3</a></li>
+						<li><a href="#">Slide 4</a></li>
+						<li><a href="#">Slide 5</a></li>
+						<li><a href="#">Slide 6</a></li>
+					</ul>												
+				</div>
+			
 	</section>
 			
 		<table><tr><td >
@@ -149,13 +222,13 @@
 			<p style="font-size: 200%; color: gray">Our #1 goal is to help you find that great guide to take you to the next level<br><br>
 			<p style="font-size: 300%; color: gray">******<br><br>
 			<p style="font-size: 16px; color: gray" >If you are a certified coach who enjoys helping others sign-up with us, our customers are always looking for great coaches <br> <br>
-			<p style="font-size: 16px; color: gray" >If you are looking for a professional coach or tutor, you've come to the right place.  We have all types of coaches, including business coaches, life coaches, sports coaches, and many more...
+			<p style="font-size: 16px; color: gray" >If you are looking for a professional coach or tutor, you&#39;ve come to the right place.  We have all types of coaches, including business coaches, life coaches, sports coaches, and many more...
 													Our tutors can help with any subject, including math, english, and science; and work with students from elementary to college level <br> <br>
 		</td></tr></table>
 		
 	</div><!-- #wrapper -->		
 	
-	<%@ include file="/WEB-INF/views/tutor/common/footer_no_side.jsp" %>	
+	<%@ include file="/WEB-INF/views/common/footer_no_side.jsp" %>	
 <!-- 	
 </body>
 </html>

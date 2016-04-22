@@ -59,7 +59,7 @@ Bellow are the commonly asked questions for users looking to find a coach.
 </p>
 <br>
 <ul >
-<li style="text-align:left;">Q. What's the best way to work with my coach <br>
+<li style="text-align:left;">Q. What&#39;s the best way to work with my coach <br>
 A. The best way to interact with your coach is through phone and email.  We do not recommend meeting face to face
 <br> <br>
 </li>

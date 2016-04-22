@@ -178,8 +178,8 @@ text-align:center;
 									<ul style="list-style-type: square;">
 										<li style="text-align: left;">Help you be more accountable.  Since there is no one else to push you, you need a coach to provide that pressue and help you move forward</li>
 										<li style="text-align: left;">Provide and outside perspective to give you a clearer picture of your environment</li>
-										<li style="text-align: left;">Provide lessons learned from prior mistakes made by others so you don't make the same mistakes</li>
-										<li style="text-align: left;">Help you more quickly identify the problem areas so small issues don't get out of hand</li>
+										<li style="text-align: left;">Provide lessons learned from prior mistakes made by others so you don&#39;t make the same mistakes</li>
+										<li style="text-align: left;">Help you more quickly identify the problem areas so small issues don&#39;t get out of hand</li>
 										<li style="text-align: left;">Help you step back and think more strategically about the business and determine how the employees and clients can best address your vision</li>
 										<li style="text-align: left;">Assist you in balancing your personal with your business life.</li>
 										<li style="text-align: left;">Work with you on the problems you're facing, help you set goals and develop a plan, and require you to carry out and implement your plans.</li>

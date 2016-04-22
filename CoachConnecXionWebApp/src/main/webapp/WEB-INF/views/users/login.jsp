@@ -36,7 +36,7 @@
                     <dd class="clear"><input  size="30" id="password" type="password" class="text required" name="j_password"/></dd>
                 </dl>
                 <c:if test="${not empty param.login_error}">
-                    <div class="error">Could not log you in.  Please verify your email and password and try again. <br> If you still can't login the system may be down, please try again at a later time</div>
+                    <div class="error">Could not log you in.  Please verify your email and password and try again. <br> If you still can&#39;t login the system may be down, please try again at a later time</div>
                 </c:if>
                 <br>
                 <div>
@@ -49,7 +49,7 @@
         </div>
         <br>
         <p style="font-size:16px">
-            Don't have an account yet? 
+            Don&#39;t have an account yet? 
             <a  rel="nofollow" href="<c:url value="/users/create"/>" style="font-size:16px; font-color:blue; text-decoration:underline" >Register here</a>
         </p>
         

@@ -22,7 +22,7 @@
 <%-- 
         <ul class="hintsList">
             <li>Sample hint text</li>
-            <li>Chuck Norris doesn't call the wrong number. You answer the wrong phone.</li>
+            <li>Chuck Norris doesn&#39;t call the wrong number. You answer the wrong phone.</li>
             <li>When Alexander Bell invented the telephone he had 3 missed calls from Chuck Norris.</li>
             <li>When the Boogeyman goes to sleep every night, he checks his closet for Chuck Norris.</li>
             <li>Chuck Norris' hand is the only hand that can beat a Royal Flush.</li>

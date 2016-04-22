@@ -473,7 +473,7 @@ label {font-size:14px;}
 				</tr>
 				<tr><td>&nbsp;</td></tr>
 				<tr>	
-				<td class="leftalign" nowrap> <label>Qualifications: Detail out what qualifies you to tutor in each of the subjects you've selected</label>  
+				<td class="leftalign" nowrap> <label>Qualifications: Detail out what qualifies you to tutor in each of the subjects you&#39;ve selected</label>  
 				<font style="font-size: 14px; color: red;"><form:errors path="serviceDescription" cssClass="error" /></font> <br>
 					<div style="height: 10px;"></div>
 					<form:textarea name="wysiwyg1" class="required" cols="100"

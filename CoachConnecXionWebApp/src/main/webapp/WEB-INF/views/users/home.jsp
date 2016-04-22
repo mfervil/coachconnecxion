@@ -60,6 +60,7 @@
 					<a style="font-size:12px;color:#0404B4"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> | 
 					--%>
 					<a  rel="nofollow" style="font-size:16px;color:#0404B4; font-weight: bold; background-color: #B0C4DE; border: 1px solid navy;" href="${pageContext.request.contextPath}/users/login">Login/Sign Up</a>
+					&nbsp; <a style="font-size:14px;color:#0404B4; background-color: #B0C4DE; border: 1px solid navy;"  href="${pageContext.request.contextPath}/contact-us">Contact Us </a> 
 
 <c:if test="${!empty sessionScope.nummessages and sessionScope.nummessages > 0}">
 	<c:if test="${sessionScope.usertype == 1}">
@@ -96,52 +97,55 @@
 		<br>
 		<div style="padding: 20px;"></div>
 
+		<div style="font-size: 300%; color: #086A87; text-align: center">Welcome to CoachConnecXion</div>
+		
+		<br><br>
+		
 		<div  class="list-row"><a style="font-size: 20px" href="${pageContext.request.contextPath}/coach/public">COACHING SERVICES</a></div>
 		<div  class="list-row"><a style="font-size: 20px" href="${pageContext.request.contextPath}/tutor/public">TUTORING SERVICES</a></div>
 		<%-- <div  class="list-row"><a style="font-size: 20px" href="${pageContext.request.contextPath}/training/public">TRAINING SERVICES</a></div> --%>
 
-		<br><br>
+		<br>
 		<div style="padding: 20px;">
-			<p style="font-size: 300%; color: #086A87">Welcome to CoachConnecXion<br><br>
-			<H1 style="font-size: 200%; color: gray">Home of the top professional and personal coaches and tutors in the industry<br><br></H1>
-			<p style="font-size: 200%; color: gray">Our #1 goal is to help you find that great guide to take you to the next level<br><br>
-			<p style="font-size: 300%; color: gray">******<br><br>
+			<H1 style="font-size: 150%; color: gray">We have some of the top professional and personal coaches and tutors in the industry.  
+			Our #1 goal is to help you find that great guide to take you to the next level.<br><br></h1>
+			<p style="font-size: 300%; color: gray; text-align: center;">******<br><br>
 			<p>
-			When you want to succeed in a particular area of life, a common word of advice you’ll hear is that you should find a competent tutor or coach. But actually finding an experienced coach you can trust is another matter. Where do you begin your search for the best coach or tutor? CoachConnecXion can help!
+			When you want to succeed in a particular area of life, a common word of advice you&#39;ll hear is that you should find a competent coach or tutor. But actually finding an experienced coach you can trust is another matter. Where do you begin your search for the best coach or tutor? CoachConnecXion can help!
 			</p>
 			<br>
 			<p>
-			We&#39;ve made it our mission to match qualified, certified coaches with the customers who need their expertise. CoachConnecXion works with many different types of coaches, so try our site if you need a:
+			We&#39;ve made it our mission to match qualified coaches and qualified tutors with the customers who need their expertise. CoachConnecXion works with many different types of coaches, so try our site if you need a:
 			</p>
-			<ul>
-				<li>-- Business coach</li> 
-				<li>-- Life coach</li>
-				<li>-- Sports coach</li>
-				<li>-- Family coach</li>
-				<li>-- Relationship coach</li>
-				<li>-- Finance or money management coach</li>
-				<li>-- Nutrition coach</li>
-				<li>-- Career or corporate coach</li>
-				<li>-- Or any other type of coach</li>
+			<ul style="list-style-type: disc; list-style-position: inside;">
+				<li> Business coach</li> 
+				<li> Life coach</li>
+				<li> Sports coach</li>
+				<li> Family coach</li>
+				<li> Relationship coach</li>
+				<li> Finance or money management coach</li>
+				<li> Nutrition coach</li>
+				<li> Career or corporate coach</li>
+				<li> Or any other type of coach</li>
 			</ul>
 			<br>
 			<p>In addition, we can also help you find a tutor to help you or your child with a variety of subjects. Our tutors work with a wide range of ages, from elementary school students through college students, so come to us when you need the following types of tutors:
 			</p>						
-			<ul>
-				<li>-- Math tutor</li>
-				<li>-- Science tutor</li>
-				<li>-- English tutor</li>
-				<li>-- Language tutor</li> 
-				<li>-- Or any other type of tutor</li> 
+			<ul style="list-style-type: disc; list-style-position: inside;">
+				<li> Math tutor</li>
+				<li> Science tutor</li>
+				<li> English tutor</li>
+				<li> Language tutor</li> 
+				<li> Or any other type of tutor</li> 
 			</ul>
 			<br>
 			<p>We can even help pair you with a music tutor who can help you or your child learn to play an instrument.</p>			
 			<br>
-			<p>The CoachConnecXion team comes from different areas of expertise, from information technology to management, and that’s why we understand the value of different kinds of knowledge and skills. We’ve made it our business to match qualified, trustworthy coaches and tutors with the people who can benefit from their knowledge and experience. Give us a try today and find the coach or tutor you’ve been looking for!</p>
+			<p>The CoachConnecXion team comes from different areas of expertise, from information technology to management, and that&#39;s why we understand the value of different kinds of knowledge and skills. We&#39;ve made it our business to match qualified, experienced coaches and tutors with the people who can benefit from their knowledge and experience. Give us a try today and find the coach or tutor you&#39;ve been looking for!</p>
 			
 			<%--
 			<p style="font-size: 16px; color: gray" >If you are a certified coach who enjoys helping others sign-up with us, our customers are always looking for great coaches <br> <br>
-			<p style="font-size: 16px; color: gray" >If you are looking for a professional coach or tutor, you've come to the right place.  We have all types of coaches, including business coaches, life coaches, sports coaches, and many more...
+			<p style="font-size: 16px; color: gray" >If you are looking for a professional coach or tutor, you&#39;ve come to the right place.  We have all types of coaches, including business coaches, life coaches, sports coaches, and many more...
 													Our tutors can help with any subject, including math, english, and science; and work with students from elementary to college level <br> <br>
 			 --%>													
 		</div>

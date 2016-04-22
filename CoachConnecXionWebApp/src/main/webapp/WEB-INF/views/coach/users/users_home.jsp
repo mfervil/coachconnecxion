@@ -104,7 +104,7 @@
 			<p style="font-size: 200%; color: gray">Our #1 goal is to help you find that great guide to take you to the next level<br><br>
 			<p style="font-size: 300%; color: gray">******<br><br>
 			<p style="font-size: 16px; color: gray" >If you are a certified coach who enjoys helping others sign-up with us, our customers are always looking for great coaches <br> <br>
-			<p style="font-size: 16px; color: gray" >If you are looking for a professional coach or tutor, you've come to the right place.  We have all types of coaches, including business coaches, life coaches, sports coaches, and many more...
+			<p style="font-size: 16px; color: gray" >If you are looking for a professional coach or tutor, you&#39;ve come to the right place.  We have all types of coaches, including business coaches, life coaches, sports coaches, and many more...
 													Our tutors can help with any subject, including math, english, and science; and work with students from elementary to college level <br> <br>
 		</div>
 		

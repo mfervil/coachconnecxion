@@ -38,7 +38,7 @@
         
 		<%--
         <p>
-            Don't have an account yet? 
+            Don&#39;t have an account yet? 
             <a href="<c:url value="/users/create"/>" style="font:14px;color:#0404B4">REGISTER HERE</a>
         </p>
         --%>

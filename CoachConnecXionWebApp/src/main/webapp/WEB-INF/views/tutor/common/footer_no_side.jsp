@@ -12,7 +12,7 @@
 	<section id="footerline">
 		<div id="left">
 			<%-- <p style="font-size:12px;"><span class="colorizer">CoachConnecXion.com</span> BY CoachSessions LLC &COPY; 2014  - ALL RIGHTS RESERVED!</p> --%>
-			<p style="font-size:12px;"><a href="https://www.coachconnecxion.com/" class="colorizer"> CoachConnecXion.com </a> BY CoachSessions LLC &COPY; 2014 - 2016 - ALL RIGHTS RESERVED! | <a href="/sitemap/">Sitempa</a></</p>
+			<p style="font-size:12px;"><a href="https://www.coachconnecxion.com/" class="colorizer"> CoachConnecXion.com </a> BY CoachSessions LLC &COPY; 2014 - 2016 - ALL RIGHTS RESERVED! | <a href="/sitemap/">Sitemap</a></</p>
 
 		</div>
 		<div id="right">
@@ -51,26 +51,34 @@
 		</div>
 		
 		<div class="separator"></div>
-
-		<div id="landingLinks">
-			<b>AVAILABLE COACHES:&nbsp;</b> <%-- <a href="${pageContext.request.contextPath}/tutor/public/landing-general-personal-coaches">ADVANCED SEARCH</a> |--%> 
-			<a href="${pageContext.request.contextPath}/tutor/public/landing-business-coaches">BUSINESS COACHES</a> | 
-			<a href="${pageContext.request.contextPath}/tutor/public/landing-career-coaches">CAREER COACHES</a> | 
-			<a href="${pageContext.request.contextPath}/tutor/public/landing-corporate-coaches">CORPORATE COACHES</a> | 
-			<a href="${pageContext.request.contextPath}/tutor/public/landing-family-coaches">FAMILY COACHES</a> | 
-			<a href="${pageContext.request.contextPath}/tutor/public/landing-finance-money-coaches">FINANCE / MONEY COACHES</a> | 
-			<a href="${pageContext.request.contextPath}/tutor/public/landing-fitness-coaches">FITNESS COACHES</a> | 
-			<a href="${pageContext.request.contextPath}/tutor/public/landing-nutrition-coaches">NUTRITION COACHES</a> | 
-			<a href="${pageContext.request.contextPath}/tutor/public/landing-life-coaches">LIFE COACHES</a> | 
-			<a href="${pageContext.request.contextPath}/tutor/public/landing-relationship-coaches">RELATIONSHIP COACHES</a>
-		</div>
+		<div >
+			<div style="float: left; width: 90px; font-weight: bold;">AVAILABLE TUTORS: </div>
 		
-		<div id="right">
-			<a href="https://www.facebook.com/pages/Coachconnecxion/381001272060479"><img src="${pageContext.request.contextPath}/images/social/facebook.png" alt="facebook" /></a>
-			&nbsp;&nbsp;<a href="https://twitter.com/CoachConnecX"><img src="${pageContext.request.contextPath}/images/social/twitter.png" alt="twitter" /></a>
-			&nbsp;&nbsp;<a href="https://plus.google.com/u/6/101269948124610306307"><img src="${pageContext.request.contextPath}/images/social/googleplus.png" alt="googleplus" /></a>
-			&nbsp;&nbsp;<a href="https://www.linkedin.com/company/coachconnecxion"><img src="${pageContext.request.contextPath}/images/social/linkedin.png" alt="linkedin" /></a>
-		</div>
+			<div style="float: left; width: 75%; text-align: left;">
+				<a style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-art-tutor">ART</a> | 
+				<a  style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-business-tutor">BUSINESS</a> | 
+				<a  style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-computer-business-tutor">COMPUTER BS</a> | 
+				<a  style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-computer-programming-tutor">COMPUTER DEV</a> | 
+				<a  style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-communication-presentation-tutor">COMM/PRES</a> | 
+				<a  style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-english-tutor">ENGLISH</a> | 
+				<a  style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-history-tutor">HISTORY</a> | 
+				<a  style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-homeschool-tutor">HOMESCHOOL</a> | 
+				<a  style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-language-tutor">LANGUAGE</a> | 
+				<a  style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-math-tutor">MATH</a> | 
+				<a  style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-music-tutor">MUSIC</a> | 
+				<a  style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-science-tutor">SCIENCE</a> | 
+				<a  style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-add-adhd-tutor">SPECIAL NEEDS</a> | 
+				<a  style="color:#0404B4" href="${pageContext.request.contextPath}/tutor/public/landing-sat-act-gmat-lsat-tutor">TEST PREPARATION (SAT/ACT/GMAT/LSAT/ETC...)</a>
+				
+			</div>
+			
+			<div style="float: left; ">
+				<a href="https://www.facebook.com/pages/Coachconnecxion/381001272060479"><img src="${pageContext.request.contextPath}/images/social/facebook.png" alt="facebook" /></a>
+				&nbsp;&nbsp;<a href="https://twitter.com/CoachConnecX"><img src="${pageContext.request.contextPath}/images/social/twitter.png" alt="twitter" /></a>
+				&nbsp;&nbsp;<a href="https://plus.google.com/u/6/101269948124610306307"><img src="${pageContext.request.contextPath}/images/social/googleplus.png" alt="googleplus" /></a>
+				&nbsp;&nbsp;<a href="https://www.linkedin.com/company/coachconnecxion"><img src="${pageContext.request.contextPath}/images/social/linkedin.png" alt="linkedin" /></a>
+			</div>
+		</div>	
 	</section>
 	
 	
