@@ -14,7 +14,7 @@ public class Decoding  extends TagSupport {
 	    return URLEncoder.encode(value, charset);
 	}	
 */	
-	
+	// Testing
  
 //public class SubstrTagHandler {
     private String urlinput;
